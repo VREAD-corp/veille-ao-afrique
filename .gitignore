@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.pytest_cache/
+_site/
+cache/
+node_modules/
+test-results/
+playwright-report/
+gas/.clasp.json
+gas/.deployment.json
+gas/src/Secret.js
+.env
+e2e/screenshots/

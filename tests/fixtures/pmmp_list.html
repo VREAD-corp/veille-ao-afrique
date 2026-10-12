@@ -1,0 +1,1369 @@
+<form id="ctl0_ctl4" method="post" action="/index.php?page=entreprise.EntrepriseAdvancedSearch&amp;AllCons" name="main_form"><div style="visibility:hidden;">
+<input type="hidden" name="PRADO_PAGESTATE" id="PRADO_PAGESTATE" value="STATE" />
+<input type="hidden" name="PRADO_POSTBACK_TARGET" id="PRADO_POSTBACK_TARGET" value="" />
+<input type="hidden" name="PRADO_POSTBACK_PARAMETER" id="PRADO_POSTBACK_PARAMETER" value="" />
+</div>
+<script type="text/javascript" src="/assets/b925f310/clientscripts.php?js=prado,ajax"></script>
+
+  
+  
+  
+
+  <!--Debut Bandeau agent-->
+  
+  <!--Debut header-->
+<div id="header">
+	<div class="top">
+			<div class="liens-evitement">
+				<ul>	
+					<li><a href="#menu">Aller au menu</a></li>
+					<li><a href="#main-part">Aller au contenu</a></li>
+				</ul>
+			</div>
+		
+		<div id="ctl0_bandeauEntreprise_panelLogo" class="logo-client">
+			<h1><img src="themes/images/logo.gif" class="logo" alt="La plate-forme de dématérialisation des marchés publics" title="La plate-forme de dématérialisation des marchés publics" /></h1>
+		</div>
+		
+		
+	  	<div id="ctl0_bandeauEntreprise_panelNaviguationMulilingue" class="choix-langue">
+			<span>Langue de navigation : </span>
+        	
+        			<a onclick="selectFlag(this);" class="on"><input type="image" name="ctl0$bandeauEntreprise$langages$ctl0$flagImg" id="ctl0_bandeauEntreprise_langages_ctl0_flagImg" src="themes/images/flag-fr.png" alt="FR" title="FR" /></a>
+        		
+        			<a onclick="selectFlag(this);" class=""><input type="image" name="ctl0$bandeauEntreprise$langages$ctl1$flagImg" id="ctl0_bandeauEntreprise_langages_ctl1_flagImg" src="themes/images/flag-ar.png" alt="AR" title="AR" /></a>
+        		
+		    &nbsp;&nbsp;
+		</div>	
+	</div>
+	<div class="nav">
+		<div id="ctl0_bandeauEntreprise_panelDate" class="date"><span id="ctl0_bandeauEntreprise_dateAujourdhui"></span></div>
+		<div  class="accueil">
+			<a id="ctl0_bandeauEntreprise_ctl1" href="javascript:;//ctl0_bandeauEntreprise_ctl1">
+				
+				Vous n'êtes pas authentifié
+			</a>
+		</div>
+		<div class="lien-portail"><a id="ctl0_bandeauEntreprise_linkAccueilPortail" href="pmmp">PORTAIL</a></div>
+                <div class="lien-portail"></div>
+		<div class="message-user">
+			<span>Bienvenue <strong> </strong> </span>
+        </div>	
+	</div>
+	
+</div>
+
+	
+
+<!--Fin header-->
+
+  
+  <script type="text/javascript">dateBandeau('1791843329000', '0');</script>
+  <!--Fin Bandeau agent-->
+  <!--Debut partie centrale-->
+  <div id="middle">
+    <!--Debut menu agent-->
+    
+    
+    
+    <!--Debut colonne gauche-->
+	<div class="left-part" id="left-part">
+		<!--Debut menu -->
+		<div id="menu">
+			<ul id="menuList">
+				<li style="display:block" class="menu-open"><span><a id="ctl0_menuGaucheEntreprise_ctl0" href="javascript:;//ctl0_menuGaucheEntreprise_ctl0">S'identifier</a></span></li>
+				<li style="display:none;" class="menu-open"><span class="panier"><a accesskey="p" title="Menu actif" onclick="toggleMenu('menuPanier');" href="javascript:void(0);">Mon panier</a></span>
+					<ul style="display: block;" id="menuPanier" class="ss-menu-open">
+						<li style="display:block;" class="on"><a title="Mon panier - Consultations" href="javascript:void(0);" onclick="toggleSousMenu(this,'ssMenuPanier');">Consultations</a>
+							<ul class="ss-menu-open" id="ssMenuPanier" style="display:block;">
+								<li class="off"><a title="Mon panier - Consultations - Toutes les consultations" href="?page=entreprise.EntrepriseAdvancedSearch&amp;panierEntreprise">Toutes les consultations</a></li>
+								<li class="off"><a href="?page=entreprise.EntrepriseAdvancedSearch&amp;panierEntreprise&amp;retraits" title="Mon panier - Consultations - Avec retrait" >Avec</a>/<a href="?page=entreprise.EntrepriseAdvancedSearch&amp;panierEntreprise&amp;sansRetraits" title="Mon panier - Consultations - sans retrait">sans retrait</a></li>
+								<li class="off"><a href="?page=entreprise.EntrepriseAdvancedSearch&amp;panierEntreprise&amp;questions" title="Mon panier - Consultations - Avec question posée">Avec</a>/<a href="?page=entreprise.EntrepriseAdvancedSearch&amp;panierEntreprise&amp;sansQuestions" title="Mon panier - Consultations - sans question posée">sans question posée</a></li>
+								<li class="off"><a href="?page=entreprise.EntrepriseAdvancedSearch&amp;panierEntreprise&amp;depots"  title="Mon panier - Consultations - Avec dépôt">Avec</a>/<a href="?page=entreprise.EntrepriseAdvancedSearch&amp;panierEntreprise&amp;sansDepots" title="Mon panier - Consultations - sans dépôt">sans dépôt</a></li>
+								<li class="off"><a href="?page=entreprise.EntrepriseAdvancedSearch&amp;panierEntreprise&amp;echanges" title="Mon panier - Consultations - Avec message échangé">Avec</a>/<a href="?page=entreprise.EntrepriseAdvancedSearch&amp;panierEntreprise&amp;sansEchanges" title="Mon panier - Consultations - sans message échangé" >sans message échangé</a></li>
+							</ul>
+						</li>
+						<li style="display:none;" class="off"><a href="?page=entreprise.EntrepriseAdvancedSearch&amp;panierEntreprise">Toutes les consultations</a></li>
+						<li style="display:block;" class="off"><a href="?page=entreprise.EntrepriseAdvancedSearch&amp;panierEntreprise&amp;panierEntreprise&amp;dateFinEnd">Consultations clôturées</a></li>
+						<li class="off">
+							<a title="Mon panier - Recherche avancée" href="?page=entreprise.EntrepriseAdvancedSearch&amp;searchAnnCons&amp;panierEntreprise">Recherche avancée
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="menu-open menu-on"><span><a title="Menu actif" href="javascript:void(0);" onclick="toggleMenu('menuAnnonces');" accesskey="a">Annonces</a></span>
+					<ul class="ss-menu-open" id="menuAnnonces" style="display:block">
+						<li class="ss-menu-rub">Consultations</li>
+						<li class="off"><label for="ctl0_menuGaucheEntreprise_quickSearch" style="display:none;">Recherche rapide</label>
+							<div id="ctl0_menuGaucheEntreprise_ctl18">
+	    						<input name="ctl0$menuGaucheEntreprise$quickSearch" type="text" value="Recherche rapide" id="ctl0_menuGaucheEntreprise_quickSearch" class="rechercher" onfocus="clearOnFocus(event,this);showDiv('infosRechercheRapide');" onmouseover="clearOnFocus(event,this);" onblur="hideDiv('infosRechercheRapide');" title="Recherche rapide" />
+	    							<input type="image" name="ctl0$menuGaucheEntreprise$imageOk" id="ctl0_menuGaucheEntreprise_imageOk" src="themes/images/bouton-ok.gif" alt="OK" title="Consultations - Lancer la recherche" class="ok" />
+		                    </div>
+		                    <div class="info-bulle recherche-rapide" id="infosRechercheRapide" style="display:none;"><div>Ex 1: Fourniture d'écrans pour micro-ordinateurs : Recherche de type OU sur chaque mot, hors mots de liaison (le, la, les, avec,pour, etc.) <br /> Ex 2 : "Fourniture d'écrans pour micro-ordinateurs" : Recherche sur l'expression exacte (car présence de guillemets)</div></div>
+						</li>
+						<li style="display:block;" class="off"><a title="Annonces - Consultations" href="?page=entreprise.EntrepriseAdvancedSearch&amp;searchAnnCons" >Consultations en cours</a></li>
+						<li style="display:none;" class="off"><a title="Annonces - Consultations - Toutes les consultations" href="?page=entreprise.EntrepriseAdvancedSearch&amp;AllCons&amp;searchAnnCons">Toutes les consultations</a></li>
+						<li class="off"><a title="Annonces - Consultations - Recherche avancée" href="?page=entreprise.EntrepriseAdvancedSearch&amp;searchAnnCons">Recherche avancée</a></li>
+						<div class="line">
+							<li class="ss-menu-rub">Bon de commande</li>
+							<li class="off" style="display:block"><a id="ctl0_menuGaucheEntreprise_ctl67" href="javascript:;//ctl0_menuGaucheEntreprise_ctl67">Avis d'achat en cours</a></span></li>
+						</div>
+						<li class="ss-menu-rub">Autres annonces</li>
+						<li class="off" style="display:block"><a href="?page=entreprise.EntrepriseAdvancedSearch&amp;AvisInformation">Toutes les annonces d'information</a></li>
+						<li class="off" style="display:block"><a href="?page=entreprise.EntrepriseAdvancedSearch&amp;AvisExtraitPV">Tous les extraits de PV</a></li>						
+						<li class="off"><a href="?page=entreprise.EntrepriseAdvancedSearch&amp;AvisAttribution">Tous les résultats définitifs</a></li>
+						<li class="off" style="display:block"><a href="?page=entreprise.EntrepriseAdvancedSearch&amp;AvisRapportAchevement">Tous les rapports d'achèvement</a></li>						
+						<li class="off" style="display:block"><a href="?page=entreprise.EntrepriseAdvancedSearch&amp;AvisRapportPresentation">Tous les rapports de présentation</a></li>
+						<li class="off" style="display:block"><a href="?page=entreprise.EntrepriseAdvancedSearch&amp;AvisdecisionResiliation">Toutes les décisions de résiliation</a></li>
+						<li class="off"><a title="Annonces - Autres annonces - Recherche avancée" href="?page=entreprise.EntrepriseAdvancedSearch&amp;AllAnn">Recherche avancée</a></li>
+						
+						<li class="off" style="display:block">
+						<a href="?page=entreprise.ListePPs">
+						Annonce de programme previsionnel</a>
+						</li>
+						<li class="off" style="display:block">
+						<a href="?page=entreprise.ListeSRA">
+						Annonce de synthèse de rapport d'audit</a>
+						</li>
+						<li class="off" style="display:block">
+							<a href="?page=entreprise.ListeAnnonceAnnuelle&typeAnnonce=1">
+								Liste des bons de commande attribués</a>
+						</li>
+						<li class="off" style="display:block">
+							<a href="?page=entreprise.ListeAnnonceAnnuelle&typeAnnonce=2">
+								Liste des marchés attribués</a>
+						</li>
+						<li class="off" style="display:block">
+							<a href="?page=entreprise.ListeAnnonceAnnuelle&typeAnnonce=3">
+								Liste des conventions et des contrats de droit commun
+							</a>
+						</li>
+						<li style="display:none;">
+							
+						</li>
+						<li class="ss-menu-rub" style="display:none;" title="Annonces -  Liste des marchés conclus"> Liste des marchés conclus</li>
+						<li class="off" style="display:none;" >
+							
+						</li>
+				<!-- debut menu consultations annulees -->
+
+				<!-- Fin menu consultations annulees --
+                <!-- debut menu consultations annulees -->
+						<li style="display:block;" >
+							<div>
+								<ul>
+									<li class="ss-menu-rub">Consultations annulées</li>
+									<li class="off">
+										<div id="ctl0_menuGaucheEntreprise_listerConsAnnulees" class="config">
+											<a href="?page=entreprise.EntrepriseAdvancedSearch&amp;AllCons&amp;consAnnulee=1">Toutes les consultations</a>
+										</div>
+									</li>
+									<li class="off">
+										<div id="ctl0_menuGaucheEntreprise_serchConsAnnulees" class="config">
+											<a href="?page=entreprise.EntrepriseAdvancedSearch&amp;searchAnnCons&amp;consAnnulee=1">Recherche avancée</a>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</li>
+<!-- Fin menu consultations annulees -->
+					</ul>
+				</li>
+
+				<li class="menu-open" style="display:none" >
+					<span><a title="Menu actif" accesskey="m" onclick="toggleMenu('menuReclamations');" href="javascript:void(0);" >Réclamations</a></span>
+					<ul class="ss-menu-open" id="menuReclamations" style="display: block;">
+						<li class="off"><a href="?page=entreprise.Reclamations&action=envoi">Soumettre une réclamation</a></li>
+						<li class="off"><a href="?page=entreprise.Reclamations&action=suivi">Mes réclamations</a></li>
+					</ul>
+				</li>
+<!-- Start Menu BOURSE_A_CO_TRAITANCE -->
+				<li class="menu-open"  style="display:none;">
+					<span><a title="Menu actif" accesskey="m" onclick="toggleMenu('menuBourses');" href="javascript:void(0);" >Bourse à la co-traitance</a></span>
+					<ul class="ss-menu-open" id="menuBourses" style="display: block;">
+						<li class="off"><a href="?page=entreprise.RechercheCollaborateur">Recherche de collaboration</a></li>
+					</ul>
+				</li>
+<!-- End Menu BOURSE_A_CO_TRAITANCE -->	
+<!-- Start Menu OUTILS_DE_SIGNATURE -->
+                <li class="menu-open" style="display:block;"><span><a title="Menu actif" href="javascript:void(0);" onclick="toggleMenu('menuOutilsDeSignature');" accesskey="t">Outils de signature </a></span>
+                    <ul class="ss-menu-open" id="menuOutilsDeSignature" style="display:block">
+                            <li class="off"><a href="?page=commun.SignDocument&amp;callFrom=entreprise">Signer un document</a></li>
+                            <li class="off"><a href="?page=commun.VerifierSignature&amp;callFrom=entreprise">Vérifier la signature</a></li>
+                    </ul>
+                </li>
+<!-- End Menu OUTILS_DE_SIGNATURE -->
+				<li  class="menu-open"><span><a title="Menu actif" href="javascript:void(0);" onclick="toggleMenu('menuAssistance');" accesskey="m">Aide</a></span>
+					<ul class="ss-menu-open" id="menuAssistance" style="display:none;">
+						<li class="off"><a href="?page=entreprise.EntrepriseGuide&Aide" title="Aide - Guides d'utilisation" >Guides d'utilisation</a></li>
+						<li class="off"><a href="?page=entreprise.EntrepriseAide">Contact / Assistance</a></li>
+						<li style="display:none;">
+						
+						</li>
+						<li style="display:none;">
+							
+						</li>
+						<li style="display:block;">
+						<div id="ctl0_menuGaucheEntreprise_VisionEaEntreprise">
+							<ul>
+								<li class="off"><a href="?page=entreprise.EntrepriseVisualiserEntitesAchatsRecherche">Visualiser les Acheteurs publics</a></li>
+							</ul>
+						</div>
+						</li>
+						<li class="off" style="display:block;"><a href="?page=commun.AutresOutils&amp;callFrom=entreprise">Outils informatiques</a></li>
+					</ul>
+				</li>
+				<li class="menu-open" style="display:block">
+					<span><a href="javascript:void(0);" onclick="toggleMenu('societesExclues');" >Sociétés exclues</a></span>
+					<ul class="ss-menu-open" id="societesExclues" style="display: none;">
+						<li class="off">
+							<a href="?page=entreprise.EntrepriseRechercherSocietesExclues&amp;search=1" title="Sociétés exclues - Recherche avancée" >
+								Recherche avancée
+							</a>
+						</li>
+					</ul>
+				</li>
+				<li class="menu-open menu-on" style="display:block;"><span><a href="javascript:void(0);" title="Menu actif" onclick="toggleMenu('menuPreparation');" accesskey="m">Se préparer à répondre</a></span>
+					<ul style="display:none;" id="menuPreparation" class="ss-menu-open">
+						<li class="off"><a href="?page=commun.DiagnosticPoste&amp;callFrom=entreprise">Tester la configuration de mon poste</a></li>
+						<li class="off"><a href="?page=entreprise.EntrepriseAdvancedSearch&amp;AllCons&amp;orgTest">Consultations de test</a></li>						
+					</ul>
+				</li>
+				<li class="menu-open" style="display:none;"><span><a href="javascript:void(0);" onclick="toggleMenu('indicateursCles');" accesskey="m">Indicateurs clés</a></span> 
+					<ul id="indicateursCles" class="ss-menu-open"> 
+						<li class="off"><a>0 consultations en ligne</a></li> 
+						<li class="off" style="display:block"><a>0 entités publiques inscrites</a></li> 
+						<li class="off" style="display:block"><a>0 entreprises inscrites</a></li> 
+						<li class="ss-menu-rub">Depuis le  0</li> 
+						<li class="off"><a>0 consultations publiées</a></li> 
+						<li class="off" style="display:block"><a>0 DCE téléchargés</a></li> 
+						<li class="off" style="display:block"><a>0 réponses électroniques reçues</a></li> 
+					</ul> 
+				</li> 
+<!-- Start Menu GUIDES -->				
+				<li style="display:none" class="menu-open"><span><a href="javascript:void(0);" title="Menu actif" onclick="toggleMenu('menuGuide');" accesskey="d" >Guides</a></span>
+			   		<ul class="ss-menu-open" id="menuGuide" style="display:block">
+			   			<li class="off"><a href="index.php?page=entreprise.EntrepriseGuide&Guides" title="Guides - Guides d'utilisation">Guides d'utilisation</a></li>
+						<li style="display:none">
+							<div id="ctl0_menuGaucheEntreprise_GuidesMultimedia">
+								<ul>
+									<li class="off">
+										<a href="index.php?page=commun.Guides&calledFrom=entreprise">Guides d'utilisateurs multimédia</a>
+									</li>
+								</ul>
+							</div>
+						</li>
+					</ul>
+				</li>
+<!-- Start Menu GUIDES -->
+			</ul>
+		</div>
+		<div class="menu-bottom"></div>
+		<span id="ctl0_menuGaucheEntreprise_labelJs"></span>
+		<!--Fin menu -->
+		<script type="text/javascript">
+if (document.getElementById('menuAnnonces') != null ) document.getElementById('menuAnnonces').style.display = 'block';
+if (document.getElementById('menuAssistance') != null ) document.getElementById('menuAssistance').style.display = 'none';
+if (document.getElementById('societesExclues') != null ) document.getElementById('societesExclues').style.display = 'none';
+if (document.getElementById('menuPreparation') != null ) document.getElementById('menuPreparation').style.display = 'none';
+if (document.getElementById('menuOutilsDeSignature') != null ) document.getElementById('menuOutilsDeSignature').style.display = 'none';
+if (document.getElementById('menuPanier') != null ) document.getElementById('menuPanier').style.display = 'block';
+if (document.getElementById('menuBourses') != null ) document.getElementById('menuBourses').style.display = 'none';
+</script>
+	</div>
+	<!--Fin colonne gauche-->
+
+    
+    
+    
+    
+    
+    <!--Fin menu agent-->
+    
+
+		<!--Debut Bloc Recherche avancee-->
+		
+		<!--Fin Bloc Recherche avancee-->
+		<!--Debut Bloc de Resultat-->
+		<div id="ctl0_CONTENU_PAGE_panelResult" class="float-left">
+  			<!--Debut colonne droite-->
+<div class="main-part" id="main-part">
+  <div class="breadcrumbs float-left" style="display:;">
+    <a id="ctl0_CONTENU_PAGE_resultSearch_linkAnnonces" href="#">Annonces</a>
+    &gt;
+    <a href="#">
+      Recherche avancée
+    </a>
+    >Résultat
+  </div>
+  <!--div class="choix-langue"><span>Langue de navigation :</span>
+     <a href="javascript:void(0);" onclick="selectFlag(this);" class=""><input type="image" name="ctl0$CONTENU_PAGE$resultSearch$fr" id="ctl0_CONTENU_PAGE_resultSearch_fr" src="themes/images/flag-france.png" alt="FR" title="FR" /></a>
+     <a href="javascript:void(0);" onclick="selectFlag(this);" class=""><input type="image" name="ctl0$CONTENU_PAGE$resultSearch$en" id="ctl0_CONTENU_PAGE_resultSearch_en" src="themes/images/flag-great-britain.png" alt="EN" title="EN" /></a>
+     <a href="javascript:void(0);" onclick="selectFlag(this);" class=""><input type="image" name="ctl0$CONTENU_PAGE$resultSearch$es" id="ctl0_CONTENU_PAGE_resultSearch_es" src="themes/images/flag-spain.png" alt="ES" title="ES" /></a>
+  </div-->
+  <div class="link-line">
+    <a id="ctl0_CONTENU_PAGE_resultSearch_ctl19" class="bouton-retour" title="Modifier ma recherche" href="javascript:;//ctl0_CONTENU_PAGE_resultSearch_ctl19">Modifier ma recherche</a>
+    
+    <a id="ctl0_CONTENU_PAGE_resultSearch_ctl21" class="bouton-suivant" title="Nouvelle recherche" href="javascript:;//ctl0_CONTENU_PAGE_resultSearch_ctl21">Nouvelle recherche</a>
+  </div>
+  <!--Debut legende-->
+  <div class="toggle-panel" id="legende"
+       style="display:;">
+    <div class="top"><span class="left">&nbsp;</span><span class="right">&nbsp;</span></div>
+    <div class="content">
+      <h2 class="toggle-btn"><a href="javascript:void(0);" class="title-toggle"
+                                onclick="togglePanel(this,'legendPanel');">
+          Légende
+        </a></h2>
+      <div class="panel" style="display:none;" id="legendPanel">
+        <div style="display:block;">
+          <div class="column column-certificat">
+            <h3> Réponse électronique :</h3>
+            <img src="themes/images/reponse-elec-oblig.gif" alt=""/>
+            <div class="intitule-legende"><span class="intitule-auto">:</span><span>Réponse électronique obligatoire pour cette consultation, sans signature électronique</span>
+            </div>
+            <img src="themes/images/reponse-elec.gif" alt=""/>
+            <div class="intitule-legende"><span class="intitule-auto">:</span><span>Réponse électronique non obligatoire pour cette consultation, sans signature électronique</span>
+            </div>
+            <img src="themes/images/reponse-elec-oblig-avec-signature.gif" alt=""/>
+            <div class="intitule-legende"><span class="intitule-auto">:</span><span> Réponse électronique obligatoire pour cette consultation, avec signature électronique requise </span>
+            </div>
+            <img src="themes/images/reponse-elec-avec-signature.gif" alt=""/>
+            <div class="intitule-legende"><span class="intitule-auto">:</span><span> Réponse électronique non obligatoire pour cette consultation, avec signature électronique requise </span>
+            </div>
+            <img src="themes/images/reponse-elec-non.gif" alt="" class="margin-top-3"/>
+            <div class="intitule-legende"><span class="intitule-auto">:</span><span>Pas de réponse électronique pour cette consultation</span>
+            </div>
+            <div class="spacer-mini"></div>
+            <img src="themes/images/logo-mps-small.png" class="logo-mps" alt=""
+                 style="display:none"/>
+            <div class="intitule-legende"
+                 style="display:none"><span
+                class="intitule-auto">:</span>
+              Ce marché est un Marché Public Simplifié
+            </div>
+            
+          </div>
+          <div class="column bloc-250 bloc-actions">
+            <h3>
+              Actions
+              :
+            </h3>
+            <img src="themes/images/picto-details.gif" alt=""/>
+            <div class="intitule-legende"><span class="intitule-auto">:</span><span>Voir le détail</span>
+            </div>
+            <img src="themes/images/picto-acces-consultation.gif" alt=""/>
+            <div class="intitule-legende"><span class="intitule-auto">:</span><span>Accéder à l'annonce</span>
+            </div>
+            <img src="themes/images/picto-test-config.gif" alt=""
+                 style="display:"/>
+            <div class="intitule-legende"
+                 style="display:"><span
+                class="intitule-auto">:</span><span>Tester la configuration de mon poste</span></div>
+            <img class="bouton-partager" src="themes/images/picto-partager.gif" alt=""
+                 style="display:none"/>
+            <div class="intitule-legende"
+                 style="display:none">
+              <span class="intitule-auto">:</span><span>Partager</span></div>
+            <img src="themes/images/picto-ajout-cart.gif" alt=""
+                 style="display:"/>
+            <div class="intitule-legende"
+                 style="display:"><span
+                class="intitule-auto">:</span><span>Ajouter au panier</span></div>
+            <img src="themes/images/picto-remove-cart.gif" alt=""
+                 style="display:"/>
+            <div class="intitule-legende"
+                 style="display:"><span
+                class="intitule-auto">:</span><span>Supprimer du panier</span></div>
+            <img src="themes/images/picto-acces-MPS.png" alt=""
+                 style="display:none"
+                 class="btn-action"/>
+            <div class="intitule-legende"
+                 style="display:none"><span
+                class="intitule-auto">:</span><span>Répondre à la consultation de manière simplifiée</span>
+            </div>
+          </div>
+        </div>
+        <div style="display:none;">
+          <div class="column bloc-235">
+            <h3>
+              Type d'annonce
+              :
+            </h3>
+            <img src="themes/images/picto-avis-info.gif" alt="Annonce d'information"/>
+            <div class="intitule-legende">&nbsp;: Annonce d'information</div>
+            <div>
+              <img src="themes/images/picto-PV.gif" alt="Extrait de PV"
+                   title="Extrait de PV"/>
+              <div class="intitule-legende">&nbsp;: Extrait de PV</div>
+            </div>
+            <div>
+              <img src="themes/images/picto-rapport-achevement.gif"
+                   alt="Rapport d'achèvement"
+                   title="Rapport d'achèvement"/>
+              <div class="intitule-legende">&nbsp;: Rapport d'achèvement</div>
+            </div>
+            <div>
+              <img src="themes/images/picto-PP.png" alt="Rapport de présentation"
+                   title="Rapport de présentation"/>
+              <div class="intitule-legende">&nbsp;: Rapport de présentation</div>
+            </div>
+            <img src="themes/images/picto-avis-attribution.gif"
+                 alt="Résultat définitif"/>
+            <div class="intitule-legende">&nbsp;: Résultat définitif</div>
+          </div>
+          <div class="column bloc-250 bloc-actions">
+            <h3>
+              Actions
+              :
+            </h3>
+            <img src="themes/images/picto-acces-consultation.gif" alt="Accéder à l'annonce"/>
+            <div class="intitule-legende"><span class="intitule-auto">:</span><span>Accéder à l'annonce</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="breaker"></div>
+    </div>
+    <div class="bottom"><span class="left">&nbsp;</span><span class="right">&nbsp;</span></div>
+  </div>
+  <!--Fin legende-->
+  <!--Debut Bloc Info text-->
+  
+  <!--Fin Bloc info text-->
+  <div class="breaker"></div>
+  
+  <div id="ctl0_CONTENU_PAGE_resultSearch_panelElementsFound">
+    <!--Debut Bloc formulaire avec onglets-->
+    <div id="tabNav">
+      <!--Debut navigation onglets-->
+      <div class="nav-onglet" id="form-nav"
+           style="display:;">
+        <div class="tab-on"><span class="border-left">&nbsp;</span>
+          <a href="#" class="tab-5item">
+            
+            Annonces de consultation
+          </a>
+          <span class="border-right">&nbsp;</span>
+        </div>
+      </div>
+      <!--Fin navigation onglets-->
+      <!--Debut Layer 1-->
+      <div class="ongletLayer">
+        <div class="top"></div>
+        <div class="content">
+          <!--Debut partitionneur-->
+          <div class="line-partitioner">
+            <h3>
+              Nombre de résultats :&nbsp;<span id="ctl0_CONTENU_PAGE_resultSearch_nombreElement">101384</span>
+            </h3>
+            <div class="partitioner">
+              <div class="intitule"><strong><label for="cons_nbResultsTop">
+                    Afficher
+                  </label></strong></div>
+
+              <select name="ctl0$CONTENU_PAGE$resultSearch$listePageSizeTop" id="ctl0_CONTENU_PAGE_resultSearch_listePageSizeTop" title="Nombre de résultats par page">
+<option selected="selected" value="10">10</option>
+<option value="20">20</option>
+<option value="50">50</option>
+<option value="100">100</option>
+<option value="500">500</option>
+</select>
+
+              <div class="intitule">
+                résultats / page
+              </div>
+
+              <label style="display:none;" for="cons_pageNumberTop">
+                Aller à la page
+              </label>
+
+              <div id="ctl0_CONTENU_PAGE_resultSearch_panelBouttonGotoPageTop" class="float-left">
+                <input name="ctl0$CONTENU_PAGE$resultSearch$numPageTop" type="text" value="1" id="ctl0_CONTENU_PAGE_resultSearch_numPageTop" title="N° de la page" />
+                <div class="nb-total ">/
+                  <span id="ctl0_CONTENU_PAGE_resultSearch_nombrePageTop">10139</span>
+                </div>
+                <input type="submit" name="ctl0$CONTENU_PAGE$resultSearch$DefaultButtonTop" value="" id="ctl0_CONTENU_PAGE_resultSearch_DefaultButtonTop" style="display:none" />
+              </div>
+
+              <div class="liens">
+                <span id="ctl0_CONTENU_PAGE_resultSearch_PagerTop"><span><img src='themes/images/fleche-premier.gif' alt='Aller à la première page' title='Aller à la première page' /></span>
+<span><img src='themes/images/fleche-precedent.gif' alt='Aller à la page précédente' title='Aller à la page précédente' /></span>
+<a id="ctl0_CONTENU_PAGE_resultSearch_PagerTop_ctl2" href="javascript:;//ctl0_CONTENU_PAGE_resultSearch_PagerTop_ctl2"><img src='themes/images/fleche-suivant.gif' alt='Aller à la page suivante' title='Aller à la page suivante' /></a>
+<a id="ctl0_CONTENU_PAGE_resultSearch_PagerTop_ctl3" href="javascript:;//ctl0_CONTENU_PAGE_resultSearch_PagerTop_ctl3"><img src='themes/images/fleche-dernier.gif' alt='Aller à la dernière page' title='Aller à la dernière page' /></a></span>
+              </div>
+
+            </div>
+          </div>
+          <!--Fin partitionneur-->
+          <!--Debut Tableau consultations-->
+          
+              <table summary="R�sultats de la recherche" class="table-results">
+                <caption>
+                  Résultats de la recherche
+                </caption>
+                <thead>
+                <tr>
+                  <th class="top" colspan="5">
+                    <span class="left">&nbsp;</span>
+                    <span class="right">&nbsp;</span>
+                  </th>
+                </tr>
+                <tr>
+                  <th class="check-col" id="checkAll" abbr="Tous" style="display:none">
+                    <input title="Tous/Aucun" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl0_selectAll" type="checkbox" onclick="CheckUnCheckAll(this, 'resultSearch_tableauResultSearch', 'annonceSelection');" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl0$selectAll" />
+                  </th>
+                  <th class="col-90" id="cons_ref" abbr="Ref">
+
+                    Procédure
+                    <br/>
+                    
+                    Catégorie
+                    
+                    <input type="image" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl0$ctl3" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl0_ctl3" src="themes/images/arrow-tri-off.gif" alt="Trier" title="Trier Par 'Catégorie'" />
+                    <br/>
+                    
+                    Publié le
+                    
+                    <input type="image" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl0$ctl5" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl0_ctl5" src="themes/images/arrow-tri-off.gif" alt="Trier" title="Trier Par 'Publié le'" />
+
+                  </th>
+                  <th class="col-450" id="cons_intitule" abbr="Intitule">
+                    
+                    Référence
+                    
+                    <input type="image" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl0$ctl7" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl0_ctl7" src="themes/images/arrow-tri-off.gif" alt="Trier" title="Trier Par 'Référence'" />
+                    
+                    <div
+                      style="display: none;">
+                      |
+                      Contexte/Programmme
+                      
+                      <input type="image" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl0$ctl9" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl0_ctl9" src="themes/images/arrow-tri-off.gif" alt="Trier" title="Trier Par 'Contexte/Programmme'" />
+                    </div>
+                    <br/>
+                    
+                    Objet
+                    
+                    <input type="image" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl0$ctl11" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl0_ctl11" src="themes/images/arrow-tri-off.gif" alt="Trier" title="Trier Par 'Objet'" />
+                    <br/>
+                    
+                    Acheteur public
+                    
+                    <input type="image" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl0$ctl13" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl0_ctl13" src="themes/images/arrow-tri-off.gif" alt="Trier" title="Trier Par 'Organisme'" />
+                  </th>
+                  <th class="col-90" id="cons_lieuExe"
+                      style="display:;">
+    									<span style="display:none;">
+            								Type d'annonce
+            								
+            								<input type="image" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl0$ctl15" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl0_ctl15" src="themes/images/arrow-tri-off.gif" alt="Trier" title="Trier Par 'Type d'annonce'" />
+        									<br>
+    									</span>
+                    <span>
+                      Lots
+                    </span>
+                    <br/>
+                    <span>
+                      Lieu d'exécution
+                    </span>
+                    <div class="info-clauses"
+                         style="display:none">
+                      <br/>
+
+                      <a href="javascript:void(0);"
+                         onmouseover="afficheBulle('infoClauses', this)"
+                         onmouseout="cacheBulle('infoClauses')"
+                         onfocus="afficheBulle('infoClauses', this)"
+                         onblur="cacheBulle('infoClauses')"
+                         class="info-suite">
+                        Clauses soc./env.
+                      </a>
+
+                      <div class="info-bulle" id="infoClauses">
+                        <div>
+                          <ul>
+                            <li>-
+                              Clauses sociales 
+                            </li>
+                            <li>-
+                              Clauses environnementales 
+                            </li>
+                            <li>-
+                              Marchés réservés à des emplois ou des ateliers protégés (EA / ESAT, art. 15 du CMP)
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                    <br/>
+                    
+                  </th>
+
+                  <th class="col-60" id="cons_dateEnd"
+                      abbr="Date limite">
+        								<span style="display:block;">
+        								
+        									Date limite de remise des plis
+
+        									
+            								 <input type="image" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl0$ctl23" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl0_ctl23" src="themes/images/arrow-tri-off.gif" alt="Trier" title="Trier Par 'Date limite de remise des plis'" />
+        								</span>
+
+                    <span style="display:none;">
+        									Détail
+        								</span>
+                  </th>
+                  <th class="actions" id="cons_actions">
+                    Actions
+                  </th>
+                </tr>
+                </thead>
+            
+              <tr class="">
+
+                <td class="check-col" headers="checkAll" style="display:none">
+                  <input type="hidden" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl1$refCons" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_refCons" value="1005224" />
+                  <input type="hidden" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl1$orgCons" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_orgCons" value="h5j" />
+                  <input title="Sélectionner" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_annonceSelection" type="checkbox" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl1$annonceSelection" />
+
+                </td>
+
+                <td class="col-90" headers="cons_ref">
+                  <div class="line-info-bulle">
+                    AOO
+                    <a href="javascript:void(0);"
+                       onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_panelBlocTypesProc', this)"
+                       onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_panelBlocTypesProc')"
+                       onfocus="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_panelBlocTypesProc', this)"
+                       onblur="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_panelBlocTypesProc')" class="info-suite">
+                      ...
+                    </a>
+                  </div>
+                  <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_panelBlocTypesProc" class="info-bulle" onmouseover="mouseOverBulle();" onmouseout="mouseOutBulle();">
+                    <div id="identification_cons_0_type_procedure">
+                      Appel d'offres ouvert
+                    </div>
+                  </div>
+                  <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_panelBlocCategorie">
+                    Fournitures
+                  </div>
+                  <div>
+                    09/10/2026
+                  </div>
+                  
+                  <a target="_blank">
+                    
+                  </a>
+                </td>
+                <td class="col-450" headers="cons_intitule">
+                  <div id="identification_cons_0">
+
+
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_panelBlocIntitule" class="objet-line">
+                      <span id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_reference" class="ref">68/2026</span>
+                      <div
+                        style="display: none;">
+                        -
+                         
+                      </div>
+                      <span
+                        style="display:none"
+                        onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_infosIntitule', this)"
+                        onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_infosIntitule')"
+                        class="info-suite">...</span>
+                      
+                    </div>
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_panelBlocObjet" class="objet-line">
+                      <strong>
+                        Objet
+                        : </strong>
+                      La Fourniture et mise en service des équipements de cuisine au profit de la Prison Locale Chichaoua, en lot unique  
+                      <span
+                        style="display:none"
+                        onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_infosBullesObjet', this)"
+                        onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_infosBullesObjet')"
+                        class="info-suite">...</span>
+                      <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_infosBullesObjet" class="info-bulle" onmouseover="mouseOverBulle();" onmouseout="mouseOutBulle();">
+                        <div>
+                          La Fourniture et mise en service des équipements de cuisine au profit de la Prison Locale Chichaoua, en lot unique 
+                        </div>
+                      </div>
+                    </div>
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_panelBlocDenomination" class="objet-line">
+                      <strong>
+                        Acheteur public
+                        : </strong>
+                      DELEGATION GENERALE A L'ADMINISTRATION PENITENTIAIRE ET A LA REINSERTION
+                    </div>
+
+                    
+
+                </td>
+
+                <td class="col-90" headers="cons_lieuExe"
+                    style="display:;">
+
+                  <div id="identification_cons_0_lieuxExecution">
+    								<span style="display:none;">
+	    								
+	    								
+	    								
+	    								
+	    							    
+                                    </span>
+
+                    <span>
+                      <a
+                        href="javascript:popUp('index.php?page=commun.PopUpDetailLots&orgAccronyme=h5j&refConsultation=1005224&lang=','yes')"><img
+                          src="themes/images/picto-details.gif"
+                          style="display:none"
+                          alt="Détail des lots"
+                          title="Détail des lots"/></a>&nbsp;&nbsp;&nbsp;&nbsp;<span>-</span>
+                    </span>
+
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_panelBlocLieuxExec" style="display:;">
+                      CHICHAOUA<br /><br />
+        <div class="bloc-info-bulle">
+        	<a style="display:none" 
+        		href="javascript:void(0);" 
+        		onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_ctl15_infosLieuExecution', this)" 
+        		onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_ctl15_infosLieuExecution')" 
+        		onfocus="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_ctl15_infosLieuExecution', this)" 
+        		onblur="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_ctl15_infosLieuExecution')" 
+        		class="info-suite">
+        		...
+        	</a>
+        	<div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_ctl15_infosLieuExecution" class="info-bulle"><div>CHICHAOUA</div></div>
+        </div>
+                    </div>
+                    
+
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_panelBlocCodesNuts" headers="cons_codes_nuts" style="display:none;">
+                      	
+   <span 
+    onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_infosLieuExecutionLtRef', this)" 
+    onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_infosLieuExecutionLtRef')" 
+    class="info-suite" 
+    title="Info-bulle">
+     <span style="display:none;">...</span>
+     </span>
+    <div 
+    id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_infosLieuExecutionLtRef" 
+        class="info-bulle" 
+        onmouseover="mouseOverBulle();" 
+        onmouseout="mouseOutBulle();"
+        >
+        <div>
+        
+        </div>
+    </div>
+                    </div>
+
+                </td>
+
+                <td class="col-60" headers="cons_dateEnd"
+                    abbr="Date limite">
+                  <div style="display:;">
+                    <div class="cloture-line">
+                      26/11/2026<br>11:00
+                    </div>
+                  </div>
+                  <div style="display:none;">
+                    <div class="cloture-line">
+                       
+                      <span
+                        style="display:none"
+                        onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_infosObjet', this)"
+                        onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_infosObjet')" class="info-suite">...</span>
+                      <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_infosObjet" class="info-bulle" onmouseover="mouseOverBulle();" onmouseout="mouseOutBulle();">
+                        <div>
+                          
+                        </div>
+                      </div>
+                      <!-- %#$this->DataItem->getDetailConsultation()% -->
+                    </div>
+                  </div>
+                  <img src="themes/images/reponse-elec-oblig-avec-signature.gif" alt=" Réponse électronique obligatoire pour cette consultation, avec signature électronique requise " class="certificat" title=" Réponse électronique obligatoire pour cette consultation, avec signature électronique requise " style="display:;" />
+
+                  <img src="themes/images/logo-mps-small.png" alt="Cette consultation est un Marché Public Simplifié" title="Cette consultation est un Marché Public Simplifié" style="display:none;" />
+                </td>
+                <td style="display:" class="actions"
+                    headers="cons_actions">
+                  <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_panelAction" class="actions">
+                    
+                    <a target="" href="?page=entreprise.EntrepriseDetailConsultation&refConsultation=1005224&orgAcronyme=h5j">
+                      <img src="themes/images/picto-acces-consultation.gif"
+                           alt="Accéder à la consultation"
+                           title="Accéder à la consultation"/></a>
+                    
+                    
+                    
+                    
+                    <a href="index.php?page=commun.DiagnosticPoste&callFrom=entreprise" style="display:;">
+                      <img src="themes/images/picto-test-config.gif"
+                           alt="Tester la configuration de mon poste"
+                           title="Tester la configuration de mon poste"/></a>
+                    <!--Debut liens Partager-->
+                    
+                    <!--Fin liens Partager-->
+
+                    <a href="index.php?page=entreprise.EntrepriseHome&goto=%3Fpage%3Dentreprise.EntrepriseAccueilAuthentifie">
+                      <img src="themes/images/picto-ajout-cart.gif"
+                           alt="Ajouter au panier"
+                           title="Ajouter au panier"/>
+                    </a>
+                    
+                </td>
+                <td
+                  style="display:none"
+                  class="actions col-panier" headers="cons_actions">
+                  <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl1_ctl29">
+                    <div class="registre-line"><span class="intitule"><img src="themes/images/picto-retrait.gif"
+                                                                           alt="Retraits"
+                                                                           title="Registre des retraits"/>:</span>
+                      <a href="https://www.marchespublics.gov.ma/?page=entreprise.EntrepriseDetailsConsultation&refConsultation=1005224&orgAcronyme=h5j&code=&retraits">
+                        0
+                      </a>
+                    </div>
+                    <div class="registre-line"><span class="intitule"><img src="themes/images/picto-questions.gif"
+                                                                           alt="Questions"
+                                                                           title="Questions"/>:</span>
+                      <a href="https://www.marchespublics.gov.ma/?page=entreprise.EntrepriseDetailsConsultation&refConsultation=1005224&orgAcronyme=h5j&code=&questions">
+                        0
+                      </a>
+                    </div>
+                    <div class="registre-line"><span class="intitule"><img src="themes/images/picto-depot.gif"
+                                                                           alt="Dépôts"
+                                                                           title="Dépôts"/>:</span>
+                      <a href="https://www.marchespublics.gov.ma/?page=entreprise.EntrepriseDetailsConsultation&refConsultation=1005224&orgAcronyme=h5j&depots">
+                        0
+                      </a>
+                    </div>
+                    <div class="registre-line"><span class="intitule"><img src="themes/images/picto-msg-echange.gif"
+                                                                           alt="Message échangé"
+                                                                           title="Message échangé"/>:</span>
+                      <a href="https://www.marchespublics.gov.ma/?page=entreprise.EntrepriseDetailsConsultation&refConsultation=1005224&orgAcronyme=h5j&code=&echanges">
+                        0
+                      </a>
+                    </div>
+                  </div>
+                  
+                  
+                  <a href="javascript:popUp('index.php?page=entreprise.popUpGestionPanier&refConsultation=MTAwNTIyNA==&orgAcronyme=h5j&action=suppression','yes');">
+                    <img src="themes/images/picto-remove-cart.gif"
+                         alt="Supprimer du panier"
+                         title="Supprimer du panier"/></a>
+                </td>
+                </div>
+
+                <!--Debut pictos BASE DCE -->
+                
+                <!-- Fin pictos BASE DCE -->
+
+              </tr>
+            
+              <tr class="on">
+
+                <td class="check-col" headers="checkAll" style="display:none">
+                  <input type="hidden" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl2$refCons" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_refCons" value="1027006" />
+                  <input type="hidden" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl2$orgCons" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_orgCons" value="g7n" />
+                  <input title="Sélectionner" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_annonceSelection" type="checkbox" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl2$annonceSelection" />
+
+                </td>
+
+                <td class="col-90" headers="cons_ref">
+                  <div class="line-info-bulle">
+                    AOO
+                    <a href="javascript:void(0);"
+                       onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_panelBlocTypesProc', this)"
+                       onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_panelBlocTypesProc')"
+                       onfocus="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_panelBlocTypesProc', this)"
+                       onblur="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_panelBlocTypesProc')" class="info-suite">
+                      ...
+                    </a>
+                  </div>
+                  <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_panelBlocTypesProc" class="info-bulle" onmouseover="mouseOverBulle();" onmouseout="mouseOutBulle();">
+                    <div id="identification_cons_1_type_procedure">
+                      Appel d'offres ouvert
+                    </div>
+                  </div>
+                  <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_panelBlocCategorie">
+                    Fournitures
+                  </div>
+                  <div>
+                    12/10/2026
+                  </div>
+                  
+                  <a target="_blank">
+                    
+                  </a>
+                </td>
+                <td class="col-450" headers="cons_intitule">
+                  <div id="identification_cons_1">
+
+
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_panelBlocIntitule" class="objet-line">
+                      <span id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_reference" class="ref">13/2026/DRHAG</span>
+                      <div
+                        style="display: none;">
+                        -
+                         
+                      </div>
+                      <span
+                        style="display:none"
+                        onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_infosIntitule', this)"
+                        onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_infosIntitule')"
+                        class="info-suite">...</span>
+                      
+                    </div>
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_panelBlocObjet" class="objet-line">
+                      <strong>
+                        Objet
+                        : </strong>
+                      L’acquisition, l’installation et le déploiement d’une solution de téléphonie IP, ainsi que la mise à niveau de l’infrastructure réseau informatique au profit de l’annexe du Haut-Commissariat au Plan à Rabat. 
+                      <span
+                        style=""
+                        onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_infosBullesObjet', this)"
+                        onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_infosBullesObjet')"
+                        class="info-suite">...</span>
+                      <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_infosBullesObjet" class="info-bulle" onmouseover="mouseOverBulle();" onmouseout="mouseOutBulle();">
+                        <div>
+                          L’acquisition, l’installation et le déploiement d’une solution de téléphonie IP, ainsi que la mise à niveau de l’infrastructure réseau informatique au profit de l’annexe du Haut-Commissariat au Plan à Rabat.
+                        </div>
+                      </div>
+                    </div>
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_panelBlocDenomination" class="objet-line">
+                      <strong>
+                        Acheteur public
+                        : </strong>
+                      HAUT COMMISSARIAT AU PLAN
+                    </div>
+
+                    
+
+                </td>
+
+                <td class="col-90" headers="cons_lieuExe"
+                    style="display:;">
+
+                  <div id="identification_cons_1_lieuxExecution">
+    								<span style="display:none;">
+	    								
+	    								
+	    								
+	    								
+	    							    
+                                    </span>
+
+                    <span>
+                      <a
+                        href="javascript:popUp('index.php?page=commun.PopUpDetailLots&orgAccronyme=g7n&refConsultation=1027006&lang=','yes')"><img
+                          src="themes/images/picto-details.gif"
+                          style="display:none"
+                          alt="Détail des lots"
+                          title="Détail des lots"/></a>&nbsp;&nbsp;&nbsp;&nbsp;<span>-</span>
+                    </span>
+
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_panelBlocLieuxExec" style="display:;">
+                      RABAT<br /><br />
+        <div class="bloc-info-bulle">
+        	<a style="display:none" 
+        		href="javascript:void(0);" 
+        		onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_ctl15_infosLieuExecution', this)" 
+        		onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_ctl15_infosLieuExecution')" 
+        		onfocus="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_ctl15_infosLieuExecution', this)" 
+        		onblur="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_ctl15_infosLieuExecution')" 
+        		class="info-suite">
+        		...
+        	</a>
+        	<div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_ctl15_infosLieuExecution" class="info-bulle"><div>RABAT</div></div>
+        </div>
+                    </div>
+                    
+
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_panelBlocCodesNuts" headers="cons_codes_nuts" style="display:none;">
+                      	
+   <span 
+    onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_infosLieuExecutionLtRef', this)" 
+    onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_infosLieuExecutionLtRef')" 
+    class="info-suite" 
+    title="Info-bulle">
+     <span style="display:none;">...</span>
+     </span>
+    <div 
+    id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_infosLieuExecutionLtRef" 
+        class="info-bulle" 
+        onmouseover="mouseOverBulle();" 
+        onmouseout="mouseOutBulle();"
+        >
+        <div>
+        
+        </div>
+    </div>
+                    </div>
+
+                </td>
+
+                <td class="col-60" headers="cons_dateEnd"
+                    abbr="Date limite">
+                  <div style="display:;">
+                    <div class="cloture-line">
+                      26/11/2026<br>10:00
+                    </div>
+                  </div>
+                  <div style="display:none;">
+                    <div class="cloture-line">
+                       
+                      <span
+                        style="display:none"
+                        onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_infosObjet', this)"
+                        onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_infosObjet')" class="info-suite">...</span>
+                      <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_infosObjet" class="info-bulle" onmouseover="mouseOverBulle();" onmouseout="mouseOutBulle();">
+                        <div>
+                          
+                        </div>
+                      </div>
+                      <!-- %#$this->DataItem->getDetailConsultation()% -->
+                    </div>
+                  </div>
+                  <img src="themes/images/reponse-elec-oblig-avec-signature.gif" alt=" Réponse électronique obligatoire pour cette consultation, avec signature électronique requise " class="certificat" title=" Réponse électronique obligatoire pour cette consultation, avec signature électronique requise " style="display:;" />
+
+                  <img src="themes/images/logo-mps-small.png" alt="Cette consultation est un Marché Public Simplifié" title="Cette consultation est un Marché Public Simplifié" style="display:none;" />
+                </td>
+                <td style="display:" class="actions"
+                    headers="cons_actions">
+                  <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_panelAction" class="actions">
+                    
+                    <a target="" href="?page=entreprise.EntrepriseDetailConsultation&refConsultation=1027006&orgAcronyme=g7n">
+                      <img src="themes/images/picto-acces-consultation.gif"
+                           alt="Accéder à la consultation"
+                           title="Accéder à la consultation"/></a>
+                    
+                    
+                    
+                    
+                    <a href="index.php?page=commun.DiagnosticPoste&callFrom=entreprise" style="display:;">
+                      <img src="themes/images/picto-test-config.gif"
+                           alt="Tester la configuration de mon poste"
+                           title="Tester la configuration de mon poste"/></a>
+                    <!--Debut liens Partager-->
+                    
+                    <!--Fin liens Partager-->
+
+                    <a href="index.php?page=entreprise.EntrepriseHome&goto=%3Fpage%3Dentreprise.EntrepriseAccueilAuthentifie">
+                      <img src="themes/images/picto-ajout-cart.gif"
+                           alt="Ajouter au panier"
+                           title="Ajouter au panier"/>
+                    </a>
+                    
+                </td>
+                <td
+                  style="display:none"
+                  class="actions col-panier" headers="cons_actions">
+                  <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl2_ctl29">
+                    <div class="registre-line"><span class="intitule"><img src="themes/images/picto-retrait.gif"
+                                                                           alt="Retraits"
+                                                                           title="Registre des retraits"/>:</span>
+                      <a href="https://www.marchespublics.gov.ma/?page=entreprise.EntrepriseDetailsConsultation&refConsultation=1027006&orgAcronyme=g7n&code=&retraits">
+                        0
+                      </a>
+                    </div>
+                    <div class="registre-line"><span class="intitule"><img src="themes/images/picto-questions.gif"
+                                                                           alt="Questions"
+                                                                           title="Questions"/>:</span>
+                      <a href="https://www.marchespublics.gov.ma/?page=entreprise.EntrepriseDetailsConsultation&refConsultation=1027006&orgAcronyme=g7n&code=&questions">
+                        0
+                      </a>
+                    </div>
+                    <div class="registre-line"><span class="intitule"><img src="themes/images/picto-depot.gif"
+                                                                           alt="Dépôts"
+                                                                           title="Dépôts"/>:</span>
+                      <a href="https://www.marchespublics.gov.ma/?page=entreprise.EntrepriseDetailsConsultation&refConsultation=1027006&orgAcronyme=g7n&depots">
+                        0
+                      </a>
+                    </div>
+                    <div class="registre-line"><span class="intitule"><img src="themes/images/picto-msg-echange.gif"
+                                                                           alt="Message échangé"
+                                                                           title="Message échangé"/>:</span>
+                      <a href="https://www.marchespublics.gov.ma/?page=entreprise.EntrepriseDetailsConsultation&refConsultation=1027006&orgAcronyme=g7n&code=&echanges">
+                        0
+                      </a>
+                    </div>
+                  </div>
+                  
+                  
+                  <a href="javascript:popUp('index.php?page=entreprise.popUpGestionPanier&refConsultation=MTAyNzAwNg==&orgAcronyme=g7n&action=suppression','yes');">
+                    <img src="themes/images/picto-remove-cart.gif"
+                         alt="Supprimer du panier"
+                         title="Supprimer du panier"/></a>
+                </td>
+                </div>
+
+                <!--Debut pictos BASE DCE -->
+                
+                <!-- Fin pictos BASE DCE -->
+
+              </tr>
+            
+              <tr class="">
+
+                <td class="check-col" headers="checkAll" style="display:none">
+                  <input type="hidden" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl3$refCons" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_refCons" value="1044902" />
+                  <input type="hidden" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl3$orgCons" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_orgCons" value="d0q" />
+                  <input title="Sélectionner" id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_annonceSelection" type="checkbox" name="ctl0$CONTENU_PAGE$resultSearch$tableauResultSearch$ctl3$annonceSelection" />
+
+                </td>
+
+                <td class="col-90" headers="cons_ref">
+                  <div class="line-info-bulle">
+                    AOO
+                    <a href="javascript:void(0);"
+                       onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocTypesProc', this)"
+                       onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocTypesProc')"
+                       onfocus="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocTypesProc', this)"
+                       onblur="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocTypesProc')" class="info-suite">
+                      ...
+                    </a>
+                  </div>
+                  <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocTypesProc" class="info-bulle" onmouseover="mouseOverBulle();" onmouseout="mouseOutBulle();">
+                    <div id="identification_cons_2_type_procedure">
+                      Appel d'offres ouvert
+                    </div>
+                  </div>
+                  <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocCategorie">
+                    Services
+                  </div>
+                  <div>
+                    12/10/2026
+                  </div>
+                  <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_logoConsEnv">
+                    <div class="spacer-mini"></div>
+                    <a href="javascript:void(0);"
+                       onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocConsEnv', this)"
+                       onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocConsEnv')"
+                       onfocus="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocConsEnv', this)"
+                       onblur="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocConsEnv')" class="info-suite">
+                      <img src="ressources/eco.png" width="24" height="24">
+                    </a>
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocConsEnv" class="info-bulle" onmouseover="mouseOverBulle();" onmouseout="mouseOutBulle();">
+                      <div>
+                        Comporte des dispositions envrionnementales
+                      </div>
+                    </div>
+                  </div>
+                  <a target="_blank">
+                    
+                  </a>
+                </td>
+                <td class="col-450" headers="cons_intitule">
+                  <div id="identification_cons_2">
+
+
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocIntitule" class="objet-line">
+                      <span id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_reference" class="ref">29/2026</span>
+                      <div
+                        style="display: none;">
+                        -
+                         
+                      </div>
+                      <span
+                        style="display:none"
+                        onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_infosIntitule', this)"
+                        onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_infosIntitule')"
+                        class="info-suite">...</span>
+                      
+                    </div>
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocObjet" class="objet-line">
+                      <strong>
+                        Objet
+                        : </strong>
+                      l'Exploitation temporaire de quelques points de ventes au souk de poisson situé au boulevard grande ceinture (ancien abattoir) Guercif 
+                      <span
+                        style="display:none"
+                        onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_infosBullesObjet', this)"
+                        onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_infosBullesObjet')"
+                        class="info-suite">...</span>
+                      <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_infosBullesObjet" class="info-bulle" onmouseover="mouseOverBulle();" onmouseout="mouseOutBulle();">
+                        <div>
+                          l'Exploitation temporaire de quelques points de ventes au souk de poisson situé au boulevard grande ceinture (ancien abattoir) Guercif
+                        </div>
+                      </div>
+                    </div>
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocDenomination" class="objet-line">
+                      <strong>
+                        Acheteur public
+                        : </strong>
+                      Commune urbaine de GUERCIF
+                    </div>
+
+                    
+
+                </td>
+
+                <td class="col-90" headers="cons_lieuExe"
+                    style="display:;">
+
+                  <div id="identification_cons_2_lieuxExecution">
+    								<span style="display:none;">
+	    								
+	    								
+	    								
+	    								
+	    							    
+                                    </span>
+
+                    <span>
+                      <a
+                        href="javascript:popUp('index.php?page=commun.PopUpDetailLots&orgAccronyme=d0q&refConsultation=1044902&lang=','yes')"><img
+                          src="themes/images/picto-details.gif"
+                          style="display:none"
+                          alt="Détail des lots"
+                          title="Détail des lots"/></a>&nbsp;&nbsp;&nbsp;&nbsp;<span>-</span>
+                    </span>
+
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocLieuxExec" style="display:;">
+                      GUERCIF<br /><br />
+        <div class="bloc-info-bulle">
+        	<a style="display:none" 
+        		href="javascript:void(0);" 
+        		onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_ctl15_infosLieuExecution', this)" 
+        		onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_ctl15_infosLieuExecution')" 
+        		onfocus="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_ctl15_infosLieuExecution', this)" 
+        		onblur="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_ctl15_infosLieuExecution')" 
+        		class="info-suite">
+        		...
+        	</a>
+        	<div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_ctl15_infosLieuExecution" class="info-bulle"><div>GUERCIF</div></div>
+        </div>
+                    </div>
+                    
+
+                    <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelBlocCodesNuts" headers="cons_codes_nuts" style="display:none;">
+                      	
+   <span 
+    onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_infosLieuExecutionLtRef', this)" 
+    onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_infosLieuExecutionLtRef')" 
+    class="info-suite" 
+    title="Info-bulle">
+     <span style="display:none;">...</span>
+     </span>
+    <div 
+    id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_infosLieuExecutionLtRef" 
+        class="info-bulle" 
+        onmouseover="mouseOverBulle();" 
+        onmouseout="mouseOutBulle();"
+        >
+        <div>
+        
+        </div>
+    </div>
+                    </div>
+
+                </td>
+
+                <td class="col-60" headers="cons_dateEnd"
+                    abbr="Date limite">
+                  <div style="display:;">
+                    <div class="cloture-line">
+                      26/11/2026<br>10:00
+                    </div>
+                  </div>
+                  <div style="display:none;">
+                    <div class="cloture-line">
+                       
+                      <span
+                        style="display:none"
+                        onmouseover="afficheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_infosObjet', this)"
+                        onmouseout="cacheBulle('ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_infosObjet')" class="info-suite">...</span>
+                      <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_infosObjet" class="info-bulle" onmouseover="mouseOverBulle();" onmouseout="mouseOutBulle();">
+                        <div>
+                          
+                        </div>
+                      </div>
+                      <!-- %#$this->DataItem->getDetailConsultation()% -->
+                    </div>
+                  </div>
+                  <img src="themes/images/reponse-elec-avec-signature.gif" alt=" Réponse électronique non obligatoire pour cette consultation, avec signature électronique requise " class="certificat" title=" Réponse électronique non obligatoire pour cette consultation, avec signature électronique requise " style="display:;" />
+
+                  <img src="themes/images/logo-mps-small.png" alt="Cette consultation est un Marché Public Simplifié" title="Cette consultation est un Marché Public Simplifié" style="display:none;" />
+                </td>
+                <td style="display:" class="actions"
+                    headers="cons_actions">
+                  <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_panelAction" class="actions">
+                    
+                    <a target="" href="?page=entreprise.EntrepriseDetailConsultation&refConsultation=1044902&orgAcronyme=d0q">
+                      <img src="themes/images/picto-acces-consultation.gif"
+                           alt="Accéder à la consultation"
+                           title="Accéder à la consultation"/></a>
+                    
+                    
+                    
+                    
+                    <a href="index.php?page=commun.DiagnosticPoste&callFrom=entreprise" style="display:;">
+                      <img src="themes/images/picto-test-config.gif"
+                           alt="Tester la configuration de mon poste"
+                           title="Tester la configuration de mon poste"/></a>
+                    <!--Debut liens Partager-->
+                    
+                    <!--Fin liens Partager-->
+
+                    <a href="index.php?page=entreprise.EntrepriseHome&goto=%3Fpage%3Dentreprise.EntrepriseAccueilAuthentifie">
+                      <img src="themes/images/picto-ajout-cart.gif"
+                           alt="Ajouter au panier"
+                           title="Ajouter au panier"/>
+                    </a>
+                    
+                </td>
+                <td
+                  style="display:none"
+                  class="actions col-panier" headers="cons_actions">
+                  <div id="ctl0_CONTENU_PAGE_resultSearch_tableauResultSearch_ctl3_ctl29">
+                    <div class="registre-line"><span class="intitule"><img src="themes/images/picto-retrait.gif"
+                                                                           alt="Retraits"
+                                                                           title="Registre des retraits"/>:</span>
+                      <a href="https://www.marchespublics.gov.ma/?page=entreprise.EntrepriseDetailsConsultation&refConsultation=1044902&orgAcronyme=d0q&code=&retraits">
+                        0
+                      </a>
+                    </div>
+                    <div class="registre-line"><span class="intitule"><img src="themes/images/picto-questions.gif"
+                                                                           alt="Questions"
+                                                                           title="Questions"/>:</span>
+                      <a href="https://www.marchespublics.gov.ma/?page=entreprise.EntrepriseDetailsConsultation&refConsultation=1044902&orgAcronyme=d0q&code=&questions">
+                        0
+                      </a>
+                    </div>
+                    <div class="registre-line"><span class="intitule"><img src="themes/images/picto-depot.gif"
+                                                                           alt="Dépôts"
+                                                                           title="Dépôts"/>:</span>
+                      <a href="https://www.marchespublics.gov.ma/?page=entreprise.EntrepriseDetailsConsultation&refConsultation=1044902&orgAcronyme=d0q&depots">
+                        0
+                      </a>
+                    </div>
+                    <div class="registre-line"><span class="intitule"><img src="themes/images/picto-msg-echange.gif"
+                                                                           alt="Message échangé"
+                                                                           title="Message échangé"/>:</span>
+                      <a href="https://www.marchespublics.gov.ma/?page=entreprise.EntrepriseDetailsConsultation&refConsultation=1044902&orgAcronyme=d0q&code=&echanges">
+                        0
+                      </a>
+                    </div>
+                  </div>
+                  
+                  
+                  <a href="javascript:popUp('index.php?page=entreprise.popUpGestionPanier&refConsultation=MTA0NDkwMg==&orgAcronyme=d0q&action=suppression','yes');">
+                    <img src="themes/images/picto-remove-cart.gif"
+                         alt="Supprimer du panier"
+                         title="Supprimer du panier"/></a>
+                </td>
+                </div>
+
+                <!--Debut pictos BASE DCE -->
+                
+                <!-- Fin pictos BASE DCE -->
+
+              </tr>
+            
+              <tr class="on">
+
+                <td class="check-col" headers="checkAll" style="display:none">
+                  <select name="ctl0$CONTENU_PAGE$resultSearch$listePageSizeBottom"><option selected="selected" value="10">10</option></select></form>

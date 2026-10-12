@@ -1,0 +1,92 @@
+name: Mise à jour et publication
+
+on:
+  schedule:
+    # 05:20 and 17:20 UTC (about 7 h 20 and 19 h 20 in Paris)
+    - cron: "20 5,17 * * *"
+  workflow_dispatch:
+    inputs:
+      details:
+        description: "Maximum detail pages to read this run (default 400)"
+        required: false
+      full:
+        description: "Full relist of the Moroccan portal (1) instead of the last 4 days"
+        required: false
+  push:
+    branches: [main]
+    paths-ignore: ["data/**", "**.md"]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: update-and-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Tests
+        run: |
+          pip install -r requirements-dev.txt
+          python -m pytest -q
+      - name: Fetch sources (Maroc PMMP + Banque mondiale)
+        if: github.event_name != 'push'
+        env:
+          AOA_DETAILS: ${{ github.event.inputs.details || '400' }}
+          AOA_DETAIL_MINUTES: "40"
+          AOA_FULL: ${{ github.event.inputs.full || '0' }}
+        run: python -m aoafrique update
+      - name: Commit data
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No data change"
+          else
+            git commit -m "data: mise à jour $(date -u +'%Y-%m-%d %H:%M') UTC"
+            for i in 1 2 3; do
+              if git pull --rebase origin main && git push origin HEAD:main; then break; fi
+              if [ "$i" = 3 ]; then echo "::warning::data commit not pushed after 3 attempts"; break; fi
+              sleep $((i * 15))
+            done
+          fi
+      - name: Build site
+        run: python -m aoafrique build --out _site
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5
+
+  indexnow:
+    needs: deploy
+    if: github.event_name != 'push'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Notify IndexNow of new pages
+        run: python -m aoafrique indexnow --since-days 1 || echo "::warning::IndexNow ping failed"
