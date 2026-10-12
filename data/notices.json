@@ -504,12 +504,17 @@
 "url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1028196&orgAcronyme=t5y"
 },
 {
+"bond": 5000.0,
 "buyer": "DIRECTEUR DE LA BIBLIOTHEQUE NATIONALE DU ROYAUME DU MAROC",
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-03T11:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
+],
 "env_clauses": true,
+"estimate": 296400.0,
 "first_seen": "2026-10-12",
 "id": "ma-s5z-1048765",
 "object": "la fourniture, l’installation et la mise en service d’une mini-bibliothèque intelligente RFID (Smart Mini Library) au profit de la Bibliothèque Nationale du Royaume du Maroc en lot unique.",
@@ -522,12 +527,15 @@
 "regions": [
 "Rabat-Salé-Kénitra"
 ],
+"reserved": false,
 "sectors": [
-"fournitures-mobilier"
+"informatique-telecoms",
+"vehicules-transport"
 ],
 "slug": "ma-s5z-1048765-fourniture-linstallation-mise-service-dune-mini-bibliotheque-intelligente-rfid",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048765&orgAcronyme=s5z"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048765&orgAcronyme=s5z",
+"variant": "Non"
 },
 {
 "buyer": "Commune de SIDI YAHYA ZAER",
@@ -598,7 +606,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-12",
 "reference": "05/2026",
-"regions": [],
+"regions": [
+"Rabat-Salé-Kénitra"
+],
 "sectors": [
 "btp",
 "services-generaux"
@@ -608,12 +618,17 @@
 "url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1040396&orgAcronyme=s3z"
 },
 {
+"bond": 5000.0,
 "buyer": "SOCIETE NATIONALE DE REALISATION ET DE GESTION DES ÉQUIPEMENTS SPORTIFS",
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-04T11:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
+],
 "env_clauses": true,
+"estimate": 350000.0,
 "first_seen": "2026-10-12",
 "id": "ma-s3d-1048770",
 "object": "Mise en place d'un référentiel technique et normatif des infrastructures sportives relevant de la SONARGES",
@@ -626,20 +641,27 @@
 "regions": [
 "Rabat-Salé-Kénitra"
 ],
+"reserved": false,
 "sectors": [
-"autre"
+"etudes-conseil"
 ],
 "slug": "ma-s3d-1048770-mise-place-referentiel-technique-normatif-infrastructures-sportives-relevant-son",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048770&orgAcronyme=s3d"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048770&orgAcronyme=s3d",
+"variant": "Non"
 },
 {
+"bond": 12000.0,
 "buyer": "SOCIETE NATIONALE DE REALISATION ET DE GESTION DES ÉQUIPEMENTS SPORTIFS",
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-04T11:30",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux d’installation / Travaux d’installation de matériel et équipements hydro-électromécaniques, électroniques, électromécaniques et similaires"
+],
 "env_clauses": true,
+"estimate": 619640.0,
 "first_seen": "2026-10-12",
 "id": "ma-s3d-1048769",
 "object": "Fourniture, installation et mise en service de centrales photovoltaïques au niveau du siège de la SONARGES et de la piscine de la ville-haute à Kenitra.",
@@ -653,12 +675,15 @@
 "regions": [
 "Rabat-Salé-Kénitra"
 ],
+"reserved": false,
 "sectors": [
-"energie"
+"energie",
+"btp"
 ],
 "slug": "ma-s3d-1048769-fourniture-installation-mise-service-centrales-photovoltaiques-niveau-siege-sona",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048769&orgAcronyme=s3d"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048769&orgAcronyme=s3d",
+"variant": "Non"
 },
 {
 "buyer": "SOCIETE NATIONALE DE REALISATION ET DE GESTION DES ÉQUIPEMENTS SPORTIFS",
@@ -956,8 +981,12 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-03T10:30",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Services / Services architecturales et topographiques / Exécution de plans, sommaires, d’exécutions et de détails"
+],
 "env_clauses": true,
+"estimate": 12600000.0,
 "first_seen": "2026-10-12",
 "id": "ma-q1s-1048779",
 "object": "Conception architecturale et suivi des travaux de construction de sept centres de collecte et de concassage d’afyache dans la province de Tiznit",
@@ -970,20 +999,26 @@
 "regions": [
 "Souss-Massa"
 ],
+"reserved": false,
 "sectors": [
-"btp"
+"etudes-conseil"
 ],
 "slug": "ma-q1s-1048779-conception-architecturale-suivi-travaux-construction-sept-centres-collecte-conca",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048779&orgAcronyme=q1s"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048779&orgAcronyme=q1s",
+"variant": "Non"
 },
 {
 "buyer": "AGENCE NATIONALE POUR LE DEVELOPPEMENT DES ZONES OASIENNES ET DE L’ARGANIER",
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-03T10:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Services / Services architecturales et topographiques / Exécution de plans, sommaires, d’exécutions et de détails"
+],
 "env_clauses": true,
+"estimate": 7000000.0,
 "first_seen": "2026-10-12",
 "id": "ma-q1s-1048777",
 "object": "Conception architecturale et suivi des travaux de construction d’une unité de conditionnement de znine et d’un centre de collecte et de concassage d’afyache dans la province de Tiznit et d’une unité de conditionnement de znine dans la province de Taroudant",
@@ -997,20 +1032,27 @@
 "regions": [
 "Souss-Massa"
 ],
+"reserved": false,
 "sectors": [
-"btp"
+"etudes-conseil"
 ],
 "slug": "ma-q1s-1048777-conception-architecturale-suivi-travaux-construction-dune-unite-conditionnement",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048777&orgAcronyme=q1s"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048777&orgAcronyme=q1s",
+"variant": "Non"
 },
 {
+"bond": 3000.0,
 "buyer": "AGENCE NATIONALE POUR LE DEVELOPPEMENT DES ZONES OASIENNES ET DE L’ARGANIER",
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-03T13:30",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
+],
 "env_clauses": true,
+"estimate": 165000.0,
 "first_seen": "2026-10-12",
 "id": "ma-q1s-1048773",
 "object": "Études d’exécution et suivi des travaux de construction d’une unité de conditionnement de znine et d’un centre de collecte et de concassage d’afyache dans la province de Tiznit et d’une unité de conditionnement de znine dans la province de Taroudant",
@@ -1024,20 +1066,27 @@
 "regions": [
 "Souss-Massa"
 ],
+"reserved": true,
 "sectors": [
 "etudes-conseil"
 ],
 "slug": "ma-q1s-1048773-etudes-dexecution-suivi-travaux-construction-dune-unite-conditionnement-znine",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048773&orgAcronyme=q1s"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048773&orgAcronyme=q1s",
+"variant": "Non"
 },
 {
+"bond": 1700.0,
 "buyer": "AGENCE NATIONALE POUR LE DEVELOPPEMENT DES ZONES OASIENNES ET DE L’ARGANIER",
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-03T13:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Services / Prestations d’essais, de contrôle et de laboratoire / Expertises et contrôles techniques de génie civil des sols et des ouvrages d’art"
+],
 "env_clauses": true,
+"estimate": 85000.0,
 "first_seen": "2026-10-12",
 "id": "ma-q1s-1048772",
 "object": "Optimisation des études techniques et contrôle des travaux de construction d’une unité de conditionnement de znine et d’un centre de collecte et de concassage d’afyache dans la province de Tiznit et d’une unité de conditionnement de znine dans la province de Taroudant",
@@ -1051,12 +1100,14 @@
 "regions": [
 "Souss-Massa"
 ],
+"reserved": true,
 "sectors": [
 "etudes-conseil"
 ],
 "slug": "ma-q1s-1048772-optimisation-etudes-techniques-controle-travaux-construction-dune-unite-conditio",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048772&orgAcronyme=q1s"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048772&orgAcronyme=q1s",
+"variant": "Non"
 },
 {
 "buyer": "INSTITUT AGRONOMIQUE ET VETERINAIRE HASSAN II - COMPLEXE HORTICOLE D'AGADIR",
@@ -1230,7 +1281,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-12",
 "reference": "26/2026/ANDZOA",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "etudes-conseil"
 ],
@@ -1254,7 +1307,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-12",
 "reference": "25/2026/ANDZOA",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "etudes-conseil"
 ],
@@ -1429,8 +1484,12 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-04T10:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Services / Services architecturales et topographiques / Exécution de plans, sommaires, d’exécutions et de détails"
+],
 "env_clauses": true,
+"estimate": 7200000.0,
 "first_seen": "2026-10-12",
 "id": "ma-p8x-1048787",
 "object": "ETUDE ARCHITECTURALE ET SUIVI DES TRAVAUX D’EXTENSION DE TRENTE (30) SALLES DE CLASSE DE PRESCOLAIRE A LA PROVINCE DE SIDI SLIMANE",
@@ -1443,12 +1502,14 @@
 "regions": [
 "Rabat-Salé-Kénitra"
 ],
+"reserved": false,
 "sectors": [
 "etudes-conseil"
 ],
 "slug": "ma-p8x-1048787-etude-architecturale-suivi-travaux-dextension-trente-30-salles-classe",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048787&orgAcronyme=p8x"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048787&orgAcronyme=p8x",
+"variant": "Non"
 },
 {
 "buyer": "ECOLE NORMALE SUPERIEURE DE MEKNES",
@@ -1759,7 +1820,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-12",
 "reference": "40/SNTL/2026",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "btp",
 "fournitures-mobilier"
@@ -2571,12 +2634,17 @@
 "url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1032211&orgAcronyme=k2q"
 },
 {
+"bond": 21100.0,
 "buyer": "AL OMRANE TANGER TETOUAN AL HOCEIMA",
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-04T12:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de voiries, chemins et pistes / Travaux d’assises traitées et enrobées à chaud"
+],
 "env_clauses": true,
+"estimate": 1412832.0,
 "first_seen": "2026-10-12",
 "id": "ma-j8k-1048775",
 "object": "TRAVAUX D'ACHEVEMENT DE LA VOIRIE DU QUARTIER ROUMAN, A AL HOCEIMA – PROGRAMME DE VSB DE LA VILLE AL HOCEIMA-",
@@ -2589,20 +2657,27 @@
 "regions": [
 "Tanger-Tétouan-Al Hoceïma"
 ],
+"reserved": false,
 "sectors": [
 "btp"
 ],
 "slug": "ma-j8k-1048775-travaux-achevement-voirie-quartier-rouman-al-hoceima-programme-vsb",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048775&orgAcronyme=j8k"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048775&orgAcronyme=j8k",
+"variant": "Non"
 },
 {
+"bond": 90000.0,
 "buyer": "AL OMRANE TANGER TETOUAN AL HOCEIMA",
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-04T11:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux d’électricité / Travaux de branchement électrique"
+],
 "env_clauses": true,
+"estimate": 6204354.0,
 "first_seen": "2026-10-12",
 "id": "ma-j8k-1048774",
 "object": "TRAVAUX DE MISE A NIVEAU ET LA MISE A JOUR DE L’ALIMENTATION HTA « HORS SITE » DU PROJET D’ELECTRIFICATION 2°/1° CATEGORIE DU NOUVEAU POLE URBAIN SIDI ABID COMMUNE D’AL HOCEIMA-PROVINCE D’AL HOCEIMA",
@@ -2615,13 +2690,15 @@
 "regions": [
 "Tanger-Tétouan-Al Hoceïma"
 ],
+"reserved": false,
 "sectors": [
 "energie",
 "alimentation"
 ],
 "slug": "ma-j8k-1048774-travaux-mise-niveau-mise-jour-lalimentation-hta-hors-site",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048774&orgAcronyme=j8k"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048774&orgAcronyme=j8k",
+"variant": "Non"
 },
 {
 "buyer": "SOCIETE AL OMRANE FES MEKNES",
@@ -3177,12 +3254,17 @@
 "url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1042333&orgAcronyme=h5r"
 },
 {
+"bond": 170000.0,
 "buyer": "RABAT REGION AMENAGEMENT",
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-04T12:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux d’installation / Travaux d'installation de climatisation et chauffage"
+],
 "env_clauses": true,
+"estimate": 11333805.12,
 "first_seen": "2026-10-12",
 "id": "ma-g8e-1048767",
 "object": "TRAVAUX DE L'ENTRETIEN ET DE L'AMÉNAGEMENT DU SIÈGE DE LA DÉLÉGATION INTERMINISTÉRIELLE AUX DROITS DE L'HOMME À RABAT",
@@ -3195,21 +3277,28 @@
 "regions": [
 "Rabat-Salé-Kénitra"
 ],
+"reserved": false,
 "sectors": [
 "btp",
 "services-generaux"
 ],
 "slug": "ma-g8e-1048767-travaux-entretien-amenagement-siege-delegation-interministerielle-droits-homme-r",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048767&orgAcronyme=g8e"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048767&orgAcronyme=g8e",
+"variant": "Non"
 },
 {
+"bond": 170000.0,
 "buyer": "RABAT REGION AMENAGEMENT",
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-04T11:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
 "env_clauses": true,
+"estimate": 11494750.6,
 "first_seen": "2026-10-12",
 "id": "ma-g8e-1048764",
 "object": "TRAVAUX DE CONSTRUCTION DU COLLÈGE KHNICHAT A LA COMMUNE EL KHNICHAT - PROVINCE SIDI KACEM",
@@ -3222,22 +3311,28 @@
 "regions": [
 "Rabat-Salé-Kénitra"
 ],
+"reserved": false,
 "sectors": [
 "btp"
 ],
 "slug": "ma-g8e-1048764-travaux-construction-college-khnichat-commune-el-khnichat-province-sidi",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048764&orgAcronyme=g8e"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048764&orgAcronyme=g8e",
+"variant": "Non"
 },
 {
 "buyer": "RABAT REGION AMENAGEMENT",
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-04T10:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
 "env_clauses": true,
 "first_seen": "2026-10-12",
 "id": "ma-g8e-1048760",
+"lots": 2,
 "object": "TRAVAUX DE CONSTRUCTION DES EXTENSIONS DES ETABLISSEMENTS SCOLAIRES – PROVINCE DE KENITRA - TRANCHE 2 EN DEUX LOTS SEPARES NON CUMULATIFS",
 "places": [
 "KENITRA"
@@ -3253,7 +3348,8 @@
 ],
 "slug": "ma-g8e-1048760-travaux-construction-extensions-etablissements-scolaires-province-kenitra-tranch",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048760&orgAcronyme=g8e"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048760&orgAcronyme=g8e",
+"visit": "Variante :"
 },
 {
 "buyer": "AGENCE REGIONALE D'EXECUTION DES PROJETS DE LA REGION BENI MELLAL- KHENIFRA",
@@ -3413,12 +3509,17 @@
 "url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1027006&orgAcronyme=g7n"
 },
 {
+"bond": 40000.0,
 "buyer": "AGENCE POUR LE DEVELOPPEMENT ET LA REHABILITATION DE LA VILLE DE FES",
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-03T10:30",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Travaux / Fondations, injections, parois moulées, sondages et forages / Travaux de fondations"
+],
 "env_clauses": false,
+"estimate": 2515230.0,
 "first_seen": "2026-10-12",
 "id": "ma-g3h-1048788",
 "object": "Achèvement des travaux d'illumination des remparts et portes historiques dans la ville de Meknès, en lot unique. Tronçon 1 : Bab Rais-Assarag -Place Mechouar",
@@ -3431,20 +3532,28 @@
 "regions": [
 "Fès-Meknès"
 ],
+"reserved": false,
 "sectors": [
+"eau-assainissement",
 "btp"
 ],
 "slug": "ma-g3h-1048788-achevement-travaux-illumination-remparts-portes-historiques-ville-meknes-troncon",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048788&orgAcronyme=g3h"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048788&orgAcronyme=g3h",
+"variant": "Non"
 },
 {
+"bond": 260000.0,
 "buyer": "Société de Développement Local Agadir Souss Massa Aménagement SA",
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-04T10:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement"
+],
 "env_clauses": true,
+"estimate": 17500188.0,
 "first_seen": "2026-10-12",
 "id": "ma-g3h-1048771",
 "object": "TRAVAUX DE CONSTRUCTION D’UN CENTRE SOCIO-SPORTIF DE PROXIMITÉ DE TYPE A AU QUARTIER AGHROUD DE LA VILLE D’AGADIR.",
@@ -3458,20 +3567,27 @@
 "regions": [
 "Souss-Massa"
 ],
+"reserved": false,
 "sectors": [
 "btp"
 ],
 "slug": "ma-g3h-1048771-travaux-construction-dun-centre-socio-sportif-proximite-type-quartier",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048771&orgAcronyme=g3h"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048771&orgAcronyme=g3h",
+"variant": "Non"
 },
 {
+"bond": 11000.0,
 "buyer": "Province de Ouezzane",
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-10T10:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Fournitures / Matériel, mobilier et fournitures de bureau / Matériel de bureau"
+],
 "env_clauses": false,
+"estimate": 568080.0,
 "first_seen": "2026-10-12",
 "id": "ma-g3h-1048763",
 "object": "achat de mobilier, matériel de bureau au profit du siège de la Province et des postes de commandement relevant de la Province Ouezzane.",
@@ -3485,12 +3601,14 @@
 "regions": [
 "Tanger-Tétouan-Al Hoceïma"
 ],
+"reserved": false,
 "sectors": [
 "fournitures-mobilier"
 ],
 "slug": "ma-g3h-1048763-achat-mobilier-materiel-bureau-profit-siege-province-postes-commandement",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048763&orgAcronyme=g3h"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048763&orgAcronyme=g3h",
+"variant": "Non"
 },
 {
 "buyer": "SOCIETE REGIONALE MULTISERVICES BENI MELLAL-KHENIFRA SA",
@@ -4240,12 +4358,17 @@
 "url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1041777&orgAcronyme=g3h"
 },
 {
+"bond": 780.0,
 "buyer": "Commune urbaine de TALIOUINE",
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-05T11:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Services / Services de location sans option d’achat / Mobiliers"
+],
 "env_clauses": false,
+"estimate": 3250.0,
 "first_seen": "2026-10-12",
 "id": "ma-f9f-1048785",
 "object": "L’affermage des parkings et de leurs blocs sanitaires situés au centre de taliouine au titre de l’année 2027 et 2028\n( 24 MOIS)\ndu 01/01/2027 au 31/12/2028",
@@ -4258,20 +4381,27 @@
 "regions": [
 "Souss-Massa"
 ],
+"reserved": true,
 "sectors": [
-"autre"
+"fournitures-mobilier"
 ],
 "slug": "ma-f9f-1048785-laffermage-parkings-leurs-blocs-sanitaires-situes-centre-taliouine-titre",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048785&orgAcronyme=f9f"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048785&orgAcronyme=f9f",
+"variant": "Non"
 },
 {
+"bond": 2448.0,
 "buyer": "Commune urbaine de TALIOUINE",
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-05T10:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Services / Services de location sans option d’achat / Mobiliers"
+],
 "env_clauses": false,
+"estimate": 10200.0,
 "first_seen": "2026-10-12",
 "id": "ma-f9f-1048780",
 "object": "L’affermage de l’abattoir communal de la commune Taliouine au titre de l’année 2027 et 2028 ( 18 MOIS) du 01/01/2027 au 31/12/2028",
@@ -4284,12 +4414,14 @@
 "regions": [
 "Souss-Massa"
 ],
+"reserved": true,
 "sectors": [
-"autre"
+"fournitures-mobilier"
 ],
 "slug": "ma-f9f-1048780-laffermage-labattoir-communal-commune-taliouine-titre-lannee-2027-2028",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048780&orgAcronyme=f9f"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048780&orgAcronyme=f9f",
+"variant": "Non"
 },
 {
 "buyer": "Commune de IDMINE",
@@ -4482,12 +4614,17 @@
 "url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1043942&orgAcronyme=e5w"
 },
 {
+"bond": 1000.0,
 "buyer": "AGENCE DU BASSIN HYDRAULIQUE DE MOULOUYA",
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-03T11:30",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
+],
 "env_clauses": false,
+"estimate": 99972.0,
 "first_seen": "2026-10-12",
 "id": "ma-d4q-1048759",
 "object": "Maintenance préventive et corrective du parc informatique de l’ABHM",
@@ -4500,12 +4637,15 @@
 "regions": [
 "L'Oriental"
 ],
+"reserved": true,
 "sectors": [
-"informatique-telecoms"
+"informatique-telecoms",
+"vehicules-transport"
 ],
 "slug": "ma-d4q-1048759-maintenance-preventive-corrective-parc-informatique-labhm",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048759&orgAcronyme=d4q"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048759&orgAcronyme=d4q",
+"variant": "Non"
 },
 {
 "buyer": "AGENCE DU BASSIN HYDRAULIQUE DE MOULOUYA",
@@ -5204,12 +5344,17 @@
 "url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1041714&orgAcronyme=d4q"
 },
 {
+"bond": 50000.0,
 "buyer": "CHAMBRE DE L'ARTISANAT DE LA REGION MARRAKECH SAFI",
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-03T10:00",
-"detail_checked": false,
+"detail_checked": true,
+"domains": [
+"Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation événementiel, d’organisation de manifestations"
+],
 "env_clauses": false,
+"estimate": 2502000.0,
 "first_seen": "2026-10-12",
 "id": "ma-d2q-1048789",
 "object": "L’Organisation du Salon National de l’artisanat à Essaouira Région Marrakech Safi, EN LOT UNIQUE.",
@@ -5223,12 +5368,15 @@
 "regions": [
 "Marrakech-Safi"
 ],
+"reserved": false,
 "sectors": [
+"alimentation",
 "formation-evenementiel"
 ],
 "slug": "ma-d2q-1048789-lorganisation-salon-national-lartisanat-essaouira-region-marrakech-safi",
 "source": "PMMP",
-"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048789&orgAcronyme=d2q"
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048789&orgAcronyme=d2q",
+"variant": "Non"
 },
 {
 "buyer": "Commune rurale de RATBA",
@@ -5695,7 +5843,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-11",
 "reference": "110/2026/INV",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -5720,7 +5870,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-11",
 "reference": "109/2026/INV",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -5745,7 +5897,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-11",
 "reference": "108/2026/INV",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -5873,7 +6027,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-10-11",
 "reference": "AON10/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "vehicules-transport"
 ],
@@ -5897,7 +6053,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-10-11",
 "reference": "AON10/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "vehicules-transport"
 ],
@@ -5921,7 +6079,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-10-11",
 "reference": "9/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "services-generaux",
 "fournitures-mobilier"
@@ -5946,7 +6106,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-10-11",
 "reference": "05/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -14028,7 +14190,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-09",
 "reference": "PM3130981/2026/DXM",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "btp"
 ],
@@ -14052,7 +14216,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-09",
 "reference": "PM1131104/2026/DXM",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "fournitures-mobilier"
 ],
@@ -14076,7 +14242,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-09",
 "reference": "PM3131111/2026/DXM",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "energie"
 ],
@@ -14100,7 +14268,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-09",
 "reference": "PM1131187/2026/DXM",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "vehicules-transport"
 ],
@@ -14124,7 +14294,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-09",
 "reference": "PM1131105/2026/DXM",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "autre"
 ],
@@ -14148,7 +14320,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-09",
 "reference": "PM1131063/2026/DXM",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "vehicules-transport"
 ],
@@ -14456,7 +14630,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-09",
 "reference": "64DR1/CI/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "eau-assainissement",
 "btp"
@@ -17842,7 +18018,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-08",
 "reference": "35/AOO/DPMR/ANP/2026",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "informatique-telecoms"
 ],
@@ -18223,7 +18401,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-08",
 "reference": "22/AOO/DPMR/ANP/2026",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "eau-assainissement",
 "btp"
@@ -18421,7 +18601,8 @@
 "published": "2026-10-08",
 "reference": "33/AOO/DPMR/ANP/2026",
 "regions": [
-"Rabat-Salé-Kénitra"
+"Rabat-Salé-Kénitra",
+"Casablanca-Settat"
 ],
 "sectors": [
 "btp",
@@ -19094,7 +19275,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-08",
 "reference": "95/26",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "btp"
 ],
@@ -20944,7 +21127,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-08",
 "reference": "03TN/BC/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -21073,7 +21258,9 @@
 "procedure": "Consultation architecturale ouverte",
 "published": "2026-10-08",
 "reference": "20/BC.OT/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "etudes-conseil"
 ],
@@ -21765,7 +21952,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-08",
 "reference": "AO/CB/18/2026",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "services-generaux",
 "fournitures-mobilier"
@@ -21843,7 +22032,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-08",
 "reference": "10/2026/CM/DATUSE",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "btp"
 ],
@@ -29164,7 +29355,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-07",
 "reference": "02/2026/SUETP/CR/F.",
-"regions": [],
+"regions": [
+"Fès-Meknès"
+],
 "sectors": [
 "vehicules-transport"
 ],
@@ -29821,7 +30014,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-06",
 "reference": "68/2026/DRANEF/SM/DPANEF/Tar",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "etudes-conseil",
 "formation-evenementiel"
@@ -29846,7 +30041,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-06",
 "reference": "67/2026/DRANEF/SM/DPANEF/Tar",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp",
 "services-generaux"
@@ -31422,7 +31619,9 @@
 "procedure": "Consultation architecturale ouverte",
 "published": "2026-10-06",
 "reference": "31/2026/DPA/1/SAHA.",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "etudes-conseil"
 ],
@@ -37364,7 +37563,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-10-06",
 "reference": "13/2026/BG",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "fournitures-mobilier"
 ],
@@ -37388,7 +37589,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-06",
 "reference": "20/2026/INDH",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "sante"
 ],
@@ -38450,7 +38653,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-06",
 "reference": "08/2026",
-"regions": [],
+"regions": [
+"Fès-Meknès"
+],
 "sectors": [
 "autre"
 ],
@@ -38553,7 +38758,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-06",
 "reference": "09/2026",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "autre"
 ],
@@ -40865,7 +41072,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-10-05",
 "reference": "02/2026",
-"regions": [],
+"regions": [
+"Rabat-Salé-Kénitra"
+],
 "sectors": [
 "fournitures-mobilier"
 ],
@@ -40889,7 +41098,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-10-05",
 "reference": "01/2026",
-"regions": [],
+"regions": [
+"Rabat-Salé-Kénitra"
+],
 "sectors": [
 "vehicules-transport"
 ],
@@ -42819,7 +43030,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-05",
 "reference": "40/2026/KH",
-"regions": [],
+"regions": [
+"Rabat-Salé-Kénitra"
+],
 "sectors": [
 "etudes-conseil"
 ],
@@ -42843,7 +43056,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-05",
 "reference": "39/2026/KH",
-"regions": [],
+"regions": [
+"Rabat-Salé-Kénitra"
+],
 "sectors": [
 "btp"
 ],
@@ -45223,7 +45438,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-05",
 "reference": "21/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -45247,7 +45464,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-05",
 "reference": "13/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -45946,7 +46165,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-05",
 "reference": "01/2026",
-"regions": [],
+"regions": [
+"Fès-Meknès"
+],
 "sectors": [
 "autre"
 ],
@@ -46205,7 +46426,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-04",
 "reference": "16/2026/ITSAT",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -47924,7 +48147,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-03",
 "reference": "19/DRSM/FSSH/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -48248,7 +48473,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-10-03",
 "reference": "01/2026",
-"regions": [],
+"regions": [
+"Fès-Meknès"
+],
 "sectors": [
 "eau-assainissement",
 "btp"
@@ -51281,7 +51508,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-02",
 "reference": "48/ELH/2026",
-"regions": [],
+"regions": [
+"Fès-Meknès"
+],
 "sectors": [
 "btp"
 ],
@@ -53047,7 +53276,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-02",
 "reference": "06/2026/DRMC",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "fournitures-mobilier"
 ],
@@ -57022,7 +57253,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-10-01",
 "reference": "04BUV/2026",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "alimentation"
 ],
@@ -59420,7 +59653,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-01",
 "reference": "42/2026/KH",
-"regions": [],
+"regions": [
+"Rabat-Salé-Kénitra"
+],
 "sectors": [
 "btp",
 "services-generaux"
@@ -61585,7 +61820,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-10-01",
 "reference": "173/2026/ADHA",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "etudes-conseil"
 ],
@@ -64936,7 +65173,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-30",
 "reference": "26/MOD/2026/ALOMRANE_SOUSS_MASSA",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "etudes-conseil"
 ],
@@ -66575,7 +66814,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-30",
 "reference": "21/BC.OT/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -70398,7 +70639,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-29",
 "reference": "106/2026/INV",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -70746,7 +70989,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-29",
 "reference": "57/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "sante",
 "btp"
@@ -71483,7 +71728,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-29",
 "reference": "03/2026/DRMC",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "fournitures-mobilier"
 ],
@@ -71689,7 +71936,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-29",
 "reference": "04/2026/ASYBA",
-"regions": [],
+"regions": [
+"Marrakech-Safi"
+],
 "sectors": [
 "alimentation"
 ],
@@ -71975,7 +72224,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-09-29",
 "reference": "10/2026/ASYBA",
-"regions": [],
+"regions": [
+"Marrakech-Safi"
+],
 "sectors": [
 "fournitures-mobilier"
 ],
@@ -72051,7 +72302,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-09-29",
 "reference": "06/2026/ASYBA",
-"regions": [],
+"regions": [
+"Marrakech-Safi"
+],
 "sectors": [
 "energie"
 ],
@@ -72153,7 +72406,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-09-29",
 "reference": "07/2026/ASYBA",
-"regions": [],
+"regions": [
+"Marrakech-Safi"
+],
 "sectors": [
 "btp"
 ],
@@ -73007,7 +73262,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-09-29",
 "reference": "01/S/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -73032,7 +73289,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-29",
 "reference": "02/IDA/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "eau-assainissement",
 "btp"
@@ -76444,7 +76703,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-28",
 "reference": "34/AOO/DPMR/ANP/2026",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "eau-assainissement",
 "etudes-conseil"
@@ -77952,7 +78213,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-28",
 "reference": "10008960",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "eau-assainissement",
 "btp"
@@ -79772,7 +80035,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-27",
 "reference": "105/2026/INV",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -79796,7 +80061,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-27",
 "reference": "04/LOGDEV/2026",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "etudes-conseil"
 ],
@@ -82732,7 +82999,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-25",
 "reference": "34/2026/KH",
-"regions": [],
+"regions": [
+"Rabat-Salé-Kénitra"
+],
 "sectors": [
 "eau-assainissement",
 "etudes-conseil"
@@ -83367,7 +83636,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-25",
 "reference": "92/26",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "energie",
 "informatique-telecoms"
@@ -84883,7 +85154,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-25",
 "reference": "464/2026/SRMCS",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "eau-assainissement",
 "btp"
@@ -85144,7 +85417,9 @@
 "procedure": "Consultation architecturale ouverte",
 "published": "2026-09-25",
 "reference": "22/2026/CA",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "etudes-conseil"
 ],
@@ -87494,7 +87769,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-24",
 "reference": "33/SNTL/2026",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "btp",
 "fournitures-mobilier"
@@ -88180,7 +88457,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-24",
 "reference": "05/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "autre"
 ],
@@ -88230,7 +88509,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-24",
 "reference": "02/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -88958,7 +89239,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-09-24",
 "reference": "17/BC.OT/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "fournitures-mobilier"
 ],
@@ -89035,7 +89318,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-24",
 "reference": "18/DRSM/FSSH/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -89059,7 +89344,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-24",
 "reference": "17/DRSM/FSSH/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -92945,7 +93232,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-09-23",
 "reference": "19/BC.OT/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "fournitures-mobilier"
 ],
@@ -92969,7 +93258,9 @@
 "procedure": "Appel d'offres ouvert simplifié",
 "published": "2026-09-23",
 "reference": "18/BC.OT/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "fournitures-mobilier"
 ],
@@ -96481,7 +96772,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-22",
 "reference": "38/2026/KH",
-"regions": [],
+"regions": [
+"Rabat-Salé-Kénitra"
+],
 "sectors": [
 "btp"
 ],
@@ -96505,7 +96798,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-22",
 "reference": "37/2026/KH",
-"regions": [],
+"regions": [
+"Rabat-Salé-Kénitra"
+],
 "sectors": [
 "etudes-conseil"
 ],
@@ -97958,7 +98253,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-22",
 "reference": "11/2026/BG",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "btp"
 ],
@@ -99688,7 +99985,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-21",
 "reference": "22/2026/DRASM/DDFA",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "fournitures-mobilier"
 ],
@@ -100145,7 +100444,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-21",
 "reference": "32/AOO/DPMR/ANP/2026",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "informatique-telecoms"
 ],
@@ -100195,7 +100496,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-21",
 "reference": "06/2026/ASBMS",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "etudes-conseil"
 ],
@@ -100219,7 +100522,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-21",
 "reference": "05/2026/ASBMS",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "etudes-conseil"
 ],
@@ -102702,7 +103007,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-21",
 "reference": "04/C.Tal/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "vehicules-transport"
 ],
@@ -102726,7 +103033,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-21",
 "reference": "37/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "eau-assainissement",
 "alimentation"
@@ -102804,7 +103113,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-21",
 "reference": "01/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -106302,7 +106613,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-18",
 "reference": "90/26",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "eau-assainissement",
 "btp"
@@ -107816,7 +108129,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-18",
 "reference": "19/2026/BG",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "btp"
 ],
@@ -107868,7 +108183,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-18",
 "reference": "08/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "vehicules-transport"
 ],
@@ -107971,7 +108288,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-18",
 "reference": "PM3130988/2026/DXM",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "btp",
 "services-generaux"
@@ -107996,7 +108315,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-18",
 "reference": "PM2130779/2026/DXM",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "eau-assainissement"
 ],
@@ -108020,7 +108341,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-18",
 "reference": "PM2130943/2026/DXM",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "fournitures-mobilier"
 ],
@@ -108070,7 +108393,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-18",
 "reference": "PM4130063/2026/DXM",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "fournitures-mobilier"
 ],
@@ -108148,7 +108473,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-18",
 "reference": "06/2026",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "btp"
 ],
@@ -108488,7 +108815,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-17",
 "reference": "17/2026/ITSAT",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "eau-assainissement",
 "btp"
@@ -108753,7 +109082,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-17",
 "reference": "103/2026/INV",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "btp"
 ],
@@ -109789,7 +110120,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-17",
 "reference": "49/2026",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "eau-assainissement"
 ],
@@ -114161,7 +114494,8 @@
 "published": "2026-09-14",
 "reference": "89/DGPC/2026",
 "regions": [
-"Rabat-Salé-Kénitra"
+"Rabat-Salé-Kénitra",
+"Casablanca-Settat"
 ],
 "sectors": [
 "fournitures-mobilier"
@@ -114370,7 +114704,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-14",
 "reference": "24/MOD/2026/ALOMRANE_SOUSS_MASSA",
-"regions": [],
+"regions": [
+"Souss-Massa"
+],
 "sectors": [
 "eau-assainissement",
 "etudes-conseil"
@@ -115014,7 +115350,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-13",
 "reference": "2/2026",
-"regions": [],
+"regions": [
+"Fès-Meknès"
+],
 "sectors": [
 "autre"
 ],
@@ -117025,6 +117363,7 @@
 "Tanger-Tétouan-Al Hoceïma",
 "Fès-Meknès",
 "Béni Mellal-Khénifra",
+"Souss-Massa",
 "Guelmim-Oued Noun",
 "Laâyoune-Sakia El Hamra"
 ],
@@ -117350,7 +117689,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-09",
 "reference": "PM4130906/2026/DXM",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "fournitures-mobilier"
 ],
@@ -119009,7 +119350,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-03",
 "reference": "32/2026/ANEPCO",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "sante",
 "btp"
@@ -119034,7 +119377,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-09-03",
 "reference": "31/2026/ANEPCO",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "sante",
 "btp"
@@ -119764,7 +120109,9 @@
 "procedure": "Appel d'offres ouvert",
 "published": "2026-08-31",
 "reference": "33/2026/ANEPCO",
-"regions": [],
+"regions": [
+"Casablanca-Settat"
+],
 "sectors": [
 "energie",
 "sante"
