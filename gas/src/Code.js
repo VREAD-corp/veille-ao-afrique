@@ -24,7 +24,8 @@ var STATS_KEYS_ = 8;
 var EXCL_HEADER_ = ['date', 'site', 'page', 'event', 'detail', 'reason', 'count', 'mobile', 'desktop', 'updated_at'];
 var EXCL_KEYS_ = 6;
 // Why a hit was not counted as a visit (decided in the browser; the user agent itself is never sent).
-var EXCL_REASONS_ = ['webdriver', 'bot', 'notrack'];
+// 'legacy': no `v` field, i.e. sent by a pre-2026-10-13 mesure.js still cached by a crawler's renderer.
+var EXCL_REASONS_ = ['webdriver', 'bot', 'notrack', 'legacy'];
 var SIGNUP_HEADER_ = ['at', 'email', 'kind', 'plan', 'company', 'company_country', 'sectors', 'countries', 'regions', 'frequency', 'consent_version', 'consent_text', 'page', 'source', 'test', 'withdrawn_at', 'id'];
 var TRACK_EVENTS_ = ['view', 'tender_view', 'filter_use', 'search_use', 'official_click', 'alert_form_view', 'alert_signup', 'preinscription_click', 'preinscription_signup', 'cta_click'];
 var TRACK_DETAILS_ = /^[a-z0-9_-]{0,40}$/;
@@ -189,7 +190,7 @@ function validateTrack_(req) {
     source: token_(req.utm_source, 50) || ref || '(direct)',
     medium: token_(req.utm_medium, 30), campaign: token_(req.utm_campaign, 50),
     device: req.device === 'mobile' || req.device === 'desktop' ? req.device : '',
-    reason: EXCL_REASONS_.indexOf(String(req.excluded || '')) >= 0 ? String(req.excluded) : (req.excluded ? 'bot' : ''),
+    reason: EXCL_REASONS_.indexOf(String(req.excluded || '')) >= 0 ? String(req.excluded) : req.excluded ? 'bot' : !req.v ? 'legacy' : '',
   };
 }
 

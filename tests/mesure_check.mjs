@@ -27,7 +27,7 @@ function run({ ua = CHROME, webdriver = false, search = '', store = {}, prerende
 
 let r = run();
 assert.deepEqual(r.sent.map((b) => b.event), ['view', 'tender_view']);
-assert.ok(r.sent.every((b) => !('excluded' in b)), 'a normal visit is counted');
+assert.ok(r.sent.every((b) => !('excluded' in b) && b.v === 2), 'a normal visit is counted, with the snippet version');
 assert.ok(!JSON.stringify(r.sent).includes('Chrome'), 'the user agent is never sent');
 
 assert.ok(run({ webdriver: true }).sent.every((b) => b.excluded === 'webdriver'));

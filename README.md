@@ -35,7 +35,7 @@ Python 3.12, standard library only at runtime.
 
 ## Backend (Apps Script, `gas/`)
 
-A new standalone project `veille-ao-afrique-gas (READ FRANCE SAS)`, scope `spreadsheets` only, its own spreadsheet created on first use. Actions: `track` (cookieless daily counters, same pattern as octave-checkout `Track.js`; hits from crawlers, `navigator.webdriver`, headless browsers and our tests go to a separate `Exclus` tab by reason, prerendered pages count only once opened), `stats` (token: one day's counted vs excluded views and all counter rows), `signup` (interest form and pre-registration, consent text stored), `unsubscribe`, `admin` (token in the git-ignored `gas/src/Secret.js`).
+A new standalone project `veille-ao-afrique-gas (READ FRANCE SAS)`, scope `spreadsheets` only, its own spreadsheet created on first use. Actions: `track` (cookieless daily counters, same pattern as octave-checkout `Track.js`; hits from crawlers, `navigator.webdriver`, headless browsers and our tests go to a separate `Exclus` tab by reason, prerendered pages count only once opened; a hit without the snippet version `v`, i.e. from an old mesure.js still cached by a crawler, is excluded as `legacy`; the snippet URL carries a content hash), `stats` (token: one day's counted vs excluded views and all counter rows), `signup` (interest form and pre-registration, consent text stored), `unsubscribe`, `admin` (token in the git-ignored `gas/src/Secret.js`).
 
 ```bash
 cd gas && ~/.local/share/octave-clasp/node_modules/.bin/clasp push --force

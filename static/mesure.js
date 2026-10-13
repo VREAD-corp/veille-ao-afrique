@@ -11,7 +11,7 @@
   if (!x && q.get('octave_notrack') == '1') x = 'notrack';
   if (!x && n.webdriver) x = 'webdriver';
   if (!x && /bot\b|crawl|spider|slurp|headless|lighthouse|pagespeed|inspectiontool|googleother|mediapartners|bingpreview|phantom|puppeteer|playwright|selenium/i.test(n.userAgent || '')) x = 'bot';
-  var base = { site: 'veille-ao-afrique', page: l.pathname, ref_domain: (d.referrer.split('/')[2] || ''), device: innerWidth < 768 ? 'mobile' : 'desktop' };
+  var base = { v: 2, site: 'veille-ao-afrique', page: l.pathname, ref_domain: (d.referrer.split('/')[2] || ''), device: innerWidth < 768 ? 'mobile' : 'desktop' };
   ['source', 'medium', 'campaign'].forEach(function (k) { base['utm_' + k] = q.get('utm_' + k) || ''; });
   if (x) base.excluded = x;
   function send(event, detail) {

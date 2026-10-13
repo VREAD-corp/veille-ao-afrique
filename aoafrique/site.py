@@ -3,6 +3,7 @@ sitemap, Atom feed, JSON for the client-side filters."""
 
 from __future__ import annotations
 
+import hashlib
 import json
 import shutil
 from collections import Counter
@@ -24,6 +25,8 @@ GOOGLE_VERIFICATION_FILE = "google4f1f7b7ea70e5312.html"
 PARIS = ZoneInfo("Europe/Paris")
 CASA = ZoneInfo("Africa/Casablanca")
 STATIC = Path(__file__).resolve().parent.parent / "static"
+# Content hash in the snippet URL: search-engine renderers cache scripts by URL and would keep running an old one.
+MESURE_V = hashlib.sha256((STATIC / "mesure.js").read_bytes()).hexdigest()[:10]
 SELLER = {
     "name": "READ FRANCE SAS",
     "form": "société par actions simplifiée",
@@ -124,7 +127,7 @@ class Site:
 <link rel="icon" href="{link('static/favicon.svg')}" type="image/svg+xml">
 <link rel="alternate" type="application/atom+xml" title="{BRAND} : nouveaux appels d'offres" href="{link('feed.xml')}">
 <link rel="stylesheet" href="{link('static/style.css')}">
-<script src="{link('static/mesure.js')}" defer></script>
+<script src="{link('static/mesure.js')}?v={MESURE_V}" defer></script>
 {script_tags}
 {ld}
 </head>
