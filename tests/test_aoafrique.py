@@ -1,4 +1,5 @@
 import json
+import re
 from datetime import date, datetime
 from pathlib import Path
 
@@ -92,3 +93,8 @@ def test_build_site(tmp_path):
     assert data["count"] == 3
     alerts = (tmp_path / "alertes" / "index.html").read_text(encoding="utf-8")
     assert "Pré-inscription, sans paiement" in alerts and "bientôt disponible" in alerts and "09-08" in alerts
+    lic = (tmp_path / "licence.html").read_text(encoding="utf-8")
+    assert "Conditions de réutilisation des données" in lic and "31-13" in lic and "CC BY 4.0" in lic
+    assert "https://outils.vread.fr/veille-ao-afrique/licence.html</loc>" in (tmp_path / "sitemap.xml").read_text()
+    ds = [x for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>', idx) if '"Dataset"' in x]
+    assert json.loads(ds[0])["license"] == "https://outils.vread.fr/veille-ao-afrique/licence.html"

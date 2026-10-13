@@ -22,6 +22,8 @@ CONTACT = "octave@vread.fr"
 GAS_URL = "https://script.google.com/macros/s/AKfycbyUsVoWWzL7xA18-O-GkEto4ivugNO-8v4W0l1pugf1HmLHUSKG7uOhEcx3FT2RgfKpWA/exec"
 INDEXNOW_KEY = "3f9c2b7e8a4d41c6b0e5a17d9c62f4e8"
 GOOGLE_VERIFICATION_FILE = "google4f1f7b7ea70e5312.html"
+# Reuse terms of the data (target of the Dataset "license" property).
+LICENCE_PAGE = "licence.html"
 PARIS = ZoneInfo("Europe/Paris")
 CASA = ZoneInfo("Africa/Casablanca")
 STATIC = Path(__file__).resolve().parent.parent / "static"
@@ -161,6 +163,7 @@ class Site:
 <nav aria-label="Liens de bas de page">
 <a href="{link('methode/')}">Méthode et sources</a>
 <a href="{link('alertes/')}">Alertes e-mail</a>
+<a href="{link(LICENCE_PAGE)}">Réutilisation des données</a>
 <a href="{link('mentions-legales/')}">Mentions légales</a>
 <a href="{link('confidentialite/')}">Confidentialité</a>
 <a href="{REPO_URL}">Code source</a>
@@ -292,6 +295,7 @@ class Site:
                "url": self.base, "inLanguage": "fr", "dateModified": self.updated_paris.isoformat(timespec="minutes"),
                "spatialCoverage": "Maroc, Afrique francophone",
                "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": self.base + "data/ouverts.json"}],
+               "license": self.base + LICENCE_PAGE,
                "creator": {"@type": "Organization", "name": SELLER["name"]}}]
         self.write("", self.page("", f"Appels d'offres Maroc en cours : {nb(s['pmmp'])} consultations | {BRAND}",
                                  f"{nb(s['pmmp'])} appels d'offres publics ouverts au Maroc, mis à jour deux fois par jour, avec filtres par secteur, région, acheteur et date limite, et un résumé en français de chaque avis.",
@@ -506,10 +510,33 @@ class Site:
 <p>Le résumé met en phrases la procédure, l'acheteur, le lieu, l'estimation, la caution et la date limite avec le nombre de jours restants. Il ne lit pas le dossier de consultation.</p>
 <h2>Limites</h2>
 <p>Le site peut avoir jusqu'à 12 heures de retard sur le portail pour les nouvelles consultations, et jusqu'à une semaine pour une annulation ou un report de date : vérifiez toujours l'avis officiel avant de préparer une offre. Les portails nationaux du Sénégal, de la Côte d'Ivoire et des autres pays ne sont pas encore couverts.</p>
-<p>Code source : <a href="{REPO_URL}">{REPO_URL}</a>. Données brutes du jour : <a href="{link('data/ouverts.json')}">ouverts.json</a>.</p>"""
+<p>Code source : <a href="{REPO_URL}">{REPO_URL}</a>. Données brutes du jour : <a href="{link('data/ouverts.json')}">ouverts.json</a>, réutilisables selon les <a href="{link(LICENCE_PAGE)}">conditions de réutilisation des données</a>.</p>"""
         self.write("methode/", self.page("methode/", f"Méthode et sources | {BRAND}",
                                          "D'où viennent les appels d'offres de Veille AO Afrique, à quelle fréquence ils sont relus, sur quelle base légale et avec quelles limites.",
                                          method, crumbs=[("", "Appels d'offres"), ("methode/", "Méthode")]))
+        licence = f"""<h1>Conditions de réutilisation des données</h1>
+<p class="lead">Les avis publiés sur {BRAND}, et le fichier <a href="{link('data/ouverts.json')}">ouverts.json</a> qui les rassemble, proviennent de deux sources publiques. Chacune garde ses propres conditions de réutilisation : les voici.</p>
+<h2>Avis marocains : portail marocain des marchés publics</h2>
+<p>Les consultations marocaines proviennent du <a href="https://www.marchespublics.gov.ma/" rel="noopener">portail marocain des marchés publics</a> (www.marchespublics.gov.ma), géré par la Trésorerie Générale du Royaume.</p>
+<p>Elles peuvent être réutilisées selon l'article 6 de la <a href="https://www.cdai.ma/fr/cadre-juridique-national/" rel="noopener">loi n° 31-13 relative au droit d'accès à l'information</a>, qui autorise la réutilisation des informations publiées par les administrations, à des fins légitimes, aux conditions suivantes :</p>
+<ul>
+<li>ne pas altérer les informations ni en dénaturer le sens ;</li>
+<li>indiquer la source : « Portail marocain des marchés publics (www.marchespublics.gov.ma) » ;</li>
+<li>indiquer la date de publication de l'avis, ou à défaut la date à laquelle l'information a été consultée.</li>
+</ul>
+<p>Chaque fiche du site affiche l'objet officiel tel quel, la source et la date de publication, et renvoie vers l'avis officiel, qui seul fait foi.</p>
+<h2>Avis de la Banque mondiale : licence CC BY 4.0</h2>
+<p>Les avis de passation de marché de la Banque mondiale proviennent du jeu de données « <a href="https://datacatalog.worldbank.org/search/dataset/0037776/procurement-notice" rel="noopener">Procurement Notice</a> » (catalogue de données de la Banque mondiale, n° 0037776), publié sous licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr" rel="noopener">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.</p>
+<p>Vous pouvez les copier, les redistribuer et les adapter, y compris à des fins commerciales, à condition de créditer la source, d'indiquer un lien vers la licence et de signaler les modifications. Attribution à reprendre : « Source : Banque mondiale, Procurement Notice (datacatalog.worldbank.org), licence CC BY 4.0. » Nous n'avons gardé que les avis rédigés en français, ouverts, pour l'Afrique francophone, et retiré les coordonnées des contacts.</p>
+<h2>Notre compilation</h2>
+<p>{SELLER['name']} rassemble ces avis, les met dans un format commun et y ajoute un secteur, une région et un résumé produits par des règles fixes (voir <a href="{link('methode/')}">Méthode et sources</a>). Cette compilation n'ajoute aucun droit à ceux des sources : chaque avis reste soumis aux conditions de la source dont il provient, décrites ci-dessus, et nous ne revendiquons aucun droit exclusif sur les données.</p>
+<p>Si vous réutilisez les données, citez la source d'origine de chaque avis ; vous pouvez aussi mentionner « {BRAND} ({self.base}) » comme intermédiaire. Les avis peuvent avoir été modifiés ou annulés depuis notre dernière lecture : vérifiez toujours l'avis officiel.</p>
+<p>Le code du site est un sujet distinct : il est publié sous licence MIT (<a href="{REPO_URL}">{REPO_URL}</a>).</p>
+<p>Questions : <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
+<p class="small muted">Version du 13 octobre 2026.</p>"""
+        self.write(LICENCE_PAGE, self.page(LICENCE_PAGE, f"Conditions de réutilisation des données | {BRAND}",
+                                           "Conditions de réutilisation des appels d'offres de Veille AO Afrique : avis marocains selon l'article 6 de la loi 31-13, avis de la Banque mondiale sous licence CC BY 4.0.",
+                                           licence, crumbs=[("", "Appels d'offres"), (LICENCE_PAGE, "Réutilisation des données")]))
         p = SELLER
         legal = f"""<h1>Mentions légales</h1>
 <h2>Éditeur</h2>

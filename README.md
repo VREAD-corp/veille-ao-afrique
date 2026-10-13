@@ -31,6 +31,7 @@ Python 3.12, standard library only at runtime.
 - `/ao/<id>-<slug>/` one page per tender: verbatim object, fact table, rule-based summary, official link, JSON-LD (`Demand`, `BreadcrumbList`). Closed tenders stay 30 days.
 - `/secteurs/<slug>/` (13), `/regions/<slug>/` (12), `/afrique-francophone/` (World Bank).
 - `/alertes/` interest form + « Pré-inscription, sans paiement » for two planned tiers (Essentiel 39 € and Pro 79 € for 3 months, marked « bientôt disponible »). No payment code.
+- `/licence.html` « Conditions de réutilisation des données » (law 31-13 art. 6 for the Moroccan notices, CC BY 4.0 for the World Bank ones), target of the `Dataset` JSON-LD `license` property.
 - `/methode/`, `/mentions-legales/`, `/confidentialite/`, `sitemap.xml`, `feed.xml`, IndexNow key file.
 
 ## Backend (Apps Script, `gas/`)
