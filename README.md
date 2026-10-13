@@ -44,7 +44,7 @@ cd gas && ~/.local/share/octave-clasp/node_modules/.bin/clasp push --force
 
 ## Automation
 
-`.github/workflows/update.yml`: 05:20 and 17:20 UTC, tests → fetch → commit `data/` → build → GitHub Pages → IndexNow.
+`.github/workflows/update.yml`: 05:20 and 17:20 UTC (backup crons at :41 every 2 h run only if that refresh is missing), tests → fetch → commit `data/` → build → GitHub Pages → IndexNow.
 
 ## Tests
 

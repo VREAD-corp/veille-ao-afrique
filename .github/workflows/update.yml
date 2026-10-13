@@ -4,6 +4,9 @@ on:
   schedule:
     # 05:20 and 17:20 UTC (about 7 h 20 and 19 h 20 in Paris)
     - cron: "20 5,17 * * *"
+    # Backups: GitHub delays or drops scheduled runs (the first 05:20 run, 2026-10-13, never fired). The gate job
+    # makes them exit in seconds unless the latest 05:20 / 17:20 refresh is missing (late, dropped or failed).
+    - cron: "41 6,8,10,18,20,22 * * *"
   workflow_dispatch:
     inputs:
       details:
@@ -26,7 +29,45 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  gate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write
+    outputs:
+      run: ${{ steps.fresh.outputs.run }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          sparse-checkout: data/meta.json
+          sparse-checkout-cone-mode: false
+      - id: fresh
+        name: Refresh needed?
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          python3 - <<'EOF'
+          import datetime as dt, json, os
+          now = dt.datetime.now(dt.timezone.utc)
+          # Latest 05:20 / 17:20 UTC slot at or before now; a scheduled run refreshes only if nothing has since.
+          slot = max(s for s in (now.replace(hour=h, minute=20, second=0, microsecond=0) + dt.timedelta(days=d)
+                                 for d in (-1, 0) for h in (5, 17)) if s <= now)
+          checked = json.load(open("data/meta.json")).get("checked", "")
+          last = dt.datetime.fromisoformat(checked) if checked else None
+          run = os.environ["EVENT"] != "schedule" or last is None or last < slot
+          print(f"event {os.environ['EVENT']}, last refresh {checked or 'none'}, slot {slot:%Y-%m-%d %H:%M}Z: run={run}")
+          open(os.environ["GITHUB_OUTPUT"], "a").write(f"run={'true' if run else 'false'}\n")
+          EOF
+      - name: Keep the schedule enabled (GitHub disables it after 60 days without activity)
+        if: github.event_name == 'schedule'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X PUT "repos/${{ github.repository }}/actions/workflows/update.yml/enable" || echo "::warning::could not re-enable the workflow"
+
   build:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 120
     steps:
