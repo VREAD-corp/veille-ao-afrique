@@ -27,6 +27,11 @@ CASA = ZoneInfo("Africa/Casablanca")
 STATIC = Path(__file__).resolve().parent.parent / "static"
 # Content hash in the snippet URL: search-engine renderers cache scripts by URL and would keep running an old one.
 MESURE_V = hashlib.sha256((STATIC / "mesure.js").read_bytes()).hexdigest()[:10]
+# cro.js: Octave's shared aggregate behaviour counters and A/B framework (vendored byte-identical from octave-checkout
+# gas/web/cro.js). No experiment runs on this site (the two plans are pre-registrations, not price arms): no OCTAVE_XP.
+CRO_V = hashlib.sha256((STATIC / "cro.js").read_bytes()).hexdigest()[:10]
+# Primary CTAs for "time to first CTA click": alert links, official-notice links, pre-registration buttons, form submit.
+CRO_CTA = "[data-mesure],#alerte-form [type=submit]"
 SELLER = {
     "name": "READ FRANCE SAS",
     "form": "société par actions simplifiée",
@@ -128,6 +133,7 @@ class Site:
 <link rel="alternate" type="application/atom+xml" title="{BRAND} : nouveaux appels d'offres" href="{link('feed.xml')}">
 <link rel="stylesheet" href="{link('static/style.css')}">
 <script src="{link('static/mesure.js')}?v={MESURE_V}" defer></script>
+<script src="{link('static/cro.js')}?v={CRO_V}" data-site="veille-ao-afrique" data-api="{GAS_URL}" data-hosts="outils.vread.fr" data-cta="{e(CRO_CTA)}" defer></script>
 {script_tags}
 {ld}
 </head>
@@ -138,7 +144,7 @@ class Site:
 <a class="brand" href="{link()}"><svg class="brand-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="7"/><path d="M8 23 16 8l8 15M11.5 17h9" /></svg><span>{BRAND}</span></a>
 <nav class="nav-main" aria-label="Navigation principale">{nav_html}</nav>
 <a class="btn btn-sm nav-cta" href="{link('alertes/')}" data-mesure="cta_click" data-detail="header">Alertes e-mail</a>
-<details class="nav-menu"><summary>Menu</summary><nav aria-label="Navigation principale (mobile)">{nav_html}<a href="{link('alertes/')}">Alertes e-mail</a></nav></details>
+<details class="nav-menu" id="menu"><summary>Menu</summary><nav aria-label="Navigation principale (mobile)">{nav_html}<a href="{link('alertes/')}">Alertes e-mail</a></nav></details>
 </div>
 </header>
 <main id="contenu" class="wrap">
@@ -235,7 +241,7 @@ class Site:
         cat = s["cat"]
         first = self.open[:30]
         body = f"""
-<section class="hero">
+<section class="hero" id="hero">
 <div class="hero-text">
 <p class="kicker">Mis à jour le {e(self.updated_text())}</p>
 <h1>Appels d'offres publics au Maroc et en Afrique francophone, en cours aujourd'hui</h1>
@@ -271,7 +277,7 @@ class Site:
 <noscript><p>Sans JavaScript, parcourez les pages <a href="{link('secteurs/')}">par secteur</a> ou <a href="{link('regions/')}">par région</a>.</p></noscript>
 </section>
 
-<section class="explain">
+<section class="explain" id="a-propos">
 <h2>Ce que fait ce site, et ce qu'il ne fait pas</h2>
 <p>Deux fois par jour, un programme relit la liste des « consultations en cours » du <a href="https://www.marchespublics.gov.ma/" rel="noopener">portail marocain des marchés publics</a> et la fiche de chaque nouvelle consultation : objet, acheteur, lieu d'exécution, date limite, estimation et caution provisoire quand l'acheteur les publie. Il ajoute les avis rédigés en français de la Banque mondiale pour {len(s['countries'])} pays et zones d'Afrique francophone.</p>
 <p>Il ne télécharge pas les dossiers de consultation (DAO), ne dépose aucune offre et ne remplace pas l'avis officiel : chaque fiche renvoie vers lui. Les contacts nominatifs publiés par les acheteurs ne sont pas recopiés. Le détail est sur la page <a href="{link('methode/')}">Méthode et sources</a>.</p>
@@ -331,20 +337,20 @@ class Site:
 <p class="kicker">{'Maroc' if n['source'] == 'PMMP' else e(n['country'])} · {e(n.get('category') or '')} · {self.badge(n)}</p>
 <h1>{e(n['object'])}</h1>
 {closed_note}
-<section class="summary" aria-labelledby="resume-h">
+<section class="summary" id="resume" aria-labelledby="resume-h">
 <h2 id="resume-h">En bref</h2>
 <p>{e(model.summary(n, self.today))}</p>
 <p class="small muted">Résumé produit automatiquement par des règles fixes à partir des champs de l'avis, sans intelligence artificielle. L'objet ci-dessus est le texte officiel, non modifié.</p>
 </section>
-<p class="official"><a class="btn" href="{e(n['url'])}" rel="noopener" data-mesure="official_click" data-detail="{n['source'].lower()}">Voir l'avis officiel sur {src_name}</a></p>
+<p class="official" data-section="avis-officiel"><a class="btn" href="{e(n['url'])}" rel="noopener" data-mesure="official_click" data-detail="{n['source'].lower()}">Voir l'avis officiel sur {src_name}</a></p>
 <table class="facts-table"><caption>Fiche de la consultation</caption><tbody>{table}</tbody></table>
 <p class="small muted">{source_line}{e(fmt_date(n.get('published', '')))}, relu le {e(self.updated_text())}. Le dossier de consultation et les éventuels rectificatifs sont sur le site officiel, qui fait foi.</p>
 </article>
-<aside class="alert-box">
+<aside class="alert-box" data-section="alerte-cta">
 <p><strong>Ne ratez pas les prochaines consultations de ce type.</strong> Indiquez vos secteurs et régions : nous vous écrirons à l'ouverture des alertes e-mail.</p>
 <a class="btn btn-sm" href="{link('alertes/')}?secteur={e((n.get('sectors') or [''])[0])}" data-mesure="cta_click" data-detail="fiche">Créer mon alerte</a>
 </aside>
-{f'<section><h2>Consultations proches</h2>{self.cards(similar)}</section>' if similar else ''}
+{f'<section id="proches"><h2>Consultations proches</h2>{self.cards(similar)}</section>' if similar else ''}
 """
         d = model.parse_deadline(n.get("deadline", ""))
         ld = {"@context": "https://schema.org", "@type": "Demand", "name": n["object"][:300],
@@ -443,11 +449,11 @@ class Site:
         s = self.stats()
         body = f"""<h1>Alertes e-mail : les nouveaux appels d'offres marocains de vos secteurs, chaque matin</h1>
 <p class="lead">Le portail marocain publie en moyenne {nb(round(s['new7'] / 7))} nouvelles consultations par jour (moyenne des 7 derniers jours). L'alerte vous envoie seulement celles de vos secteurs et régions, avec le résumé et la date limite de chacune.</p>
-<div class="status-box">
+<div class="status-box" data-section="statut">
 <p><strong>Où en est le service.</strong> La liste et les fiches de ce site sont en ligne et à jour. Les envois d'e-mails ne sont pas encore ouverts. Inscrivez-vous maintenant : vous recevrez un premier message à l'ouverture, puis les alertes, gratuites pendant les 21 jours du test. Désinscription en un clic à tout moment.</p>
 </div>
 
-<form id="alerte-form" class="alert-form" novalidate>
+<form id="alerte-form" class="alert-form" data-section="formulaire" novalidate>
 <input type="hidden" name="kind" value="alertes">
 <input type="hidden" name="plan" value="">
 <div class="hp" aria-hidden="true"><label>Site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
@@ -467,14 +473,14 @@ class Site:
 <p class="form-msg" id="form-msg" role="status" aria-live="polite"></p>
 </form>
 
-<section class="plans-section" aria-labelledby="offres-h">
+<section class="plans-section" id="offres" aria-labelledby="offres-h">
 <h2 id="offres-h">Offres payantes prévues</h2>
 <p>Nous testons deux prix avant d'ouvrir le paiement. Aucun paiement n'est demandé aujourd'hui : la pré-inscription enregistre votre intérêt, et nous vous écrirons à l'ouverture pour que vous décidiez. Paiement unique pour 3 mois, sans renouvellement automatique. Prix nets, TVA non applicable (art. 293 B du CGI).</p>
 <div class="plans">{plans}</div>
 <p class="small muted">Ce qui ne sera pas inclus : la rédaction des offres, le téléchargement des dossiers de consultation à votre place, le dépôt électronique sur le portail (il demande un compte entreprise et une signature électronique à votre nom).</p>
 </section>
 
-<section>
+<section id="exemple-email">
 <h2>À quoi ressemblera l'e-mail</h2>
 <p>Objet : « 14 nouveaux appels d'offres : eau et assainissement, Souss-Massa ». Pour chaque avis : l'objet officiel, l'acheteur, le lieu, l'estimation et la caution quand elles sont publiées, la date limite, le résumé de quatre lignes que vous voyez sur chaque <a href="{link('')}#liste">fiche du site</a>, et le lien vers l'avis officiel.</p>
 </section>
@@ -511,7 +517,7 @@ class Site:
 <p>Directeur de la publication : {p['president']}, président.</p>
 <p>Le site est écrit et tenu à jour par Octave, l'assistant IA de READ FRANCE, sous la responsabilité éditoriale du directeur de la publication. Les fiches d'appels d'offres sont produites automatiquement à partir des sources décrites sur la page <a href="{link('methode/')}">Méthode et sources</a>.</p>
 <h2>Hébergement</h2>
-<p>GitHub Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis. Formulaire et mesure d'audience : Google Apps Script et Google Sheets (Google LLC).</p>
+<p>GitHub Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis. Formulaire, mesure d'audience et de comportement (totaux par jour, sans cookie) : Google Apps Script et Google Sheets (Google LLC).</p>
 <h2>Sources et propriété</h2>
 <p>Les avis proviennent du Portail marocain des marchés publics (Trésorerie Générale du Royaume, réutilisation selon l'article 6 de la loi n° 31-13) et de la Banque mondiale (CC BY 4.0). Veille AO Afrique n'est ni affilié à ces organismes ni approuvé par eux. L'avis officiel fait foi. Le code du site est publié sous licence MIT.</p>"""
         self.write("mentions-legales/", self.page("mentions-legales/", f"Mentions légales | {BRAND}",
@@ -519,8 +525,13 @@ class Site:
                                                   crumbs=[("", "Appels d'offres"), ("mentions-legales/", "Mentions légales")]))
         privacy = f"""<h1>Confidentialité</h1>
 <p class="lead">Responsable du traitement : {p['name']}, {p['address']}, <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
-<h2>Mesure d'audience sans cookie</h2>
-<p>Chaque page envoie un compteur anonyme : la page vue, le type d'action (filtre utilisé, clic vers l'avis officiel, inscription), le site d'où vous venez, et si l'écran est un mobile ou un ordinateur. Aucun cookie, aucun identifiant, aucune adresse IP n'est enregistré : nous ne gardons que des totaux par jour dans un tableur Google. Si votre navigateur envoie le signal « Do Not Track » ou « Global Privacy Control », rien n'est envoyé. Les robots d'indexation et les navigateurs automatisés (reconnus dans votre navigateur, sans que leur signature soit transmise) sont comptés à part, et une page préchargée n'est comptée que si vous l'ouvrez. Ce dispositif relève de l'exemption de consentement prévue pour la mesure d'audience strictement anonyme.</p>
+<h2>Mesure d'audience et de comportement, sans cookie</h2>
+<p>Chaque page envoie un compteur anonyme : la page vue, le type d'action (filtre utilisé, clic vers l'avis officiel, inscription), le site d'où vous venez, et si l'écran est un mobile ou un ordinateur. Les robots d'indexation et les navigateurs automatisés (reconnus dans votre navigateur, sans que leur signature soit transmise) sont comptés à part, et une page préchargée n'est comptée que si vous l'ouvrez.</p>
+<p>Pour améliorer le site, une fois par page et au moment où vous la quittez, nous mesurons aussi la façon dont elle est utilisée : la profondeur de défilement (25, 50, 75 ou 100 %), les sections atteintes, le temps écoulé avant le premier clic sur un bouton principal, les formulaires commencés ou envoyés et le <em>nom</em> du dernier champ touché quand un formulaire est abandonné (jamais son contenu : rien de ce que vous tapez n'est lu), le menu ou les questions dépliés, les liens sortants (le nom du site seulement), les erreurs techniques (sous la forme d'une empreinte anonyme du message), la vitesse d'affichage (indicateurs Core Web Vitals : bon, moyen ou lent) et les clics répétés sur un même élément.</p>
+<p>Nous ne gardons que des totaux par jour dans un tableur Google : aucun cookie, aucun identifiant, aucune adresse IP conservée, aucune donnée personnelle, aucun suivi d'un site à l'autre. Ces chiffres servent uniquement aux statistiques de ce site ; ils ne sont ni croisés avec un autre traitement, ni transmis, ni vendus.</p>
+<p>Tests A/B : il peut nous arriver de montrer à une partie des visiteurs une autre version d'un titre, d'un bouton ou d'un prix pour voir laquelle est la plus claire. La version (une simple lettre) est gardée dans le stockage de session de l'onglet (effacé à sa fermeture) ou choisie selon la date (rien n'est stocké), et n'est jamais reliée à une personne. Le prix payé est toujours celui qui est affiché. Aucun test de ce type n'est en cours aujourd'hui.</p>
+<p>Si votre navigateur envoie le signal « Do Not Track » ou « Global Privacy Control », rien n'est envoyé, ni compteur d'audience ni mesure de comportement.</p>
+<p>Ce dispositif reste dans l'exemption de consentement prévue pour la mesure d'audience (article 82 de la loi Informatique et Libertés, lignes directrices et recommandation de la CNIL du 17 septembre 2020 sur les cookies et autres traceurs) : statistiques strictement agrégées, propres à ce site, sans suivi d'un site à l'autre, sans croisement avec d'autres traitements et sans transmission à des tiers. Aucun bandeau de consentement n'est donc nécessaire.</p>
 <h2>Formulaire « Alertes e-mail » et pré-inscription</h2>
 <p>Nous enregistrons votre adresse e-mail et, si vous les indiquez, le nom de l'entreprise, son pays d'établissement, les secteurs et régions choisis, la fréquence souhaitée et l'offre pré-réservée. Nous gardons aussi la date et le texte exact du consentement que vous avez coché.</p>
 <p>Ces données servent à vous prévenir de l'ouverture du service, à vous envoyer les alertes demandées et à compter les pré-inscriptions pour choisir le prix. La base légale est votre consentement (article 6.1.a du RGPD), que vous pouvez retirer à tout moment par e-mail ou par le lien présent dans chaque message.</p>
@@ -530,9 +541,9 @@ class Site:
 <p>Accès, rectification, effacement, limitation, opposition et portabilité : écrivez à <a href="mailto:{CONTACT}">{CONTACT}</a>, réponse sous un mois. Vous pouvez saisir la <a href="https://www.cnil.fr/fr/plaintes" rel="noopener">CNIL</a>. Si vous résidez au Maroc, la loi n° 09-08 vous donne des droits comparables (accès, rectification, opposition) ; nous les appliquons de la même manière, et l'autorité marocaine compétente est la <a href="https://www.cndp.ma/" rel="noopener">CNDP</a>.</p>
 <h2>Hébergement</h2>
 <p>GitHub Pages traite des journaux techniques (adresse IP notamment) pour servir le site, selon la <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">déclaration de confidentialité de GitHub</a>.</p>
-<p class="small muted">Version du 13 octobre 2026.</p>"""
+<p class="small muted">Version mise à jour le 13 octobre 2026 : ajout de la mesure de comportement agrégée et des tests A/B.</p>"""
         self.write("confidentialite/", self.page("confidentialite/", f"Confidentialité | {BRAND}",
-                                                 "Données collectées par Veille AO Afrique : mesure d'audience sans cookie, formulaire d'alertes, droits RGPD et loi 09-08.",
+                                                 "Données collectées par Veille AO Afrique : mesure d'audience et de comportement sans cookie, tests A/B, formulaire d'alertes, droits RGPD et loi 09-08.",
                                                  privacy, crumbs=[("", "Appels d'offres"), ("confidentialite/", "Confidentialité")]))
         nf = f"""<h1>Page introuvable</h1><p>Cet appel d'offres a peut-être été clôturé et retiré. <a href="{link('')}">Retour à la liste des consultations en cours</a>.</p>"""
         (self.out / "404.html").write_text(self.page("404.html", f"Page introuvable | {BRAND}", "Page introuvable.", nf, noindex=True), encoding="utf-8")

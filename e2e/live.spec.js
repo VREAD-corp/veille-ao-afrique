@@ -100,8 +100,11 @@ test('alert form posts to the Sheet, pre-registration is tracked', async ({ page
   await page.check('input[name=regions][value=souss-massa]');
   await page.check('input[name=consent]');
   await page.screenshot({ path: `${SHOTS}/${info.project.name}-alertes.png`, fullPage: true });
+  // cro.js conversion goal: spy on octaveCro.goal (our run sends nothing: octave_notrack=1).
+  await page.evaluate(() => { const g = window.octaveCro.goal; window.__goals = []; window.octaveCro.goal = (m) => { window.__goals.push(m); g(m); }; });
   await page.click('#alerte-form button[type=submit]');
   await expect(page.locator('#form-msg')).toContainText('Pré-inscription enregistrée', { timeout: 30000 });
+  expect(await page.evaluate(() => window.__goals)).toEqual(['preorder']);
   const after = await admin(request, `&find=${encodeURIComponent(email)}`);
   expect(after.found, 'row written in the Sheet').toBe(true);
   expect(after.test_rows).toBeGreaterThan(before.test_rows);
@@ -109,4 +112,32 @@ test('alert form posts to the Sheet, pre-registration is tracked', async ({ page
   await expect.poll(async () => x(await admin(request), 'preinscription_click:pro-79'), { timeout: 30000, intervals: [3000] })
     .toBeGreaterThan(x(before, 'preinscription_click:pro-79'));
   await page.screenshot({ path: `${SHOTS}/${info.project.name}-alertes-ok.png`, fullPage: false });
+});
+
+test('cro.js loads on every kind of page, no A/B test, nothing sent for our runs', async ({ page }) => {
+  const cro = [];
+  page.on('request', (r) => { if (r.url().startsWith(GAS) && (r.postData() || '').includes('"kind":"cro"')) cro.push(r.url()); });
+  const tender = await (async () => { await page.goto(''); return page.locator('#resultats .card-title a').first().getAttribute('href'); })();
+  for (const path of ['', tender, 'alertes/', 'confidentialite/', 'page-inexistante/']) {
+    await page.goto(path);
+    const tag = page.locator('script[src*="static/cro.js"]');
+    await expect(tag).toHaveCount(1);
+    await expect(tag).toHaveAttribute('data-site', 'veille-ao-afrique');
+    await expect(tag).toHaveAttribute('data-api', GAS);
+    await expect.poll(() => page.evaluate(() => typeof (window.octaveCro || {}).goal)).toBe('function');
+    // No experiment here: no variant, even when a forcing parameter is passed.
+    expect(await page.evaluate(() => [window.octaveCro.v('price'), document.documentElement.getAttribute('data-xp-price')])).toEqual([undefined, null]);
+  }
+  await page.goto('?xp_price=b');
+  expect(await page.evaluate(() => window.octaveCro.v('price'))).toBeUndefined();
+  const served = await page.request.get('static/cro.js');
+  expect(served.ok()).toBeTruthy();
+  expect(await served.text()).toContain('Octave cro.js');
+  await page.evaluate(() => document.dispatchEvent(new Event('visibilitychange')));
+  await page.goto('alertes/');
+  await page.waitForTimeout(1000);
+  expect(cro, 'octave_notrack=1: no behaviour batch is sent').toEqual([]);
+  await page.goto('confidentialite/');
+  await expect(page.locator('main')).toContainText('profondeur de défilement');
+  await expect(page.locator('main')).toContainText('Global Privacy Control');
 });

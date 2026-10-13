@@ -49,6 +49,8 @@
     msg.textContent = 'Envoi…';
     fetch(U, { method: 'POST', credentials: 'omit', body: JSON.stringify(body) }).then(function (r) { return r.json(); }).then(function (j) {
       if (!j.ok) throw new Error(j.message || 'Erreur');
+      // Octave cro.js conversion goal (aggregate A/B counter, nothing about the person): counted once per tab.
+      if (window.octaveCro && j.kind) window.octaveCro.goal(j.kind === 'preinscription' ? 'preorder' : 'signup');
       form.reset();
       chosen.hidden = true;
       form.elements.plan.value = ''; form.elements.kind.value = 'alertes';

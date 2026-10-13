@@ -12,7 +12,14 @@
  *                                   detected client-side, or our own tests with octave_notrack=1) is counted in
  *                                   the `Exclus` tab instead, by reason, so filtered and raw totals both show.
  *   admin   GET ?token=             aggregated counts for tests and reporting (token in the git-ignored Secret.js).
- *   stats   GET ?token=&date=       the counter rows of one day (Stats and Exclus), for the dashboard.
+ *   stats   GET ?token=&date=       the counter rows of one day (Stats and Exclus), for the dashboard, plus `cro`:
+ *                                   that day's behaviour and A/B summary (croSummary_).
+ *   track with kind 'cro'           once-per-page batch of the shared cro.js (Octave behaviour counters + A/B, src/Cro.js
+ *                                   vendored byte-identical from octave-checkout): daily counters in `Comportement`
+ *                                   and `Experiences`, nothing typed, no identifier.
+ *   cro     GET/POST ?key=          aggregated behaviour + A/B summary for the weekly CRO report (key hash in the
+ *                                   Script Property CRO_KEY_SHA256, never in git).
+ *   cro_init POST {key}             stores that key's SHA-256 once (refused afterwards).
  *
  * Only scope: spreadsheets. The spreadsheet is created on first use and its id kept in Script Properties.
  */
@@ -36,6 +43,13 @@ var CONSENT_VERSION_ = 'v1-2026-10-13';
 var RATE_TRACK_ = 300;   // hits per minute, all pages
 var RATE_SIGNUP_ = 20;   // sign-ups per minute
 
+// Octave CRO module (src/Cro.js): settings it reads from the host.
+var CRO_SITES_ = [SITE_];
+var CRO_EXPERIMENTS_ = {}; // no A/B test on this site (Essentiel 39 / Pro 79 are pre-registration plans, not arms)
+function croBook_() { return book_(); }
+/** Same page normaliser as Stats (tender pages collapsed to /ao/*), so Comportement pages match Stats pages. */
+function croPage_(site, page) { return trackPage_(page); }
+
 function doGet(e) { return route_((e && e.parameter) || {}, null); }
 
 function doPost(e) {
@@ -54,7 +68,12 @@ function route_(params, body) {
   Object.keys(body || {}).forEach(function (k) { req[k] = body[k]; });
   try {
     switch (req.action) {
-      case 'track': return json_(track_(req));
+      // kind 'cro': the once-per-page behaviour batch of cro.js, before this host's own track validation.
+      case 'track': return json_(req.kind === 'cro' ? croTrack_(req) : track_(req));
+      case 'cro': return json_(croAction_(req));
+      case 'cro_init':
+        if (!body) throw userError_('method_not_allowed', 'POST attendu.');
+        return json_(croInit_(req));
       case 'signup':
         if (!body) throw userError_('method_not_allowed', 'POST attendu.');
         return json_(signup_(req));
@@ -370,7 +389,7 @@ function stats_(req) {
   var byReason = {};
   excl.forEach(function (r) { if (r.event === 'view') byReason[r.reason] = (byReason[r.reason] || 0) + Number(r.count || 0); });
   return { ok: true, date: date, views: { counted: sum(kept, 'view'), excluded: sum(excl, 'view'), raw: sum(kept, 'view') + sum(excl, 'view'), excluded_by_reason: byReason },
-    stats: kept, exclus: excl };
+    stats: kept, exclus: excl, cro: croSummary_(date, date) };
 }
 
 /** Run from the editor once if needed: creates the spreadsheet and prints its URL. */

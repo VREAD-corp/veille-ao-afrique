@@ -37,6 +37,8 @@ Python 3.12, standard library only at runtime.
 
 A new standalone project `veille-ao-afrique-gas (READ FRANCE SAS)`, scope `spreadsheets` only, its own spreadsheet created on first use. Actions: `track` (cookieless daily counters, same pattern as octave-checkout `Track.js`; hits from crawlers, `navigator.webdriver`, headless browsers and our tests go to a separate `Exclus` tab by reason, prerendered pages count only once opened; a hit without the snippet version `v`, i.e. from an old mesure.js still cached by a crawler, is excluded as `legacy`; the snippet URL carries a content hash), `stats` (token: one day's counted vs excluded views and all counter rows), `signup` (interest form and pre-registration, consent text stored), `unsubscribe`, `admin` (token in the git-ignored `gas/src/Secret.js`).
 
+Behaviour analytics and A/B framework (Octave CRO): `static/cro.js` and `gas/src/Cro.js` are vendored byte-identical from `octave-checkout` (`gas/web/cro.js`, `gas/src/Cro.js`; never edit the copies). `cro.js` is loaded on every page (`data-site="veille-ao-afrique"`, `data-cta="[data-mesure],#alerte-form [type=submit]"`) and sends one aggregate batch per page (`track` with `kind:"cro"`): scroll depth, sections reached (`id` / `data-section`), time to first CTA click, forms started/submitted and the name of the last field of an abandoned form, outbound domains, error hashes, Core Web Vitals, rage clicks; daily counters in the `Comportement` and `Experiences` tabs. Goals `signup` and `preorder` fire on a successful sign-up / pre-registration (`static/alertes.js`). No A/B test runs here (`CRO_EXPERIMENTS_ = {}`, no `OCTAVE_XP`). Tender pages are collapsed to `/ao/*` like `Stats` (`croPage_`). Extra actions: `cro` (summary, key whose SHA-256 is in the Script Property `CRO_KEY_SHA256`), `cro_init` (POST, registers that key once); `stats` also returns `cro` for the day.
+
 ```bash
 cd gas && ~/.local/share/octave-clasp/node_modules/.bin/clasp push --force
 ~/.local/share/octave-clasp/node_modules/.bin/clasp deploy -i "$(node -e "console.log(require('./.deployment.json').deploymentId)")"
@@ -48,7 +50,7 @@ cd gas && ~/.local/share/octave-clasp/node_modules/.bin/clasp push --force
 
 ## Tests
 
-`tests/` unit tests on trimmed fixtures. `e2e/` Playwright checks on the live site (390 px and 1440 px): fresh data, filters, form posting to the Sheet, tracking counters. They set `octave_notrack=1` (query or localStorage) so their hits land in the excluded counters, never in visits. `tests/mesure_check.mjs` checks the snippet's bot, webdriver, prerender and opt-out rules under Node.
+`tests/` unit tests on trimmed fixtures. `e2e/` Playwright checks on the live site (390 px and 1440 px): fresh data, filters, form posting to the Sheet, tracking counters. They set `octave_notrack=1` (query or localStorage) so their hits land in the excluded counters, never in visits. `tests/mesure_check.mjs` checks the snippet's bot, webdriver, prerender and opt-out rules under Node. `tests/test_cro.py` runs the vendored `tests/cro.check.mjs` on `static/cro.js` and `tests/cro-gas.check.mjs` on `gas/src/Cro.js`, and checks the wiring (tag on every page, routes, `/ao/*` pages).
 
 ## Limits
 
