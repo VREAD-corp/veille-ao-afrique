@@ -3353,38 +3353,6 @@
 "reference": "40/DRD/CI/SPD/1/2026"
 },
 {
-"buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
-"category": "Travaux",
-"deadline": "2026-10-13T09:00",
-"env_clauses": false,
-"object": "Maintenance des équipements hydro-électromécaniques et pneumatiques de stations\nde traitement et des postes de chloration, des postes de dosage des réactifs et des appareils\nde mesure et de contrôle en continu relevant du Secteur de Production Sidi Kacem-Sidi Slimane.",
-"org": "d4q",
-"places": [
-"SIDI KACEM"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-17",
-"ref_id": "1040234",
-"reference": "32/2026/DR4"
-},
-{
-"buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
-"category": "Services",
-"deadline": "2026-10-13T09:00",
-"env_clauses": false,
-"object": "Mise à disposition du personnel d’intérim pour la Direction Régionale de Production Rabat-Salé-Kénitra.",
-"org": "d4q",
-"places": [
-"KENITRA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-17",
-"ref_id": "1040240",
-"reference": "34/2026/DR4"
-},
-{
 "buyer": "DIRECTION REGIONALE DE L'ENVIRONNEMENT DE LA REGION DE L'ORIENTAL",
 "category": "Services",
 "deadline": "2026-10-13T10:00",
@@ -3405,39 +3373,6 @@
 {
 "buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
 "category": "Fournitures",
-"deadline": "2026-10-13T09:00",
-"env_clauses": false,
-"object": "Acquisition des comparateurs de chlore et pastilles DPD pour les centres de DR4.",
-"org": "d4q",
-"places": [
-"KENITRA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-17",
-"ref_id": "1040393",
-"reference": "35/2026/DR4"
-},
-{
-"buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
-"category": "Services",
-"deadline": "2026-10-13T09:00",
-"env_clauses": false,
-"object": "Acquisition et installation des groupes de secours au niveau des unités et centres de production Sidi Kacem et Sidi Slimane.",
-"org": "d4q",
-"places": [
-"SIDI KACEM",
-"SIDI SLIMANE"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-17",
-"ref_id": "1040398",
-"reference": "31/2026/DR4"
-},
-{
-"buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
-"category": "Fournitures",
 "deadline": "2026-10-15T11:00",
 "env_clauses": false,
 "object": "ACHAT DES PRODUITS CHIMIQUES POUR LES LABORATOIRES DE LA DIRECTION REGIONALE DE PRODUCTION CASABLANCA-SETTAT (DRC).",
@@ -3450,23 +3385,6 @@
 "published": "2026-09-17",
 "ref_id": "1040400",
 "reference": "52/DRC/CI/2026"
-},
-{
-"buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
-"category": "Travaux",
-"deadline": "2026-10-13T09:00",
-"env_clauses": false,
-"object": "Renforcement de l'AEP des centres Zaggota-Selfat à partir des forages de Nzalat Bni Ammar - Lot : Ligne Electrique 2",
-"org": "d4q",
-"places": [
-"SIDI KACEM",
-"SIDI SLIMANE"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-17",
-"ref_id": "1040408",
-"reference": "33/2026/DR4"
 },
 {
 "buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
@@ -3654,54 +3572,6 @@
 "published": "2026-09-18",
 "ref_id": "1040903",
 "reference": "PX3129940/2026/DXR"
-},
-{
-"buyer": "OFFICE NATIONALE DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE ELECTRICITE",
-"category": "Fournitures",
-"deadline": "2026-10-13T09:00",
-"env_clauses": true,
-"object": "Fourniture des consommables mécaniques pour la section chaufferie de la Direction Exploitation Mohammedia",
-"org": "d4q",
-"places": [
-"MOHAMMADIA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-18",
-"ref_id": "1040904",
-"reference": "PM2130943/2026/DXM"
-},
-{
-"buyer": "OFFICE NATIONALE DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE ELECTRICITE",
-"category": "Fournitures",
-"deadline": "2026-10-13T09:00",
-"env_clauses": true,
-"object": "Fourniture des paliers et coupleurs hydrauliques pour la Direction Exploitation Mohammedia",
-"org": "d4q",
-"places": [
-"MOHAMMADIA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-18",
-"ref_id": "1040929",
-"reference": "PM2130779/2026/DXM"
-},
-{
-"buyer": "OFFICE NATIONALE DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE ELECTRICITE",
-"category": "Travaux",
-"deadline": "2026-10-13T09:00",
-"env_clauses": true,
-"object": "Travaux d’entretien des vannes papillons, soufflets de dilatation et filtres autonettoyants de la conduite BONA des 4 tranches de la Direction Exploitation Mohammedia, marché cadre pour une durée d’une année ferme, reconduit tacitement d’année en année pour une durée maximale de trois ans",
-"org": "d4q",
-"places": [
-"MOHAMMADIA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-18",
-"ref_id": "1040944",
-"reference": "PM3130988/2026/DXM"
 },
 {
 "buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
@@ -7221,6 +7091,26 @@
 "reference": "TL4131007/2026/10/ONEEBELEC"
 },
 {
+"buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
+"category": "Travaux",
+"deadline": "2026-11-04T10:00",
+"env_clauses": false,
+"object": "Marché cadre relatif à la réalisation des forages d'exploitation dans les villes et centres relevant des directions régionales du centre (DR3) et du nord (DR9).",
+"org": "d4q",
+"places": [
+"TANGER-ASSILAH",
+"TETOUAN",
+"AL HOCEIMA",
+"BENI MELLAL",
+"KHENIFRA"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-13",
+"ref_id": "1048664",
+"reference": "39/DAM/EE/2026"
+},
+{
 "buyer": "AGENCE DU BASSIN HYDRAULIQUE DE MOULOUYA",
 "category": "Travaux",
 "deadline": "2026-11-03T10:00",
@@ -7596,23 +7486,6 @@
 "published": "2026-10-01",
 "ref_id": "1039974",
 "reference": "17/CEO/2026"
-},
-{
-"buyer": "Arrondissement de JNAN EL OUARD",
-"category": "Services",
-"deadline": "2026-10-13T09:00",
-"env_clauses": true,
-"object": "Frais de restauration et de réception à l'occasion de l'organisation de fêtes nationales et cérémonies officielles et à l'organisation de séminaires, colloques et stages",
-"org": "e5w",
-"places": [
-"MAROC",
-"FES"
-],
-"procedure": "Appel d'offres ouvert simplifié",
-"procedure_code": "AOS",
-"published": "2026-09-16",
-"ref_id": "1040347",
-"reference": "3/2026"
 },
 {
 "buyer": "Arrondissement de JNAN EL OUARD",
@@ -15082,22 +14955,6 @@
 "reference": "56/SAP/SGU/2026"
 },
 {
-"buyer": "SOCIETE REGIONALE MULTISERVICES FES - MEKNES S.A",
-"category": "Services",
-"deadline": "2026-10-13T08:30",
-"env_clauses": true,
-"object": "Prestations topographiques et parcellaires, traitement des requêtes, bornage\nd’immatriculation,\nmorcellement, fusion et mise à jour des terrains abritant des projets de la SRM-FM dans la région FES-MEKNES.",
-"org": "g3h",
-"places": [
-"FES"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-18",
-"ref_id": "1040769",
-"reference": "82/CL/2026/SRMFM"
-},
-{
 "buyer": "FONDS D'EQUIPEMENT COMMUNAL",
 "category": "Services",
 "deadline": "2026-10-15T15:00",
@@ -15114,54 +14971,6 @@
 "reference": "AO/1526"
 },
 {
-"buyer": "SOCIETE REGIONALE MULTISERVICES FES - MEKNES S.A",
-"category": "Fournitures",
-"deadline": "2026-10-13T08:30",
-"env_clauses": true,
-"object": "Fourniture et modernisation de l’infrastructure du Datacenter (3 LOTS)",
-"org": "g3h",
-"places": [
-"FES"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-18",
-"ref_id": "1040774",
-"reference": "278/CL/2026/SRMFM"
-},
-{
-"buyer": "SOCIETE REGIONALE MULTISERVICES FES - MEKNES S.A",
-"category": "Travaux",
-"deadline": "2026-10-13T08:30",
-"env_clauses": true,
-"object": "Travaux de pose des équipements pour l’extension des tableaux 20KV des postes sources Fès-Sud et Fès-Ouest pour alimentation MT du projet Sunrise y compris génie civil",
-"org": "g3h",
-"places": [
-"FES"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-18",
-"ref_id": "1040779",
-"reference": "348/CL/2026/SRMFM"
-},
-{
-"buyer": "SOCIETE REGIONALE MULTISERVICES FES - MEKNES S.A",
-"category": "Fournitures",
-"deadline": "2026-10-13T08:30",
-"env_clauses": true,
-"object": "Fournitures et installations des équipements audiovisuels des salles des réunions du nouveau siège de la société régionale multiservices FES-MEKNES",
-"org": "g3h",
-"places": [
-"FES"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-18",
-"ref_id": "1040786",
-"reference": "388/CL/2026/SRMFM"
-},
-{
 "buyer": "REDAL",
 "category": "Travaux",
 "deadline": "2026-10-14T10:00",
@@ -15176,38 +14985,6 @@
 "published": "2026-09-18",
 "ref_id": "1040787",
 "reference": "54/2026/AO"
-},
-{
-"buyer": "SOCIETE REGIONALE MULTISERVICES FES - MEKNES S.A",
-"category": "Fournitures",
-"deadline": "2026-10-13T08:30",
-"env_clauses": true,
-"object": "Fourniture des postes de travail informatiques pour la SRM-FM",
-"org": "g3h",
-"places": [
-"FES"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-18",
-"ref_id": "1040793",
-"reference": "389/CL/2026/SRMFM"
-},
-{
-"buyer": "SOCIETE REGIONALE MULTISERVICES FES - MEKNES S.A",
-"category": "Fournitures",
-"deadline": "2026-10-13T08:30",
-"env_clauses": true,
-"object": "Fourniture et mise à niveau de l’Architecture d’interconnexion des Datacenters de la SRM-FM avec ses Sites Distants",
-"org": "g3h",
-"places": [
-"FES"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-18",
-"ref_id": "1040797",
-"reference": "390/CL/2026/SRMFM"
 },
 {
 "buyer": "SOCIETE REGIONALE MULTISERVICES DARAA - TAFILALET S.A",
@@ -15290,22 +15067,6 @@
 "reference": "35/INDH/PSS/2026"
 },
 {
-"buyer": "SOCIETE REGIONALE MULTISERVICES TANGER- TETOUAN-AL HOCEIMA SA",
-"category": "Travaux",
-"deadline": "2026-10-13T09:00",
-"env_clauses": true,
-"object": "Travaux de recherche et réparation des fuites sur le réseau d’eau potable de la Province d’Ouezzane",
-"org": "g3h",
-"places": [
-"OUEZZANE"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-18",
-"ref_id": "1040894",
-"reference": "173/2026/EP"
-},
-{
 "buyer": "SOCIETE RABAT REGION MOBILITE",
 "category": "Services",
 "deadline": "2026-10-16T10:00",
@@ -15379,22 +15140,6 @@
 "reference": "14/2026/BG"
 },
 {
-"buyer": "SOCIETE REGIONALE MULTISERVICES TANGER- TETOUAN-AL HOCEIMA SA",
-"category": "Travaux",
-"deadline": "2026-10-13T09:00",
-"env_clauses": false,
-"object": "Travaux d’aménagement de l’agence commerciale de Stehate",
-"org": "g3h",
-"places": [
-"CHEFCHAOUEN"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-18",
-"ref_id": "1040938",
-"reference": "182/2026/MG"
-},
-{
 "buyer": "GOUVERNEUR DE LA PROVINCE D'AZILAL",
 "category": "Travaux",
 "deadline": "2026-10-13T11:00",
@@ -15425,27 +15170,6 @@
 "published": "2026-09-18",
 "ref_id": "1040949",
 "reference": "10010629_1/2026/SRMDT"
-},
-{
-"buyer": "SOCIETE REGIONALE MULTISERVICES TANGER- TETOUAN-AL HOCEIMA SA",
-"category": "Fournitures",
-"deadline": "2026-10-13T09:00",
-"env_clauses": false,
-"object": "Fourniture du mobilier de bureau pour le compte de la SRM-TTA",
-"org": "g3h",
-"places": [
-"TANGER-ASSILAH",
-"TETOUAN",
-"FAHS-ANJRA",
-"AL HOCEIMA",
-"CHEFCHAOUEN",
-"OUEZZANE"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-18",
-"ref_id": "1040953",
-"reference": "183/2026/MG"
 },
 {
 "buyer": "SOCIETE REGIONALE MULTISERVICES DARAA - TAFILALET S.A",
@@ -15729,22 +15453,6 @@
 "reference": "10011725"
 },
 {
-"buyer": "SOCIETE REGIONALE MULTISERVICES FES - MEKNES S.A",
-"category": "Travaux",
-"deadline": "2026-10-13T08:30",
-"env_clauses": true,
-"object": "Travaux d’entretien courant des locaux et bâtiments techniques et administratifs relevant de la SRM-FM",
-"org": "g3h",
-"places": [
-"FES"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-18",
-"ref_id": "1041179",
-"reference": "432//CL/2026/SRMFM"
-},
-{
 "buyer": "SOCIETE REGIONALE MULTISERVICES DE L'ORIENTAL S.A",
 "category": "Travaux",
 "deadline": "2026-10-15T09:00",
@@ -15841,22 +15549,6 @@
 "reference": "E/342/26"
 },
 {
-"buyer": "SOCIETE REGIONALE MULTISERVICES BENI MELLAL-KHENIFRA SA",
-"category": "Travaux",
-"deadline": "2026-10-13T09:00",
-"env_clauses": false,
-"object": "Remplacement des poteaux HTA dégradés au niveau de la province Azilal",
-"org": "g3h",
-"places": [
-"AZILAL"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-21",
-"ref_id": "1041394",
-"reference": "176/EL/26"
-},
-{
 "buyer": "SOCIETE REGIONALE MULTISERVICES RABAT - SALE - KENITRA SA",
 "category": "Travaux",
 "deadline": "2026-10-15T09:30",
@@ -15903,22 +15595,6 @@
 "published": "2026-09-21",
 "ref_id": "1041399",
 "reference": "C/314/26"
-},
-{
-"buyer": "SOCIETE REGIONALE MULTISERVICES BENI MELLAL-KHENIFRA SA",
-"category": "Travaux",
-"deadline": "2026-10-13T09:00",
-"env_clauses": false,
-"object": "Travaux de construction d’un réservoir semi-enterré de capacité 15 000 m3 à la ville de Béni Mellal",
-"org": "g3h",
-"places": [
-"BENI MELLAL"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-21",
-"ref_id": "1041402",
-"reference": "175/O/26"
 },
 {
 "buyer": "SOCIETE REGIONALE MULTISERVICES RABAT - SALE - KENITRA SA",
@@ -16182,22 +15858,6 @@
 "reference": "40/2026/INDH/PT"
 },
 {
-"buyer": "SOCIETE REGIONALE MULTISERVICES BENI MELLAL-KHENIFRA SA",
-"category": "Travaux",
-"deadline": "2026-10-13T09:00",
-"env_clauses": false,
-"object": "Travaux d'injection des postes HTA-BT et d'aménagement du Réseau HTA relavant de la Province Khouribga",
-"org": "g3h",
-"places": [
-"KHOURIBGA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-21",
-"ref_id": "1041535",
-"reference": "177/EL/26"
-},
-{
 "buyer": "GOUVERNEUR DE OUARZAZATE",
 "category": "Fournitures",
 "deadline": "2026-10-20T10:30",
@@ -16212,26 +15872,6 @@
 "published": "2026-09-25",
 "ref_id": "1041537",
 "reference": "13/INDH/2026"
-},
-{
-"buyer": "SOCIETE REGIONALE MULTISERVICES BENI MELLAL-KHENIFRA SA",
-"category": "Fournitures",
-"deadline": "2026-10-13T09:00",
-"env_clauses": false,
-"object": "Fourniture, dépose, pose et mise en service des débitmètres à ultrasons sur canal venturi et des débitmètres électromagnétiques des stations des eaux usées relevant de la SRM-BK",
-"org": "g3h",
-"places": [
-"BENI MELLAL",
-"AZILAL",
-"FQUIH BEN SALAH",
-"KHENIFRA",
-"KHOURIBGA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-21",
-"ref_id": "1041538",
-"reference": "178/AS/26"
 },
 {
 "buyer": "SOCIETE REGIONALE MULTISERVICES DE L'ORIENTAL S.A",
@@ -18999,29 +18639,6 @@
 "published": "2026-09-28",
 "ref_id": "1043590",
 "reference": "158/2026/EL"
-},
-{
-"buyer": "SOCIETE REGIONALE MULTISERVICES TANGER- TETOUAN-AL HOCEIMA SA",
-"category": "Services",
-"deadline": "2026-10-13T09:00",
-"env_clauses": true,
-"object": "Prestation de maintenance curative, de réparation et de remise en état des groupes électropompes des installations d’eau potable de la SRM-TTA",
-"org": "g3h",
-"places": [
-"TANGER-ASSILAH",
-"MDIQ-FNIDEQ",
-"TETOUAN",
-"FAHS-ANJRA",
-"LARACHE",
-"AL HOCEIMA",
-"CHEFCHAOUEN",
-"OUEZZANE"
-],
-"procedure": "Appel d'offres ouvert simplifié",
-"procedure_code": "AOS",
-"published": "2026-09-28",
-"ref_id": "1043624",
-"reference": "168/2026/EP"
 },
 {
 "buyer": "SOCIETE REGIONALE MULTISERVICES TANGER- TETOUAN-AL HOCEIMA SA",
@@ -22170,6 +21787,22 @@
 "reference": "385/26/ELEC"
 },
 {
+"buyer": "PREFET DE LA POLICE DU GRAND CASA",
+"category": "Travaux",
+"deadline": "2026-10-26T10:30",
+"env_clauses": false,
+"object": "TRAVAUX D’NSTALLATION ET MISE EN SERVICE D’UN SYSTEME DE VIDEO SURVEILLANCE AU NOUVEAU LOCAL ABRITE SIEGE DE L’ARRONDISSEMENT DE POLICE OTHMANIA.",
+"org": "g3h",
+"places": [
+"CASABLANCA"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"procedure_code": "AOS",
+"published": "2026-10-13",
+"ref_id": "1046013",
+"reference": "57/SAP/SPIM/2026"
+},
+{
 "buyer": "SOCIETE REGIONALE MULTISERVICES MARRAKECH - SAFI S.A",
 "category": "Services",
 "deadline": "2026-10-19T10:00",
@@ -24922,6 +24555,22 @@
 "published": "2026-10-12",
 "ref_id": "1048538",
 "reference": "360/R1/P2/2026"
+},
+{
+"buyer": "AGENCE POUR L'AMENAGEMENT DU SITE DE LA LAGUNE DE MARCHICA",
+"category": "Services",
+"deadline": "2026-11-04T11:00",
+"env_clauses": false,
+"object": "L’EXECUTION DES PRESTATIONS DE GARDIENNAGE ET DE SECURITE DES LOCAUX DE L’AGENCE POUR L’AMENAGEMENT DU SITE DE LA LAGUNE DE MARCHICA.",
+"org": "g3h",
+"places": [
+"NADOR"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-13",
+"ref_id": "1048542",
+"reference": "43/AOO/AASLM/2026"
 },
 {
 "buyer": "SOCIETE REGIONALE MULTISERVICES TANGER- TETOUAN-AL HOCEIMA SA",
@@ -29759,6 +29408,22 @@
 "published": "2026-10-05",
 "ref_id": "1037397",
 "reference": "103/2026/CM"
+},
+{
+"buyer": "Commune urbaine de MARRAKECH",
+"category": "Services",
+"deadline": "2026-11-10T11:30",
+"env_clauses": true,
+"object": "CONTROLE ET OPTIMISATION DES ETUDES TECHNIQUES ET SUIVI DES TRAVAUX DE CONSTRUCTION D’UN CENTRE MULTIDISCIPLINAIRE POUR LES FEMMES ET LES JEUNES- ARRONDISSEMENT SIDI YOUSSEF BEN ALI- MARRAKECH : (LOT STRUCTURE, LOT SECURITE CONTRE LES RISQUES D’INCENDIE ET DE PANIQUE ET LOTS TECHNIQUES",
+"org": "j0w",
+"places": [
+"MARRAKECH"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-13",
+"ref_id": "1037400",
+"reference": "104/2026/CM"
 },
 {
 "buyer": "Arrondissement MENARA",
@@ -38982,6 +38647,22 @@
 "published": "2026-10-12",
 "ref_id": "1048448",
 "reference": "80/2026/OFPPT"
+},
+{
+"buyer": "OFFICE DE LA FORMATION PROFESSIONNELLE ET DE LA PROMOTION DU TRAVAIL",
+"category": "Travaux",
+"deadline": "2026-11-04T10:00",
+"env_clauses": true,
+"object": "Travaux d'aménagement et d'extension de l'ISTA MIDELT.",
+"org": "o4d",
+"places": [
+"MIDELT"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-13",
+"ref_id": "1048526",
+"reference": "140/2026/OFPPT"
 },
 {
 "buyer": "POLYCLINIQUE CNSS – HAY HASSANI",
@@ -57342,23 +57023,6 @@
 "reference": "16/2026/DPA/CH/SMOPFPA"
 },
 {
-"buyer": "OFFICE REGIONAL DE MISE EN VALEUR AGRICOLE DE TAFILALET",
-"category": "Services",
-"deadline": "2026-10-13T09:00",
-"env_clauses": false,
-"object": "Audit comptable et financier de l’ORMVA/TF au titre des exercices 2026, 2027 et 2028.",
-"org": "q1s",
-"places": [
-"ERRACHIDIA",
-"MIDELT"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-18",
-"ref_id": "1040863",
-"reference": "62/2026/ORTAF"
-},
-{
 "buyer": "Direction Régionale d'Agriculture Dakhla Oued Eddahab",
 "category": "Services",
 "deadline": "2026-10-26T11:00",
@@ -59049,31 +58713,6 @@
 "published": "2026-09-30",
 "ref_id": "1044385",
 "reference": "02/ONSSA/DR11/2026"
-},
-{
-"buyer": "OFFICE NATIONAL DU CONSEIL AGRICOLE DIRECTION REGIONALE DE LAAYOUNE SAKIA EL HAMRA",
-"category": "Services",
-"deadline": "2026-10-13T09:00",
-"env_clauses": false,
-"object": "Prestations de prise en charge du voyage d’étude organisé à la région de Souss Massa au profit des femmes rurales de la région de Laayoune Sakia El Hamra",
-"org": "q1s",
-"places": [
-"AGADIR IDA OU TANANE",
-"INEZGANE-AIT MELLOUL",
-"CHTOUKA-AIT BAHA",
-"TAROUDANNT",
-"TIZNIT",
-"TATA",
-"LAAYOUNE",
-"BOUJDOUR",
-"TARFAYA",
-"ES-SEMARA"
-],
-"procedure": "Appel d'offres ouvert simplifié",
-"procedure_code": "AOS",
-"published": "2026-09-30",
-"ref_id": "1044474",
-"reference": "08/2026/DRCALSH"
 },
 {
 "buyer": "DIRECTEUR PROVINCIAL DE L'AGRICULTURE DE BOULMANE",
@@ -61493,6 +61132,22 @@
 "published": "2026-09-22",
 "ref_id": "1037518",
 "reference": "14/2026"
+},
+{
+"buyer": "DIRECTEUR REGIONAL DE LA SANTE A LA REGION DE GUELMIM OUED NOUN",
+"category": "Travaux",
+"deadline": "2026-11-09T10:00",
+"env_clauses": false,
+"object": "TRAVAUX D’EXTENSION ET REHABILITATION DES ETABLISSEMENTS DE SOINS DE SANTE PRIMAIRES DE LA REGION GUELMIM OUED NOUN :\nCSR2 AOUINT IGHOUMAN RELEVANT DE LA PROVINCE ASSA ZAG",
+"org": "q9t",
+"places": [
+"ASSA-ZAG"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-13",
+"ref_id": "1037796",
+"reference": "34/2026/DRSPSGON"
 },
 {
 "buyer": "CENTRE HOSPITALIER PROVINCIAL DE FKIH BENSALEH",
@@ -69302,22 +68957,6 @@
 {
 "buyer": "PRESIDENCE DE L'UNIVERSITE IBN ZOHR AGADIR",
 "category": "Fournitures",
-"deadline": "2026-10-13T09:00",
-"env_clauses": false,
-"object": "ACHAT DE MATERIEL SCIENTIFIQUE POUR LE COMPTE DE LA FACULTE DES SCIENCES D’AGADIR 3M-3 (EN CINQ LOTS)\nLOT N°1 : MATERIEL SCIENTIFIQUE TYPE 1\nLOT N°2 : MATERIEL SCIENTIFIQUE TYPE 2\nLOT N°3 : MATERIEL SCIENTIFIQUE TYPE 3\nLOT N°4 : MATERIEL SCIENTIFIQUE TYPE 4\nLOT N°5 : MATERIEL SCIENTIFIQUE TYPE 5",
-"org": "z7x",
-"places": [
-"AGADIR IDA OU TANANE"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-16",
-"ref_id": "1040295",
-"reference": "21MATSCIFSA/2026/PUIZ"
-},
-{
-"buyer": "PRESIDENCE DE L'UNIVERSITE IBN ZOHR AGADIR",
-"category": "Fournitures",
 "deadline": "2026-10-13T10:00",
 "env_clauses": false,
 "object": "ACHAT DE MATERIEL SCIENTIFIQUE POUR LE COMPTE DE LA FACULTE DES SCIENCES AGADIR (TROIS LOTS)\nLOT N°1 : MATERIEL SCIENTIFIQUE TYPE 1\nLOT N°2 : MATERIEL SCIENTIFIQUE TYPE 2\nLOT N°3 : MATERIEL SCIENTIFIQUE TYPE 3",
@@ -71741,6 +71380,23 @@
 "published": "2026-10-12",
 "ref_id": "1048719",
 "reference": "131/FSJPM/2026"
+},
+{
+"buyer": "PRESIDENCE DE L'UNIVERSITE MOULAY ISMAIL MEKNES",
+"category": "Travaux",
+"deadline": "2026-11-05T10:00",
+"env_clauses": false,
+"object": "Travaux de réfection de l’étanchéité des établissements relevant de l’Université Moulay Ismaïl de Meknès",
+"org": "z7x",
+"places": [
+"MAROC",
+"MEKNES"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-13",
+"ref_id": "1048796",
+"reference": "10/ETA/UMI/26"
 },
 {
 "buyer": "COMMUNE SOUK SEBT OULED NEMMA",
