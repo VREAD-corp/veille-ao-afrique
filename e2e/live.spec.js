@@ -14,6 +14,9 @@ async function admin(request, extra = '') {
   return j;
 }
 const c = (j, k) => j.counters[k] || 0;
+// Our runs never count as visits: octave_notrack=1 sends them to the "excluded" counters instead (reason notrack).
+const x = (j, k) => (j.excluded || {})[`${k}|notrack`] || 0;
+test.beforeEach(async ({ page }) => { await page.addInitScript(() => localStorage.setItem('octave_notrack', '1')); });
 
 async function noHorizontalScroll(page) {
   const [sw, cw] = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
@@ -63,11 +66,12 @@ test('filters work and are tracked', async ({ page, request }, info) => {
   await noHorizontalScroll(page);
   await page.screenshot({ path: `${SHOTS}/${info.project.name}-filtres.png`, fullPage: false });
   await page.waitForTimeout(4000);
-  await expect.poll(async () => c(await admin(request), 'filter_use:secteur'), { timeout: 30000, intervals: [3000] })
-    .toBeGreaterThan(c(before, 'filter_use:secteur'));
+  await expect.poll(async () => x(await admin(request), 'filter_use:secteur'), { timeout: 30000, intervals: [3000] })
+    .toBeGreaterThan(x(before, 'filter_use:secteur'));
   const after = await admin(request);
-  expect(c(after, 'view')).toBeGreaterThan(c(before, 'view'));
-  expect(c(after, 'filter_use:region')).toBeGreaterThan(c(before, 'filter_use:region'));
+  expect(x(after, 'view')).toBeGreaterThan(x(before, 'view'));
+  expect(x(after, 'filter_use:region')).toBeGreaterThan(x(before, 'filter_use:region'));
+  expect(c(after, 'filter_use:region'), 'test hits must not count as visits').toBe(c(before, 'filter_use:region'));
 });
 
 test('tender page has summary, official link and JSON-LD', async ({ page }, info) => {
@@ -102,7 +106,7 @@ test('alert form posts to the Sheet, pre-registration is tracked', async ({ page
   expect(after.found, 'row written in the Sheet').toBe(true);
   expect(after.test_rows).toBeGreaterThan(before.test_rows);
   expect(c(after, 'preinscription_signup:test')).toBeGreaterThan(c(before, 'preinscription_signup:test'));
-  await expect.poll(async () => c(await admin(request), 'preinscription_click:pro-79'), { timeout: 30000, intervals: [3000] })
-    .toBeGreaterThan(c(before, 'preinscription_click:pro-79'));
+  await expect.poll(async () => x(await admin(request), 'preinscription_click:pro-79'), { timeout: 30000, intervals: [3000] })
+    .toBeGreaterThan(x(before, 'preinscription_click:pro-79'));
   await page.screenshot({ path: `${SHOTS}/${info.project.name}-alertes-ok.png`, fullPage: false });
 });

@@ -35,7 +35,7 @@ Python 3.12, standard library only at runtime.
 
 ## Backend (Apps Script, `gas/`)
 
-A new standalone project `veille-ao-afrique-gas (READ FRANCE SAS)`, scope `spreadsheets` only, its own spreadsheet created on first use. Actions: `track` (cookieless daily counters, same pattern as octave-checkout `Track.js`), `signup` (interest form and pre-registration, consent text stored), `unsubscribe`, `admin` (token in the git-ignored `gas/src/Secret.js`).
+A new standalone project `veille-ao-afrique-gas (READ FRANCE SAS)`, scope `spreadsheets` only, its own spreadsheet created on first use. Actions: `track` (cookieless daily counters, same pattern as octave-checkout `Track.js`; hits from crawlers, `navigator.webdriver`, headless browsers and our tests go to a separate `Exclus` tab by reason, prerendered pages count only once opened), `stats` (token: one day's counted vs excluded views and all counter rows), `signup` (interest form and pre-registration, consent text stored), `unsubscribe`, `admin` (token in the git-ignored `gas/src/Secret.js`).
 
 ```bash
 cd gas && ~/.local/share/octave-clasp/node_modules/.bin/clasp push --force
@@ -48,7 +48,7 @@ cd gas && ~/.local/share/octave-clasp/node_modules/.bin/clasp push --force
 
 ## Tests
 
-`tests/` unit tests on trimmed fixtures. `e2e/` Playwright checks on the live site (390 px and 1440 px): fresh data, filters, form posting to the Sheet, tracking counters.
+`tests/` unit tests on trimmed fixtures. `e2e/` Playwright checks on the live site (390 px and 1440 px): fresh data, filters, form posting to the Sheet, tracking counters. They set `octave_notrack=1` (query or localStorage) so their hits land in the excluded counters, never in visits. `tests/mesure_check.mjs` checks the snippet's bot, webdriver, prerender and opt-out rules under Node.
 
 ## Limits
 
