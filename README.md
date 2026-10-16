@@ -2,8 +2,8 @@
 
 Open public tenders in Morocco and French-language World Bank notices for francophone Africa, refreshed twice a day and published as a static French site with filters, one page per tender, a rule-based summary (no LLM), an e-mail alerts interest form and a paid-tier fake door.
 
-**Site:** https://outils.vread.fr/veille-ao-afrique/
-A service of READ FRANCE SAS (SIREN 988 741 773, Paris). Venture AF-XX-04 of Octave's global portfolio (`VREAD-corp/octave-global-ventures`). Independent from the Vread app.
+**Site:** https://ao-afrique.jalonel.com/ (since 2026-10-16, served at the root of its Jalonel subdomain; ancienne adresse : https://outils.vread.fr/veille-ao-afrique/, which GitHub Pages redirects here)
+A service of READ FRANCE SAS (SIREN 988 741 773, Paris), under the brand Jalonel (« Jalonel est une marque de READ FRANCE SAS. », footer « Une marque Jalonel » → https://jalonel.com/, JSON-LD publisher Jalonel). Venture AF-XX-04 of Octave's global portfolio (`VREAD-corp/octave-global-ventures`). Independent from the Vread app.
 
 ## Sources and legal basis
 
@@ -32,7 +32,7 @@ Python 3.12, standard library only at runtime.
 - `/secteurs/<slug>/` (13), `/regions/<slug>/` (12), `/afrique-francophone/` (World Bank).
 - `/alertes/` interest form + « Pré-inscription, sans paiement » for two planned tiers (Essentiel 39 € and Pro 79 € for 3 months, marked « bientôt disponible »). No payment code.
 - `/licence.html` « Conditions de réutilisation des données » (law 31-13 art. 6 for the Moroccan notices, CC BY 4.0 for the World Bank ones), target of the `Dataset` JSON-LD `license` property.
-- `/methode/`, `/mentions-legales/`, `/confidentialite/`, `sitemap.xml`, `feed.xml`, IndexNow key file.
+- `/methode/`, `/mentions-legales/`, `/confidentialite/`, `sitemap.xml`, `robots.txt`, `feed.xml`, `CNAME` (`ao-afrique.jalonel.com`), IndexNow key file (`5be19f56d46ca3d2553bee28ebfa8edd.txt`, the key shared by the Jalonel sites).
 
 ## Backend (Apps Script, `gas/`)
 

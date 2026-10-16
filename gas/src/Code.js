@@ -25,7 +25,7 @@
  */
 
 var SITE_ = 'veille-ao-afrique';
-var OWN_HOSTS_ = ['outils.vread.fr', 'vread-corp.github.io'];
+var OWN_HOSTS_ = ['ao-afrique.jalonel.com', 'outils.vread.fr', 'vread-corp.github.io'];
 var STATS_HEADER_ = ['date', 'site', 'page', 'event', 'detail', 'source', 'medium', 'campaign', 'count', 'mobile', 'desktop', 'updated_at'];
 var STATS_KEYS_ = 8;
 var EXCL_HEADER_ = ['date', 'site', 'page', 'event', 'detail', 'reason', 'count', 'mobile', 'desktop', 'updated_at'];
@@ -133,7 +133,7 @@ function json_(obj) { return ContentService.createTextOutput(JSON.stringify(obj)
 function html_(text) {
   return HtmlService.createHtmlOutput('<!doctype html><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
     '<div style="font:16px/1.5 system-ui,sans-serif;max-width:36rem;margin:3rem auto;padding:0 1rem">' + text +
-    '<p><a href="https://outils.vread.fr/veille-ao-afrique/">Veille AO Afrique</a></p></div>').setTitle('Veille AO Afrique');
+    '<p><a href="https://ao-afrique.jalonel.com/">Veille AO Afrique</a></p></div>').setTitle('Veille AO Afrique');
 }
 
 function userError_(code, message) { var e = new Error(message); e.userError = true; e.code = code; return e; }

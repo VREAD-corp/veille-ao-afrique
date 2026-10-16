@@ -162,7 +162,7 @@ def cmd_indexnow(args) -> int:
     urls += [base + "ao/" + n["slug"] + "/" for n in load(DATA / "notices.json", [])
              if (n.get("first_seen") or "") >= since and not n.get("delisted")]
     urls = urls[:10000]
-    body = json.dumps({"host": "outils.vread.fr", "key": site.INDEXNOW_KEY,
+    body = json.dumps({"host": base.split("/")[2], "key": site.INDEXNOW_KEY,
                        "keyLocation": base + site.INDEXNOW_KEY + ".txt", "urlList": urls}).encode()
     req = urllib.request.Request("https://api.indexnow.org/indexnow", data=body, method="POST",
                                  headers={"Content-Type": "application/json; charset=utf-8"})
@@ -181,10 +181,10 @@ def main(argv=None) -> int:
     u.add_argument("--detail-minutes", type=float, default=float(os.environ.get("AOA_DETAIL_MINUTES", "25")))
     b = sub.add_parser("build")
     b.add_argument("--out", default="_site")
-    b.add_argument("--base-url", default="https://outils.vread.fr/veille-ao-afrique/")
+    b.add_argument("--base-url", default="https://ao-afrique.jalonel.com/")
     x = sub.add_parser("indexnow")
     x.add_argument("--since-days", type=int, default=1)
-    x.add_argument("--base-url", default="https://outils.vread.fr/veille-ao-afrique/")
+    x.add_argument("--base-url", default="https://ao-afrique.jalonel.com/")
     args = p.parse_args(argv)
     return {"update": cmd_update, "build": cmd_build, "indexnow": cmd_indexnow}[args.cmd](args)
 

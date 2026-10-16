@@ -1,4 +1,4 @@
-// Live e2e checks of https://outils.vread.fr/veille-ao-afrique/ (run: ADMIN_TOKEN=... npx playwright test)
+// Live e2e checks of https://ao-afrique.jalonel.com/ (run: ADMIN_TOKEN=... npx playwright test)
 import { test, expect } from '@playwright/test';
 import fs from 'node:fs';
 

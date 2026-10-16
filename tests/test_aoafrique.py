@@ -79,7 +79,7 @@ def test_build_site(tmp_path):
     rows = pmmp.parse_results((FX / "pmmp_list.html").read_text(encoding="utf-8"))
     notices = [model.from_pmmp(r, None) for r in rows]
     meta = {"updated": "2026-10-13T05:40+00:00", "sources": {"PMMP": {"ok": True, "at": "2026-10-13T05:40+00:00", "open": 3}}}
-    site = Site(tmp_path, notices, meta, "https://outils.vread.fr/veille-ao-afrique/")
+    site = Site(tmp_path, notices, meta, "https://ao-afrique.jalonel.com/")
     site.now = datetime(2026, 10, 13, 8, 0)
     site.today = site.now.date()
     site.open = notices
@@ -95,6 +95,16 @@ def test_build_site(tmp_path):
     assert "Pré-inscription, sans paiement" in alerts and "bientôt disponible" in alerts and "09-08" in alerts
     lic = (tmp_path / "licence.html").read_text(encoding="utf-8")
     assert "Conditions de réutilisation des données" in lic and "31-13" in lic and "CC BY 4.0" in lic
-    assert "https://outils.vread.fr/veille-ao-afrique/licence.html</loc>" in (tmp_path / "sitemap.xml").read_text()
+    assert "https://ao-afrique.jalonel.com/licence.html</loc>" in (tmp_path / "sitemap.xml").read_text()
     ds = [x for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>', idx) if '"Dataset"' in x]
-    assert json.loads(ds[0])["license"] == "https://outils.vread.fr/veille-ao-afrique/licence.html"
+    assert json.loads(ds[0])["license"] == "https://ao-afrique.jalonel.com/licence.html"
+    assert (tmp_path / "CNAME").read_text() == "ao-afrique.jalonel.com\n"
+    assert (tmp_path / "5be19f56d46ca3d2553bee28ebfa8edd.txt").read_text() == "5be19f56d46ca3d2553bee28ebfa8edd"
+    assert "Sitemap: https://ao-afrique.jalonel.com/sitemap.xml" in (tmp_path / "robots.txt").read_text()
+    assert '<link rel="canonical" href="https://ao-afrique.jalonel.com/">' in idx and 'href="/alertes/"' in idx
+    assert "/veille-ao-afrique/" not in idx and "outils.vread.fr/veille" not in idx
+    assert '<a href="https://jalonel.com/">Une marque Jalonel</a>' in idx
+    ws = [json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>', idx) if '"WebSite"' in x]
+    assert ws[0]["publisher"]["name"] == "Jalonel" and ws[0]["publisher"]["parentOrganization"]["name"] == "READ FRANCE SAS"
+    legal = (tmp_path / "mentions-legales" / "index.html").read_text(encoding="utf-8")
+    assert "Jalonel est une marque de READ FRANCE SAS." in legal and "988 741 773" in legal

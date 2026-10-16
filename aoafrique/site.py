@@ -16,11 +16,15 @@ from . import model
 from .model import SECTOR_LABEL, fmt_date, fmt_mad, fmt_short, place_label
 
 BRAND = "Veille AO Afrique"
-PATH = "/veille-ao-afrique/"
+# Served at the root of its own Jalonel subdomain since 2026-10-16 (was https://outils.vread.fr/veille-ao-afrique/).
+ORIGIN = "https://ao-afrique.jalonel.com"
+HOST = ORIGIN.split("//")[1]
+PATH = "/"
 REPO_URL = "https://github.com/VREAD-corp/veille-ao-afrique"
 CONTACT = "octave@vread.fr"
 GAS_URL = "https://script.google.com/macros/s/AKfycbyUsVoWWzL7xA18-O-GkEto4ivugNO-8v4W0l1pugf1HmLHUSKG7uOhEcx3FT2RgfKpWA/exec"
-INDEXNOW_KEY = "3f9c2b7e8a4d41c6b0e5a17d9c62f4e8"
+# IndexNow key shared by the Jalonel sites, served at the site root.
+INDEXNOW_KEY = "5be19f56d46ca3d2553bee28ebfa8edd"
 GOOGLE_VERIFICATION_FILE = "google4f1f7b7ea70e5312.html"
 # Reuse terms of the data (target of the Dataset "license" property).
 LICENCE_PAGE = "licence.html"
@@ -49,6 +53,12 @@ PLANS = [
     ("pro-79", "Pro", 79, "Tout l'Essentiel, plus les avis Banque mondiale des pays d'Afrique francophone, un résumé "
      "en anglais pour vos partenaires et l'export CSV de vos sélections."),
 ]
+# Publisher: the Jalonel brand (hub https://jalonel.com/), operated by READ FRANCE SAS.
+PUBLISHER = {"@type": "Organization", "@id": "https://jalonel.com/#org", "name": "Jalonel", "url": "https://jalonel.com/",
+             "parentOrganization": {"@type": "Organization", "name": "READ FRANCE SAS", "identifier": "SIREN 988741773",
+                                    "email": CONTACT,
+                                    "address": {"@type": "PostalAddress", "streetAddress": "11 rue Rouvet",
+                                                "postalCode": "75019", "addressLocality": "Paris", "addressCountry": "FR"}}}
 CONSENT_TEXT = ("J'accepte que READ FRANCE SAS conserve mon adresse e-mail et les critères choisis pour me prévenir "
                 "de l'ouverture de Veille AO Afrique et m'envoyer les alertes demandées. Je peux retirer mon accord "
                 "à tout moment en écrivant à octave@vread.fr ou par le lien présent dans chaque e-mail.")
@@ -135,7 +145,7 @@ class Site:
 <link rel="alternate" type="application/atom+xml" title="{BRAND} : nouveaux appels d'offres" href="{link('feed.xml')}">
 <link rel="stylesheet" href="{link('static/style.css')}">
 <script src="{link('static/mesure.js')}?v={MESURE_V}" defer></script>
-<script src="{link('static/cro.js')}?v={CRO_V}" data-site="veille-ao-afrique" data-api="{GAS_URL}" data-hosts="outils.vread.fr" data-cta="{e(CRO_CTA)}" defer></script>
+<script src="{link('static/cro.js')}?v={CRO_V}" data-site="veille-ao-afrique" data-api="{GAS_URL}" data-hosts="{HOST} outils.vread.fr" data-cta="{e(CRO_CTA)}" defer></script>
 {script_tags}
 {ld}
 </head>
@@ -156,8 +166,8 @@ class Site:
 <footer class="foot">
 <div class="wrap foot-in">
 <div>
-<p class="foot-brand">{BRAND}</p>
-<p>Un service de {SELLER['name']} (SIREN {SELLER['siren']}), {SELLER['address']}.<br>Contact : <a href="mailto:{CONTACT}">{CONTACT}</a></p>
+<p class="foot-brand">{BRAND} · <a href="https://jalonel.com/">Une marque Jalonel</a></p>
+<p>Un service de {SELLER['name']} (SIREN {SELLER['siren']}), {SELLER['address']}. Jalonel est une marque de {SELLER['name']}.<br>Contact : <a href="mailto:{CONTACT}">{CONTACT}</a></p>
 <p class="small">Données : <a href="https://www.marchespublics.gov.ma/" rel="noopener">Portail marocain des marchés publics</a> (Trésorerie Générale du Royaume) et <a href="https://datacatalog.worldbank.org/search/dataset/0037776/procurement-notice" rel="noopener">avis de passation de marchés de la Banque mondiale</a> (CC BY 4.0). Service indépendant, sans lien avec ces organismes. L'avis officiel fait foi.</p>
 </div>
 <nav aria-label="Liens de bas de page">
@@ -287,9 +297,7 @@ class Site:
 </section>
 """
         ld = [{"@context": "https://schema.org", "@type": "WebSite", "name": BRAND, "url": self.base, "inLanguage": "fr",
-               "publisher": {"@type": "Organization", "name": SELLER["name"], "email": CONTACT,
-                             "address": {"@type": "PostalAddress", "streetAddress": "11 rue Rouvet",
-                                         "postalCode": "75019", "addressLocality": "Paris", "addressCountry": "FR"}}},
+               "publisher": PUBLISHER},
               {"@context": "https://schema.org", "@type": "Dataset", "name": "Appels d'offres publics en cours au Maroc et en Afrique francophone",
                "description": "Consultations ouvertes du portail marocain des marchés publics et avis en français de la Banque mondiale, normalisés deux fois par jour.",
                "url": self.base, "inLanguage": "fr", "dateModified": self.updated_paris.isoformat(timespec="minutes"),
@@ -541,6 +549,7 @@ class Site:
         legal = f"""<h1>Mentions légales</h1>
 <h2>Éditeur</h2>
 <p>{p['name']}, {p['form']} au capital de {p['capital']}, {p['rcs']}, siège : {p['address']}. Contact : <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
+<p>Jalonel est une marque de {p['name']}.</p>
 <p>Directeur de la publication : {p['president']}, président.</p>
 <p>Le site est écrit et tenu à jour par Octave, l'assistant IA de READ FRANCE, sous la responsabilité éditoriale du directeur de la publication. Les fiches d'appels d'offres sont produites automatiquement à partir des sources décrites sur la page <a href="{link('methode/')}">Méthode et sources</a>.</p>
 <h2>Hébergement</h2>
@@ -612,6 +621,8 @@ class Site:
             f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n',
             encoding="utf-8")
         (self.out / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
+        (self.out / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {self.base}sitemap.xml\n", encoding="utf-8")
+        (self.out / "CNAME").write_text(HOST + "\n", encoding="utf-8")
         if GOOGLE_VERIFICATION_FILE:
             (self.out / GOOGLE_VERIFICATION_FILE).write_text(f"google-site-verification: {GOOGLE_VERIFICATION_FILE}",
                                                              encoding="utf-8")

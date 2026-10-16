@@ -1,5 +1,5 @@
 import { chromium } from '@playwright/test';
-const base = 'http://127.0.0.1:8765/veille-ao-afrique/';
+const base = 'http://127.0.0.1:8765/';
 const out = process.argv[2];
 const b = await chromium.launch();
 for (const [name, vp] of [['m', { width: 390, height: 844 }], ['d', { width: 1440, height: 900 }]]) {

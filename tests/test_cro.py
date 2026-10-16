@@ -39,9 +39,10 @@ const { route_, croPageOf_, CRO_SITES_, CRO_EXPERIMENTS_ } = ctx.R;
 const body = { action: 'track', kind: 'cro', v: 2, site: 'nope', page: '/', e: [['pv', '', '']] };
 console.log(JSON.stringify({
   sites: CRO_SITES_, xp: CRO_EXPERIMENTS_,
-  tender: croPageOf_('veille-ao-afrique', '/veille-ao-afrique/ao/ma-h5j-1005224-x/'),
-  home: croPageOf_('veille-ao-afrique', '/veille-ao-afrique/'),
-  alerts: croPageOf_('veille-ao-afrique', '/veille-ao-afrique/alertes/index.html'),
+  tender: croPageOf_('veille-ao-afrique', '/ao/ma-h5j-1005224-x/'),
+  home: croPageOf_('veille-ao-afrique', '/'),
+  alerts: croPageOf_('veille-ao-afrique', '/alertes/index.html'),
+  legacy: croPageOf_('veille-ao-afrique', '/veille-ao-afrique/ao/ma-h5j-1005224-x/'),
   bad: route_({}, body).s,
   init_get: route_({ action: 'cro_init', key: 'x' }, null).s,
 }));
@@ -54,6 +55,7 @@ def test_backend_wiring():
     assert r["sites"] == ["veille-ao-afrique"] and r["xp"] == {}
     assert r["tender"] == "/ao/*", "tender pages collapsed like the Stats tab"
     assert r["home"] == "/" and r["alerts"] == "/alertes/"
+    assert r["legacy"] == "/ao/*", "old /veille-ao-afrique/ paths (cached pages) still map to the same rows"
     assert json.loads(r["bad"]) == {"ok": False, "error": "bad_request"}
     assert json.loads(r["init_get"])["error"] == "method_not_allowed"
 
@@ -67,14 +69,14 @@ def test_every_page_loads_cro_js(tmp_path):
     rows = pmmp.parse_results((TESTS / "fixtures" / "pmmp_list.html").read_text(encoding="utf-8"))
     notices = [model.from_pmmp(r, None) for r in rows]
     meta = {"updated": "2026-10-13T05:40+00:00", "sources": {}}
-    site = Site(tmp_path, notices, meta, "https://outils.vread.fr/veille-ao-afrique/")
+    site = Site(tmp_path, notices, meta, "https://ao-afrique.jalonel.com/")
     site.now = datetime(2026, 10, 13, 8, 0)
     site.today = site.now.date()
     site.open = notices
     site.build_all()
     assert (tmp_path / "static" / "cro.js").read_bytes() == (ROOT / "static" / "cro.js").read_bytes()
-    tag = (f'<script src="/veille-ao-afrique/static/cro.js?v={CRO_V}" data-site="veille-ao-afrique" '
-           f'data-api="{GAS_URL}" data-hosts="outils.vread.fr" data-cta="[data-mesure],#alerte-form [type=submit]" defer>')
+    tag = (f'<script src="/static/cro.js?v={CRO_V}" data-site="veille-ao-afrique" '
+           f'data-api="{GAS_URL}" data-hosts="ao-afrique.jalonel.com outils.vread.fr" data-cta="[data-mesure],#alerte-form [type=submit]" defer>')
     pages = list(tmp_path.rglob("*.html"))
     assert len(pages) > 30 and any(p.name == "404.html" for p in pages)
     for p in pages:
