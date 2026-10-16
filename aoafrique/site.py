@@ -25,6 +25,8 @@ CONTACT = "octave@vread.fr"
 GAS_URL = "https://script.google.com/macros/s/AKfycbyUsVoWWzL7xA18-O-GkEto4ivugNO-8v4W0l1pugf1HmLHUSKG7uOhEcx3FT2RgfKpWA/exec"
 # IndexNow key shared by the Jalonel sites, served at the site root.
 INDEXNOW_KEY = "5be19f56d46ca3d2553bee28ebfa8edd"
+# Older key files stay published (search engines may re-check a key they were given before).
+OLD_INDEXNOW_KEYS = ("3f9c2b7e8a4d41c6b0e5a17d9c62f4e8",)
 GOOGLE_VERIFICATION_FILE = "google4f1f7b7ea70e5312.html"
 # Reuse terms of the data (target of the Dataset "license" property).
 LICENCE_PAGE = "licence.html"
@@ -55,10 +57,7 @@ PLANS = [
 ]
 # Publisher: the Jalonel brand (hub https://jalonel.com/), operated by READ FRANCE SAS.
 PUBLISHER = {"@type": "Organization", "@id": "https://jalonel.com/#org", "name": "Jalonel", "url": "https://jalonel.com/",
-             "parentOrganization": {"@type": "Organization", "name": "READ FRANCE SAS", "identifier": "SIREN 988741773",
-                                    "email": CONTACT,
-                                    "address": {"@type": "PostalAddress", "streetAddress": "11 rue Rouvet",
-                                                "postalCode": "75019", "addressLocality": "Paris", "addressCountry": "FR"}}}
+             "parentOrganization": {"@type": "Organization", "name": "READ FRANCE SAS", "identifier": "SIREN 988741773"}}
 CONSENT_TEXT = ("J'accepte que READ FRANCE SAS conserve mon adresse e-mail et les critères choisis pour me prévenir "
                 "de l'ouverture de Veille AO Afrique et m'envoyer les alertes demandées. Je peux retirer mon accord "
                 "à tout moment en écrivant à octave@vread.fr ou par le lien présent dans chaque e-mail.")
@@ -167,7 +166,7 @@ class Site:
 <div class="wrap foot-in">
 <div>
 <p class="foot-brand">{BRAND} · <a href="https://jalonel.com/">Une marque Jalonel</a></p>
-<p>Un service de {SELLER['name']} (SIREN {SELLER['siren']}), {SELLER['address']}. Jalonel est une marque de {SELLER['name']}.<br>Contact : <a href="mailto:{CONTACT}">{CONTACT}</a></p>
+<p>Éditeur : {SELLER['name']} (SIREN {SELLER['siren']}), {SELLER['address']}.<br>Contact : <a href="mailto:{CONTACT}">{CONTACT}</a></p>
 <p class="small">Données : <a href="https://www.marchespublics.gov.ma/" rel="noopener">Portail marocain des marchés publics</a> (Trésorerie Générale du Royaume) et <a href="https://datacatalog.worldbank.org/search/dataset/0037776/procurement-notice" rel="noopener">avis de passation de marchés de la Banque mondiale</a> (CC BY 4.0). Service indépendant, sans lien avec ces organismes. L'avis officiel fait foi.</p>
 </div>
 <nav aria-label="Liens de bas de page">
@@ -304,7 +303,7 @@ class Site:
                "spatialCoverage": "Maroc, Afrique francophone",
                "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": self.base + "data/ouverts.json"}],
                "license": self.base + LICENCE_PAGE,
-               "creator": {"@type": "Organization", "name": SELLER["name"]}}]
+               "creator": PUBLISHER}]
         self.write("", self.page("", f"Appels d'offres Maroc en cours : {nb(s['pmmp'])} consultations | {BRAND}",
                                  f"{nb(s['pmmp'])} appels d'offres publics ouverts au Maroc, mis à jour deux fois par jour, avec filtres par secteur, région, acheteur et date limite, et un résumé en français de chaque avis.",
                                  body, jsonld=ld, scripts=("app.js",)))
@@ -610,7 +609,7 @@ class Site:
         feed = f"""<?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>{BRAND} : nouveaux appels d'offres</title>
 <link href="{e(self.base)}"/><link rel="self" href="{e(self.base)}feed.xml"/><id>{e(self.base)}</id>
-<updated>{self.updated_paris.isoformat(timespec='seconds')}</updated><author><name>{SELLER['name']}</name></author>
+<updated>{self.updated_paris.isoformat(timespec='seconds')}</updated><author><name>Jalonel</name><uri>https://jalonel.com/</uri></author>
 {''.join(ents)}</feed>
 """
         (self.out / "feed.xml").write_text(feed, encoding="utf-8")
@@ -620,7 +619,8 @@ class Site:
         (self.out / "sitemap.xml").write_text(
             f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n',
             encoding="utf-8")
-        (self.out / f"{INDEXNOW_KEY}.txt").write_text(INDEXNOW_KEY, encoding="utf-8")
+        for key in (INDEXNOW_KEY, *OLD_INDEXNOW_KEYS):
+            (self.out / f"{key}.txt").write_text(key, encoding="utf-8")
         (self.out / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {self.base}sitemap.xml\n", encoding="utf-8")
         (self.out / "CNAME").write_text(HOST + "\n", encoding="utf-8")
         if GOOGLE_VERIFICATION_FILE:

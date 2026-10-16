@@ -100,6 +100,7 @@ def test_build_site(tmp_path):
     assert json.loads(ds[0])["license"] == "https://ao-afrique.jalonel.com/licence.html"
     assert (tmp_path / "CNAME").read_text() == "ao-afrique.jalonel.com\n"
     assert (tmp_path / "5be19f56d46ca3d2553bee28ebfa8edd.txt").read_text() == "5be19f56d46ca3d2553bee28ebfa8edd"
+    assert (tmp_path / "3f9c2b7e8a4d41c6b0e5a17d9c62f4e8.txt").read_text() == "3f9c2b7e8a4d41c6b0e5a17d9c62f4e8"
     assert "Sitemap: https://ao-afrique.jalonel.com/sitemap.xml" in (tmp_path / "robots.txt").read_text()
     assert '<link rel="canonical" href="https://ao-afrique.jalonel.com/">' in idx and 'href="/alertes/"' in idx
     assert "/veille-ao-afrique/" not in idx and "outils.vread.fr/veille" not in idx
