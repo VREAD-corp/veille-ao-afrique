@@ -11292,6 +11292,22 @@
 "reference": "45/2026"
 },
 {
+"buyer": "Collectivité territoriale de ARBAA AIT AHMED",
+"category": "Fournitures",
+"deadline": "2026-11-12T11:00",
+"env_clauses": true,
+"object": "l’achat de matériel informatique destinés aux services de la commune Arbaa Ait Ahmed , province de Tiznit .",
+"org": "f9f",
+"places": [
+"TIZNIT"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-16",
+"ref_id": "1037249",
+"reference": "04/2026/BC"
+},
+{
 "buyer": "Commune urbaine de DCHEIRA ELJIHADIA",
 "category": "Travaux",
 "deadline": "2026-11-05T10:00",
@@ -12727,6 +12743,22 @@
 "published": "2026-10-16",
 "ref_id": "1050470",
 "reference": "09/2026/BC"
+},
+{
+"buyer": "C.T. TAMALOUKT",
+"category": "Services",
+"deadline": "2026-11-02T11:00",
+"env_clauses": false,
+"object": "ELABORATION DES ETUDES TECHNIQUES DE PROTECTION CONTRE INONDATION AU PROFIT DE LA CT TAMALOUKT PROVINCE DE TAROUDANT.",
+"org": "f9f",
+"places": [
+"TAROUDANNT"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"procedure_code": "AOS",
+"published": "2026-10-16",
+"ref_id": "1050766",
+"reference": "09/2026"
 },
 {
 "buyer": "L'IMPRIMERIE OFFICIELLE",
@@ -25394,6 +25426,22 @@
 {
 "buyer": "SOCIETE REGIONALE MULTISERVICES RABAT - SALE - KENITRA SA",
 "category": "Travaux",
+"deadline": "2026-11-09T10:00",
+"env_clauses": false,
+"object": "Extension et renforcement du réseau électrique au niveau de 5 communes territoriales relevant de la province Sidi Kacem",
+"org": "g3h",
+"places": [
+"SIDI KACEM"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-16",
+"ref_id": "1050325",
+"reference": "E/362/26"
+},
+{
+"buyer": "SOCIETE REGIONALE MULTISERVICES RABAT - SALE - KENITRA SA",
+"category": "Travaux",
 "deadline": "2026-11-09T11:00",
 "env_clauses": false,
 "object": "Remplacement et remise en état des supports HTA de la Direction Provinciale Sidi Kacem",
@@ -25455,6 +25503,22 @@
 "published": "2026-10-16",
 "ref_id": "1050358",
 "reference": "188/2026/EL"
+},
+{
+"buyer": "SOCIETE REGIONALE MULTISERVICES RABAT - SALE - KENITRA SA",
+"category": "Fournitures",
+"deadline": "2026-11-09T13:00",
+"env_clauses": false,
+"object": "Acquisition des localisateurs de défaut de câble souterrain BT (Localisateurs, traceurs, identificateurs, et accessoires)",
+"org": "g3h",
+"places": [
+"SIDI KACEM"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-16",
+"ref_id": "1050359",
+"reference": "E/365/26"
 },
 {
 "buyer": "SOCIETE REGIONALE MULTISERVICES CASABLANCA - SETTAT SA",
@@ -25766,6 +25830,22 @@
 "published": "2026-10-16",
 "ref_id": "1050749",
 "reference": "76/2026/S2A"
+},
+{
+"buyer": "SOCIETE DE DEVELOPPEMENT REGIONAL - REGION AMENAGEMENT MARRAKECH SA",
+"category": "Travaux",
+"deadline": "2026-11-09T11:00",
+"env_clauses": false,
+"object": "TRAVAUX D’ELARGISSEMENT ET MISE A NIVEAU DE LA ROUTE D'OURIKA (RP 2017) – TRAVAUX DE VOIRIE, ASSAINISSEMENT ET GENIE CIVIL AU NIVEAU DE LA COMMUNE DE TASSOULTANTE PREFECTURE DE MARRAKECH – TRONÇON 3",
+"org": "g3h",
+"places": [
+"MARRAKECH"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-16",
+"ref_id": "1050774",
+"reference": "10/2026/SDRRAM"
 },
 {
 "buyer": "CHEF DE LA SURETE PROVINCIAL DE KENITRA",
@@ -29139,6 +29219,22 @@
 "reference": "04/2026"
 },
 {
+"buyer": "Collectivité territoriale de OULED H'CINE",
+"category": "Fournitures",
+"deadline": "2026-10-28T11:00",
+"env_clauses": false,
+"object": "Fourniture et pose des équipements pour l’éclairage public à la commune Ouled H’cine, province de Sidi Slimane- Lot Unique-",
+"org": "i1t",
+"places": [
+"SIDI SLIMANE"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"procedure_code": "AOS",
+"published": "2026-10-16",
+"ref_id": "1050773",
+"reference": "05/2026/COH"
+},
+{
 "buyer": "DOMAINE DE LA REFORME DE L'ADMINISTRATION ET DE LA FONCTION PUBLIQUE",
 "category": "Services",
 "deadline": "2026-11-02T10:00",
@@ -31940,6 +32036,38 @@
 "reference": "08/2026"
 },
 {
+"buyer": "Commune rurale de S. AISSA BEN SLIMANE",
+"category": "Services",
+"deadline": "2026-11-09T10:00",
+"env_clauses": false,
+"object": "location souk hebdomadaire au titre 2027",
+"org": "j0w",
+"places": [
+"EL KELAA DES SRAGHNA"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-16",
+"ref_id": "1050329",
+"reference": "3/2026"
+},
+{
+"buyer": "Commune rurale de S. AISSA BEN SLIMANE",
+"category": "Services",
+"deadline": "2026-11-09T10:00",
+"env_clauses": false,
+"object": "Location abattoir au souk hebdomadaire au titre 2027",
+"org": "j0w",
+"places": [
+"EL KELAA DES SRAGHNA"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-16",
+"ref_id": "1050374",
+"reference": "4/2026"
+},
+{
 "buyer": "Commune urbaine de MECHOUAR-KESBA",
 "category": "Fournitures",
 "deadline": "2026-11-19T11:00",
@@ -31954,6 +32082,22 @@
 "published": "2026-10-16",
 "ref_id": "1050390",
 "reference": "02/2026/DPUECMK"
+},
+{
+"buyer": "Commune rurale de S. AISSA BEN SLIMANE",
+"category": "Services",
+"deadline": "2026-11-09T10:00",
+"env_clauses": false,
+"object": "Location du souk d'olive au titre 2026",
+"org": "j0w",
+"places": [
+"EL KELAA DES SRAGHNA"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-16",
+"ref_id": "1050392",
+"reference": "5/2026"
 },
 {
 "buyer": "Commune SID ZOUINE",
@@ -48573,6 +48717,38 @@
 "reference": "11/2026"
 },
 {
+"buyer": "Commune LABKHATI",
+"category": "Travaux",
+"deadline": "2026-10-27T11:00",
+"env_clauses": false,
+"object": "CONSTRUCTION DE LA PARTIE AU MUR DE CLOTURE POUR LA CEMETIERE DU DOUAR OULED BOUCHAIB A LA COMMUNE LABKHATI -PROVINCE DE SAFI.",
+"org": "p1v",
+"places": [
+"SAFI"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"procedure_code": "AOS",
+"published": "2026-10-16",
+"ref_id": "1050770",
+"reference": "07/2026"
+},
+{
+"buyer": "Commune LABKHATI",
+"category": "Travaux",
+"deadline": "2026-10-27T11:00",
+"env_clauses": false,
+"object": "Travaux de construction d’une partie du mur de clôture pour la cimetière au douar ouled farkou au niveau de la commune labkhati –province Safi .",
+"org": "p1v",
+"places": [
+"SAFI"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"procedure_code": "AOS",
+"published": "2026-10-16",
+"ref_id": "1050772",
+"reference": "08/2026"
+},
+{
 "buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE TINGHIR",
 "category": "Services",
 "deadline": "2026-10-19T10:00",
@@ -55827,6 +56003,54 @@
 "reference": "26/2026/AREFDT"
 },
 {
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE MIDELT",
+"category": "Travaux",
+"deadline": "2026-10-28T10:00",
+"env_clauses": false,
+"object": "Travaux de construction de Dix (10) blocs sanitaires préscolaire, relevant de la direction provinciale de L’AREF DT de Midelt",
+"org": "p8x",
+"places": [
+"MIDELT"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"procedure_code": "AOS",
+"published": "2026-10-16",
+"ref_id": "1050768",
+"reference": "85/2026/MID"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE MIDELT",
+"category": "Travaux",
+"deadline": "2026-10-28T10:30",
+"env_clauses": false,
+"object": "Travaux de construction de deux (02) salles scientifiques à l’école communautaire ait yahya à la CT ait yahya relevant de la direction provinciale de L’AREF DT de Midelt",
+"org": "p8x",
+"places": [
+"MIDELT"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"procedure_code": "AOS",
+"published": "2026-10-16",
+"ref_id": "1050769",
+"reference": "86/2026/MID"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE MIDELT",
+"category": "Travaux",
+"deadline": "2026-10-28T11:00",
+"env_clauses": false,
+"object": "Travaux de construction de six (06) salles de l’enseignement primaire relevant de la direction provinciale de l'AREF de Midelt",
+"org": "p8x",
+"places": [
+"MIDELT"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"procedure_code": "AOS",
+"published": "2026-10-16",
+"ref_id": "1050771",
+"reference": "87/2026/MID"
+},
+{
 "buyer": "Commune urbaine de MEKNES",
 "category": "Travaux",
 "deadline": "2026-10-22T10:00",
@@ -56809,6 +57033,22 @@
 "published": "2026-10-12",
 "ref_id": "1048060",
 "reference": "04/2026/ctg"
+},
+{
+"buyer": "Commune rurale de GUERS TIAALLALINE",
+"category": "Fournitures",
+"deadline": "2026-10-29T11:00",
+"env_clauses": true,
+"object": ": ACQUISITION D’UN VEHICULE DE SERVICE « PICK-UP DOUBLE CABINE 4X4 » AU PROFIT DE LA COMMUNE GUERS TIALLALINE PROVINCE DE MIDELT.",
+"org": "q0x",
+"places": [
+"MIDELT"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"procedure_code": "AOS",
+"published": "2026-10-16",
+"ref_id": "1048453",
+"reference": "09/2026/CGT"
 },
 {
 "buyer": "Commune de AIT IZDEG",
@@ -66001,6 +66241,22 @@
 "reference": "176/2026/GSTCS"
 },
 {
+"buyer": "AGENCE MAROCAINE DU MEDICAMENT ET DES PRODUITS DE SANTE",
+"category": "Fournitures",
+"deadline": "2026-10-28T10:30",
+"env_clauses": false,
+"object": "ACHAT DE MOBILIER DE BUREAU AU PROFIT DE L'AGENCE MAROCAINE DU MEDICAMENT ET DES PRODUITS DE SANTE",
+"org": "q9t",
+"places": [
+"RABAT"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"procedure_code": "AOS",
+"published": "2026-10-16",
+"ref_id": "1050311",
+"reference": "36/2026/AMMPS"
+},
+{
 "buyer": "CENTRE HOSPITALIER UNIVERSITAIRE MOHAMMED VI - MARRAKECH",
 "category": "Fournitures",
 "deadline": "2026-11-10T10:00",
@@ -66015,6 +66271,22 @@
 "published": "2026-10-16",
 "ref_id": "1050312",
 "reference": "47/2026/AOOI/CHM6M"
+},
+{
+"buyer": "AGENCE MAROCAINE DU MEDICAMENT ET DES PRODUITS DE SANTE",
+"category": "Services",
+"deadline": "2026-11-10T10:00",
+"env_clauses": false,
+"object": "PRESTATIONS DE SERVICES D’ACCUEIL ET D’ASSISTANCE DES USAGERS AU PROFIT DE L’AGENCE MAROCAINE DU MEDICAMENT ET DES PRODUITS DE SANTE",
+"org": "q9t",
+"places": [
+"RABAT"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-16",
+"ref_id": "1050366",
+"reference": "35/2026/AMMPS"
 },
 {
 "buyer": "DISTRICT SANITAIRE CHEFCHAOUEN",
@@ -69000,6 +69272,22 @@
 "published": "2026-09-29",
 "ref_id": "1044018",
 "reference": "14/2026"
+},
+{
+"buyer": "DELEGUE DES PECHES MARITIMES D'ESSAOUIRA",
+"category": "Travaux",
+"deadline": "2026-11-09T10:00",
+"env_clauses": false,
+"object": "Travaux d’extension du Point de Débarquement Aménagé (PDA) de Tafedna.",
+"org": "u6i",
+"places": [
+"ESSAOUIRA"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-16",
+"ref_id": "1050236",
+"reference": "04/DPMEssaouira/BG/2026"
 },
 {
 "buyer": "FONDATION MOHAMMED VI POUR LA PROMOTION DES OEUVRES SOCIALES DE L'EDUCATION-FORMATION",
