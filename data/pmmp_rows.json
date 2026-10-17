@@ -2756,6 +2756,22 @@
 "reference": "03/2026"
 },
 {
+"buyer": "Commune rurale de OURTZARH",
+"category": "Travaux",
+"deadline": "2026-11-09T12:00",
+"env_clauses": false,
+"object": "Branchement des foyers à la Commune d’OURTZARH au réseau public d’électricité (basse tension).",
+"org": "d0q",
+"places": [
+"TAOUNATE"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050834",
+"reference": "05/2026"
+},
+{
 "buyer": "MINISTERE DES AFFAIRES ETRANGERES, DE LA COOPERATION AFRICAINE ET DES MAROCAINS RESIDANT A L'ETRANGER",
 "category": "Services",
 "deadline": "2026-10-29T11:00",
@@ -2855,6 +2871,22 @@
 "published": "2026-10-15",
 "ref_id": "1050216",
 "reference": "04.CARDT.2026"
+},
+{
+"buyer": "CHAMBRE DE L'ARTISANAT DE LA REGION DRAA TAFILALET",
+"category": "Services",
+"deadline": "2026-10-28T13:00",
+"env_clauses": false,
+"object": "Organisation de la foire de l’artisanat à l’occasion du festival de tapis Ouazguiti à Taznakhte, Province Ouarzazate. (en lot unique)",
+"org": "d2q",
+"places": [
+"OUARZAZATE"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"procedure_code": "AOS",
+"published": "2026-10-17",
+"ref_id": "1050767",
+"reference": "05.CARDT.2026"
 },
 {
 "buyer": "MINISTÈRE DE LA TRANSITION ENERGÉTIQUE ET DU DÉVELOPPEMENT DURABLE – DÉPARTEMENT DU DÉVELOPPEMENT DURABLE",
@@ -9781,6 +9813,70 @@
 "published": "2026-10-16",
 "ref_id": "1047659",
 "reference": "24/DRAI/DT/BG/2026"
+},
+{
+"buyer": "Direction des Mosquées",
+"category": "Services",
+"deadline": "2026-11-09T10:30",
+"env_clauses": true,
+"object": "la conception et le suivi des travaux de construction d’une mosquée et de ses dépendances au quartier Al Intilaq province de Jerada -Région de l’Oriental-",
+"org": "f4g",
+"places": [
+"JERADA"
+],
+"procedure": "Consultation architecturale ouverte",
+"procedure_code": "CONSA",
+"published": "2026-10-17",
+"ref_id": "1047746",
+"reference": "05/ARCH/DM/BG/2026"
+},
+{
+"buyer": "Direction des Mosquées",
+"category": "Services",
+"deadline": "2026-11-10T10:30",
+"env_clauses": true,
+"object": "la conception et le suivi des travaux d’extension de la mosquée Omar Ibn Abdelaaziz et ses dépendances à hay Tikiria, commune urbaine de Tantan, province de Tantan, région de Guelmim Oued Noun",
+"org": "f4g",
+"places": [
+"TAN-TAN"
+],
+"procedure": "Consultation architecturale ouverte",
+"procedure_code": "CONSA",
+"published": "2026-10-17",
+"ref_id": "1047747",
+"reference": "06/ARCH/DM/BG/2026"
+},
+{
+"buyer": "Direction des Mosquées",
+"category": "Services",
+"deadline": "2026-11-11T10:30",
+"env_clauses": true,
+"object": "la conception et le suivi des travaux de construction d’une mosquée et ses dépendances au lotissement AL MOUHIT à Larache -province Larache",
+"org": "f4g",
+"places": [
+"LARACHE"
+],
+"procedure": "Consultation architecturale ouverte",
+"procedure_code": "CONSA",
+"published": "2026-10-17",
+"ref_id": "1047750",
+"reference": "07/ARCH/DM/BG/2026"
+},
+{
+"buyer": "Direction des Mosquées",
+"category": "Services",
+"deadline": "2026-11-12T10:30",
+"env_clauses": true,
+"object": "la conception et le suivi des travaux de construction d’une mosquée et ses dépendances à Douar Tchayef Sidi Boutmime à la commune rurale de Sidi Boutmime, province d’Al Hoceima, région de Tanger Tétouan Al Hoceima",
+"org": "f4g",
+"places": [
+"AL HOCEIMA"
+],
+"procedure": "Consultation architecturale ouverte",
+"procedure_code": "CONSA",
+"published": "2026-10-17",
+"ref_id": "1047751",
+"reference": "08/ARCH/DM/BG/2026"
 },
 {
 "buyer": "Direction des Mosquées",
@@ -32100,6 +32196,22 @@
 "reference": "5/2026"
 },
 {
+"buyer": "Commune urbaine de MARRAKECH",
+"category": "Services",
+"deadline": "2026-11-12T10:00",
+"env_clauses": true,
+"object": "Location des locaux commerciaux situés à la gare routière Al Azzouzia relevant de la Commune de Marrakech",
+"org": "j0w",
+"places": [
+"MARRAKECH"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050828",
+"reference": "10/2026"
+},
+{
 "buyer": "Commune SID ZOUINE",
 "category": "Fournitures",
 "deadline": "2026-10-20T11:00",
@@ -32429,22 +32541,6 @@
 "published": "2026-09-28",
 "ref_id": "1041563",
 "reference": "149/2026"
-},
-{
-"buyer": "AL OMRANE RABAT SALE KENITRA",
-"category": "Services",
-"deadline": "2026-10-17T11:00",
-"env_clauses": false,
-"object": "L’ELABORATION DES ETUDES GEOTECHNIQUES ET DE CONTROLE DE QUALITE DES PROJETS D’AMENAGEMENT, DE MISE A NIVEAU ET DE CONSTRUCTION RENTRANT DANS LE CADRE DES PROGRAMMES GERES PAR L’AGENCE TERRITORIALE : TAMESNA TEMARA DE LA SOCIETE AL OMRANE RABAT SALE KENITRA",
-"org": "j8k",
-"places": [
-"SKHIRATE-TEMARA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-21",
-"ref_id": "1041647",
-"reference": "140/2026/T/ETU"
 },
 {
 "buyer": "SOCIETE AL OMRANE SOUSS MASSA",
@@ -34870,6 +34966,118 @@
 "published": "2026-10-16",
 "ref_id": "1050692",
 "reference": "159/2026/SSTRA"
+},
+{
+"buyer": "AGENCE URBAINE D'OUARZAZATE-ZAGORA",
+"category": "Services",
+"deadline": "2026-11-09T09:00",
+"env_clauses": false,
+"object": "L’élaboration du plan d’aménagement du centre de la commune de Taghzoute n’Ait Atta, province de Tinghir, région Drâa-Tafilalet. En lot unique.\n(Réservé aux PME)",
+"org": "j8k",
+"places": [
+"OUARZAZATE"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050778",
+"reference": "01/2026"
+},
+{
+"buyer": "AGENCE URBAINE D'OUARZAZATE-ZAGORA",
+"category": "Services",
+"deadline": "2026-11-09T10:00",
+"env_clauses": false,
+"object": "L’élaboration du plan de développement du Centre d’Ait Sedrate Jbel El Soufla (commune territoriale d’Ait Sedrate Jbel El Soufla) Province de Tinghir, région Drâa-Tafilalet. En lot unique.\n(Réservé aux PME)",
+"org": "j8k",
+"places": [
+"OUARZAZATE"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050779",
+"reference": "02/2026"
+},
+{
+"buyer": "AGENCE URBAINE D'OUARZAZATE-ZAGORA",
+"category": "Services",
+"deadline": "2026-11-09T11:00",
+"env_clauses": false,
+"object": "L’élaboration du plan de développement du Centre d’Ait Sedrate Jbel El Oulia (commune territoriale d’Ait Sedrate Jbel El Oulia) Province de Tinghir, région Drâa-Tafilalet. En lot unique.\n(Réservé aux PME)",
+"org": "j8k",
+"places": [
+"OUARZAZATE"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050780",
+"reference": "03/2026"
+},
+{
+"buyer": "AGENCE URBAINE D'OUARZAZATE-ZAGORA",
+"category": "Services",
+"deadline": "2026-11-09T12:00",
+"env_clauses": false,
+"object": "L’élaboration du plan de développement du Centre d’Ait Youl (commune territoriale d’Ait Youl) Province de Tinghir, région Drâa-Tafilalet. En lot unique.\n(Réservé aux PME)",
+"org": "j8k",
+"places": [
+"OUARZAZATE"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050781",
+"reference": "04/2026"
+},
+{
+"buyer": "AGENCE URBAINE D'OUARZAZATE-ZAGORA",
+"category": "Services",
+"deadline": "2026-11-09T14:00",
+"env_clauses": false,
+"object": "L’élaboration du plan de développement du Centre de Fezouata (commune territoriale de Fezouata) Province de Zagora, région Drâa-Tafilalet. En lot unique.\n(Réservé aux PME)",
+"org": "j8k",
+"places": [
+"OUARZAZATE"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050784",
+"reference": "05/2026"
+},
+{
+"buyer": "AGENCE URBAINE D'OUARZAZATE-ZAGORA",
+"category": "Services",
+"deadline": "2026-11-09T15:00",
+"env_clauses": false,
+"object": "L’élaboration du plan de développement du Centre de Mezguita (commune territoriale de Mezguita) Province de Zagora, région Drâa-Tafilalet. En lot unique.\n(Réservé aux PME)",
+"org": "j8k",
+"places": [
+"OUARZAZATE"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050786",
+"reference": "06/2026"
+},
+{
+"buyer": "AGENCE URBAINE D'OUARZAZATE-ZAGORA",
+"category": "Services",
+"deadline": "2026-11-09T16:00",
+"env_clauses": false,
+"object": "L’élaboration du plan de développement du Centre de Taftechna (commune territoriale de Taftechna) Province de Zagora, région Drâa-Tafilalet. en lot unique.\n(Réservé aux PME)",
+"org": "j8k",
+"places": [
+"OUARZAZATE"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050788",
+"reference": "07/2026"
 },
 {
 "buyer": "DIRECTEUR DE LA METEOROLOGIE NATIONALE",
@@ -47916,6 +48124,39 @@
 "reference": "36/2026/GU/PRO"
 },
 {
+"buyer": "AGENCE NATIONALE DES PORTS/ DIRECTION DU PORT MOHAMMEDIA ET REGION",
+"category": "Services",
+"deadline": "2026-11-10T10:00",
+"env_clauses": false,
+"object": "LA MAINTENENCE DU SYSTEME DE SIGNALISATION MARITIME AUX PORTS DE MOHAMMEDIA ET DES SABLES D’OR",
+"org": "o8p",
+"places": [
+"SKHIRATE-TEMARA",
+"MOHAMMADIA"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050803",
+"reference": "36/AOO/DPMR/ANP/2026"
+},
+{
+"buyer": "AGENCE NATIONALE DES PORTS/ DIRECTION DU PORT MOHAMMEDIA ET REGION",
+"category": "Services",
+"deadline": "2026-11-10T10:00",
+"env_clauses": false,
+"object": "ÉTUDE DE BALISAGE DU CHENAL MEHDIA–KÉNITRA ET DU PORT DE KÉNITRA",
+"org": "o8p",
+"places": [
+"KENITRA"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050811",
+"reference": "37/AOO/DPMR/ANP/2026"
+},
+{
 "buyer": "DIRECTEUR PROVINCIAL DE L'EQUIPEMENT, DU TRANSPORT ET DE LA LOGISTIQUE DE AGADIR IDDA OUTANAN",
 "category": "Travaux",
 "deadline": "2026-11-10T10:00",
@@ -48635,6 +48876,22 @@
 "published": "2026-10-09",
 "ref_id": "1048318",
 "reference": "01/2026/CTSEBTSAISS"
+},
+{
+"buyer": "Commune rurale de MOULAY ABDELLAH",
+"category": "Services",
+"deadline": "2026-11-10T10:00",
+"env_clauses": false,
+"object": "ETUDES TECHNIQUES ET SUIVI TOUS CORPS D’ETAT RELATIF AUX TRAVAUX D’AMENAGEMENT DES PISTES ET CHEMINS VICINAUX A LA COMMUNE TERRITORIALE DE MOULAY ABDELLAH (TRANCHE 4)",
+"org": "p1v",
+"places": [
+"EL JADIDA"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1048781",
+"reference": "46/2026CTMA"
 },
 {
 "buyer": "Commune rurale de OULAD BOUSSAKEN",
@@ -55971,6 +56228,23 @@
 "reference": "169/2026/AREF/FM"
 },
 {
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D’EL HAJEB",
+"category": "Services",
+"deadline": "2026-11-11T10:00",
+"env_clauses": false,
+"object": "ETUDES ARCHITECTURALES ET SUIVI DES TRAVAUX DE CONSTRUCTION DU LYCEE QUALIFIANT AL AMAL A LA CT AIT YEAZEM RELEVANT DE LA DIRECTION PROVINCIALE DE L’AREF FM A EL HAJEB.",
+"org": "p8x",
+"places": [
+"Province d'Elhajeb",
+"MAROC"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050662",
+"reference": "01/CAELH/2026"
+},
+{
 "buyer": "ACADEMIE REGIONALE D'EDUCATION ET DE FORMATION FES-MEKNES",
 "category": "Travaux",
 "deadline": "2026-11-10T10:30",
@@ -55987,6 +56261,23 @@
 "reference": "170/2026/AREF/FM"
 },
 {
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D’EL HAJEB",
+"category": "Services",
+"deadline": "2026-11-10T10:00",
+"env_clauses": false,
+"object": "CONTROLE TECHNIQUE ET SUIVI DES TRAVAUX DE CONSTRUCTION DU LYCEE QUALIFIANT AL AMAL A LA CT AIT YEAZEM RELEVANT DE LA DIRECTION PROVINCIALE DE L’AREF FM A EL HAJEB.",
+"org": "p8x",
+"places": [
+"Province d'Elhajeb",
+"MAROC"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050681",
+"reference": "49/ELH/2026"
+},
+{
 "buyer": "ACADEMIE REGIONALE D'EDUCATION ET DE FORMATION DRAA TAFILALT",
 "category": "Fournitures",
 "deadline": "2026-10-28T10:00",
@@ -56001,6 +56292,91 @@
 "published": "2026-10-16",
 "ref_id": "1050689",
 "reference": "26/2026/AREFDT"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D’EL HAJEB",
+"category": "Services",
+"deadline": "2026-11-10T10:00",
+"env_clauses": false,
+"object": "ETUDES TECHNIQUES ET SUIVI DES TRAVAUX DE CONSTRUCTION DU LYCEE QUALIFIANT AL AMAL A LA CT AIT YEAZEM RELEVANT DE LA DIRECTION PROVINCIALE DE L’AREF FM A EL HAJEB.",
+"org": "p8x",
+"places": [
+"Province d'Elhajeb",
+"MAROC"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050691",
+"reference": "50/ELH/2026"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D’EL HAJEB",
+"category": "Travaux",
+"deadline": "2026-11-12T10:00",
+"env_clauses": false,
+"object": "TRAVAUX DE REMPLACEMENT DES SALLES DE CLASSES ET DES ADMINISTRATIONS DE PREFABRIQUES AUX ETABLISSEMENT SCOLAIRES A LA CT AIT YEAZEM, CT JAHJOUH ET CT RAS JERRY RELEVANT DE LA DIRECTION PROVINCIALE DE L’AREF FM A EL HAJEB",
+"org": "p8x",
+"places": [
+"Province d'Elhajeb",
+"MAROC"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050697",
+"reference": "51/ELH/2026"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D’EL HAJEB",
+"category": "Travaux",
+"deadline": "2026-11-12T10:00",
+"env_clauses": false,
+"object": "TRAVAUX DE CONSTRUCTION D'INTERNAT AU CENTRE DE FORMATION DE PRESCOLAIRE A LA MU EL HAJEB A LA PROVINCE D’EL HAJEB",
+"org": "p8x",
+"places": [
+"Province d'Elhajeb",
+"MAROC"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050703",
+"reference": "52/ELH/2026"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D’EL HAJEB",
+"category": "Travaux",
+"deadline": "2026-10-29T10:00",
+"env_clauses": false,
+"object": "Travaux de construction de deux (02) salles dans l'école primaire AIT YAHYA à la CT SBAA AYOUNE relevant de la direction provinciale d’El-hajeb à la province d’EL-HAJEB",
+"org": "p8x",
+"places": [
+"Province d'Elhajeb",
+"MAROC"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"procedure_code": "AOS",
+"published": "2026-10-17",
+"ref_id": "1050710",
+"reference": "53/ELH/2026"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D’EL HAJEB",
+"category": "Travaux",
+"deadline": "2026-10-29T10:00",
+"env_clauses": false,
+"object": "TRAVAUX D’AMENAGEMENT DES BLOCS SANITAIRES AUX ETABLISSEMENTS SCOLAIRE AUX CT BETIT, CT LAQSIR ET CT SBAA AYOUN RELEVANT DE LA DIRECTION PROVINCIALE DE L’AREF FM A EL HAJEB",
+"org": "p8x",
+"places": [
+"Province d'Elhajeb",
+"MAROC"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"procedure_code": "AOS",
+"published": "2026-10-17",
+"ref_id": "1050717",
+"reference": "54/ELH/2026"
 },
 {
 "buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE MIDELT",
@@ -56049,6 +56425,199 @@
 "published": "2026-10-16",
 "ref_id": "1050771",
 "reference": "87/2026/MID"
+},
+{
+"buyer": "CENTRE REGIONAL DES METIERS DE L'EDUCATION ET DE FORMATION SOUSS MASSA",
+"category": "Services",
+"deadline": "2026-11-09T10:00",
+"env_clauses": false,
+"object": "PRESTATIONS DE RESTAURATION AU PROFIT DES PARTICIPANTS AUX SESSIONS DE FORMATION CONTINUE ORGANISEES PAR LE CENTRE REGIONAL DES METIERS D’EDUCATION ET DE FORMATION SOUSS MASSA.",
+"org": "p8x",
+"places": [
+"AGADIR IDA OU TANANE",
+"INEZGANE-AIT MELLOUL"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050812",
+"reference": "03/2026/CRMEFEXP"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D'ES-SMARA",
+"category": "Travaux",
+"deadline": "2026-11-13T11:00",
+"env_clauses": false,
+"object": "TRAVAUX DE CONSTRUCTION DE QUATRE SALLES PRESCOLAIRES A ESSMARA",
+"org": "p8x",
+"places": [
+"Province d'Es Smara"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050814",
+"reference": "39/INV/2026"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D'ES-SMARA",
+"category": "Travaux",
+"deadline": "2026-11-13T12:00",
+"env_clauses": false,
+"object": "TRAVAUX D’AMENAGEMENT ET DE REHABILITATION DES BLOCS SANITAIRES DES ETABLISSEMENTS RELEVANT DE LA DIRECTION PROVINCIALE D’ES-SMARA",
+"org": "p8x",
+"places": [
+"Province d'Es Smara"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050816",
+"reference": "40/INV/2026"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D'ES-SMARA",
+"category": "Travaux",
+"deadline": "2026-11-13T13:00",
+"env_clauses": false,
+"object": "TRAVAUX D’AMENAGEMENT ET DE REHABILITATION DES MURS DE CLOTURES DES ETABLISSEMENTS RELEVANT DE LA DIRECTION PROVINCIALE D’ES-SMARA.",
+"org": "p8x",
+"places": [
+"Province d'Es Smara"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050819",
+"reference": "41/INV/2026"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE BENI MELLAL",
+"category": "Travaux",
+"deadline": "2026-11-11T09:00",
+"env_clauses": false,
+"object": "Travaux d’extension par construction de vingt-deux (22) salles de classes dans les établissements scolaires relevant de la direction provinciale de Béni Mellal. En lot unique",
+"org": "p8x",
+"places": [
+"Province de Beni Mellal"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050821",
+"reference": "41/2026/INV/BM"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE BENI MELLAL",
+"category": "Travaux",
+"deadline": "2026-11-11T10:00",
+"env_clauses": false,
+"object": "Travaux de construction de l’école autonome 31 octobre à la commune de Béni Mellal relevant de la province de Béni Mellal. En lot unique",
+"org": "p8x",
+"places": [
+"Province de Beni Mellal"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050822",
+"reference": "42/2026/INV/BM"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE Fqih Ben Saleh",
+"category": "Services",
+"deadline": "2026-11-02T10:00",
+"env_clauses": true,
+"object": "Etudes architecturales et suivi des travaux de construction (remplacement) de huit (8) salles préfabriquées à l’école ouled abdellah centre C/T khalfia, relevant de la direction provinciale de Fquih Ben Salah.",
+"org": "p8x",
+"places": [
+"FQUIH BEN SALAH"
+],
+"procedure": "Consultation architecturale ouverte",
+"procedure_code": "CONSA",
+"published": "2026-10-17",
+"ref_id": "1050823",
+"reference": "CAS03/FBS/2026"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE BENI MELLAL",
+"category": "Travaux",
+"deadline": "2026-11-11T11:00",
+"env_clauses": false,
+"object": "Travaux d’extension des établissements scolaires suivants par des blocs sanitaires :\nEcole Zouaer à Ouled Yaich,\nTihouna à Dir El Ksiba,\nEcole Chaaba Lkbira à Ouled Said,\nEcole Lmazrar à Ouled Said,\nEcole Ait Khouya Lahcen à Ait Oum Lbakht,\nEcole Almou à Ait Oum Lbakht,\nEcole Ait Ouaabidrzzak à Ait Oum Lbakht,\nEcole Ait Boumlal à Ait Oum Lbakht,\nEcole Igli à Ait Oum Lbakht,\nEcole Idis à Boutfarda.\nProvince de Beni Mellal en lot unique",
+"org": "p8x",
+"places": [
+"Province de Beni Mellal"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050824",
+"reference": "43/2026/INV/BM"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE BENI MELLAL",
+"category": "Travaux",
+"deadline": "2026-11-11T12:00",
+"env_clauses": false,
+"object": "Travaux d’aménagement, de réhabilitation de trois (03) établissements de la 2ème chance relevant de la Direction provinciale de Béni Mellal en lot unique\nEcole Azzaytouna à Beni Mellal ;\nEcole Abbad Majjati à Kasbat Tadla ;\nEcole Charquia à El Ksiba.",
+"org": "p8x",
+"places": [
+"Province de Beni Mellal"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050825",
+"reference": "44/2026/INV/BM"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE BENI MELLAL",
+"category": "Travaux",
+"deadline": "2026-11-11T13:00",
+"env_clauses": false,
+"object": "Travaux d’aménagement, de réhabilitation de trente-deux (32) salles préscolaires dans les établissements scolaires relevant de la Direction provinciale de Béni Mellal en lot unique",
+"org": "p8x",
+"places": [
+"Province de Beni Mellal"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050826",
+"reference": "45/2026/INV/BM"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE BENI MELLAL",
+"category": "Travaux",
+"deadline": "2026-11-11T14:00",
+"env_clauses": false,
+"object": "Travaux d’aménagement, de réhabilitation des bâtiments du siège de la Direction provinciale de Béni Mellal en lot unique",
+"org": "p8x",
+"places": [
+"Province de Beni Mellal"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050827",
+"reference": "46/2026/INV/BM"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE SETTAT",
+"category": "Travaux",
+"deadline": "2026-11-09T10:30",
+"env_clauses": false,
+"object": "TRAVAUX DE CONSTRUCTION DU LYCEE COLLEGIALE EL IRFANE A LA COMMUNE DE SETTAT, RELEVANT DE LA DIRECTION PROVINCIALE DE SETTAT",
+"org": "p8x",
+"places": [
+"SETTAT"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-17",
+"ref_id": "1050829",
+"reference": "131/DPS/2026"
 },
 {
 "buyer": "Commune urbaine de MEKNES",
@@ -56841,7 +57410,7 @@
 {
 "buyer": "Province de EL HAJEB",
 "category": "Fournitures",
-"deadline": "2026-10-29T10:00",
+"deadline": "2026-10-28T10:00",
 "env_clauses": false,
 "object": "l’achat de fournitures de bureau au profit du Conseil Provincial d’El-Hajeb",
 "org": "q0x",
@@ -66739,6 +67308,22 @@
 "published": "2026-10-15",
 "ref_id": "1046965",
 "reference": "25/2026"
+},
+{
+"buyer": "DERECTEUR REGIONAL DE LA JEUNESSE ET DES SPORTS MARRAKECH -SAFI",
+"category": "Services",
+"deadline": "2026-10-28T10:00",
+"env_clauses": false,
+"object": "PRESTATION D’EVENEMENTIELLE DE LA RENCONTRE NATIONALE DU LANCEMENT DE LA 2EME EDITION DE « SHABAB LAB’S » 2026 AU PROFIT DU-DEPARTEMENT DE LA JEUNESSE-REGION MARRAKECH SAFI.",
+"org": "s3d",
+"places": [
+"MARRAKECH"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"procedure_code": "AOS",
+"published": "2026-10-17",
+"ref_id": "1047826",
+"reference": "30/2026/MJCC/SJ/DRMS"
 },
 {
 "buyer": "SOCIETE NATIONALE DE REALISATION ET DE GESTION DES ÉQUIPEMENTS SPORTIFS",
