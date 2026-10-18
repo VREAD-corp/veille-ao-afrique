@@ -14,6 +14,14 @@
  *   admin   GET ?token=             aggregated counts for tests and reporting (token in the git-ignored Secret.js).
  *   stats   GET ?token=&date=       the counter rows of one day (Stats and Exclus), for the dashboard, plus `cro`:
  *                                   that day's behaviour and A/B summary (croSummary_).
+ *   reclass POST {token, date, page, event, source, …}  moves one whole Stats row to Exclus as `burst` and notes it
+ *                                   in `Annotations` (used once for the 13/10/2026 crawler burst).
+ *
+ * Bursts (2026-10-18): more than BURST_MINUTE_ distinct tender pages in one minute, or BURST_HOUR_ in one hour with
+ * no interaction, from one coarse browser fingerprint go to Exclus as `burst`, and the hits of that window already
+ * counted are moved there too. The fingerprint `fp` (mesure.js v3) is a short hash of the user agent, language,
+ * screen size and the current hour, computed in the browser: it changes every hour and cannot follow anyone. It is
+ * only used as a CacheService key (in memory, ≤ 1 h) and never written to the spreadsheet; no IP is read or stored.
  *   track with kind 'cro'           once-per-page batch of the shared cro.js (Octave behaviour counters + A/B, src/Cro.js
  *                                   vendored byte-identical from octave-checkout): daily counters in `Comportement`
  *                                   and `Experiences`, nothing typed, no identifier.
@@ -33,6 +41,13 @@ var EXCL_KEYS_ = 6;
 // Why a hit was not counted as a visit (decided in the browser; the user agent itself is never sent).
 // 'legacy': no `v` field, i.e. sent by a pre-2026-10-13 mesure.js still cached by a crawler's renderer.
 var EXCL_REASONS_ = ['webdriver', 'bot', 'notrack', 'legacy'];
+// Server-side reason (never sent by the page): a burst of distinct tender pages from one fingerprint (see burst_).
+var BURST_REASON_ = 'burst';
+var BURST_MINUTE_ = 8;    // > 8 distinct tender pages in one minute
+var BURST_HOUR_ = 30;     // > 30 distinct tender pages in one hour, with no filter, search or click
+var BURST_EVENTS_HUMAN_ = ['filter_use', 'search_use', 'official_click', 'cta_click', 'preinscription_click'];
+var FP_RE_ = /^[0-9a-f]{8}$/;
+var ANNOT_HEADER_ = ['at', 'date', 'page', 'event', 'detail', 'source', 'count', 'reason', 'note'];
 var SIGNUP_HEADER_ = ['at', 'email', 'kind', 'plan', 'company', 'company_country', 'sectors', 'countries', 'regions', 'frequency', 'consent_version', 'consent_text', 'page', 'source', 'test', 'withdrawn_at', 'id'];
 var TRACK_EVENTS_ = ['view', 'tender_view', 'filter_use', 'search_use', 'official_click', 'alert_form_view', 'alert_signup', 'preinscription_click', 'preinscription_signup', 'cta_click'];
 var TRACK_DETAILS_ = /^[a-z0-9_-]{0,40}$/;
@@ -80,6 +95,9 @@ function route_(params, body) {
       case 'unsubscribe': return html_(unsubscribe_(req));
       case 'admin': return json_(admin_(req));
       case 'stats': return json_(stats_(req));
+      case 'reclass':
+        if (!body) throw userError_('method_not_allowed', 'POST attendu.');
+        return json_(reclass_(req));
       case 'ping': return json_({ ok: true, service: SITE_ });
       default: return json_({ ok: false, error: 'unknown_action' });
     }
@@ -197,6 +215,7 @@ function validateTrack_(req) {
   if (!TRACK_DETAILS_.test(detail)) throw userError_('bad_request', 'detail');
   var page = trackPage_(req.page);
   if (page === null) throw userError_('bad_request', 'page');
+  var tm = /^\/(?:veille-ao-afrique\/)?ao\/([^/?#]+)\/?(?:[?#].*)?$/.exec(String(req.page || '').toLowerCase());
   if (req.ts !== undefined && req.ts !== null && req.ts !== '') {
     var ts = Number(req.ts);
     if (!isFinite(ts) || Math.abs(ts - now_().getTime()) > 2 * 86400 * 1000) throw userError_('bad_request', 'ts');
@@ -210,6 +229,9 @@ function validateTrack_(req) {
     medium: token_(req.utm_medium, 30), campaign: token_(req.utm_campaign, 50),
     device: req.device === 'mobile' || req.device === 'desktop' ? req.device : '',
     reason: EXCL_REASONS_.indexOf(String(req.excluded || '')) >= 0 ? String(req.excluded) : req.excluded ? 'bot' : !req.v ? 'legacy' : '',
+    // in memory only (burst_): never part of a counter key, never written to the spreadsheet
+    fp: FP_RE_.test(String(req.fp || '')) ? String(req.fp) : '',
+    tender: tm ? sha256Hex_('ao|' + tm[1]).slice(0, 8) : '',
   };
 }
 
@@ -219,26 +241,71 @@ function track_(req) {
   var lock = LockService.getScriptLock();
   if (!lock.tryLock(8000)) return { ok: false, error: 'busy' };
   try {
+    if (!hit.reason) hit.reason = burst_(hit);
     if (hit.reason) incrementExcluded_(hit);
     else incrementStat_(hit);
   } finally { lock.releaseLock(); }
   return { ok: true };
 }
 
+/**
+ * Burst screen (caller holds the script lock). Returns 'burst' when this hit belongs to a burst, else '' (and the
+ * hit is remembered in the window so it can be moved if the window turns into a burst). State per window, in
+ * CacheService only: distinct tender-page hashes, interaction count, the counter keys already counted (no
+ * identifier: page, event, source…), and a flag. Key: sha256(fp + hour). Without `fp` (mesure.js before v3), only
+ * the minute rule applies, on a coarse key (device + source) shared by all such visitors.
+ */
+function burst_(hit) {
+  try {
+    var t = now_().getTime();
+    var hour = Math.floor(t / 3600000), minute = Math.floor(t / 60000);
+    var cache = CacheService.getScriptCache();
+    var key = 'burst:' + sha256Hex_((hit.fp ? 'fp|' + hit.fp : 'nofp|' + hit.device + '|' + hit.source) + '|' + hour).slice(0, 32);
+    var w = null;
+    try { w = JSON.parse(cache.get(key) || 'null'); } catch (e) { w = null; }
+    if (!w || typeof w !== 'object') w = { t: [], mk: minute, m: [], i: 0, c: [], f: 0 };
+    if (w.mk !== minute) { w.mk = minute; w.m = []; }
+    if (BURST_EVENTS_HUMAN_.indexOf(hit.event) >= 0) w.i++;
+    if (hit.tender) {
+      if (w.t.indexOf(hit.tender) < 0 && w.t.length < 500) w.t.push(hit.tender);
+      if (w.m.indexOf(hit.tender) < 0) w.m.push(hit.tender);
+    }
+    var burst = w.f || w.m.length > BURST_MINUTE_ || (hit.fp && !w.i && w.t.length > BURST_HOUR_);
+    if (burst && !w.f) {
+      // the window just turned into a burst: move the hits of this window already counted as visits
+      w.c.forEach(function (c) {
+        if (incrementRow_('Stats', STATS_HEADER_, STATS_KEYS_, c[0], c[1], -1)) {
+          incrementRow_('Exclus', EXCL_HEADER_, EXCL_KEYS_, [c[0][0], c[0][1], c[0][2], c[0][3], c[0][4], BURST_REASON_], c[1], 1);
+        }
+      });
+      w.c = [];
+      w.f = 1;
+    }
+    if (!burst && w.c.length < 200) w.c.push([statKey_(hit), hit.device]);
+    cache.put(key, JSON.stringify(w), 3700);
+    return burst ? BURST_REASON_ : '';
+  } catch (err) {
+    console.error('burst screen failed: ' + String(err && err.message));
+    return '';
+  }
+}
+
 function statKey_(h) { return [h.date, h.site, h.page, h.event, h.detail, h.source, h.medium, h.campaign]; }
 
-function incrementStat_(h) { return incrementRow_('Stats', STATS_HEADER_, STATS_KEYS_, statKey_(h), h.device); }
+function incrementStat_(h) { return incrementRow_('Stats', STATS_HEADER_, STATS_KEYS_, statKey_(h), h.device, 1); }
 
 /** Hits not counted as visits: same daily counters, keyed by reason instead of source. */
 function incrementExcluded_(h) {
-  return incrementRow_('Exclus', EXCL_HEADER_, EXCL_KEYS_, [h.date, h.site, h.page, h.event, h.detail, h.reason], h.device);
+  return incrementRow_('Exclus', EXCL_HEADER_, EXCL_KEYS_, [h.date, h.site, h.page, h.event, h.detail, h.reason], h.device, 1);
 }
 
 /**
  * Caller holds the script lock. Daily counter row `keys` (first column is the date) in tab `name`:
- * cached row number (verified), else a scan of the newest rows; incremented, or appended.
+ * cached row number (verified), else a scan of the newest rows; incremented by `delta` (default 1), or appended.
+ * A negative delta (a burst moved to Exclus) never creates a row and never goes below 0; returns 0 if no row.
  */
-function incrementRow_(name, header, nKeys, keys, device) {
+function incrementRow_(name, header, nKeys, keys, device, delta) {
+  delta = delta === undefined ? 1 : delta;
   var sheet = tab_(name, header);
   var key = keys.join('\u001f');
   var cache = CacheService.getScriptCache();
@@ -258,14 +325,16 @@ function incrementRow_(name, header, nKeys, keys, device) {
     }
   }
   var stamp = now_().toISOString();
+  if (!rowNum && delta < 0) return 0;
   if (!rowNum) {
     sheet.appendRow(keys.map(txt_).concat([1, device === 'mobile' ? 1 : 0, device === 'desktop' ? 1 : 0, stamp]));
     rowNum = sheet.getLastRow();
     sheet.getRange(rowNum, 1).setNumberFormat('@').setValue(keys[0]);
   } else {
     var c = sheet.getRange(rowNum, nKeys + 1, 1, 3).getValues()[0];
-    sheet.getRange(rowNum, nKeys + 1, 1, 4).setValues([[Number(c[0] || 0) + 1, Number(c[1] || 0) + (device === 'mobile' ? 1 : 0),
-      Number(c[2] || 0) + (device === 'desktop' ? 1 : 0), stamp]]);
+    var add = function (v, d) { return Math.max(0, Number(v || 0) + d); };
+    sheet.getRange(rowNum, nKeys + 1, 1, 4).setValues([[add(c[0], delta), add(c[1], device === 'mobile' ? delta : 0),
+      add(c[2], device === 'desktop' ? delta : 0), stamp]]);
   }
   cache.put(ck, String(rowNum), 21600);
   return rowNum;
@@ -390,6 +459,45 @@ function stats_(req) {
   excl.forEach(function (r) { if (r.event === 'view') byReason[r.reason] = (byReason[r.reason] || 0) + Number(r.count || 0); });
   return { ok: true, date: date, views: { counted: sum(kept, 'view'), excluded: sum(excl, 'view'), raw: sum(kept, 'view') + sum(excl, 'view'), excluded_by_reason: byReason },
     stats: kept, exclus: excl, cro: croSummary_(date, date) };
+}
+
+/**
+ * Token required, POST. Moves ONE whole counter row of `Stats` (exact date, page, event, detail, source, medium,
+ * campaign) to `Exclus` as `burst` and notes it in `Annotations` (reason + note). Refuses if the row is not found
+ * or its count differs from `expect_count` (so a replay never moves anything twice).
+ */
+function reclass_(req) {
+  var token = typeof ADMIN_TOKEN_ === 'string' && ADMIN_TOKEN_.length >= 24 ? ADMIN_TOKEN_ : '';
+  if (!token || String(req.token || '') !== token) throw userError_('forbidden', 'Accès refusé.');
+  var date = String(req.date || '');
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(date)) throw userError_('bad_request', 'date');
+  var keys = [date, SITE_, String(req.page || ''), String(req.event || ''), String(req.detail || ''), String(req.source || ''), String(req.medium || ''), String(req.campaign || '')];
+  var note = String(req.note || '').replace(/[\u0000-\u001f]+/g, ' ').slice(0, 300);
+  var lock = LockService.getScriptLock();
+  if (!lock.tryLock(10000)) return { ok: false, error: 'busy' };
+  try {
+    var sh = tab_('Stats', STATS_HEADER_);
+    var last = sh.getLastRow();
+    if (last < 2) return { ok: false, error: 'not_found' };
+    var vals = sh.getRange(2, 1, last - 1, STATS_HEADER_.length).getValues();
+    var key = keys.join('\u001f');
+    for (var i = 0; i < vals.length; i++) {
+      if (vals[i].slice(0, STATS_KEYS_).map(cellText_).join('\u001f') !== key) continue;
+      var n = Number(vals[i][8] || 0), mob = Number(vals[i][9] || 0), desk = Number(vals[i][10] || 0);
+      if (String(n) !== String(req.expect_count)) return { ok: false, error: 'count_mismatch', count: n };
+      if (!n) return { ok: false, error: 'empty' };
+      sh.getRange(i + 2, 9, 1, 4).setValues([[0, 0, 0, now_().toISOString()]]);
+      var ex = tab_('Exclus', EXCL_HEADER_);
+      ex.appendRow([date, SITE_, txt_(keys[2]), keys[3], keys[4], BURST_REASON_, n, mob, desk, now_().toISOString()]);
+      ex.getRange(ex.getLastRow(), 1).setNumberFormat('@').setValue(date);
+      var an = tab_('Annotations', ANNOT_HEADER_);
+      an.appendRow([now_().toISOString(), date, txt_(keys[2]), keys[3], keys[4], txt_(keys[5]), n, BURST_REASON_, txt_(note)]);
+      return { ok: true, moved: n, mobile: mob, desktop: desk };
+    }
+    return { ok: false, error: 'not_found' };
+  } finally {
+    lock.releaseLock();
+  }
 }
 
 /** Run from the editor once if needed: creates the spreadsheet and prints its URL. */
