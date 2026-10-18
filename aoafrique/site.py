@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import shutil
 from functools import lru_cache
 from collections import Counter
@@ -99,6 +100,10 @@ class Site:
         self.open = [n for n in notices if model.is_open(n, self.now) and not n.get("delisted")]
         self.open.sort(key=lambda n: (n.get("published", ""), n["id"]), reverse=True)
         self.pages: list[tuple[str, str]] = []  # (path, lastmod)
+        # Place names seen in the data (lower case), so soft_case() writes "Nouaceur", not "nouaceur", in titles.
+        self.proper = frozenset(w for n in notices for p in n.get("places", []) for w in re.split(r"[\s\-']+", p.lower())
+                                if len(w) >= 4 and w not in {"commune", "province", "region", "prefecture", "ville",
+                                                             "centre", "rurale", "urbaine", "sidi"})
 
     # ------------------------------------------------------------------ shell
     def write(self, path: str, html: str, lastmod: str | None = None, sitemap: bool = True) -> None:
@@ -400,8 +405,8 @@ class Site:
                "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": self.base + "data/ouverts.json"}],
                "license": self.base + LICENCE_PAGE,
                "creator": PUBLISHER}]
-        self.write("", self.page("", f"Appels d'offres Maroc en cours : {nb(s['pmmp'])} consultations | {BRAND}",
-                                 f"{nb(s['pmmp'])} appels d'offres publics ouverts au Maroc, mis à jour deux fois par jour, avec filtres par secteur, région, acheteur et date limite, et un résumé en français de chaque avis.",
+        self.write("", self.page("", f"Appels d'offres Maroc en cours ({nb(s['pmmp'])}), veille et alertes e-mail | {BRAND}",
+                                 f"Veille des appels d'offres publics au Maroc : {nb(s['pmmp'])} consultations ouvertes, mises à jour deux fois par jour. Filtres par secteur, région, acheteur et date limite, résumé en français, alerte par e-mail.",
                                  body, jsonld=ld, scripts=("app.js", "alerte-inline.js")))
 
     def build_tender(self, n: dict) -> None:
@@ -500,13 +505,24 @@ class Site:
         ld = {k: v for k, v in ld.items() if v}
         title_obj = n["object"] if len(n["object"]) <= 70 else n["object"][:67].rsplit(" ", 1)[0] + "…"
         where = self.where(n)
-        desc = (f"Appel d'offres {('Maroc, ' + where) if n['source'] == 'PMMP' else where} : {n['object'][:120]}. "
-                f"Clôture le {fmt_short(n['deadline'])}. Acheteur : {n.get('buyer', '')[:60]}.")
+        # <title>/<meta description> only (SEO-CTR 2026-10-19): searchers type the object, the town, the buyer's
+        # acronym or the reference ("gardiennage nouaceur", "sntl oujda", "rp5001"); capitals read as noise in results.
+        obj_sc = model.soft_case(n["object"], self.proper)
+        seo_obj = obj_sc if len(obj_sc) <= 62 else obj_sc[:59].rsplit(" ", 1)[0].rstrip(" ,;:-") + "…"
+        dl = model.parse_deadline(n.get("deadline", ""))
+        dl_txt = (("clôture " if open_ else "clos le ") + dl.strftime("%d/%m")) if dl else ""
+        seo_title = f"{seo_obj} | AO {where}" + (f", {dl_txt}" if dl_txt else "")
+        buyer = model.soft_case(n.get("buyer", ""), self.proper)
+        buyer = buyer if len(buyer) <= 60 else buyer[:57].rsplit(" ", 1)[0] + "…"
+        ref = f", réf. {n['reference']}" if n.get("reference") and len(n["reference"]) <= 40 else ""
+        desc_obj = obj_sc if len(obj_sc) <= 95 else obj_sc[:92].rsplit(" ", 1)[0].rstrip(" ,;:-") + "…"
+        desc = (f"Appel d'offres {('Maroc, ' + where) if n['source'] == 'PMMP' else where} : {desc_obj.rstrip('.')}{'' if desc_obj.endswith('…') else '.'} "
+                f"Acheteur : {buyer}{ref}. Date limite : {fmt_short(n['deadline'])}. Résumé en français et lien vers l'avis officiel.")
         crumbs = [("", "Appels d'offres")]
         if n.get("sectors"):
             crumbs.append((f"secteurs/{n['sectors'][0]}/", SECTOR_LABEL.get(n["sectors"][0], "Secteur")))
         crumbs.append((f"ao/{n['slug']}/", title_obj))
-        self.write(f"ao/{n['slug']}/", self.page(f"ao/{n['slug']}/", f"{title_obj} | AO {where}", desc, body,
+        self.write(f"ao/{n['slug']}/", self.page(f"ao/{n['slug']}/", seo_title, desc, body,
                                                   jsonld=ld, crumbs=crumbs, scripts=("alerte-inline.js",),
                                                   head_scripts=("xp.js",)),
                    lastmod=n.get("first_seen") or n.get("published"))

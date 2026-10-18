@@ -200,6 +200,42 @@ def fmt_date(iso: str, *, weekday: bool = False) -> str:
     return out
 
 
+_SOFT_KEEP = {"ONDA", "ONEE", "OCP", "CNSS", "ANAM", "ADM", "ONCF", "SONARGES", "REDAL", "AREF", "ORMVA", "ORMVAD",
+              "ONSSA", "OFPPT", "ANAPEC", "UGP", "IRED", "SRM", "SNTL", "AMO", "CHU", "CHR", "AEP", "AOO", "AOR", "BTP",
+              "TGR", "RAM", "ONMT", "ANP", "AMDIE", "OMPIC", "FM", "BM", "PME", "TPE"}
+
+
+_PLACE_WORDS = {"commune", "douar", "douars", "ville", "province", "prefecture", "préfecture", "cercle", "ksar", "caidat"}
+_PLACE_SKIP = {"de", "des", "du", "d", "l", "la", "le", "les", "rurale", "urbaine", "territoriale", "et", "suivants"}
+
+
+def soft_case(text: str, proper: frozenset = frozenset()) -> str:
+    """Sentence case for a text typed in capitals ('GARDIENNAGE DES LOCAUX DE LA CNSS A NOUACEUR' -> 'Gardiennage des
+    locaux de la CNSS a Nouaceur'). Kept in capitals: tokens without a vowel (RN1, PK, SRM) and known public-buyer
+    acronyms; capitalised: tokens found in `proper` (lower-case place names seen in the data). Mixed-case text is
+    returned unchanged. Display only (titles, descriptions): the official text stays in the data."""
+    t = " ".join((text or "").split())
+    letters = [c for c in t if c.isalpha()]
+    if not letters or sum(c.isupper() for c in letters) / len(letters) < 0.6:
+        return t
+    out, after_place_word = [], False
+    for w in re.split(r"(\s+|[-/'’(),.:;])", t):
+        low = w.lower()
+        if w.isupper() and (w in _SOFT_KEEP or (2 <= len(w) <= 5 and not re.search(r"[aeiouyàâéèêëîïôûü]", low))):
+            out.append(w)
+        elif low in proper or (after_place_word and len(low) >= 3 and low not in _PLACE_SKIP):
+            out.append(low[:1].upper() + low[1:])
+        else:
+            out.append(low)
+        if low.strip(" -'’"):
+            if low in _PLACE_WORDS:
+                after_place_word = True
+            elif low not in _PLACE_SKIP and len(low) > 1:
+                after_place_word = False
+    s = "".join(out)
+    return s[:1].upper() + s[1:]
+
+
 def fmt_short(iso: str) -> str:
     d = parse_deadline(iso)
     return d.strftime("%d/%m/%Y") if d else ""
