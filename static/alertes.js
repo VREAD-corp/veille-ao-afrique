@@ -63,7 +63,7 @@
         : 'Inscription enregistrée. Vous recevrez un premier e-mail à l’ouverture des alertes.';
     }).catch(function (err) {
       msg.className = 'form-msg err';
-      msg.textContent = (err && err.message && err.message !== 'Failed to fetch' ? err.message : 'Envoi impossible pour le moment.') + ' Vous pouvez aussi écrire à octave@vread.fr.';
+      msg.textContent = (err && err.message && err.message !== 'Failed to fetch' ? err.message : 'Envoi impossible pour le moment.') + ' Vous pouvez aussi écrire à contact@jalonel.com.';
     }).then(function () { submit.disabled = false; });
   });
 })();

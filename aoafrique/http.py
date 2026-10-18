@@ -13,7 +13,7 @@ import urllib.parse
 import urllib.request
 from pathlib import Path
 
-CONTACT = "octave@vread.fr"
+CONTACT = "contact@jalonel.com"
 USER_AGENT = (f"VeilleAOAfrique/1.0 (READ FRANCE SAS, Paris; +https://ao-afrique.jalonel.com/methode/; "
               f"contact: {CONTACT})")
 

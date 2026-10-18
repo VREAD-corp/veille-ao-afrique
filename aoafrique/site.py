@@ -17,12 +17,12 @@ from . import model
 from .model import SECTOR_LABEL, fmt_date, fmt_mad, fmt_short, place_label
 
 BRAND = "Veille AO Afrique"
-# Served at the root of its own Jalonel subdomain since 2026-10-16 (was https://outils.vread.fr/veille-ao-afrique/).
+# Served at the root of its own Jalonel subdomain since 2026-10-16.
 ORIGIN = "https://ao-afrique.jalonel.com"
 HOST = ORIGIN.split("//")[1]
 PATH = "/"
 REPO_URL = "https://github.com/VREAD-corp/veille-ao-afrique"
-CONTACT = "octave@vread.fr"
+CONTACT = "contact@jalonel.com"
 GAS_URL = "https://script.google.com/macros/s/AKfycbyUsVoWWzL7xA18-O-GkEto4ivugNO-8v4W0l1pugf1HmLHUSKG7uOhEcx3FT2RgfKpWA/exec"
 # IndexNow key shared by the Jalonel sites, served at the site root.
 INDEXNOW_KEY = "5be19f56d46ca3d2553bee28ebfa8edd"
@@ -61,7 +61,7 @@ PUBLISHER = {"@type": "Organization", "@id": "https://jalonel.com/#org", "name":
              "parentOrganization": {"@type": "Organization", "name": "READ FRANCE SAS", "identifier": "SIREN 988741773"}}
 CONSENT_TEXT = ("J'accepte que READ FRANCE SAS conserve mon adresse e-mail et les critères choisis pour me prévenir "
                 "de l'ouverture de Veille AO Afrique et m'envoyer les alertes demandées. Je peux retirer mon accord "
-                "à tout moment en écrivant à octave@vread.fr ou par le lien présent dans chaque e-mail.")
+                "à tout moment en écrivant à contact@jalonel.com ou par le lien présent dans chaque e-mail.")
 CSP = ("default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; "
        "connect-src 'self' https://script.google.com https://script.googleusercontent.com; "
        "form-action 'self' https://script.google.com; base-uri 'self'")
@@ -145,7 +145,7 @@ class Site:
 <link rel="alternate" type="application/atom+xml" title="{BRAND} : nouveaux appels d'offres" href="{link('feed.xml')}">
 <link rel="stylesheet" href="{link('static/style.css')}">
 <script src="{link('static/mesure.js')}?v={MESURE_V}" defer></script>
-<script src="{link('static/cro.js')}?v={CRO_V}" data-site="veille-ao-afrique" data-api="{GAS_URL}" data-hosts="{HOST} outils.vread.fr" data-cta="{e(CRO_CTA)}" defer></script>
+<script src="{link('static/cro.js')}?v={CRO_V}" data-site="veille-ao-afrique" data-api="{GAS_URL}" data-hosts="{HOST}" data-cta="{e(CRO_CTA)}" defer></script>
 {script_tags}
 {ld}
 </head>

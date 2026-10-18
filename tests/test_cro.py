@@ -76,7 +76,7 @@ def test_every_page_loads_cro_js(tmp_path):
     site.build_all()
     assert (tmp_path / "static" / "cro.js").read_bytes() == (ROOT / "static" / "cro.js").read_bytes()
     tag = (f'<script src="/static/cro.js?v={CRO_V}" data-site="veille-ao-afrique" '
-           f'data-api="{GAS_URL}" data-hosts="ao-afrique.jalonel.com outils.vread.fr" data-cta="[data-mesure],#alerte-form [type=submit],#alerte-inline [type=submit]" defer>')
+           f'data-api="{GAS_URL}" data-hosts="ao-afrique.jalonel.com" data-cta="[data-mesure],#alerte-form [type=submit],#alerte-inline [type=submit]" defer>')
     pages = list(tmp_path.rglob("*.html"))
     assert len(pages) > 30 and any(p.name == "404.html" for p in pages)
     for p in pages:

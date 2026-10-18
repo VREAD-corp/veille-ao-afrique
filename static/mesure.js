@@ -2,7 +2,7 @@
 (function (n, l, d) {
   'use strict';
   var U = 'https://script.google.com/macros/s/AKfycbyUsVoWWzL7xA18-O-GkEto4ivugNO-8v4W0l1pugf1HmLHUSKG7uOhEcx3FT2RgfKpWA/exec?action=track';
-  var off = n.doNotTrack == '1' || n.globalPrivacyControl || !/^(ao-afrique\.jalonel\.com|outils\.vread\.fr|vread-corp\.github\.io)$/.test(l.hostname);
+  var off = n.doNotTrack == '1' || n.globalPrivacyControl || l.hostname != 'ao-afrique.jalonel.com';
   var q = new URLSearchParams(l.search);
   // Not a visit: our own tests (?octave_notrack=1, remembered in this browser; =0 clears it), automated browsers,
   // crawlers. Such hits go to a separate "excluded" counter. The user agent is only read here, never sent.

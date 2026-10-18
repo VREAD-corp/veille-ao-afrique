@@ -57,7 +57,7 @@ r = run({ search: '?octave_notrack=0', store: { octave_notrack: '1' } });
 assert.ok(r.sent.every((b) => !('excluded' in b)) && !('octave_notrack' in r.store), '=0 clears the flag');
 
 assert.equal(run({ dnt: '1' }).sent.length, 0, 'Do Not Track: nothing at all');
-assert.equal(run({ host: 'outils.vread.fr' }).sent.length, 2, 'old host still counted (redirect window)');
+assert.equal(run({ host: 'example.github.io' }).sent.length, 0, 'only the Jalonel subdomain is counted');
 assert.equal(run({ host: 'localhost' }).sent.length, 0, 'unknown host: nothing sent');
 
 r = run({ prerendering: true });
