@@ -109,6 +109,13 @@ def test_build_site(tmp_path):
     assert ws[0]["publisher"]["name"] == "Jalonel" and ws[0]["publisher"]["parentOrganization"]["name"] == "READ FRANCE SAS"
     legal = (tmp_path / "mentions-legales" / "index.html").read_text(encoding="utf-8")
     assert "Jalonel est une marque de READ FRANCE SAS." in legal and "988 741 773" in legal
+    # Jalonel kept apart from Vread: no Vread address or host, no GitHub repository or source-code link anywhere.
+    for f in tmp_path.rglob("*"):
+        if f.suffix in (".html", ".js", ".css", ".json", ".xml", ".txt"):
+            t = f.read_text(encoding="utf-8")
+            assert "vread" not in t.lower() and "github.com/" not in t.replace("docs.github.com/", "") \
+                and "code source" not in t.lower() and "/issues" not in t, f
+    assert "mailto:contact@jalonel.com" in legal
 
 
 def test_inline_alert_on_tender_list_and_filter_pages(tmp_path):

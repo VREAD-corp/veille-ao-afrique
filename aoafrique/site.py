@@ -21,7 +21,6 @@ BRAND = "Veille AO Afrique"
 ORIGIN = "https://ao-afrique.jalonel.com"
 HOST = ORIGIN.split("//")[1]
 PATH = "/"
-REPO_URL = "https://github.com/VREAD-corp/veille-ao-afrique"
 CONTACT = "contact@jalonel.com"
 GAS_URL = "https://script.google.com/macros/s/AKfycbyUsVoWWzL7xA18-O-GkEto4ivugNO-8v4W0l1pugf1HmLHUSKG7uOhEcx3FT2RgfKpWA/exec"
 # IndexNow key shared by the Jalonel sites, served at the site root.
@@ -176,7 +175,6 @@ class Site:
 <a href="{link(LICENCE_PAGE)}">Réutilisation des données</a>
 <a href="{link('mentions-legales/')}">Mentions légales</a>
 <a href="{link('confidentialite/')}">Confidentialité</a>
-<a href="{REPO_URL}">Code source</a>
 </nav>
 </div>
 </footer>
@@ -629,7 +627,7 @@ class Site:
 <p>Le résumé met en phrases la procédure, l'acheteur, le lieu, l'estimation, la caution et la date limite avec le nombre de jours restants. Il ne lit pas le dossier de consultation.</p>
 <h2>Limites</h2>
 <p>Le site peut avoir jusqu'à 12 heures de retard sur le portail pour les nouvelles consultations, et jusqu'à une semaine pour une annulation ou un report de date : vérifiez toujours l'avis officiel avant de préparer une offre. Les portails nationaux du Sénégal, de la Côte d'Ivoire et des autres pays ne sont pas encore couverts.</p>
-<p>Code source : <a href="{REPO_URL}">{REPO_URL}</a>. Données brutes du jour : <a href="{link('data/ouverts.json')}">ouverts.json</a>, réutilisables selon les <a href="{link(LICENCE_PAGE)}">conditions de réutilisation des données</a>.</p>"""
+<p>Données brutes du jour : <a href="{link('data/ouverts.json')}">ouverts.json</a>, réutilisables selon les <a href="{link(LICENCE_PAGE)}">conditions de réutilisation des données</a>.</p>"""
         self.write("methode/", self.page("methode/", f"Méthode et sources | {BRAND}",
                                          "D'où viennent les appels d'offres de Veille AO Afrique, à quelle fréquence ils sont relus, sur quelle base légale et avec quelles limites.",
                                          method, crumbs=[("", "Appels d'offres"), ("methode/", "Méthode")]))
@@ -650,7 +648,6 @@ class Site:
 <h2>Notre compilation</h2>
 <p>{SELLER['name']} rassemble ces avis, les met dans un format commun et y ajoute un secteur, une région et un résumé produits par des règles fixes (voir <a href="{link('methode/')}">Méthode et sources</a>). Cette compilation n'ajoute aucun droit à ceux des sources : chaque avis reste soumis aux conditions de la source dont il provient, décrites ci-dessus, et nous ne revendiquons aucun droit exclusif sur les données.</p>
 <p>Si vous réutilisez les données, citez la source d'origine de chaque avis ; vous pouvez aussi mentionner « {BRAND} ({self.base}) » comme intermédiaire. Les avis peuvent avoir été modifiés ou annulés depuis notre dernière lecture : vérifiez toujours l'avis officiel.</p>
-<p>Le code du site est un sujet distinct : il est publié sous licence MIT (<a href="{REPO_URL}">{REPO_URL}</a>).</p>
 <p>Questions : <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
 <p class="small muted">Version du 13 octobre 2026.</p>"""
         self.write(LICENCE_PAGE, self.page(LICENCE_PAGE, f"Conditions de réutilisation des données | {BRAND}",
