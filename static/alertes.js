@@ -10,8 +10,10 @@
   var NAMES = { 'essentiel-39': 'Essentiel, 39 € pour 3 mois', 'pro-79': 'Pro, 79 € pour 3 mois' };
   var qs = new URLSearchParams(location.search);
   function slug(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, ''); }
+  // Same rule as model.slugify (checkbox values): accents and stop words dropped, so « L'Oriental » matches « oriental ».
+  function mslug(s) { var stop = { de: 1, des: 1, du: 1, la: 1, le: 1, les: 1, et: 1, a: 1, au: 1, aux: 1, d: 1, l: 1, en: 1, pour: 1, un: 1, une: 1, sur: 1, par: 1, dans: 1, lot: 1, unique: 1 }; return String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().split(/[^a-z0-9]+/).filter(function (w) { return w && !stop[w]; }).slice(0, 9).join('-'); }
   if (qs.get('secteur')) form.querySelectorAll('input[name=sectors]').forEach(function (b) { if (b.value === qs.get('secteur')) b.checked = true; });
-  if (qs.get('region')) form.querySelectorAll('input[name=regions]').forEach(function (b) { if (b.value === slug(qs.get('region'))) b.checked = true; });
+  if (qs.get('region')) form.querySelectorAll('input[name=regions]').forEach(function (b) { if (mslug(b.value) === mslug(qs.get('region'))) b.checked = true; });
   var all = document.getElementById('toutes-regions');
   if (all) all.addEventListener('click', function () {
     var boxes = form.querySelectorAll('input[name=regions]');

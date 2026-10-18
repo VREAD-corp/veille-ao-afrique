@@ -10,6 +10,7 @@ from collections import Counter
 from datetime import datetime, timedelta
 from html import escape
 from pathlib import Path
+from urllib.parse import urlencode
 from zoneinfo import ZoneInfo
 
 from . import model
@@ -39,7 +40,7 @@ MESURE_V = hashlib.sha256((STATIC / "mesure.js").read_bytes()).hexdigest()[:10]
 # gas/web/cro.js). No experiment runs on this site (the two plans are pre-registrations, not price arms): no OCTAVE_XP.
 CRO_V = hashlib.sha256((STATIC / "cro.js").read_bytes()).hexdigest()[:10]
 # Primary CTAs for "time to first CTA click": alert links, official-notice links, pre-registration buttons, form submit.
-CRO_CTA = "[data-mesure],#alerte-form [type=submit]"
+CRO_CTA = "[data-mesure],#alerte-form [type=submit],#alerte-inline [type=submit]"
 SELLER = {
     "name": "READ FRANCE SAS",
     "form": "société par actions simplifiée",
@@ -216,6 +217,63 @@ class Site:
     def cards(self, items: list[dict], heading: str = "h3") -> str:
         return '<div class="cards">' + "".join(self.card(n, heading) for n in items) + "</div>"
 
+    def alert_inline(self, ctx: str, sector: str = "", region: str = "", bm: bool = False, title: str = "") -> str:
+        """Short alert sign-up (e-mail + consent), pre-filled from the page: sector and region of a tender, of a
+        sector or region page, or of the list filters (synced by static/alerte-inline.js). Posts the same `signup`
+        as /alertes/ (kind alertes, no plan). `ctx` goes into the alert_form_view event detail."""
+        sector = sector if sector in SECTOR_LABEL and sector != "autre" else ""
+        sector_opts = '<option value="">Tous les secteurs</option>' + "".join(
+            f'<option value="{k}"{" selected" if k == sector else ""}>{e(v)}</option>'
+            for k, v in SECTOR_LABEL.items() if k != "autre")
+        if bm:
+            where_field = ('<p class="ai-zone"><span class="muted">Zone :</span> Afrique francophone, avis de la Banque mondiale'
+                           '<input type="hidden" name="countries" value="afrique-francophone"></p>')
+            price = ("Gratuit pendant les 21 jours du test, puis formule Pro prévue à 79 € pour 3 mois "
+                     "(prix net, TVA non applicable, sans renouvellement automatique). Aucun paiement aujourd'hui.")
+        else:
+            region_opts = '<option value="">Toutes les régions</option>' + "".join(
+                f'<option value="{e(model.slugify(r))}"{" selected" if r == region else ""}>{e(r)}</option>'
+                for r in model.REGIONS)
+            where_field = f'<label>Région<select name="regions">{region_opts}</select></label>'
+            price = ("Gratuit pendant les 21 jours du test, puis formule Essentiel prévue à 39 € pour 3 mois "
+                     "(prix net, TVA non applicable, sans renouvellement automatique). Aucun paiement aujourd'hui.")
+        qs = urlencode([(k, v) for k, v in (("secteur", sector), ("region", region)) if v])
+        full = link("alertes/") + ("?" + e(qs) if qs else "")
+        heading = title or "Recevoir les nouveaux appels d'offres de ce secteur et de cette région"
+        return f"""<section class="alert-inline" id="alerte" data-section="alerte-inline" data-ctx="{e(ctx)}" aria-labelledby="alerte-h">
+<h2 id="alerte-h">{e(heading)}</h2>
+<p class="ai-lead">Un e-mail le matin, seulement quand un nouvel avis correspond : objet officiel, acheteur, lieu, date limite, résumé et lien vers l'avis.</p>
+<form id="alerte-inline" class="ai-form" novalidate>
+<div class="hp" aria-hidden="true"><label>Site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
+<div class="ai-crit"><label>Secteur<select name="sectors">{sector_opts}</select></label>{where_field}</div>
+<label class="ai-email">Adresse e-mail professionnelle<input type="email" name="email" required autocomplete="email" maxlength="254" placeholder="vous@entreprise.ma"></label>
+<label class="chk consent"><input type="checkbox" name="consent" required> <span class="consent-text">{e(CONSENT_TEXT)}</span></label>
+<p class="ai-send"><button type="submit" class="btn">Recevoir ces alertes</button></p>
+<p class="form-msg" role="status" aria-live="polite"></p>
+</form>
+<p class="small ai-terms"><strong>Le service ouvre bientôt :</strong> vous recevrez d'abord un e-mail à l'ouverture, puis les alertes. {price} Désinscription en un clic dans chaque e-mail.</p>
+<p class="small"><a href="{full}">Choisir plusieurs secteurs et régions, ou un envoi hebdomadaire</a> · <a href="{link('confidentialite/')}">Vos données</a></p>
+</section>"""
+
+    def similar(self, n: dict, k: int = 6) -> list[dict]:
+        """Open notices close to `n`: same sector and same region (or World Bank country) first, then same sector,
+        then same place; within each group, soonest deadline first, those closing in under 3 days last."""
+        sec, reg = set(n.get("sectors", [])) - {"autre"}, set(n.get("regions", []))
+        bm = n["source"] == "BM"
+        scored = []
+        for m in self.open:
+            if m["id"] == n["id"]:
+                continue
+            s_hit = bool(sec & set(m.get("sectors", [])))
+            p_hit = (m["source"] == "BM" and m.get("country") == n.get("country")) if bm else bool(reg & set(m.get("regions", [])))
+            score = 3 if s_hit and p_hit else 2 if s_hit else 1 if p_hit else 0
+            if score:
+                left = model.days_left(m, self.today)
+                # Notices closing in under 3 days come last: too late to prepare an offer.
+                scored.append((-score, left is not None and left < 3, m.get("deadline", ""), m["id"], m))
+        scored.sort(key=lambda x: x[:4])
+        return [x[4] for x in scored[:k]]
+
     # ------------------------------------------------------------------ pages
     def stats(self) -> dict:
         pm = [n for n in self.open if n["source"] == "PMMP"]
@@ -258,7 +316,7 @@ class Site:
 <p class="kicker">Mis à jour le {e(self.updated_text())}</p>
 <h1>Appels d'offres publics au Maroc et en Afrique francophone, en cours aujourd'hui</h1>
 <p class="lead"><strong>{nb(s['pmmp'])} consultations ouvertes</strong> sur le portail marocain des marchés publics ({nb(cat.get('Travaux', 0))} travaux, {nb(cat.get('Fournitures', 0))} fournitures, {nb(cat.get('Services', 0))} services), plus {nb(s['bm'])} avis en français de projets financés par la Banque mondiale. Chaque avis a sa fiche avec un résumé en français et le lien vers l'avis officiel.</p>
-<p class="hero-cta"><a class="btn" href="{link('alertes/')}" data-mesure="cta_click" data-detail="hero">Recevoir les nouveaux avis par e-mail (gratuit pendant le test)</a> <a class="link-more" href="#liste">Parcourir la liste</a></p>
+<p class="hero-cta"><a class="btn" href="#alerte" data-mesure="cta_click" data-detail="hero">Recevoir les nouveaux avis par e-mail (gratuit pendant le test)</a> <a class="link-more" href="#liste">Parcourir la liste</a></p>
 <ul class="hero-facts">
 <li><b>{nb(s['new7'])}</b> publiées ces 7 derniers jours</li>
 <li><b>{nb(s['close7'])}</b> clôturent dans les 7 jours</li>
@@ -288,6 +346,7 @@ class Site:
 <p class="more"><button type="button" class="btn-ghost" id="plus" hidden>Afficher 50 avis de plus</button></p>
 <noscript><p>Sans JavaScript, parcourez les pages <a href="{link('secteurs/')}">par secteur</a> ou <a href="{link('regions/')}">par région</a>.</p></noscript>
 </section>
+{self.alert_inline("liste", title="Recevoir par e-mail les nouveaux avis de votre secteur")}
 
 <section class="explain" id="a-propos">
 <h2>Ce que fait ce site, et ce qu'il ne fait pas</h2>
@@ -306,7 +365,7 @@ class Site:
                "creator": PUBLISHER}]
         self.write("", self.page("", f"Appels d'offres Maroc en cours : {nb(s['pmmp'])} consultations | {BRAND}",
                                  f"{nb(s['pmmp'])} appels d'offres publics ouverts au Maroc, mis à jour deux fois par jour, avec filtres par secteur, région, acheteur et date limite, et un résumé en français de chaque avis.",
-                                 body, jsonld=ld, scripts=("app.js",)))
+                                 body, jsonld=ld, scripts=("app.js", "alerte-inline.js")))
 
     def build_tender(self, n: dict) -> None:
         open_ = model.is_open(n, self.now) and not n.get("delisted")
@@ -340,8 +399,37 @@ class Site:
         source_line = ("Source : Portail marocain des marchés publics (Trésorerie Générale du Royaume), avis publié le "
                        if n["source"] == "PMMP" else
                        "Source : Banque mondiale, avis de passation de marché (licence CC BY 4.0) publié le ")
-        similar = [m for m in self.open if m["id"] != n["id"] and set(m.get("sectors", [])) & set(n.get("sectors", []))
-                   and (set(m.get("regions", [])) & set(n.get("regions", [])) or m.get("country") == n.get("country") != "Maroc")][:6]
+        similar = self.similar(n)
+        sector = next((s for s in n.get("sectors", []) if s != "autre"), "")
+        region = (n.get("regions") or [""])[0]
+        bm = n["source"] == "BM"
+        if sector and (region or bm):
+            ai_title = "Recevoir les nouveaux appels d'offres de ce secteur" + (" et de cette région" if region else " en Afrique francophone")
+        elif sector:
+            ai_title = "Recevoir les nouveaux appels d'offres de ce secteur"
+        elif region:
+            ai_title = "Recevoir les nouveaux appels d'offres de cette région"
+        else:
+            ai_title = "Recevoir les nouveaux appels d'offres publics" + (" d'Afrique francophone" if bm else " du Maroc")
+        more = []
+        if sector:
+            more.append(f'<li><a href="{link("secteurs/" + sector + "/")}">Tous les appels d\'offres du secteur « {e(SECTOR_LABEL[sector])} »</a> <span class="muted">({nb(self.n_sector.get(sector, 0))} ouverts)</span></li>')
+        if region:
+            more.append(f'<li><a href="{link("regions/" + model.slugify(region) + "/")}">Tous les appels d\'offres de la région {e(region)}</a> <span class="muted">({nb(self.n_region.get(region, 0))} ouverts)</span></li>')
+        if bm:
+            more.append(f'<li><a href="{link("afrique-francophone/")}">Tous les avis Banque mondiale en Afrique francophone</a> <span class="muted">({nb(sum(self.n_country.values()))} ouverts, dont {nb(self.n_country.get(n.get("country"), 0))} pour ce pays)</span></li>')
+        left = model.days_left(n, self.today)
+        if open_:
+            step1 = (f'<li><strong>Vérifier l\'avis officiel et retirer le dossier</strong> sur <a href="{e(n["url"])}" rel="noopener" data-mesure="official_click" data-detail="{n["source"].lower()}-fin">{src_name}</a> : '
+                     f'le règlement de consultation et les éventuels rectificatifs y sont publiés.</li>'
+                     f'<li><strong>Noter la date limite</strong> : {e(fmt_date(n.get("deadline", ""), weekday=True))}'
+                     f'{f" (dans {left} jours)" if left and left > 1 else ""}.</li>')
+        else:
+            step1 = '<li><strong>Cette consultation est close.</strong> Les avis similaires ci-dessus sont encore ouverts.</li>'
+        next_steps = f"""<section class="next-steps" id="suite" data-section="suite" aria-labelledby="suite-h">
+<h2 id="suite-h">Et maintenant ?</h2>
+<ol>{step1}<li><strong>Ne pas rater le prochain avis de ce type</strong> : <a href="#alerte" data-mesure="cta_click" data-detail="fin-fiche">recevez-le par e-mail</a> dès sa publication.</li></ol>
+</section>"""
         closed_note = "" if open_ else '<p class="notice">Cette consultation est clôturée ou n\'apparaît plus parmi les consultations en cours du portail. La fiche reste en ligne 30 jours.</p>'
         body = f"""
 <article class="tender">
@@ -353,15 +441,14 @@ class Site:
 <p>{e(model.summary(n, self.today))}</p>
 <p class="small muted">Résumé produit automatiquement par des règles fixes à partir des champs de l'avis, sans intelligence artificielle. L'objet ci-dessus est le texte officiel, non modifié.</p>
 </section>
-<p class="official" data-section="avis-officiel"><a class="btn" href="{e(n['url'])}" rel="noopener" data-mesure="official_click" data-detail="{n['source'].lower()}">Voir l'avis officiel sur {src_name}</a></p>
+<p class="official" data-section="avis-officiel"><a class="btn" href="{e(n['url'])}" rel="noopener" data-mesure="official_click" data-detail="{n['source'].lower()}">Voir l'avis officiel sur {src_name}</a> <a class="link-more" href="#alerte" data-mesure="cta_click" data-detail="fiche-haut">Être prévenu des avis similaires</a></p>
 <table class="facts-table"><caption>Fiche de la consultation</caption><tbody>{table}</tbody></table>
 <p class="small muted">{source_line}{e(fmt_date(n.get('published', '')))}, relu le {e(self.updated_text())}. Le dossier de consultation et les éventuels rectificatifs sont sur le site officiel, qui fait foi.</p>
 </article>
-<aside class="alert-box" data-section="alerte-cta">
-<p><strong>Ne ratez pas les prochaines consultations de ce type.</strong> Indiquez vos secteurs et régions : nous vous écrirons à l'ouverture des alertes e-mail.</p>
-<a class="btn btn-sm" href="{link('alertes/')}?secteur={e((n.get('sectors') or [''])[0])}" data-mesure="cta_click" data-detail="fiche">Créer mon alerte</a>
-</aside>
-{f'<section id="proches"><h2>Consultations proches</h2>{self.cards(similar)}</section>' if similar else ''}
+{self.alert_inline("fiche-bm" if bm else "fiche", sector, region, bm, ai_title)}
+{f'<section id="similaires" data-section="similaires" aria-labelledby="similaires-h"><h2 id="similaires-h">Avis similaires encore ouverts</h2>{self.cards(similar)}</section>' if similar else ''}
+{f'<ul class="more-links">{"".join(more)}</ul>' if more else ''}
+{next_steps}
 """
         d = model.parse_deadline(n.get("deadline", ""))
         ld = {"@context": "https://schema.org", "@type": "Demand", "name": n["object"][:300],
@@ -382,7 +469,7 @@ class Site:
             crumbs.append((f"secteurs/{n['sectors'][0]}/", SECTOR_LABEL.get(n["sectors"][0], "Secteur")))
         crumbs.append((f"ao/{n['slug']}/", title_obj))
         self.write(f"ao/{n['slug']}/", self.page(f"ao/{n['slug']}/", f"{title_obj} | AO {where}", desc, body,
-                                                  jsonld=ld, crumbs=crumbs),
+                                                  jsonld=ld, crumbs=crumbs, scripts=("alerte-inline.js",)),
                    lastmod=n.get("first_seen") or n.get("published"))
 
     def build_group_pages(self) -> None:
@@ -400,13 +487,16 @@ class Site:
             reg_txt = ", ".join(f"{r} ({c})" for r, c in regions)
             body = f"""<h1>Appels d'offres {e(label.lower())} : {nb(len(lst))} consultations ouvertes</h1>
 <p class="lead">{nb(len(ma))} au Maroc{f', surtout en {e(reg_txt)}' if reg_txt else ''}, et {nb(len(lst) - len(ma))} avis Banque mondiale en Afrique francophone. Liste triée par date limite, mise à jour le {e(self.updated_text())}.</p>
-<p><a class="btn btn-sm" href="{link('alertes/')}?secteur={slug}" data-mesure="cta_click" data-detail="secteur">Recevoir ce secteur par e-mail</a> <a class="link-more" href="{link('')}?secteur={slug}#liste">Filtrer davantage</a></p>
+<p><a class="btn btn-sm" href="#alerte" data-mesure="cta_click" data-detail="secteur">Recevoir ce secteur par e-mail</a> <a class="link-more" href="{link('')}?secteur={slug}#liste">Filtrer davantage</a></p>
 <p class="small muted">Classement par mots-clés sur l'objet et les domaines d'activité déclarés par l'acheteur : un avis peut relever de deux secteurs, et quelques-uns sont mal classés.</p>
-{self.cards(lst[:150], 'h2')}
+{self.cards(lst[:12], 'h2')}
+{self.alert_inline("secteur", slug, title=f"Recevoir par e-mail les nouveaux avis « {label} »") if slug != "autre" else ""}
+{self.cards(lst[12:150], 'h2')}
 {f'<p>Et {nb(len(lst) - 150)} autres : <a href="{link("")}?secteur={slug}#liste">voir la liste complète filtrée</a>.</p>' if len(lst) > 150 else ''}"""
             self.write(f"secteurs/{slug}/", self.page(f"secteurs/{slug}/", f"Appels d'offres {label} au Maroc ({nb(len(lst))} ouverts) | {BRAND}",
                                                       f"{nb(len(lst))} appels d'offres {label.lower()} ouverts au Maroc et en Afrique francophone, triés par date limite, avec résumé et lien officiel.",
-                                                      body, crumbs=[("", "Appels d'offres"), ("secteurs/", "Secteurs"), (f"secteurs/{slug}/", label)]))
+                                                      body, crumbs=[("", "Appels d'offres"), ("secteurs/", "Secteurs"), (f"secteurs/{slug}/", label)],
+                                                      scripts=("alerte-inline.js",)))
         self.write("secteurs/", self.page("secteurs/", f"Appels d'offres par secteur | {BRAND}",
                                           "Appels d'offres publics ouverts au Maroc classés en 13 secteurs : BTP, eau, énergie, informatique, études, santé…",
                                           f"<h1>Appels d'offres par secteur</h1><ul class='index-list'>{''.join(items)}</ul>",
@@ -421,12 +511,15 @@ class Site:
             sect = Counter(s for n in lst for s in n.get("sectors", [])).most_common(3)
             body = f"""<h1>Appels d'offres dans la région {e(region)} : {nb(len(lst))} consultations ouvertes</h1>
 <p class="lead">Lieux d'exécution les plus fréquents : {e(', '.join(f'{p} ({c})' for p, c in places)) or 'aucun'}. Secteurs principaux : {e(', '.join(f'{SECTOR_LABEL.get(s, s).lower()} ({c})' for s, c in sect)) or 'aucun'}. Mise à jour le {e(self.updated_text())}.</p>
-<p><a class="btn btn-sm" href="{link('alertes/')}?region={e(region)}" data-mesure="cta_click" data-detail="region">Recevoir cette région par e-mail</a></p>
-{self.cards(lst[:150], 'h2')}
+<p><a class="btn btn-sm" href="#alerte" data-mesure="cta_click" data-detail="region">Recevoir cette région par e-mail</a></p>
+{self.cards(lst[:12], 'h2')}
+{self.alert_inline("region", region=region, title="Recevoir les nouveaux appels d'offres de la région " + region)}
+{self.cards(lst[12:150], 'h2')}
 {f'<p>Et {nb(len(lst) - 150)} autres : <a href="{link("")}?region={e(region)}#liste">voir la liste complète filtrée</a>.</p>' if len(lst) > 150 else ''}"""
             self.write(f"regions/{slug}/", self.page(f"regions/{slug}/", f"Appels d'offres {region} ({nb(len(lst))} ouverts) | {BRAND}",
                                                      f"{nb(len(lst))} appels d'offres publics ouverts dans la région {region} (Maroc), triés par date limite, avec résumé et lien officiel.",
-                                                     body, crumbs=[("", "Appels d'offres"), ("regions/", "Régions"), (f"regions/{slug}/", region)]))
+                                                     body, crumbs=[("", "Appels d'offres"), ("regions/", "Régions"), (f"regions/{slug}/", region)],
+                                                     scripts=("alerte-inline.js",)))
         unplaced = sum(1 for n in self.open if n["source"] == "PMMP" and not n.get("regions"))
         self.write("regions/", self.page("regions/", f"Appels d'offres par région du Maroc | {BRAND}",
                                          "Appels d'offres publics ouverts dans les 12 régions du Maroc, d'après le lieu d'exécution déclaré par l'acheteur.",
@@ -441,10 +534,12 @@ class Site:
             blocks.append(f"<section><h2>{e(c)} <span class='muted'>({cnt})</span></h2>{self.cards(lst, 'h3')}</section>")
         body = f"""<h1>Appels d'offres Banque mondiale en Afrique francophone : {nb(len(bm))} avis ouverts</h1>
 <p class="lead">Avis rédigés en français (appels d'offres, appels à manifestation d'intérêt, avis spécifiques) de projets financés par la Banque mondiale dans {len(by_c)} pays et zones. Les portails nationaux de ces pays ne sont pas encore couverts : nous n'y avons pas trouvé d'accès automatisé dont les conditions sont claires.</p>
+{self.alert_inline("afrique", bm=True, title="Recevoir les nouveaux avis Banque mondiale d'Afrique francophone")}
 {''.join(blocks) or '<p>Aucun avis ouvert pour le moment.</p>'}"""
         self.write("afrique-francophone/", self.page("afrique-francophone/", f"Appels d'offres Banque mondiale Afrique francophone ({nb(len(bm))}) | {BRAND}",
                                                      "Avis de marchés en français des projets Banque mondiale au Sénégal, en Côte d'Ivoire, au Cameroun, à Madagascar, au Niger, en RD Congo et ailleurs, avec date limite et lien officiel.",
-                                                     body, crumbs=[("", "Appels d'offres"), ("afrique-francophone/", "Afrique francophone")]))
+                                                     body, crumbs=[("", "Appels d'offres"), ("afrique-francophone/", "Afrique francophone")],
+                                                     scripts=("alerte-inline.js",)))
 
     def build_alerts(self) -> None:
         sector_boxes = "".join(f'<label class="chk"><input type="checkbox" name="sectors" value="{k}"> {e(v)}</label>'
@@ -494,6 +589,23 @@ class Site:
 <section id="exemple-email">
 <h2>À quoi ressemblera l'e-mail</h2>
 <p>Objet : « 14 nouveaux appels d'offres : eau et assainissement, Souss-Massa ». Pour chaque avis : l'objet officiel, l'acheteur, le lieu, l'estimation et la caution quand elles sont publiées, la date limite, le résumé de quatre lignes que vous voyez sur chaque <a href="{link('')}#liste">fiche du site</a>, et le lien vers l'avis officiel.</p>
+</section>
+
+<section id="pour-qui">
+<h2>Trois exemples de réglage</h2>
+<ul>
+<li>Une entreprise de travaux d'Agadir coche les secteurs « BTP et aménagement » et « Eau, assainissement et irrigation », et la région Souss-Massa.</li>
+<li>Un bureau d'études de Rabat prend « Études, conseil et ingénierie » dans toutes les régions, et ajoute les avis Banque mondiale d'Afrique francophone.</li>
+<li>Un fournisseur de matériel informatique suit « Informatique et télécoms » et reçoit un seul e-mail par semaine.</li>
+</ul>
+</section>
+
+<section id="questions" data-section="faq">
+<h2>Questions fréquentes</h2>
+<details id="faq-prix"><summary>Est-ce payant ?</summary><p>Pas aujourd'hui. Les alertes sont gratuites pendant les 21 jours du test. Ensuite, deux formules sont prévues (Essentiel 39 €, Pro 79 €, pour 3 mois, prix nets, TVA non applicable) : nous vous écrirons avant, et rien ne vous sera facturé sans votre accord.</p></details>
+<details id="faq-volume"><summary>Combien d'e-mails vais-je recevoir ?</summary><p>Au plus un par matin (ou un par semaine si vous le choisissez), et seulement s'il y a de nouveaux avis dans vos secteurs et régions. Chaque e-mail contient un lien de désinscription en un clic.</p></details>
+<details id="faq-facture"><summary>Facture, devis, bon de commande ?</summary><p>Rien n'est facturé pendant le test. Si vous choisissez une formule payante à l'ouverture, la facture sera établie au nom de votre entreprise par {SELLER['name']} (SIREN {SELLER['siren']}). Si votre service achats demande un devis avant, écrivez à <a href="mailto:{CONTACT}">{CONTACT}</a>.</p></details>
+<details id="faq-mise-a-jour"><summary>Les avis sont-ils à jour ?</summary><p>La liste est relue deux fois par jour, vers 7 h et 19 h (heure de Paris). Une annulation ou un report peut mettre jusqu'à une semaine à apparaître : l'avis officiel fait foi. Le détail est sur la page <a href="{link('methode/')}">Méthode et sources</a>.</p></details>
 </section>
 """
         self.write("alertes/", self.page("alertes/", f"Alertes e-mail appels d'offres Maroc | {BRAND}",
@@ -632,6 +744,10 @@ class Site:
             shutil.rmtree(self.out)
         self.out.mkdir(parents=True)
         shutil.copytree(STATIC, self.out / "static")
+        # Open notices per sector / region / World Bank country: counts for the links at the end of each tender page.
+        self.n_sector = Counter(s for n in self.open for s in n.get("sectors", []))
+        self.n_region = Counter(r for n in self.open for r in n.get("regions", []))
+        self.n_country = Counter(n.get("country") for n in self.open if n["source"] == "BM")
         self.build_index()
         for n in self.all:
             self.build_tender(n)

@@ -58,6 +58,9 @@ h2 { font-size: clamp(1.25rem, 3vw, 1.6rem); margin: 2rem 0 .8rem; }
 .btn:hover { background: var(--clay-dark); color: #fff; }
 .btn:disabled { opacity: .6; cursor: wait; }
 .btn-sm { padding: .42rem .75rem; font-size: .9rem; }
+/* Touch targets: at least 44 px high (WCAG 2.5.5 / audit grid item 6). */
+.btn, .btn-ghost { min-height: 44px; display: inline-flex; align-items: center; justify-content: center; text-align: center; }
+.nav-cta { min-height: 40px; }
 .btn-ghost { background: transparent; border: 1.5px solid var(--green-2); color: var(--green-2); border-radius: 8px; padding: .55rem .9rem; font: 600 .95rem var(--sans); cursor: pointer; }
 .btn-ghost:hover { background: var(--green-2); color: #fff; }
 .link-btn { background: none; border: 0; color: var(--green-2); text-decoration: underline; cursor: pointer; font: inherit; font-size: .85rem; padding: 0 .3rem; }
@@ -122,8 +125,25 @@ input:focus, select:focus, button:focus-visible, a:focus-visible { outline: 3px 
 .facts-table th, .facts-table td { text-align: left; vertical-align: top; padding: .55rem .7rem; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
 .facts-table th { width: 36%; color: var(--muted); font-weight: 600; font-size: .88rem; }
 .notice { background: #ece7de; padding: .7rem 1rem; border-radius: var(--radius); }
-.alert-box { max-width: 52rem; margin: 2rem 0; background: var(--green); color: #f3efe6; border-radius: var(--radius); padding: 1rem 1.1rem; }
-.alert-box p { margin: 0 0 .7rem; }
+/* inline alert sign-up (tender, list, sector and region pages) */
+.alert-inline { max-width: 52rem; margin: 2rem 0; background: var(--paper); border: 1px solid var(--line); border-top: 4px solid var(--clay); border-radius: var(--radius); padding: .2rem 1.1rem 1rem; }
+.alert-inline h2 { margin: .9rem 0 .4rem; font-size: clamp(1.15rem, 2.6vw, 1.4rem); }
+.ai-lead { margin: 0 0 .8rem; }
+.ai-form { display: grid; gap: .7rem; }
+.ai-crit { display: grid; gap: .6rem; }
+.ai-crit label, .ai-email { display: grid; gap: .2rem; font-size: .85rem; font-weight: 600; color: var(--muted); min-width: 0; }
+.ai-zone { margin: 0; font-size: .93rem; align-self: end; }
+.ai-email { max-width: 30rem; }
+.ai-send { margin: 0; }
+.ai-send .btn { width: 100%; }
+@media (min-width: 640px) { .ai-crit { grid-template-columns: 1fr 1fr; } .ai-send .btn { width: auto; } }
+.ai-terms { margin: .8rem 0 .3rem; color: var(--muted); }
+.ai-terms strong { color: var(--ink); }
+.next-steps { max-width: 52rem; }
+.next-steps ol { padding-left: 1.3rem; }
+.next-steps li { margin: .45rem 0; }
+.more-links { max-width: 52rem; padding-left: 1.1rem; margin: 1.2rem 0; }
+.more-links li { margin: .35rem 0; }
 
 /* index lists */
 .index-list { columns: 1; padding-left: 1.1rem; }

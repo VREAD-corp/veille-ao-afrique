@@ -76,7 +76,7 @@ def test_every_page_loads_cro_js(tmp_path):
     site.build_all()
     assert (tmp_path / "static" / "cro.js").read_bytes() == (ROOT / "static" / "cro.js").read_bytes()
     tag = (f'<script src="/static/cro.js?v={CRO_V}" data-site="veille-ao-afrique" '
-           f'data-api="{GAS_URL}" data-hosts="ao-afrique.jalonel.com outils.vread.fr" data-cta="[data-mesure],#alerte-form [type=submit]" defer>')
+           f'data-api="{GAS_URL}" data-hosts="ao-afrique.jalonel.com outils.vread.fr" data-cta="[data-mesure],#alerte-form [type=submit],#alerte-inline [type=submit]" defer>')
     pages = list(tmp_path.rglob("*.html"))
     assert len(pages) > 30 and any(p.name == "404.html" for p in pages)
     for p in pages:
@@ -100,3 +100,11 @@ def test_goals_on_successful_signup():
     ok = js.index("if (!j.ok) throw")
     goal = js.index("octaveCro.goal(j.kind === 'preinscription' ? 'preorder' : 'signup')")
     assert ok < goal < js.index("form.reset()"), "goal recorded only after a successful sign-up"
+
+
+def test_inline_alert_goal_after_success_and_view_event():
+    js = (ROOT / "static" / "alerte-inline.js").read_text(encoding="utf-8")
+    ok = js.index("if (!j.ok) throw")
+    assert ok < js.index("octaveCro.goal('signup')"), "goal recorded only after a successful sign-up"
+    assert "window.aoaMesure('alert_form_view', ctx)" in js and "IntersectionObserver" in js
+    assert "kind: 'alertes', plan: ''" in js, "inline form never pre-registers a paid plan"

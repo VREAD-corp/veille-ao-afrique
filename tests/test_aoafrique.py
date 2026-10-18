@@ -109,3 +109,39 @@ def test_build_site(tmp_path):
     assert ws[0]["publisher"]["name"] == "Jalonel" and ws[0]["publisher"]["parentOrganization"]["name"] == "READ FRANCE SAS"
     legal = (tmp_path / "mentions-legales" / "index.html").read_text(encoding="utf-8")
     assert "Jalonel est une marque de READ FRANCE SAS." in legal and "988 741 773" in legal
+
+
+def test_inline_alert_on_tender_list_and_filter_pages(tmp_path):
+    rows = pmmp.parse_results((FX / "pmmp_list.html").read_text(encoding="utf-8"))
+    notices = [model.from_pmmp(r, None) for r in rows]
+    meta = {"updated": "2026-10-13T05:40+00:00", "sources": {}}
+    site = Site(tmp_path, notices, meta, "https://ao-afrique.jalonel.com/")
+    site.now = datetime(2026, 10, 13, 8, 0)
+    site.today = site.now.date()
+    site.open = notices
+    site.build_all()
+    n = notices[0]
+    page = (tmp_path / "ao" / n["slug"] / "index.html").read_text(encoding="utf-8")
+    # one short form, after the key facts, pre-filled with the tender's sector and region
+    assert page.count('<form id="alerte-inline"') == 1
+    assert page.index('class="facts-table"') < page.index('id="alerte"') < page.index('id="suite"')
+    sector = next(s for s in n["sectors"] if s != "autre")
+    assert f'<option value="{sector}" selected>' in page
+    assert f'<option value="{model.slugify(n["regions"][0])}" selected>' in page
+    assert 'data-ctx="fiche"' in page and "/static/alerte-inline.js" in page
+    # honest price and status next to the button
+    assert "Aucun paiement aujourd'hui" in page and "39 €" in page and "TVA non applicable" in page
+    assert "Le service ouvre bientôt" in page
+    # similar notices, links to the sector and region, clear next step at the end
+    assert "Et maintenant ?" in page and 'href="#alerte"' in page
+    assert f'href="/secteurs/{sector}/"' in page
+    assert "Consultations proches" not in page
+    form = page[page.index('<form id="alerte-inline"'):page.index("</form>", page.index('<form id="alerte-inline"'))]
+    assert form.count('name="email"') == 1 and form.count('type="checkbox"') == 1, "short form: e-mail + consent"
+    idx = (tmp_path / "index.html").read_text(encoding="utf-8")
+    assert 'data-ctx="liste"' in idx and 'href="#alerte"' in idx
+    sec = (tmp_path / "secteurs" / sector / "index.html").read_text(encoding="utf-8")
+    assert 'data-ctx="secteur"' in sec and f'<option value="{sector}" selected>' in sec
+    reg = (tmp_path / "regions" / model.slugify(n["regions"][0]) / "index.html").read_text(encoding="utf-8")
+    assert 'data-ctx="region"' in reg
+    assert 'data-ctx="afrique"' in (tmp_path / "afrique-francophone" / "index.html").read_text(encoding="utf-8")

@@ -88,6 +88,34 @@ test('tender page has summary, official link and JSON-LD', async ({ page }, info
   await page.screenshot({ path: `${SHOTS}/${info.project.name}-fiche.png`, fullPage: true });
 });
 
+test('inline alert on a tender page: pre-filled, view tracked, posts to the Sheet', async ({ page, request }, info) => {
+  const before = await admin(request);
+  await page.goto('secteurs/btp/');
+  const href = await page.locator('.card-title a').first().getAttribute('href');
+  await page.goto(href);
+  const box = page.locator('#alerte');
+  await expect(box).toHaveAttribute('data-ctx', 'fiche');
+  await expect(page.locator('#alerte-inline select[name=sectors]')).toHaveValue('btp');
+  await expect(box).toContainText('Aucun paiement aujourd');
+  await box.scrollIntoViewIfNeeded();
+  await expect(page.locator('#similaires .card').first()).toBeVisible();
+  await expect(page.locator('#suite')).toContainText('Et maintenant');
+  const email = `e2e-inline-${info.project.name}-${Date.now()}@example.com`;
+  await page.fill('#alerte-inline input[name=email]', email);
+  await page.check('#alerte-inline input[name=consent]');
+  await page.evaluate(() => { const g = window.octaveCro.goal; window.__goals = []; window.octaveCro.goal = (m) => { window.__goals.push(m); g(m); }; });
+  await page.click('#alerte-inline button[type=submit]');
+  await expect(page.locator('#alerte-inline .form-msg')).toContainText('noté', { timeout: 30000 });
+  expect(await page.evaluate(() => window.__goals)).toEqual(['signup']);
+  await noHorizontalScroll(page);
+  await page.screenshot({ path: `${SHOTS}/${info.project.name}-fiche-alerte.png`, fullPage: false });
+  const after = await admin(request, `&find=${encodeURIComponent(email)}`);
+  expect(after.found, 'row written in the Sheet').toBe(true);
+  expect(c(after, 'alert_signup:test')).toBeGreaterThan(c(before, 'alert_signup:test'));
+  await expect.poll(async () => x(await admin(request), 'alert_form_view:fiche'), { timeout: 30000, intervals: [3000] })
+    .toBeGreaterThan(x(before, 'alert_form_view:fiche'));
+});
+
 test('alert form posts to the Sheet, pre-registration is tracked', async ({ page, request }, info) => {
   const before = await admin(request);
   await page.goto('alertes/?secteur=energie');
