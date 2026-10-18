@@ -1816,6 +1816,18 @@
 "reserved": false,
 "variant": "Non"
 },
+"ma-d0q-1048782": {
+"bond": 10000.0,
+"buyer_full": "RTAH / CRBL - COMMUNE BNI LENT",
+"domains": [
+"Services / Services de location sans option d’achat / Salles et stands"
+],
+"estimate": 154000.0,
+"fetched": "2026-10-18",
+"notice_type": "Annonce de consultation",
+"reserved": false,
+"variant": "Non"
+},
 "ma-d0q-1048805": {
 "bond": 20000.0,
 "buyer_full": "RTAH / CRM - Commune rurale de MKANSA",
@@ -5341,6 +5353,30 @@
 "reserved": true,
 "variant": "Non",
 "visit": "30/10/2026 10:00"
+},
+"ma-d4q-1050866": {
+"bond": 82700.0,
+"buyer_full": "MEMEE / ABHSEHOE - AGENCE DU BASSIN HYDRAULIQUE DE SAKIA EL HAMRA & OUED EDDAHAB",
+"domains": [
+"Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
+],
+"estimate": 5510000.0,
+"fetched": "2026-10-18",
+"notice_type": "Annonce de consultation",
+"reserved": true,
+"variant": "Non"
+},
+"ma-d4q-1050867": {
+"bond": 18000.0,
+"buyer_full": "MEMEE / ABHSEHOE - AGENCE DU BASSIN HYDRAULIQUE DE SAKIA EL HAMRA & OUED EDDAHAB",
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
+],
+"estimate": 945468.0,
+"fetched": "2026-10-18",
+"notice_type": "Annonce de consultation",
+"reserved": true,
+"variant": "Non"
 },
 "ma-d8t-1023324": {
 "bond": 8000.0,
@@ -9022,6 +9058,18 @@
 "fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": true,
+"variant": "Non"
+},
+"ma-f9f-1050853": {
+"bond": 8000.0,
+"buyer_full": "RSMD / CRANI - Commune rurale de AZAGHAR N'IRS",
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
+],
+"estimate": 417600.0,
+"fetched": "2026-10-18",
+"notice_type": "Annonce de consultation",
+"reserved": false,
 "variant": "Non"
 },
 "ma-g0u-1036787": {
@@ -32809,6 +32857,18 @@
 "variant": "Non",
 "visit": "28/10/2026 11:00"
 },
+"ma-o8p-1047966": {
+"bond": 1120000.0,
+"buyer_full": "M3 / CSETLET - CHEF DE SERVICE DE L'EQUIPEMENT DU TRANSPORTS DE LA LOGISTIQUE ET DE L'EAU TINGHIR",
+"domains": [
+"Travaux / Terrassements / Terrassements routiers"
+],
+"estimate": 56320379.1,
+"fetched": "2026-10-18",
+"notice_type": "Annonce de consultation",
+"reserved": false,
+"variant": "Non"
+},
 "ma-o8p-1048160": {
 "bond": 190000.0,
 "buyer_full": "M3 / ANEP / DRANEPO - DIRECTION REGIONALE DE L'AGENCE NATIONALE DES EQUIPEMENTS PUBLICS DE L'ORIENTAL",
@@ -34259,6 +34319,30 @@
 "fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": true,
+"variant": "Non"
+},
+"ma-p1v-1050852": {
+"bond": 15000.0,
+"buyer_full": "RDA / CRSABH - Commune rurale de S. ALI BEN HAMDOUCHE",
+"domains": [
+"Services / Etudes d’ingénierie / Etude de marché"
+],
+"estimate": 880800.0,
+"fetched": "2026-10-18",
+"notice_type": "Annonce de consultation",
+"reserved": false,
+"variant": "Non"
+},
+"ma-p1v-1050855": {
+"bond": 25000.0,
+"buyer_full": "RDA / CRSABH - Commune rurale de S. ALI BEN HAMDOUCHE",
+"domains": [
+"Services / Etudes d’ingénierie / Etude de marché"
+],
+"estimate": 1358559.0,
+"fetched": "2026-10-18",
+"notice_type": "Annonce de consultation",
+"reserved": false,
 "variant": "Non"
 },
 "ma-p8x-1037090": {
@@ -39854,6 +39938,42 @@
 ],
 "estimate": 9220712.4,
 "fetched": "2026-10-17",
+"notice_type": "Annonce de consultation",
+"reserved": false,
+"variant": "Non"
+},
+"ma-p8x-1050841": {
+"bond": 30000.0,
+"buyer_full": "MENESFC / DPD - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE Driouch",
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
+"estimate": 1671552.0,
+"fetched": "2026-10-18",
+"notice_type": "Annonce de consultation",
+"reserved": false,
+"variant": "Non"
+},
+"ma-p8x-1050842": {
+"bond": 38000.0,
+"buyer_full": "MENESFC / DPD - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE Driouch",
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
+"estimate": 1964064.0,
+"fetched": "2026-10-18",
+"notice_type": "Annonce de consultation",
+"reserved": false,
+"variant": "Non"
+},
+"ma-p8x-1050861": {
+"bond": 40000.0,
+"buyer_full": "MENESFC / DPE - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D'ERRACHIDIA",
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
+"estimate": 2313542.4,
+"fetched": "2026-10-18",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -47454,6 +47574,30 @@
 ],
 "estimate": 350000.0,
 "fetched": "2026-10-12",
+"notice_type": "Annonce de consultation",
+"reserved": false,
+"variant": "Non"
+},
+"ma-s3d-1050850": {
+"bond": 5000.0,
+"buyer_full": "MJS / SONARGES - SOCIETE NATIONALE DE REALISATION ET DE GESTION DES ÉQUIPEMENTS SPORTIFS",
+"domains": [
+"Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
+],
+"estimate": 300000.0,
+"fetched": "2026-10-18",
+"notice_type": "Annonce de consultation",
+"reserved": false,
+"variant": "Non"
+},
+"ma-s3d-1050857": {
+"bond": 60000.0,
+"buyer_full": "MJS / SONARGES - SOCIETE NATIONALE DE REALISATION ET DE GESTION DES ÉQUIPEMENTS SPORTIFS",
+"domains": [
+"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
+],
+"estimate": 3300000.0,
+"fetched": "2026-10-18",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"

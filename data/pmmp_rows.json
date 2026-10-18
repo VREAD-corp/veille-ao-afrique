@@ -2498,6 +2498,22 @@
 "reference": "02/2026/CT.Ratba"
 },
 {
+"buyer": "COMMUNE BNI LENT",
+"category": "Services",
+"deadline": "2026-11-10T11:00",
+"env_clauses": false,
+"object": "gestion déléguée du Souk hebdomadaire de BNI LENT PROVINCE DE TAZA",
+"org": "d0q",
+"places": [
+"Province de Taza"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-18",
+"ref_id": "1048782",
+"reference": "6/2026"
+},
+{
 "buyer": "Commune rurale de MKANSA",
 "category": "Services",
 "deadline": "2026-11-11T11:00",
@@ -7783,6 +7799,42 @@
 "reference": "PM3131120/2026/DXM"
 },
 {
+"buyer": "AGENCE DU BASSIN HYDRAULIQUE DE SAKIA EL HAMRA & OUED EDDAHAB",
+"category": "Services",
+"deadline": "2026-11-12T10:00",
+"env_clauses": false,
+"object": "ETUDE DE DELIMITATION DU DOMAINE PUBLIC HYDRAULIQUE AU NIVEAU DE LA REGION DE LAAYOUNE SAKIA EL HAMRA",
+"org": "d4q",
+"places": [
+"LAAYOUNE",
+"BOUJDOUR",
+"TARFAYA",
+"ES-SEMARA"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-18",
+"ref_id": "1050866",
+"reference": "09/2026/ABHSHOD"
+},
+{
+"buyer": "AGENCE DU BASSIN HYDRAULIQUE DE SAKIA EL HAMRA & OUED EDDAHAB",
+"category": "Travaux",
+"deadline": "2026-11-12T11:00",
+"env_clauses": false,
+"object": "TRAVAUX D’AMENAGEMENT DES STATIONS HYDROLOGIQUES RELEVANT DES PROVINCES D’ES-SMARA ET DE LAÂYOUNE",
+"org": "d4q",
+"places": [
+"LAAYOUNE",
+"ES-SEMARA"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-18",
+"ref_id": "1050867",
+"reference": "10/2026/ABHSHOD"
+},
+{
 "buyer": "DELEGUE PROVINCIAL DU SECRETARIAT D'ETAT AUPRES DU 1ER MINISTRE CHARGE DE LA JEUNESSE MARRAKECH-AL HAOUZ",
 "category": "Travaux",
 "deadline": "2026-10-29T11:00",
@@ -12824,6 +12876,22 @@
 "published": "2026-10-16",
 "ref_id": "1050766",
 "reference": "09/2026"
+},
+{
+"buyer": "Commune rurale de AZAGHAR N'IRS",
+"category": "Travaux",
+"deadline": "2026-11-11T10:00",
+"env_clauses": false,
+"object": "TRAVAUX DES CLOTURES EN GRILLAGE DES CIMETIERES DES DOUARS : TINTZOURINE ET TASGOUNT A LA CT AZAGHAR N’IRS.",
+"org": "f9f",
+"places": [
+"TAROUDANNT"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-18",
+"ref_id": "1050853",
+"reference": "03/AZA/2026"
 },
 {
 "buyer": "L'IMPRIMERIE OFFICIELLE",
@@ -46979,6 +47047,22 @@
 "reference": "43/2026/AMDL"
 },
 {
+"buyer": "CHEF DE SERVICE DE L'EQUIPEMENT DU TRANSPORTS DE LA LOGISTIQUE ET DE L'EAU TINGHIR",
+"category": "Travaux",
+"deadline": "2026-11-10T10:00",
+"env_clauses": false,
+"object": "Travaux d’amélioration du niveau de service de la RN10 du PK465+410 au PK 474+550 et du PK 476+380 AU PK 479+694 – Province de Tinghir",
+"org": "o8p",
+"places": [
+"TINGHIR"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-18",
+"ref_id": "1047966",
+"reference": "AO33/2026"
+},
+{
 "buyer": "DIRECTION REGIONALE DE L'AGENCE NATIONALE DES EQUIPEMENTS PUBLICS DE L'ORIENTAL",
 "category": "Travaux",
 "deadline": "2026-11-03T10:00",
@@ -49100,6 +49184,38 @@
 "published": "2026-10-16",
 "ref_id": "1050772",
 "reference": "08/2026"
+},
+{
+"buyer": "Commune rurale de S. ALI BEN HAMDOUCHE",
+"category": "Services",
+"deadline": "2026-11-13T15:00",
+"env_clauses": false,
+"object": "ETUDES TECHNIQUES DE ROUTES GOUDRONNEES EN BICOUCHE ET EN ENROBE DANS LA COMMUE SIDI ALI BEN HAMDOUCHE",
+"org": "p1v",
+"places": [
+"EL JADIDA"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-18",
+"ref_id": "1050852",
+"reference": "01/2026"
+},
+{
+"buyer": "Commune rurale de S. ALI BEN HAMDOUCHE",
+"category": "Services",
+"deadline": "2026-11-12T15:00",
+"env_clauses": false,
+"object": "ETUDE TECHNIQUE DU SOUK HEBDOMADAIRE DE LA COMMUNE SIDI ALI BEN HAMDOUCHE",
+"org": "p1v",
+"places": [
+"EL JADIDA"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-18",
+"ref_id": "1050855",
+"reference": "02/2026"
 },
 {
 "buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE TINGHIR",
@@ -56730,6 +56846,54 @@
 "published": "2026-10-17",
 "ref_id": "1050829",
 "reference": "131/DPS/2026"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE Driouch",
+"category": "Travaux",
+"deadline": "2026-11-19T10:00",
+"env_clauses": false,
+"object": "Travaux De Construction de 08 salles de classe pour l’enseignement Primaire, relevant de la Direction De Driouch.",
+"org": "p8x",
+"places": [
+"Province de Driouch"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-18",
+"ref_id": "1050841",
+"reference": "17/2026"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE Driouch",
+"category": "Travaux",
+"deadline": "2026-11-19T10:30",
+"env_clauses": false,
+"object": "Travaux De Construction de 08 salles de classe pour l’enseignement Qualifiant, relevant de la Direction De Driouch.",
+"org": "p8x",
+"places": [
+"Province de Driouch"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-18",
+"ref_id": "1050842",
+"reference": "18/2026"
+},
+{
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D'ERRACHIDIA",
+"category": "Travaux",
+"deadline": "2026-11-10T10:00",
+"env_clauses": false,
+"object": "TRAVAUX D’EXTENSION PAR NEUF (09) SALLES DE CLASSE ET CONSTRUCTION DE DEUX (02) BUREAUX ADMINISTRATIFS, DANS DES ETABLISSEMENTS PRIMAIRES ET COLLEGIAUX , PROVINCE D’ERRACHIDIA",
+"org": "p8x",
+"places": [
+"Province d'Errachidia"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-18",
+"ref_id": "1050861",
+"reference": "43/2026/ERR"
 },
 {
 "buyer": "Commune urbaine de MEKNES",
@@ -67565,6 +67729,39 @@
 "published": "2026-10-12",
 "ref_id": "1048770",
 "reference": "16/2026/SONARGES"
+},
+{
+"buyer": "SOCIETE NATIONALE DE REALISATION ET DE GESTION DES ÉQUIPEMENTS SPORTIFS",
+"category": "Services",
+"deadline": "2026-11-09T10:00",
+"env_clauses": false,
+"object": "ELABORATION DES ÉTUDES TECHNIQUES ET SUIVI DES TRAVAUX D’AMÉNAGEMENT AUX INFRASTRUCTURES RELEVANT DE LA DIRECTION RÉGIONALE DE LA SONARGES A LA REGION DE CASABLANCA SETTAT",
+"org": "s3d",
+"places": [
+"CASABLANCA"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-18",
+"ref_id": "1050850",
+"reference": "05/DRCS/2026/SONARGES"
+},
+{
+"buyer": "SOCIETE NATIONALE DE REALISATION ET DE GESTION DES ÉQUIPEMENTS SPORTIFS",
+"category": "Services",
+"deadline": "2026-11-09T11:00",
+"env_clauses": false,
+"object": "REALISATION DES PRESTATIONS DE MAINTENANCE PREVENTIVE, CORRECTIVE, DES INSTALLATIONS MULTITECHNIQUES DES INFRASTRUCTURES DE LA SONARGES RELEVANT DE LA REGION CASABLANCA-SETTAT",
+"org": "s3d",
+"places": [
+"CASABLANCA",
+"BENSLIMANE"
+],
+"procedure": "Appel d'offres ouvert",
+"procedure_code": "AOO",
+"published": "2026-10-18",
+"ref_id": "1050857",
+"reference": "06/DRCS/2026/SONARGES"
 },
 {
 "buyer": "PREFECTURE de SALE",

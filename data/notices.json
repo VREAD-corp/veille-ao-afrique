@@ -1,5 +1,271 @@
 [
 {
+"bond": 60000.0,
+"buyer": "SOCIETE NATIONALE DE REALISATION ET DE GESTION DES ÉQUIPEMENTS SPORTIFS",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-11-09T11:00",
+"detail_checked": true,
+"domains": [
+"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
+],
+"env_clauses": false,
+"estimate": 3300000.0,
+"first_seen": "2026-10-18",
+"id": "ma-s3d-1050857",
+"object": "REALISATION DES PRESTATIONS DE MAINTENANCE PREVENTIVE, CORRECTIVE, DES INSTALLATIONS MULTITECHNIQUES DES INFRASTRUCTURES DE LA SONARGES RELEVANT DE LA REGION CASABLANCA-SETTAT",
+"places": [
+"CASABLANCA",
+"BENSLIMANE"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-18",
+"reference": "06/DRCS/2026/SONARGES",
+"regions": [
+"Casablanca-Settat"
+],
+"reserved": false,
+"sectors": [
+"energie",
+"vehicules-transport"
+],
+"slug": "ma-s3d-1050857-realisation-prestations-maintenance-preventive-corrective-installations-multitec",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050857&orgAcronyme=s3d",
+"variant": "Non"
+},
+{
+"bond": 5000.0,
+"buyer": "SOCIETE NATIONALE DE REALISATION ET DE GESTION DES ÉQUIPEMENTS SPORTIFS",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-11-09T10:00",
+"detail_checked": true,
+"domains": [
+"Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
+],
+"env_clauses": false,
+"estimate": 300000.0,
+"first_seen": "2026-10-18",
+"id": "ma-s3d-1050850",
+"object": "ELABORATION DES ÉTUDES TECHNIQUES ET SUIVI DES TRAVAUX D’AMÉNAGEMENT AUX INFRASTRUCTURES RELEVANT DE LA DIRECTION RÉGIONALE DE LA SONARGES A LA REGION DE CASABLANCA SETTAT",
+"places": [
+"CASABLANCA"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-18",
+"reference": "05/DRCS/2026/SONARGES",
+"regions": [
+"Casablanca-Settat"
+],
+"reserved": false,
+"sectors": [
+"etudes-conseil"
+],
+"slug": "ma-s3d-1050850-elaboration-etudes-techniques-suivi-travaux-damenagement-infrastructures-relevan",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050850&orgAcronyme=s3d",
+"variant": "Non"
+},
+{
+"bond": 40000.0,
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D'ERRACHIDIA",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-10T10:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
+"env_clauses": false,
+"estimate": 2313542.4,
+"first_seen": "2026-10-18",
+"id": "ma-p8x-1050861",
+"object": "TRAVAUX D’EXTENSION PAR NEUF (09) SALLES DE CLASSE ET CONSTRUCTION DE DEUX (02) BUREAUX ADMINISTRATIFS, DANS DES ETABLISSEMENTS PRIMAIRES ET COLLEGIAUX , PROVINCE D’ERRACHIDIA",
+"places": [
+"Province d'Errachidia"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-18",
+"reference": "43/2026/ERR",
+"regions": [
+"Drâa-Tafilalet"
+],
+"reserved": false,
+"sectors": [
+"btp"
+],
+"slug": "ma-p8x-1050861-travaux-dextension-neuf-09-salles-classe-construction-deux-02",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050861&orgAcronyme=p8x",
+"variant": "Non"
+},
+{
+"bond": 38000.0,
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE Driouch",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-19T10:30",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
+"env_clauses": false,
+"estimate": 1964064.0,
+"first_seen": "2026-10-18",
+"id": "ma-p8x-1050842",
+"object": "Travaux De Construction de 08 salles de classe pour l’enseignement Qualifiant, relevant de la Direction De Driouch.",
+"places": [
+"Province de Driouch"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-18",
+"reference": "18/2026",
+"regions": [
+"L'Oriental"
+],
+"reserved": false,
+"sectors": [
+"btp"
+],
+"slug": "ma-p8x-1050842-travaux-construction-08-salles-classe-lenseignement-qualifiant-relevant-directio",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050842&orgAcronyme=p8x",
+"variant": "Non"
+},
+{
+"bond": 30000.0,
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE Driouch",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-19T10:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
+"env_clauses": false,
+"estimate": 1671552.0,
+"first_seen": "2026-10-18",
+"id": "ma-p8x-1050841",
+"object": "Travaux De Construction de 08 salles de classe pour l’enseignement Primaire, relevant de la Direction De Driouch.",
+"places": [
+"Province de Driouch"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-18",
+"reference": "17/2026",
+"regions": [
+"L'Oriental"
+],
+"reserved": false,
+"sectors": [
+"btp"
+],
+"slug": "ma-p8x-1050841-travaux-construction-08-salles-classe-lenseignement-primaire-relevant-direction",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050841&orgAcronyme=p8x",
+"variant": "Non"
+},
+{
+"bond": 25000.0,
+"buyer": "Commune rurale de S. ALI BEN HAMDOUCHE",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-11-12T15:00",
+"detail_checked": true,
+"domains": [
+"Services / Etudes d’ingénierie / Etude de marché"
+],
+"env_clauses": false,
+"estimate": 1358559.0,
+"first_seen": "2026-10-18",
+"id": "ma-p1v-1050855",
+"object": "ETUDE TECHNIQUE DU SOUK HEBDOMADAIRE DE LA COMMUNE SIDI ALI BEN HAMDOUCHE",
+"places": [
+"EL JADIDA"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-18",
+"reference": "02/2026",
+"regions": [
+"Casablanca-Settat"
+],
+"reserved": false,
+"sectors": [
+"etudes-conseil"
+],
+"slug": "ma-p1v-1050855-etude-technique-souk-hebdomadaire-commune-sidi-ali-ben-hamdouche",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050855&orgAcronyme=p1v",
+"variant": "Non"
+},
+{
+"bond": 15000.0,
+"buyer": "Commune rurale de S. ALI BEN HAMDOUCHE",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-11-13T15:00",
+"detail_checked": true,
+"domains": [
+"Services / Etudes d’ingénierie / Etude de marché"
+],
+"env_clauses": false,
+"estimate": 880800.0,
+"first_seen": "2026-10-18",
+"id": "ma-p1v-1050852",
+"object": "ETUDES TECHNIQUES DE ROUTES GOUDRONNEES EN BICOUCHE ET EN ENROBE DANS LA COMMUE SIDI ALI BEN HAMDOUCHE",
+"places": [
+"EL JADIDA"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-18",
+"reference": "01/2026",
+"regions": [
+"Casablanca-Settat"
+],
+"reserved": false,
+"sectors": [
+"etudes-conseil"
+],
+"slug": "ma-p1v-1050852-etudes-techniques-routes-goudronnees-bicouche-enrobe-commue-sidi-ali",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050852&orgAcronyme=p1v",
+"variant": "Non"
+},
+{
+"bond": 1120000.0,
+"buyer": "CHEF DE SERVICE DE L'EQUIPEMENT DU TRANSPORTS DE LA LOGISTIQUE ET DE L'EAU TINGHIR",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-10T10:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Terrassements / Terrassements routiers"
+],
+"env_clauses": false,
+"estimate": 56320379.1,
+"first_seen": "2026-10-18",
+"id": "ma-o8p-1047966",
+"object": "Travaux d’amélioration du niveau de service de la RN10 du PK465+410 au PK 474+550 et du PK 476+380 AU PK 479+694 – Province de Tinghir",
+"places": [
+"TINGHIR"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-18",
+"reference": "AO33/2026",
+"regions": [
+"Drâa-Tafilalet"
+],
+"reserved": false,
+"sectors": [
+"btp"
+],
+"slug": "ma-o8p-1047966-travaux-damelioration-niveau-service-rn10-pk465-410-pk-474",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1047966&orgAcronyme=o8p",
+"variant": "Non"
+},
+{
 "bond": 55000.0,
 "buyer": "SOCIETE TANGER REGION AMENAGEMENTS S.A",
 "category": "Travaux",
@@ -187,6 +453,167 @@
 "url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1040352&orgAcronyme=g3h",
 "variant": "Non",
 "visit": "27/10/2026 10:30"
+},
+{
+"bond": 8000.0,
+"buyer": "Commune rurale de AZAGHAR N'IRS",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-11T10:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
+],
+"env_clauses": false,
+"estimate": 417600.0,
+"first_seen": "2026-10-18",
+"id": "ma-f9f-1050853",
+"object": "TRAVAUX DES CLOTURES EN GRILLAGE DES CIMETIERES DES DOUARS : TINTZOURINE ET TASGOUNT A LA CT AZAGHAR N’IRS.",
+"places": [
+"TAROUDANNT"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-18",
+"reference": "03/AZA/2026",
+"regions": [
+"Souss-Massa"
+],
+"reserved": false,
+"sectors": [
+"btp",
+"services-generaux"
+],
+"slug": "ma-f9f-1050853-travaux-clotures-grillage-cimetieres-douars-tintzourine-tasgount-ct-azaghar",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050853&orgAcronyme=f9f",
+"variant": "Non"
+},
+{
+"bond": 18000.0,
+"buyer": "AGENCE DU BASSIN HYDRAULIQUE DE SAKIA EL HAMRA & OUED EDDAHAB",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-12T11:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
+],
+"env_clauses": false,
+"estimate": 945468.0,
+"first_seen": "2026-10-18",
+"id": "ma-d4q-1050867",
+"object": "TRAVAUX D’AMENAGEMENT DES STATIONS HYDROLOGIQUES RELEVANT DES PROVINCES D’ES-SMARA ET DE LAÂYOUNE",
+"places": [
+"LAAYOUNE",
+"ES-SEMARA"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-18",
+"reference": "10/2026/ABHSHOD",
+"regions": [
+"Laâyoune-Sakia El Hamra"
+],
+"reserved": true,
+"sectors": [
+"btp",
+"services-generaux"
+],
+"slug": "ma-d4q-1050867-travaux-damenagement-stations-hydrologiques-relevant-provinces-smara-laayoune",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050867&orgAcronyme=d4q",
+"variant": "Non"
+},
+{
+"bond": 82700.0,
+"buyer": "AGENCE DU BASSIN HYDRAULIQUE DE SAKIA EL HAMRA & OUED EDDAHAB",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-11-12T10:00",
+"detail_checked": true,
+"domains": [
+"Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
+],
+"env_clauses": false,
+"estimate": 5510000.0,
+"first_seen": "2026-10-18",
+"id": "ma-d4q-1050866",
+"object": "ETUDE DE DELIMITATION DU DOMAINE PUBLIC HYDRAULIQUE AU NIVEAU DE LA REGION DE LAAYOUNE SAKIA EL HAMRA",
+"places": [
+"LAAYOUNE",
+"BOUJDOUR",
+"TARFAYA",
+"ES-SEMARA"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-18",
+"reference": "09/2026/ABHSHOD",
+"regions": [
+"Laâyoune-Sakia El Hamra"
+],
+"reserved": true,
+"sectors": [
+"eau-assainissement",
+"etudes-conseil"
+],
+"slug": "ma-d4q-1050866-etude-delimitation-domaine-public-hydraulique-niveau-region-laayoune-sakia",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050866&orgAcronyme=d4q",
+"variant": "Non"
+},
+{
+"bond": 10000.0,
+"buyer": "COMMUNE BNI LENT",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-11-10T11:00",
+"detail_checked": true,
+"domains": [
+"Services / Services de location sans option d’achat / Salles et stands"
+],
+"env_clauses": false,
+"estimate": 154000.0,
+"first_seen": "2026-10-18",
+"id": "ma-d0q-1048782",
+"object": "gestion déléguée du Souk hebdomadaire de BNI LENT PROVINCE DE TAZA",
+"places": [
+"Province de Taza"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-18",
+"reference": "6/2026",
+"regions": [
+"Fès-Meknès"
+],
+"reserved": false,
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "ma-d0q-1048782-gestion-deleguee-souk-hebdomadaire-bni-lent-province-taza",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048782&orgAcronyme=d0q",
+"variant": "Non"
+},
+{
+"buyer": "Institut National de la Statistique",
+"category": "Services de consultants",
+"country": "Afrique de l'Ouest et du Centre (régional)",
+"deadline": "2026-11-04T16:00",
+"first_seen": "2026-10-18",
+"id": "wb-op00475909",
+"method": "Consultant Qualification  Selection",
+"object": "Sélection d'un cabinet pour le recrutement du personnel complémentaire dans le cadre du 5 ème RGPH",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P178497 – Harmonizing and Improving Statistics in West and Central Africa - Series of Projects 1 (HISWACA - SO",
+"published": "2026-10-17",
+"reference": "NE-INS-NIGER-572857-CS-CQS",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "wb-op00475909-selection-cabinet-recrutement-personnel-complementaire-cadre-5-eme-rgph",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00475909"
 },
 {
 "bond": 6500.0,
