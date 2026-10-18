@@ -33,7 +33,7 @@
  */
 
 var SITE_ = 'veille-ao-afrique';
-var OWN_HOSTS_ = ['ao-afrique.jalonel.com', 'outils.vread.fr', 'vread-corp.github.io'];
+var OWN_HOSTS_ = ['ao-afrique.jalonel.com'];
 var STATS_HEADER_ = ['date', 'site', 'page', 'event', 'detail', 'source', 'medium', 'campaign', 'count', 'mobile', 'desktop', 'updated_at'];
 var STATS_KEYS_ = 8;
 var EXCL_HEADER_ = ['date', 'site', 'page', 'event', 'detail', 'reason', 'count', 'mobile', 'desktop', 'updated_at'];
@@ -54,7 +54,7 @@ var TRACK_DETAILS_ = /^[a-z0-9_-]{0,40}$/;
 var KINDS_ = ['alertes', 'preinscription'];
 var PLANS_ = ['', 'essentiel-39', 'pro-79'];
 var FREQ_ = ['', 'quotidien', 'hebdomadaire'];
-var CONSENT_VERSION_ = 'v1-2026-10-13';
+var CONSENT_VERSION_ = 'v2-2026-10-18'; // v2: contact address contact@jalonel.com in the consent text
 var RATE_TRACK_ = 300;   // hits per minute, all pages
 var RATE_SIGNUP_ = 20;   // sign-ups per minute
 
@@ -402,7 +402,7 @@ function signup_(req) {
 
 function unsubscribe_(req) {
   var email = String(req.email || '').trim().toLowerCase();
-  if (!email || String(req.t || '') !== hmac_(email)) return '<p>Lien invalide. Écrivez à octave@vread.fr pour être retiré de la liste.</p>';
+  if (!email || String(req.t || '') !== hmac_(email)) return '<p>Lien invalide. Écrivez à contact@jalonel.com pour être retiré de la liste.</p>';
   var sh = tab_('Inscriptions', SIGNUP_HEADER_);
   var last = sh.getLastRow();
   if (last < 2) return '<p>Adresse introuvable.</p>';

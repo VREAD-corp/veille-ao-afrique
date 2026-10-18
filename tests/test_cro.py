@@ -108,3 +108,14 @@ def test_inline_alert_goal_after_success_and_view_event():
     assert ok < js.index("octaveCro.goal('signup')"), "goal recorded only after a successful sign-up"
     assert "window.aoaMesure('alert_form_view', ctx)" in js and "IntersectionObserver" in js
     assert "kind: 'alertes', plan: ''" in js, "inline form never pre-registers a paid plan"
+
+
+def test_backend_is_jalonel_only():
+    """Jalonel and the Vread reading sites are kept apart: the backend names no Vread host or address, and the
+    page it serves (unsubscribe) gives the Jalonel contact."""
+    code = (ROOT / "gas/src/Code.js").read_text(encoding="utf-8")
+    assert "vread" not in code.lower()
+    assert "var OWN_HOSTS_ = ['ao-afrique.jalonel.com'];" in code
+    assert "Écrivez à contact@jalonel.com pour être retiré de la liste." in code
+    # The script sends no e-mail (no reply-to to set); if one is ever added, it must reply to contact@jalonel.com.
+    assert "MailApp" not in code and "GmailApp" not in code
