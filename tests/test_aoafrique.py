@@ -145,3 +145,20 @@ def test_inline_alert_on_tender_list_and_filter_pages(tmp_path):
     reg = (tmp_path / "regions" / model.slugify(n["regions"][0]) / "index.html").read_text(encoding="utf-8")
     assert 'data-ctx="region"' in reg
     assert 'data-ctx="afrique"' in (tmp_path / "afrique-francophone" / "index.html").read_text(encoding="utf-8")
+
+
+def test_legal_pages_noindex_out_of_sitemap(tmp_path):
+    # Legal notice and privacy pages are near-identical across the Jalonel subdomains: noindex, follow, not in the sitemap.
+    rows = pmmp.parse_results((FX / "pmmp_list.html").read_text(encoding="utf-8"))
+    notices = [model.from_pmmp(r, None) for r in rows]
+    site = Site(tmp_path, notices, {"updated": "2026-10-13T05:40+00:00", "sources": {}}, "https://ao-afrique.jalonel.com/")
+    site.now = datetime(2026, 10, 13, 8, 0)
+    site.today = site.now.date()
+    site.open = notices
+    site.build_all()
+    sm = (tmp_path / "sitemap.xml").read_text()
+    for p in ("mentions-legales", "confidentialite"):
+        assert '<meta name="robots" content="noindex, follow">' in (tmp_path / p / "index.html").read_text(encoding="utf-8")
+        assert f"/{p}/</loc>" not in sm
+    assert "noindex" not in (tmp_path / "index.html").read_text(encoding="utf-8")
+    assert "/licence.html</loc>" in sm

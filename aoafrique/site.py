@@ -131,7 +131,7 @@ class Site:
 <title>{e(title)}</title>
 <meta name="description" content="{e(description)}">
 <link rel="canonical" href="{e(canonical)}">
-{'<meta name="robots" content="noindex">' if noindex else ''}
+{'<meta name="robots" content="noindex, follow">' if noindex else ''}
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fr_FR">
 <meta property="og:site_name" content="{BRAND}">
@@ -668,8 +668,9 @@ class Site:
 <h2>Sources et propriété</h2>
 <p>Les avis proviennent du Portail marocain des marchés publics (Trésorerie Générale du Royaume, réutilisation selon l'article 6 de la loi n° 31-13) et de la Banque mondiale (CC BY 4.0). Veille AO Afrique n'est ni affilié à ces organismes ni approuvé par eux. L'avis officiel fait foi. Le code du site est publié sous licence MIT.</p>"""
         self.write("mentions-legales/", self.page("mentions-legales/", f"Mentions légales | {BRAND}",
-                                                  "Éditeur, hébergeur et sources de Veille AO Afrique.", legal,
-                                                  crumbs=[("", "Appels d'offres"), ("mentions-legales/", "Mentions légales")]))
+                                                  "Éditeur, hébergeur et sources de Veille AO Afrique.", legal, noindex=True,
+                                                  crumbs=[("", "Appels d'offres"), ("mentions-legales/", "Mentions légales")]),
+                   sitemap=False)
         privacy = f"""<h1>Confidentialité</h1>
 <p class="lead">Responsable du traitement : {p['name']}, {p['address']}, <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
 <h2>Mesure d'audience et de comportement, sans cookie</h2>
@@ -692,7 +693,8 @@ class Site:
 <p class="small muted">Version mise à jour le 18 octobre 2026 : empreinte technique éphémère pour écarter les robots non déclarés (13 octobre 2026 : mesure de comportement agrégée et tests A/B).</p>"""
         self.write("confidentialite/", self.page("confidentialite/", f"Confidentialité | {BRAND}",
                                                  "Données collectées par Veille AO Afrique : mesure d'audience et de comportement sans cookie, tests A/B, formulaire d'alertes, droits RGPD et loi 09-08.",
-                                                 privacy, crumbs=[("", "Appels d'offres"), ("confidentialite/", "Confidentialité")]))
+                                                 privacy, noindex=True, crumbs=[("", "Appels d'offres"), ("confidentialite/", "Confidentialité")]),
+                   sitemap=False)
         nf = f"""<h1>Page introuvable</h1><p>Cet appel d'offres a peut-être été clôturé et retiré. <a href="{link('')}">Retour à la liste des consultations en cours</a>.</p>"""
         (self.out / "404.html").write_text(self.page("404.html", f"Page introuvable | {BRAND}", "Page introuvable.", nf, noindex=True), encoding="utf-8")
 
