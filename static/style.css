@@ -184,3 +184,20 @@ input:focus, select:focus, button:focus-visible, a:focus-visible { outline: 3px 
 .foot-brand { font-family: var(--serif); font-weight: 700; font-size: 1.05rem; margin: 0 0 .3rem; }
 .foot nav { display: flex; flex-wrap: wrap; gap: .4rem 1.1rem; align-content: start; }
 @media (min-width: 800px) { .foot-in { grid-template-columns: 2fr 1fr; } .foot nav { flex-direction: column; } }
+
+/* A/B AOAF-ALERT-INLINE-01: one-field alert above the official-notice link, shown only in arm B (static/xp.js) */
+.alert-quick { display: none; max-width: 52rem; margin: 1.2rem 0 .4rem; background: var(--paper); border: 1px solid var(--line); border-left: 4px solid var(--clay); border-radius: var(--radius); padding: .7rem 1rem .6rem; }
+html[data-xp-aoaf-alert="b"] .alert-quick { display: block; }
+html[data-xp-aoaf-alert="b"] .official .link-more { display: none; }
+.alert-quick p { margin: 0; }
+.aq-h { font-weight: 600; }
+.aq-crit { margin: .1rem 0 .55rem !important; }
+.aq-form { display: flex; flex-wrap: wrap; gap: .5rem; align-items: flex-end; }
+.aq-email { display: grid; gap: .2rem; font-size: .85rem; font-weight: 600; color: var(--muted); flex: 1 1 15rem; min-width: 0; }
+.aq-email input { min-height: 44px; }
+.aq-form .btn { flex: 0 0 auto; background: var(--green-2); }
+.aq-form .btn:hover { background: var(--green); }
+.aq-form .form-msg { flex-basis: 100%; min-height: 0; }
+.aq-terms { margin-top: .45rem !important; color: var(--muted); }
+.alert-quick.aq-back { border-color: var(--clay); box-shadow: 0 0 0 2px var(--amber); }
+@media (max-width: 480px) { .aq-form .btn { width: 100%; } }

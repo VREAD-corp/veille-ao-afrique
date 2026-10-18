@@ -6,6 +6,7 @@ from __future__ import annotations
 import hashlib
 import json
 import shutil
+from functools import lru_cache
 from collections import Counter
 from datetime import datetime, timedelta
 from html import escape
@@ -36,8 +37,12 @@ STATIC = Path(__file__).resolve().parent.parent / "static"
 # Content hash in the snippet URL: search-engine renderers cache scripts by URL and would keep running an old one.
 MESURE_V = hashlib.sha256((STATIC / "mesure.js").read_bytes()).hexdigest()[:10]
 # cro.js: Octave's shared aggregate behaviour counters and A/B framework (vendored byte-identical from octave-checkout
-# gas/web/cro.js). No experiment runs on this site (the two plans are pre-registrations, not price arms): no OCTAVE_XP.
+# gas/web/cro.js). One experiment: AOAF-ALERT-INLINE-01 on tender pages (static/xp.js, OCTAVE_XP `aoaf-alert`).
 CRO_V = hashlib.sha256((STATIC / "cro.js").read_bytes()).hexdigest()[:10]
+# Content hash of every page script, so a new page never runs with a cached older script.
+@lru_cache(maxsize=None)
+def static_v(name: str) -> str:
+    return hashlib.sha256((STATIC / name).read_bytes()).hexdigest()[:10]
 # Primary CTAs for "time to first CTA click": alert links, official-notice links, pre-registration buttons, form submit.
 CRO_CTA = "[data-mesure],#alerte-form [type=submit],#alerte-inline [type=submit]"
 SELLER = {
@@ -61,6 +66,9 @@ PUBLISHER = {"@type": "Organization", "@id": "https://jalonel.com/#org", "name":
 CONSENT_TEXT = ("J'accepte que READ FRANCE SAS conserve mon adresse e-mail et les critères choisis pour me prévenir "
                 "de l'ouverture de Veille AO Afrique et m'envoyer les alertes demandées. Je peux retirer mon accord "
                 "à tout moment en écrivant à contact@jalonel.com ou par le lien présent dans chaque e-mail.")
+# Consent sentence of the one-field form (arm B of AOAF-ALERT-INLINE-01): printed under the button, stored with the sign-up.
+QUICK_CONSENT_TEXT = ("En cliquant sur « Recevoir les alertes », vous acceptez que Veille AO Afrique garde votre adresse et ces "
+                      "critères pour vous écrire quand un avis correspond. Désinscription en un clic dans chaque e-mail.")
 CSP = ("default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; "
        "connect-src 'self' https://script.google.com https://script.googleusercontent.com; "
        "form-action 'self' https://script.google.com; base-uri 'self'")
@@ -100,7 +108,7 @@ class Site:
         if sitemap:
             self.pages.append((path, lastmod or self.updated_paris.date().isoformat()))
 
-    def page(self, path: str, title: str, description: str, body: str, *, jsonld=None, scripts=(),
+    def page(self, path: str, title: str, description: str, body: str, *, jsonld=None, scripts=(), head_scripts=(),
              noindex: bool = False, crumbs: list[tuple[str, str]] | None = None) -> str:
         canonical = self.base + path
         lds = []
@@ -120,7 +128,9 @@ class Site:
         if crumbs and len(crumbs) > 1:
             crumb_html = ('<nav class="crumbs" aria-label="Fil d\'Ariane">' + " / ".join(
                 f'<a href="{link(p)}">{e(name)}</a>' for p, name in crumbs[:-1]) + "</nav>")
-        script_tags = "".join(f'<script src="{link("static/" + s)}" defer></script>' for s in scripts)
+        script_tags = "".join(f'<script src="{link("static/" + s)}?v={static_v(s)}" defer></script>' for s in scripts)
+        # Not deferred, before cro.js: the A/B arm is on <html> before the first paint (static/xp.js).
+        head_tags = "".join(f'<script src="{link("static/" + s)}?v={static_v(s)}"></script>' for s in head_scripts)
         return f"""<!doctype html>
 <html lang="fr">
 <head>
@@ -142,8 +152,8 @@ class Site:
 <meta name="theme-color" content="#16302b">
 <link rel="icon" href="{link('static/favicon.svg')}" type="image/svg+xml">
 <link rel="alternate" type="application/atom+xml" title="{BRAND} : nouveaux appels d'offres" href="{link('feed.xml')}">
-<link rel="stylesheet" href="{link('static/style.css')}">
-<script src="{link('static/mesure.js')}?v={MESURE_V}" defer></script>
+<link rel="stylesheet" href="{link('static/style.css')}?v={static_v('style.css')}">
+{head_tags}<script src="{link('static/mesure.js')}?v={MESURE_V}" defer></script>
 <script src="{link('static/cro.js')}?v={CRO_V}" data-site="veille-ao-afrique" data-api="{GAS_URL}" data-hosts="{HOST}" data-cta="{e(CRO_CTA)}" defer></script>
 {script_tags}
 {ld}
@@ -251,6 +261,35 @@ class Site:
 </form>
 <p class="small ai-terms"><strong>Le service ouvre bientôt :</strong> vous recevrez d'abord un e-mail à l'ouverture, puis les alertes. {price} Désinscription en un clic dans chaque e-mail.</p>
 <p class="small"><a href="{full}">Choisir plusieurs secteurs et régions, ou un envoi hebdomadaire</a> · <a href="{link('confidentialite/')}">Vos données</a></p>
+</section>"""
+
+    def alert_quick(self, sector: str, region: str, bm: bool) -> str:
+        """Arm B of AOAF-ALERT-INLINE-01 (tender pages): one e-mail field right above the official-notice link, the
+        tender's sector and region (or francophone Africa for a World Bank notice) sent as hidden fields. Hidden by CSS
+        unless <html data-xp-aoaf-alert="b"> (static/xp.js). The click on the button is the consent: the sentence
+        `.consent-text` is printed under it and stored with the sign-up, like the checkbox text of the other forms."""
+        sector = sector if sector in SECTOR_LABEL and sector != "autre" else ""
+        what = SECTOR_LABEL[sector] if sector else "Tous secteurs"
+        if bm:
+            where = "Afrique francophone (avis Banque mondiale)"
+            hidden = '<input type="hidden" name="countries" value="afrique-francophone">'
+        else:
+            where = f"{region}, Maroc" if region else "tout le Maroc"
+            hidden = f'<input type="hidden" name="regions" value="{e(model.slugify(region))}">' if region else ""
+        if sector:
+            hidden += f'<input type="hidden" name="sectors" value="{e(sector)}">'
+        qs = urlencode([(k, v) for k, v in (("secteur", sector), ("region", region)) if v])
+        full = link("alertes/") + ("?" + e(qs) if qs else "")
+        return f"""<section class="alert-quick" id="alerte-rapide" data-section="alerte-rapide" data-ctx="{'fiche-bm-rapide' if bm else 'fiche-rapide'}" aria-labelledby="aq-h">
+<p class="aq-h" id="aq-h">Recevoir les prochains AO similaires :</p>
+<p class="aq-crit"><strong>{e(what)} – {e(where)}</strong></p>
+<form id="alerte-rapide-form" class="aq-form" novalidate>
+<div class="hp" aria-hidden="true"><label>Site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>{hidden}
+<label class="aq-email"><span>Votre e-mail</span><input type="email" name="email" required autocomplete="email" maxlength="254" placeholder="vous@entreprise.ma"></label>
+<button type="submit" class="btn">Recevoir les alertes</button>
+<p class="form-msg" role="status" aria-live="polite"></p>
+</form>
+<p class="small aq-terms"><span class="consent-text">{e(QUICK_CONSENT_TEXT)}</span> Gratuit pendant les 21 jours du test, aucun paiement. <a href="{full}">Autres critères</a> · <a href="{link('confidentialite/')}">Vos données</a></p>
 </section>"""
 
     def similar(self, n: dict, k: int = 6) -> list[dict]:
@@ -439,6 +478,7 @@ class Site:
 <p>{e(model.summary(n, self.today))}</p>
 <p class="small muted">Résumé produit automatiquement par des règles fixes à partir des champs de l'avis, sans intelligence artificielle. L'objet ci-dessus est le texte officiel, non modifié.</p>
 </section>
+{self.alert_quick(sector, region, bm)}
 <p class="official" data-section="avis-officiel"><a class="btn" href="{e(n['url'])}" rel="noopener" data-mesure="official_click" data-detail="{n['source'].lower()}">Voir l'avis officiel sur {src_name}</a> <a class="link-more" href="#alerte" data-mesure="cta_click" data-detail="fiche-haut">Être prévenu des avis similaires</a></p>
 <table class="facts-table"><caption>Fiche de la consultation</caption><tbody>{table}</tbody></table>
 <p class="small muted">{source_line}{e(fmt_date(n.get('published', '')))}, relu le {e(self.updated_text())}. Le dossier de consultation et les éventuels rectificatifs sont sur le site officiel, qui fait foi.</p>
@@ -467,7 +507,8 @@ class Site:
             crumbs.append((f"secteurs/{n['sectors'][0]}/", SECTOR_LABEL.get(n["sectors"][0], "Secteur")))
         crumbs.append((f"ao/{n['slug']}/", title_obj))
         self.write(f"ao/{n['slug']}/", self.page(f"ao/{n['slug']}/", f"{title_obj} | AO {where}", desc, body,
-                                                  jsonld=ld, crumbs=crumbs, scripts=("alerte-inline.js",)),
+                                                  jsonld=ld, crumbs=crumbs, scripts=("alerte-inline.js",),
+                                                  head_scripts=("xp.js",)),
                    lastmod=n.get("first_seen") or n.get("published"))
 
     def build_group_pages(self) -> None:
@@ -675,7 +716,7 @@ class Site:
 <p>Pour écarter aussi les robots qui ne se déclarent pas, chaque compteur porte une empreinte technique courte : un calcul fait dans votre navigateur à partir de sa version, de sa langue, de la taille de l'écran et de l'heure en cours. Elle change toutes les heures, ne permet pas de vous reconnaître d'une heure à l'autre, n'est gardée qu'en mémoire vive moins d'une heure et n'est jamais enregistrée. Elle sert seulement à repérer qu'une même source ouvre des dizaines de fiches en quelques minutes ; ces pages sont alors comptées à part.</p>
 <p>Pour améliorer le site, une fois par page et au moment où vous la quittez, nous mesurons aussi la façon dont elle est utilisée : la profondeur de défilement (25, 50, 75 ou 100 %), les sections atteintes, le temps écoulé avant le premier clic sur un bouton principal, les formulaires commencés ou envoyés et le <em>nom</em> du dernier champ touché quand un formulaire est abandonné (jamais son contenu : rien de ce que vous tapez n'est lu), le menu ou les questions dépliés, les liens sortants (le nom du site seulement), les erreurs techniques (sous la forme d'une empreinte anonyme du message), la vitesse d'affichage (indicateurs Core Web Vitals : bon, moyen ou lent) et les clics répétés sur un même élément.</p>
 <p>Nous ne gardons que des totaux par jour dans un tableur Google : aucun cookie, aucun identifiant, aucune adresse IP conservée, aucune donnée personnelle, aucun suivi d'un site à l'autre. Ces chiffres servent uniquement aux statistiques de ce site ; ils ne sont ni croisés avec un autre traitement, ni transmis, ni vendus.</p>
-<p>Tests A/B : il peut nous arriver de montrer à une partie des visiteurs une autre version d'un titre, d'un bouton ou d'un prix pour voir laquelle est la plus claire. La version (une simple lettre) est gardée dans le stockage de session de l'onglet (effacé à sa fermeture) ou choisie selon la date (rien n'est stocké), et n'est jamais reliée à une personne. Le prix payé est toujours celui qui est affiché. Aucun test de ce type n'est en cours aujourd'hui.</p>
+<p>Tests A/B : il peut nous arriver de montrer à une partie des visiteurs une autre version d'un titre, d'un bouton ou d'un prix pour voir laquelle est la plus claire. La version (une simple lettre) est gardée dans le stockage de session de l'onglet (effacé à sa fermeture) ou choisie selon la date (rien n'est stocké), et n'est jamais reliée à une personne. Le prix payé est toujours celui qui est affiché. Test en cours depuis octobre 2026 sur les fiches d'appel d'offres : dans la moitié des onglets, un formulaire d'alerte réduit à l'adresse e-mail apparaît au-dessus du lien vers l'avis officiel. Nous comptons les inscriptions de chaque version, rien de plus.</p>
 <p>Si votre navigateur envoie le signal « Do Not Track » ou « Global Privacy Control », rien n'est envoyé, ni compteur d'audience ni mesure de comportement.</p>
 <p>Ce dispositif reste dans l'exemption de consentement prévue pour la mesure d'audience (article 82 de la loi Informatique et Libertés, lignes directrices et recommandation de la CNIL du 17 septembre 2020 sur les cookies et autres traceurs) : statistiques strictement agrégées, propres à ce site, sans suivi d'un site à l'autre, sans croisement avec d'autres traitements et sans transmission à des tiers. Aucun bandeau de consentement n'est donc nécessaire.</p>
 <h2>Formulaire « Alertes e-mail » et pré-inscription</h2>

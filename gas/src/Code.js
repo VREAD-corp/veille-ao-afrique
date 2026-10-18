@@ -61,7 +61,13 @@ var RATE_SIGNUP_ = 20;   // sign-ups per minute
 
 // Octave CRO module (src/Cro.js): settings it reads from the host.
 var CRO_SITES_ = [SITE_];
-var CRO_EXPERIMENTS_ = {}; // no A/B test on this site (Essentiel 39 / Pro 79 are pre-registration plans, not arms)
+// A/B AOAF-ALERT-INLINE-01 (static/xp.js, tender pages): a = current page, b = one-field alert above the official link.
+// Essentiel 39 / Pro 79 are pre-registration plans, not arms.
+var CRO_EXPERIMENTS_ = { 'aoaf-alert': ['a', 'b'] };
+// Goals of that test, once per tab and per arm: alert form on screen, official-notice click, reminder shown on return.
+var CRO_GOALS_ = ['alert_view', 'official', 'nudge'];
+var XP_SIGNUP_ = /^(a|b)$/;      // arm sent with a sign-up (alerte-inline.js), kept in the Stats detail
+var XP_FORMS_ = ['inline', 'rapide'];
 function croBook_() { return book_(); }
 /** Same page normaliser as Stats (tender pages collapsed to /ao/*), so Comportement pages match Stats pages. */
 function croPage_(site, page) { return trackPage_(page); }
@@ -413,11 +419,17 @@ function signup_(req) {
   try {
     tab_('Inscriptions', SIGNUP_HEADER_).appendRow(row);
     incrementStat_({ date: parisDate_(now_()), site: SITE_, page: trackPage_(req.page) || '/', event: kind === 'preinscription' ? 'preinscription_signup' : 'alert_signup',
-      detail: test ? 'test' : (plan || ''), source: '(serveur)', medium: '', campaign: '', device: '' });
+      detail: test ? 'test' : (plan || xpDetail_(req)), source: '(serveur)', medium: '', campaign: '', device: '' });
   } finally {
     lock.releaseLock();
   }
   return { ok: true, kind: kind, plan: plan };
+}
+
+/** Stats detail of an alert sign-up made on a tender page during AOAF-ALERT-INLINE-01: `aoaf-alert-<arm>-<form>`. */
+function xpDetail_(req) {
+  var arm = String(req.xp || ''), form = String(req.form || '');
+  return XP_SIGNUP_.test(arm) && XP_FORMS_.indexOf(form) >= 0 ? 'aoaf-alert-' + arm + '-' + form : '';
 }
 
 function unsubscribe_(req) {
