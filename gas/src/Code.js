@@ -26,7 +26,8 @@
  *                                   vendored byte-identical from octave-checkout): daily counters in `Comportement`
  *                                   and `Experiences`, nothing typed, no identifier.
  *   cro     GET/POST ?key=          aggregated behaviour + A/B summary for the weekly CRO report (key hash in the
- *                                   Script Property CRO_KEY_SHA256, never in git).
+ *                                   Script Property CRO_KEY_SHA256, never in git); test sign-ups are left out of
+ *                                   `funnel` and listed in `funnel_test` (croSummaryReal_).
  *   cro_init POST {key}             stores that key's SHA-256 once (refused afterwards).
  *
  * Only scope: spreadsheets. The spreadsheet is created on first use and its id kept in Script Properties.
@@ -64,6 +65,25 @@ var CRO_EXPERIMENTS_ = {}; // no A/B test on this site (Essentiel 39 / Pro 79 ar
 function croBook_() { return book_(); }
 /** Same page normaliser as Stats (tender pages collapsed to /ao/*), so Comportement pages match Stats pages. */
 function croPage_(site, page) { return trackPage_(page); }
+/**
+ * `cro` and `stats` summaries without our own test sign-ups. signup_ counts every sign-up in Stats, a test one
+ * (`test: true` or an @example.* address) with the detail `test`; croSummary_ sums Stats by event only. Those rows stay
+ * in the sheet; they are only taken out of `funnel` here and shown apart in `funnel_test`. Cro.js stays byte-identical.
+ */
+function croSummaryReal_(sum) {
+  if (!sum || !sum.ok || !sum.sites) return sum;
+  var st = croRows_('Stats', sum.from, sum.to), h = st.header;
+  var iS = h.indexOf('site'), iE = h.indexOf('event'), iD = h.indexOf('detail'), iC = h.indexOf('count');
+  if (iE < 0 || iD < 0 || iC < 0) return sum;
+  st.rows.forEach(function (r) {
+    if (croCell_(r[iD]) !== 'test') return;
+    var s = sum.sites[iS >= 0 ? croCell_(r[iS]) : SITE_], ev = croCell_(r[iE]), n = Number(r[iC] || 0);
+    if (!s || !n) return;
+    s.funnel[ev] = Math.max(0, (s.funnel[ev] || 0) - n);
+    croInc_(s.funnel_test || (s.funnel_test = {}), ev, n);
+  });
+  return sum;
+}
 
 function doGet(e) { return route_((e && e.parameter) || {}, null); }
 
@@ -85,7 +105,7 @@ function route_(params, body) {
     switch (req.action) {
       // kind 'cro': the once-per-page behaviour batch of cro.js, before this host's own track validation.
       case 'track': return json_(req.kind === 'cro' ? croTrack_(req) : track_(req));
-      case 'cro': return json_(croAction_(req));
+      case 'cro': return json_(croSummaryReal_(croAction_(req)));
       case 'cro_init':
         if (!body) throw userError_('method_not_allowed', 'POST attendu.');
         return json_(croInit_(req));
@@ -458,7 +478,7 @@ function stats_(req) {
   var byReason = {};
   excl.forEach(function (r) { if (r.event === 'view') byReason[r.reason] = (byReason[r.reason] || 0) + Number(r.count || 0); });
   return { ok: true, date: date, views: { counted: sum(kept, 'view'), excluded: sum(excl, 'view'), raw: sum(kept, 'view') + sum(excl, 'view'), excluded_by_reason: byReason },
-    stats: kept, exclus: excl, cro: croSummary_(date, date) };
+    stats: kept, exclus: excl, cro: croSummaryReal_(croSummary_(date, date)) };
 }
 
 /**

@@ -126,4 +126,17 @@ assert.equal(g.sum('Stats', (r) => r.event === 'tender_view'), 0);
 assert.equal(g.sum('Exclus', (r) => r.reason === 'burst'), 3);
 assert.equal(g.table('Annotations')[0].reason, 'burst');
 
+// 8. Test sign-ups (@example.* or test: true) stay in Stats with the detail `test` but are left out of the cro funnel.
+g = gas();
+const su = (email, over = {}) => g.post({ action: 'signup', email, consent: true, kind: 'alertes', plan: '', page: '/', consent_text: 'J’accepte de recevoir les alertes e-mail de Veille AO Afrique.', ...over });
+assert.equal(su('e2e-1@example.com').ok, true);
+assert.equal(su('someone@company.ma', { test: true }).ok, true);
+assert.equal(su('buyer@company.ma').ok, true);
+assert.equal(su('buyer2@company.ma', { kind: 'preinscription', plan: 'pro-79', test: 'true' }).ok, true);
+assert.equal(g.sum('Stats', (r) => r.event === 'alert_signup'), 3, 'nothing is deleted from Stats');
+const day = g.post({ action: 'stats', token: T, date: '2026-10-19' }).cro.sites['veille-ao-afrique'];
+assert.equal(day.funnel.alert_signup, 1);
+assert.equal(day.funnel.preinscription_signup, 0);
+assert.deepEqual(day.funnel_test, { alert_signup: 2, preinscription_signup: 1 });
+
 console.log('burst: ok');
