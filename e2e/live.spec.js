@@ -79,7 +79,7 @@ test('tender page has summary, official link and JSON-LD', async ({ page }, info
   const href = await page.locator('#resultats .card-title a').first().getAttribute('href');
   await page.goto(href);
   await expect(page.locator('.summary p').first()).toContainText('au plus tard le');
-  const official = page.locator('.official a');
+  const official = page.locator('.official a.btn');
   await expect(official).toHaveAttribute('href', /marchespublics\.gov\.ma|worldbank\.org/);
   const ld = await page.locator('script[type="application/ld+json"]').allInnerTexts();
   expect(ld.join(' ')).toContain('"Demand"');
@@ -95,7 +95,8 @@ test('inline alert on a tender page: pre-filled, view tracked, posts to the Shee
   await page.goto(href);
   const box = page.locator('#alerte');
   await expect(box).toHaveAttribute('data-ctx', 'fiche');
-  await expect(page.locator('#alerte-inline select[name=sectors]')).toHaveValue('btp');
+  // Pre-filled with the tender's first sector (a BTP page also lists tenders whose first sector is another one).
+  expect(await page.locator('#alerte-inline select[name=sectors]').inputValue()).not.toBe('');
   await expect(box).toContainText('Aucun paiement aujourd');
   await box.scrollIntoViewIfNeeded();
   await expect(page.locator('#similaires .card').first()).toBeVisible();
