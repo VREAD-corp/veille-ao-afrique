@@ -1,5 +1,997 @@
 [
 {
+"bond": 9000.0,
+"buyer": "DIRECTION GENERALE DE LA PROTECTION CIVILE",
+"category": "Fournitures",
+"country": "Maroc",
+"deadline": "2026-11-02T10:00",
+"detail_checked": true,
+"domains": [
+"Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
+],
+"env_clauses": false,
+"estimate": 487200.0,
+"first_seen": "2026-10-20",
+"id": "ma-w9x-1050576",
+"object": "l’acquisition du matériel médical pour aptitude physique destinés à l’Ecole Nationale de la Protection Civile de Casablanca et au dépôt régional de la Protection Civile D’AL ARJATE (lot unique).",
+"places": [
+"SALE",
+"CASABLANCA"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"published": "2026-10-20",
+"reference": "116/DGPC/2026",
+"regions": [
+"Rabat-Salé-Kénitra",
+"Casablanca-Settat"
+],
+"reserved": false,
+"sectors": [
+"sante"
+],
+"slug": "ma-w9x-1050576-lacquisition-materiel-medical-aptitude-physique-destines-lecole-nationale-protec",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050576&orgAcronyme=w9x",
+"variant": "Non"
+},
+{
+"bond": 280000.0,
+"buyer": "Commune urbaine de KHENIFRA",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-17T11:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de voiries, chemins et pistes / Travaux d’assises traitées et enrobées à chaud"
+],
+"env_clauses": true,
+"estimate": 14179014.0,
+"first_seen": "2026-10-20",
+"id": "ma-q0x-1049886",
+"object": "Travaux de mise à niveau des quartiers sous équipes de la ville de Khénifra",
+"places": [
+"KHENIFRA"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "26/2026",
+"regions": [
+"Béni Mellal-Khénifra"
+],
+"reserved": false,
+"sectors": [
+"btp"
+],
+"slug": "ma-q0x-1049886-travaux-mise-niveau-quartiers-sous-equipes-ville-khenifra",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1049886&orgAcronyme=q0x",
+"variant": "Non"
+},
+{
+"bond": 6000.0,
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE Driouch",
+"category": "Fournitures",
+"country": "Maroc",
+"deadline": "2026-11-02T10:00",
+"detail_checked": true,
+"domains": [
+"Fournitures / Documentation, manuels, fournitures scolaires et d’enseignement / fournitures scolaires et d’enseignement"
+],
+"env_clauses": false,
+"estimate": 331200.0,
+"first_seen": "2026-10-20",
+"id": "ma-p8x-1051313",
+"object": "ACHAT DE MATIERES, FOURNITURES D’ENSEIGNEMENT ET PIECES DE RECHANGE AU PROFIT DES ETABLISSEMENTS SCOLAIRES RELEVANT DE LA DIRECTION PROVINCIALE DE DRIOUCH.",
+"places": [
+"Province de Driouch"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"published": "2026-10-20",
+"reference": "19/2026",
+"regions": [
+"L'Oriental"
+],
+"reserved": false,
+"sectors": [
+"vehicules-transport"
+],
+"slug": "ma-p8x-1051313-achat-matieres-fournitures-denseignement-pieces-rechange-profit-etablissements-s",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051313&orgAcronyme=p8x",
+"variant": "Non"
+},
+{
+"bond": 100000.0,
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE TANGER ASSILA",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-12T10:30",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
+"env_clauses": false,
+"estimate": 6912701.16,
+"first_seen": "2026-10-20",
+"id": "ma-p8x-1051311",
+"object": "Travaux de construction de l’école primaire Tomouh commune Bni Makada (Arrond) Direction Provinciale de TANGER ASSILAH",
+"places": [
+"MAROC",
+"TANGER-ASSILAH"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "103/INV/TNG/2026",
+"regions": [
+"Tanger-Tétouan-Al Hoceïma"
+],
+"reserved": false,
+"sectors": [
+"btp"
+],
+"slug": "ma-p8x-1051311-travaux-construction-lecole-primaire-tomouh-commune-bni-makada-arrond",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051311&orgAcronyme=p8x",
+"variant": "Non"
+},
+{
+"bond": 100000.0,
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE TANGER ASSILA",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-12T10:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
+"env_clauses": false,
+"estimate": 6851063.46,
+"first_seen": "2026-10-20",
+"id": "ma-p8x-1051306",
+"object": "Travaux de construction de l’école primaire Al Maghrib Al-Aqsa commune Charf-Souani (Arrond) Direction Provinciale de TANGER ASSILAH",
+"places": [
+"MAROC",
+"TANGER-ASSILAH"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "102/INV/TNG/2026",
+"regions": [
+"Tanger-Tétouan-Al Hoceïma"
+],
+"reserved": false,
+"sectors": [
+"btp"
+],
+"slug": "ma-p8x-1051306-travaux-construction-lecole-primaire-al-maghrib-al-aqsa-commune",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051306&orgAcronyme=p8x",
+"variant": "Non"
+},
+{
+"bond": 100000.0,
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE TANGER ASSILA",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-11T10:30",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
+"env_clauses": false,
+"estimate": 6470899.34,
+"first_seen": "2026-10-20",
+"id": "ma-p8x-1051300",
+"object": "Travaux de construction de l’école primaire Al Rayyan commune Bni Makada (Arrond) Direction Provinciale de TANGER ASSILAH",
+"places": [
+"MAROC",
+"TANGER-ASSILAH"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "101/INV/TNG/2026",
+"regions": [
+"Tanger-Tétouan-Al Hoceïma"
+],
+"reserved": false,
+"sectors": [
+"btp"
+],
+"slug": "ma-p8x-1051300-travaux-construction-lecole-primaire-al-rayyan-commune-bni-makada",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051300&orgAcronyme=p8x",
+"variant": "Non"
+},
+{
+"bond": 100000.0,
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE TANGER ASSILA",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-11T10:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
+"env_clauses": false,
+"estimate": 6289608.38,
+"first_seen": "2026-10-20",
+"id": "ma-p8x-1051299",
+"object": "Travaux de construction de l’école primaire Abderrahim Bouabid 1 commune Bni Makada (Arrond) Direction Provinciale de TANGER ASSILAH",
+"places": [
+"MAROC",
+"TANGER-ASSILAH"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "100/INV/TNG/2026",
+"regions": [
+"Tanger-Tétouan-Al Hoceïma"
+],
+"reserved": false,
+"sectors": [
+"btp"
+],
+"slug": "ma-p8x-1051299-travaux-construction-lecole-primaire-abderrahim-bouabid-1-commune-bni",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051299&orgAcronyme=p8x",
+"variant": "Non"
+},
+{
+"bond": 150000.0,
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE TANGER ASSILA",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-10T10:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
+"env_clauses": false,
+"estimate": 9613602.0,
+"first_seen": "2026-10-20",
+"id": "ma-p8x-1051280",
+"object": "TRAVAUX DE CONSTRUCTION DU LYCEE COLLEGIAL AHMED TAYEB AL ALAJ COMMUNE BNI MAKADA (Arrond) relevant de la Direction Provinciale de TANGER ASSILAH",
+"places": [
+"MAROC",
+"TANGER-ASSILAH"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "99/INV/TNG/2026",
+"regions": [
+"Tanger-Tétouan-Al Hoceïma"
+],
+"reserved": false,
+"sectors": [
+"btp"
+],
+"slug": "ma-p8x-1051280-travaux-construction-lycee-collegial-ahmed-tayeb-al-alaj-commune",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051280&orgAcronyme=p8x",
+"variant": "Non"
+},
+{
+"bond": 150000.0,
+"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE TANGER ASSILA",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-10T10:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Fondations, injections, parois moulées, sondages et forages / Travaux de fondations"
+],
+"env_clauses": false,
+"estimate": 9643672.8,
+"first_seen": "2026-10-20",
+"id": "ma-p8x-1051271",
+"object": "Travaux de construction du LYCEE COLLEGIAL AL MOUTAMED BNOU ABBAD COMMUNE Charf Mghogha (Arrond) Direction Provinciale de TANGER ASSILAH",
+"places": [
+"TANGER-ASSILAH"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "98/INV/TNG/2026",
+"regions": [
+"Tanger-Tétouan-Al Hoceïma"
+],
+"reserved": false,
+"sectors": [
+"eau-assainissement",
+"btp"
+],
+"slug": "ma-p8x-1051271-travaux-construction-lycee-collegial-al-moutamed-bnou-abbad-commune",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051271&orgAcronyme=p8x",
+"variant": "Non"
+},
+{
+"bond": 93000.0,
+"buyer": "AGENCE NATIONALE DES PORTS/ DIRECTION DU PORT DE TANGER ET REGION",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-11-11T10:00",
+"detail_checked": true,
+"domains": [
+"Services / Nettoyage, gardiennage, entretien et maintenance / Gardiennage et surveillance des bâtiments administratifs"
+],
+"env_clauses": true,
+"estimate": 4670716.32,
+"first_seen": "2026-10-20",
+"id": "ma-o8p-1051339",
+"object": "PRESTATIONS DE GARDIENNAGE ET D’EXPLOITATION DU SYSTEME DE VIDEOSURVEILLANCE AU PORT DE PECHE DE TANGER",
+"places": [
+"TANGER-ASSILAH"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "31/2026/DPTR/ANP",
+"regions": [
+"Tanger-Tétouan-Al Hoceïma"
+],
+"reserved": false,
+"sectors": [
+"informatique-telecoms",
+"agriculture"
+],
+"slug": "ma-o8p-1051339-prestations-gardiennage-dexploitation-systeme-videosurveillance-port-peche-tange",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051339&orgAcronyme=o8p",
+"variant": "Non"
+},
+{
+"bond": 72000.0,
+"buyer": "OFFICE NATIONAL DES CHEMINS DE FER",
+"category": "Fournitures",
+"country": "Maroc",
+"deadline": "2026-11-25T09:00",
+"detail_checked": true,
+"domains": [
+"Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Locomotives et matériel roulant de chemin de fer et de tramway, fournitures ferroviaires et pièces détachées"
+],
+"env_clauses": true,
+"estimate": 4800000.0,
+"first_seen": "2026-10-20",
+"id": "ma-o8p-1051309",
+"object": "Travaux de remise en état des moteurs thermiques des engins voie et catenaire de l’ONCF",
+"places": [
+"CASABLANCA"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "26F033",
+"regions": [
+"Casablanca-Settat"
+],
+"reserved": false,
+"sectors": [
+"vehicules-transport"
+],
+"slug": "ma-o8p-1051309-travaux-remise-etat-moteurs-thermiques-engins-voie-catenaire-loncf",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051309&orgAcronyme=o8p",
+"variant": "Non",
+"visit": "04/11/2026 10:00"
+},
+{
+"bond": 60000.0,
+"buyer": "DIRECTION PROVINCIALE DE L'EQUIPEMENT DU TRANSPORT DE LA LOGISTIQUE ET DE L'EAU DE RABAT",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-11-12T10:00",
+"detail_checked": true,
+"domains": [
+"Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Assistance et conseil (juridique, financier, en management, en gestion, technique…)"
+],
+"env_clauses": false,
+"estimate": 3336000.0,
+"first_seen": "2026-10-20",
+"id": "ma-o8p-1048428",
+"object": "ASSISTANCE TECHNIQUE POUR LES TRAVAUX DE PROTECTION DU LITTORAL DE SALE PHASE 1.",
+"places": [
+"SALE"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "AO16/2026",
+"regions": [
+"Rabat-Salé-Kénitra"
+],
+"reserved": false,
+"sectors": [
+"etudes-conseil"
+],
+"slug": "ma-o8p-1048428-assistance-technique-travaux-protection-littoral-sale-phase-1",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048428&orgAcronyme=o8p",
+"variant": "Non"
+},
+{
+"buyer": "OFPPT / COMPLEXE DE FORMATION PROFESSIONNELLE BENI MELLAL 2",
+"category": "Fournitures",
+"country": "Maroc",
+"deadline": "2026-11-02T10:00",
+"detail_checked": true,
+"domains": [
+"Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Pièces de rechange des équipements médicaux, médico-techniques et biomédical"
+],
+"env_clauses": false,
+"first_seen": "2026-10-20",
+"id": "ma-o4d-1051315",
+"lots": 5,
+"object": "Achat des matières d’œuvres et petits outillages destinées à la formation dans les établissements de formation professionnelle relevant du complexe de formation professionnelle Beni Mellal II.",
+"places": [
+"BENI MELLAL"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"published": "2026-10-20",
+"reference": "AOOS_01/2026/DRBK/CFPBM2",
+"regions": [
+"Béni Mellal-Khénifra"
+],
+"sectors": [
+"sante",
+"vehicules-transport"
+],
+"slug": "ma-o4d-1051315-achat-matieres-duvres-petits-outillages-destinees-formation-etablissements-forma",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051315&orgAcronyme=o4d",
+"visit": "Variante :"
+},
+{
+"buyer": "OFFICE DE LA FORMATION PROFESSIONNELLE ET DE LA PROMOTION DU TRAVAIL",
+"category": "Fournitures",
+"country": "Maroc",
+"deadline": "2026-11-11T10:00",
+"detail_checked": true,
+"domains": [
+"Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
+],
+"env_clauses": false,
+"first_seen": "2026-10-20",
+"id": "ma-o4d-1050894",
+"lots": 6,
+"object": "L’acquisition des microordinateurs destinés aux Etablissements de Formation Professionnelles de l'OFPPT, répartie en lots suivants :\n• Lot n°1 : Microordinateurs pour IFMS RABAT\n• Lot n°2 : Microordinateurs pour IFMS CASA\n• Lot n°3 : Microordinateurs pour CFIP OUAZZANE\n• Lot n°4 : Microordinateurs pour ISTA TEMARA 2\n• Lot n°5 : Microordinateurs pour ISTA BOUJDOUR\n• Lot n°6 : Microordinateurs pour ISHT OUJDA",
+"places": [
+"OUEZZANE",
+"OUJDA-ANGAD",
+"RABAT",
+"SKHIRATE-TEMARA",
+"CASABLANCA",
+"BOUJDOUR"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "110/2026/OFPPT",
+"regions": [
+"Tanger-Tétouan-Al Hoceïma",
+"L'Oriental",
+"Rabat-Salé-Kénitra",
+"Casablanca-Settat",
+"Laâyoune-Sakia El Hamra"
+],
+"sectors": [
+"informatique-telecoms",
+"vehicules-transport"
+],
+"slug": "ma-o4d-1050894-lacquisition-microordinateurs-destines-etablissements-formation-professionnelles",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050894&orgAcronyme=o4d",
+"visit": "Variante :"
+},
+{
+"bond": 150000.0,
+"buyer": "CAISSE NATIONALE DE SECURITE SOCIALE",
+"category": "Fournitures",
+"country": "Maroc",
+"deadline": "2026-11-10T11:30",
+"detail_checked": true,
+"domains": [
+"Fournitures / Matériaux de construction, plomberie, quincaillerie et outillages"
+],
+"env_clauses": false,
+"estimate": 8713452.0,
+"first_seen": "2026-10-20",
+"id": "ma-o4d-1050337",
+"object": "l’ameublement de l’hôtel du centre de vacances Marrakech de la CNSS, en lot unique.‎",
+"places": [
+"MARRAKECH"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "AOOI54/2026/CNSS",
+"regions": [
+"Marrakech-Safi"
+],
+"reserved": false,
+"sectors": [
+"btp",
+"fournitures-mobilier"
+],
+"slug": "ma-o4d-1050337-lameublement-lhotel-centre-vacances-marrakech-cnss",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050337&orgAcronyme=o4d",
+"variant": "Non"
+},
+{
+"bond": 5000.0,
+"buyer": "DIRECTION REGIONALE DE LA METEOROLOGIE DU NORD EST FES",
+"category": "Fournitures",
+"country": "Maroc",
+"deadline": "2026-11-04T10:00",
+"detail_checked": true,
+"domains": [
+"Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
+],
+"env_clauses": false,
+"estimate": 255600.0,
+"first_seen": "2026-10-20",
+"id": "ma-k2q-1044215",
+"object": "Mise à niveau de deux stations météorologiques automatiques de la Direction Régionale de la Météorologie du Nord Est (Provinces de Nador et Guercif)",
+"places": [
+"NADOR",
+"GUERCIF"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"published": "2026-10-20",
+"reference": "07/2026/DRMNE",
+"regions": [
+"L'Oriental"
+],
+"reserved": false,
+"sectors": [
+"vehicules-transport"
+],
+"slug": "ma-k2q-1044215-mise-niveau-deux-stations-meteorologiques-automatiques-direction-regionale-meteo",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1044215&orgAcronyme=k2q",
+"variant": "Non"
+},
+{
+"bond": 350000.0,
+"buyer": "SOCIETE AL OMRANE FES MEKNES",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-13T11:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de voiries, chemins et pistes / Travaux d’assises traitées et enrobées à chaud"
+],
+"env_clauses": false,
+"estimate": 23787660.0,
+"first_seen": "2026-10-20",
+"id": "ma-j8k-1051305",
+"object": "TRAVAUX DE CONSTRUCTION DE LA PLATEFORME DE VALORISATION ET DE COMMERCIALISATION DES PRODUITS AGRICOLES ET ALIMENTAIRES - COMMUNE BEN SMIM – PROVINCE D’IFRANE LOT--TRAVAUX DE VRD ET MUR DE CLOTURE-",
+"places": [
+"IFRANE"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "AO/170/2026",
+"regions": [
+"Fès-Meknès"
+],
+"reserved": false,
+"sectors": [
+"agriculture",
+"alimentation"
+],
+"slug": "ma-j8k-1051305-travaux-construction-plateforme-valorisation-commercialisation-produits-agricole",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051305&orgAcronyme=j8k",
+"variant": "Non"
+},
+{
+"bond": 16000.0,
+"buyer": "SOCIETE AL OMRANE FES MEKNES",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-12T11:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Ouvrages d'assainissement"
+],
+"env_clauses": false,
+"estimate": 1083000.0,
+"first_seen": "2026-10-20",
+"id": "ma-j8k-1051301",
+"object": "TRAVAUX DE LA STATION DE POMPAGE ET TRANSFERT PAR CONDUITE DE REFOULEMENT DES EAUX USEES DE LA ZONE D’ACTIVITÉ ARTISANALE D’OUISLANE PRÉFECTURE DE MEKNÈS",
+"places": [
+"MEKNES"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "AO/169/2026",
+"regions": [
+"Fès-Meknès"
+],
+"reserved": false,
+"sectors": [
+"eau-assainissement",
+"btp"
+],
+"slug": "ma-j8k-1051301-travaux-station-pompage-transfert-conduite-refoulement-eaux-usees-zone",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051301&orgAcronyme=j8k",
+"variant": "Non"
+},
+{
+"bond": 3138.0,
+"buyer": "Commune IROHALEN",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-05T10:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Fondations, injections, parois moulées, sondages et forages / Travaux de creusement de puits"
+],
+"env_clauses": true,
+"estimate": 156900.0,
+"first_seen": "2026-10-20",
+"id": "ma-j0w-1051298",
+"object": "Réalisation de forage d’exploitation au douar IMESKAR .",
+"places": [
+"CHICHAOUA"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"published": "2026-10-20",
+"reference": "4/2026",
+"regions": [
+"Marrakech-Safi"
+],
+"reserved": true,
+"sectors": [
+"eau-assainissement",
+"btp"
+],
+"slug": "ma-j0w-1051298-realisation-forage-dexploitation-douar-imeskar",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051298&orgAcronyme=j0w",
+"variant": "Non"
+},
+{
+"bond": 4600.0,
+"buyer": "Commune IROHALEN",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-03T10:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Terrassements / Terrassements en masse"
+],
+"env_clauses": false,
+"estimate": 234984.0,
+"first_seen": "2026-10-20",
+"id": "ma-j0w-1051295",
+"object": "1. Travaux d’aménagement piste au douar IGOUNTAR\n2. Construction d’un mur de clôture de cimetière au douar ARGUE.\n3. Construction château d’eau au douar TIJDINE",
+"places": [
+"CHICHAOUA"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"published": "2026-10-20",
+"reference": "3/2026",
+"regions": [
+"Marrakech-Safi"
+],
+"reserved": true,
+"sectors": [
+"btp"
+],
+"slug": "ma-j0w-1051295-1-travaux-damenagement-piste-douar-igountar-2-construction-dun",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051295&orgAcronyme=j0w",
+"variant": "Non"
+},
+{
+"bond": 6000.0,
+"buyer": "Arrondissement MENARA",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-10-28T10:00",
+"detail_checked": true,
+"domains": [
+"Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation événementiel, d’organisation de manifestations"
+],
+"env_clauses": false,
+"estimate": 304740.0,
+"first_seen": "2026-10-20",
+"id": "ma-j0w-1040447",
+"object": "Impression et production des supports de communication et de publication",
+"places": [
+"Préfecture de Marrakech Menara"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"published": "2026-10-20",
+"reference": "14/2026/menara",
+"regions": [
+"Marrakech-Safi"
+],
+"reserved": false,
+"sectors": [
+"alimentation",
+"formation-evenementiel"
+],
+"slug": "ma-j0w-1040447-impression-production-supports-communication-publication",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1040447&orgAcronyme=j0w",
+"variant": "Non"
+},
+{
+"bond": 6000.0,
+"buyer": "COMMUNE DE TINGHIR",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-02T11:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de voiries, chemins et pistes / Routes et voiries en béton"
+],
+"env_clauses": false,
+"estimate": 389520.0,
+"first_seen": "2026-10-20",
+"id": "ma-f9f-1049196",
+"object": "TRAVAUX DE LA MISE A NIVEAU DU SITE DU MARCHE PERMANANT AU PROFIT DES MARCHANDS AMBULANTS AU NIVEAU DE LA VILLE DE TINGHIR PROVINCE DE TINGHIR.",
+"places": [
+"TINGHIR"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"published": "2026-10-20",
+"reference": "CT/SM/18/2026",
+"regions": [
+"Drâa-Tafilalet"
+],
+"reserved": true,
+"sectors": [
+"btp"
+],
+"slug": "ma-f9f-1049196-travaux-mise-niveau-site-marche-permanant-profit-marchands-ambulants",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1049196&orgAcronyme=f9f",
+"variant": "Non"
+},
+{
+"bond": 3000.0,
+"buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-11-12T09:00",
+"detail_checked": true,
+"domains": [
+"Services / Prestations d’essais, de contrôle et de laboratoire / Contrôle et analyse techniques des échantillons prélevés sur les produits, matériel et matériaux soumis à des normes obligatoires (autre que le domaine du génie civil)"
+],
+"env_clauses": false,
+"estimate": 240000.0,
+"first_seen": "2026-10-20",
+"id": "ma-d4q-1051323",
+"object": "Prélèvement des échantillons de l’eau au niveau des captages, réservoirs de production et des points frontaliers avec la SRM relevant des Provinces MEKNES -IFRANE -ELHAJEB",
+"places": [
+"MEKNES",
+"EL-HAJEB",
+"IFRANE"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "89/DR5/2026",
+"regions": [
+"Fès-Meknès"
+],
+"reserved": true,
+"sectors": [
+"btp",
+"fournitures-mobilier"
+],
+"slug": "ma-d4q-1051323-prelevement-echantillons-leau-niveau-captages-reservoirs-production-points-front",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1051323&orgAcronyme=d4q",
+"variant": "Non"
+},
+{
+"bond": 10800.0,
+"buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-11-12T09:00",
+"detail_checked": true,
+"domains": [
+"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
+],
+"env_clauses": false,
+"estimate": 1080000.0,
+"first_seen": "2026-10-20",
+"id": "ma-d4q-1050986",
+"object": "Maintenance des armoires électriques de commande et protection au niveau des centres relevant des provinces Meknès-El Hajeb-Ifrane",
+"places": [
+"MEKNES",
+"EL-HAJEB",
+"IFRANE"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "84/DR5/2026",
+"regions": [
+"Fès-Meknès"
+],
+"reserved": true,
+"sectors": [
+"energie",
+"vehicules-transport"
+],
+"slug": "ma-d4q-1050986-maintenance-armoires-electriques-commande-protection-niveau-centres-relevant-pro",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050986&orgAcronyme=d4q",
+"variant": "Non"
+},
+{
+"bond": 3000.0,
+"buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-12T09:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux d’étanchéité, isolation, plomberie et menuiserie / Travaux de plomberie sanitaire"
+],
+"env_clauses": false,
+"estimate": 239970.0,
+"first_seen": "2026-10-20",
+"id": "ma-d4q-1050945",
+"object": "Entretien des Bâtiments techniques : ISO22000",
+"places": [
+"FES"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "79/DR5/2026",
+"regions": [
+"Fès-Meknès"
+],
+"reserved": true,
+"sectors": [
+"btp",
+"services-generaux"
+],
+"slug": "ma-d4q-1050945-entretien-batiments-techniques-iso22000",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050945&orgAcronyme=d4q",
+"variant": "Non"
+},
+{
+"bond": 9600.0,
+"buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-11-12T09:30",
+"detail_checked": true,
+"domains": [
+"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
+],
+"env_clauses": false,
+"estimate": 960000.0,
+"first_seen": "2026-10-20",
+"id": "ma-d4q-1050939",
+"object": "Maintenance des postes de transformation MT/BT et des équipements d’exploitation MT et BT au niveau des centres de production relevant du Secteur de Production Jerada-Figuig-Debdou.",
+"places": [
+"JERADA",
+"TAOURIRT",
+"FIGUIG"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "71DR6/2026",
+"regions": [
+"L'Oriental"
+],
+"reserved": true,
+"sectors": [
+"energie",
+"vehicules-transport"
+],
+"slug": "ma-d4q-1050939-maintenance-postes-transformation-mt-bt-equipements-dexploitation-mt-bt",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050939&orgAcronyme=d4q",
+"variant": "Non"
+},
+{
+"bond": 3000.0,
+"buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-11-12T09:00",
+"detail_checked": true,
+"domains": [
+"Services / Prestations d’essais, de contrôle et de laboratoire / Contrôle et analyse de la qualité de l’eau et d’air"
+],
+"env_clauses": false,
+"estimate": 60000.0,
+"first_seen": "2026-10-20",
+"id": "ma-d4q-1050915",
+"object": "Raccordement métrologique des analyses de la DR5/IQ au système international (SI) par participation aux essais d’aptitudes selon ISO 17043",
+"places": [
+"FES"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "90/DR5/2026",
+"regions": [
+"Fès-Meknès"
+],
+"reserved": true,
+"sectors": [
+"alimentation"
+],
+"slug": "ma-d4q-1050915-raccordement-metrologique-analyses-dr5-iq-systeme-international-si-participation",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050915&orgAcronyme=d4q",
+"variant": "Non"
+},
+{
+"bond": 13000.0,
+"buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
+"category": "Fournitures",
+"country": "Maroc",
+"deadline": "2026-11-12T09:30",
+"detail_checked": true,
+"domains": [
+"Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Pièces de rechange des équipements médicaux, médico-techniques et biomédical"
+],
+"env_clauses": false,
+"estimate": 1227600.0,
+"first_seen": "2026-10-20",
+"id": "ma-d4q-1050891",
+"object": "Acquisition des appareils scientifiques de laboratoire : Lot 1",
+"places": [
+"OUJDA-ANGAD"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "73DR6/2026",
+"regions": [
+"L'Oriental"
+],
+"reserved": true,
+"sectors": [
+"sante",
+"vehicules-transport"
+],
+"slug": "ma-d4q-1050891-acquisition-appareils-scientifiques-laboratoire-1",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050891&orgAcronyme=d4q",
+"variant": "Non"
+},
+{
+"bond": 3000.0,
+"buyer": "OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-11-12T09:00",
+"detail_checked": true,
+"domains": [
+"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et nettoyage des bâtiments administratifs"
+],
+"env_clauses": false,
+"estimate": 240000.0,
+"first_seen": "2026-10-20",
+"id": "ma-d4q-1050883",
+"object": "Dératisation et traitement des nuisibles au niveau des stations de traitement Fès et Driss 1er.",
+"places": [
+"FES"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-20",
+"reference": "95/DR5/2026",
+"regions": [
+"Fès-Meknès"
+],
+"reserved": true,
+"sectors": [
+"btp",
+"services-generaux"
+],
+"slug": "ma-d4q-1050883-deratisation-traitement-nuisibles-niveau-stations-traitement-fes-driss-1er",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050883&orgAcronyme=d4q",
+"variant": "Non"
+},
+{
 "bond": 5000.0,
 "buyer": "Commune rurale de OULED YOUSSEF",
 "category": "Services",
@@ -7230,6 +8222,71 @@
 "visit": "03/11/2026 10:00"
 },
 {
+"buyer": "GOUVERNEUR DE NADOR",
+"category": "Services",
+"country": "Maroc",
+"deadline": "2026-11-12T11:00",
+"detail_checked": true,
+"domains": [
+"Services / Services architecturales et topographiques / Exécution de plans, sommaires, d’exécutions et de détails"
+],
+"env_clauses": true,
+"estimate": 1340000.0,
+"first_seen": "2026-10-20",
+"id": "ma-g3h-1050227",
+"object": "CONCEPTION ARCHITECTURALE ET SUIVI DES TRAVAUX DE DÉMOLITION ET DE RECONSTRUCTION DE LA CAÏDAT DE BENI CHIKER – PROVINCE DE NADOR",
+"places": [
+"NADOR"
+],
+"procedure": "Consultation architecturale ouverte",
+"published": "2026-10-19",
+"reference": "31/2026",
+"regions": [
+"L'Oriental"
+],
+"reserved": false,
+"sectors": [
+"etudes-conseil"
+],
+"slug": "ma-g3h-1050227-conception-architecturale-suivi-travaux-demolition-reconstruction-caidat-beni-ch",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050227&orgAcronyme=g3h",
+"variant": "Non"
+},
+{
+"bond": 17000.0,
+"buyer": "GOUVERNEUR DE NADOR",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-03T11:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
+"env_clauses": true,
+"estimate": 1029672.0,
+"first_seen": "2026-10-20",
+"id": "ma-g3h-1050225",
+"object": "TRAVAUX D’EXTENSION ET DE SURELEVATION DE CENTRE « NOUR EL FATH » DES FEMMES EN SITUATION DIFFICILE A LA COMMUNE DE AL AROUI – DANS LE CADRE DE L’INITIATIVE NATIONALE POUR LE DEVELOPPEMENT HUMAIN -PROVINCE DE NADOR-",
+"places": [
+"NADOR"
+],
+"procedure": "Appel d'offres ouvert simplifié",
+"published": "2026-10-19",
+"reference": "30/2026",
+"regions": [
+"L'Oriental"
+],
+"reserved": false,
+"sectors": [
+"btp"
+],
+"slug": "ma-g3h-1050225-travaux-dextension-surelevation-centre-nour-el-fath-femmes-situation",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1050225&orgAcronyme=g3h",
+"variant": "Non"
+},
+{
 "bond": 16000.0,
 "buyer": "GOUVERNEUR DE LA PROVINCE DE BERRECHID",
 "category": "Fournitures",
@@ -7330,6 +8387,40 @@
 "variant": "Non"
 },
 {
+"bond": 70000.0,
+"buyer": "GOUVERNEUR DE NADOR",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-12T11:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
+],
+"env_clauses": true,
+"estimate": 3796200.0,
+"first_seen": "2026-10-20",
+"id": "ma-g3h-1049245",
+"object": "TRAVAUX DE CONSTRUCTION D’UN CENTRE SOCIO-MÉDICAL AU PROFIT DES PERSONNES HANDICAPÉES ATTEINTES DE TROUBLES PSYCHIATRIQUES ET MENTAUX À SELOUANE – PROVINCE DE NADOR, DANS LE CADRE DE l’INDH.",
+"places": [
+"NADOR"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-19",
+"reference": "29/2026INDH",
+"regions": [
+"L'Oriental"
+],
+"reserved": false,
+"sectors": [
+"sante",
+"btp"
+],
+"slug": "ma-g3h-1049245-travaux-construction-dun-centre-socio-medical-profit-personnes-handicapees",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1049245&orgAcronyme=g3h",
+"variant": "Non"
+},
+{
 "bond": 3000.0,
 "buyer": "GOUVERNEUR DE LA PROVINCE DE KHENIFRA",
 "category": "Fournitures",
@@ -7360,6 +8451,40 @@
 "slug": "ma-g3h-1048939-acquisition-dun-vehicule-dassistance-sociale-transport-personnes-sans-abris",
 "source": "PMMP",
 "url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048939&orgAcronyme=g3h",
+"variant": "Non"
+},
+{
+"bond": 70000.0,
+"buyer": "GOUVERNEUR DE NADOR",
+"category": "Travaux",
+"country": "Maroc",
+"deadline": "2026-11-12T11:00",
+"detail_checked": true,
+"domains": [
+"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Ouvrages d'assainissement"
+],
+"env_clauses": true,
+"estimate": 3834840.0,
+"first_seen": "2026-10-20",
+"id": "ma-g3h-1048792",
+"object": "Travaux de construction, d’aménagement et de réhabilitation des ouvrages d’assainissement et de franchissement sur des pistes desservant des douars relevant de la Province de Nador, dans le cadre de l’INDH",
+"places": [
+"NADOR"
+],
+"procedure": "Appel d'offres ouvert",
+"published": "2026-10-19",
+"reference": "28/2026INDH",
+"regions": [
+"L'Oriental"
+],
+"reserved": false,
+"sectors": [
+"eau-assainissement",
+"btp"
+],
+"slug": "ma-g3h-1048792-travaux-construction-damenagement-rehabilitation-ouvrages-dassainissement-franch",
+"source": "PMMP",
+"url": "https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseDetailConsultation&refConsultation=1048792&orgAcronyme=g3h",
 "variant": "Non"
 },
 {
@@ -11827,6 +12952,7 @@
 "category": "Services de consultants",
 "country": "Madagascar",
 "deadline": "2026-10-19T16:00",
+"delisted": "2026-10-20",
 "first_seen": "2026-10-17",
 "id": "wb-op00475807",
 "method": "Individual Consultant Selection",
@@ -62813,6 +63939,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Gardiennage et surveillance des bâtiments administratifs"
@@ -63455,6 +64582,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges"
@@ -64577,6 +65705,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Fournitures de bureau"
@@ -66183,6 +67312,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Produits pétroliers, carburants, lubrifiants et produits de chauffage / Lubrifiants, liquide à usage hydraulique et autres préparations lubrifiantes"
@@ -68016,6 +69146,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
@@ -68450,6 +69581,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Matériel de bureau"
@@ -70307,6 +71439,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
@@ -70810,6 +71943,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
@@ -71804,6 +72938,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de revêtement, platerie et peinture / Peinture générale de bâtiment"
@@ -71972,6 +73107,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Fongibles et consommables médicaux"
@@ -72952,6 +74088,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
@@ -73868,6 +75005,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "env_clauses": true,
 "estimate": 2397600.0,
@@ -73900,6 +75038,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Accompagnement dans la mise en œuvre de projet, pilotage des travaux Et coordination"
@@ -74477,6 +75616,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Terrassements / Terrassements routiers"
@@ -76378,6 +77518,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Mobilier de bureau"
@@ -76713,6 +77854,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Pose de conduites d'eau potable"
@@ -77874,6 +79016,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Travaux d’adduction d’eau potable"
@@ -78877,6 +80020,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électrique"
@@ -79229,6 +80373,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matières premières et produits de textile, cuir, caoutchouc et plastique / Produits en caoutchouc et en plastique."
@@ -80188,6 +81333,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Imprimés, produits d’impression, de reproduction, et de photographie / Consommables d'impression et de reproduction (encre, plaques…)."
@@ -80323,6 +81469,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation événementiel, d’organisation de manifestations"
@@ -80420,6 +81567,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T09:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
@@ -81030,6 +82178,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T09:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Logiciels utilitaires, middlewares, sécurités, messageries, collaboration et autres"
@@ -81639,6 +82788,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
@@ -84237,6 +85387,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Travaux de branchement électrique"
@@ -84271,6 +85422,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Travaux de réseaux téléphoniques"
@@ -84305,6 +85457,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
@@ -84542,6 +85695,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
@@ -85381,6 +86535,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Terrassements / Terrassements en masse"
@@ -86480,6 +87635,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation de restauration"
@@ -86614,6 +87770,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et articles de literie, de couchage, de cuisine et de buanderie / Appareils et ustensiles de cuisine"
@@ -87053,6 +88210,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Matériels et engins de chantier"
@@ -89192,6 +90350,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Moyens de transport des personnes"
@@ -90468,6 +91627,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
@@ -93052,6 +94212,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation d’Hôtellerie."
@@ -93349,6 +94510,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
@@ -94984,6 +96146,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Mobilier de bureau"
@@ -95122,6 +96285,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériaux de construction, plomberie, quincaillerie et outillages / Articles et fournitures de plomberie"
@@ -96374,6 +97538,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -98348,6 +99513,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Pose de conduites d'eau potable"
@@ -98516,6 +99682,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de revêtement, platerie et peinture / Revêtement en bois et ébénisterie"
@@ -98782,6 +99949,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Terrassements / Travaux de fouilles"
@@ -100314,6 +101482,7 @@
 "category": "Services de consultants",
 "country": "Madagascar",
 "deadline": "2026-10-19T16:00",
+"delisted": "2026-10-20",
 "first_seen": "2026-10-12",
 "id": "wb-op00473169",
 "method": "Individual Consultant Selection",
@@ -100358,6 +101527,7 @@
 "category": "Services de consultants",
 "country": "Madagascar",
 "deadline": "2026-10-19T16:00",
+"delisted": "2026-10-20",
 "first_seen": "2026-10-12",
 "id": "wb-op00473158",
 "method": "Individual Consultant Selection",
@@ -100402,6 +101572,7 @@
 "category": "Services de consultants",
 "country": "Madagascar",
 "deadline": "2026-10-19T16:00",
+"delisted": "2026-10-20",
 "first_seen": "2026-10-12",
 "id": "wb-op00473147",
 "method": "Individual Consultant Selection",
@@ -100491,6 +101662,7 @@
 "category": "Services de consultants",
 "country": "Madagascar",
 "deadline": "2026-10-19T16:00",
+"delisted": "2026-10-20",
 "first_seen": "2026-10-12",
 "id": "wb-op00473130",
 "method": "Individual Consultant Selection",
@@ -100535,6 +101707,7 @@
 "category": "Services de consultants",
 "country": "Madagascar",
 "deadline": "2026-10-19T16:00",
+"delisted": "2026-10-20",
 "first_seen": "2026-10-12",
 "id": "wb-op00473118",
 "method": "Individual Consultant Selection",
@@ -100580,6 +101753,7 @@
 "category": "Services de consultants",
 "country": "Madagascar",
 "deadline": "2026-10-19T16:00",
+"delisted": "2026-10-20",
 "first_seen": "2026-10-12",
 "id": "wb-op00473102",
 "method": "Individual Consultant Selection",
@@ -100737,6 +101911,7 @@
 "category": "Services de consultants",
 "country": "Afrique de l'Ouest et du Centre (régional)",
 "deadline": "2026-10-19T16:00",
+"delisted": "2026-10-20",
 "first_seen": "2026-10-12",
 "id": "wb-op00472998",
 "method": "Individual Consultant Selection",
@@ -100803,6 +101978,7 @@
 "category": "Services de consultants",
 "country": "Madagascar",
 "deadline": "2026-10-19T16:00",
+"delisted": "2026-10-20",
 "first_seen": "2026-10-12",
 "id": "wb-op00472893",
 "method": "Individual Consultant Selection",
@@ -100825,6 +102001,7 @@
 "category": "Services de consultants",
 "country": "Madagascar",
 "deadline": "2026-10-19T16:00",
+"delisted": "2026-10-20",
 "first_seen": "2026-10-12",
 "id": "wb-op00472890",
 "method": "Individual Consultant Selection",
@@ -105174,6 +106351,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériaux de construction, plomberie, quincaillerie et outillages / Articles et fournitures de quincaillerie"
@@ -106081,6 +107259,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Terrassements / Travaux de fouilles"
@@ -108257,6 +109436,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
@@ -108291,6 +109471,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Terrassements / Terrassements routiers"
@@ -108597,6 +109778,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Mobilier de bureau"
@@ -116681,6 +117863,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Produits alimentaires, d’élevage, de la pêche, d’agriculture, d’horticulture et pépinière / Produits alimentaires pour usage humain"
@@ -121705,6 +122888,7 @@
 "category": "Services de consultants",
 "country": "Sénégal",
 "deadline": "2026-10-19T10:30",
+"delisted": "2026-10-20",
 "first_seen": "2026-10-12",
 "id": "wb-op00472543",
 "method": "Individual Consultant Selection",
@@ -121882,6 +123066,7 @@
 "category": "Services de consultants",
 "country": "Sénégal",
 "deadline": "2026-10-19T11:00",
+"delisted": "2026-10-20",
 "first_seen": "2026-10-12",
 "id": "wb-op00472481",
 "method": "Quality And Cost-Based Selection",
@@ -121926,6 +123111,7 @@
 "category": "Services de consultants",
 "country": "Sénégal",
 "deadline": "2026-10-19T10:00",
+"delisted": "2026-10-20",
 "first_seen": "2026-10-12",
 "id": "wb-op00472470",
 "method": "Individual Consultant Selection",
@@ -122152,6 +123338,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Travaux d'installation pour usage domestique de bâtiments courants"
@@ -134267,6 +135454,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "env_clauses": false,
 "estimate": 388656.0,
@@ -136615,6 +137803,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
@@ -136647,6 +137836,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
@@ -141890,6 +143080,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements informatiques (matériel, logiciels, progiciels )"
@@ -143434,6 +144625,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
@@ -143597,6 +144789,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et nettoyage des bâtiments administratifs"
@@ -144336,6 +145529,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
@@ -144658,6 +145852,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Matériel de bureau"
@@ -144726,6 +145921,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
@@ -145859,6 +147055,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -145926,6 +147123,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "env_clauses": true,
 "estimate": 4380000.0,
@@ -146183,6 +147381,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T09:30",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de voiries, chemins et pistes / Routes et voiries en béton"
@@ -146687,6 +147886,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -146720,6 +147920,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de voiries, chemins et pistes / Routes et voiries en béton"
@@ -146909,6 +148110,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Travaux d'éclairage publics"
@@ -147468,6 +148670,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T09:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Travaux d'entretien et de réparation des équipements électriques MT/BT"
@@ -147502,6 +148705,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T09:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / pièces de rechange pour matériel électrique, électronique et électromécanique"
@@ -147542,6 +148746,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T09:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
@@ -147577,6 +148782,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T09:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Moyens de transport des personnes"
@@ -147720,6 +148926,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T09:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électromécanique"
@@ -148215,6 +149422,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Consommables et réactifs de laboratoire pour analyses physico-chimiques, bactériologiques, microbiologiques et toxicologiques y compris verreries"
@@ -148251,6 +149459,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Produits chimiques, de nettoyage, insecticides / Emulsions de bitumes, liants hydrocarbonés et autres matériaux enrobés"
@@ -148358,6 +149567,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Pose de conduites d'eau potable"
@@ -148429,6 +149639,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électromécanique"
@@ -148574,6 +149785,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / pièces de rechange pour matériel électrique, électronique et électromécanique"
@@ -148611,6 +149823,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Assistance et conseil (juridique, financier, en management, en gestion, technique…)"
@@ -148682,6 +149895,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électromécanique"
@@ -148889,6 +150103,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Travaux d’adduction d’eau potable"
@@ -148950,6 +150165,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Transformateurs et travaux d'installations de MT"
@@ -149146,6 +150362,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -150044,6 +151261,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services de technologies de l'information et télécommunications / Développement informatique et services connexes"
@@ -150145,6 +151363,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T09:30",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Transformateurs et travaux d'installations de MT"
@@ -150212,6 +151431,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériaux de construction, plomberie, quincaillerie et outillages / Outillages"
@@ -150344,6 +151564,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de revêtement, platerie et peinture / Peinture industrielle"
@@ -150382,6 +151603,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’installation / Travaux d’installation de matériel et équipements hydro-électromécaniques, électroniques, électromécaniques et similaires"
@@ -150607,6 +151829,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
@@ -150640,6 +151863,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -150874,6 +152098,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
@@ -150976,6 +152201,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Prestations d’essais, de contrôle et de laboratoire / Essais géotechniques"
@@ -151112,6 +152338,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Travaux d'installation pour usage domestique de bâtiments courants"
@@ -151146,6 +152373,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T09:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Pose de conduites d'eau potable"
@@ -151214,6 +152442,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Travaux de branchement électrique"
@@ -151690,6 +152919,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
@@ -151756,6 +152986,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
@@ -151989,6 +153220,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
@@ -152121,6 +153353,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
@@ -152628,6 +153861,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -152794,6 +154028,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
@@ -152929,6 +154164,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude de marché"
@@ -153128,6 +154364,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -153582,6 +154819,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
@@ -153823,6 +155061,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électrique"
@@ -154688,6 +155927,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de voiries, chemins et pistes / Pistes"
@@ -154721,6 +155961,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de voiries, chemins et pistes / Pistes"
@@ -154871,6 +156112,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Travaux d'installation pour usage domestique de bâtiments courants"
@@ -155077,6 +156319,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Matériel de bureau"
@@ -156116,6 +157359,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services architecturales et topographiques / Cartographie des zones urbaines et rurales"
@@ -156153,6 +157397,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T09:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Travaux d'entretien et de réparation des équipements électriques MT/BT"
@@ -156293,6 +157538,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T08:30",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers"
@@ -156327,6 +157573,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T08:30",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers"
@@ -156361,6 +157608,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T09:30",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Ouvrages d'assainissement"
@@ -156394,6 +157642,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T08:30",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité"
@@ -156495,6 +157744,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Fournitures de bureau"
@@ -156528,6 +157778,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T08:30",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité"
@@ -156562,6 +157813,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T08:30",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers"
@@ -156595,6 +157847,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T08:30",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange"
@@ -156889,6 +158142,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Prestations d’essais, de contrôle et de laboratoire / Essais géotechniques"
@@ -157124,6 +158378,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Jardinage des espaces verts"
@@ -157227,6 +158482,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T09:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
@@ -157260,6 +158516,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T09:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électrique"
@@ -157294,6 +158551,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T09:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Transformateurs et travaux d'installations de MT"
@@ -157364,6 +158622,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services de technologies de l'information et télécommunications / Conseil et intégration de progiciel"
@@ -157439,6 +158698,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services courants / Gestion des archives"
@@ -157791,6 +159051,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
@@ -157852,6 +159113,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services courants / Recrutement"
@@ -157919,6 +159181,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Documentation, manuels, fournitures scolaires et d’enseignement / fournitures scolaires et d’enseignement"
@@ -158021,6 +159284,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de voiries, chemins et pistes / Chemins forestiers"
@@ -158374,6 +159638,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Consommables et réactifs de laboratoire pour analyses physico-chimiques, bactériologiques, microbiologiques et toxicologiques y compris verreries"
@@ -159015,6 +160280,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -159205,6 +160471,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Matériels et équipements informatiques."
@@ -159305,6 +160572,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Equipements électronique"
@@ -159376,6 +160644,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services courants / Montage et démontage du matériel"
@@ -159706,6 +160975,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Produits pétroliers, carburants, lubrifiants et produits de chauffage / Combustibles et produits de chauffage (charbon, bois de chauffage, fuel, gaz….)"
@@ -159740,6 +161010,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Prestations d’essais, de contrôle et de laboratoire / Essais géotechniques"
@@ -160699,6 +161970,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements informatiques (matériel, logiciels, progiciels )"
@@ -161062,6 +162334,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Assistance et conseil (juridique, financier, en management, en gestion, technique…)"
@@ -161271,6 +162544,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
@@ -161575,6 +162849,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -161736,6 +163011,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -161837,6 +163113,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T09:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "env_clauses": false,
 "estimate": 166800.0,
@@ -161955,6 +163232,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "env_clauses": false,
 "estimate": 420000.0,
@@ -162214,6 +163492,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude d’organisation et de gestion"
@@ -163284,6 +164563,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux forestiers / Travaux de labour et de plantation"
@@ -163577,6 +164857,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Assistance et conseil (juridique, financier, en management, en gestion, technique…)"
@@ -164355,6 +165636,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Terrassements / Terrassements routiers"
@@ -164389,6 +165671,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’installation / Travaux d’installation de cuisines"
@@ -164485,6 +165768,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Matériel de bureau"
@@ -165602,6 +166886,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
@@ -165801,6 +167086,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Pose de conduites d'eau potable"
@@ -166069,6 +167355,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électromécanique"
@@ -167187,6 +168474,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
@@ -167314,6 +168602,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Construction d'ouvrages d'art / Ouvrages d'art en béton armé ou compacté au rouleau, en acier et maçonnerie"
@@ -167587,6 +168876,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -167621,6 +168911,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Produits alimentaires, d’élevage, de la pêche, d’agriculture, d’horticulture et pépinière / Produits alimentaires pour usage humain"
@@ -167891,6 +169182,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -167924,6 +169216,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -168155,6 +169448,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Construction d'ouvrages d'art / Ouvrages d'art en béton armé ou compacté au rouleau, en acier et maçonnerie"
@@ -168188,6 +169482,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T09:30",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -171801,6 +173096,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Travaux d'éclairage publics"
@@ -172098,6 +173394,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Terrassements / Terrassements en masse"
@@ -172228,6 +173525,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T09:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électrique"
@@ -172932,6 +174230,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Salles et stands"
@@ -173268,6 +174567,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -173491,6 +174791,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux forestiers / Travaux de reboisement"
@@ -173760,6 +175061,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -175768,6 +177070,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Terrassements / Terrassements routiers"
@@ -176734,6 +178037,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
@@ -178429,6 +179733,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Terrassements / Terrassements pour espaces verts"
@@ -178846,6 +180151,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Location avec option d’achat de biens, d’équipements de matériel et d’outillage / Matériel"
@@ -178995,6 +180301,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -179029,6 +180336,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -180139,6 +181447,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Terrassements / Terrassements routiers"
@@ -180232,6 +181541,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Construction d'ouvrages d'art / Ouvrages d'art en béton armé ou compacté au rouleau, en acier et maçonnerie"
@@ -180509,6 +181819,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services de technologies de l'information et télécommunications / Développement informatique et services connexes"
@@ -182864,6 +184175,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Salles et stands"
@@ -183859,6 +185171,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Prestations d’essais, de contrôle et de laboratoire / Essais routiers et d’ouvrages d’art"
@@ -185925,6 +187238,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électromécanique"
@@ -187169,6 +188483,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
@@ -187833,6 +189148,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements informatiques (matériel, logiciels, progiciels )"
@@ -190309,6 +191625,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et articles de literie, de couchage, de cuisine et de buanderie / Appareils et ustensiles de cuisine"
@@ -191443,6 +192760,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T09:15",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Pose de conduites d'eau potable"
@@ -191598,6 +192916,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -192444,6 +193763,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Produits alimentaires, d’élevage, de la pêche, d’agriculture, d’horticulture et pépinière / Produits de la pêche et de l’aquaticulture (poissons, crustacés….)"
@@ -193132,6 +194452,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
@@ -193164,6 +194485,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
@@ -193669,6 +194991,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
@@ -193789,6 +195112,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Terrassements / Terrassements routiers"
@@ -193997,6 +195321,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matières premières et produits de textile, cuir, caoutchouc et plastique / Produits textiles"
@@ -194236,6 +195561,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Produits alimentaires, d’élevage, de la pêche, d’agriculture, d’horticulture et pépinière / Animaux vivants (bétail, cheptel…..)"
@@ -194269,6 +195595,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etablissement de plans directeurs"
@@ -194407,6 +195734,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Prestations d’essais, de contrôle et de laboratoire / Essais routiers et d’ouvrages d’art"
@@ -194695,6 +196023,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etudes et enquêtes statistiques et de recensement"
@@ -194940,6 +196269,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -195545,6 +196875,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
@@ -197169,6 +198500,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-20T10:00",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériaux de construction, plomberie, quincaillerie et outillages / Articles et fournitures de plomberie"
@@ -197203,6 +198535,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-20T08:30",
+"delisted": "2026-10-20",
 "detail_checked": true,
 "env_clauses": true,
 "estimate": 211180320.0,
