@@ -249,3 +249,5 @@ def test_status_file_and_source_dates(tmp_path):
     idx = (tmp_path / "index.html").read_text(encoding="utf-8")
     assert "portail marocain le 20 octobre 2026 à 22 h 42 (dernière tentative en échec" in idx
     assert "Banque mondiale le 21 octobre 2026 à 14 h 34" in idx and 'href="/statut.json"' in idx
+    feed = json.loads((tmp_path / "data" / "alertes.json").read_text(encoding="utf-8"))
+    assert feed["sectors"]["btp"] and all({"i", "o", "s", "r", "x", "f", "d"} <= set(n) for n in feed["notices"])

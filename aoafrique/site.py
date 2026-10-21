@@ -799,6 +799,18 @@ class Site:
         payload = {"updated": self.updated_paris.isoformat(timespec="minutes"), "today": self.today.isoformat(),
                    "count": len(rows), "sectors": SECTOR_LABEL, "notices": rows}
         (d / "ouverts.json").write_text(json.dumps(payload, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
+        # Feed of the e-mail alerts (gas/src/Alerts.js): open notices first seen in the last 8 days, with the region
+        # slugs of the sign-up form, the first-seen date and the summary sentence of the tender page.
+        since = (self.today - timedelta(days=8)).isoformat()
+        fresh = [n for n in self.open if (n.get("first_seen") or "") >= since]
+        fresh.sort(key=lambda n: (n.get("first_seen", ""), n.get("published", ""), n["id"]), reverse=True)
+        alerts = {"updated": self.meta.get("updated"), "today": self.today.isoformat(), "count": len(fresh),
+                  "sectors": SECTOR_LABEL, "notices": [
+            {"i": n["slug"], "o": n["object"][:300], "b": n.get("buyer", "")[:120], "s": n.get("sectors", []),
+             "r": [model.slugify(r) for r in n.get("regions", [])], "k": n.get("country", ""), "x": n["source"],
+             "d": n.get("deadline", ""), "f": n.get("first_seen", ""), "p": [place_label(x) for x in n.get("places", [])][:3]}
+            for n in fresh]}
+        (d / "alertes.json").write_text(json.dumps(alerts, ensure_ascii=False, separators=(",", ":")), encoding="utf-8")
 
     def build_feed(self) -> None:
         items = sorted(self.open, key=lambda n: (n.get("first_seen", ""), n.get("published", "")), reverse=True)[:100]

@@ -30,7 +30,12 @@
  *                                   `funnel` and listed in `funnel_test` (croSummaryReal_).
  *   cro_init POST {key}             stores that key's SHA-256 once (refused afterwards).
  *
- * Only scope: spreadsheets. The spreadsheet is created on first use and its id kept in Script Properties.
+ *   alerts_status GET               last run of the daily e-mail alerts (src/Alerts.js): time, ok, errors; no personal data.
+ *
+ * Scopes: spreadsheets, plus (2026-10-21, e-mail alerts, src/Alerts.js) script.send_mail, script.external_request
+ * (the public feed data/alertes.json) and script.scriptapp (the daily trigger). The owner grants them once by running
+ * installAlerts from the editor; redeploy the web app only after that, or it would ask anonymous visitors to sign in.
+ * The spreadsheet is created on first use and its id kept in Script Properties.
  */
 
 var SITE_ = 'veille-ao-afrique';
@@ -125,6 +130,7 @@ function route_(params, body) {
         if (!body) throw userError_('method_not_allowed', 'POST attendu.');
         return json_(reclass_(req));
       case 'ping': return json_({ ok: true, service: SITE_ });
+      case 'alerts_status': return json_(alertsStatus_());
       default: return json_({ ok: false, error: 'unknown_action' });
     }
   } catch (err) {

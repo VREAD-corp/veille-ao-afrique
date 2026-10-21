@@ -48,6 +48,12 @@ cd gas && ~/.local/share/octave-clasp/node_modules/.bin/clasp push --force
 ~/.local/share/octave-clasp/node_modules/.bin/clasp deploy -i "$(node -e "console.log(require('./.deployment.json').deploymentId)")"
 ```
 
+### E-mail alerts (`gas/src/Alerts.js`, 2026-10-21)
+
+Until 2026-10-21 nothing sent the alerts the site promises: the backend only stored sign-ups (scope `spreadsheets`). `sendAlerts` now runs once a day (~9 h 15 Paris), reads the public `data/alertes.json` (open notices first seen in the last 8 days, region slugs, sector labels) and e-mails each active alert sign-up (kind `alertes`, not `test`, not withdrawn; one per address, criteria of its latest row) the notices first seen since its last e-mail that match its sectors, regions and zone (`maroc` → portal notices, `afrique-francophone` → World Bank). Nothing is sent when there is nothing new; `hebdomadaire` gets at most one e-mail every 7 days; 25 notices listed at most, then a link to the list. Sender: the script owner's Google account, name « Veille AO Afrique (Jalonel) », reply-to contact@jalonel.com, one-click unsubscribe link (`unsubscribe_`), no Vread mention. Logs: `Alertes_envois` (one row per run: counts, quota, errors, no address) and `Alertes_etat` (last e-mail per address). An error makes the run throw so Google e-mails the owner; `?action=alerts_status` (public, no personal data) gives the last run. Checked by `tests/alerts_check.mjs` (fake Apps Script).
+
+**One-time owner step (pending):** the new scopes (`script.send_mail`, `script.external_request`, `script.scriptapp`) need the owner's consent. Open the project in the Apps Script editor, select `installAlerts`, Run, accept; optionally run `previewAlerts` (dry run, nothing sent). Then redeploy the web app (command above) so `alerts_status` is live. **Do not redeploy the web app before that consent**: with unauthorised scopes it would stop answering anonymous visitors (tracking and sign-ups).
+
 ## Automation
 
 `.github/workflows/update.yml`: 05:20 and 17:20 UTC (backup crons at :41 every 2 h run only if that refresh is missing), tests → fetch → commit `data/` → build → GitHub Pages → IndexNow.
