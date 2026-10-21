@@ -1,5 +1,89 @@
 [
 {
+"buyer": "Office National de l'Assainissement",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-24T10:00",
+"first_seen": "2026-10-21",
+"id": "tn-104370",
+"object": "Acquisition pièces en fonte",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-21",
+"reference": "Tender-104370",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "tn-104370-acquisition-pieces-fonte",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104370"
+},
+{
+"buyer": "Office National de l'Assainissement",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-08T10:00",
+"first_seen": "2026-10-21",
+"id": "tn-104369",
+"object": "TRAVAUX DE REHABILITATION DU RESEAU PRIMAIRE DANS LA VILLE DE SOUKRA",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-21",
+"reference": "Tender-104369",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104369-travaux-rehabilitation-reseau-primaire-ville-soukra",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104369"
+},
+{
+"buyer": "Municipalité de Mahdia",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-19T10:00",
+"first_seen": "2026-10-21",
+"id": "tn-104367",
+"object": "la commune de Mahdia confie à des avocats pour la représenter devant les tribinaux et les organismes judiciaires,",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-21",
+"reference": "Tender-104367",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "tn-104367-commune-mahdia-confie-avocats-representer-devant-tribinaux-organismes-judiciaire",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104367"
+},
+{
+"buyer": "Société Tunisienne des Industries de Raffinage",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-23T10:00",
+"first_seen": "2026-10-21",
+"id": "tn-104366",
+"object": "Souscription des contrats d'assurances pour l'exercice 2027",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-21",
+"reference": "Tender-104366",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "tn-104366-souscription-contrats-assurances-exercice-2027",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104366"
+},
+{
 "buyer": "Centre D’Essais et des Techniques de Construction",
 "category": "",
 "country": "Tunisie",
@@ -189,6 +273,91 @@
 "sme": false,
 "source": "TN",
 "url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104348"
+},
+{
+"buyer": "Société Béninoise Pour l’Approvisionnement en Produits de Santé",
+"category": "Fournitures",
+"country": "Bénin",
+"deadline": "2026-11-13T10:00",
+"first_seen": "2026-10-21",
+"id": "bj-1250414",
+"object": "Fourniture, installation et mise en œuvre d’une solution ERP de gestion intégrée (Sage X3) au profit de la SoBAPS S.A",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/5432721102026_Pj_AVIS%20DE%20AO%20SAGE%20X3.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-21",
+"reference": "F_CSI_125910",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "bj-1250414-fourniture-installation-mise-uvre-dune-solution-erp-gestion-integree",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=F_CSI_125910"
+},
+{
+"buyer": "Commune de Bassila",
+"category": "Travaux",
+"country": "Bénin",
+"deadline": "2026-11-19T10:00",
+"first_seen": "2026-10-21",
+"id": "bj-1250285",
+"lots": 5,
+"object": "Réhabilitation des sièges des arrondissements et réfection des maisons des jeunes de Bassila centre, Manigri, Alédjo et Pénessoulou",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/2419521102026_Pj_avis%20d%27appel%20d%27offres%20r%C3%A9habilitation%20si%C3%A8ge%20Arrondissement%20et%20maison%20jeunes.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-21",
+"reference": "T_RST_116297",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "bj-1250285-rehabilitation-sieges-arrondissements-refection-maisons-jeunes-bassila-centre-ma",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=T_RST_116297"
+},
+{
+"buyer": "Cour Constitutionnelle",
+"category": "Services",
+"country": "Bénin",
+"deadline": "2026-11-13T10:00",
+"first_seen": "2026-10-21",
+"id": "bj-1250233",
+"object": "Recrutement d'une compagnie d’assurance maladie au profit des membres et du personnel de Cour constitutionnelle. (Accord-cadre pour la période 2027 -2028 - 2029 par marchés subséquents).",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/2412421102026_Pj_AVIS%20DAO%20ASSURANCE%20MALADIE%20ACCORD%20CADRE%202027-2028-2029.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-21",
+"reference": "S_DPAF_127362",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "bj-1250233-recrutement-compagnie-dassurance-maladie-profit-membres-personnel-cour-constitut",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=S_DPAF_127362"
+},
+{
+"buyer": "Commune de Boukoumbé",
+"category": "Services de consultants",
+"country": "Bénin",
+"deadline": "2026-11-13T09:00",
+"first_seen": "2026-10-21",
+"id": "bj-1249442",
+"object": "Etude technique, suivi et contrôle pour la reconstruction des marchés de Boukombé, Kouporgou, Korontiere et de Dikoumini en deux (02) LOTS LOT1 : Etude technique, suivi et contrôle pour la reconstruction des marchés de Boukombe et Dikoumini LOT 2 : Etude technique, suivi et contrôle pour la reconstruction des marchés de Kouporgou et Korontiere",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/3525220102026_Pj_AVIS%20AMI%20ETUDES%20DES%20MARCHES%20DE%20BOUKOMBE%20EN%20DEUX%20LOTS.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-21",
+"reference": "PI_ST_114359",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "bj-1249442-etude-technique-suivi-controle-reconstruction-marches-boukombe-kouporgou-koronti",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=PI_ST_114359"
 },
 {
 "buyer": "Ministry of Finance, Budget and the Digital Economy- Executive Secretariat for ICT (SETIC)",
@@ -64539,6 +64708,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-21T13:30",
+"delisted": "2026-10-21",
 "detail_checked": true,
 "domains": [
 "Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation d’Hôtellerie."
@@ -67089,6 +67259,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-21T14:00",
+"delisted": "2026-10-21",
 "detail_checked": true,
 "domains": [
 "Services / Services courants / Impression de documents, brochures, maquettes et services connexes"
@@ -85330,6 +85501,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-21T14:00",
+"delisted": "2026-10-21",
 "detail_checked": true,
 "domains": [
 "Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation de restauration"
@@ -142523,6 +142695,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-21T16:00",
+"delisted": "2026-10-21",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude de définition"
@@ -157561,6 +157734,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-21T14:30",
+"delisted": "2026-10-21",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
