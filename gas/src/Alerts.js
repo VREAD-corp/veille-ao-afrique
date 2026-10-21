@@ -163,10 +163,18 @@ function alertSubscribers_() {
   return Object.keys(by).filter(function (k) { return !withdrawn[k]; }).map(function (k) { return by[k]; });
 }
 
+/** 'Côte d'Ivoire' -> 'cote-d-ivoire': the country value of the sign-up forms (pays pages, Bénin and Tunisie boxes). */
+function countrySlug_(k) {
+  return String(k || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
 function alertMatches_(sub, n) {
   var countries = sub.countries.length ? sub.countries : ['maroc'];
   if (n.x === 'BM') {
-    if (countries.indexOf('afrique-francophone') < 0) return false;
+    if (countries.indexOf('afrique-francophone') < 0 && countries.indexOf(countrySlug_(n.k)) < 0) return false;
+  } else if (n.x && n.x !== 'PMMP') {
+    // National portals other than Morocco's (BJ, TN): only for those who chose that country.
+    if (countries.indexOf(countrySlug_(n.k)) < 0) return false;
   } else {
     if (countries.indexOf('maroc') < 0) return false;
     if (sub.regions.length && !(n.r || []).some(function (r) { return sub.regions.indexOf(r) >= 0; })) return false;
@@ -212,6 +220,11 @@ function escHtml_(s) {
   return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 }
 
+var COUNTRY_NAMES_ = { benin: 'Bénin', tunisie: 'Tunisie', senegal: 'Sénégal', 'cote-d-ivoire': "Côte d'Ivoire", cameroun: 'Cameroun',
+  niger: 'Niger', mali: 'Mali', 'burkina-faso': 'Burkina Faso', togo: 'Togo', guinee: 'Guinée', madagascar: 'Madagascar',
+  'rd-congo': 'RD Congo', congo: 'Congo', tchad: 'Tchad', mauritanie: 'Mauritanie', djibouti: 'Djibouti', comores: 'Comores',
+  burundi: 'Burundi', centrafrique: 'Centrafrique', gabon: 'Gabon' };
+
 function criteriaText_(sub, labels) {
   var parts = [];
   parts.push(sub.sectors.length ? sub.sectors.map(function (x) { return (labels && labels[x]) || x; }).join(', ') : 'tous secteurs');
@@ -219,6 +232,9 @@ function criteriaText_(sub, labels) {
   var zones = [];
   if (countries.indexOf('maroc') >= 0) zones.push('Maroc' + (sub.regions.length ? ' (' + sub.regions.length + ' région' + (sub.regions.length > 1 ? 's' : '') + ')' : ', toutes régions'));
   if (countries.indexOf('afrique-francophone') >= 0) zones.push('Afrique francophone (Banque mondiale)');
+  countries.forEach(function (c) {
+    if (c !== 'maroc' && c !== 'afrique-francophone') zones.push(COUNTRY_NAMES_[c] || c);
+  });
   parts.push(zones.join(' et '));
   return parts.join(' ; ');
 }

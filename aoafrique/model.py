@@ -164,6 +164,41 @@ def from_pmmp(row: dict, detail: dict | None) -> dict:
     return n
 
 
+# ------------------------------------------------------------------------------------------ national portals
+# Sources read as one list (no detail page): the notice carries the country, the site gives it a country page.
+NATIONAL: dict[str, dict] = {
+    "BJ": {"country": "Bénin", "short": "Portail du Bénin", "host": "marches-publics.bj",
+           "name": "portail national des marchés publics du Bénin", "home": "https://www.marches-publics.bj/"},
+    "TN": {"country": "Tunisie", "short": "Portail tunisien", "host": "marchespublics.gov.tn",
+           "name": "portail tunisien des marchés publics (HAICOP)", "home": "https://www.marchespublics.gov.tn/fr"},
+}
+# "au Bénin", "en Tunisie"… for titles and sentences.
+COUNTRY_IN = {
+    "Maroc": "au Maroc", "Tunisie": "en Tunisie", "Algérie": "en Algérie", "Mauritanie": "en Mauritanie",
+    "Sénégal": "au Sénégal", "Mali": "au Mali", "Burkina Faso": "au Burkina Faso", "Niger": "au Niger",
+    "Tchad": "au Tchad", "Côte d'Ivoire": "en Côte d'Ivoire", "Guinée": "en Guinée", "Bénin": "au Bénin",
+    "Togo": "au Togo", "Cameroun": "au Cameroun", "Centrafrique": "en Centrafrique", "Gabon": "au Gabon",
+    "Congo": "au Congo", "RD Congo": "en RD Congo", "Burundi": "au Burundi", "Rwanda": "au Rwanda",
+    "Djibouti": "à Djibouti", "Comores": "aux Comores", "Madagascar": "à Madagascar",
+}
+
+
+def country_in(country: str) -> str:
+    return COUNTRY_IN.get(country, f"en {country}" if country[:1] in "AEIOUÉ" else f"au {country}")
+
+
+def country_slug(country: str) -> str:
+    return "-".join(fold(country).lower().split())
+
+
+def from_national(norm: dict) -> dict:
+    n = dict(norm)
+    n["regions"] = []
+    n["sectors"] = sectors_of(n["object"], n.get("category", ""))
+    n["slug"] = f"{n['id']}-{slugify(n['object'])}"
+    return n
+
+
 def from_worldbank(norm: dict) -> dict:
     n = dict(norm)
     n["regions"] = []
@@ -277,6 +312,10 @@ def summary(n: dict, today: date) -> str:
             more = len(n["places"]) - 3
             parts.append(f"Lieu d'exécution : {', '.join(place_label(p) for p in n['places'][:3])}"
                          f"{f' et {more} autre(s)' if more > 0 else ''}.")
+    elif n["source"] in NATIONAL:
+        src = NATIONAL[n["source"]]
+        parts.append(f"{proc}{f' ({cat})' if cat else ''} publié le {fmt_date(n['published'])} sur le {src['name']}"
+                     f" par {who}.")
     else:
         first = (f"{proc}{f' ({cat})' if cat else ''} publié le {fmt_date(n['published'])} au titre d'un projet "
                  f"financé par la Banque mondiale en {n['country']}")
@@ -301,6 +340,8 @@ def summary(n: dict, today: date) -> str:
             tail = " (aujourd'hui)" if left == 0 else (" (demain)" if left == 1 else f" ({left} jours)")
         verb = "Les plis sont à remettre" if n["source"] == "PMMP" else "Les offres ou candidatures sont attendues"
         parts.append(f"{verb} au plus tard le {when}{tail}.")
+    if n.get("sme") is True:
+        parts.append("Le portail indique un marché réservé aux petites et moyennes entreprises.")
     if n.get("reserved") is True:
         parts.append("Marché réservé aux TPE et PME installées au Maroc, aux coopératives, aux auto-entrepreneurs "
                      "et aux jeunes entreprises innovantes.")

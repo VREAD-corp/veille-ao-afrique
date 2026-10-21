@@ -16,7 +16,7 @@ from urllib.parse import urlencode
 from zoneinfo import ZoneInfo
 
 from . import model
-from .model import SECTOR_LABEL, fmt_date, fmt_mad, fmt_short, place_label
+from .model import NATIONAL, SECTOR_LABEL, country_in, country_slug, fmt_date, fmt_mad, fmt_short, place_label
 
 BRAND = "Veille AO Afrique"
 # Served at the root of its own Jalonel subdomain since 2026-10-16.
@@ -58,7 +58,7 @@ SELLER = {
 PLANS = [
     ("essentiel-39", "Essentiel", 39, "Maroc : les nouveaux appels d'offres de vos secteurs et régions, chaque matin, "
      "avec le résumé de chaque avis et le lien officiel."),
-    ("pro-79", "Pro", 79, "Tout l'Essentiel, plus les avis Banque mondiale des pays d'Afrique francophone, un résumé "
+    ("pro-79", "Pro", 79, "Tout l'Essentiel, plus les avis des portails du Bénin et de la Tunisie et ceux de la Banque mondiale en Afrique francophone, un résumé "
      "en anglais pour vos partenaires et l'export CSV de vos sélections."),
 ]
 # Publisher: the Jalonel brand (hub https://jalonel.com/), operated by READ FRANCE SAS.
@@ -70,6 +70,16 @@ CONSENT_TEXT = ("J'accepte que READ FRANCE SAS conserve mon adresse e-mail et le
 # Consent sentence of the one-field form (arm B of AOAF-ALERT-INLINE-01): printed under the button, stored with the sign-up.
 QUICK_CONSENT_TEXT = ("En cliquant sur « Recevoir les alertes », vous acceptez que Veille AO Afrique garde votre adresse et ces "
                       "critères pour vous écrire quand un avis correspond. Désinscription en un clic dans chaque e-mail.")
+SOURCE_SHORT = {"PMMP": "Portail marocain", "BM": "Banque mondiale", **{k: v["short"] for k, v in NATIONAL.items()}}
+SOURCE_HOST = {"PMMP": "marchespublics.gov.ma", "BM": "projects.worldbank.org", **{k: v["host"] for k, v in NATIONAL.items()}}
+SOURCE_LINE = {
+    "PMMP": "Source : Portail marocain des marchés publics (Trésorerie Générale du Royaume), avis publié le ",
+    "BM": "Source : Banque mondiale, avis de passation de marché (licence CC BY 4.0) publié le ",
+    "BJ": "Source : portail national des marchés publics du Bénin (marches-publics.bj), avis publié le ",
+    "TN": "Source : portail tunisien des marchés publics (marchespublics.gov.tn, HAICOP), avis publié le ",
+}
+# A country gets an indexed page from this many open notices (fewer: page kept but noindex, out of the sitemap).
+COUNTRY_MIN = 3
 CSP = ("default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; "
        "connect-src 'self' https://script.google.com https://script.googleusercontent.com; "
        "form-action 'self' https://script.google.com; base-uri 'self'")
@@ -125,7 +135,7 @@ class Site:
             lds.extend(jsonld if isinstance(jsonld, list) else [jsonld])
         ld = "".join(f'<script type="application/ld+json">{json.dumps(x, ensure_ascii=False).replace("</", "<\\/")}</script>'
                      for x in lds)
-        nav = [("", "Appels d'offres"), ("secteurs/", "Secteurs"), ("regions/", "Régions"),
+        nav = [("", "Appels d'offres"), ("pays/", "Pays"), ("secteurs/", "Secteurs"), ("regions/", "Régions"),
                ("afrique-francophone/", "Afrique francophone"), ("methode/", "Méthode")]
         nav_html = "".join(f'<a href="{link(p)}"{" aria-current=\"page\"" if p == path else ""}>{label}</a>'
                            for p, label in nav)
@@ -182,7 +192,7 @@ class Site:
 <div>
 <p class="foot-brand">{BRAND} · <a href="https://jalonel.com/">Une marque Jalonel</a></p>
 <p>Éditeur : {SELLER['name']} (SIREN {SELLER['siren']}), {SELLER['address']}.<br>Contact : <a href="mailto:{CONTACT}">{CONTACT}</a></p>
-<p class="small">Données : <a href="https://www.marchespublics.gov.ma/" rel="noopener">Portail marocain des marchés publics</a> (Trésorerie Générale du Royaume) et <a href="https://datacatalog.worldbank.org/search/dataset/0037776/procurement-notice" rel="noopener">avis de passation de marchés de la Banque mondiale</a> (CC BY 4.0). Service indépendant, sans lien avec ces organismes. L'avis officiel fait foi.</p>
+<p class="small">Données : <a href="https://www.marchespublics.gov.ma/" rel="noopener">Portail marocain des marchés publics</a> (Trésorerie Générale du Royaume), <a href="https://www.marches-publics.bj/" rel="noopener">portail des marchés publics du Bénin</a>, <a href="https://www.marchespublics.gov.tn/fr" rel="noopener">portail tunisien des marchés publics</a> (HAICOP) et <a href="https://datacatalog.worldbank.org/search/dataset/0037776/procurement-notice" rel="noopener">avis de passation de marchés de la Banque mondiale</a> (CC BY 4.0). Service indépendant, sans lien avec ces organismes. L'avis officiel fait foi.</p>
 <p class="small muted foot-sources">{self.sources_line()}</p>
 </div>
 <nav aria-label="Liens de bas de page">
@@ -211,7 +221,7 @@ class Site:
         return f'<span class="badge {cls}">J-{left}</span>'
 
     def where(self, n: dict) -> str:
-        if n["source"] == "BM":
+        if n["source"] != "PMMP":
             return n.get("country", "")
         places = ", ".join(place_label(p) for p in n.get("places", [])[:3])
         return places or "Maroc"
@@ -220,7 +230,7 @@ class Site:
         facts = [f"<span>{e(n.get('category') or '')}</span>" if n.get("category") else "",
                  f"<span>{e(self.where(n))}</span>",
                  f"<span>{e(fmt_mad(n['estimate']))}</span>" if n.get("estimate") else ""]
-        src = "Banque mondiale" if n["source"] == "BM" else "Portail marocain"
+        src = SOURCE_SHORT.get(n["source"], n["source"])
         return f"""<article class="card">
 <div class="card-top">{self.badge(n)}<span class="src">{src}</span><span class="dl">Clôture {e(fmt_short(n['deadline']))}</span></div>
 <{heading} class="card-title"><a href="{link('ao/' + n['slug'] + '/')}">{e(n['object'])}</a></{heading}>
@@ -231,7 +241,8 @@ class Site:
     def cards(self, items: list[dict], heading: str = "h3") -> str:
         return '<div class="cards">' + "".join(self.card(n, heading) for n in items) + "</div>"
 
-    def alert_inline(self, ctx: str, sector: str = "", region: str = "", bm: bool = False, title: str = "") -> str:
+    def alert_inline(self, ctx: str, sector: str = "", region: str = "", bm: bool = False, title: str = "",
+                     country: str = "") -> str:
         """Short alert sign-up (e-mail + consent), pre-filled from the page: sector and region of a tender, of a
         sector or region page, or of the list filters (synced by static/alerte-inline.js). Posts the same `signup`
         as /alertes/ (kind alertes, no plan). `ctx` goes into the alert_form_view event detail."""
@@ -239,7 +250,14 @@ class Site:
         sector_opts = '<option value="">Tous les secteurs</option>' + "".join(
             f'<option value="{k}"{" selected" if k == sector else ""}>{e(v)}</option>'
             for k, v in SECTOR_LABEL.items() if k != "autre")
-        if bm:
+        if country:
+            what = ("portail national et avis de la Banque mondiale" if any(v["country"] == country for v in NATIONAL.values())
+                    else "avis de la Banque mondiale")
+            where_field = (f'<p class="ai-zone"><span class="muted">Zone :</span> {e(country)}, {what}'
+                           f'<input type="hidden" name="countries" value="{e(country_slug(country))}"></p>')
+            price = ("Gratuit pendant les 21 jours du test, puis formule Pro prévue à 79 € pour 3 mois "
+                     "(prix net, TVA non applicable, sans renouvellement automatique). Aucun paiement aujourd'hui.")
+        elif bm:
             where_field = ('<p class="ai-zone"><span class="muted">Zone :</span> Afrique francophone, avis de la Banque mondiale'
                            '<input type="hidden" name="countries" value="afrique-francophone"></p>')
             price = ("Gratuit pendant les 21 jours du test, puis formule Pro prévue à 79 € pour 3 mois "
@@ -269,14 +287,17 @@ class Site:
 <p class="small"><a href="{full}">Choisir plusieurs secteurs et régions, ou un envoi hebdomadaire</a> · <a href="{link('confidentialite/')}">Vos données</a></p>
 </section>"""
 
-    def alert_quick(self, sector: str, region: str, bm: bool) -> str:
+    def alert_quick(self, sector: str, region: str, bm: bool, country: str = "") -> str:
         """Arm B of AOAF-ALERT-INLINE-01 (tender pages): one e-mail field right above the official-notice link, the
         tender's sector and region (or francophone Africa for a World Bank notice) sent as hidden fields. Hidden by CSS
         unless <html data-xp-aoaf-alert="b"> (static/xp.js). The click on the button is the consent: the sentence
         `.consent-text` is printed under it and stored with the sign-up, like the checkbox text of the other forms."""
         sector = sector if sector in SECTOR_LABEL and sector != "autre" else ""
         what = SECTOR_LABEL[sector] if sector else "Tous secteurs"
-        if bm:
+        if country:
+            where = country
+            hidden = f'<input type="hidden" name="countries" value="{e(country_slug(country))}">'
+        elif bm:
             where = "Afrique francophone (avis Banque mondiale)"
             hidden = '<input type="hidden" name="countries" value="afrique-francophone">'
         else:
@@ -286,7 +307,7 @@ class Site:
             hidden += f'<input type="hidden" name="sectors" value="{e(sector)}">'
         qs = urlencode([(k, v) for k, v in (("secteur", sector), ("region", region)) if v])
         full = link("alertes/") + ("?" + e(qs) if qs else "")
-        return f"""<section class="alert-quick" id="alerte-rapide" data-section="alerte-rapide" data-ctx="{'fiche-bm-rapide' if bm else 'fiche-rapide'}" aria-labelledby="aq-h">
+        return f"""<section class="alert-quick" id="alerte-rapide" data-section="alerte-rapide" data-ctx="{'fiche-pays-rapide' if country else 'fiche-bm-rapide' if bm else 'fiche-rapide'}" aria-labelledby="aq-h">
 <p class="aq-h" id="aq-h">Recevoir les prochains AO similaires :</p>
 <p class="aq-crit"><strong>{e(what)} – {e(where)}</strong></p>
 <form id="alerte-rapide-form" class="aq-form" novalidate>
@@ -302,13 +323,13 @@ class Site:
         """Open notices close to `n`: same sector and same region (or World Bank country) first, then same sector,
         then same place; within each group, soonest deadline first, those closing in under 3 days last."""
         sec, reg = set(n.get("sectors", [])) - {"autre"}, set(n.get("regions", []))
-        bm = n["source"] == "BM"
+        bm = n["source"] != "PMMP"
         scored = []
         for m in self.open:
             if m["id"] == n["id"]:
                 continue
             s_hit = bool(sec & set(m.get("sectors", [])))
-            p_hit = (m["source"] == "BM" and m.get("country") == n.get("country")) if bm else bool(reg & set(m.get("regions", [])))
+            p_hit = (m["source"] != "PMMP" and m.get("country") == n.get("country")) if bm else bool(reg & set(m.get("regions", [])))
             score = 3 if s_hit and p_hit else 2 if s_hit else 1 if p_hit else 0
             if score:
                 left = model.days_left(m, self.today)
@@ -324,6 +345,7 @@ class Site:
         week = (self.today - timedelta(days=7)).isoformat()
         return {
             "pmmp": len(pm), "bm": len(bm),
+            "national": Counter(n["country"] for n in self.open if n["source"] in NATIONAL),
             "cat": Counter(n.get("category") for n in pm),
             "new7": sum(1 for n in pm if n.get("published", "") >= week),
             "close7": sum(1 for n in pm if (model.days_left(n, self.today) or 99) <= 7),
@@ -346,7 +368,8 @@ class Site:
 
     def sources_line(self) -> str:
         parts = []
-        for src, label in (("PMMP", "portail marocain"), ("BM", "Banque mondiale")):
+        for src, label in (("PMMP", "portail marocain"), ("BM", "Banque mondiale"), ("BJ", "portail du Bénin"),
+                           ("TN", "portail tunisien")):
             when, ok = self.source_read(src)
             if when:
                 parts.append(f"{label} le {when}" + ("" if ok else " (dernière tentative en échec, avis de la lecture précédente)"))
@@ -356,7 +379,8 @@ class Site:
     def build_status(self) -> None:
         """/statut.json: state of each source, read by the daily monitor (and anyone curious)."""
         st = self.meta.get("sources", {})
-        labels = {"PMMP": "Portail marocain des marchés publics", "BM": "Banque mondiale (avis en français)"}
+        labels = {"PMMP": "Portail marocain des marchés publics", "BM": "Banque mondiale (avis en français)",
+                  "BJ": "Portail des marchés publics du Bénin", "TN": "Portail tunisien des marchés publics (HAICOP)"}
         out = {"site": self.base, "built": datetime.now(PARIS).isoformat(timespec="minutes"),
                "updated": self.meta.get("updated"), "checked": self.meta.get("checked"),
                "open": len(self.open), "total": len(self.all), "guard": self.meta.get("guard"), "sources": {}}
@@ -383,7 +407,7 @@ class Site:
 </figure>"""
         sector_opts = "".join(f'<option value="{k}">{e(v)}</option>' for k, v in SECTOR_LABEL.items())
         region_opts = "".join(f'<option value="{e(r)}">{e(r)}</option>' for r in model.REGIONS)
-        countries = sorted({n["country"] for n in self.open if n["source"] == "BM"})
+        countries = sorted({n["country"] for n in self.open if n["source"] != "PMMP"})
         country_opts = "".join(f'<option value="{e(c)}">{e(c)}</option>' for c in countries)
         cat = s["cat"]
         first = self.open[:30]
@@ -392,7 +416,7 @@ class Site:
 <div class="hero-text">
 <p class="kicker">Mis à jour le {e(self.updated_text())}</p>
 <h1>Appels d'offres publics au Maroc et en Afrique francophone, en cours aujourd'hui</h1>
-<p class="lead"><strong>{nb(s['pmmp'])} consultations ouvertes</strong> sur le portail marocain des marchés publics ({nb(cat.get('Travaux', 0))} travaux, {nb(cat.get('Fournitures', 0))} fournitures, {nb(cat.get('Services', 0))} services), plus {nb(s['bm'])} avis en français de projets financés par la Banque mondiale. Chaque avis a sa fiche avec un résumé en français et le lien vers l'avis officiel.</p>
+<p class="lead"><strong>{nb(s['pmmp'])} consultations ouvertes</strong> sur le portail marocain des marchés publics ({nb(cat.get('Travaux', 0))} travaux, {nb(cat.get('Fournitures', 0))} fournitures, {nb(cat.get('Services', 0))} services), {''.join(f", {nb(c)} sur le portail national {'du' if k == 'Bénin' else 'de la'} {e(k)}" for k, c in sorted(s['national'].items()))} et {nb(s['bm'])} avis en français de projets financés par la Banque mondiale (<a href="{link('pays/')}">par pays</a>). Chaque avis a sa fiche avec un résumé en français et le lien vers l'avis officiel.</p>
 <p class="hero-cta"><a class="btn" href="#alerte" data-mesure="cta_click" data-detail="hero">Recevoir les nouveaux avis par e-mail (gratuit pendant le test)</a> <a class="link-more" href="#liste">Parcourir la liste</a></p>
 <ul class="hero-facts">
 <li><b>{nb(s['new7'])}</b> publiées ces 7 derniers jours</li>
@@ -427,16 +451,16 @@ class Site:
 
 <section class="explain" id="a-propos">
 <h2>Ce que fait ce site, et ce qu'il ne fait pas</h2>
-<p>Deux fois par jour, un programme relit la liste des « consultations en cours » du <a href="https://www.marchespublics.gov.ma/" rel="noopener">portail marocain des marchés publics</a> et la fiche de chaque nouvelle consultation : objet, acheteur, lieu d'exécution, date limite, estimation et caution provisoire quand l'acheteur les publie. Il ajoute les avis rédigés en français de la Banque mondiale pour {len(s['countries'])} pays et zones d'Afrique francophone.</p>
+<p>Deux fois par jour, un programme relit la liste des « consultations en cours » du <a href="https://www.marchespublics.gov.ma/" rel="noopener">portail marocain des marchés publics</a> et la fiche de chaque nouvelle consultation : objet, acheteur, lieu d'exécution, date limite, estimation et caution provisoire quand l'acheteur les publie. Il ajoute les appels d'offres ouverts des portails nationaux du <a href="{link('pays/benin/')}">Bénin</a> et de la <a href="{link('pays/tunisie/')}">Tunisie</a>, et les avis rédigés en français de la Banque mondiale pour {len(s['countries'])} pays et zones d'Afrique francophone.</p>
 <p>Il ne télécharge pas les dossiers de consultation (DAO), ne dépose aucune offre et ne remplace pas l'avis officiel : chaque fiche renvoie vers lui. Les contacts nominatifs publiés par les acheteurs ne sont pas recopiés. Le détail est sur la page <a href="{link('methode/')}">Méthode et sources</a>.</p>
 </section>
 """
         ld = [{"@context": "https://schema.org", "@type": "WebSite", "name": BRAND, "url": self.base, "inLanguage": "fr",
                "publisher": PUBLISHER},
               {"@context": "https://schema.org", "@type": "Dataset", "name": "Appels d'offres publics en cours au Maroc et en Afrique francophone",
-               "description": "Consultations ouvertes du portail marocain des marchés publics et avis en français de la Banque mondiale, normalisés deux fois par jour.",
+               "description": "Consultations ouvertes des portails des marchés publics du Maroc, du Bénin et de la Tunisie, et avis en français de la Banque mondiale, normalisés deux fois par jour.",
                "url": self.base, "inLanguage": "fr", "dateModified": self.updated_paris.isoformat(timespec="minutes"),
-               "spatialCoverage": "Maroc, Afrique francophone",
+               "spatialCoverage": "Maroc, Bénin, Tunisie, Afrique francophone",
                "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": self.base + "data/ouverts.json"}],
                "license": self.base + LICENCE_PAGE,
                "creator": PUBLISHER}]
@@ -457,7 +481,8 @@ class Site:
             if n.get("regions"):
                 rows.append(("Région", ", ".join(f'<a href="{link("regions/" + model.slugify(r) + "/")}">{e(r)}</a>' for r in n["regions"])))
         else:
-            rows.append(("Pays", e(n.get("country"))))
+            c = n.get("country", "")
+            rows.append(("Pays", f'<a href="{link("pays/" + country_slug(c) + "/")}">{e(c)}</a>' if c in self.country_pages else e(c)))
             if n.get("project"):
                 rows.append(("Projet", e(n["project"])))
         rows.append(("Publié le", e(fmt_date(n.get("published", "")))))
@@ -471,16 +496,24 @@ class Site:
             rows.append(("Réservé TPE/PME, coopératives, auto-entrepreneurs", "Oui" if n["reserved"] else "Non"))
         if n.get("domains"):
             rows.append(("Domaines d'activité (portail)", "<br>".join(e(d) for d in n["domains"][:4])))
+        if n.get("lots"):
+            rows.append(("Lots", e(n["lots"])))
+        if n.get("pdf"):
+            rows.append(("Avis officiel (PDF)", f'<a href="{e(n["pdf"])}" rel="noopener" data-mesure="official_click" data-detail="{n["source"].lower()}-pdf">Télécharger l\'avis sur {e(SOURCE_HOST[n["source"]])}</a>'))
         table = "".join(f"<tr><th scope='row'>{k}</th><td>{v}</td></tr>" for k, v in rows if v)
-        src_name = "marchespublics.gov.ma" if n["source"] == "PMMP" else "projects.worldbank.org"
-        source_line = ("Source : Portail marocain des marchés publics (Trésorerie Générale du Royaume), avis publié le "
-                       if n["source"] == "PMMP" else
-                       "Source : Banque mondiale, avis de passation de marché (licence CC BY 4.0) publié le ")
+        src_name = SOURCE_HOST[n["source"]]
+        source_line = SOURCE_LINE[n["source"]]
         similar = self.similar(n)
         sector = next((s for s in n.get("sectors", []) if s != "autre"), "")
         region = (n.get("regions") or [""])[0]
         bm = n["source"] == "BM"
-        if sector and (region or bm):
+        nat = n["source"] in NATIONAL
+        country = n.get("country", "") if nat else ""
+        if sector and country:
+            ai_title = f"Recevoir les nouveaux appels d'offres de ce secteur {country_in(country)}"
+        elif country:
+            ai_title = f"Recevoir les nouveaux appels d'offres publics {country_in(country)}"
+        elif sector and (region or bm):
             ai_title = "Recevoir les nouveaux appels d'offres de ce secteur" + (" et de cette région" if region else " en Afrique francophone")
         elif sector:
             ai_title = "Recevoir les nouveaux appels d'offres de ce secteur"
@@ -493,6 +526,11 @@ class Site:
             more.append(f'<li><a href="{link("secteurs/" + sector + "/")}">Tous les appels d\'offres du secteur « {e(SECTOR_LABEL[sector])} »</a> <span class="muted">({nb(self.n_sector.get(sector, 0))} ouverts)</span></li>')
         if region:
             more.append(f'<li><a href="{link("regions/" + model.slugify(region) + "/")}">Tous les appels d\'offres de la région {e(region)}</a> <span class="muted">({nb(self.n_region.get(region, 0))} ouverts)</span></li>')
+        cslug = country_slug(n.get("country", ""))
+        if n["source"] != "PMMP" and n.get("country") in self.country_pages:
+            if sector and (n["country"], sector) in self.country_sector_pages:
+                more.append(f'<li><a href="{link("pays/" + cslug + "/" + sector + "/")}">Appels d\'offres « {e(SECTOR_LABEL[sector])} » {e(country_in(n["country"]))}</a> <span class="muted">({nb(self.n_country_sector[(n["country"], sector)])} ouverts)</span></li>')
+            more.append(f'<li><a href="{link("pays/" + cslug + "/")}">Tous les appels d\'offres publics {e(country_in(n["country"]))}</a> <span class="muted">({nb(self.n_country_open.get(n["country"], 0))} ouverts)</span></li>')
         if bm:
             more.append(f'<li><a href="{link("afrique-francophone/")}">Tous les avis Banque mondiale en Afrique francophone</a> <span class="muted">({nb(sum(self.n_country.values()))} ouverts, dont {nb(self.n_country.get(n.get("country"), 0))} pour ce pays)</span></li>')
         left = model.days_left(n, self.today)
@@ -510,7 +548,7 @@ class Site:
         closed_note = "" if open_ else '<p class="notice">Cette consultation est clôturée ou n\'apparaît plus parmi les consultations en cours du portail. La fiche reste en ligne 30 jours.</p>'
         body = f"""
 <article class="tender">
-<p class="kicker">{'Maroc' if n['source'] == 'PMMP' else e(n['country'])} · {e(n.get('category') or '')} · {self.badge(n)}</p>
+<p class="kicker">{'Maroc' if n['source'] == 'PMMP' else e(n['country'])}{' · ' + e(SOURCE_SHORT[n['source']]) if nat else ''} · {e(n.get('category') or '')} · {self.badge(n)}</p>
 <h1>{e(n['object'])}</h1>
 {closed_note}
 <section class="summary" id="resume" aria-labelledby="resume-h">
@@ -518,12 +556,12 @@ class Site:
 <p>{e(model.summary(n, self.today))}</p>
 <p class="small muted">Résumé produit automatiquement par des règles fixes à partir des champs de l'avis, sans intelligence artificielle. L'objet ci-dessus est le texte officiel, non modifié.</p>
 </section>
-{self.alert_quick(sector, region, bm)}
+{self.alert_quick(sector, region, bm, country)}
 <p class="official" data-section="avis-officiel"><a class="btn" href="{e(n['url'])}" rel="noopener" data-mesure="official_click" data-detail="{n['source'].lower()}">Voir l'avis officiel sur {src_name}</a> <a class="link-more" href="#alerte" data-mesure="cta_click" data-detail="fiche-haut">Être prévenu des avis similaires</a></p>
 <table class="facts-table"><caption>Fiche de la consultation</caption><tbody>{table}</tbody></table>
 <p class="small muted">{source_line}{e(fmt_date(n.get('published', '')))}, relu le {e(self.updated_text())}. Le dossier de consultation et les éventuels rectificatifs sont sur le site officiel, qui fait foi.</p>
 </article>
-{self.alert_inline("fiche-bm" if bm else "fiche", sector, region, bm, ai_title)}
+{self.alert_inline("fiche-pays" if country else "fiche-bm" if bm else "fiche", sector, region, bm, ai_title, country)}
 {f'<section id="similaires" data-section="similaires" aria-labelledby="similaires-h"><h2 id="similaires-h">Avis similaires encore ouverts</h2>{self.cards(similar)}</section>' if similar else ''}
 {f'<ul class="more-links">{"".join(more)}</ul>' if more else ''}
 {next_steps}
@@ -532,7 +570,7 @@ class Site:
         ld = {"@context": "https://schema.org", "@type": "Demand", "name": n["object"][:300],
               "description": model.summary(n, self.today)[:500], "url": self.base + "ao/" + n["slug"] + "/",
               "areaServed": n.get("country"),
-              "seller": {"@type": "GovernmentOrganization" if n["source"] == "PMMP" else "Organization", "name": n.get("buyer")},
+              "seller": {"@type": "GovernmentOrganization" if n["source"] != "BM" else "Organization", "name": n.get("buyer")},
               "availabilityStarts": n.get("published"), "availabilityEnds": d.isoformat() if d else None,
               "sameAs": n["url"]}
         if n.get("estimate"):
@@ -554,7 +592,9 @@ class Site:
         desc = (f"Appel d'offres {('Maroc, ' + where) if n['source'] == 'PMMP' else where} : {desc_obj.rstrip('.')}{'' if desc_obj.endswith('…') else '.'} "
                 f"Acheteur : {buyer}{ref}. Date limite : {fmt_short(n['deadline'])}. Résumé en français et lien vers l'avis officiel.")
         crumbs = [("", "Appels d'offres")]
-        if n.get("sectors"):
+        if nat and n.get("country") in self.country_pages:
+            crumbs.append((f"pays/{cslug}/", n["country"]))
+        elif n.get("sectors"):
             crumbs.append((f"secteurs/{n['sectors'][0]}/", SECTOR_LABEL.get(n["sectors"][0], "Secteur")))
         crumbs.append((f"ao/{n['slug']}/", title_obj))
         self.write(f"ao/{n['slug']}/", self.page(f"ao/{n['slug']}/", seo_title, desc, body,
@@ -575,8 +615,18 @@ class Site:
             items.append(f'<li><a href="{link("secteurs/" + slug + "/")}">{e(label)}</a> <span class="muted">{nb(len(lst))} avis</span></li>')
             regions = Counter(r for n in ma for r in n.get("regions", [])).most_common(4)
             reg_txt = ", ".join(f"{r} ({c})" for r, c in regions)
+            nat = Counter(n["country"] for n in lst if n["source"] in NATIONAL)
+            nat_txt = "".join(f", {nb(c)} {e(country_in(k))}" for k, c in sorted(nat.items()))
+            n_bm = sum(1 for n in lst if n["source"] == "BM")
+            by_country = [(c, k) for (c, k) in sorted(self.country_sector_pages) if k == slug]
+            countries_html = ""
+            if by_country:
+                countries_html = ('<p class="country-links">Ce secteur par pays : ' + " · ".join(
+                    f'<a href="{link("pays/" + country_slug(c) + "/" + slug + "/")}">{e(c)}</a> <span class="muted">({nb(self.n_country_sector[(c, slug)])})</span>'
+                    for c, _ in by_country) + "</p>")
             body = f"""<h1>Appels d'offres {e(label.lower())} : {nb(len(lst))} consultations ouvertes</h1>
-<p class="lead">{nb(len(ma))} au Maroc{f', surtout en {e(reg_txt)}' if reg_txt else ''}, et {nb(len(lst) - len(ma))} avis Banque mondiale en Afrique francophone. Liste triée par date limite, mise à jour le {e(self.updated_text())}.</p>
+<p class="lead">{nb(len(ma))} au Maroc{f', surtout en {e(reg_txt)}' if reg_txt else ''}{nat_txt}, et {nb(n_bm)} avis Banque mondiale en Afrique francophone. Liste triée par date limite, mise à jour le {e(self.updated_text())}.</p>
+{countries_html}
 <p><a class="btn btn-sm" href="#alerte" data-mesure="cta_click" data-detail="secteur">Recevoir ce secteur par e-mail</a> <a class="link-more" href="{link('')}?secteur={slug}#liste">Filtrer davantage</a></p>
 <p class="small muted">Classement par mots-clés sur l'objet et les domaines d'activité déclarés par l'acheteur : un avis peut relever de deux secteurs, et quelques-uns sont mal classés.</p>
 {self.cards(lst[:12], 'h2')}
@@ -584,7 +634,7 @@ class Site:
 {self.cards(lst[12:150], 'h2')}
 {f'<p>Et {nb(len(lst) - 150)} autres : <a href="{link("")}?secteur={slug}#liste">voir la liste complète filtrée</a>.</p>' if len(lst) > 150 else ''}"""
             self.write(f"secteurs/{slug}/", self.page(f"secteurs/{slug}/", f"Appels d'offres {label} au Maroc ({nb(len(lst))} ouverts) | {BRAND}",
-                                                      f"{nb(len(lst))} appels d'offres {label.lower()} ouverts au Maroc et en Afrique francophone, triés par date limite, avec résumé et lien officiel.",
+                                                      f"{nb(len(lst))} appels d'offres {label.lower()} ouverts au Maroc, en Tunisie, au Bénin et en Afrique francophone, triés par date limite, avec résumé et lien officiel.",
                                                       body, crumbs=[("", "Appels d'offres"), ("secteurs/", "Secteurs"), (f"secteurs/{slug}/", label)],
                                                       scripts=("alerte-inline.js",)))
         self.write("secteurs/", self.page("secteurs/", f"Appels d'offres par secteur | {BRAND}",
@@ -621,15 +671,110 @@ class Site:
         blocks = []
         for c, cnt in sorted(by_c.items(), key=lambda x: -x[1]):
             lst = [n for n in bm if n["country"] == c]
-            blocks.append(f"<section><h2>{e(c)} <span class='muted'>({cnt})</span></h2>{self.cards(lst, 'h3')}</section>")
+            more_c = (f'<p class="small"><a href="{link("pays/" + country_slug(c) + "/")}">Page {e(c)} : tous les appels d\'offres publics {e(country_in(c))}</a></p>'
+                      if c in self.country_pages and self.country_pages[c] else "")
+            blocks.append(f"<section><h2>{e(c)} <span class='muted'>({cnt})</span></h2>{self.cards(lst, 'h3')}{more_c}</section>")
         body = f"""<h1>Appels d'offres Banque mondiale en Afrique francophone : {nb(len(bm))} avis ouverts</h1>
-<p class="lead">Avis rédigés en français (appels d'offres, appels à manifestation d'intérêt, avis spécifiques) de projets financés par la Banque mondiale dans {len(by_c)} pays et zones. Les portails nationaux de ces pays ne sont pas encore couverts : nous n'y avons pas trouvé d'accès automatisé dont les conditions sont claires.</p>
+<p class="lead">Avis rédigés en français (appels d'offres, appels à manifestation d'intérêt, avis spécifiques) de projets financés par la Banque mondiale dans {len(by_c)} pays et zones. Les portails nationaux du <a href="{link('pays/benin/')}">Bénin</a> et de la <a href="{link('pays/tunisie/')}">Tunisie</a> sont aussi relus ; pour les autres pays, nous n'avons pas encore trouvé d'accès automatisé dont les conditions sont claires. <a href="{link('pays/')}">Tous les pays</a>.</p>
 {self.alert_inline("afrique", bm=True, title="Recevoir les nouveaux avis Banque mondiale d'Afrique francophone")}
 {''.join(blocks) or '<p>Aucun avis ouvert pour le moment.</p>'}"""
         self.write("afrique-francophone/", self.page("afrique-francophone/", f"Appels d'offres Banque mondiale Afrique francophone ({nb(len(bm))}) | {BRAND}",
                                                      "Avis de marchés en français des projets Banque mondiale au Sénégal, en Côte d'Ivoire, au Cameroun, à Madagascar, au Niger, en RD Congo et ailleurs, avec date limite et lien officiel.",
                                                      body, crumbs=[("", "Appels d'offres"), ("afrique-francophone/", "Afrique francophone")],
                                                      scripts=("alerte-inline.js",)))
+
+    def plan_country_pages(self) -> None:
+        """Which country and country × sector pages exist (open notices outside the Moroccan portal, regional zones
+        excluded), and whether they are indexed (at least COUNTRY_MIN open notices)."""
+        # Morocco is covered by the home page and the region pages (its World Bank notices are listed there too).
+        outside = [n for n in self.open if n["source"] != "PMMP" and n.get("country") != "Maroc"
+                   and "régional" not in n.get("country", "")]
+        self.n_country_open = Counter(n["country"] for n in outside)
+        self.n_country_sector = Counter((n["country"], s) for n in outside for s in n.get("sectors", []) if s != "autre")
+        self.country_pages = {c: k >= COUNTRY_MIN for c, k in self.n_country_open.items()}
+        self.country_sector_pages = {cs: k >= COUNTRY_MIN for cs, k in self.n_country_sector.items()}
+
+    def collection_ld(self, path: str, name: str, items: list[dict]) -> dict:
+        """CollectionPage + ItemList of the tender pages listed (no rating, no review: facts only)."""
+        return {"@context": "https://schema.org", "@type": "CollectionPage", "name": name, "url": self.base + path,
+                "inLanguage": "fr", "isPartOf": {"@type": "WebSite", "name": BRAND, "url": self.base},
+                "publisher": PUBLISHER, "dateModified": self.updated_paris.isoformat(timespec="minutes"),
+                "mainEntity": {"@type": "ItemList", "numberOfItems": len(items), "itemListElement": [
+                    {"@type": "ListItem", "position": i + 1, "url": self.base + "ao/" + n["slug"] + "/", "name": n["object"][:150]}
+                    for i, n in enumerate(items[:30])]}}
+
+    def build_country_pages(self) -> None:
+        outside = [n for n in self.open if n["source"] != "PMMP"]
+        items = [f'<li><a href="{link("")}">Maroc</a> <span class="muted">{nb(self.stats()["pmmp"])} avis du portail national, '
+                 f'<a href="{link("regions/")}">par région</a></span></li>']
+        for c in sorted(self.country_pages, key=lambda c: (-self.n_country_open[c], c)):
+            slug = country_slug(c)
+            lst = sorted([n for n in outside if n["country"] == c], key=lambda n: (n.get("deadline", ""), n["id"]))
+            nat = [n for n in lst if n["source"] in NATIONAL]
+            bm = [n for n in lst if n["source"] == "BM"]
+            src = next((NATIONAL[k] for k in NATIONAL if NATIONAL[k]["country"] == c), None)
+            items.append(f'<li><a href="{link("pays/" + slug + "/")}">{e(c)}</a> <span class="muted">{nb(len(lst))} avis'
+                         f'{" (portail national et Banque mondiale)" if nat and bm else " (portail national)" if nat else " (Banque mondiale)"}</span></li>')
+            sect = Counter(s for n in lst for s in n.get("sectors", []) if s != "autre")
+            sector_links = " · ".join(
+                f'<a href="{link("pays/" + slug + "/" + k + "/")}">{e(SECTOR_LABEL[k])}</a> <span class="muted">({nb(v)})</span>'
+                for k, v in sorted(sect.items(), key=lambda x: (-x[1], x[0])) if (c, k) in self.country_sector_pages)
+            cats = Counter(n.get("category") for n in lst if n.get("category"))
+            closing = sum(1 for n in lst if (model.days_left(n, self.today) or 99) <= 7)
+            where = country_in(c)
+            src_txt = []
+            if nat:
+                src_txt.append(f'{nb(len(nat))} viennent du <a href="{e(src["home"])}" rel="noopener">{e(src["name"])}</a>')
+            if bm:
+                src_txt.append(f'{nb(len(bm))} sont des avis en français de projets financés par la Banque mondiale')
+            body = f"""<h1>Appels d'offres publics {e(where)} : {nb(len(lst))} avis ouverts</h1>
+<p class="lead">{' ; '.join(src_txt)}. {f"{nb(closing)} clôturent dans les 7 jours. " if closing else ""}{', '.join(f"{nb(v)} {k.lower()}" for k, v in cats.most_common(4))}{'. ' if cats else ''}Liste triée par date limite, mise à jour le {e(self.updated_text())}.</p>
+<p><a class="btn btn-sm" href="#alerte" data-mesure="cta_click" data-detail="pays">Recevoir les avis {e(where)} par e-mail</a> <a class="link-more" href="{link('')}?pays={e(c)}#liste">Filtrer davantage</a></p>
+{f'<nav class="country-sectors" aria-label="Secteurs {e(where)}"><p>Par secteur : {sector_links}</p></nav>' if sector_links else ''}
+<p class="small muted">Chaque fiche reprend l'objet officiel, l'acheteur, la référence et la date limite, avec le lien vers l'avis officiel, qui seul fait foi. Secteurs attribués par mots-clés sur l'objet.</p>
+{self.cards(lst[:12], 'h2')}
+{self.alert_inline("pays", bm=True, title=f"Recevoir les nouveaux appels d'offres {where}", country=c)}
+{self.cards(lst[12:200], 'h2')}
+{f'<p>Et {nb(len(lst) - 200)} autres : <a href="{link("")}?pays={e(c)}#liste">voir la liste complète filtrée</a>.</p>' if len(lst) > 200 else ''}
+<p class="more-links"><a href="{link('pays/')}">Tous les pays</a> · <a href="{link('afrique-francophone/')}">Avis Banque mondiale en Afrique francophone</a> · <a href="{link('secteurs/')}">Tous les secteurs</a></p>"""
+            title = f"Appels d'offres {c} : {nb(len(lst))} avis ouverts | {BRAND}"
+            desc = (f"{nb(len(lst))} appels d'offres publics ouverts {where}"
+                    + (f" ({src['name'].split(' (')[0]} et Banque mondiale)" if nat and bm else f" ({src['name'].split(' (')[0]})" if nat else " (projets Banque mondiale)")
+                    + ", triés par date limite, avec acheteur, référence et lien vers l'avis officiel.")
+            indexed = self.country_pages[c]
+            self.write(f"pays/{slug}/", self.page(f"pays/{slug}/", title, desc, body, noindex=not indexed,
+                                                 jsonld=self.collection_ld(f"pays/{slug}/", f"Appels d'offres publics {where}", lst),
+                                                 crumbs=[("", "Appels d'offres"), ("pays/", "Pays"), (f"pays/{slug}/", c)],
+                                                 scripts=("alerte-inline.js",)), sitemap=indexed)
+            for k in sect:
+                if (c, k) not in self.country_sector_pages:
+                    continue
+                label = SECTOR_LABEL[k]
+                sl = [n for n in lst if k in n.get("sectors", [])]
+                others = " · ".join(f'<a href="{link("pays/" + slug + "/" + o + "/")}">{e(SECTOR_LABEL[o])}</a>'
+                                    for o, _ in sorted(sect.items(), key=lambda x: (-x[1], x[0]))
+                                    if o != k and (c, o) in self.country_sector_pages)
+                body = f"""<h1>Appels d'offres {e(label.lower())} {e(where)} : {nb(len(sl))} avis ouverts</h1>
+<p class="lead">Avis ouverts du secteur « {e(label)} » {e(where)}, triés par date limite, mis à jour le {e(self.updated_text())}. Voir aussi <a href="{link("pays/" + slug + "/")}">tous les appels d'offres {e(where)}</a> et <a href="{link("secteurs/" + k + "/")}">ce secteur dans tous les pays</a>.</p>
+<p><a class="btn btn-sm" href="#alerte" data-mesure="cta_click" data-detail="pays-secteur">Recevoir ce secteur {e(where)} par e-mail</a></p>
+{self.cards(sl[:12], 'h2')}
+{self.alert_inline("pays-secteur", k, bm=True, title=f"Recevoir les nouveaux avis « {label} » {where}", country=c)}
+{self.cards(sl[12:200], 'h2')}
+{f'<p class="country-links">Autres secteurs {e(where)} : {others}</p>' if others else ''}"""
+                ok = self.country_sector_pages[(c, k)]
+                self.write(f"pays/{slug}/{k}/", self.page(
+                    f"pays/{slug}/{k}/", f"Appels d'offres {label} {where} ({nb(len(sl))} ouverts) | {BRAND}",
+                    f"{nb(len(sl))} appels d'offres « {label.lower()} » ouverts {where}, triés par date limite, avec acheteur, référence et lien vers l'avis officiel.",
+                    body, noindex=not ok, jsonld=self.collection_ld(f"pays/{slug}/{k}/", f"Appels d'offres {label} {where}", sl),
+                    crumbs=[("", "Appels d'offres"), ("pays/", "Pays"), (f"pays/{slug}/", c), (f"pays/{slug}/{k}/", label)],
+                    scripts=("alerte-inline.js",)), sitemap=ok)
+        body = f"""<h1>Appels d'offres publics par pays</h1>
+<p class="lead">Avis ouverts des portails nationaux des marchés publics du Maroc, du Bénin et de la Tunisie, et avis en français des projets financés par la Banque mondiale en Afrique francophone. Mise à jour le {e(self.updated_text())}.</p>
+<ul class="index-list">{''.join(items)}</ul>
+<p class="small muted">Les autres portails nationaux (Sénégal, Côte d'Ivoire, Cameroun…) ne sont pas encore relus : leurs avis financés par la Banque mondiale figurent sur la page <a href="{link('afrique-francophone/')}">Afrique francophone</a>.</p>"""
+        self.write("pays/", self.page("pays/", f"Appels d'offres par pays : Maroc, Tunisie, Bénin, Afrique francophone | {BRAND}",
+                                      "Appels d'offres publics ouverts par pays : Maroc, Tunisie, Bénin, Sénégal, Côte d'Ivoire, Cameroun, Madagascar et autres pays d'Afrique francophone.",
+                                      body, crumbs=[("", "Appels d'offres"), ("pays/", "Pays")]))
 
     def build_alerts(self) -> None:
         sector_boxes = "".join(f'<label class="chk"><input type="checkbox" name="sectors" value="{k}"> {e(v)}</label>'
@@ -655,7 +800,7 @@ class Site:
 <div class="hp" aria-hidden="true"><label>Site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>Vos secteurs</legend><div class="chk-grid">{sector_boxes}</div></fieldset>
 <fieldset><legend>Vos régions au Maroc <button type="button" class="link-btn" id="toutes-regions">tout cocher</button></legend><div class="chk-grid">{region_boxes}</div></fieldset>
-<fieldset><legend>Autres pays (avis Banque mondiale)</legend><label class="chk"><input type="checkbox" name="countries" value="afrique-francophone"> Ajouter les avis en français des pays d'Afrique francophone</label></fieldset>
+<fieldset><legend>Autres pays</legend><label class="chk"><input type="checkbox" name="countries" value="benin"> Bénin (portail national)</label><label class="chk"><input type="checkbox" name="countries" value="tunisie"> Tunisie (portail national)</label><label class="chk"><input type="checkbox" name="countries" value="afrique-francophone"> Ajouter les avis en français de la Banque mondiale dans les pays d'Afrique francophone</label></fieldset>
 <div class="row">
 <label>Adresse e-mail professionnelle<input type="email" name="email" required autocomplete="email" maxlength="254"></label>
 <label>Entreprise <span class="muted">(facultatif)</span><input type="text" name="company" maxlength="120" autocomplete="organization"></label>
@@ -704,25 +849,30 @@ class Site:
 
     def build_static_pages(self) -> None:
         method = f"""<h1>Méthode et sources</h1>
-<p class="lead">Ce site relit deux fois par jour, vers 7 h et 19 h (heure de Paris), deux sources publiques. Il n'utilise aucun modèle de langage : les résumés sont assemblés par des règles fixes à partir des champs de chaque avis.</p>
+<p class="lead">Ce site relit deux fois par jour, vers 7 h et 19 h (heure de Paris), quatre sources publiques. Il n'utilise aucun modèle de langage : les résumés sont assemblés par des règles fixes à partir des champs de chaque avis.</p>
 <h2>Portail marocain des marchés publics</h2>
 <p>Le <a href="https://www.marchespublics.gov.ma/" rel="noopener">portail marocain des marchés publics</a> est géré par la Trésorerie Générale du Royaume. À chaque passage, nous lisons les « consultations en cours » mises en ligne dans les 4 derniers jours (une ou deux pages de 500 lignes) ; le dimanche matin, nous relisons la liste complète (neuf pages) pour retirer les consultations annulées et corriger les dates reportées. La fiche de chaque nouvelle consultation est lue une seule fois. Les requêtes partent une par une, avec au moins 3 secondes d'écart. Nos requêtes portent un identifiant qui donne l'adresse {CONTACT}. Nous ne téléchargeons pas les dossiers de consultation et ne créons pas de compte.</p>
 <p>Le portail ne publie pas de fichier robots.txt ni de conditions d'utilisation (le lien « Mentions légales » de son pied de page ne mène nulle part, vérifié le 13 octobre 2026). Nous nous appuyons sur l'article 6 de la <a href="https://www.cdai.ma/fr/cadre-juridique-national/" rel="noopener">loi n° 31-13 relative au droit d'accès à l'information</a>, qui autorise la réutilisation des informations publiées par les administrations à des fins légitimes, sans altération, en indiquant la source et la date. Chaque fiche affiche donc l'objet officiel tel quel, la source et la date de publication. Les noms, e-mails et téléphones des agents qui figurent sur les fiches du portail ne sont pas repris.</p>
 <p>Dernière lecture réussie : {e(self.source_read('PMMP')[0] or 'inconnue')} (heure de Paris){'' if self.source_read('PMMP')[1] else ' ; la dernière tentative a échoué, les avis affichés sont ceux de la lecture précédente'}.</p>
 <h2>Banque mondiale</h2>
 <p>Les avis de passation de marché de la Banque mondiale viennent de son <a href="https://search.worldbank.org/api/v2/procnotices?format=json&amp;rows=1" rel="noopener">API publique</a>, jeu de données « <a href="https://datacatalog.worldbank.org/search/dataset/0037776/procurement-notice" rel="noopener">Procurement Notice</a> », sous licence Creative Commons Attribution 4.0. Nous gardons les avis rédigés en français, de type appel d'offres, appel à manifestation d'intérêt ou avis spécifique, dont la date limite n'est pas passée, pour les pays d'Afrique francophone. Dernière lecture réussie : {e(self.source_read('BM')[0] or 'inconnue')} (heure de Paris){'' if self.source_read('BM')[1] else ' ; la dernière tentative a échoué, les avis affichés sont ceux de la lecture précédente'}. L'état de chaque source est publié dans <a href="{link('statut.json')}">statut.json</a>.</p>
+<h2>Portail des marchés publics du Bénin</h2>
+<p>Le <a href="https://www.marches-publics.bj/" rel="noopener">portail des marchés publics du Bénin</a> publie ses avis d'appels d'offres dans une page publique, alimentée par une interface de données ouverte sans compte, et en propose lui-même un flux RSS. À chaque passage, une seule requête lit les avis dont la date limite n'est pas passée. Nous gardons l'objet, l'autorité contractante, la référence, le type de marché, la date de publication, la date limite et le lien vers l'avis officiel (PDF publié par le portail). Les noms, e-mails et téléphones des contacts ne sont pas repris, et nous ne téléchargeons pas les dossiers d'appel d'offres. Le portail ne publie ni robots.txt ni conditions d'utilisation (vérifié le 21 octobre 2026). Dernière lecture réussie : {e(self.source_read('BJ')[0] or 'inconnue')} (heure de Paris).</p>
+<h2>Portail tunisien des marchés publics</h2>
+<p>Le <a href="https://www.marchespublics.gov.tn/fr" rel="noopener">portail tunisien des marchés publics</a> est tenu par la Haute Instance de la Commande Publique (HAICOP). Nous lisons le tableau public de ses appels d'offres, du plus récent au plus ancien (trois ou quatre requêtes de 500 lignes, à 3 secondes d'écart), et gardons les avis dont la date limite n'est pas passée et dont l'objet est rédigé en français (les avis rédigés seulement en arabe ne sont pas repris). Nous gardons l'objet, l'acheteur public, le numéro de l'appel d'offres, les dates de publication et de remise des offres, et le lien vers l'avis officiel. Son fichier robots.txt autorise la lecture de tout le site ; sa page « Charte d'utilisation » est vide (vérifié le 21 octobre 2026). Dernière lecture réussie : {e(self.source_read('TN')[0] or 'inconnue')} (heure de Paris).</p>
+<p>Pour ces deux portails, nous ne reprenons que les éléments d'identification de chaque avis, sans le modifier, avec la source et la date, et renvoyons vers l'avis officiel. Nous ne créons pas de compte et ne déposons rien. Un portail peut demander le retrait de ses avis à <a href="mailto:{CONTACT}">{CONTACT}</a> : nous le faisons sans délai.</p>
 <h2>Classements ajoutés par nous</h2>
 <p>Le secteur est attribué par mots-clés sur l'objet et les domaines d'activité déclarés, parmi 13 secteurs. Un avis peut en avoir deux, et les objets très courts sont parfois mal classés.</p>
-<p>La région vient du lieu d'exécution saisi par l'acheteur, rapproché de la liste des provinces et préfectures des 12 régions. Les lieux « tout le Royaume » ou mal orthographiés restent sans région.</p>
+<p>La région vient du lieu d'exécution saisi par l'acheteur, rapproché de la liste des provinces et préfectures des 12 régions. Les lieux « tout le Royaume » ou mal orthographiés restent sans région. Pour le Bénin, la Tunisie et les avis de la Banque mondiale, nous indiquons le pays, sans région.</p>
 <p>Le résumé met en phrases la procédure, l'acheteur, le lieu, l'estimation, la caution et la date limite avec le nombre de jours restants. Il ne lit pas le dossier de consultation.</p>
 <h2>Limites</h2>
-<p>Le site peut avoir jusqu'à 12 heures de retard sur le portail pour les nouvelles consultations, et jusqu'à une semaine pour une annulation ou un report de date : vérifiez toujours l'avis officiel avant de préparer une offre. Les portails nationaux du Sénégal, de la Côte d'Ivoire et des autres pays ne sont pas encore couverts.</p>
+<p>Le site peut avoir jusqu'à 12 heures de retard sur le portail pour les nouvelles consultations, et jusqu'à une semaine pour une annulation ou un report de date : vérifiez toujours l'avis officiel avant de préparer une offre. Les portails nationaux du Sénégal, de la Côte d'Ivoire, du Cameroun et des autres pays ne sont pas encore couverts : nous n'y avons pas trouvé d'accès automatisé à jour dont les conditions sont claires, ou l'accès demande un compte.</p>
 <p>Données brutes du jour : <a href="{link('data/ouverts.json')}">ouverts.json</a>, réutilisables selon les <a href="{link(LICENCE_PAGE)}">conditions de réutilisation des données</a>.</p>"""
         self.write("methode/", self.page("methode/", f"Méthode et sources | {BRAND}",
                                          "D'où viennent les appels d'offres de Veille AO Afrique, à quelle fréquence ils sont relus, sur quelle base légale et avec quelles limites.",
                                          method, crumbs=[("", "Appels d'offres"), ("methode/", "Méthode")]))
         licence = f"""<h1>Conditions de réutilisation des données</h1>
-<p class="lead">Les avis publiés sur {BRAND}, et le fichier <a href="{link('data/ouverts.json')}">ouverts.json</a> qui les rassemble, proviennent de deux sources publiques. Chacune garde ses propres conditions de réutilisation : les voici.</p>
+<p class="lead">Les avis publiés sur {BRAND}, et le fichier <a href="{link('data/ouverts.json')}">ouverts.json</a> qui les rassemble, proviennent de quatre sources publiques. Chacune garde ses propres conditions de réutilisation : les voici.</p>
 <h2>Avis marocains : portail marocain des marchés publics</h2>
 <p>Les consultations marocaines proviennent du <a href="https://www.marchespublics.gov.ma/" rel="noopener">portail marocain des marchés publics</a> (www.marchespublics.gov.ma), géré par la Trésorerie Générale du Royaume.</p>
 <p>Elles peuvent être réutilisées selon l'article 6 de la <a href="https://www.cdai.ma/fr/cadre-juridique-national/" rel="noopener">loi n° 31-13 relative au droit d'accès à l'information</a>, qui autorise la réutilisation des informations publiées par les administrations, à des fins légitimes, aux conditions suivantes :</p>
@@ -735,13 +885,16 @@ class Site:
 <h2>Avis de la Banque mondiale : licence CC BY 4.0</h2>
 <p>Les avis de passation de marché de la Banque mondiale proviennent du jeu de données « <a href="https://datacatalog.worldbank.org/search/dataset/0037776/procurement-notice" rel="noopener">Procurement Notice</a> » (catalogue de données de la Banque mondiale, n° 0037776), publié sous licence <a href="https://creativecommons.org/licenses/by/4.0/deed.fr" rel="noopener">Creative Commons Attribution 4.0 International (CC BY 4.0)</a>.</p>
 <p>Vous pouvez les copier, les redistribuer et les adapter, y compris à des fins commerciales, à condition de créditer la source, d'indiquer un lien vers la licence et de signaler les modifications. Attribution à reprendre : « Source : Banque mondiale, Procurement Notice (datacatalog.worldbank.org), licence CC BY 4.0. » Nous n'avons gardé que les avis rédigés en français, ouverts, pour l'Afrique francophone, et retiré les coordonnées des contacts.</p>
+<h2>Avis du Bénin et de la Tunisie : portails nationaux</h2>
+<p>Les avis béninois proviennent du <a href="https://www.marches-publics.bj/" rel="noopener">portail des marchés publics du Bénin</a> (www.marches-publics.bj), les avis tunisiens du <a href="https://www.marchespublics.gov.tn/fr" rel="noopener">portail tunisien des marchés publics</a> (www.marchespublics.gov.tn, Haute Instance de la Commande Publique). Ces portails publient les avis pour l'information de tous les candidats et n'en limitent pas la lecture (pas de compte, robots.txt absent ou sans restriction, aucune condition d'utilisation publiée, vérifié le 21 octobre 2026).</p>
+<p>Nous n'en reprenons que les éléments d'identification (objet, acheteur, référence, dates), sans modification, avec la source et la date de publication, et un lien vers l'avis officiel. Si vous les réutilisez, citez « Portail des marchés publics du Bénin (www.marches-publics.bj) » ou « Portail tunisien des marchés publics (www.marchespublics.gov.tn) » et la date de publication de l'avis.</p>
 <h2>Notre compilation</h2>
 <p>{SELLER['name']} rassemble ces avis, les met dans un format commun et y ajoute un secteur, une région et un résumé produits par des règles fixes (voir <a href="{link('methode/')}">Méthode et sources</a>). Cette compilation n'ajoute aucun droit à ceux des sources : chaque avis reste soumis aux conditions de la source dont il provient, décrites ci-dessus, et nous ne revendiquons aucun droit exclusif sur les données.</p>
 <p>Si vous réutilisez les données, citez la source d'origine de chaque avis ; vous pouvez aussi mentionner « {BRAND} ({self.base}) » comme intermédiaire. Les avis peuvent avoir été modifiés ou annulés depuis notre dernière lecture : vérifiez toujours l'avis officiel.</p>
 <p>Questions : <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
-<p class="small muted">Version du 13 octobre 2026.</p>"""
+<p class="small muted">Version du 21 octobre 2026 (ajout des portails du Bénin et de la Tunisie ; version précédente du 13 octobre 2026).</p>"""
         self.write(LICENCE_PAGE, self.page(LICENCE_PAGE, f"Conditions de réutilisation des données | {BRAND}",
-                                           "Conditions de réutilisation des appels d'offres de Veille AO Afrique : avis marocains selon l'article 6 de la loi 31-13, avis de la Banque mondiale sous licence CC BY 4.0.",
+                                           "Conditions de réutilisation des appels d'offres de Veille AO Afrique : avis marocains selon l'article 6 de la loi 31-13, avis du Bénin et de la Tunisie avec leur source, avis de la Banque mondiale sous licence CC BY 4.0.",
                                            licence, crumbs=[("", "Appels d'offres"), (LICENCE_PAGE, "Réutilisation des données")]))
         p = SELLER
         legal = f"""<h1>Mentions légales</h1>
@@ -753,7 +906,7 @@ class Site:
 <h2>Hébergement</h2>
 <p>GitHub Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis. Formulaire, mesure d'audience et de comportement (totaux par jour, sans cookie) : Google Apps Script et Google Sheets (Google LLC).</p>
 <h2>Sources et propriété</h2>
-<p>Les avis proviennent du Portail marocain des marchés publics (Trésorerie Générale du Royaume, réutilisation selon l'article 6 de la loi n° 31-13) et de la Banque mondiale (CC BY 4.0). Veille AO Afrique n'est ni affilié à ces organismes ni approuvé par eux. L'avis officiel fait foi. Le code du site est publié sous licence MIT.</p>"""
+<p>Les avis proviennent du Portail marocain des marchés publics (Trésorerie Générale du Royaume, réutilisation selon l'article 6 de la loi n° 31-13), du portail des marchés publics du Bénin, du portail tunisien des marchés publics (HAICOP) et de la Banque mondiale (CC BY 4.0). Veille AO Afrique n'est ni affilié à ces organismes ni approuvé par eux. L'avis officiel fait foi. Le code du site est publié sous licence MIT.</p>"""
         self.write("mentions-legales/", self.page("mentions-legales/", f"Mentions légales | {BRAND}",
                                                   "Éditeur, hébergeur et sources de Veille AO Afrique.", legal, noindex=True,
                                                   crumbs=[("", "Appels d'offres"), ("mentions-legales/", "Mentions légales")]),
@@ -850,10 +1003,12 @@ class Site:
         self.n_sector = Counter(s for n in self.open for s in n.get("sectors", []))
         self.n_region = Counter(r for n in self.open for r in n.get("regions", []))
         self.n_country = Counter(n.get("country") for n in self.open if n["source"] == "BM")
+        self.plan_country_pages()
         self.build_index()
         for n in self.all:
             self.build_tender(n)
         self.build_group_pages()
+        self.build_country_pages()
         self.build_alerts()
         self.build_static_pages()
         self.build_data()

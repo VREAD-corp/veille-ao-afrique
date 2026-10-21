@@ -3,7 +3,7 @@ import re
 from datetime import date, datetime
 from pathlib import Path
 
-from aoafrique import model, pmmp, worldbank
+from aoafrique import benin, model, pmmp, tunisie, worldbank
 from aoafrique.site import Site
 
 FX = Path(__file__).parent / "fixtures"
@@ -171,7 +171,7 @@ def test_legal_pages_noindex_out_of_sitemap(tmp_path):
     assert "/licence.html</loc>" in sm
 
 
-def _update(tmp_path, monkeypatch, old, pmmp_rows, wb=None, wb_fail=False):
+def _update(tmp_path, monkeypatch, old, pmmp_rows, wb=None, wb_fail=False, nat=None, nat_fail=None):
     """Run `update` on a temporary data dir with fake sources; pmmp_rows None = portal down."""
     import argparse
     from aoafrique import __main__ as cli
@@ -192,8 +192,16 @@ def _update(tmp_path, monkeypatch, old, pmmp_rows, wb=None, wb_fail=False):
         if wb_fail:
             raise OSError("API down")
         return wb or []
+    def nat_open(src):
+        def fetch(http, now):
+            if (wb_fail if nat_fail is None else nat_fail):
+                raise OSError("portal down")
+            return (nat or {}).get(src, [])
+        return fetch
     monkeypatch.setattr(cli.pmmp, "fetch_open", fetch_open)
     monkeypatch.setattr(cli.worldbank, "fetch_open", wb_open)
+    monkeypatch.setattr(cli.benin, "fetch_open", nat_open("BJ"))
+    monkeypatch.setattr(cli.tunisie, "fetch_open", nat_open("TN"))
     args = argparse.Namespace(delay=0, details=0, detail_minutes=1, full=False)
     code = cli.cmd_update(args)
     return code, json.loads((data / "notices.json").read_text()), json.loads((data / "meta.json").read_text())
@@ -251,3 +259,123 @@ def test_status_file_and_source_dates(tmp_path):
     assert "Banque mondiale le 21 octobre 2026 à 14 h 34" in idx and 'href="/statut.json"' in idx
     feed = json.loads((tmp_path / "data" / "alertes.json").read_text(encoding="utf-8"))
     assert feed["sectors"]["btp"] and all({"i", "o", "s", "r", "x", "f", "d"} <= set(n) for n in feed["notices"])
+
+
+# ------------------------------------------------------------------ national portals (Bénin, Tunisie)
+class _FakeHttp:
+    def __init__(self, payloads):
+        self.payloads, self.calls = list(payloads), []
+
+    def json(self, url, params=None, extra=None):
+        self.calls.append((url, params, extra))
+        return self.payloads.pop(0)
+
+
+def test_benin_fetch_and_normalise_without_contacts():
+    from zoneinfo import ZoneInfo
+    payload = json.loads((FX / "benin_appelsoffres.json").read_text(encoding="utf-8"))
+    http = _FakeHttp([payload])
+    rows = benin.fetch_open(http, datetime(2026, 10, 21, 15, 0, tzinfo=ZoneInfo("Africa/Porto-Novo")), log=lambda *a: None)
+    assert len(http.calls) == 1 and http.calls[0][1]["limitStart"] == 1792537200000  # 21/10/2026 00:00 Cotonou
+    n = model.from_national(benin.normalise(rows[0]))
+    assert n["id"] == "bj-1249053" and n["source"] == "BJ" and n["country"] == "Bénin"
+    assert n["reference"] == "F_DSA_125322" and n["deadline"] == "2026-11-24T10:00" and n["published"] == "2026-10-20"
+    assert n["category"] == "Fournitures" and n["buyer"].startswith("Agence des Systèmes d'Information")
+    assert n["url"] == "https://www.marches-publics.bj/appels-doffres?search=F_DSA_125322"
+    assert n["pdf"].startswith("https://bi.marches-publics.bj/") and " " not in n["pdf"]
+    dumped = json.dumps(n, ensure_ascii=False)
+    assert "example.bj" not in dumped and "0100000000" not in dumped and "0100000001" not in dumped
+    s = model.summary(n, date(2026, 10, 21))
+    assert "portail national des marchés publics du Bénin" in s and "mardi 24 novembre 2026 à 10 h (34 jours)" in s
+
+
+def test_tunisie_keeps_open_french_notices_only():
+    from zoneinfo import ZoneInfo
+    payload = json.loads((FX / "tunisie_appelsoffres.json").read_text(encoding="utf-8"))
+    http = _FakeHttp([payload])
+    rows = tunisie.fetch_open(http, datetime(2026, 10, 21, 15, 0, tzinfo=ZoneInfo("Africa/Tunis")), log=lambda *a: None)
+    assert http.calls[0][2] == {"X-Requested-With": "XMLHttpRequest"} and http.calls[0][1]["start"] == 0
+    ids = [r["id"] for r in rows]
+    assert ids == ["Tender-104364", "Tender-104363", "Tender-104361"]  # Arabic-only title and closed notice dropped
+    n = model.from_national(tunisie.normalise(rows[0]))
+    assert n["id"] == "tn-104364" and n["country"] == "Tunisie" and n["reference"] == "Tender-104364"
+    assert n["deadline"] == "2026-11-20T09:30" and n["published"] == "2026-10-21"
+    assert n["url"] == "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104364"
+    sme = model.from_national(tunisie.normalise(rows[2]))
+    assert sme["sme"] is True and "réservé aux petites et moyennes entreprises" in model.summary(sme, date(2026, 10, 21))
+    assert tunisie.is_french("Acquisition de batteries") and not tunisie.is_french("استبدال معدات")
+
+
+def _national_notices():
+    from zoneinfo import ZoneInfo
+    now = datetime(2026, 10, 21, 15, 0, tzinfo=ZoneInfo("Africa/Tunis"))
+    tn = [model.from_national(tunisie.normalise(r)) for r in
+          tunisie.fetch_open(_FakeHttp([json.loads((FX / "tunisie_appelsoffres.json").read_text(encoding="utf-8"))]),
+                             now, log=lambda *a: None)]
+    bj = [model.from_national(benin.normalise(r)) for r in
+          json.loads((FX / "benin_appelsoffres.json").read_text(encoding="utf-8"))["content"]]
+    return bj, tn
+
+
+def test_country_pages_sitemap_and_ab_test_on_new_tenders(tmp_path):
+    rows = pmmp.parse_results((FX / "pmmp_list.html").read_text(encoding="utf-8"))
+    bj, tn = _national_notices()
+    for n in tn:
+        n["sectors"] = ["btp"]  # 3 open notices in one sector: indexed country × sector page
+    notices = [model.from_pmmp(r, None) for r in rows] + bj + tn
+    site = Site(tmp_path, notices, {"updated": "2026-10-21T13:00+00:00", "sources": {}}, "https://ao-afrique.jalonel.com/")
+    site.now = datetime(2026, 10, 21, 16, 0)
+    site.today = site.now.date()
+    site.open = notices
+    site.build_all()
+    sm = (tmp_path / "sitemap.xml").read_text()
+    tun = (tmp_path / "pays" / "tunisie" / "index.html").read_text(encoding="utf-8")
+    ben = (tmp_path / "pays" / "benin" / "index.html").read_text(encoding="utf-8")
+    sec = (tmp_path / "pays" / "tunisie" / "btp" / "index.html").read_text(encoding="utf-8")
+    # 3 Tunisian notices: indexed and in the sitemap; 2 Beninese ones: page kept, noindex, out of the sitemap
+    assert "/pays/tunisie/</loc>" in sm and "/pays/tunisie/btp/</loc>" in sm and "/pays/</loc>" in sm
+    assert "/pays/benin/</loc>" not in sm and '<meta name="robots" content="noindex, follow">' in ben
+    assert "noindex" not in tun and "Appels d'offres publics en Tunisie : 3 avis ouverts" in tun
+    assert 'href="/pays/tunisie/btp/"' in tun and 'href="/pays/tunisie/"' in sec and 'href="/secteurs/btp/"' in sec
+    assert 'value="tunisie"' in tun and 'data-ctx="pays"' in tun
+    # structured data: breadcrumb and item list of tender pages, no rating or review
+    for page in (tun, sec):
+        lds = [json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>', page)]
+        types = {x["@type"] for x in lds}
+        assert {"BreadcrumbList", "CollectionPage"} <= types
+        assert "Review" not in page and "AggregateRating" not in page and "ratingValue" not in page
+    cp = next(x for x in (json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>', tun))
+              if x["@type"] == "CollectionPage")
+    assert cp["mainEntity"]["numberOfItems"] == 3 and cp["mainEntity"]["itemListElement"][0]["url"].startswith(
+        "https://ao-afrique.jalonel.com/ao/tn-")
+    # internal links: home, /pays/, sector page and tender pages point to the country pages
+    assert 'href="/pays/"' in (tmp_path / "index.html").read_text(encoding="utf-8")
+    pays = (tmp_path / "pays" / "index.html").read_text(encoding="utf-8")
+    assert 'href="/pays/tunisie/"' in pays and 'href="/pays/benin/"' in pays
+    assert 'href="/pays/tunisie/btp/"' in (tmp_path / "secteurs" / "btp" / "index.html").read_text(encoding="utf-8")
+    t = tn[0]
+    page = (tmp_path / "ao" / t["slug"] / "index.html").read_text(encoding="utf-8")
+    assert "/static/xp.js" in page and 'id="alerte-rapide"' in page and 'data-ctx="fiche-pays-rapide"' in page
+    assert '<input type="hidden" name="countries" value="tunisie">' in page and 'data-ctx="fiche-pays"' in page
+    assert 'href="/pays/tunisie/"' in page and "marchespublics.gov.tn" in page and "Portail tunisien" in page
+    assert '"@type": "Demand"' in page
+    b = (tmp_path / "ao" / bj[0]["slug"] / "index.html").read_text(encoding="utf-8")
+    assert "Avis officiel (PDF)" in b and "marches-publics.bj" in b
+    data = json.loads((tmp_path / "data" / "ouverts.json").read_text(encoding="utf-8"))
+    assert {n["x"] for n in data["notices"]} >= {"BJ", "TN", "PMMP"}
+    st = json.loads((tmp_path / "statut.json").read_text(encoding="utf-8"))
+    assert {"BJ", "TN"} <= set(st["sources"]) and st["sources"]["TN"]["open"] == 3
+
+
+def test_update_national_sources_first_read_and_failure(tmp_path, monkeypatch):
+    bj_raw = json.loads((FX / "benin_appelsoffres.json").read_text(encoding="utf-8"))["content"]
+    old = [_bm(i) for i in range(3)]
+    code, notices, meta = _update(tmp_path, monkeypatch, old, [], wb=[], nat={"BJ": bj_raw, "TN": []})
+    assert code == 0 and meta["sources"]["BJ"]["ok"] is True and meta["sources"]["BJ"]["open"] == 2
+    bj = {n["id"]: n for n in notices if n["source"] == "BJ"}
+    # first read: dated from publication, so the feed and IndexNow do not present a backlog as new
+    assert bj["bj-1249053"]["first_seen"] == "2026-10-20" and bj["bj-1248059"]["first_seen"] == "2026-10-15"
+    # next run, portal down: last known notices kept, failure recorded, run not failed
+    code, notices2, meta2 = _update(tmp_path, monkeypatch, notices, [], wb=[], nat_fail=True)
+    assert code == 0 and meta2["sources"]["BJ"]["ok"] is False and "portal down" in meta2["sources"]["BJ"]["error"]
+    assert {n["id"] for n in notices2 if n["source"] == "BJ"} == set(bj)

@@ -1,0 +1,106 @@
+{
+ "content": [
+  {
+   "dosID": 1249053,
+   "appelsoffres": {
+    "apoID": 1249052,
+    "apoDateAuto": null,
+    "apoDatecreation": "2026-10-19",
+    "apoDatepvouverturepli": null,
+    "apoFichierPV": null,
+    "apoObjet": "Acquisition et installation d'équipement pour la sécurisation, la résilience et la centralisation des bases de données des solutions et services exploités par ASIN",
+    "apoReference": "F_DSA_125322",
+    "typemarche": {
+     "id": 1,
+     "code": "F",
+     "description": "Fournitures",
+     "libelle": "Fournitures",
+     "nbContent": 0
+    }
+   },
+   "autoriteContractante": {
+    "denomination": "Agence des Systèmes d'Information et du Numérique (ASIN)",
+    "email": "prmp@example.bj",
+    "telephone": "0100000000",
+    "sigle": "ASIN",
+    "id": 603982
+   },
+   "dosDateCreation": "2026-10-19",
+   "dosDateLimiteDepot": "2026-11-24",
+   "dosDateOuvertueDesplis": "2026-11-24",
+   "dosDatePublication": "2026-10-20",
+   "dosDatePublicationDefinitive": null,
+   "dosDatePublicationProvisoire": null,
+   "dosDescriptif": null,
+   "dosDownloadFichier": null,
+   "dosFichier": "https://bi.marches-publics.bj/beninmp/fichiers/pj/3907820102026_Pj_AVIS ACQUISITION ET INSTALLATION DEQUIQUIPEMENTS RESILIENCE.pdf",
+   "dosHeurelimitedepot": "10:00:00",
+   "dosHeureOuvertureDesPlis": "10:30:00",
+   "doslieuacquisitiondao": "Secrétariat de la PRMP ASIN, 4ème étage Immeuble JUMMY PALACE (Kougblenou ou Immeuble CAPAGO)",
+   "dosLieuDepotDossier": null,
+   "dosLieuOuvertureDesPlis": null,
+   "dosLotDivisible": "OUI",
+   "dosNombreLots": 1,
+   "dosReference": "F_DSA_125322",
+   "dosTelResp": "0100000001",
+   "telechargerdao": 1,
+   "texteHtml": "3907820102026_Pj_AVIS ACQUISITION ET INSTALLATION DEQUIQUIPEMENTS RESILIENCE.pdf",
+   "checked": false,
+   "dayLeft": 34,
+   "expired": false
+  },
+  {
+   "dosID": 1248059,
+   "appelsoffres": {
+    "apoID": 1248058,
+    "apoDateAuto": null,
+    "apoDatecreation": "2026-10-16",
+    "apoDatepvouverturepli": null,
+    "apoFichierPV": null,
+    "apoObjet": "Accord cadre triennal à bon de commande pour la sélection d'un  prestataire chargé de l'assurance des véhicules du parc automobile de la Mairie de Cotonou",
+    "apoReference": "S_DAAF_118090",
+    "typemarche": {
+     "id": 2,
+     "code": "S",
+     "description": "Services",
+     "libelle": "Services",
+     "nbContent": 0
+    }
+   },
+   "autoriteContractante": {
+    "denomination": "Mairie de Cotonou",
+    "email": "prmp@example.bj",
+    "telephone": "0100000000",
+    "sigle": "M.COT",
+    "id": 517335
+   },
+   "dosDateCreation": "2026-10-16",
+   "dosDateLimiteDepot": "2026-11-12",
+   "dosDateOuvertueDesplis": "2026-11-12",
+   "dosDatePublication": "2026-10-15",
+   "dosDatePublicationDefinitive": null,
+   "dosDatePublicationProvisoire": null,
+   "dosDescriptif": null,
+   "dosDownloadFichier": null,
+   "dosFichier": "https://bi.marches-publics.bj/beninmp/fichiers/pj/42441016102026_Pj_AVIS ASSURANCE DES VEHICULES ...pdf",
+   "dosHeurelimitedepot": "10:00:00",
+   "dosHeureOuvertureDesPlis": "10:30:00",
+   "doslieuacquisitiondao": "seécrétariat de la prmp",
+   "dosLieuDepotDossier": null,
+   "dosLieuOuvertureDesPlis": null,
+   "dosLotDivisible": "OUI",
+   "dosNombreLots": 1,
+   "dosReference": "S_DAAF_118090",
+   "dosTelResp": "0100000001",
+   "telechargerdao": 1,
+   "texteHtml": "42441016102026_Pj_AVIS ASSURANCE DES VEHICULES ...pdf",
+   "checked": false,
+   "dayLeft": 22,
+   "expired": false
+  }
+ ],
+ "last": true,
+ "totalElements": 2,
+ "number": 0,
+ "size": 100
+}

@@ -37,9 +37,10 @@ class Polite:
             time.sleep(self.delay - gap)
         self._last = time.monotonic()
 
-    def fetch(self, url: str, data: dict | None = None, *, accept: str = "text/html") -> bytes:
+    def fetch(self, url: str, data: dict | None = None, *, accept: str = "text/html", extra: dict | None = None) -> bytes:
         body = urllib.parse.urlencode(data).encode() if data is not None else None
-        headers = {"User-Agent": USER_AGENT, "Accept": accept, "Accept-Language": "fr", "Accept-Encoding": "gzip"}
+        headers = {"User-Agent": USER_AGENT, "Accept": accept, "Accept-Language": "fr", "Accept-Encoding": "gzip",
+                   **(extra or {})}
         if body is not None:
             headers["Content-Type"] = "application/x-www-form-urlencoded"
         last: Exception | None = None
@@ -65,10 +66,10 @@ class Polite:
     def text(self, url: str, data: dict | None = None) -> str:
         return self.fetch(url, data).decode("utf-8", errors="replace")
 
-    def json(self, url: str, params: dict | None = None):
+    def json(self, url: str, params: dict | None = None, *, extra: dict | None = None):
         if params:
             url = f"{url}?{urllib.parse.urlencode(params)}"
-        return json.loads(self.fetch(url, accept="application/json"))
+        return json.loads(self.fetch(url, accept="application/json", extra=extra))
 
     def cached_text(self, url: str, max_age_s: float) -> str:
         """GET with an on-disk cache (detail pages: fetched once, then reused until max_age_s)."""

@@ -1,0 +1,92 @@
+{
+ "draw": 1,
+ "recordsTotal": 5,
+ "recordsFiltered": 5,
+ "data": [
+  {
+   "id": "Tender-104364",
+   "planID": "P2026-134601",
+   "title_fr": "Etalonnage de matériels d'essais (APL, Ecodyn, Capteurs de forces)",
+   "procuringEntityID": "ORG-88813",
+   "created_at": "2026-10-21 11:56:47",
+   "tenderPeriod_endDate": "2026-11-20 09:30:00",
+   "publication_date": "2026-10-21 12:01:46",
+   "organization": {
+    "id": "ORG-88813",
+    "name_fr": "Centre D’Essais et des Techniques de Construction"
+   },
+   "plan": {
+    "planID": "P2026-134601",
+    "reservedSME": false
+   }
+  },
+  {
+   "id": "Tender-104363",
+   "planID": "P2026-148738",
+   "title_fr": "acquisition voitures de services",
+   "procuringEntityID": "ORG-88643",
+   "created_at": "2026-10-21 11:29:17",
+   "tenderPeriod_endDate": "2026-11-09 10:00:00",
+   "publication_date": "2026-10-21 11:36:02",
+   "organization": {
+    "id": "ORG-88643",
+    "name_fr": "Agence Nationale de la Métrologie"
+   },
+   "plan": {
+    "planID": "P2026-148738",
+    "reservedSME": false
+   }
+  },
+  {
+   "id": "Tender-104361",
+   "planID": "P2026-150701",
+   "title_fr": "Mission d’audit de sécurité du site web de l’ISIM Gabès",
+   "procuringEntityID": "ORG-88702",
+   "created_at": "2026-10-21 10:55:19",
+   "tenderPeriod_endDate": "2026-11-05 12:00:00",
+   "publication_date": "2026-10-21 10:59:28",
+   "organization": {
+    "id": "ORG-88702",
+    "name_fr": "Institut supérieur d'informatique et multiimédia Gabes"
+   },
+   "plan": {
+    "planID": "P2026-150701",
+    "reservedSME": true
+   }
+  },
+  {
+   "id": "Tender-104362",
+   "planID": "P2026-150702",
+   "title_fr": "انجاز مشروع اقتناء وتركيز مولد كهربائي بمقر ثكنة الأمن الوطني حي المزوغي بن عروس",
+   "procuringEntityID": "ORG-89214",
+   "created_at": "2026-10-21 11:17:56",
+   "tenderPeriod_endDate": "2026-11-27 10:00:00",
+   "publication_date": "2026-10-21 11:19:50",
+   "organization": {
+    "id": "ORG-89214",
+    "name_fr": "Gouvernorat de Ben Arous"
+   },
+   "plan": {
+    "planID": "P2026-150702",
+    "reservedSME": false
+   }
+  },
+  {
+   "id": "Tender-103731",
+   "planID": "P2026-150146",
+   "title_fr": "AVIS D’APPEL D’OFFRE A PROCEDURE SIMPLIFIEE Nº 27/2026 POUR LA DEUXIEME FOIS",
+   "procuringEntityID": "ORG-89349",
+   "created_at": "2026-09-14 11:55:55",
+   "tenderPeriod_endDate": "2026-10-14 09:00:00",
+   "publication_date": "2026-10-09 16:26:15",
+   "organization": {
+    "id": "ORG-89349",
+    "name_fr": "Office National de la Protection Civile"
+   },
+   "plan": {
+    "planID": "P2026-150146",
+    "reservedSME": true
+   }
+  }
+ ]
+}

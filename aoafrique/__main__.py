@@ -11,7 +11,7 @@ from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
-from . import model, pmmp, worldbank
+from . import benin, model, pmmp, tunisie, worldbank
 from .http import Polite
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -121,6 +121,29 @@ def cmd_update(args) -> int:
             if n["source"] == "BM":
                 notices.setdefault(nid, n)
 
+    # 3b. National portals read as one list each (Bénin, Tunisie): same pattern as the World Bank. The first
+    #     successful read of a source dates its notices from their publication, so the feed and IndexNow are not
+    #     flooded with a backlog presented as new.
+    for src, mod in NATIONAL_SOURCES.items():
+        first_read = not status.get(src, {}).get("at")
+        try:
+            rows = mod.fetch_open(Polite(delay=args.delay), now_utc.astimezone(NATIONAL_TZ[src]))
+            for raw in rows:
+                n = model.from_national(mod.normalise(raw))
+                n["first_seen"] = (old.get(n["id"], {}).get("first_seen")
+                                   or (min(n.get("published") or today.isoformat(), today.isoformat()) if first_read
+                                       else today.isoformat()))
+                notices[n["id"]] = n
+            status[src] = {"ok": True, "at": now_utc.isoformat(timespec="minutes"), "open": len(rows)}
+        except Exception as exc:
+            print(f"{SOURCE_LABEL[src]} en échec : {exc}", file=sys.stderr)
+            status.setdefault(src, {})["ok"] = False
+            status[src]["error"] = str(exc)[:300]
+            status[src]["failed_at"] = now_utc.isoformat(timespec="minutes")
+            for nid, n in old.items():
+                if n["source"] == src:
+                    notices.setdefault(nid, n)
+
     # 4. Closed notices stay 30 days (their page says "clôturé"), then disappear.
     for nid, n in old.items():
         if nid in notices:
@@ -164,8 +187,12 @@ def cmd_update(args) -> int:
     return 0
 
 
-SOURCES = ("PMMP", "BM")
-SOURCE_LABEL = {"PMMP": "Portail marocain des marchés publics", "BM": "Banque mondiale"}
+SOURCES = ("PMMP", "BM", "BJ", "TN")
+SOURCE_LABEL = {"PMMP": "Portail marocain des marchés publics", "BM": "Banque mondiale",
+                "BJ": "Portail des marchés publics du Bénin", "TN": "Portail tunisien des marchés publics"}
+NATIONAL_SOURCES = {"BJ": benin, "TN": tunisie}
+# Deadlines are given in local time: Cotonou (UTC+1), Tunis (UTC+1).
+NATIONAL_TZ = {"BJ": ZoneInfo("Africa/Porto-Novo"), "TN": ZoneInfo("Africa/Tunis")}
 MIN_KEEP = 0.7  # a run may not lose more than 30 % of the notices (all sources), nor half of one source's
 
 
@@ -199,9 +226,12 @@ def cmd_indexnow(args) -> int:
     from . import site
     base = args.base_url.rstrip("/") + "/"
     since = (datetime.now(CASA).date() - timedelta(days=args.since_days)).isoformat()
-    urls = [base, base + "alertes/", base + "afrique-francophone/"]
-    urls += [base + "ao/" + n["slug"] + "/" for n in load(DATA / "notices.json", [])
-             if (n.get("first_seen") or "") >= since and not n.get("delisted")]
+    if args.paths:  # only these pages (e.g. new country and sector pages), not the tenders
+        urls = [base + p.lstrip("/") for p in args.paths]
+    else:
+        urls = [base, base + "alertes/", base + "afrique-francophone/", base + "pays/"]
+        urls += [base + "ao/" + n["slug"] + "/" for n in load(DATA / "notices.json", [])
+                 if (n.get("first_seen") or "") >= since and not n.get("delisted")]
     urls = urls[:10000]
     body = json.dumps({"host": base.split("/")[2], "key": site.INDEXNOW_KEY,
                        "keyLocation": base + site.INDEXNOW_KEY + ".txt", "urlList": urls}).encode()
@@ -225,6 +255,7 @@ def main(argv=None) -> int:
     b.add_argument("--base-url", default="https://ao-afrique.jalonel.com/")
     x = sub.add_parser("indexnow")
     x.add_argument("--since-days", type=int, default=1)
+    x.add_argument("--paths", nargs="*", default=None, help="send only these site paths (e.g. pays/benin/)")
     x.add_argument("--base-url", default="https://ao-afrique.jalonel.com/")
     args = p.parse_args(argv)
     return {"update": cmd_update, "build": cmd_build, "indexnow": cmd_indexnow}[args.cmd](args)

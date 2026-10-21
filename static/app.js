@@ -8,6 +8,7 @@
   var more = document.getElementById('plus');
   var root = location.pathname.replace(/[^/]*$/, '');
   var data = null, loading = null, shown = 0, list = [], tracked = {};
+  var SRC = { PMMP: 'Portail marocain', BM: 'Banque mondiale', BJ: 'Portail du Bénin', TN: 'Portail tunisien' };
   var MONTHS = ['janv.', 'févr.', 'mars', 'avr.', 'mai', 'juin', 'juil.', 'août', 'sept.', 'oct.', 'nov.', 'déc.'];
   function fold(s) { return String(s || '').normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase(); }
   function esc(s) { return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]; }); }
@@ -78,9 +79,9 @@
     return '<span class="badge ' + (l <= 7 ? 'urgent' : l <= 14 ? 'soon' : '') + '">J-' + l + '</span>';
   }
   function card(n) {
-    var facts = [n.c, n.x === 'BM' ? n.k : (n.p.slice(0, 3).join(', ') || 'Maroc'), n.e ? mad(n.e) : ''].filter(Boolean)
+    var facts = [n.c, n.x !== 'PMMP' ? n.k : (n.p.slice(0, 3).join(', ') || 'Maroc'), n.e ? mad(n.e) : ''].filter(Boolean)
       .map(function (f) { return '<span>' + esc(f) + '</span>'; }).join('');
-    return '<article class="card"><div class="card-top">' + badge(n) + '<span class="src">' + (n.x === 'BM' ? 'Banque mondiale' : 'Portail marocain') +
+    return '<article class="card"><div class="card-top">' + badge(n) + '<span class="src">' + (SRC[n.x] || n.x) +
       '</span><span class="dl">Clôture ' + short(n.d) + '</span></div><h3 class="card-title"><a href="' + root + 'ao/' + esc(n.i) + '/">' + esc(n.o) +
       '</a></h3><p class="buyer">' + esc(n.b) + '</p><p class="facts">' + facts + '</p></article>';
   }

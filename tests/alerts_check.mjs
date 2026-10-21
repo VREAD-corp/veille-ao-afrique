@@ -84,6 +84,19 @@ const g = gas([
   { at: '2026-10-18T09:00:00Z', email: 'pre@entreprise.ma', kind: 'preinscription', plan: 'pro-79', ...consent },
   { at: '2026-10-18T09:00:00Z', email: 'none@entreprise.ma', kind: 'alertes', sectors: 'formation', countries: 'maroc', ...consent },
 ], feed);
+// National portals other than Morocco's (Bénin, Tunisie) only reach those who chose that country.
+{
+  const ctx = {};
+  vm.runInNewContext(alerts + '\n;globalThis.M = { alertMatches_, criteriaText_ };', Object.assign(ctx, { globalThis: ctx }));
+  const tn = n(90, '2026-10-21', { x: 'TN', k: 'Tunisie', r: [] });
+  const sub = (countries) => ({ sectors: [], regions: [], countries });
+  assert.equal(ctx.M.alertMatches_(sub(['maroc']), tn), false, 'a Tunisian notice is not sent to Moroccan subscribers');
+  assert.equal(ctx.M.alertMatches_(sub(['afrique-francophone']), tn), false);
+  assert.equal(ctx.M.alertMatches_(sub(['tunisie']), tn), true);
+  assert.equal(ctx.M.alertMatches_(sub(['cote-d-ivoire']), n(91, '2026-10-21', { x: 'BM', k: "Côte d'Ivoire", r: [] })), true);
+  assert.equal(ctx.M.alertMatches_(sub(['tunisie']), n(92, '2026-10-21')), false, 'Moroccan notice needs maroc');
+  assert.match(ctx.M.criteriaText_(sub(['benin']), {}), /Bénin/);
+}
 
 // Dry run: nothing sent, nothing written.
 const pv = g.R.previewAlerts();
