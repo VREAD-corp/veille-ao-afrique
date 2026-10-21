@@ -52,6 +52,8 @@ cd gas && ~/.local/share/octave-clasp/node_modules/.bin/clasp push --force
 
 `.github/workflows/update.yml`: 05:20 and 17:20 UTC (backup crons at :41 every 2 h run only if that refresh is missing), tests → fetch → commit `data/` → build → GitHub Pages → IndexNow.
 
+Failure tolerance (2026-10-21): one source down (e.g. the Moroccan portal timing out from GitHub) no longer fails the run. The site is published with the other source and the last known notices of the failed one, `data/meta.json` keeps per source `ok`, `at` (last success), `failed_at`, `error`, `count`, the run shows a warning, and the gate retries at the next backup slot. The run fails (exit 1, data files untouched, only `meta.json` records `guard`) if every source failed, if the result is empty, if the total drops below 70 % of the previous run, or if one source loses more than half of its notices; after checking the drop is real, rerun with `workflow_dispatch` input `allow_drop=1`. `/statut.json` publishes that state (read by the daily monitor in `vread-revenue-lab`), and the footer of every page shows the last successful read of each source.
+
 ## Tests
 
 `tests/` unit tests on trimmed fixtures. `e2e/` Playwright checks on the live site (390 px and 1440 px): fresh data, filters, form posting to the Sheet, tracking counters. They set `octave_notrack=1` (query or localStorage) so their hits land in the excluded counters, never in visits. `tests/mesure_check.mjs` checks the snippet's bot, webdriver, prerender and opt-out rules under Node. `tests/test_cro.py` runs the vendored `tests/cro.check.mjs` on `static/cro.js` and `tests/cro-gas.check.mjs` on `gas/src/Cro.js`, and checks the wiring (tag on every page, routes, `/ao/*` pages).

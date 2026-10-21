@@ -103,7 +103,6 @@ def cmd_update(args) -> int:
         n["detail_checked"] = nid in details
         n["first_seen"] = old.get(nid, {}).get("first_seen") or today.isoformat()
         notices[nid] = n
-    dump(DATA / "pmmp_rows.json", sorted(stored.values(), key=lambda r: (r["org"], r["ref_id"])))
 
     # 3. World Bank, francophone Africa
     try:
@@ -117,6 +116,7 @@ def cmd_update(args) -> int:
         print(f"Banque mondiale en échec : {exc}", file=sys.stderr)
         status.setdefault("BM", {})["ok"] = False
         status["BM"]["error"] = str(exc)[:300]
+        status["BM"]["failed_at"] = now_utc.isoformat(timespec="minutes")
         for nid, n in old.items():
             if n["source"] == "BM":
                 notices.setdefault(nid, n)
@@ -134,15 +134,56 @@ def cmd_update(args) -> int:
     # Details of consultations gone for good are dropped too.
     details = {k: v for k, v in details.items() if k in notices}
     out = sorted(notices.values(), key=lambda n: (n.get("published", ""), n["id"]), reverse=True)
+
+    # Guard rails: one source down → publish the others with the last known data of the one that failed
+    # (kept above); fail only if every source failed, or if the number of notices drops abnormally.
+    for src in SOURCES:
+        status.setdefault(src, {"ok": False})
+        status[src]["count"] = sum(1 for n in out if n["source"] == src)
+    problems = guard(old, out, status)
+    meta["sources"] = status
+    meta["checked"] = now_utc.isoformat(timespec="minutes")
+    if problems and os.environ.get("AOA_ALLOW_DROP") != "1":
+        meta["guard"] = {"at": meta["checked"], "problems": problems}
+        dump(DATA / "meta.json", meta)  # status only: notices.json, details.json and pmmp_rows.json stay as they were
+        for msg in problems:
+            print(f"::error::{msg}")
+        return 1
+    meta.pop("guard", None)
+    dump(DATA / "pmmp_rows.json", sorted(stored.values(), key=lambda r: (r["org"], r["ref_id"])))
     changed = dump(DATA / "notices.json", out)
     dump(DATA / "details.json", details)
-    meta["sources"] = status
     if changed or "updated" not in meta:
         meta["updated"] = now_utc.isoformat(timespec="minutes")
-    meta["checked"] = now_utc.isoformat(timespec="minutes")
     dump(DATA / "meta.json", meta)
+    for src in SOURCES:
+        if not status[src].get("ok"):
+            print(f"::warning::{SOURCE_LABEL[src]} en échec, dernières données connues gardées "
+                  f"(lecture réussie : {status[src].get('at', 'jamais')}) : {status[src].get('error', '')[:200]}")
     print(f"{len(out)} avis enregistrés ({'modifiés' if changed else 'inchangés'})")
-    return 0 if status.get("PMMP", {}).get("ok") else 1
+    return 0
+
+
+SOURCES = ("PMMP", "BM")
+SOURCE_LABEL = {"PMMP": "Portail marocain des marchés publics", "BM": "Banque mondiale"}
+MIN_KEEP = 0.7  # a run may not lose more than 30 % of the notices (all sources), nor half of one source's
+
+
+def guard(old: dict, out: list[dict], status: dict) -> list[str]:
+    """Reasons not to publish this run's data (empty list: publish)."""
+    problems = []
+    if not any(status.get(s, {}).get("ok") for s in SOURCES):
+        problems.append("toutes les sources sont en échec : rien n'est publié")
+    if not out:
+        problems.append("aucun avis : publication d'un site vide refusée")
+    elif len(old) >= 100 and len(out) < MIN_KEEP * len(old):
+        problems.append(f"chute anormale du nombre d'avis : {len(old)} → {len(out)} (seuil {int(MIN_KEEP * 100)} %)")
+    for src in SOURCES:
+        before = sum(1 for n in old.values() if n["source"] == src)
+        after = status[src]["count"]
+        if before >= 20 and after < before / 2:
+            problems.append(f"{SOURCE_LABEL[src]} : {before} → {after} avis, plus de la moitié disparaît")
+    return problems
 
 
 def cmd_build(args) -> int:

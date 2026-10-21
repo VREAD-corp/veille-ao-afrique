@@ -183,6 +183,7 @@ class Site:
 <p class="foot-brand">{BRAND} · <a href="https://jalonel.com/">Une marque Jalonel</a></p>
 <p>Éditeur : {SELLER['name']} (SIREN {SELLER['siren']}), {SELLER['address']}.<br>Contact : <a href="mailto:{CONTACT}">{CONTACT}</a></p>
 <p class="small">Données : <a href="https://www.marchespublics.gov.ma/" rel="noopener">Portail marocain des marchés publics</a> (Trésorerie Générale du Royaume) et <a href="https://datacatalog.worldbank.org/search/dataset/0037776/procurement-notice" rel="noopener">avis de passation de marchés de la Banque mondiale</a> (CC BY 4.0). Service indépendant, sans lien avec ces organismes. L'avis officiel fait foi.</p>
+<p class="small muted foot-sources">{self.sources_line()}</p>
 </div>
 <nav aria-label="Liens de bas de page">
 <a href="{link('methode/')}">Méthode et sources</a>
@@ -333,6 +334,40 @@ class Site:
     def updated_text(self) -> str:
         u = self.updated_paris
         return f"{fmt_date(u.date().isoformat())} à {u.hour} h {u.minute:02d} (heure de Paris)"
+
+    def source_read(self, src: str) -> tuple[str, bool]:
+        """(date of the last successful read of a source in Paris time, last attempt ok?)"""
+        st = self.meta.get("sources", {}).get(src, {})
+        when = ""
+        if st.get("at"):
+            u = datetime.fromisoformat(st["at"]).astimezone(PARIS)
+            when = f"{fmt_date(u.date().isoformat())} à {u.hour} h {u.minute:02d}"
+        return when, bool(st.get("ok", True))
+
+    def sources_line(self) -> str:
+        parts = []
+        for src, label in (("PMMP", "portail marocain"), ("BM", "Banque mondiale")):
+            when, ok = self.source_read(src)
+            if when:
+                parts.append(f"{label} le {when}" + ("" if ok else " (dernière tentative en échec, avis de la lecture précédente)"))
+        return ("Dernière lecture réussie : " + " ; ".join(parts) + " (heure de Paris). "
+                f'<a href="{link("statut.json")}">État des sources</a>') if parts else ""
+
+    def build_status(self) -> None:
+        """/statut.json: state of each source, read by the daily monitor (and anyone curious)."""
+        st = self.meta.get("sources", {})
+        labels = {"PMMP": "Portail marocain des marchés publics", "BM": "Banque mondiale (avis en français)"}
+        out = {"site": self.base, "built": datetime.now(PARIS).isoformat(timespec="minutes"),
+               "updated": self.meta.get("updated"), "checked": self.meta.get("checked"),
+               "open": len(self.open), "total": len(self.all), "guard": self.meta.get("guard"), "sources": {}}
+        for src, label in labels.items():
+            x = st.get(src, {})
+            out["sources"][src] = {"label": label, "ok": bool(x.get("ok")), "last_success": x.get("at"),
+                                   "last_failure": x.get("failed_at") if not x.get("ok") else None,
+                                   "error": x.get("error") if not x.get("ok") else None,
+                                   "notices": x.get("count", sum(1 for n in self.all if n["source"] == src)),
+                                   "open": sum(1 for n in self.open if n["source"] == src)}
+        (self.out / "statut.json").write_text(json.dumps(out, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
 
     def build_index(self) -> None:
         s = self.stats()
@@ -668,16 +703,14 @@ class Site:
                                          body, scripts=("alertes.js",), crumbs=[("", "Appels d'offres"), ("alertes/", "Alertes e-mail")]))
 
     def build_static_pages(self) -> None:
-        st = self.meta.get("sources", {})
-        pm, bm = st.get("PMMP", {}), st.get("BM", {})
         method = f"""<h1>Méthode et sources</h1>
 <p class="lead">Ce site relit deux fois par jour, vers 7 h et 19 h (heure de Paris), deux sources publiques. Il n'utilise aucun modèle de langage : les résumés sont assemblés par des règles fixes à partir des champs de chaque avis.</p>
 <h2>Portail marocain des marchés publics</h2>
 <p>Le <a href="https://www.marchespublics.gov.ma/" rel="noopener">portail marocain des marchés publics</a> est géré par la Trésorerie Générale du Royaume. À chaque passage, nous lisons les « consultations en cours » mises en ligne dans les 4 derniers jours (une ou deux pages de 500 lignes) ; le dimanche matin, nous relisons la liste complète (neuf pages) pour retirer les consultations annulées et corriger les dates reportées. La fiche de chaque nouvelle consultation est lue une seule fois. Les requêtes partent une par une, avec au moins 3 secondes d'écart. Nos requêtes portent un identifiant qui donne l'adresse {CONTACT}. Nous ne téléchargeons pas les dossiers de consultation et ne créons pas de compte.</p>
 <p>Le portail ne publie pas de fichier robots.txt ni de conditions d'utilisation (le lien « Mentions légales » de son pied de page ne mène nulle part, vérifié le 13 octobre 2026). Nous nous appuyons sur l'article 6 de la <a href="https://www.cdai.ma/fr/cadre-juridique-national/" rel="noopener">loi n° 31-13 relative au droit d'accès à l'information</a>, qui autorise la réutilisation des informations publiées par les administrations à des fins légitimes, sans altération, en indiquant la source et la date. Chaque fiche affiche donc l'objet officiel tel quel, la source et la date de publication. Les noms, e-mails et téléphones des agents qui figurent sur les fiches du portail ne sont pas repris.</p>
-<p>Dernière lecture réussie : {e(pm.get('at', 'inconnue'))} (UTC), {nb(pm.get('open', 0))} consultations listées.</p>
+<p>Dernière lecture réussie : {e(self.source_read('PMMP')[0] or 'inconnue')} (heure de Paris){'' if self.source_read('PMMP')[1] else ' ; la dernière tentative a échoué, les avis affichés sont ceux de la lecture précédente'}.</p>
 <h2>Banque mondiale</h2>
-<p>Les avis de passation de marché de la Banque mondiale viennent de son <a href="https://search.worldbank.org/api/v2/procnotices?format=json&amp;rows=1" rel="noopener">API publique</a>, jeu de données « <a href="https://datacatalog.worldbank.org/search/dataset/0037776/procurement-notice" rel="noopener">Procurement Notice</a> », sous licence Creative Commons Attribution 4.0. Nous gardons les avis rédigés en français, de type appel d'offres, appel à manifestation d'intérêt ou avis spécifique, dont la date limite n'est pas passée, pour les pays d'Afrique francophone. Dernière lecture réussie : {e(bm.get('at', 'inconnue'))} (UTC).</p>
+<p>Les avis de passation de marché de la Banque mondiale viennent de son <a href="https://search.worldbank.org/api/v2/procnotices?format=json&amp;rows=1" rel="noopener">API publique</a>, jeu de données « <a href="https://datacatalog.worldbank.org/search/dataset/0037776/procurement-notice" rel="noopener">Procurement Notice</a> », sous licence Creative Commons Attribution 4.0. Nous gardons les avis rédigés en français, de type appel d'offres, appel à manifestation d'intérêt ou avis spécifique, dont la date limite n'est pas passée, pour les pays d'Afrique francophone. Dernière lecture réussie : {e(self.source_read('BM')[0] or 'inconnue')} (heure de Paris){'' if self.source_read('BM')[1] else ' ; la dernière tentative a échoué, les avis affichés sont ceux de la lecture précédente'}. L'état de chaque source est publié dans <a href="{link('statut.json')}">statut.json</a>.</p>
 <h2>Classements ajoutés par nous</h2>
 <p>Le secteur est attribué par mots-clés sur l'objet et les domaines d'activité déclarés, parmi 13 secteurs. Un avis peut en avoir deux, et les objets très courts sont parfois mal classés.</p>
 <p>La région vient du lieu d'exécution saisi par l'acheteur, rapproché de la liste des provinces et préfectures des 12 régions. Les lieux « tout le Royaume » ou mal orthographiés restent sans région.</p>
@@ -812,6 +845,7 @@ class Site:
         self.build_alerts()
         self.build_static_pages()
         self.build_data()
+        self.build_status()
         self.build_feed()
         self.build_sitemap()
         (self.out / ".nojekyll").write_text("", encoding="utf-8")

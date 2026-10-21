@@ -15,6 +15,9 @@ on:
       full:
         description: "Full relist of the Moroccan portal (1) instead of the last 4 days"
         required: false
+      allow_drop:
+        description: "Publish even if the guard sees an abnormal drop in notices (1), after checking it is real"
+        required: false
   push:
     branches: [main]
     paths-ignore: ["data/**", "**.md"]
@@ -53,10 +56,13 @@ jobs:
           # Latest 05:20 / 17:20 UTC slot at or before now; a scheduled run refreshes only if nothing has since.
           slot = max(s for s in (now.replace(hour=h, minute=20, second=0, microsecond=0) + dt.timedelta(days=d)
                                  for d in (-1, 0) for h in (5, 17)) if s <= now)
-          checked = json.load(open("data/meta.json")).get("checked", "")
+          meta = json.load(open("data/meta.json"))
+          checked = meta.get("checked", "")
           last = dt.datetime.fromisoformat(checked) if checked else None
-          run = os.environ["EVENT"] != "schedule" or last is None or last < slot
-          print(f"event {os.environ['EVENT']}, last refresh {checked or 'none'}, slot {slot:%Y-%m-%d %H:%M}Z: run={run}")
+          # A source that failed last time (or a guard that blocked publication) is retried at the next backup slot.
+          failed = [k for k, v in meta.get("sources", {}).items() if not v.get("ok")] + (["guard"] if meta.get("guard") else [])
+          run = os.environ["EVENT"] != "schedule" or last is None or last < slot or bool(failed)
+          print(f"event {os.environ['EVENT']}, last refresh {checked or 'none'}, slot {slot:%Y-%m-%d %H:%M}Z, failed {failed}: run={run}")
           open(os.environ["GITHUB_OUTPUT"], "a").write(f"run={'true' if run else 'false'}\n")
           EOF
       - name: Keep the schedule enabled (GitHub disables it after 60 days without activity)
@@ -80,14 +86,19 @@ jobs:
           pip install -r requirements-dev.txt
           python -m pytest -q
       - name: Fetch sources (Maroc PMMP + Banque mondiale)
+        id: fetch
         if: github.event_name != 'push'
         env:
           AOA_DETAILS: ${{ github.event.inputs.details || '400' }}
           AOA_DETAIL_MINUTES: "40"
           AOA_FULL: ${{ github.event.inputs.full || '0' }}
+          AOA_ALLOW_DROP: ${{ github.event.inputs.allow_drop || '0' }}
+        # Exit 1 only if every source failed or the guard blocked publication (data then left untouched);
+        # a single source down gives a warning and the site keeps its last known notices (see /statut.json).
         run: python -m aoafrique update
       - name: Commit data
-        if: github.event_name != 'push'
+        # Also after a blocked run, so meta.json records the failure (the gate then retries at the next slot).
+        if: always() && github.event_name != 'push' && (steps.fetch.outcome == 'success' || steps.fetch.outcome == 'failure')
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

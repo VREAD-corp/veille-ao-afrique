@@ -169,3 +169,83 @@ def test_legal_pages_noindex_out_of_sitemap(tmp_path):
         assert f"/{p}/</loc>" not in sm
     assert "noindex" not in (tmp_path / "index.html").read_text(encoding="utf-8")
     assert "/licence.html</loc>" in sm
+
+
+def _update(tmp_path, monkeypatch, old, pmmp_rows, wb=None, wb_fail=False):
+    """Run `update` on a temporary data dir with fake sources; pmmp_rows None = portal down."""
+    import argparse
+    from aoafrique import __main__ as cli
+    data = tmp_path / "data"
+    data.mkdir(exist_ok=True)
+    cli.dump(data / "notices.json", old)
+    cli.dump(data / "pmmp_rows.json", [])
+    cli.dump(data / "meta.json", {"checked": "2026-10-20T20:42+00:00", "updated": "2026-10-20T20:42+00:00",
+                                  "sources": {"PMMP": {"ok": True, "at": "2026-10-20T20:42+00:00"}}})
+    monkeypatch.setattr(cli, "DATA", data)
+
+    def fetch_open(http, published_since=None):
+        if pmmp_rows is None:
+            raise OSError("Connection timed out")
+        return pmmp_rows
+
+    def wb_open(http, today):
+        if wb_fail:
+            raise OSError("API down")
+        return wb or []
+    monkeypatch.setattr(cli.pmmp, "fetch_open", fetch_open)
+    monkeypatch.setattr(cli.worldbank, "fetch_open", wb_open)
+    args = argparse.Namespace(delay=0, details=0, detail_minutes=1, full=False)
+    code = cli.cmd_update(args)
+    return code, json.loads((data / "notices.json").read_text()), json.loads((data / "meta.json").read_text())
+
+
+def _bm(i):
+    return {"id": f"bm-{i}", "source": "BM", "object": f"Avis {i}", "deadline": "2099-01-01", "published": "2026-10-01"}
+
+
+def test_update_one_source_down_publishes_with_last_known_data(tmp_path, monkeypatch):
+    rows = pmmp.parse_results((FX / "pmmp_list.html").read_text(encoding="utf-8"))
+    for r in rows:
+        r["deadline"] = "2099-01-01T10:00"
+    old = [model.from_pmmp(r, None) for r in rows] + [_bm(i) for i in range(3)]
+    # Portal down: stored rows are empty here, so the PMMP notices survive through the 30-day "delisted" rule.
+    code, notices, meta = _update(tmp_path, monkeypatch, old, None, wb_fail=False)
+    assert code == 0
+    assert meta["sources"]["PMMP"]["ok"] is False and "timed out" in meta["sources"]["PMMP"]["error"]
+    assert meta["sources"]["PMMP"]["at"] == "2026-10-20T20:42+00:00"  # last success kept
+    assert meta["sources"]["BM"]["ok"] is True and "guard" not in meta
+
+
+def test_update_fails_when_all_sources_fail(tmp_path, monkeypatch):
+    old = [_bm(i) for i in range(5)]
+    code, notices, meta = _update(tmp_path, monkeypatch, old, None, wb_fail=True)
+    assert code == 1 and meta["guard"]["problems"]
+    assert [n["id"] for n in notices] == [n["id"] for n in old]  # data untouched
+
+
+def test_update_guard_blocks_mass_removal(tmp_path, monkeypatch):
+    old = [_bm(i) for i in range(200)]
+    for n in old[20:]:
+        n["deadline"] = "2026-01-01"  # closed long ago: 180 of 200 would be dropped
+    code, notices, meta = _update(tmp_path, monkeypatch, old, [], wb=[])
+    assert code == 1 and any("chute anormale" in p for p in meta["guard"]["problems"])
+    assert len(notices) == 200
+
+
+def test_status_file_and_source_dates(tmp_path):
+    rows = pmmp.parse_results((FX / "pmmp_list.html").read_text(encoding="utf-8"))
+    notices = [model.from_pmmp(r, None) for r in rows]
+    meta = {"updated": "2026-10-20T20:42+00:00", "checked": "2026-10-21T12:34+00:00", "sources": {
+        "PMMP": {"ok": False, "at": "2026-10-20T20:42+00:00", "failed_at": "2026-10-21T12:34+00:00", "error": "timed out"},
+        "BM": {"ok": True, "at": "2026-10-21T12:34+00:00"}}}
+    site = Site(tmp_path, notices, meta, "https://ao-afrique.jalonel.com/")
+    site.now = datetime(2026, 10, 13, 8, 0)
+    site.today = site.now.date()
+    site.open = notices
+    site.build_all()
+    st = json.loads((tmp_path / "statut.json").read_text(encoding="utf-8"))
+    assert st["sources"]["PMMP"]["ok"] is False and st["sources"]["PMMP"]["last_success"] == "2026-10-20T20:42+00:00"
+    assert st["sources"]["BM"]["ok"] is True and st["sources"]["BM"]["error"] is None
+    idx = (tmp_path / "index.html").read_text(encoding="utf-8")
+    assert "portail marocain le 20 octobre 2026 à 22 h 42 (dernière tentative en échec" in idx
+    assert "Banque mondiale le 21 octobre 2026 à 14 h 34" in idx and 'href="/statut.json"' in idx
