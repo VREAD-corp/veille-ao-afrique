@@ -30,11 +30,15 @@
  *                                   `funnel` and listed in `funnel_test` (croSummaryReal_).
  *   cro_init POST {key}             stores that key's SHA-256 once (refused afterwards).
  *
- *   alerts_status GET               last run of the daily e-mail alerts (src/Alerts.js): time, ok, errors; no personal data.
+ *   alerts_status GET               last real run of the daily e-mail alerts (src/Alerts.js): time, ok, sent, errors,
+ *                                   sender; no personal data.
+ *   alerts_plan / alerts_confirm POST {token}  e-mails of the day and their confirmation, for the GitHub Actions
+ *                                   workflow that sends them from alertes@jalonel.com (src/Alerts.js). Nothing is ever
+ *                                   e-mailed from this script.
+ *   unsubscribe also accepts the RFC 8058 one-click POST (form body List-Unsubscribe=One-Click).
  *
- * Scopes: spreadsheets, plus (2026-10-21, e-mail alerts, src/Alerts.js) script.send_mail, script.external_request
- * (the public feed data/alertes.json) and script.scriptapp (the daily trigger). The owner grants them once by running
- * installAlerts from the editor; redeploy the web app only after that, or it would ask anonymous visitors to sign in.
+ * Scope: spreadsheets only. No send_mail and no external_request: the alert e-mails never leave from the owner's
+ * Google account, and the workflow passes the public feed to alerts_plan (2026-10-22).
  * The spreadsheet is created on first use and its id kept in Script Properties.
  */
 
@@ -101,6 +105,8 @@ function doGet(e) { return route_((e && e.parameter) || {}, null); }
 function doPost(e) {
   var body = {};
   var raw = e && e.postData && e.postData.contents;
+  // One-click unsubscribe (RFC 8058): form body, the fields are already in e.parameter.
+  if (raw && /x-www-form-urlencoded/i.test(String(e.postData.type || ''))) raw = '';
   if (raw) {
     try { body = JSON.parse(raw); } catch (err) { return json_({ ok: false, error: 'bad_json' }); }
     if (!body || typeof body !== 'object' || Array.isArray(body)) return json_({ ok: false, error: 'bad_json' });
@@ -131,6 +137,12 @@ function route_(params, body) {
         return json_(reclass_(req));
       case 'ping': return json_({ ok: true, service: SITE_ });
       case 'alerts_status': return json_(alertsStatus_());
+      case 'alerts_plan':
+        if (!body) throw userError_('method_not_allowed', 'POST attendu.');
+        return json_(alertsPlanAction_(req));
+      case 'alerts_confirm':
+        if (!body) throw userError_('method_not_allowed', 'POST attendu.');
+        return json_(alertsConfirmAction_(req));
       default: return json_({ ok: false, error: 'unknown_action' });
     }
   } catch (err) {

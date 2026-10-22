@@ -1,4 +1,4 @@
-"""python -m aoafrique update | build --out _site"""
+"""python -m aoafrique update | build --out _site | indexnow | alerts --mode test|real"""
 
 from __future__ import annotations
 
@@ -242,6 +242,11 @@ def cmd_indexnow(args) -> int:
     return 0
 
 
+def cmd_alerts(args) -> int:
+    from . import alerts
+    return alerts.run(args.mode, dry_run=args.dry_run)
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="aoafrique")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -257,8 +262,11 @@ def main(argv=None) -> int:
     x.add_argument("--since-days", type=int, default=1)
     x.add_argument("--paths", nargs="*", default=None, help="send only these site paths (e.g. pays/benin/)")
     x.add_argument("--base-url", default="https://ao-afrique.jalonel.com/")
+    a = sub.add_parser("alerts", help="send today's e-mail alerts from alertes@jalonel.com (SMTP)")
+    a.add_argument("--mode", choices=["test", "real"], required=True)
+    a.add_argument("--dry-run", action="store_true", help="show who would receive what (masked); send and record nothing")
     args = p.parse_args(argv)
-    return {"update": cmd_update, "build": cmd_build, "indexnow": cmd_indexnow}[args.cmd](args)
+    return {"update": cmd_update, "build": cmd_build, "indexnow": cmd_indexnow, "alerts": cmd_alerts}[args.cmd](args)
 
 
 if __name__ == "__main__":

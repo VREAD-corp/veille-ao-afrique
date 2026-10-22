@@ -1,11 +1,15 @@
 // E-mail alerts of gas/src/Alerts.js with fake Apps Script services: node tests/alerts_check.mjs (exit 0 = ok).
 // Checks: matching on sectors, regions and zone; one e-mail per address with only the notices first seen since the
-// last one; nothing sent when nothing is new; tests, withdrawn and pre-registration rows never mailed; weekly
-// frequency; sender name and reply-to on Jalonel, no Vread anywhere; unsubscribe link; run log without addresses.
+// last one; nothing sent when nothing is new; tests, withdrawn and pre-registration rows never mailed in real mode
+// (and only test rows in test mode); weekly frequency; sender alertes@jalonel.com, reply-to on Jalonel, no Vread
+// anywhere; unsubscribe link (GET and one-click POST); token required; run log without addresses; MailApp never used.
+// The SMTP side (aoafrique/alerts.py) is simulated by send(): alerts_plan, then alerts_confirm.
 import fs from 'node:fs';
 import vm from 'node:vm';
 import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
+
+const TOKEN = 't'.repeat(40);
 
 const code = fs.readFileSync(new URL('../gas/src/Code.js', import.meta.url), 'utf8');
 const cro = fs.readFileSync(new URL('../gas/src/Cro.js', import.meta.url), 'utf8');
@@ -52,8 +56,8 @@ function gas(signups, feed) {
     CacheService: { getScriptCache: () => ({ get: () => null, put() {} }) },
     ContentService: { createTextOutput: (s) => ({ s, setMimeType() { return this; } }), MimeType: { JSON: 'json' } },
     HtmlService: { createHtmlOutput: (h) => ({ h, setTitle() { return this; }, addMetaTag() { return this; }, setXFrameOptionsMode() { return this; } }), XFrameOptionsMode: {} },
-    MailApp: { getRemainingDailyQuota: () => quota, sendEmail: (m) => { quota--; sent.push(m); } },
-    UrlFetchApp: { fetch: (url) => { assert.ok(url.startsWith('https://ao-afrique.jalonel.com/data/alertes.json')); return { getResponseCode: () => 200, getContentText: () => JSON.stringify(feed()) }; } },
+    MailApp: new Proxy({}, { get: () => { throw new Error('MailApp must never be used'); } }),
+    UrlFetchApp: new Proxy({}, { get: () => { throw new Error('UrlFetchApp needs a scope the script does not have'); } }),
     Utilities: {
       formatDate: (d) => new Date(d.getTime() + 2 * 3600e3).toISOString().slice(0, 10),
       computeHmacSha256Signature: (t, k) => [...crypto.createHmac('sha256', k).update(t).digest()].map((b) => (b > 127 ? b - 256 : b)),
@@ -61,10 +65,25 @@ function gas(signups, feed) {
       DigestAlgorithm: { SHA_256: 'sha256' }, Charset: { UTF_8: 'utf8' }, getUuid: () => crypto.randomUUID(),
     },
   };
-  vm.runInNewContext(code + '\n' + cro + '\n' + alerts + "\n;var LINK_KEY_ = 'test-link-key';\nnow_ = function () { return new Date(globalThis.__now()); };\nglobalThis.R = { route_, sendAlerts, previewAlerts, hmac_ };", Object.assign(ctx, { globalThis: ctx }));
+  vm.runInNewContext(code + '\n' + cro + '\n' + alerts + "\n;var LINK_KEY_ = 'test-link-key'; var ALERTS_TOKEN_ = '" + TOKEN + "';\nnow_ = function () { return new Date(globalThis.__now()); };\nglobalThis.R = { route_, doPost, hmac_ };", Object.assign(ctx, { globalThis: ctx }));
   ctx.__now = () => now;
   const table = (name) => { const s = tabs.get(name); if (!s) return []; const [h, ...r] = s.rows; return r.map((row) => Object.fromEntries(h.map((k, i) => [k, row[i]]))); };
-  return { R: ctx.R, sent, table, tick: (ms) => { now += ms; }, setNow: (iso) => { now = Date.parse(iso); } };
+  const post = (body) => JSON.parse(ctx.R.route_({}, body).s);
+  // What aoafrique/alerts.py does: plan, "send" each e-mail, confirm.
+  const send = (mode = 'real', fail = []) => {
+    const plan = post({ action: 'alerts_plan', token: TOKEN, mode, feed: feed() });
+    if (!plan.ok) return plan;
+    const ok = [], ko = [];
+    for (const m of plan.mails) {
+      if (fail.includes(m.email)) { ko.push({ email: m.email, error: '550 refused' }); continue; }
+      sent.push({ ...m, from: plan.from, name: plan.sender, replyTo: plan.reply_to });
+      ok.push({ email: m.email, last_first_seen: m.last_first_seen });
+    }
+    const c = post({ action: 'alerts_confirm', token: TOKEN, mode, sent: ok, failed: ko,
+      run: { feed_updated: plan.feed_updated, feed_count: plan.feed_count, subscribers: plan.subscribers, nothing_new: plan.nothing_new, weekly_wait: plan.weekly_wait, detail: plan.detail } });
+    return { ...plan, sent: c.sent, errors: c.errors };
+  };
+  return { R: ctx.R, sent, table, post, send, props, tick: (ms) => { now += ms; }, setNow: (iso) => { now = Date.parse(iso); } };
 }
 
 const n = (i, f, over = {}) => ({ i: `ma-x-${i}-avis`, o: `Avis ${i}`, b: 'Commune', s: ['btp'], r: ['casablanca-settat'], k: 'Maroc', x: 'PMMP', d: '2026-11-20T10:00', f, p: ['Casablanca'], ...over });
@@ -98,65 +117,111 @@ const g = gas([
   assert.match(ctx.M.criteriaText_(sub(['benin']), {}), /Bénin/);
 }
 
-// Dry run: nothing sent, nothing written.
-const pv = g.R.previewAlerts();
+// The plan alone is a dry run: nothing sent, nothing written.
+const pv = g.post({ action: 'alerts_plan', token: TOKEN, mode: 'real', feed: feed() });
 assert.equal(g.sent.length, 0);
-assert.equal(pv.preview.length, 2);
+assert.equal(pv.mails.length, 2);
 assert.equal(g.table('Alertes_envois').length, 0);
+assert.equal(g.table('Alertes_etat').length, 0);
 
-// 1st run: a gets notices 2 and 3 (first seen from the day of the sign-up, BTP, Casablanca-Settat), b gets the BM one.
-let s = g.R.sendAlerts();
+// Token required; plan and confirm only by POST.
+assert.equal(g.post({ action: 'alerts_plan', token: 'nope', mode: 'real' }).error, 'forbidden');
+assert.equal(g.post({ action: 'alerts_confirm', mode: 'real', sent: [] }).error, 'forbidden');
+assert.equal(JSON.parse(g.R.route_({ action: 'alerts_plan', token: TOKEN, mode: 'real' }, null).s).error, 'method_not_allowed');
+assert.equal(g.post({ action: 'alerts_plan', token: TOKEN, mode: 'x' }).error, 'bad_request');
+
+// Test mode: only the test row, its state written, no ALERTS_LAST_RUN.
+let s = g.send('test');
+assert.equal(s.subscribers, 1);
+assert.deepEqual(g.sent.map((m) => m.email), ['test@entreprise.ma']);
+assert.equal(JSON.parse(g.R.route_({ action: 'alerts_status' }, null).s).alerts, null, 'a test run is not the daily run');
+assert.match(g.table('Alertes_envois')[0].detail, /^mode test, smtp alertes@jalonel\.com/);
+g.sent.length = 0;
+
+// Test mode narrowed to one address: nobody else.
+assert.equal(g.post({ action: 'alerts_plan', token: TOKEN, mode: 'test', only: 'other@entreprise.ma', feed: feed() }).mails.length, 0);
+assert.equal(g.post({ action: 'alerts_plan', token: TOKEN, mode: 'real', only: 'a@entreprise.ma', feed: feed() }).subscribers, 3, '`only` ignored in real mode');
+
+// A confirmation for an address that is not an active sign-up of that mode is refused.
+const bad = g.post({ action: 'alerts_confirm', token: TOKEN, mode: 'real', sent: [{ email: 'test@entreprise.ma', last_first_seen: '2026-10-21' }, { email: 'x@y.ma', last_first_seen: '2026-10-21' }], run: {} });
+assert.equal(bad.sent, 0);
+assert.equal(bad.errors, 2);
+assert.equal(g.table('Alertes_etat').filter((r) => r.email === 'x@y.ma').length, 0);
+
+// 1st real run: a gets notices 2 and 3 (first seen from the day of the sign-up, BTP, Casablanca-Settat), b gets the BM one.
+s = g.send();
 assert.equal(s.sent, 2);
 assert.equal(s.subscribers, 3, 'test, withdrawn and pre-registration rows left out');
 assert.equal(s.nothing_new, 1);
-const a = g.sent.find((m) => m.to === 'a@entreprise.ma');
+const a = g.sent.find((m) => m.email === 'a@entreprise.ma');
+a.body = a.text; a.htmlBody = a.html;
 assert.ok(a.body.includes('Avis 2') && a.body.includes('Avis 3'));
+assert.equal(a.unsubscribe, 'https://script.google.com/macros/s/AKfycbyUsVoWWzL7xA18-O-GkEto4ivugNO-8v4W0l1pugf1HmLHUSKG7uOhEcx3FT2RgfKpWA/exec?action=unsubscribe&email=a%40entreprise.ma&t=' + g.R.hmac_('a@entreprise.ma'));
 assert.ok(!a.body.includes('Avis 1') && !a.body.includes('Avis 4') && !a.body.includes('Avis 5') && !a.body.includes('Avis 6'));
 assert.match(a.subject, /^2 nouveaux appels d’offres pour vos critères/);
 assert.equal(a.name, 'Veille AO Afrique (Jalonel)');
+assert.equal(a.from, 'alertes@jalonel.com');
 assert.equal(a.replyTo, 'contact@jalonel.com');
 assert.ok(a.body.includes('depuis votre inscription') && a.body.includes('BTP et génie civil'));
 assert.ok(a.body.includes('?action=unsubscribe&email=a%40entreprise.ma&t=' + g.R.hmac_('a@entreprise.ma')));
 assert.ok(a.htmlBody.includes('https://ao-afrique.jalonel.com/ao/ma-x-3-avis/?utm_source=alerte'));
-for (const m of g.sent) assert.ok(!/vread/i.test(m.body + m.htmlBody + m.name + m.subject), 'no Vread mention');
-const b = g.sent.find((m) => m.to === 'b@entreprise.sn');
-assert.ok(b.body.includes('Avis 6') && b.body.includes('Sénégal') && !b.body.includes('Avis 3'));
+for (const m of g.sent) assert.ok(!/vread|gmail/i.test(m.text + m.html + m.name + m.subject + m.from + m.replyTo), 'no Vread or Gmail mention');
+const b = g.sent.find((m) => m.email === 'b@entreprise.sn');
+assert.ok(b.text.includes('Avis 6') && b.text.includes('Sénégal') && !b.text.includes('Avis 3'));
 const runs = g.table('Alertes_envois');
-assert.equal(runs.length, 1);
-assert.ok(!JSON.stringify(runs).includes('@entreprise'), 'run log carries no address');
+assert.equal(runs.length, 3);
+assert.ok(!/[a-z0-9]@entreprise/.test(JSON.stringify(runs)), 'run log carries no address (masked only)');
 assert.deepEqual(JSON.parse(g.R.route_({ action: 'alerts_status' }, null).s).alerts.ok, true);
 
 // Same day again: nothing new for anyone.
-s = g.R.sendAlerts();
+s = g.send();
 assert.equal(s.sent, 0);
 
 // Next day: a new BTP notice in Casablanca reaches a only; b (weekly) waits.
 g.setNow('2026-10-22T07:15:00Z');
 notices = notices.concat([n(7, '2026-10-22'), n(8, '2026-10-22', { x: 'BM', k: 'Bénin', r: [] })]);
-s = g.R.sendAlerts();
+s = g.send();
 assert.equal(s.sent, 1);
 assert.equal(s.weekly_wait, 1);
 const a2 = g.sent.at(-1);
-assert.equal(a2.to, 'a@entreprise.ma');
-assert.ok(a2.body.includes('Avis 7') && !a2.body.includes('Avis 3') && a2.body.includes('depuis notre dernier envoi'));
+assert.equal(a2.email, 'a@entreprise.ma');
+assert.ok(a2.text.includes('Avis 7') && !a2.text.includes('Avis 3') && a2.text.includes('depuis notre dernier envoi'));
 assert.match(a2.subject, /^1 nouvel appel d’offres/);
 
 // A week later b gets the Bénin notice.
 g.setNow('2026-10-28T07:15:00Z');
-s = g.R.sendAlerts();
-assert.ok(g.sent.at(-1).to === 'b@entreprise.sn' && g.sent.at(-1).body.includes('Avis 8') && !g.sent.at(-1).body.includes('Avis 6'));
+s = g.send();
+assert.ok(g.sent.at(-1).email === 'b@entreprise.sn' && g.sent.at(-1).text.includes('Avis 8') && !g.sent.at(-1).text.includes('Avis 6'));
 
-// Unsubscribe link withdraws the address: no more e-mail.
-const page = g.R.route_({ action: 'unsubscribe', email: 'a@entreprise.ma', t: g.R.hmac_('a@entreprise.ma') }, null);
+// One-click unsubscribe (RFC 8058 POST, form body) withdraws the address: no more e-mail.
+const page = g.R.doPost({ parameter: { action: 'unsubscribe', email: 'a@entreprise.ma', t: g.R.hmac_('a@entreprise.ma'), 'List-Unsubscribe': 'One-Click' },
+  postData: { type: 'application/x-www-form-urlencoded', contents: 'List-Unsubscribe=One-Click' } });
 assert.match(page.h, /ne recevrez plus rien/);
+assert.match(g.R.route_({ action: 'unsubscribe', email: 'a@entreprise.ma', t: 'bad' }, null).h, /Lien invalide/);
 notices = notices.concat([n(9, '2026-10-29')]);
 g.setNow('2026-10-29T07:15:00Z');
 const before = g.sent.length;
-s = g.R.sendAlerts();
+s = g.send();
 assert.equal(g.sent.length, before, 'withdrawn address not mailed');
 
-// Feed down: the run throws (Google notifies the owner) and logs the error.
-const g2 = gas([], () => { throw new Error('down'); });
-assert.throws(() => g2.R.sendAlerts(), /alertes : 1 erreur/);
-assert.equal(g2.table('Alertes_envois')[0].errors, 1);
+// An SMTP failure is logged (masked address) and makes the public status not ok; the address stays due.
+notices = notices.concat([n(10, '2026-10-29', { x: 'BM', k: 'Togo', r: [] })]);
+g.setNow('2026-11-05T07:15:00Z');
+s = g.send('real', ['b@entreprise.sn']);
+assert.equal(s.errors, 1);
+assert.match(g.table('Alertes_envois').at(-1).detail, /b…@entreprise\.sn: 550 refused/);
+assert.equal(JSON.parse(g.R.route_({ action: 'alerts_status' }, null).s).alerts.ok, false);
+assert.equal(g.send().sent, 1, 'retried next run');
+const st = JSON.parse(g.R.route_({ action: 'alerts_status' }, null).s);
+assert.equal(st.sender, 'alertes@jalonel.com');
+assert.ok(!JSON.stringify(st).includes('@entreprise'));
+
+// No feed or a malformed one: alerts_plan fails; malformed notices are dropped.
+assert.equal(g.post({ action: 'alerts_plan', token: TOKEN, mode: 'real' }).error, 'feed_unavailable');
+assert.equal(g.post({ action: 'alerts_plan', token: TOKEN, mode: 'real', feed: { notices: 'x' } }).error, 'feed_unavailable');
+g.setNow('2026-11-06T07:15:00Z');
+const odd = g.post({ action: 'alerts_plan', token: TOKEN, mode: 'real', feed: { updated: '', notices: [{ i: '<script>', f: '2026-11-06' }, { ...n(11, '2026-11-06'), o: 42 }] } });
+assert.equal(odd.ok, true);
+assert.equal(odd.feed_count, 1);
+assert.ok(!/MailApp|send_mail/.test(alerts.replace(/no MailApp, no\s+\* send_mail/, '')), 'Alerts.js never sends');
 console.log('alerts: ok');

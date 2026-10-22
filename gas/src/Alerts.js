@@ -1,147 +1,158 @@
 /**
- * Veille AO Afrique — e-mail alerts for the free sign-ups (2026-10-21).
+ * Veille AO Afrique — e-mail alerts for the free sign-ups (2026-10-21; sender moved to alertes@jalonel.com 2026-10-22).
  *
- *   sendAlerts      daily time trigger (~9 h Europe/Paris, after the 05:20 UTC data refresh): reads the public
- *                   feed data/alertes.json (open notices first seen in the last 8 days, built by aoafrique/site.py),
- *                   and e-mails each active sign-up (kind `alertes`, not a test, not withdrawn) the notices first
- *                   seen since its last e-mail that match its sectors, regions and zone. Nothing is sent when there
- *                   is nothing new; `hebdomadaire` sign-ups get at most one e-mail every 7 days. One row per run in
- *                   `Alertes_envois` (counts, quota, errors, no address), one row per address in `Alertes_etat`.
- *                   An error makes the run throw at the end, so Google e-mails the script owner (trigger failure
- *                   notification), and `alerts_status` (public, no personal data) shows the last run.
- *   installAlerts   run ONCE from the Apps Script editor by the owner: grants the scopes (send_mail,
- *                   external_request, scriptapp) and installs the daily trigger. Re-running replaces the trigger.
- *   previewAlerts   dry run from the editor: what each address would receive today, nothing sent or written.
+ * This file decides who receives what; it never sends anything. The e-mails leave from the Jalonel mailbox
+ * alertes@jalonel.com (OVHcloud MX Plan, SMTP) through the GitHub Actions workflow .github/workflows/alerts.yml
+ * (aoafrique/alerts.py), so no alert is ever sent from the script owner's Google account (no MailApp, no
+ * send_mail scope, no time trigger).
  *
- * Sender: the script owner's Google account, display name « Veille AO Afrique (Jalonel) », reply-to
- * contact@jalonel.com. Every e-mail carries the one-click unsubscribe link of Code.js (unsubscribe_, HMAC LINK_KEY_).
+ *   alerts_plan     POST {token, mode: 'real'|'test', feed}: from the public feed data/alertes.json (open notices first
+ *                   seen in the last 8 days), fetched and passed in by the workflow (this script needs no
+ *                   external_request scope, only spreadsheets), returns for each active sign-up (kind `alertes`, not withdrawn;
+ *                   mode real: not `test`; mode test: only `test` rows), the e-mail to send today (subject, text,
+ *                   HTML, one-click unsubscribe URL; test mode may add `only`: one test address) with the notices first seen since its last e-mail that match its
+ *                   sectors, regions and zone. Nothing when nothing is new; `hebdomadaire` at most every 7 days.
+ *   alerts_confirm  POST {token, mode, run, sent: [{email, last_first_seen}], failed: [{email, error}]}: after the
+ *                   SMTP run, one row per address in `Alertes_etat` (only active sign-ups of that mode), one row per
+ *                   run in `Alertes_envois` (counts, errors, no address); a real run also sets ALERTS_LAST_RUN,
+ *                   shown by the public `alerts_status` (no personal data) for the daily monitor.
+ *   alerts_plan writes nothing: `python -m aoafrique alerts --mode real --dry-run` is the dry run.
+ *
+ * Token: ALERTS_TOKEN_ (git-ignored Secret.js, also the GitHub secret AOAF_ALERTS_TOKEN). Sender name
+ * « Veille AO Afrique (Jalonel) », reply-to contact@jalonel.com, one-click unsubscribe (unsubscribe_, HMAC LINK_KEY_,
+ * also as List-Unsubscribe / List-Unsubscribe-Post headers).
  */
 
-var ALERT_FEED_URL_ = 'https://ao-afrique.jalonel.com/data/alertes.json';
 var ALERT_SITE_ = 'https://ao-afrique.jalonel.com/';
 var ALERT_WEBAPP_URL_ = 'https://script.google.com/macros/s/AKfycbyUsVoWWzL7xA18-O-GkEto4ivugNO-8v4W0l1pugf1HmLHUSKG7uOhEcx3FT2RgfKpWA/exec';
+var ALERT_FROM_ = 'alertes@jalonel.com';
 var ALERT_SENDER_ = 'Veille AO Afrique (Jalonel)';
 var ALERT_REPLY_TO_ = 'contact@jalonel.com';
-var ALERT_HOUR_ = 9;            // Europe/Paris
+var ALERT_VIA_ = 'smtp ' + ALERT_FROM_ + ' (OVHcloud) via GitHub Actions';
 var ALERT_MAX_ITEMS_ = 25;      // notices listed in one e-mail; the rest through a link to the filtered list
-var ALERT_QUOTA_RESERVE_ = 3;   // MailApp daily quota kept back
+var ALERT_MAX_MAILS_ = 150;     // e-mails per run (the OVHcloud mailbox allows about 200 an hour); the rest wait a day
 var ALERT_WEEKLY_DAYS_ = 6.5;
 var ALERT_STATE_HEADER_ = ['email', 'last_sent_at', 'last_first_seen', 'mails', 'updated_at'];
 var ALERT_RUNS_HEADER_ = ['at', 'feed_updated', 'feed_count', 'subscribers', 'sent', 'nothing_new', 'weekly_wait', 'deferred', 'errors', 'quota_left', 'duration_ms', 'detail'];
 var ALERT_MONTHS_ = ['janvier', 'février', 'mars', 'avril', 'mai', 'juin', 'juillet', 'août', 'septembre', 'octobre', 'novembre', 'décembre'];
 
-/* ------------------------------------------------------------------ owner actions (Apps Script editor) */
+/* ------------------------------------------------------------------ web-app actions (token) */
 
-function installAlerts() {
-  ScriptApp.getProjectTriggers().forEach(function (t) {
-    if (t.getHandlerFunction() === 'sendAlerts') ScriptApp.deleteTrigger(t);
-  });
-  ScriptApp.newTrigger('sendAlerts').timeBased().atHour(ALERT_HOUR_).nearMinute(15).everyDays(1).inTimezone('Europe/Paris').create();
-  var msg = 'Déclencheur sendAlerts installé (chaque jour vers ' + ALERT_HOUR_ + ' h 15, Paris). Quota e-mail restant : ' + MailApp.getRemainingDailyQuota();
-  console.log(msg);
-  return msg;
+function alertsAuth_(req) {
+  var token = typeof ALERTS_TOKEN_ === 'string' && ALERTS_TOKEN_.length >= 32 ? ALERTS_TOKEN_ : '';
+  if (!token || String(req.token || '') !== token) throw userError_('forbidden', 'Accès refusé.');
 }
 
-function previewAlerts() {
-  var out = runAlerts_({ dryRun: true });
-  console.log(JSON.stringify(out, null, 1));
+function alertsPlanAction_(req) {
+  alertsAuth_(req);
+  if (req.mode !== 'real' && req.mode !== 'test') throw userError_('bad_request', 'mode');
+  // Test mode may be narrowed to one test address (`only`), so an end-to-end check mails nobody else.
+  var only = req.mode === 'test' && req.only ? String(req.only).trim().toLowerCase() : '';
+  var plan = alertPlan_(req.mode === 'test', only, alertFeed_(req.feed));
+  return { ok: true, mode: req.mode, from: ALERT_FROM_, sender: ALERT_SENDER_, reply_to: ALERT_REPLY_TO_, max_mails: ALERT_MAX_MAILS_,
+    feed_updated: plan.feed_updated, feed_count: plan.feed_count, subscribers: plan.subscribers, nothing_new: plan.nothing_new,
+    weekly_wait: plan.weekly_wait, detail: plan.detail, mails: plan.mails };
+}
+
+/** What each active sign-up of the mode should receive today. */
+function alertPlan_(testMode, only, feed) {
+  var now = now_();
+  var out = { feed_updated: feed.updated || '', feed_count: feed.notices.length, subscribers: 0, nothing_new: 0, weekly_wait: 0, detail: [], mails: [] };
+  if (feed.updated && now.getTime() - new Date(feed.updated).getTime() > 36 * 3600e3) out.detail.push('feed stale (' + feed.updated + ')');
+  var subs = alertSubscribers_(testMode).filter(function (x) { return !only || x.email === only; });
+  out.subscribers = subs.length;
+  var state = alertState_(tab_('Alertes_etat', ALERT_STATE_HEADER_));
+  subs.forEach(function (sub) {
+    var st = state[sub.email] || null;
+    if (sub.frequency === 'hebdomadaire' && st && st.last_sent_at && now.getTime() - new Date(st.last_sent_at).getTime() < ALERT_WEEKLY_DAYS_ * 86400e3) {
+      out.weekly_wait++;
+      return;
+    }
+    // New sign-ups: notices first seen from the day of the sign-up on.
+    var since = (st && st.last_first_seen) || dayBefore_(sub.since);
+    var items = feed.notices.filter(function (n) { return n.f > since && alertMatches_(sub, n); });
+    if (!items.length) { out.nothing_new++; return; }
+    var mail = alertMail_(sub, items, feed.sectors, !st);
+    out.mails.push({ email: sub.email, notices: items.length, subject: mail.subject, text: mail.body, html: mail.html, unsubscribe: mail.unsubscribe,
+      last_first_seen: items.reduce(function (a, n) { return n.f > a ? n.f : a; }, since) });
+  });
   return out;
 }
 
-function sendAlerts() {
-  var s = runAlerts_({ dryRun: false });
-  if (s.errors) throw new Error('Veille AO Afrique, alertes : ' + s.errors + ' erreur(s) : ' + s.detail.join(' ; ').slice(0, 500));
-  return s;
-}
-
-/* ------------------------------------------------------------------ run */
-
-function runAlerts_(opt) {
-  var t0 = Date.now();
+/** After the SMTP run: per-address state, run log, last-run status (real mode). Only active sign-ups are written. */
+function alertsConfirmAction_(req) {
+  alertsAuth_(req);
+  if (req.mode !== 'real' && req.mode !== 'test') throw userError_('bad_request', 'mode');
+  var run = req.run && typeof req.run === 'object' ? req.run : {};
+  var sent = Array.isArray(req.sent) ? req.sent : [];
+  var failed = Array.isArray(req.failed) ? req.failed : [];
   var now = now_();
-  var s = { at: now.toISOString(), feed_updated: '', feed_count: 0, subscribers: 0, sent: 0, nothing_new: 0, weekly_wait: 0, deferred: 0, errors: 0, quota_left: 0, duration_ms: 0, detail: [], preview: [] };
+  var num = function (v) { var n = Number(v); return isFinite(n) && n >= 0 ? Math.floor(n) : 0; };
   var lock = LockService.getScriptLock();
-  if (!lock.tryLock(30000)) { s.errors++; s.detail.push('lock busy'); return s; }
+  if (!lock.tryLock(30000)) throw userError_('busy', 'Service occupé, réessayez.');
+  var s = { at: now.toISOString(), feed_updated: String(run.feed_updated || '').slice(0, 40), feed_count: num(run.feed_count), subscribers: num(run.subscribers),
+    sent: 0, nothing_new: num(run.nothing_new), weekly_wait: num(run.weekly_wait), deferred: num(run.deferred), errors: 0,
+    quota_left: num(run.quota_left), duration_ms: num(run.duration_ms), detail: [] };
   try {
-    var feed;
-    try {
-      feed = fetchAlertFeed_();
-    } catch (err) {
-      s.errors++;
-      s.detail.push('feed: ' + String(err && err.message).slice(0, 200));
-      return s;
-    }
-    s.feed_updated = feed.updated || '';
-    s.feed_count = feed.notices.length;
-    if (feed.updated && now.getTime() - new Date(feed.updated).getTime() > 36 * 3600e3) s.detail.push('feed stale (' + feed.updated + ')');
-    var subs = alertSubscribers_();
-    s.subscribers = subs.length;
+    var active = {};
+    alertSubscribers_(req.mode === 'test').forEach(function (x) { active[x.email] = true; });
     var stateSheet = tab_('Alertes_etat', ALERT_STATE_HEADER_);
     var state = alertState_(stateSheet);
-    var quota = MailApp.getRemainingDailyQuota();
-    subs.forEach(function (sub) {
-      try {
-        var st = state[sub.email] || null;
-        if (sub.frequency === 'hebdomadaire' && st && st.last_sent_at && now.getTime() - new Date(st.last_sent_at).getTime() < ALERT_WEEKLY_DAYS_ * 86400e3) {
-          s.weekly_wait++;
-          return;
-        }
-        // New sign-ups: notices first seen from the day of the sign-up on.
-        var since = (st && st.last_first_seen) || dayBefore_(sub.since);
-        var items = feed.notices.filter(function (n) { return n.f > since && alertMatches_(sub, n); });
-        if (!items.length) { s.nothing_new++; return; }
-        if (opt.dryRun) { s.preview.push({ to: maskEmail_(sub.email), notices: items.length, first: items[0].o.slice(0, 80) }); return; }
-        if (quota - ALERT_QUOTA_RESERVE_ <= 0) { s.deferred++; return; }
-        var mail = alertMail_(sub, items, feed.sectors, !st);
-        MailApp.sendEmail({ to: sub.email, subject: mail.subject, body: mail.body, htmlBody: mail.html, name: ALERT_SENDER_, replyTo: ALERT_REPLY_TO_ });
-        quota--;
-        s.sent++;
-        var last = items.reduce(function (a, n) { return n.f > a ? n.f : a; }, since);
-        saveAlertState_(stateSheet, state, sub.email, { last_sent_at: now.toISOString(), last_first_seen: last, mails: ((st && Number(st.mails)) || 0) + 1, updated_at: now.toISOString() });
-      } catch (err) {
-        s.errors++;
-        s.detail.push(maskEmail_(sub.email) + ': ' + String(err && err.message).slice(0, 200));
-      }
+    sent.forEach(function (m) {
+      var email = String((m && m.email) || '').trim().toLowerCase();
+      var lfs = String((m && m.last_first_seen) || '');
+      if (!active[email] || !/^\d{4}-\d{2}-\d{2}/.test(lfs)) { s.errors++; s.detail.push('confirm refused for ' + maskEmail_(email)); return; }
+      var st = state[email] || null;
+      saveAlertState_(stateSheet, state, email, { last_sent_at: now.toISOString(), last_first_seen: lfs.slice(0, 25), mails: ((st && Number(st.mails)) || 0) + 1, updated_at: now.toISOString() });
+      s.sent++;
     });
-  } finally {
-    s.quota_left = MailApp.getRemainingDailyQuota();
-    s.duration_ms = Date.now() - t0;
-    if (!opt.dryRun) {
-      try {
-        tab_('Alertes_envois', ALERT_RUNS_HEADER_).appendRow(ALERT_RUNS_HEADER_.map(function (h) {
-          return h === 'detail' ? s.detail.join(' ; ').slice(0, 1000) : (h === 'at' || h === 'feed_updated' ? txt_(s[h]) : s[h]);
-        }));
-        PropertiesService.getScriptProperties().setProperty('ALERTS_LAST_RUN', JSON.stringify({
-          at: s.at, ok: s.errors === 0, sent: s.sent, errors: s.errors, feed_updated: s.feed_updated, deferred: s.deferred }));
-      } catch (e) {
-        console.error('Alertes_envois log failed: ' + e);
-      }
+    failed.forEach(function (m) {
+      s.errors++;
+      s.detail.push(maskEmail_(String((m && m.email) || '')) + ': ' + String((m && m.error) || '').replace(/[\u0000-\u001f]+/g, ' ').slice(0, 200));
+    });
+    if (Array.isArray(run.detail)) run.detail.forEach(function (d) { s.detail.push(String(d).replace(/[\u0000-\u001f]+/g, ' ').slice(0, 200)); });
+    s.detail.unshift('mode ' + req.mode + ', ' + ALERT_VIA_);
+    tab_('Alertes_envois', ALERT_RUNS_HEADER_).appendRow(ALERT_RUNS_HEADER_.map(function (h) {
+      return h === 'detail' ? s.detail.join(' ; ').slice(0, 1000) : (h === 'at' || h === 'feed_updated' ? txt_(s[h]) : s[h]);
+    }));
+    if (req.mode === 'real') {
+      PropertiesService.getScriptProperties().setProperty('ALERTS_LAST_RUN', JSON.stringify({
+        at: s.at, ok: s.errors === 0, sent: s.sent, errors: s.errors, feed_updated: s.feed_updated, deferred: s.deferred }));
     }
-    console.log('sendAlerts ' + JSON.stringify({ sent: s.sent, nothing_new: s.nothing_new, errors: s.errors, detail: s.detail }));
+  } finally {
     lock.releaseLock();
   }
-  return s;
+  return { ok: true, mode: req.mode, sent: s.sent, errors: s.errors };
 }
 
-/** Public, no personal data: when the last alert run happened and whether it went well (for the daily monitor). */
+/** Public, no personal data: when the last real alert run happened, whether it went well, and how alerts leave. */
 function alertsStatus_() {
   var raw = PropertiesService.getScriptProperties().getProperty('ALERTS_LAST_RUN');
   var last = raw ? JSON.parse(raw) : null;
-  return { ok: true, service: SITE_, alerts: last ? { at: last.at, ok: last.ok, errors: last.errors, feed_updated: last.feed_updated } : null };
+  return { ok: true, service: SITE_, sender: ALERT_FROM_, via: 'github-actions-smtp',
+    alerts: last ? { at: last.at, ok: last.ok, sent: last.sent, errors: last.errors, feed_updated: last.feed_updated } : null };
 }
 
 /* ------------------------------------------------------------------ pieces */
 
-function fetchAlertFeed_() {
-  var res = UrlFetchApp.fetch(ALERT_FEED_URL_ + '?t=' + Date.now(), { muteHttpExceptions: true, followRedirects: true });
-  if (res.getResponseCode() !== 200) throw new Error('HTTP ' + res.getResponseCode());
-  var feed = JSON.parse(res.getContentText('UTF-8'));
-  if (!feed || !Array.isArray(feed.notices)) throw new Error('feed without notices');
-  return feed;
+/** The feed data/alertes.json as sent by the workflow, checked; only the fields the e-mails use are kept. */
+function alertFeed_(feed) {
+  if (!feed || typeof feed !== 'object' || !Array.isArray(feed.notices)) throw userError_('feed_unavailable', 'feed without notices');
+  var str = function (v, max) { return typeof v === 'string' ? v.slice(0, max) : ''; };
+  var arr = function (v) { return Array.isArray(v) ? v.filter(function (x) { return typeof x === 'string'; }).map(function (x) { return x.slice(0, 80); }).slice(0, 30) : []; };
+  var notices = [];
+  feed.notices.slice(0, 20000).forEach(function (n) {
+    if (!n || !/^[a-z0-9-]{3,200}$/.test(String(n.i)) || !/^\d{4}-\d{2}-\d{2}/.test(String(n.f))) return;
+    notices.push({ i: n.i, o: str(n.o, 500), b: str(n.b, 200), s: arr(n.s), r: arr(n.r), k: str(n.k, 60), x: str(n.x, 10), d: str(n.d, 25), f: str(n.f, 25), p: arr(n.p) });
+  });
+  var sectors = {};
+  if (feed.sectors && typeof feed.sectors === 'object') Object.keys(feed.sectors).slice(0, 100).forEach(function (k) { sectors[k] = str(feed.sectors[k], 80); });
+  return { updated: str(feed.updated, 40), sectors: sectors, notices: notices };
 }
 
-/** Active alert sign-ups, one per address: criteria of the latest row, `since` = day of the first row. */
-function alertSubscribers_() {
+/** Active alert sign-ups, one per address: criteria of the latest row, `since` = day of the first row. testMode: only the
+ * `test` rows (end-to-end checks); otherwise only the real ones. A withdrawal on any row stops the address. */
+function alertSubscribers_(testMode) {
   var sh = tab_('Inscriptions', SIGNUP_HEADER_);
   var last = sh.getLastRow();
   if (last < 2) return [];
@@ -152,7 +163,7 @@ function alertSubscribers_() {
     var email = cellText_(r[1]).toLowerCase();
     if (!email) return;
     if (r[15]) { withdrawn[email] = true; return; }
-    if (r[2] !== 'alertes' || r[14] === 'oui') return;
+    if (r[2] !== 'alertes' || (r[14] === 'oui') !== !!testMode) return;
     var at = cellText_(r[0]);
     var split = function (v) { return cellText_(v).split(',').map(function (x) { return x.trim(); }).filter(String); };
     var cur = by[email];
@@ -275,5 +286,5 @@ function alertMail_(sub, items, labels, first) {
   text = text.concat(foot);
   html.push('<hr style="border:0;border-top:1px solid #ddd"><p style="color:#555;font-size:85%">' + escHtml_(foot[0]) + '<br>' + escHtml_(foot[1]) +
     '<br><a href="' + escHtml_(unsub) + '">Se désinscrire en un clic</a><br>' + escHtml_(foot[3]) + '</p>');
-  return { subject: subject, body: text.join('\n'), html: html.join('') };
+  return { subject: subject, body: text.join('\n'), html: html.join(''), unsubscribe: unsub };
 }

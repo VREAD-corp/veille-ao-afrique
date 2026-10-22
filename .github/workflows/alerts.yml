@@ -1,0 +1,51 @@
+name: Alertes e-mail
+
+# Daily e-mail alerts of the free sign-ups, sent from alertes@jalonel.com (OVHcloud mailbox, SMTP over SSL).
+# The Apps Script backend decides who receives what (alerts_plan) and records what was sent (alerts_confirm);
+# nothing is ever sent from a Google account. Secrets: AOAF_ALERTS_TOKEN, AOAF_SMTP_PASSWORD.
+# Scheduled runs send for real only while the repository variable ALERTS_LIVE is 1; at most one real run a day.
+on:
+  schedule:
+    # 07:15 UTC (9 h 15 Paris in summer, 8 h 15 in winter), after the 05:20 data refresh; 08:50 is a backup that
+    # does nothing if the 07:15 run already happened (GitHub delays or drops scheduled runs).
+    - cron: "15 7 * * *"
+    - cron: "50 8 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "test (the `test` sign-up of secret AOAF_TEST_TO only) or real"
+        required: true
+        default: test
+        type: choice
+        options: [test, real]
+      force:
+        description: "Real mode: send even if a real run already happened today (1)"
+        required: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: alerts
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    if: github.event_name != 'schedule' || vars.ALERTS_LIVE == '1'
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: aoafrique
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Send
+        env:
+          AOAF_ALERTS_TOKEN: ${{ secrets.AOAF_ALERTS_TOKEN }}
+          AOAF_SMTP_PASSWORD: ${{ secrets.AOAF_SMTP_PASSWORD }}
+          # Test mode goes to this one test sign-up only (a secret: the logs of this public repository stay clean).
+          AOAF_ONLY: ${{ secrets.AOAF_TEST_TO }}
+          AOAF_FORCE: ${{ github.event.inputs.force }}
+        run: python -m aoafrique alerts --mode "${{ github.event.inputs.mode || 'real' }}"
