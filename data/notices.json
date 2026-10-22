@@ -1,5 +1,69 @@
 [
 {
+"buyer": "Société d'Exploitation du Canal et Adduction des Eaux du Nord",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-23T10:00",
+"first_seen": "2026-10-22",
+"id": "tn-104399",
+"object": "Confection de pièces de rechange mécaniques pour les stations de pompage",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-22",
+"reference": "Tender-104399",
+"regions": [],
+"sectors": [
+"vehicules-transport"
+],
+"slug": "tn-104399-confection-pieces-rechange-mecaniques-stations-pompage",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104399"
+},
+{
+"buyer": "Ministère de l’éducation",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-10-27T10:00",
+"first_seen": "2026-10-22",
+"id": "tn-104394",
+"object": "approvisionnement en denrées alimentaires des cantines scolaires des colléges et lycées",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-22",
+"reference": "Tender-104394",
+"regions": [],
+"sectors": [
+"alimentation"
+],
+"slug": "tn-104394-approvisionnement-denrees-alimentaires-cantines-scolaires-colleges-lycees",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104394"
+},
+{
+"buyer": "Gouvernorat de Tunis",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-02T09:00",
+"first_seen": "2026-10-22",
+"id": "tn-104393",
+"object": "candidature en vue d’identifier les prestataires des études architecturales, Structure et VRD, Electricité et Sécurité incendie, Fluides ainsi que le suivi d’exécution des travaux pour le projet suivant : • construction d’une piscine couverte à la caserne de garde nationale",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-22",
+"reference": "Tender-104393",
+"regions": [],
+"sectors": [
+"energie",
+"etudes-conseil"
+],
+"slug": "tn-104393-candidature-vue-didentifier-prestataires-etudes-architecturales-structure-vrd-el",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104393"
+},
+{
 "buyer": "Commissariat Régional au Développement Agricole Kasserine",
 "category": "",
 "country": "Tunisie",
@@ -293,6 +357,27 @@
 "sme": false,
 "source": "TN",
 "url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104372"
+},
+{
+"buyer": "Compagnie des Tranports par Pipe Lines au Sahara",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-30T10:00",
+"first_seen": "2026-10-22",
+"id": "tn-104350",
+"object": "LA CONSTRUCTION DE DEUX RESERVOIRS DE STOCKAGE DE PETROLE BRUT",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-22",
+"reference": "Tender-104350",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104350-construction-deux-reservoirs-stockage-petrole-brut",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104350"
 },
 {
 "buyer": "Centre National de Sécurité Routière",
@@ -72883,6 +72968,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-22T13:00",
+"delisted": "2026-10-22",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Matériel de bureau"
@@ -90379,6 +90465,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-22T14:30",
+"delisted": "2026-10-22",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de voiries, chemins et pistes / Pistes"
@@ -95172,6 +95259,7 @@
 "category": "",
 "country": "Tunisie",
 "deadline": "2026-10-22T14:00",
+"delisted": "2026-10-22",
 "first_seen": "2026-10-06",
 "id": "tn-104096",
 "object": "Marché de location de camion pour le nettoiement de la ville de Sousse",
@@ -141896,6 +141984,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-22T13:00",
+"delisted": "2026-10-22",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -158456,6 +158545,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-22T14:30",
+"delisted": "2026-10-22",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -162950,6 +163040,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-22T16:00",
+"delisted": "2026-10-22",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électrique"
@@ -164961,6 +165052,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-22T13:00",
+"delisted": "2026-10-22",
 "detail_checked": true,
 "domains": [
 "Services / Services architecturales et topographiques / Prestations d’aménagement et de réaménagement urbain"
@@ -169834,6 +169926,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-22T14:30",
+"delisted": "2026-10-22",
 "detail_checked": true,
 "domains": [
 "Services / Services architecturales et topographiques / Etude de la morphologie des zones urbaine, de l’habitat, de l’architecture et du patrimoine bâti"
@@ -170142,6 +170235,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-22T15:30",
+"delisted": "2026-10-22",
 "detail_checked": true,
 "domains": [
 "Services / Services architecturales et topographiques / Architecture, agencement et décoration"
