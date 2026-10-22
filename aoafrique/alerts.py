@@ -16,6 +16,7 @@ import ssl
 import sys
 import time
 import urllib.request
+from email import policy
 from email.message import EmailMessage
 from datetime import datetime
 from email.utils import formataddr, formatdate, make_msgid
@@ -54,7 +55,8 @@ def backend(url: str, body: dict, timeout: int = 120) -> dict:
 
 def build(mail: dict, sender: str, from_addr: str, reply_to: str) -> EmailMessage:
     check_sender(from_addr)
-    msg = EmailMessage()
+    # Long lines allowed (RFC 5322 limit 998): folding would turn the List-Unsubscribe URL into encoded words.
+    msg = EmailMessage(policy=policy.SMTP.clone(max_line_length=998))
     msg["From"] = formataddr((sender, from_addr))
     msg["To"] = mail["email"]
     msg["Reply-To"] = reply_to

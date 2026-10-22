@@ -20,6 +20,11 @@ def test_headers():
     assert m["Sender"] is None
     for h in ("From", "Reply-To", "Message-ID", "List-Id"):
         assert "vread" not in m[h].lower() and "gmail" not in m[h].lower()
+    raw = m.as_bytes().decode("utf-8")
+    long_url = "https://script.google.com/macros/s/" + "A" * 80 + "/exec?action=unsubscribe&email=a%40entreprise.ma&t=" + "f" * 32
+    raw2 = alerts.build({**MAIL, "unsubscribe": long_url}, "Veille AO Afrique (Jalonel)", "alertes@jalonel.com", "contact@jalonel.com").as_bytes().decode("utf-8")
+    assert f"List-Unsubscribe: <{long_url}>, <mailto:contact@jalonel.com?subject=desinscription>\r\n" in raw2, "not folded or encoded"
+    assert "=?utf-8?" in raw.split("Subject: ")[1].split("\r\n")[0]
     assert m.get_body(("plain",)).get_content().startswith("Bonjour")
     assert m.get_body(("html",)).get_content().startswith("<p>Bonjour")
 
