@@ -1,5 +1,68 @@
 [
 {
+"buyer": "Municipalité Tabarka",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-20T10:00",
+"first_seen": "2026-10-23",
+"id": "tn-104419",
+"object": "Acquisition de matériel de propreté",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-23",
+"reference": "Tender-104419",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "tn-104419-acquisition-materiel-proprete",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104419"
+},
+{
+"buyer": "Ministère de la Santé Publique",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-16T10:00",
+"first_seen": "2026-10-23",
+"id": "tn-104418",
+"object": "Acquisition et déploiement d'une solution d’annuaire d’entreprises multi-sites",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-23",
+"reference": "Tender-104418",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "tn-104418-acquisition-deploiement-solution-dannuaire-dentreprises-multi-sites",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104418"
+},
+{
+"buyer": "Agence de Promotion de l’Industrie et de l'Innovation",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-23T10:00",
+"first_seen": "2026-10-23",
+"id": "tn-104415",
+"object": "Acquisition de voitures de service électriques au profit de l’Agence de Promotion de l’Industrie et de l’Innovation (APII)",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-23",
+"reference": "Tender-104415",
+"regions": [],
+"sectors": [
+"energie"
+],
+"slug": "tn-104415-acquisition-voitures-service-electriques-profit-lagence-promotion-lindustrie-lin",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104415"
+},
+{
 "buyer": "Régie des Alcools",
 "category": "",
 "country": "Tunisie",
@@ -128,6 +191,28 @@
 "url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104400"
 },
 {
+"buyer": "Ministère de la Santé Publique",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-09T09:30",
+"first_seen": "2026-10-23",
+"id": "tn-104391",
+"object": "Réalisation des prestations relatives au Programme national d'Évaluation Externe de la Qualité (EEQ) des laboratoires d'analyses médicales en biochimie clinique",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-23",
+"reference": "Tender-104391",
+"regions": [],
+"sectors": [
+"etudes-conseil",
+"sante"
+],
+"slug": "tn-104391-realisation-prestations-relatives-programme-national-evaluation-externe-qualite",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104391"
+},
+{
 "buyer": "Centre de Calcul Khawarizmi",
 "category": "",
 "country": "Tunisie",
@@ -147,6 +232,27 @@
 "sme": false,
 "source": "TN",
 "url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-103108"
+},
+{
+"buyer": "Agence Nationale des Soins de Santé Primaires (ANSSP)",
+"category": "Fournitures",
+"country": "Bénin",
+"deadline": "2026-11-19T10:00",
+"first_seen": "2026-10-23",
+"id": "bj-1250992",
+"object": "Acquisition, installation et mis en service des équipements médico-techniques de pointe au profit des structures de santé",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/11371123102026_Pj_AVIS%20EQUIPEMENT%20MEDICO%20BON.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-23",
+"reference": "F_DSME-SIO_125486",
+"regions": [],
+"sectors": [
+"sante"
+],
+"slug": "bj-1250992-acquisition-installation-mis-service-equipements-medico-techniques-pointe-profit",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=F_DSME-SIO_125486"
 },
 {
 "buyer": "Société Béninoise d'Energie Electrique",
@@ -132893,6 +132999,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-23T15:00",
+"delisted": "2026-10-23",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -167919,6 +168026,7 @@
 "category": "",
 "country": "Tunisie",
 "deadline": "2026-10-23T14:30",
+"delisted": "2026-10-23",
 "first_seen": "2026-09-24",
 "id": "tn-103886",
 "object": "Acquisition des équipements de tirages et audio visuel",
