@@ -39,6 +39,19 @@ def dump(path: Path, obj) -> bool:
     return True
 
 
+def pmmp_stale(pmmp_status: dict, now_utc: datetime, window_days: int = 4) -> bool:
+    """True when the last successful PMMP read is too old for the incremental window ("put online in the last
+    4 days") to cover the gap, e.g. after a portal outage: the next successful run then relists everything."""
+    at = pmmp_status.get("at")
+    if not at:
+        return True
+    try:
+        last = datetime.fromisoformat(at)
+    except ValueError:
+        return True
+    return now_utc - last > timedelta(days=window_days - 1)
+
+
 def cmd_update(args) -> int:
     now_utc = datetime.now(timezone.utc)
     now_ma = now_utc.astimezone(CASA).replace(tzinfo=None)
@@ -52,7 +65,8 @@ def cmd_update(args) -> int:
     # 1. Maroc: list of open consultations. Twice a day only those put online in the last 4 days (one or
     #    two pages); a full relist on Sunday mornings (or when forced) catches cancellations and new dates.
     stored = {f"ma-{r['org']}-{r['ref_id']}": r for r in load(DATA / "pmmp_rows.json", [])}
-    full = args.full or not stored or (now_ma.weekday() == 6 and now_ma.hour < 12)
+    full = (args.full or not stored or (now_ma.weekday() == 6 and now_ma.hour < 12)
+            or pmmp_stale(meta.get("sources", {}).get("PMMP", {}), now_utc))
     since = None if full else today - timedelta(days=4)
     rows: list[dict] = []
     try:
@@ -81,6 +95,10 @@ def cmd_update(args) -> int:
     missing.sort(key=lambda r: (r.get("published", ""), r["ref_id"]), reverse=True)
     budget = min(len(missing), args.details)
     print(f"PMMP : {len(stored)} consultations ouvertes, {len(missing)} fiches détaillées manquantes, {budget} à lire")
+    if not status["PMMP"].get("ok"):
+        # Portal unreachable this run: each detail page would also time out (3 attempts each), so wait for next run.
+        print("PMMP : portail injoignable, fiches détaillées reportées au prochain passage")
+        budget = 0
     dhttp = Polite(delay=args.delay)
     t0 = time.monotonic()
     for i, r in enumerate(missing[:budget]):

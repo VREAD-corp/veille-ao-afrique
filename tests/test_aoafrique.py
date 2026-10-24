@@ -394,3 +394,13 @@ def test_update_national_sources_first_read_and_failure(tmp_path, monkeypatch):
     code, notices2, meta2 = _update(tmp_path, monkeypatch, notices, [], wb=[], nat_fail=True)
     assert code == 0 and meta2["sources"]["BJ"]["ok"] is False and "portal down" in meta2["sources"]["BJ"]["error"]
     assert {n["id"] for n in notices2 if n["source"] == "BJ"} == set(bj)
+
+
+def test_pmmp_stale_forces_full_relist_after_outage():
+    from datetime import timezone
+    from aoafrique.__main__ import pmmp_stale
+    now = datetime(2026, 10, 24, 13, 29, tzinfo=timezone.utc)
+    assert pmmp_stale({"at": "2026-10-20T20:42+00:00"}, now)  # 3.7 days: the 4-day window may miss notices
+    assert not pmmp_stale({"at": "2026-10-24T01:16+00:00"}, now)
+    assert pmmp_stale({}, now) and pmmp_stale({"at": "?"}, now)
+
