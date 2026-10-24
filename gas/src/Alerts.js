@@ -264,18 +264,24 @@ function alertMail_(sub, items, labels, first) {
   var utm = 'utm_source=alerte&utm_medium=email&utm_campaign=alertes-quotidiennes';
   var url = function (x) { return ALERT_SITE_ + 'ao/' + x.i + '/?' + utm; };
   var place = function (x) { return x.x === 'BM' ? x.k : (x.p && x.p.length ? x.p.join(', ') : 'Maroc'); };
-  var text = ['Bonjour,', '', (n > 1 ? 'Voici les ' + n + ' appels d’offres publiés' : 'Voici l’appel d’offres publié') + (first ? ' depuis votre inscription' : ' depuis notre dernier envoi') + ' qui correspondent à vos critères (' + criteriaText_(sub, labels) + ').', ''];
-  var html = ['<p>Bonjour,</p><p>' + escHtml_(text[2]) + '</p><ol style="padding-left:1.2em">'];
+  var since = first ? ' depuis votre inscription' : ' depuis notre dernier envoi';
+  var intro = n > 1 ? 'Voici les ' + n + ' appels d’offres publiés' + since + ' qui correspondent à vos critères'
+    : 'Voici l’appel d’offres publié' + since + ' qui correspond à vos critères';
+  var text = ['Bonjour,', '', intro + ' (' + criteriaText_(sub, labels) + ').', ''];
+  // HTML blocks separated by line breaks: a client or filter that strips the tags must not glue
+  // "date limite : … 16 h" to "L’avis officiel fait foi" (seen in the e-mail of 24 October).
+  var html = ['<p>Bonjour,</p>', '<p>' + escHtml_(text[2]) + '</p>', '<ol style="padding-left:1.2em">'];
   shown.forEach(function (x) {
     var dl = frDate_(x.d);
     text.push('- ' + x.o, '  ' + [x.b, place(x), dl ? 'date limite : ' + dl : ''].filter(String).join(' · '), '  ' + url(x), '');
-    html.push('<li style="margin:0 0 .8em"><a href="' + escHtml_(url(x)) + '">' + escHtml_(x.o) + '</a><br><span style="color:#555;font-size:90%">' +
+    html.push('<li style="margin:0 0 .8em"><a href="' + escHtml_(url(x)) + '">' + escHtml_(x.o) + '</a><br>\n<span style="color:#555;font-size:90%">' +
       escHtml_([x.b, place(x), dl ? 'date limite : ' + dl : ''].filter(String).join(' · ')) + '</span></li>');
   });
   html.push('</ol>');
   if (n > shown.length) {
-    text.push('Et ' + (n - shown.length) + ' autres : ' + listUrl_(sub), '');
-    html.push('<p>Et ' + (n - shown.length) + ' autres : <a href="' + escHtml_(listUrl_(sub)) + '">voir la liste</a>.</p>');
+    var more = 'Et ' + (n - shown.length) + (n - shown.length > 1 ? ' autres' : ' autre');
+    text.push(more + ' : ' + listUrl_(sub), '');
+    html.push('<p>' + more + ' : <a href="' + escHtml_(listUrl_(sub)) + '">voir la liste</a>.</p>');
   }
   var foot = [
     'L’avis officiel fait foi : vérifiez-le avant de préparer une offre.',
@@ -284,7 +290,7 @@ function alertMail_(sub, items, labels, first) {
     'Veille AO Afrique est un service Jalonel, marque de READ FRANCE SAS (SIREN 988 741 773), 11 rue Rouvet, 75019 Paris. Contact : ' + ALERT_REPLY_TO_ + '.',
   ];
   text = text.concat(foot);
-  html.push('<hr style="border:0;border-top:1px solid #ddd"><p style="color:#555;font-size:85%">' + escHtml_(foot[0]) + '<br>' + escHtml_(foot[1]) +
-    '<br><a href="' + escHtml_(unsub) + '">Se désinscrire en un clic</a><br>' + escHtml_(foot[3]) + '</p>');
-  return { subject: subject, body: text.join('\n'), html: html.join(''), unsubscribe: unsub };
+  html.push('<hr style="border:0;border-top:1px solid #ddd">', '<p style="color:#555;font-size:85%">' + escHtml_(foot[0]) + '<br>\n' + escHtml_(foot[1]) +
+    '<br>\n<a href="' + escHtml_(unsub) + '">Se désinscrire en un clic</a><br>\n' + escHtml_(foot[3]) + '</p>');
+  return { subject: subject, body: text.join('\n'), html: html.join('\n'), unsubscribe: unsub };
 }

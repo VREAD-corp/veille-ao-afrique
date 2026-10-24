@@ -65,7 +65,7 @@ function gas(signups, feed) {
       DigestAlgorithm: { SHA_256: 'sha256' }, Charset: { UTF_8: 'utf8' }, getUuid: () => crypto.randomUUID(),
     },
   };
-  vm.runInNewContext(code + '\n' + cro + '\n' + alerts + "\n;var LINK_KEY_ = 'test-link-key'; var ALERTS_TOKEN_ = '" + TOKEN + "';\nnow_ = function () { return new Date(globalThis.__now()); };\nglobalThis.R = { route_, doPost, hmac_ };", Object.assign(ctx, { globalThis: ctx }));
+  vm.runInNewContext(code + '\n' + cro + '\n' + alerts + "\n;var LINK_KEY_ = 'test-link-key'; var ALERTS_TOKEN_ = '" + TOKEN + "';\nnow_ = function () { return new Date(globalThis.__now()); };\nglobalThis.R = { route_, doPost, hmac_, alertMail_ };", Object.assign(ctx, { globalThis: ctx }));
   ctx.__now = () => now;
   const table = (name) => { const s = tabs.get(name); if (!s) return []; const [h, ...r] = s.rows; return r.map((row) => Object.fromEntries(h.map((k, i) => [k, row[i]]))); };
   const post = (body) => JSON.parse(ctx.R.route_({}, body).s);
@@ -187,6 +187,31 @@ const a2 = g.sent.at(-1);
 assert.equal(a2.email, 'a@entreprise.ma');
 assert.ok(a2.text.includes('Avis 7') && !a2.text.includes('Avis 3') && a2.text.includes('depuis notre dernier envoi'));
 assert.match(a2.subject, /^1 nouvel appel d’offres/);
+// Agreement with the number of notices (singular e-mail of 24 October: « publié … qui correspondent »).
+assert.ok(a2.text.includes('Voici l’appel d’offres publié depuis notre dernier envoi qui correspond à vos critères ('), 'singular: correspond');
+assert.ok(!/correspondent|publiés|appels/.test(a2.text.split('\n')[2]), 'no plural in the singular intro');
+assert.ok(a2.html.includes('qui correspond à vos critères ('));
+assert.ok(a.text.includes('Voici les 2 appels d’offres publiés depuis votre inscription qui correspondent à vos critères ('), 'plural: correspondent');
+// Deadline and footer never glued together, even once the HTML tags are stripped (« 16 hL’avis officiel fait foi »).
+for (const m of [a, a2]) {
+  const flat = m.html.replace(/<[^>]+>/g, '');
+  assert.ok(!/ h(?:\s?\d\d)?L’avis/.test(flat) && !/\dL’avis/.test(flat), 'HTML without tags: deadline glued to the footer');
+  assert.match(flat, /date limite : [^\n]+\n+L’avis officiel fait foi/);
+  assert.match(m.text, /\n\nL’avis officiel fait foi/);
+  assert.ok(!/[^\s>]L’avis officiel/.test(m.text + m.html));
+}
+{
+  const many = (k) => Array.from({ length: k }, (_, i) => n(100 + i, '2026-10-22', { d: '2026-11-06T16:00' }));
+  const sub = { email: 'a@entreprise.ma', sectors: ['btp'], regions: [], countries: ['maroc'], frequency: 'quotidien', since: '2026-10-20T09:00:00Z' };
+  const one = g.R.alertMail_(sub, many(1), {}, true);
+  assert.equal(one.subject, '1 nouvel appel d’offres pour vos critères – Veille AO Afrique');
+  assert.ok(one.body.includes('date limite : 6 novembre 2026 à 16 h\n'));
+  assert.ok(one.html.replace(/<[^>]+>/g, '').includes('à 16 h\n'));
+  const m26 = g.R.alertMail_(sub, many(26), {}, true);
+  assert.match(m26.subject, /^26 nouveaux appels d’offres/);
+  assert.ok(m26.body.includes('Et 1 autre : ') && m26.html.includes('<p>Et 1 autre : '), 'Et 1 autre (singular)');
+  assert.ok(g.R.alertMail_(sub, many(27), {}, true).body.includes('Et 2 autres : '));
+}
 
 // A week later b gets the Bénin notice.
 g.setNow('2026-10-28T07:15:00Z');
