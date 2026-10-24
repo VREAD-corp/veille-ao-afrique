@@ -55,11 +55,16 @@ SELLER = {
     "rcs": "RCS Paris 988 741 773",
     "president": "Tanguy Warsmann",
 }
+# Paid plans (2026-10-24): sold by octave-global-checkout (PaymentIntents only, buyers outside the EU), products below.
+PLAN_PRODUCTS = {"essentiel-39": ("aoaf-essentiel-3m-eur", 3900), "pro-79": ("aoaf-pro-3m-eur", 7900)}
+OGC_VENTURE = "af-xx-04"
+FREE_TEST_END = "3 novembre 2026"
+CGV_VERSION = "24 octobre 2026"
 PLANS = [
     ("essentiel-39", "Essentiel", 39, "Maroc : les nouveaux appels d'offres de vos secteurs et régions, chaque matin, "
      "avec le résumé de chaque avis et le lien officiel."),
-    ("pro-79", "Pro", 79, "Tout l'Essentiel, plus les avis des portails du Bénin et de la Tunisie et ceux de la Banque mondiale en Afrique francophone, un résumé "
-     "en anglais pour vos partenaires et l'export CSV de vos sélections."),
+    ("pro-79", "Pro", 79, "Tout l'Essentiel, plus les avis des portails nationaux du Bénin et de la Tunisie et ceux de la Banque mondiale "
+     "dans les pays d'Afrique francophone."),
 ]
 # Publisher: the Jalonel brand (hub https://jalonel.com/), operated by READ FRANCE SAS.
 PUBLISHER = {"@type": "Organization", "@id": "https://jalonel.com/#org", "name": "Jalonel", "url": "https://jalonel.com/",
@@ -83,6 +88,10 @@ COUNTRY_MIN = 3
 CSP = ("default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data:; "
        "connect-src 'self' https://script.google.com https://script.googleusercontent.com; "
        "form-action 'self' https://script.google.com; base-uri 'self'")
+CSP_PAY = ("default-src 'self'; script-src 'self' https://js.stripe.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.stripe.com; "
+           "frame-src https://js.stripe.com https://hooks.stripe.com; "
+           "connect-src 'self' https://script.google.com https://script.googleusercontent.com https://api.stripe.com; "
+           "form-action 'self' https://script.google.com; base-uri 'self'")
 
 
 def e(v) -> str:
@@ -124,7 +133,7 @@ class Site:
             self.pages.append((path, lastmod or self.updated_paris.date().isoformat()))
 
     def page(self, path: str, title: str, description: str, body: str, *, jsonld=None, scripts=(), head_scripts=(),
-             noindex: bool = False, crumbs: list[tuple[str, str]] | None = None) -> str:
+             noindex: bool = False, crumbs: list[tuple[str, str]] | None = None, csp: str = CSP) -> str:
         canonical = self.base + path
         lds = []
         if crumbs:
@@ -150,7 +159,7 @@ class Site:
 <html lang="fr">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="{e(CSP)}">
+<meta http-equiv="Content-Security-Policy" content="{e(csp)}">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{e(title)}</title>
 <meta name="description" content="{e(description)}">
@@ -199,6 +208,7 @@ class Site:
 <a href="{link('methode/')}">Méthode et sources</a>
 <a href="{link('alertes/')}">Alertes e-mail</a>
 <a href="{link(LICENCE_PAGE)}">Réutilisation des données</a>
+<a href="{link('cgv/')}">Conditions de vente</a>
 <a href="{link('mentions-legales/')}">Mentions légales</a>
 <a href="{link('confidentialite/')}">Confidentialité</a>
 </nav>
@@ -255,20 +265,20 @@ class Site:
                     else "avis de la Banque mondiale")
             where_field = (f'<p class="ai-zone"><span class="muted">Zone :</span> {e(country)}, {what}'
                            f'<input type="hidden" name="countries" value="{e(country_slug(country))}"></p>')
-            price = ("Gratuit pendant les 21 jours du test, puis formule Pro prévue à 79 € pour 3 mois "
-                     "(prix net, TVA non applicable, sans renouvellement automatique). Aucun paiement aujourd'hui.")
+            price = ("Gratuit pendant le test, au moins jusqu'au " + FREE_TEST_END + ". Formule payante, alertes garanties 3 mois : Pro à 79 €, "
+                     "sans renouvellement automatique.")
         elif bm:
             where_field = ('<p class="ai-zone"><span class="muted">Zone :</span> Afrique francophone, avis de la Banque mondiale'
                            '<input type="hidden" name="countries" value="afrique-francophone"></p>')
-            price = ("Gratuit pendant les 21 jours du test, puis formule Pro prévue à 79 € pour 3 mois "
-                     "(prix net, TVA non applicable, sans renouvellement automatique). Aucun paiement aujourd'hui.")
+            price = ("Gratuit pendant le test, au moins jusqu'au " + FREE_TEST_END + ". Formule payante, alertes garanties 3 mois : Pro à 79 €, "
+                     "sans renouvellement automatique.")
         else:
             region_opts = '<option value="">Toutes les régions</option>' + "".join(
                 f'<option value="{e(model.slugify(r))}"{" selected" if r == region else ""}>{e(r)}</option>'
                 for r in model.REGIONS)
             where_field = f'<label>Région<select name="regions">{region_opts}</select></label>'
-            price = ("Gratuit pendant les 21 jours du test, puis formule Essentiel prévue à 39 € pour 3 mois "
-                     "(prix net, TVA non applicable, sans renouvellement automatique). Aucun paiement aujourd'hui.")
+            price = ("Gratuit pendant le test, au moins jusqu'au " + FREE_TEST_END + ". Formule payante, alertes garanties 3 mois : Essentiel à 39 €, "
+                     "sans renouvellement automatique.")
         qs = urlencode([(k, v) for k, v in (("secteur", sector), ("region", region)) if v])
         full = link("alertes/") + ("?" + e(qs) if qs else "")
         heading = title or "Recevoir les nouveaux appels d'offres de ce secteur et de cette région"
@@ -283,7 +293,7 @@ class Site:
 <p class="ai-send"><button type="submit" class="btn">Recevoir ces alertes</button></p>
 <p class="form-msg" role="status" aria-live="polite"></p>
 </form>
-<p class="small ai-terms"><strong>Le service ouvre bientôt :</strong> vous recevrez d'abord un e-mail à l'ouverture, puis les alertes. {price} Désinscription en un clic dans chaque e-mail.</p>
+<p class="small ai-terms"><strong>Envoi chaque matin</strong> depuis alertes@jalonel.com, seulement s'il y a du nouveau. {price} Désinscription en un clic dans chaque e-mail.</p>
 <p class="small"><a href="{full}">Choisir plusieurs secteurs et régions, ou un envoi hebdomadaire</a> · <a href="{link('confidentialite/')}">Vos données</a></p>
 </section>"""
 
@@ -316,7 +326,7 @@ class Site:
 <button type="submit" class="btn">Recevoir les alertes</button>
 <p class="form-msg" role="status" aria-live="polite"></p>
 </form>
-<p class="small aq-terms"><span class="consent-text">{e(QUICK_CONSENT_TEXT)}</span> Gratuit pendant les 21 jours du test, aucun paiement. <a href="{full}">Autres critères</a> · <a href="{link('confidentialite/')}">Vos données</a></p>
+<p class="small aq-terms"><span class="consent-text">{e(QUICK_CONSENT_TEXT)}</span> Gratuit pendant le test, aucun paiement. <a href="{full}">Autres critères</a> · <a href="{link('confidentialite/')}">Vos données</a></p>
 </section>"""
 
     def similar(self, n: dict, k: int = 6) -> list[dict]:
@@ -782,19 +792,19 @@ class Site:
         region_boxes = "".join(f'<label class="chk"><input type="checkbox" name="regions" value="{e(model.slugify(r))}"> {e(r)}</label>'
                                for r in model.REGIONS)
         plans = "".join(f"""<div class="plan">
-<p class="plan-name">{e(name)} <span class="soon">bientôt disponible</span></p>
+<p class="plan-name">{e(name)}</p>
 <p class="price"><b>{price}&nbsp;€</b> pour 3 mois</p>
 <p>{e(text)}</p>
-<button type="button" class="btn-ghost preinscr" data-plan="{pid}" data-mesure="preinscription_click" data-detail="{pid}">Pré-inscription, sans paiement</button>
+<button type="button" class="btn plan-btn" data-plan="{pid}" data-product="{PLAN_PRODUCTS[pid][0]}" data-amount="{PLAN_PRODUCTS[pid][1]}" data-mesure="plan_click" data-detail="{pid}">Choisir {e(name)}, {price}&nbsp;€</button>
 </div>""" for pid, name, price, text in PLANS)
         s = self.stats()
         body = f"""<h1>Alertes e-mail : les nouveaux appels d'offres marocains de vos secteurs, chaque matin</h1>
 <p class="lead">Le portail marocain publie en moyenne {nb(round(s['new7'] / 7))} nouvelles consultations par jour (moyenne des 7 derniers jours). L'alerte vous envoie seulement celles de vos secteurs et régions, avec le résumé et la date limite de chacune.</p>
 <div class="status-box" data-section="statut">
-<p><strong>Où en est le service.</strong> La liste et les fiches de ce site sont en ligne et à jour. Les envois d'e-mails ne sont pas encore ouverts. Inscrivez-vous maintenant : vous recevrez un premier message à l'ouverture, puis les alertes, gratuites pendant les 21 jours du test. Désinscription en un clic à tout moment.</p>
+<p><strong>Où en est le service.</strong> Les alertes partent chaque matin depuis alertes@jalonel.com. Elles sont gratuites pendant le test, au moins jusqu'au {FREE_TEST_END}. Pour être sûr de les garder 3 mois après le test, choisissez une <a href="#offres">formule payante</a>. Désinscription en un clic à tout moment.</p>
 </div>
 
-<form id="alerte-form" class="alert-form" data-section="formulaire" novalidate>
+<form id="alerte-form" class="alert-form" data-section="formulaire" novalidate data-venture="{OGC_VENTURE}">
 <input type="hidden" name="kind" value="alertes">
 <input type="hidden" name="plan" value="">
 <div class="hp" aria-hidden="true"><label>Site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
@@ -815,9 +825,19 @@ class Site:
 </form>
 
 <section class="plans-section" id="offres" aria-labelledby="offres-h">
-<h2 id="offres-h">Offres payantes prévues</h2>
-<p>Nous testons deux prix avant d'ouvrir le paiement. Aucun paiement n'est demandé aujourd'hui : la pré-inscription enregistre votre intérêt, et nous vous écrirons à l'ouverture pour que vous décidiez. Paiement unique pour 3 mois, sans renouvellement automatique. Prix nets, TVA non applicable (art. 293 B du CGI).</p>
+<h2 id="offres-h">Formules payantes : 3 mois d'alertes garanties</h2>
+<p>Paiement unique par carte, pour 3 mois, sans renouvellement automatique. Si vous payez avant le {FREE_TEST_END} (fin du test gratuit), vos 3 mois commencent ce jour-là ; sinon, le jour du paiement. Remboursement intégral sur simple demande dans les 14 jours suivant le paiement.</p>
 <div class="plans">{plans}</div>
+<section class="pay-step" id="paiement" data-section="paiement" hidden aria-labelledby="paiement-h" data-ogc="{link('static/og-checkout.js')}?v={static_v('og-checkout.js')}">
+<h3 id="paiement-h">Paiement</h3>
+<p id="pay-summary"></p>
+<p class="small"><strong>Entreprises établies hors de l'Union européenne seulement.</strong> Prix en euros, sans TVA française : service fourni par voie électronique à un client établi hors de l'Union européenne (article 259-1° du CGI pour une entreprise, 259 B pour un particulier). Les éventuelles taxes locales de votre pays ne sont pas incluses. Une entreprise établie dans l'Union européenne ne peut pas payer en ligne pour l'instant : écrivez à <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
+<label class="chk consent"><input type="checkbox" id="cgv-ok"> <span>J'ai lu les <a href="{link('cgv/')}">conditions de vente</a> (version du {CGV_VERSION}) et je les accepte.</span></label>
+<p class="form-msg" id="pay-msg" role="alert"></p>
+<p><button type="button" class="btn" id="pay-open">Payer par carte</button></p>
+<div id="buy" aria-live="polite"></div>
+<p class="small muted">Paiement sécurisé par Stripe. Votre facture (ou votre reçu, sans nom d'entreprise), numérotée en série G-, arrive par e-mail avec la confirmation. Indiquez au paiement la même adresse e-mail que pour l'inscription : c'est elle qui reçoit les alertes.</p>
+</section>
 <p class="small muted">Ce qui ne sera pas inclus : la rédaction des offres, le téléchargement des dossiers de consultation à votre place, le dépôt électronique sur le portail (il demande un compte entreprise et une signature électronique à votre nom).</p>
 </section>
 
@@ -837,15 +857,25 @@ class Site:
 
 <section id="questions" data-section="faq">
 <h2>Questions fréquentes</h2>
-<details id="faq-prix"><summary>Est-ce payant ?</summary><p>Pas aujourd'hui. Les alertes sont gratuites pendant les 21 jours du test. Ensuite, deux formules sont prévues (Essentiel 39 €, Pro 79 €, pour 3 mois, prix nets, TVA non applicable) : nous vous écrirons avant, et rien ne vous sera facturé sans votre accord.</p></details>
+<details id="faq-prix"><summary>Est-ce payant ?</summary><p>Les alertes sont gratuites pendant le test, au moins jusqu'au {FREE_TEST_END}, et rien n'est facturé sans votre accord. Deux formules payantes garantissent 3 mois d'alertes : Essentiel à 39 € (portail marocain) et Pro à 79 € (Maroc, Bénin, Tunisie et Banque mondiale en Afrique francophone). Avant la fin du test, nous écrirons à chaque inscrit pour dire ce qui change.</p></details>
 <details id="faq-volume"><summary>Combien d'e-mails vais-je recevoir ?</summary><p>Au plus un par matin (ou un par semaine si vous le choisissez), et seulement s'il y a de nouveaux avis dans vos secteurs et régions. Chaque e-mail contient un lien de désinscription en un clic.</p></details>
-<details id="faq-facture"><summary>Facture, devis, bon de commande ?</summary><p>Rien n'est facturé pendant le test. Si vous choisissez une formule payante à l'ouverture, la facture sera établie au nom de votre entreprise par {SELLER['name']} (SIREN {SELLER['siren']}). Si votre service achats demande un devis avant, écrivez à <a href="mailto:{CONTACT}">{CONTACT}</a>.</p></details>
+<details id="faq-facture"><summary>Facture, devis, bon de commande ?</summary><p>La facture est établie au nom de votre entreprise par {SELLER['name']} (SIREN {SELLER['siren']}) et envoyée par e-mail au paiement : indiquez le nom de l'entreprise et son identifiant fiscal (ICE au Maroc, par exemple) dans le formulaire de paiement. Si votre service achats demande un devis avant, écrivez à <a href="mailto:{CONTACT}">{CONTACT}</a>.</p></details>
 <details id="faq-mise-a-jour"><summary>Les avis sont-ils à jour ?</summary><p>La liste est relue deux fois par jour, vers 7 h et 19 h (heure de Paris). Une annulation ou un report peut mettre jusqu'à une semaine à apparaître : l'avis officiel fait foi. Le détail est sur la page <a href="{link('methode/')}">Méthode et sources</a>.</p></details>
 </section>
 """
         self.write("alertes/", self.page("alertes/", f"Alertes e-mail appels d'offres Maroc | {BRAND}",
                                          "Recevez chaque matin les nouveaux appels d'offres publics marocains de vos secteurs et régions, résumés en français. Gratuit pendant le test.",
-                                         body, scripts=("alertes.js",), crumbs=[("", "Appels d'offres"), ("alertes/", "Alertes e-mail")]))
+                                         body, scripts=("alertes.js",), crumbs=[("", "Appels d'offres"), ("alertes/", "Alertes e-mail")],
+                                         jsonld=self.plans_ld(), csp=CSP_PAY))
+
+    def plans_ld(self) -> dict:
+        """Product + two Offers (the paid plans), no rating or review."""
+        return {"@context": "https://schema.org", "@type": "Product", "name": "Alertes e-mail Veille AO Afrique",
+                "description": "Alertes e-mail sur les appels d'offres publics du Maroc, du Bénin, de la Tunisie et de la Banque mondiale en Afrique francophone, 3 mois.",
+                "brand": {"@type": "Brand", "name": "Jalonel"},
+                "offers": [{"@type": "Offer", "name": f"Formule {name}, 3 mois", "price": f"{price}.00", "priceCurrency": "EUR",
+                            "availability": "https://schema.org/InStock", "url": self.base + "alertes/#offres",
+                            "seller": {"@type": "Organization", "name": SELLER["name"]}} for _pid, name, price, _t in PLANS]}
 
     def build_static_pages(self) -> None:
         method = f"""<h1>Méthode et sources</h1>
@@ -906,10 +936,41 @@ class Site:
 <h2>Hébergement</h2>
 <p>GitHub Inc. (GitHub Pages), 88 Colin P. Kelly Jr. Street, San Francisco, CA 94107, États-Unis. Formulaire, mesure d'audience et de comportement (totaux par jour, sans cookie) : Google Apps Script et Google Sheets (Google LLC). Envoi des alertes e-mail : OVH SAS, 2 rue Kellermann, 59100 Roubaix, France (boîte alertes@jalonel.com).</p>
 <h2>Sources et propriété</h2>
-<p>Les avis proviennent du Portail marocain des marchés publics (Trésorerie Générale du Royaume, réutilisation selon l'article 6 de la loi n° 31-13), du portail des marchés publics du Bénin, du portail tunisien des marchés publics (HAICOP) et de la Banque mondiale (CC BY 4.0). Veille AO Afrique n'est ni affilié à ces organismes ni approuvé par eux. L'avis officiel fait foi. Le code du site est publié sous licence MIT.</p>"""
+<p>Les avis proviennent du Portail marocain des marchés publics (Trésorerie Générale du Royaume, réutilisation selon l'article 6 de la loi n° 31-13), du portail des marchés publics du Bénin, du portail tunisien des marchés publics (HAICOP) et de la Banque mondiale (CC BY 4.0). Veille AO Afrique n'est ni affilié à ces organismes ni approuvé par eux. L'avis officiel fait foi. Le code du site est publié sous licence MIT.</p>
+<h2>Vente</h2>
+<p>Les formules payantes d'alertes sont vendues par {p['name']} selon les <a href="{link('cgv/')}">conditions de vente</a>. Paiement par carte traité par Stripe Payments Europe Ltd (Dublin, Irlande).</p>"""
         self.write("mentions-legales/", self.page("mentions-legales/", f"Mentions légales | {BRAND}",
                                                   "Éditeur, hébergeur et sources de Veille AO Afrique.", legal, noindex=True,
                                                   crumbs=[("", "Appels d'offres"), ("mentions-legales/", "Mentions légales")]),
+                   sitemap=False)
+        cgv = f"""<h1>Conditions de vente des alertes payantes</h1>
+<p class="lead">Version du {CGV_VERSION}. Elles s'appliquent aux formules Essentiel et Pro de {BRAND}, achetées sur la page <a href="{link('alertes/')}#offres">Alertes e-mail</a>.</p>
+<h2>1. Vendeur</h2>
+<p>{p['name']}, {p['form']} au capital de {p['capital']}, {p['rcs']}, siège : {p['address']}. {BRAND} est un service de la marque Jalonel. Contact : <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
+<h2>2. Ce que vous achetez</h2>
+<p>Un abonnement prépayé de 3 mois aux alertes e-mail : au plus un e-mail par matin (ou un par semaine, selon votre choix), envoyé depuis alertes@jalonel.com seulement quand un nouvel avis correspond à vos secteurs et régions. Chaque avis renvoie à sa fiche sur ce site et à l'avis officiel.</p>
+<ul>
+<li><strong>Essentiel, 39 €</strong> : les consultations du portail marocain des marchés publics.</li>
+<li><strong>Pro, 79 €</strong> : en plus, les avis des portails nationaux du Bénin et de la Tunisie et les avis en français de la Banque mondiale dans les pays d'Afrique francophone.</li>
+</ul>
+<p>Ne sont pas inclus : la rédaction des offres, le téléchargement des dossiers de consultation, le dépôt sur les portails, tout conseil juridique. Les avis viennent de sources publiques relues deux fois par jour (voir <a href="{link('methode/')}">Méthode et sources</a>) : un avis peut manquer, être en retard ou avoir changé. L'avis officiel fait foi.</p>
+<h2>3. Prix et paiement</h2>
+<p>Prix en euros, payés en une fois par carte au moment de la commande, par l'intermédiaire de Stripe. La vente est réservée aux clients établis hors de l'Union européenne et de Monaco : le paiement refuse ces pays. Pour ces clients, aucune TVA française n'est due, car le service est fourni par voie électronique à un client établi hors de l'Union européenne (article 259-1° du code général des impôts pour une entreprise, article 259 B pour un particulier). Les éventuelles taxes locales du pays du client ne sont pas incluses. Une facture (entreprise) ou un reçu (particulier), numéroté dans la série G-, est envoyé par e-mail avec la confirmation.</p>
+<h2>4. Durée</h2>
+<p>3 mois, du premier au dernier jour inclus. Pour une commande payée avant le {FREE_TEST_END}, date de fin du test gratuit, les 3 mois commencent ce jour-là ; sinon, le jour du paiement. L'abonnement ne se renouvelle pas tout seul : nous vous écrivons avant la fin.</p>
+<h2>5. Accès et critères</h2>
+<p>Les alertes vont à l'adresse e-mail donnée au paiement. Si elle est déjà inscrite aux alertes, vos critères sont gardés ; sinon, vous recevez tous les secteurs de la zone de votre formule. Pour changer vos critères, inscrivez-vous de nouveau sur la page Alertes avec la même adresse : la dernière inscription compte. Le lien de désinscription présent dans chaque e-mail arrête les envois.</p>
+<h2>6. Remboursement</h2>
+<p>Vous pouvez demander le remboursement intégral, sans motif, dans les 14 jours suivant le paiement, par simple e-mail à <a href="mailto:{CONTACT}">{CONTACT}</a>. Si le service s'arrête de notre fait avant la fin de la période payée, nous remboursons les jours restants, au prorata. Le remboursement est fait sur la carte utilisée, sous 14 jours.</p>
+<h2>7. Responsabilité</h2>
+<p>Le service est un outil de veille. {p['name']} ne garantit pas qu'un marché sera remporté ni que tous les avis publiés seront signalés. Sa responsabilité est limitée au prix payé pour la période en cours, sauf faute lourde ou dolosive.</p>
+<h2>8. Données personnelles</h2>
+<p>Voir la page <a href="{link('confidentialite/')}">Confidentialité</a>.</p>
+<h2>9. Droit applicable et litiges</h2>
+<p>Ces conditions sont soumises au droit français. En cas de difficulté, écrivez-nous d'abord : nous répondons sous 5 jours ouvrés. Pour un client professionnel, à défaut d'accord amiable, les tribunaux de Paris sont compétents. Un client particulier garde les droits que lui donne la loi de son pays de résidence.</p>"""
+        self.write("cgv/", self.page("cgv/", f"Conditions de vente | {BRAND}",
+                                     "Conditions de vente des alertes payantes de Veille AO Afrique : formules Essentiel et Pro, prix, durée de 3 mois, remboursement sous 14 jours.",
+                                     cgv, noindex=True, crumbs=[("", "Appels d'offres"), ("cgv/", "Conditions de vente")]),
                    sitemap=False)
         privacy = f"""<h1>Confidentialité</h1>
 <p class="lead">Responsable du traitement : {p['name']}, {p['address']}, <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
@@ -926,11 +987,13 @@ class Site:
 <p>Ces données servent à vous prévenir de l'ouverture du service, à vous envoyer les alertes demandées et à compter les pré-inscriptions pour choisir le prix. La base légale est votre consentement (article 6.1.a du RGPD), que vous pouvez retirer à tout moment par e-mail ou par le lien présent dans chaque message.</p>
 <p>Seule READ FRANCE y a accès. Elles sont stockées dans Google Sheets : Google LLC agit comme sous-traitant, et le transfert vers les États-Unis est encadré par le Data Privacy Framework et les clauses contractuelles types de Google. Les alertes partent de l'adresse alertes@jalonel.com, une boîte hébergée en France par OVH SAS (Roubaix), sous-traitant pour l'envoi ; le programme d'envoi tourne une fois par jour sur GitHub Actions (GitHub Inc., sous-traitant, même encadrement du transfert), qui ne fait que transmettre l'e-mail et n'en garde aucune copie ni l'adresse dans ses journaux. Elles ne sont ni vendues ni prêtées.</p>
 <p>Nous les conservons jusqu'au retrait de votre accord, et au plus 12 mois après notre dernier e-mail si le service n'ouvre pas.</p>
+<h2>Achat d'une formule payante</h2>
+<p>Au paiement, nous recevons votre adresse e-mail, votre nom, votre pays et, si vous les indiquez, le nom et l'identifiant fiscal de votre entreprise. Ils servent à exécuter la commande (envoi des alertes pendant la période payée, facture) : la base légale est le contrat (article 6.1.b du RGPD). Les données de carte sont saisies chez Stripe (Stripe Payments Europe Ltd, Irlande), qui les traite comme responsable de traitement ; nous n'y avons jamais accès. La commande et la facture sont gardées dans un tableur et un dossier Google Drive de READ FRANCE (Google LLC, sous-traitant), et la facture pendant 10 ans (article L123-22 du code de commerce).</p>
 <h2>Vos droits</h2>
 <p>Accès, rectification, effacement, limitation, opposition et portabilité : écrivez à <a href="mailto:{CONTACT}">{CONTACT}</a>, réponse sous un mois. Vous pouvez saisir la <a href="https://www.cnil.fr/fr/plaintes" rel="noopener">CNIL</a>. Si vous résidez au Maroc, la loi n° 09-08 vous donne des droits comparables (accès, rectification, opposition) ; nous les appliquons de la même manière, et l'autorité marocaine compétente est la <a href="https://www.cndp.ma/" rel="noopener">CNDP</a>.</p>
 <h2>Hébergement</h2>
 <p>GitHub Pages traite des journaux techniques (adresse IP notamment) pour servir le site, selon la <a href="https://docs.github.com/fr/site-policy/privacy-policies/github-general-privacy-statement" rel="noopener">déclaration de confidentialité de GitHub</a>.</p>
-<p class="small muted">Version mise à jour le 22 octobre 2026 : envoi des alertes depuis alertes@jalonel.com (OVH SAS, GitHub Actions). 18 octobre 2026 : empreinte technique éphémère pour écarter les robots non déclarés ; 13 octobre 2026 : mesure de comportement agrégée et tests A/B.</p>"""
+<p class="small muted">Version mise à jour le 24 octobre 2026 : achat d'une formule payante. 22 octobre 2026 : envoi des alertes depuis alertes@jalonel.com (OVH SAS, GitHub Actions). 18 octobre 2026 : empreinte technique éphémère pour écarter les robots non déclarés ; 13 octobre 2026 : mesure de comportement agrégée et tests A/B.</p>"""
         self.write("confidentialite/", self.page("confidentialite/", f"Confidentialité | {BRAND}",
                                                  "Données collectées par Veille AO Afrique : mesure d'audience et de comportement sans cookie, tests A/B, formulaire d'alertes, droits RGPD et loi 09-08.",
                                                  privacy, noindex=True, crumbs=[("", "Appels d'offres"), ("confidentialite/", "Confidentialité")]),

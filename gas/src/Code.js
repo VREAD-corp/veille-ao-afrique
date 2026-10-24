@@ -59,10 +59,25 @@ var BURST_EVENTS_HUMAN_ = ['filter_use', 'search_use', 'official_click', 'cta_cl
 var FP_RE_ = /^[0-9a-f]{8}$/;
 var ANNOT_HEADER_ = ['at', 'date', 'page', 'event', 'detail', 'source', 'count', 'reason', 'note'];
 var SIGNUP_HEADER_ = ['at', 'email', 'kind', 'plan', 'company', 'company_country', 'sectors', 'countries', 'regions', 'frequency', 'consent_version', 'consent_text', 'page', 'source', 'test', 'withdrawn_at', 'id'];
-var TRACK_EVENTS_ = ['view', 'tender_view', 'filter_use', 'search_use', 'official_click', 'alert_form_view', 'alert_signup', 'preinscription_click', 'preinscription_signup', 'cta_click'];
+var TRACK_EVENTS_ = ['view', 'tender_view', 'filter_use', 'search_use', 'official_click', 'alert_form_view', 'alert_signup', 'preinscription_click', 'preinscription_signup', 'cta_click',
+  // Paid alerts (2026-10-24): plan chosen, payment block shown, payment submitted, payment confirmed in the page.
+  'plan_click', 'checkout_view', 'checkout_start', 'paid'];
 var TRACK_DETAILS_ = /^[a-z0-9_-]{0,40}$/;
 var KINDS_ = ['alertes', 'preinscription'];
 var PLANS_ = ['', 'essentiel-39', 'pro-79'];
+/**
+ * Paid alerts (2026-10-24). Sold by octave-global-checkout (products aoaf-essentiel-3m-eur 39 €, aoaf-pro-3m-eur 79 €,
+ * buyers outside the EU), which POSTs `paid` after delivering the order (token PAID_TOKEN_, git-ignored Secret.js).
+ * One row per order in `Abonnements`. Period: PAID_MONTHS_ months from the later of the payment day and FREE_TEST_END_.
+ * Essentiel: the Moroccan portal; Pro: Morocco + Benin and Tunisia portals + World Bank notices in francophone Africa.
+ */
+var SUBS_HEADER_ = ['at', 'email', 'plan', 'order_id', 'payment_intent', 'paid_at', 'start', 'until', 'test', 'detail'];
+var PAID_PLANS_ = { 'essentiel-39': { name: 'Essentiel', countries: ['maroc'] }, 'pro-79': { name: 'Pro', countries: ['maroc', 'benin', 'tunisie', 'afrique-francophone'] } };
+var PAID_MONTHS_ = 3;
+var FREE_TEST_END_ = '2026-11-03';
+// Paris date after which ONLY paid sign-ups get e-mails (Essentiel limited to Morocco). '' = every sign-up gets its
+// alerts for free (the test is running). Set it only once the founders decide how the free test ends.
+var FREE_ALERTS_UNTIL_ = '';
 var FREQ_ = ['', 'quotidien', 'hebdomadaire'];
 var CONSENT_VERSION_ = 'v2-2026-10-18'; // v2: contact address contact@jalonel.com in the consent text
 var RATE_TRACK_ = 300;   // hits per minute, all pages
@@ -74,7 +89,7 @@ var CRO_SITES_ = [SITE_];
 // Essentiel 39 / Pro 79 are pre-registration plans, not arms.
 var CRO_EXPERIMENTS_ = { 'aoaf-alert': ['a', 'b'] };
 // Goals of that test, once per tab and per arm: alert form on screen, official-notice click, reminder shown on return.
-var CRO_GOALS_ = ['alert_view', 'official', 'nudge'];
+var CRO_GOALS_ = ['alert_view', 'official', 'nudge', 'paid'];
 var XP_SIGNUP_ = /^(a|b)$/;      // arm sent with a sign-up (alerte-inline.js), kept in the Stats detail
 var XP_FORMS_ = ['inline', 'rapide'];
 function croBook_() { return book_(); }
@@ -140,6 +155,9 @@ function route_(params, body) {
       case 'alerts_plan':
         if (!body) throw userError_('method_not_allowed', 'POST attendu.');
         return json_(alertsPlanAction_(req));
+      case 'paid':
+        if (!body) throw userError_('method_not_allowed', 'POST attendu.');
+        return json_(paid_(req));
       case 'alerts_confirm':
         if (!body) throw userError_('method_not_allowed', 'POST attendu.');
         return json_(alertsConfirmAction_(req));
@@ -444,6 +462,64 @@ function signup_(req) {
   return { ok: true, kind: kind, plan: plan };
 }
 
+/** First day of the paid period and its last day (inclusive), as Paris dates. */
+function paidPeriod_(paidAt) {
+  var day = parisDate_(paidAt);
+  var start = day > FREE_TEST_END_ ? day : FREE_TEST_END_;
+  var d = new Date(start + 'T12:00:00Z');
+  var m = d.getUTCMonth() + PAID_MONTHS_;
+  var end = new Date(Date.UTC(d.getUTCFullYear(), m, d.getUTCDate(), 12));
+  if (end.getUTCMonth() !== ((m % 12) + 12) % 12) end = new Date(Date.UTC(d.getUTCFullYear(), m + 1, 0, 12)); // 31 → last day of month
+  end.setUTCDate(end.getUTCDate() - 1);
+  return { start: start, until: end.toISOString().slice(0, 10) };
+}
+
+/**
+ * Action `paid` (POST, octave-global-checkout after delivery): records the paid period of one order, once per order.
+ * If the address has no active alert sign-up, one is created with every sector and the plan's zone, so the buyer
+ * gets alerts at once; criteria can be changed by signing up again with the same address.
+ */
+function paid_(req) {
+  var token = typeof PAID_TOKEN_ === 'string' && PAID_TOKEN_.length >= 32 ? PAID_TOKEN_ : '';
+  if (!token || String(req.token || '') !== token) throw userError_('forbidden', 'Accès refusé.');
+  var email = String(req.email || '').trim().toLowerCase();
+  if (email.length > 254 || !/^[^\s@<>"',;]+@[^\s@<>"',;]+\.[a-z]{2,}$/.test(email)) throw userError_('bad_email', 'email');
+  var plan = String(req.plan || '');
+  if (!Object.prototype.hasOwnProperty.call(PAID_PLANS_, plan)) throw userError_('bad_request', 'plan');
+  var orderId = String(req.order_id || ''), pi = String(req.payment_intent || '');
+  if (!/^og_[0-9a-f]{24}$/.test(orderId) || !/^pi_[A-Za-z0-9]{10,64}$/.test(pi)) throw userError_('bad_request', 'order');
+  var paidAt = new Date(String(req.paid_at || ''));
+  if (isNaN(paidAt.getTime()) || Math.abs(paidAt.getTime() - now_().getTime()) > 30 * 86400e3) throw userError_('bad_request', 'paid_at');
+  var test = req.test === true || req.test === 'true';
+  var lock = LockService.getScriptLock();
+  if (!lock.tryLock(20000)) throw userError_('busy', 'Service occupé, réessayez.');
+  try {
+    var subs = tab_('Abonnements', SUBS_HEADER_);
+    var last = subs.getLastRow();
+    if (last >= 2) {
+      var rows = subs.getRange(2, 1, last - 1, SUBS_HEADER_.length).getValues();
+      for (var i = 0; i < rows.length; i++) {
+        if (cellText_(rows[i][3]) === orderId) return { ok: true, already: true, plan: cellText_(rows[i][2]), start: cellText_(rows[i][6]), until: cellText_(rows[i][7]) };
+      }
+    }
+    var per = paidPeriod_(paidAt);
+    var active = alertSubscribers_(test).some(function (x) { return x.email === email; });
+    subs.appendRow([now_().toISOString(), txt_(email), plan, orderId, pi, paidAt.toISOString(), per.start, per.until, test ? 'oui' : '',
+      active ? 'inscription existante' : 'inscription créée']);
+    if (!active) {
+      tab_('Inscriptions', SIGNUP_HEADER_).appendRow([
+        now_().toISOString(), txt_(email), 'alertes', plan, '', '', '', PAID_PLANS_[plan].countries.join(', '), '', 'quotidien', 'achat',
+        txt_('Commande ' + orderId + ' : abonnement ' + PAID_PLANS_[plan].name + ' payé, alertes demandées par l’achat.'),
+        '/alertes/', 'paiement', test ? 'oui' : '', '', Utilities.getUuid().slice(0, 8)]);
+    }
+    incrementStat_({ date: parisDate_(now_()), site: SITE_, page: '/alertes/', event: 'paid', detail: test ? 'test' : plan,
+      source: '(serveur)', medium: '', campaign: '', device: '' });
+    return { ok: true, already: false, plan: plan, start: per.start, until: per.until, signup: active ? 'existing' : 'created' };
+  } finally {
+    lock.releaseLock();
+  }
+}
+
 /** Stats detail of an alert sign-up made on a tender page during AOAF-ALERT-INLINE-01: `aoaf-alert-<arm>-<form>`. */
 function xpDetail_(req) {
   var arm = String(req.xp || ''), form = String(req.form || '');
@@ -491,8 +567,11 @@ function admin_(req) {
   var real = rows.filter(function (r) { return r[14] !== 'oui' && !r[15]; });
   var out = { ok: true, date: date, counters: counters, excluded: excluded, signups_total: real.length,
     signups_alertes: real.filter(function (r) { return r[2] === 'alertes'; }).length,
-    preinscriptions: { 'essentiel-39': real.filter(function (r) { return r[3] === 'essentiel-39'; }).length, 'pro-79': real.filter(function (r) { return r[3] === 'pro-79'; }).length },
+    preinscriptions: { 'essentiel-39': real.filter(function (r) { return r[2] === 'preinscription' && r[3] === 'essentiel-39'; }).length, 'pro-79': real.filter(function (r) { return r[2] === 'preinscription' && r[3] === 'pro-79'; }).length },
     test_rows: rows.length - real.length };
+  var paid = paidSubscriptions_(false);
+  out.abonnements = { 'essentiel-39': 0, 'pro-79': 0 };
+  Object.keys(paid).forEach(function (k) { out.abonnements[paid[k].plan]++; });
   if (req.find) out.found = rows.some(function (r) { return String(r[1]).toLowerCase() === String(req.find).toLowerCase(); });
   return out;
 }

@@ -201,3 +201,8 @@ html[data-xp-aoaf-alert="b"] .official .link-more { display: none; }
 .aq-terms { margin-top: .45rem !important; color: var(--muted); }
 .alert-quick.aq-back { border-color: var(--clay); box-shadow: 0 0 0 2px var(--amber); }
 @media (max-width: 480px) { .aq-form .btn { width: 100%; } }
+/* Paid plans: payment step (octave-global-checkout mounts the Stripe Payment Element in #buy) */
+.plan .plan-btn { margin-top: .4rem; }
+.pay-step { background: var(--paper); border: 2px solid var(--line); border-radius: var(--radius); padding: 1rem; margin-top: 1rem; }
+.pay-step h3 { margin-top: 0; }
+#buy { max-width: 34rem; }

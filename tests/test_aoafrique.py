@@ -92,7 +92,22 @@ def test_build_site(tmp_path):
     data = json.loads((tmp_path / "data" / "ouverts.json").read_text(encoding="utf-8"))
     assert data["count"] == 3
     alerts = (tmp_path / "alertes" / "index.html").read_text(encoding="utf-8")
-    assert "Pré-inscription, sans paiement" in alerts and "bientôt disponible" in alerts and "09-08" in alerts
+    assert "09-08" in alerts and "bientôt disponible" not in alerts and "Pré-inscription, sans paiement" not in alerts
+    # Paid plans (2026-10-24): real buttons, product ids and server prices of octave-global-checkout, CGV, VAT basis.
+    assert 'data-product="aoaf-essentiel-3m-eur" data-amount="3900"' in alerts and 'data-product="aoaf-pro-3m-eur" data-amount="7900"' in alerts
+    assert 'data-venture="af-xx-04"' in alerts and "/static/og-checkout.js?v=" in alerts and 'href="/cgv/"' in alerts
+    assert "259-1°" in alerts and "293 B" not in alerts and "hors de l'Union européenne" in alerts
+    assert "https://js.stripe.com" in alerts and "anglais" not in alerts and "CSV" not in alerts
+    assert "pas encore ouverts" not in alerts and "alertes@jalonel.com" in alerts
+    offers = [json.loads(x) for x in re.findall(r'<script type="application/ld\+json">(.*?)</script>', alerts) if '"Offer"' in x][0]["offers"]
+    assert [(o["price"], o["priceCurrency"]) for o in offers] == [("39.00", "EUR"), ("79.00", "EUR")]
+    cgv = (tmp_path / "cgv" / "index.html").read_text(encoding="utf-8")
+    for words in ("READ FRANCE SAS", "988 741 773", "39 €", "79 €", "3 mois", "14 jours", "259-1°", "3 novembre 2026", "Union européenne", "noindex"):
+        assert words in cgv, words
+    assert "FR57" not in cgv and "293 B" not in cgv
+    assert "https://js.stripe.com" not in idx, "Stripe allowed by the CSP of the payment page only"
+    assert 'href="/cgv/"' in idx
+    assert "Achat d'une formule payante" in (tmp_path / "confidentialite" / "index.html").read_text(encoding="utf-8")
     lic = (tmp_path / "licence.html").read_text(encoding="utf-8")
     assert "Conditions de réutilisation des données" in lic and "31-13" in lic and "CC BY 4.0" in lic
     assert "https://ao-afrique.jalonel.com/licence.html</loc>" in (tmp_path / "sitemap.xml").read_text()
@@ -137,8 +152,8 @@ def test_inline_alert_on_tender_list_and_filter_pages(tmp_path):
     assert f'<option value="{model.slugify(n["regions"][0])}" selected>' in page
     assert 'data-ctx="fiche"' in page and "/static/alerte-inline.js" in page
     # honest price and status next to the button
-    assert "Aucun paiement aujourd'hui" in page and "39 €" in page and "TVA non applicable" in page
-    assert "Le service ouvre bientôt" in page
+    assert "Gratuit pendant le test" in page and "39 €" in page and "sans renouvellement automatique" in page
+    assert "Envoi chaque matin" in page and "ouvre bientôt" not in page and "Aucun paiement aujourd'hui" not in page
     # similar notices, links to the sector and region, clear next step at the end
     assert "Et maintenant ?" in page and 'href="#alerte"' in page
     assert f'href="/secteurs/{sector}/"' in page

@@ -109,8 +109,16 @@ def test_every_page_loads_cro_js(tmp_path):
 def test_goals_on_successful_signup():
     js = (ROOT / "static" / "alertes.js").read_text(encoding="utf-8")
     ok = js.index("if (!j.ok) throw")
-    goal = js.index("octaveCro.goal(j.kind === 'preinscription' ? 'preorder' : 'signup')")
+    goal = js.index("goal(j.kind === 'preinscription' ? 'preorder' : 'signup')")
     assert ok < goal < js.index("form.reset()"), "goal recorded only after a successful sign-up"
+    # Paid alerts: payment block shown, payment submitted, payment confirmed (mesure.js) and the cro.js goal `paid`.
+    for ev in ("mesure('checkout_view'", "mesure('checkout_start'", "mesure('paid'", "goal('paid')"):
+        assert ev in js, ev
+    assert js.index("goal('paid')") > js.index("onSuccess"), "paid only from the module's success callback"
+    code = (ROOT / "gas" / "src" / "Code.js").read_text(encoding="utf-8")
+    for ev in ("'checkout_view'", "'checkout_start'", "'paid'", "'plan_click'"):
+        assert ev in code.split("var TRACK_EVENTS_")[1].split("];")[0], ev
+    assert "'paid'" in code.split("var CRO_GOALS_")[1].split(";")[0]
 
 
 def test_inline_alert_goal_after_success_and_view_event():

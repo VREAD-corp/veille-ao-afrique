@@ -60,6 +60,15 @@ function alertPlan_(testMode, only, feed) {
   var out = { feed_updated: feed.updated || '', feed_count: feed.notices.length, subscribers: 0, nothing_new: 0, weekly_wait: 0, detail: [], mails: [] };
   if (feed.updated && now.getTime() - new Date(feed.updated).getTime() > 36 * 3600e3) out.detail.push('feed stale (' + feed.updated + ')');
   var subs = alertSubscribers_(testMode).filter(function (x) { return !only || x.email === only; });
+  // After the free test (FREE_ALERTS_UNTIL_ set and passed): only paid sign-ups, each limited to its plan's zone.
+  if (FREE_ALERTS_UNTIL_ && parisDate_(now) > FREE_ALERTS_UNTIL_) {
+    subs = subs.filter(function (x) { return x.paid; }).map(function (x) {
+      var zone = PAID_PLANS_[x.paid.plan].countries;
+      var c = (x.countries.length ? x.countries : ['maroc']).filter(function (k) { return x.paid.plan === 'pro-79' || zone.indexOf(k) >= 0; });
+      x.countries = c.length ? c : ['maroc'];
+      return x;
+    });
+  }
   out.subscribers = subs.length;
   var state = alertState_(tab_('Alertes_etat', ALERT_STATE_HEADER_));
   subs.forEach(function (sub) {
@@ -171,7 +180,24 @@ function alertSubscribers_(testMode) {
     if (!cur) { by[email] = row; return; }
     if (at > cur.at) { row.since = cur.since; by[email] = row; } else if (row.since < cur.since) cur.since = row.since;
   });
-  return Object.keys(by).filter(function (k) { return !withdrawn[k]; }).map(function (k) { return by[k]; });
+  var paid = paidSubscriptions_(testMode);
+  return Object.keys(by).filter(function (k) { return !withdrawn[k]; }).map(function (k) { by[k].paid = paid[k] || null; return by[k]; });
+}
+
+/** Paid periods still running today (Paris), one per address: the one that ends last. testMode: only `test` rows. */
+function paidSubscriptions_(testMode) {
+  var sh = tab_('Abonnements', SUBS_HEADER_);
+  var last = sh.getLastRow();
+  var out = {};
+  if (last < 2) return out;
+  var today = parisDate_(now_());
+  sh.getRange(2, 1, last - 1, SUBS_HEADER_.length).getValues().forEach(function (r) {
+    var email = cellText_(r[1]).toLowerCase(), until = cellText_(r[7]).slice(0, 10), plan = cellText_(r[2]);
+    if (!email || (r[8] === 'oui') !== !!testMode || until < today || !Object.prototype.hasOwnProperty.call(PAID_PLANS_, plan)) return;
+    var cur = out[email];
+    if (!cur || until > cur.until || (until === cur.until && plan === 'pro-79')) out[email] = { plan: plan, start: cellText_(r[6]).slice(0, 10), until: until };
+  });
+  return out;
 }
 
 /** 'Côte d'Ivoire' -> 'cote-d-ivoire': the country value of the sign-up forms (pays pages, Bénin and Tunisie boxes). */
@@ -285,7 +311,9 @@ function alertMail_(sub, items, labels, first) {
   }
   var foot = [
     'L’avis officiel fait foi : vérifiez-le avant de préparer une offre.',
-    'Vous recevez cet e-mail parce que vous avez demandé les alertes de Veille AO Afrique le ' + frDate_(sub.since) + ' (' + (sub.frequency === 'hebdomadaire' ? 'une fois par semaine' : 'au plus un e-mail par matin, seulement s’il y a du nouveau') + '). Gratuit pendant le test, rien ne vous sera facturé sans votre accord.',
+    'Vous recevez cet e-mail parce que vous avez demandé les alertes de Veille AO Afrique le ' + frDate_(sub.since) + ' (' + (sub.frequency === 'hebdomadaire' ? 'une fois par semaine' : 'au plus un e-mail par matin, seulement s’il y a du nouveau') + '). ' +
+      (sub.paid ? 'Formule ' + PAID_PLANS_[sub.paid.plan].name + ' payée : alertes jusqu’au ' + frDate_(sub.paid.until) + ' inclus, sans renouvellement automatique.'
+        : 'Gratuit pendant le test, rien ne vous sera facturé sans votre accord.'),
     'Se désinscrire en un clic : ' + unsub,
     'Veille AO Afrique est un service Jalonel, marque de READ FRANCE SAS (SIREN 988 741 773), 11 rue Rouvet, 75019 Paris. Contact : ' + ALERT_REPLY_TO_ + '.',
   ];

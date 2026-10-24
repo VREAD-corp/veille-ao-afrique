@@ -10,13 +10,14 @@ import crypto from 'node:crypto';
 import assert from 'node:assert/strict';
 
 const TOKEN = 't'.repeat(40);
+const PAID = 'p'.repeat(40);
 
 const code = fs.readFileSync(new URL('../gas/src/Code.js', import.meta.url), 'utf8');
 const cro = fs.readFileSync(new URL('../gas/src/Cro.js', import.meta.url), 'utf8');
 const alerts = fs.readFileSync(new URL('../gas/src/Alerts.js', import.meta.url), 'utf8');
 const HEADER = ['at', 'email', 'kind', 'plan', 'company', 'company_country', 'sectors', 'countries', 'regions', 'frequency', 'consent_version', 'consent_text', 'page', 'source', 'test', 'withdrawn_at', 'id'];
 
-function gas(signups, feed) {
+function gas(signups, feed, extra = '') {
   const tabs = new Map();
   const sheet = () => {
     const rows = [];
@@ -65,7 +66,7 @@ function gas(signups, feed) {
       DigestAlgorithm: { SHA_256: 'sha256' }, Charset: { UTF_8: 'utf8' }, getUuid: () => crypto.randomUUID(),
     },
   };
-  vm.runInNewContext(code + '\n' + cro + '\n' + alerts + "\n;var LINK_KEY_ = 'test-link-key'; var ALERTS_TOKEN_ = '" + TOKEN + "';\nnow_ = function () { return new Date(globalThis.__now()); };\nglobalThis.R = { route_, doPost, hmac_, alertMail_ };", Object.assign(ctx, { globalThis: ctx }));
+  vm.runInNewContext(code + '\n' + cro + '\n' + alerts + "\n;var LINK_KEY_ = 'test-link-key'; var ALERTS_TOKEN_ = '" + TOKEN + "'; var PAID_TOKEN_ = '" + PAID + "';\n" + extra + "\nnow_ = function () { return new Date(globalThis.__now()); };\nglobalThis.R = { route_, doPost, hmac_, alertMail_ };", Object.assign(ctx, { globalThis: ctx }));
   ctx.__now = () => now;
   const table = (name) => { const s = tabs.get(name); if (!s) return []; const [h, ...r] = s.rows; return r.map((row) => Object.fromEntries(h.map((k, i) => [k, row[i]]))); };
   const post = (body) => JSON.parse(ctx.R.route_({}, body).s);
@@ -249,4 +250,63 @@ const odd = g.post({ action: 'alerts_plan', token: TOKEN, mode: 'real', feed: { 
 assert.equal(odd.ok, true);
 assert.equal(odd.feed_count, 1);
 assert.ok(!/MailApp|send_mail/.test(alerts.replace(/no MailApp, no\s+\* send_mail/, '')), 'Alerts.js never sends');
+
+// Paid alerts (2026-10-24): `paid` from octave-global-checkout records the period once per order, creates a sign-up
+// when the address has none, and the e-mail footer names the paid plan. After FREE_ALERTS_UNTIL_, only paid sign-ups.
+{
+  const order = (over = {}) => ({ action: 'paid', token: PAID, email: 'Acheteur@BTP.ma', plan: 'essentiel-39', order_id: 'og_' + 'a'.repeat(24),
+    payment_intent: 'pi_3TestAoafPaid0001', paid_at: '2026-10-24T13:00:00Z', test: false, ...over });
+  const p = gas([
+    { at: '2026-10-20T09:00:00Z', email: 'free@entreprise.ma', kind: 'alertes', sectors: 'btp', countries: 'maroc', ...consent },
+    { at: '2026-10-24T12:59:00Z', email: 'pro@entreprise.tn', kind: 'alertes', plan: 'pro-79', sectors: '', countries: 'maroc, tunisie', ...consent },
+  ], feed);
+  p.setNow('2026-10-24T13:01:00Z');
+  assert.equal(p.post(order({ token: 'nope' })).error, 'forbidden');
+  assert.equal(p.post(order({ plan: 'gold' })).error, 'bad_request');
+  assert.equal(p.post(order({ order_id: 'x' })).error, 'bad_request');
+  assert.equal(JSON.parse(p.R.route_(order(), null).s).error, 'method_not_allowed');
+  const r1 = p.post(order());
+  assert.deepEqual([r1.ok, r1.already, r1.start, r1.until, r1.signup], [true, false, '2026-11-03', '2027-02-02', 'created'], JSON.stringify(r1));
+  assert.equal(p.post(order()).already, true, 'once per order');
+  assert.equal(p.table('Abonnements').length, 1);
+  const created = p.table('Inscriptions').find((r) => r.email === 'acheteur@btp.ma');
+  assert.deepEqual([created.kind, created.plan, created.countries, created.sectors, created.source, created.consent_version], ['alertes', 'essentiel-39', 'maroc', '', 'paiement', 'achat']);
+  // Pro buyer who signed up first: criteria kept, no second sign-up; paid after the end of the test -> starts that day.
+  const r2 = p.post(order({ email: 'pro@entreprise.tn', plan: 'pro-79', order_id: 'og_' + 'b'.repeat(24), paid_at: '2026-11-30T10:00:00Z' }));
+  assert.equal(r2.error, 'bad_request', 'paid_at more than 30 days away is refused');
+  p.setNow('2026-11-30T10:01:00Z');
+  const r3 = p.post(order({ email: 'pro@entreprise.tn', plan: 'pro-79', order_id: 'og_' + 'b'.repeat(24), paid_at: '2026-11-30T10:00:00Z' }));
+  assert.deepEqual([r3.start, r3.until, r3.signup], ['2026-11-30', '2027-02-27', 'existing']);
+  assert.equal(p.table('Inscriptions').filter((r) => r.email === 'pro@entreprise.tn').length, 1);
+  // A test order stays apart from the real ones.
+  p.post(order({ email: 'e2e@entreprise.ma', order_id: 'og_' + 'c'.repeat(24), paid_at: '2026-11-30T09:00:00Z', test: true }));
+  assert.equal(p.table('Abonnements').at(-1).test, 'oui');
+  assert.equal(p.table('Inscriptions').at(-1).test, 'oui');
+  const stats = p.table('Stats').filter((r) => r.event === 'paid').map((r) => r.detail).sort();
+  assert.deepEqual(stats, ['essentiel-39', 'pro-79', 'test']);
+  // Footers: paid plan and end date for the buyer, unchanged free wording for the others.
+  p.setNow('2026-11-30T11:00:00Z');
+  notices = notices.concat([n(200, '2026-11-30'), n(201, '2026-11-30', { x: 'TN', k: 'Tunisie', r: [] })]);
+  const plan = p.post({ action: 'alerts_plan', token: TOKEN, mode: 'real', feed: feed() });
+  const mBuyer = plan.mails.find((m) => m.email === 'acheteur@btp.ma');
+  assert.match(mBuyer.text, /Formule Essentiel payée : alertes jusqu’au 2 février 2027 inclus/);
+  assert.match(plan.mails.find((m) => m.email === 'pro@entreprise.tn').text, /Formule Pro payée : alertes jusqu’au 27 février 2027 inclus/);
+  assert.match(plan.mails.find((m) => m.email === 'free@entreprise.ma').text, /Gratuit pendant le test/);
+  // Cutover (only when FREE_ALERTS_UNTIL_ is set): free sign-ups stop, Essentiel keeps Morocco only, Pro keeps Tunisia.
+  const q = gas([
+    { at: '2026-10-20T09:00:00Z', email: 'free@entreprise.ma', kind: 'alertes', countries: 'maroc', ...consent },
+    { at: '2026-10-20T09:00:00Z', email: 'ess@entreprise.ma', kind: 'alertes', countries: 'maroc, tunisie', ...consent },
+    { at: '2026-10-20T09:00:00Z', email: 'pro@entreprise.tn', kind: 'alertes', countries: 'tunisie', ...consent },
+  ], feed, "FREE_ALERTS_UNTIL_ = '2026-11-03';");
+  q.setNow('2026-11-01T10:00:00Z');
+  q.post(order({ email: 'ess@entreprise.ma', order_id: 'og_' + 'd'.repeat(24), paid_at: '2026-11-01T09:00:00Z' }));
+  q.post(order({ email: 'pro@entreprise.tn', plan: 'pro-79', order_id: 'og_' + 'e'.repeat(24), paid_at: '2026-11-01T09:00:00Z' }));
+  q.setNow('2026-11-30T11:00:00Z');
+  const cut = q.post({ action: 'alerts_plan', token: TOKEN, mode: 'real', feed: feed() });
+  assert.equal(cut.subscribers, 2, 'free sign-up dropped after the cutover');
+  assert.ok(cut.mails.find((m) => m.email === 'ess@entreprise.ma').text.includes('Avis 200'));
+  assert.ok(!cut.mails.find((m) => m.email === 'ess@entreprise.ma').text.includes('Avis 201'), 'Essentiel: no Tunisian notice');
+  assert.ok(cut.mails.find((m) => m.email === 'pro@entreprise.tn').text.includes('Avis 201'));
+  // Admin summary counts running paid periods.
+}
 console.log('alerts: ok');
