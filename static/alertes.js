@@ -102,7 +102,7 @@
     var s = document.createElement('script');
     s.src = pay.getAttribute('data-ogc');
     s.onload = function () {
-      open.hidden = true;
+      open.hidden = true; open.style.display = 'none';
       document.getElementById('cgv-ok').disabled = true;
       document.querySelectorAll('.plan-btn').forEach(function (b) { b.disabled = true; });
       var buy = document.getElementById('buy');
