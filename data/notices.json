@@ -1,5 +1,90 @@
 [
 {
+"buyer": "Centre de Calcul Khawarizmi",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-24T10:00",
+"first_seen": "2026-10-26",
+"id": "tn-99185",
+"object": "Mission d’étude et de suivi des lots d’électricité et sécurité incendie des travaux de réaménagement et de mise à niveau énergétique des Datacenters du CCK : Région 1 à Manouba et Région 2 à El-Manar",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-26",
+"reference": "Tender-99185",
+"regions": [],
+"sectors": [
+"energie",
+"informatique-telecoms"
+],
+"slug": "tn-99185-mission-detude-suivi-lots-delectricite-securite-incendie-travaux-reamenagement",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-99185"
+},
+{
+"buyer": "Prison de Mornag",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-02T11:00",
+"first_seen": "2026-10-26",
+"id": "tn-104446",
+"object": "denrées alimentaires 2027",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-26",
+"reference": "Tender-104446",
+"regions": [],
+"sectors": [
+"alimentation"
+],
+"slug": "tn-104446-denrees-alimentaires-2027",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104446"
+},
+{
+"buyer": "Centre de Calcul Khawarizmi",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-25T10:00",
+"first_seen": "2026-10-26",
+"id": "tn-104445",
+"object": "Acquisition de nouveaux services Cloud (Région Manouba /Manar) avec Extension des ressources de computing et les licences",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-26",
+"reference": "Tender-104445",
+"regions": [],
+"sectors": [
+"informatique-telecoms"
+],
+"slug": "tn-104445-acquisition-nouveaux-services-cloud-region-manouba-manar-avec-extension",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104445"
+},
+{
+"buyer": "Municipalite de Sousse",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-06T14:00",
+"first_seen": "2026-10-26",
+"id": "tn-104444",
+"object": "Marché Simplifié de collecte et de transport de déchets ménagés et similaires du centre ville et de la zone touristique de la ville de Sousse",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-26",
+"reference": "Tender-104444",
+"regions": [],
+"sectors": [
+"vehicules-transport"
+],
+"slug": "tn-104444-marche-simplifie-collecte-transport-dechets-menages-similaires-centre-ville",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104444"
+},
+{
 "buyer": "Hopital Régional de Gabes",
 "category": "",
 "country": "Tunisie",
@@ -40,6 +125,27 @@
 "sme": false,
 "source": "TN",
 "url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104442"
+},
+{
+"buyer": "Municipalite de Tunis",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-23T10:00",
+"first_seen": "2026-10-26",
+"id": "tn-104441",
+"object": "Acquisition de produits alimentaires pour les animaux du parc zoologique",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-26",
+"reference": "Tender-104441",
+"regions": [],
+"sectors": [
+"alimentation"
+],
+"slug": "tn-104441-acquisition-produits-alimentaires-animaux-parc-zoologique",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104441"
 },
 {
 "buyer": "Office National de l'Assainissement",
@@ -848,7 +954,7 @@
 "buyer": "Ministère de l’éducation",
 "category": "",
 "country": "Tunisie",
-"deadline": "2026-10-27T10:00",
+"deadline": "2026-11-03T10:00",
 "first_seen": "2026-10-22",
 "id": "tn-104394",
 "object": "approvisionnement en denrées alimentaires des cantines scolaires des colléges et lycées",
@@ -32043,6 +32149,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -43933,6 +44040,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-26T13:30",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
@@ -43966,6 +44074,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
@@ -44320,6 +44429,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Engins et moyen de transport de matériel et matériaux"
@@ -55148,6 +55258,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-26T13:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Ouvrages d'assainissement"
@@ -55182,6 +55293,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -60942,6 +61054,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
@@ -112574,6 +112687,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-26T12:30",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Services / Prestations d’essais, de contrôle et de laboratoire / Contrôle et analyse techniques des échantillons prélevés sur les produits, matériel et matériaux soumis à des normes obligatoires (autre que le domaine du génie civil)"
@@ -118075,6 +118189,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Salles et stands"
@@ -118348,6 +118463,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et nettoyage des bâtiments administratifs"
@@ -118778,6 +118894,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Services / Prestations d’essais, de contrôle et de laboratoire / Contrôle et analyse techniques des échantillons prélevés sur les produits, matériel et matériaux soumis à des normes obligatoires (autre que le domaine du génie civil)"
@@ -119011,6 +119128,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-26T12:30",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
@@ -121159,6 +121277,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Produits alimentaires, d’élevage, de la pêche, d’agriculture, d’horticulture et pépinière / Insectes"
@@ -122351,6 +122470,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-26T11:30",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -123279,6 +123399,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-26T11:30",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
@@ -123439,6 +123560,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-26T11:30",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Services / Prestations d’essais, de contrôle et de laboratoire / Contrôle et analyse techniques des échantillons prélevés sur les produits, matériel et matériaux soumis à des normes obligatoires (autre que le domaine du génie civil)"
@@ -124221,6 +124343,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-26T13:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -124254,6 +124377,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -126696,6 +126820,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Mobiliers"
@@ -128041,6 +128166,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-26T11:30",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Assistance et conseil (juridique, financier, en management, en gestion, technique…)"
@@ -128857,6 +128983,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-26T11:30",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Services / Prestations d’essais, de contrôle et de laboratoire / Expertises et contrôles techniques de génie civil des sols et des ouvrages d’art"
@@ -131783,6 +131910,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
@@ -134176,6 +134304,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Logiciels utilitaires, middlewares, sécurités, messageries, collaboration et autres"
@@ -134949,6 +135078,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Travaux / Construction d'ouvrages d'art / Ouvrages d'art en béton armé ou compacté au rouleau, en acier et maçonnerie"
@@ -136241,6 +136371,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-26T13:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
@@ -137221,6 +137352,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Documentation, manuels, fournitures scolaires et d’enseignement / fournitures scolaires et d’enseignement"
@@ -140217,6 +140349,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de voiries, chemins et pistes / Travaux d’assises non traitées et enduits superficiels"
@@ -147876,6 +148009,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -170031,6 +170165,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-26T12:00",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation de restauration"
@@ -173838,6 +173973,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-26T11:30",
+"delisted": "2026-10-26",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -184126,7 +184262,7 @@
 "buyer": "Société Promosport",
 "category": "",
 "country": "Tunisie",
-"deadline": "2026-11-05T10:00",
+"deadline": "2026-11-20T10:00",
 "first_seen": "2026-09-21",
 "id": "tn-103845",
 "object": "APPEL D’OFFRES NATIONAL Pour l'acquisition d'une plate-forme multicanaux d'organisation des jeux de hasard et de paris sportifs",
