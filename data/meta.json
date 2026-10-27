@@ -1,14 +1,14 @@
 {
-"checked": "2026-10-27T12:38+00:00",
+"checked": "2026-10-27T21:23+00:00",
 "sources": {
 "BJ": {
-"at": "2026-10-27T12:38+00:00",
-"count": 42,
+"at": "2026-10-27T21:23+00:00",
+"count": 43,
 "ok": true,
-"open": 35
+"open": 36
 },
 "BM": {
-"at": "2026-10-27T12:38+00:00",
+"at": "2026-10-27T21:23+00:00",
 "count": 326,
 "ok": true,
 "open": 183
@@ -16,19 +16,19 @@
 "PMMP": {
 "at": "2026-10-20T20:42+00:00",
 "count": 5707,
-"error": "PMMP: 0 lignes lues pour 5106 annoncées",
-"failed_at": "2026-10-27T12:38+00:00",
+"error": "PMMP: 0 lignes lues pour 5294 annoncées",
+"failed_at": "2026-10-27T21:23+00:00",
 "listed": 0,
 "mode": "incrémental",
 "ok": false,
 "requests": 3
 },
 "TN": {
-"at": "2026-10-27T12:38+00:00",
-"count": 385,
+"at": "2026-10-27T21:23+00:00",
+"count": 391,
 "ok": true,
-"open": 337
+"open": 343
 }
 },
-"updated": "2026-10-27T12:38+00:00"
+"updated": "2026-10-27T21:23+00:00"
 }
