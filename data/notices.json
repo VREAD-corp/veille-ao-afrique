@@ -1,5 +1,131 @@
 [
 {
+"buyer": "Commissariat Regional au Developpement Agricole de Zaghouan",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-27T10:00",
+"first_seen": "2026-10-28",
+"id": "tn-104512",
+"object": "Construction du local UGP du projet de développement et de promotion des filières agricoles de Zaghouan",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-28",
+"reference": "Tender-104512",
+"regions": [],
+"sectors": [
+"agriculture"
+],
+"slug": "tn-104512-construction-local-ugp-projet-developpement-promotion-filieres-agricoles-zaghoua",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104512"
+},
+{
+"buyer": "Municipalite de Moknine",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-12T10:00",
+"first_seen": "2026-10-28",
+"id": "tn-104511",
+"object": "Acquisition de pièces détachées pour véhicules de transport et équipements spéciales",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-28",
+"reference": "Tender-104511",
+"regions": [],
+"sectors": [
+"vehicules-transport"
+],
+"slug": "tn-104511-acquisition-pieces-detachees-vehicules-transport-equipements-speciales",
+"sme": true,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104511"
+},
+{
+"buyer": "Commissariat régional de l'éducation de Zaghouan",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-30T10:00",
+"first_seen": "2026-10-28",
+"id": "tn-104510",
+"object": "Programme d'entretien des établissements d'enseignement du gouvernorat de Zaghouan pour les années 2023 et 2025",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-28",
+"reference": "Tender-104510",
+"regions": [],
+"sectors": [
+"services-generaux"
+],
+"slug": "tn-104510-programme-entretien-etablissements-enseignement-gouvernorat-zaghouan-annees-2023",
+"sme": true,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104510"
+},
+{
+"buyer": "Commissariat régional de l'éducation de Zaghouan",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-27T10:00",
+"first_seen": "2026-10-28",
+"id": "tn-104506",
+"object": "Programme de construction d'espaces préscolaires dans les écoles primaires du gouvernorat de Zaghouan pour l'année 2025",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-28",
+"reference": "Tender-104506",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104506-programme-construction-espaces-prescolaires-ecoles-primaires-gouvernorat-zaghoua",
+"sme": true,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104506"
+},
+{
+"buyer": "Hôpital Abderrahmane Mami de Pneumophistiologie",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-02T09:00",
+"first_seen": "2026-10-28",
+"id": "tn-104504",
+"object": "APPEL D’OFFRES D’ETUDES POUR L’ELABORATION DE PLAN DIRECTEUR IMMOBILIER DE L’HOPITAL ABDERRAHMANE MAMI ARIANA",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-28",
+"reference": "Tender-104504",
+"regions": [],
+"sectors": [
+"sante"
+],
+"slug": "tn-104504-appel-doffres-detudes-lelaboration-plan-directeur-immobilier-lhopital-abderrahma",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104504"
+},
+{
+"buyer": "Société Tunisinne de Sidérurgie El Fouladh",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-03T11:00",
+"first_seen": "2026-10-28",
+"id": "tn-104503",
+"object": "La démantèlement de la grue portique sur rails \"CAILLARD\" sis au quai sud du port Bizerte-Menzel Bourguiba",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-28",
+"reference": "Tender-104503",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "tn-104503-demantelement-grue-portique-rails-caillard-sis-quai-sud-port",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104503"
+},
+{
 "buyer": "Ministère des Finances",
 "category": "",
 "country": "Tunisie",
@@ -124,6 +250,71 @@
 "sme": true,
 "source": "TN",
 "url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104495"
+},
+{
+"buyer": "Commune de Tchaourou",
+"category": "Travaux",
+"country": "Bénin",
+"deadline": "2026-11-24T10:00",
+"first_seen": "2026-10-28",
+"id": "bj-1254197",
+"lots": 2,
+"object": "Construction d'une maternité isolée au dispensaire de Tékparou et réhabilitation de la maternité du centre de santé de Koda-Agbassa plus construction d'un bloc de deux latrines et de deux douches",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/1021428102026_Pj_AVIS%20APPEL%20OFFRES.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-28",
+"reference": "T_RST_126229",
+"regions": [],
+"sectors": [
+"sante",
+"btp"
+],
+"slug": "bj-1254197-construction-maternite-isolee-dispensaire-tekparou-rehabilitation-maternite-cent",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=T_RST_126229"
+},
+{
+"buyer": "Caisse des Dépôts et Consignations du Bénin",
+"category": "Fournitures",
+"country": "Bénin",
+"deadline": "2026-11-19T09:00",
+"first_seen": "2026-10-28",
+"id": "bj-1252902",
+"object": "Acquisition de serveurs pour la mise en place d’un environnement de préproduction/staging pour tester avant déploiement (Relance)",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/57151128102026_Pj_AAON%20005%20DU%2027_10_26.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-28",
+"reference": "F_DCHSIMG_126150",
+"regions": [],
+"sectors": [
+"informatique-telecoms"
+],
+"slug": "bj-1252902-acquisition-serveurs-mise-place-dun-environnement-preproduction-staging-tester",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=F_DCHSIMG_126150"
+},
+{
+"buyer": "Agence Nationale des Soins de Santé Primaires (ANSSP)",
+"category": "Fournitures",
+"country": "Bénin",
+"deadline": "2026-11-25T10:00",
+"first_seen": "2026-10-28",
+"id": "bj-1252818",
+"object": "Acquisition, installation et mis en service d'équipements médicaux techniques au profit des 6 maternités à réhabilités et les 10 centres de simulation",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/4530828102026_Pj_AVIS%20DAO%20MATERNITE.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-28",
+"reference": "F_DSME-SIO_113301",
+"regions": [],
+"sectors": [
+"sante"
+],
+"slug": "bj-1252818-acquisition-installation-mis-service-equipements-medicaux-techniques-profit-6",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=F_DSME-SIO_113301"
 },
 {
 "buyer": "DECIM",
@@ -43938,6 +44129,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-28T15:00",
+"delisted": "2026-10-28",
 "detail_checked": true,
 "domains": [
 "Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Accompagnement dans la mise en œuvre de projet, pilotage des travaux Et coordination"
@@ -69910,7 +70102,7 @@
 "buyer": "Société Tunisienne d’Electricité et de Gaz",
 "category": "",
 "country": "Tunisie",
-"deadline": "2026-11-06T09:30",
+"deadline": "2026-11-19T09:00",
 "first_seen": "2026-10-09",
 "id": "tn-104150",
 "object": "Centrales à Moteurs à Gaz (200 MW)- (phase 2 : AOR)",
@@ -103334,6 +103526,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-28T17:00",
+"delisted": "2026-10-28",
 "detail_checked": true,
 "domains": [
 "Services / Services architecturales et topographiques / Cartographie des zones urbaines et rurales"
@@ -103367,6 +103560,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-28T15:30",
+"delisted": "2026-10-28",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Logiciels utilitaires, middlewares, sécurités, messageries, collaboration et autres"
@@ -103401,6 +103595,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-28T14:00",
+"delisted": "2026-10-28",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
@@ -120521,6 +120716,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-28T15:00",
+"delisted": "2026-10-28",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -121806,6 +122002,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-28T14:30",
+"delisted": "2026-10-28",
 "detail_checked": true,
 "domains": [
 "Services / Prestations d’essais, de contrôle et de laboratoire / Contrôle et analyse techniques des échantillons prélevés sur les produits, matériel et matériaux soumis à des normes obligatoires (autre que le domaine du génie civil)"
@@ -124258,6 +124455,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-28T15:00",
+"delisted": "2026-10-28",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -174229,6 +174427,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-28T14:30",
+"delisted": "2026-10-28",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Pose de conduites d'assainissement"
@@ -180054,6 +180253,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-28T14:30",
+"delisted": "2026-10-28",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Salles et stands"
@@ -180087,6 +180287,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-28T14:00",
+"delisted": "2026-10-28",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Salles et stands"
@@ -209550,6 +209751,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-28T14:00",
+"delisted": "2026-10-28",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"

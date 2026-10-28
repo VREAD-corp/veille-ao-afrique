@@ -1680,23 +1680,6 @@
 "reference": "TN4130587"
 },
 {
-"buyer": "Chef d'Aménagement du Barrage Targa Oumadi",
-"category": "Travaux",
-"deadline": "2026-10-28T14:00",
-"env_clauses": false,
-"object": "Travaux de reconstruction d'une mosquée dans la commune Taddart - Province de Guercif.",
-"org": "d4q",
-"places": [
-"MAROC",
-"GUERCIF"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-01",
-"ref_id": "1035504",
-"reference": "05/2026/ABTOM"
-},
-{
 "buyer": "OFFICE NATIONALE DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE ELECTRICITE",
 "category": "Travaux",
 "deadline": "2026-10-29T09:00",
@@ -5870,22 +5853,6 @@
 },
 {
 "buyer": "Direction des Mosquées",
-"category": "Services",
-"deadline": "2026-10-28T14:30",
-"env_clauses": false,
-"object": "LA RECEPTION DES FONDS DE FOUILLES, SUIVI ET CONTROLE DE QUALITE DES TRAVAUX DE RESTAURATION DE LA MOSQUEE QUETTA ET SES DEPENDANCES A MARRAKECH, EN LOT UNIQUE",
-"org": "f4g",
-"places": [
-"MARRAKECH"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-03",
-"ref_id": "1042969",
-"reference": "42/SMTF/DM/FSH/2026"
-},
-{
-"buyer": "Direction des Mosquées",
 "category": "Travaux",
 "deadline": "2026-10-29T11:00",
 "env_clauses": false,
@@ -8983,22 +8950,6 @@
 "published": "2026-09-30",
 "ref_id": "1042610",
 "reference": "01/2026/PDENE"
-},
-{
-"buyer": "SOCIETE REGIONALE MULTISERVICES CASABLANCA - SETTAT SA",
-"category": "Travaux",
-"deadline": "2026-10-28T14:30",
-"env_clauses": true,
-"object": "TRAVAUX ÉQUIPEMENT EN RESEAU D’ASSAINISSEMENT LIQUIDE DANS LES COMMUNES DE LA PROVINCE DE SIDI BENNOUR",
-"org": "g3h",
-"places": [
-"SIDI BENNOUR"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-24",
-"ref_id": "1042674",
-"reference": "407/2026/SRMCS"
 },
 {
 "buyer": "GOUVERNEUR DE KHOURIBGA",
@@ -19233,54 +19184,6 @@
 "published": "2026-10-06",
 "ref_id": "1046461",
 "reference": "28/PID/HAO"
-},
-{
-"buyer": "AGENCE URBAINE DE GUELMIM OUED NOUN",
-"category": "Fournitures",
-"deadline": "2026-10-28T14:00",
-"env_clauses": true,
-"object": "ACHAT DE MATERIEL INFORMATIQUE POUR LE COMPTE DE L’AGENCE URBAINE DE GUELMIM OUED NOUN",
-"org": "j8k",
-"places": [
-"GUELMIM"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-06",
-"ref_id": "1046633",
-"reference": "08/2026/AUGON"
-},
-{
-"buyer": "AGENCE URBAINE DE GUELMIM OUED NOUN",
-"category": "Fournitures",
-"deadline": "2026-10-28T15:30",
-"env_clauses": true,
-"object": "ACHAT DE LOGICIELS POUR LE COMPTE DE L’AGENCE URBAINE DE GUELMIM OUED NOUN",
-"org": "j8k",
-"places": [
-"GUELMIM"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-06",
-"ref_id": "1046640",
-"reference": "09/2026/AUGON"
-},
-{
-"buyer": "AGENCE URBAINE DE GUELMIM OUED NOUN",
-"category": "Services",
-"deadline": "2026-10-28T17:00",
-"env_clauses": true,
-"object": "CARTE D’APTITUDE A L’URBANISATION DE L’AIRE URBAIN D’ELOUATIA",
-"org": "j8k",
-"places": [
-"TAN-TAN"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-06",
-"ref_id": "1046645",
-"reference": "10/2026/AUGON"
 },
 {
 "buyer": "AL OMRANE TANGER TETOUAN AL HOCEIMA",
@@ -30228,22 +30131,6 @@
 {
 "buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE CHTOUKA AIT BAHA",
 "category": "Travaux",
-"deadline": "2026-10-28T15:00",
-"env_clauses": false,
-"object": "TRAVAUX D’EXTENSION DU LYCEE COLLEGIAL AL GARGARATE RELEVANT DE LA DIRECTION PROVINCIALE DE L'AREF SOUSS MASSA A CHTOUKA AIT BAHA - PROVINCE DE CHTOUKA AIT BAHA- (LOT UNIQUE).",
-"org": "p8x",
-"places": [
-"CHTOUKA-AIT BAHA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-03",
-"ref_id": "1045628",
-"reference": "58/INV.CHT/2026"
-},
-{
-"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE CHTOUKA AIT BAHA",
-"category": "Travaux",
 "deadline": "2026-10-29T10:00",
 "env_clauses": false,
 "object": "TRAVAUX DE CONSTRUCTION DE LYCEE COLLEGIAL IMAM AL GHAZALI A AIT AMIRA RELEVANT DE LA DIRECTION PROVINCIALE DE L'AREF SOUSS MASSA A CHTOUKA AIT BAHA – PROVINCE DE CHTOUKA AIT BAHA - (EN LOT UNIQUE).",
@@ -32536,22 +32423,6 @@
 "published": "2026-10-14",
 "ref_id": "1049440",
 "reference": "36/2026/MAT.ENS/DMENLAAY"
-},
-{
-"buyer": "Ministère de l’Education Nationale du Préscolaire et des Sports",
-"category": "Services",
-"deadline": "2026-10-28T15:00",
-"env_clauses": false,
-"object": "l’Analyse psychométrique des items utilisés dans le contrôle continu des écoles pionnières",
-"org": "p8x",
-"places": [
-"RABAT"
-],
-"procedure": "Appel à manifestation d'intérêt",
-"procedure_code": "AMI",
-"published": "2026-10-14",
-"ref_id": "1049450",
-"reference": "DMI/DGAP/573114/CS"
 },
 {
 "buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE BOULMANE",
@@ -36075,22 +35946,6 @@
 "published": "2026-10-19",
 "ref_id": "1045356",
 "reference": "17/ITSAIH/2026"
-},
-{
-"buyer": "SOCIETE ROYALE D'ENCOURAGEMENT DU CHEVAL",
-"category": "Travaux",
-"deadline": "2026-10-28T15:00",
-"env_clauses": false,
-"object": "Travaux d’aménagement des cuisines professionnelles et restaurants au niveau du parc d’exposition Mohamed VI d’El Jadida pour le compte de la SOREC.",
-"org": "q1s",
-"places": [
-"EL JADIDA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-02",
-"ref_id": "1045385",
-"reference": "129/2026/SOREC"
 },
 {
 "buyer": "DIRECTEUR PROVINCIAL D'AGRICULTURE D'ELHAJEB",
@@ -41369,38 +41224,6 @@
 "published": "2026-10-16",
 "ref_id": "1036584",
 "reference": "18/CSB/2026"
-},
-{
-"buyer": "Commune rurale de MY DRISS AGHBAL",
-"category": "Services",
-"deadline": "2026-10-28T14:00",
-"env_clauses": false,
-"object": "La location du souk hebdomadaire de Moulay Driss Aghbal au titre de l’exercice 2027 (du 01/01/2027 au 31/12/2027.",
-"org": "s3z",
-"places": [
-"KHEMISSET"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-22",
-"ref_id": "1040154",
-"reference": "02/2026/CMDA"
-},
-{
-"buyer": "Commune rurale de MY DRISS AGHBAL",
-"category": "Services",
-"deadline": "2026-10-28T14:30",
-"env_clauses": false,
-"object": "La location de l’abattoir communal de Moulay Driss Aghbal au titre de l’exercice 2027. (du 01/01/2027 au 31/12/2027.",
-"org": "s3z",
-"places": [
-"KHEMISSET"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-22",
-"ref_id": "1040171",
-"reference": "03/2026/CMDA"
 },
 {
 "buyer": "Commune rurale de BRACHOUA",
