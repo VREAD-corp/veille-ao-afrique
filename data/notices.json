@@ -1,5 +1,68 @@
 [
 {
+"buyer": "INSTANCE TUNISIENNE DE L'INVESTISSEMENT",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-17T12:00",
+"first_seen": "2026-10-29",
+"id": "tn-104519",
+"object": "souscription des contrats d'assurance pour les années 2027-2028-2029",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-29",
+"reference": "Tender-104519",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "tn-104519-souscription-contrats-assurance-annees-2027-2028-2029",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104519"
+},
+{
+"buyer": "Centre d'Encadrement et d'Orientation Sociale de Tunis",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-26T10:00",
+"first_seen": "2026-10-29",
+"id": "tn-104518",
+"object": "Acquisition de denrées alimentaires pour année 2027",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-29",
+"reference": "Tender-104518",
+"regions": [],
+"sectors": [
+"alimentation"
+],
+"slug": "tn-104518-acquisition-denrees-alimentaires-annee-2027",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104518"
+},
+{
+"buyer": "Société Tunisienne d’Electricité et de Gaz",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-01T09:00",
+"first_seen": "2026-10-29",
+"id": "tn-104517",
+"object": "Mise à niveau des bancs d'étalonnage des compteurs gaz",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-29",
+"reference": "Tender-104517",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104517-mise-niveau-bancs-etalonnage-compteurs-gaz",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104517"
+},
+{
 "buyer": "Ministère de l'Enseignement Supérieur et de la Recherche Scientifique",
 "category": "",
 "country": "Tunisie",
@@ -28028,6 +28091,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-29T15:30",
+"delisted": "2026-10-29",
 "detail_checked": true,
 "env_clauses": false,
 "estimate": 360000.0,
@@ -31200,6 +31264,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-29T14:30",
+"delisted": "2026-10-29",
 "detail_checked": true,
 "domains": [
 "Travaux / Terrassements / Terrassements en masse"
@@ -71358,6 +71423,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-29T14:00",
+"delisted": "2026-10-29",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -81997,6 +82063,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-29T16:30",
+"delisted": "2026-10-29",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
@@ -88742,6 +88809,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-29T14:00",
+"delisted": "2026-10-29",
 "detail_checked": true,
 "domains": [
 "Fournitures / Produits chimiques, de nettoyage, insecticides / Produits d’hygiènes et de désinfection"
@@ -90550,6 +90618,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-29T14:00",
+"delisted": "2026-10-29",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
@@ -90648,6 +90717,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-29T14:00",
+"delisted": "2026-10-29",
 "detail_checked": true,
 "domains": [
 "Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation de réception"
@@ -92700,6 +92770,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-29T15:00",
+"delisted": "2026-10-29",
 "detail_checked": true,
 "domains": [
 "Fournitures / Effets d’habillement et accessoires / Vêtements professionnels"
@@ -95412,6 +95483,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-29T15:00",
+"delisted": "2026-10-29",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie"
@@ -107291,6 +107363,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-29T14:30",
+"delisted": "2026-10-29",
 "detail_checked": true,
 "env_clauses": false,
 "estimate": 240000.0,
@@ -109876,6 +109949,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-29T14:00",
+"delisted": "2026-10-29",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électrique"
@@ -121523,6 +121597,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-29T15:00",
+"delisted": "2026-10-29",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -122948,6 +123023,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-29T14:30",
+"delisted": "2026-10-29",
 "detail_checked": true,
 "domains": [
 "Services / Prestations d’essais, de contrôle et de laboratoire / Contrôle et analyse techniques des échantillons prélevés sur les produits, matériel et matériaux soumis à des normes obligatoires (autre que le domaine du génie civil)"
@@ -179759,6 +179835,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-29T16:30",
+"delisted": "2026-10-29",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électrique"
