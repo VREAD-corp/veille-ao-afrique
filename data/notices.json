@@ -1,5 +1,26 @@
 [
 {
+"buyer": "Smart Tunisia Technoparks",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-30T10:00",
+"first_seen": "2026-10-30",
+"id": "tn-104534",
+"object": "Travaux de rénovation de l'éclairage extérieur à la S2T",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-10-30",
+"reference": "Tender-104534",
+"regions": [],
+"sectors": [
+"energie"
+],
+"slug": "tn-104534-travaux-renovation-eclairage-exterieur-s2t",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104534"
+},
+{
 "buyer": "Municipalite de Tunis",
 "category": "",
 "country": "Tunisie",
@@ -12989,6 +13010,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-30T11:30",
+"delisted": "2026-10-30",
 "detail_checked": true,
 "domains": [
 "Fournitures / Imprimés, produits d’impression, de reproduction, et de photographie / Produits d’impression, de reproduction et de photographie"
@@ -20335,6 +20357,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-30T12:00",
+"delisted": "2026-10-30",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
@@ -20404,6 +20427,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-10-30T12:30",
+"delisted": "2026-10-30",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Mobilier de bureau"
@@ -25929,6 +25953,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-30T12:00",
+"delisted": "2026-10-30",
 "detail_checked": true,
 "domains": [
 "Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation d’Hôtellerie."
@@ -87974,6 +87999,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-30T12:00",
+"delisted": "2026-10-30",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de voiries, chemins et pistes / Pistes"
@@ -88670,6 +88696,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-30T12:00",
+"delisted": "2026-10-30",
 "detail_checked": true,
 "domains": [
 "Travaux / Terrassements / Terrassements routiers"
@@ -90650,6 +90677,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-30T12:00",
+"delisted": "2026-10-30",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Gardiennage et surveillance des bâtiments administratifs"
@@ -102313,6 +102341,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-10-30T11:30",
+"delisted": "2026-10-30",
 "detail_checked": true,
 "domains": [
 "Services / Services architecturales et topographiques / Exécution de plans, sommaires, d’exécutions et de détails"
@@ -102685,6 +102714,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-30T12:00",
+"delisted": "2026-10-30",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -136828,6 +136858,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-10-30T12:00",
+"delisted": "2026-10-30",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Travaux d'éclairage publics"
