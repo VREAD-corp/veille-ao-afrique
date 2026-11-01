@@ -1,5 +1,27 @@
 [
 {
+"buyer": "MISSION D'ETUDES POUR L'AMENAGEMENT ET LE DEVELOPPEMENT DE LA REGION DU NORD",
+"category": "Travaux",
+"country": "Cameroun",
+"deadline": "2026-11-02T10:00",
+"first_seen": "2026-11-01",
+"id": "wb-op00478432",
+"method": "Request for Quotations",
+"object": "Construction d'une salle de conférence équipée à l’ETAG",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P166072 – Valorization of Investments in the Valley of the Benue",
+"published": "2026-10-31",
+"reference": "CM-MEADEN-560564-CW-RFQ",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "wb-op00478432-construction-salle-conference-equipee-letag",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00478432"
+},
+{
 "buyer": "Hôpital Habib Thameur Tunis",
 "category": "",
 "country": "Tunisie",
