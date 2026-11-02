@@ -1,5 +1,89 @@
 [
 {
+"buyer": "Agence de Réhabilitation et de Rénovation Urbaine",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-03T12:00",
+"first_seen": "2026-11-02",
+"id": "tn-104557",
+"object": "AO 90 /2026 Travaux de de Réhabilitation Du Quartier Sanaouber dans la commune de Sakiet Sidi Youssef Gouvernorat El Kef",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-02",
+"reference": "Tender-104557",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104557-ao-90-2026-travaux-rehabilitation-quartier-sanaouber-commune-sakiet",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104557"
+},
+{
+"buyer": "Agence de Réhabilitation et de Rénovation Urbaine",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-02T12:00",
+"first_seen": "2026-11-02",
+"id": "tn-104556",
+"object": "AO 89 /2026 Travaux de voiries et de réseau d’eau potable au quartier Awled Aissaoui dans la commune d’Om Laarayes Gouvernorat de Gafsa",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-02",
+"reference": "Tender-104556",
+"regions": [],
+"sectors": [
+"eau-assainissement"
+],
+"slug": "tn-104556-ao-89-2026-travaux-voiries-reseau-deau-potable-quartier",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104556"
+},
+{
+"buyer": "Agence de Réhabilitation et de Rénovation Urbaine",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-02T12:00",
+"first_seen": "2026-11-02",
+"id": "tn-104555",
+"object": "AO 88 /2026 Travaux de réhabilitation Du Quartier 09 Avril dans la Commune de SIDI BOUROUISGouvernorat de SILIANA",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-02",
+"reference": "Tender-104555",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104555-ao-88-2026-travaux-rehabilitation-quartier-09-avril-commune",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104555"
+},
+{
+"buyer": "Ministere de la jeunesse et des sports",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-27T10:00",
+"first_seen": "2026-11-02",
+"id": "tn-104554",
+"object": "Fourniture et pose des équipements de cuisine pour le complexe sportif de Borj Cedria",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-02",
+"reference": "Tender-104554",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "tn-104554-fourniture-pose-equipements-cuisine-complexe-sportif-borj-cedria",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104554"
+},
+{
 "buyer": "Office National de la Propriété Foncière",
 "category": "",
 "country": "Tunisie",
@@ -69030,6 +69114,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-02T14:00",
+"delisted": "2026-11-02",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -69438,6 +69523,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-02T14:30",
+"delisted": "2026-11-02",
 "detail_checked": true,
 "domains": [
 "Services / Prestations d’essais, de contrôle et de laboratoire / Contrôle et analyse techniques des échantillons prélevés sur les produits, matériel et matériaux soumis à des normes obligatoires (autre que le domaine du génie civil)"
@@ -73195,6 +73281,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-02T14:00",
+"delisted": "2026-11-02",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et fournitures pour imagerie médical"
@@ -81045,6 +81132,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-02T14:00",
+"delisted": "2026-11-02",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / fournitures électriques (lampes, disjoncteurs, prises……..)"
@@ -89583,6 +89671,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-02T15:00",
+"delisted": "2026-11-02",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Matériels et équipements informatiques."
@@ -107497,6 +107586,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-02T15:00",
+"delisted": "2026-11-02",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Logiciels utilitaires, middlewares, sécurités, messageries, collaboration et autres"
@@ -199259,7 +199349,7 @@
 "buyer": "Société Tunisienne de Sucre",
 "category": "",
 "country": "Tunisie",
-"deadline": "2026-11-03T10:00",
+"deadline": "2026-11-17T10:00",
 "first_seen": "2026-09-17",
 "id": "tn-103783",
 "object": "ELABORATION ET MISE EN ŒUVRE D’UN PLAN DE RESTRUCTURATION ET DE SUIVI POUR LA STS",
