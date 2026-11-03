@@ -1,14 +1,14 @@
 {
-"checked": "2026-11-03T14:38+00:00",
+"checked": "2026-11-03T22:23+00:00",
 "sources": {
 "BJ": {
-"at": "2026-11-03T14:38+00:00",
+"at": "2026-11-03T22:23+00:00",
 "count": 51,
 "ok": true,
 "open": 37
 },
 "BM": {
-"at": "2026-11-03T14:38+00:00",
+"at": "2026-11-03T22:23+00:00",
 "count": 397,
 "ok": true,
 "open": 204
@@ -17,7 +17,7 @@
 "at": "2026-10-29T13:40+00:00",
 "count": 5707,
 "error": "request failed after 3 attempts: https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseAdvancedSearch&searchAnnCons: <urlopen error [Errno 110] Connection timed out>",
-"failed_at": "2026-11-03T14:38+00:00",
+"failed_at": "2026-11-03T22:23+00:00",
 "full_at": "2026-10-29T13:40+00:00",
 "listed": 0,
 "mode": "complet",
@@ -25,11 +25,11 @@
 "requests": 3
 },
 "TN": {
-"at": "2026-11-03T14:38+00:00",
-"count": 440,
+"at": "2026-11-03T22:23+00:00",
+"count": 443,
 "ok": true,
-"open": 327
+"open": 330
 }
 },
-"updated": "2026-11-03T14:38+00:00"
+"updated": "2026-11-03T22:23+00:00"
 }

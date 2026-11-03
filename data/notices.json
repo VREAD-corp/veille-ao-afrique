@@ -1,5 +1,68 @@
 [
 {
+"buyer": "Société Régionale de Transport de Médenine",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-03T10:00",
+"first_seen": "2026-11-03",
+"id": "tn-104572",
+"object": "fournitures des pneus",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-03",
+"reference": "Tender-104572",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "tn-104572-fournitures-pneus",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104572"
+},
+{
+"buyer": "Centre national du cinéma et de l'image",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-18T12:00",
+"first_seen": "2026-11-03",
+"id": "tn-104571",
+"object": "Appel d’offres n°05/2026 selon les Procédures simplifiées LOCATION DE MATRIEL DE SONORISATION, LUMIERE, PROJECTEUR VIDEO, SCENE ET STRUCTURE ALUMINIUM AU PROFIT DES JCC 2026",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-03",
+"reference": "Tender-104571",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "tn-104571-appel-doffres-n05-2026-selon-procedures-simplifiees-location-matriel",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104571"
+},
+{
+"buyer": "Office de la Marine Marchande et des Ports",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-03T10:00",
+"first_seen": "2026-11-03",
+"id": "tn-104570",
+"object": "CONCOURS NATIONAL D ARCHITECTURE A UN DEGRE PROJET DE CONSTRUCTION D UN NOUVEAU BATIMENT ADMINISTRATIF POUR LE PORT DE SOUSSE",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-03",
+"reference": "Tender-104570",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104570-concours-national-architecture-degre-projet-construction-nouveau-batiment-admini",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104570"
+},
+{
 "buyer": "Société Tunisienne des Marchés de Gros",
 "category": "",
 "country": "Tunisie",
@@ -57622,6 +57685,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-03T15:00",
+"delisted": "2026-11-03",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
