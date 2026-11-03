@@ -4,7 +4,7 @@ from datetime import date, datetime
 from pathlib import Path
 
 from aoafrique import benin, model, pmmp, tunisie, worldbank
-from aoafrique.site import Site
+from aoafrique.site import Site, pro_only
 
 FX = Path(__file__).parent / "fixtures"
 
@@ -374,7 +374,21 @@ def test_country_pages_sitemap_and_ab_test_on_new_tenders(tmp_path):
     assert '<input type="hidden" name="countries" value="tunisie">' in page and 'data-ctx="fiche-pays"' in page
     assert 'href="/pays/tunisie/"' in page and "marchespublics.gov.tn" in page and "Portail tunisien" in page
     assert '"@type": "Demand"' in page
+    # « Alertes pour ce pays : formule Pro » (2026-11-03): pages outside Morocco only, outside #alerte-rapide, so the two
+    # arms of AOAF-ALERT-INLINE-01 show it alike; never a price or a deadline in it.
+    note = re.search(r'<p class="small muted pro-note"[^>]*>(.*?)</p>', page)
+    assert note and "formule Pro" in note.group(1) and "version gratuite continue" in note.group(1) and "€" not in note.group(1)
+    assert 'href="/alertes/#offres"' in note.group(1) and 'data-detail="pro-fiche"' in note.group(1)
+    rapide = re.search(r'<section class="alert-quick".*?</section>', page, re.S).group(0)
+    assert "pro-note" not in rapide and page.index("pro-note") > page.index('id="alerte-rapide"')
+    pm = next(n for n in notices if n["source"] == "PMMP")
+    assert "pro-note" not in (tmp_path / "ao" / pm["slug"] / "index.html").read_text(encoding="utf-8")
+    assert pro_only({"source": "BM", "country": "Sénégal"}) and pro_only({"source": "BJ", "country": "Bénin"})
+    assert not pro_only({"source": "BM", "country": "Maroc"}) and not pro_only({"source": "PMMP", "country": "Maroc"})
+    al = (tmp_path / "alertes" / "index.html").read_text(encoding="utf-8")
+    assert re.search(r'value="afrique-francophone">[^<]+</label><p class="small muted pro-note">Alertes pour ces pays : <a href="#offres"', al)
     b = (tmp_path / "ao" / bj[0]["slug"] / "index.html").read_text(encoding="utf-8")
+    assert "Alertes pour ce pays : " in b
     assert "Avis officiel (PDF)" in b and "marches-publics.bj" in b
     data = json.loads((tmp_path / "data" / "ouverts.json").read_text(encoding="utf-8"))
     assert {n["x"] for n in data["notices"]} >= {"BJ", "TN", "PMMP"}

@@ -66,6 +66,15 @@ PLANS = [
     ("pro-79", "Pro", 79, "Tout l'Essentiel, plus les avis des portails nationaux du Bénin et de la Tunisie et ceux de la Banque mondiale "
      "dans les pays d'Afrique francophone."),
 ]
+# Zones of each plan, same as PAID_PLANS_ in gas/src/Code.js: Essentiel = Moroccan portal; Pro adds the Benin and Tunisia
+# portals and the World Bank. A tender page outside Morocco (BJ, TN, BM except Maroc) is covered by Pro only (2026-11-03).
+PRO_FREE_TOO = "Tant que la version gratuite continue, elle les envoie aussi."
+
+
+def pro_only(n: dict) -> bool:
+    return n.get("source") != "PMMP" and n.get("country") != "Maroc"
+
+
 # Publisher: the Jalonel brand (hub https://jalonel.com/), operated by READ FRANCE SAS.
 PUBLISHER = {"@type": "Organization", "@id": "https://jalonel.com/#org", "name": "Jalonel", "url": "https://jalonel.com/",
              "parentOrganization": {"@type": "Organization", "name": "READ FRANCE SAS", "identifier": "SIREN 988741773"}}
@@ -478,6 +487,15 @@ class Site:
                                  f"Veille des appels d'offres publics au Maroc : {nb(s['pmmp'])} consultations ouvertes, mises à jour deux fois par jour. Filtres par secteur, région, acheteur et date limite, résumé en français, alerte par e-mail.",
                                  body, jsonld=ld, scripts=("app.js", "alerte-inline.js")))
 
+    def pro_note(self, n: dict) -> str:
+        """Discreet line on a tender page whose country only Pro covers. Outside #alerte-rapide and identical in both
+        arms of AOAF-ALERT-INLINE-01 (experiments/AOAF-ALERT-INLINE-01.md, change of 2026-11-03)."""
+        if not pro_only(n):
+            return ""
+        zone = "cette zone" if "régional" in n.get("country", "") else "ce pays"
+        return (f'<p class="small muted pro-note" data-section="pro-note">Alertes pour {zone} : <a href="{link("alertes/")}#offres" '
+                f'data-mesure="cta_click" data-detail="pro-fiche">formule Pro</a>. {PRO_FREE_TOO}</p>')
+
     def build_tender(self, n: dict) -> None:
         open_ = model.is_open(n, self.now) and not n.get("delisted")
         rows = [("Acheteur", e(n.get("buyer"))),
@@ -570,6 +588,7 @@ class Site:
 <p class="official" data-section="avis-officiel"><a class="btn" href="{e(n['url'])}" rel="noopener" data-mesure="official_click" data-detail="{n['source'].lower()}">Voir l'avis officiel sur {src_name}</a> <a class="link-more" href="#alerte" data-mesure="cta_click" data-detail="fiche-haut">Être prévenu des avis similaires</a></p>
 <table class="facts-table"><caption>Fiche de la consultation</caption><tbody>{table}</tbody></table>
 <p class="small muted">{source_line}{e(fmt_date(n.get('published', '')))}, relu le {e(self.updated_text())}. Le dossier de consultation et les éventuels rectificatifs sont sur le site officiel, qui fait foi.</p>
+{self.pro_note(n)}
 </article>
 {self.alert_inline("fiche-pays" if country else "fiche-bm" if bm else "fiche", sector, region, bm, ai_title, country)}
 {f'<section id="similaires" data-section="similaires" aria-labelledby="similaires-h"><h2 id="similaires-h">Avis similaires encore ouverts</h2>{self.cards(similar)}</section>' if similar else ''}
@@ -810,7 +829,7 @@ class Site:
 <div class="hp" aria-hidden="true"><label>Site web <input type="text" name="website" tabindex="-1" autocomplete="off"></label></div>
 <fieldset><legend>Vos secteurs</legend><div class="chk-grid">{sector_boxes}</div></fieldset>
 <fieldset><legend>Vos régions au Maroc <button type="button" class="link-btn" id="toutes-regions">tout cocher</button></legend><div class="chk-grid">{region_boxes}</div></fieldset>
-<fieldset><legend>Autres pays</legend><label class="chk"><input type="checkbox" name="countries" value="benin"> Bénin (portail national)</label><label class="chk"><input type="checkbox" name="countries" value="tunisie"> Tunisie (portail national)</label><label class="chk"><input type="checkbox" name="countries" value="afrique-francophone"> Ajouter les avis en français de la Banque mondiale dans les pays d'Afrique francophone</label></fieldset>
+<fieldset><legend>Autres pays</legend><label class="chk"><input type="checkbox" name="countries" value="benin"> Bénin (portail national)</label><label class="chk"><input type="checkbox" name="countries" value="tunisie"> Tunisie (portail national)</label><label class="chk"><input type="checkbox" name="countries" value="afrique-francophone"> Ajouter les avis en français de la Banque mondiale dans les pays d'Afrique francophone</label><p class="small muted pro-note">Alertes pour ces pays : <a href="#offres" data-mesure="cta_click" data-detail="pro-alertes">formule Pro</a>. {PRO_FREE_TOO}</p></fieldset>
 <div class="row">
 <label>Adresse e-mail professionnelle<input type="email" name="email" required autocomplete="email" maxlength="254"></label>
 <label>Entreprise <span class="muted">(facultatif)</span><input type="text" name="company" maxlength="120" autocomplete="organization"></label>

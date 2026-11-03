@@ -282,6 +282,16 @@ function listUrl_(sub) {
   return ALERT_SITE_ + (q.length ? '?' + q.join('&') : '') + '#liste';
 }
 
+var ALERT_UPSELL_URL_ = ALERT_SITE_ + 'alertes/?utm_source=alerte&utm_medium=email&utm_campaign=upsell-pro#offres';
+
+/** The short Pro block of the free e-mails. Zones from PAID_PLANS_ (Pro = Maroc + Bénin + Tunisie + Banque mondiale). */
+function alertUpsell_() {
+  return { url: ALERT_UPSELL_URL_, lines: [
+    'Formule Pro : en plus du Maroc, les portails nationaux du Bénin et de la Tunisie et les avis en français de la Banque mondiale dans les pays d’Afrique francophone, 3 mois d’alertes garanties.',
+    'Les formules :',
+    'La version gratuite continue : vous n’avez rien à faire pour garder ces alertes.'] };
+}
+
 function alertMail_(sub, items, labels, first) {
   var n = items.length;
   var shown = items.slice(0, ALERT_MAX_ITEMS_);
@@ -309,11 +319,19 @@ function alertMail_(sub, items, labels, first) {
     text.push(more + ' : ' + listUrl_(sub), '');
     html.push('<p>' + more + ' : <a href="' + escHtml_(listUrl_(sub)) + '">voir la liste</a>.</p>');
   }
+  // Upsell (2026-11-03), free sign-ups only: what Pro adds (zones of PAID_PLANS_), no price, no deadline, and the
+  // free version stays. Never shown to an address with a running paid period.
+  if (!sub.paid) {
+    var up = alertUpsell_();
+    text.push(up.lines[0], up.lines[1] + ' ' + up.url, up.lines[2], '');
+    html.push('<p style="margin:1.2em 0 .4em;padding:.5em .8em;border-left:3px solid #ccc;color:#333">' + escHtml_(up.lines[0]) + '<br>\n' +
+      escHtml_(up.lines[1]) + ' <a href="' + escHtml_(up.url) + '">ao-afrique.jalonel.com/alertes</a><br>\n' + escHtml_(up.lines[2]) + '</p>');
+  }
   var foot = [
     'L’avis officiel fait foi : vérifiez-le avant de préparer une offre.',
     'Vous recevez cet e-mail parce que vous avez demandé les alertes de Veille AO Afrique le ' + frDate_(sub.since) + ' (' + (sub.frequency === 'hebdomadaire' ? 'une fois par semaine' : 'au plus un e-mail par matin, seulement s’il y a du nouveau') + '). ' +
       (sub.paid ? 'Formule ' + PAID_PLANS_[sub.paid.plan].name + ' payée : alertes jusqu’au ' + frDate_(sub.paid.until) + ' inclus, sans renouvellement automatique.'
-        : 'Gratuit pendant le test, rien ne vous sera facturé sans votre accord.'),
+        : 'Version gratuite : rien ne vous sera facturé sans votre accord.'),
     'Se désinscrire en un clic : ' + unsub,
     'Veille AO Afrique est un service Jalonel, marque de READ FRANCE SAS (SIREN 988 741 773), 11 rue Rouvet, 75019 Paris. Contact : ' + ALERT_REPLY_TO_ + '.',
   ];

@@ -197,7 +197,7 @@ assert.ok(a.text.includes('Voici les 2 appels d’offres publiés depuis votre i
 for (const m of [a, a2]) {
   const flat = m.html.replace(/<[^>]+>/g, '');
   assert.ok(!/ h(?:\s?\d\d)?L’avis/.test(flat) && !/\dL’avis/.test(flat), 'HTML without tags: deadline glued to the footer');
-  assert.match(flat, /date limite : [^\n]+\n+L’avis officiel fait foi/);
+  assert.match(flat, /date limite : [^\n]+\n+(?:Formule Pro [^\n]+\n+[^\n]+\n+La version gratuite continue[^\n]+\n+)?L’avis officiel fait foi/);
   assert.match(m.text, /\n\nL’avis officiel fait foi/);
   assert.ok(!/[^\s>]L’avis officiel/.test(m.text + m.html));
 }
@@ -291,7 +291,22 @@ assert.ok(!/MailApp|send_mail/.test(alerts.replace(/no MailApp, no\s+\* send_mai
   const mBuyer = plan.mails.find((m) => m.email === 'acheteur@btp.ma');
   assert.match(mBuyer.text, /Formule Essentiel payée : alertes jusqu’au 2 février 2027 inclus/);
   assert.match(plan.mails.find((m) => m.email === 'pro@entreprise.tn').text, /Formule Pro payée : alertes jusqu’au 27 février 2027 inclus/);
-  assert.match(plan.mails.find((m) => m.email === 'free@entreprise.ma').text, /Gratuit pendant le test/);
+  const mFree = plan.mails.find((m) => m.email === 'free@entreprise.ma');
+  assert.match(mFree.text, /Version gratuite : rien ne vous sera facturé/);
+  // Pro block (2026-11-03): free sign-ups only, before the footer, Pro zones from PAID_PLANS_, tracked link, no price
+  // and no urgency, the free version stays.
+  const URL_UP = 'https://ao-afrique.jalonel.com/alertes/?utm_source=alerte&utm_medium=email&utm_campaign=upsell-pro#offres';
+  for (const part of [mFree.text, mFree.html]) {
+    assert.ok(part.includes('Formule Pro : en plus du Maroc, les portails nationaux du Bénin et de la Tunisie et les avis en français de la Banque mondiale'), 'Pro block');
+    assert.ok(part.includes('La version gratuite continue'), 'free version stays');
+    assert.ok(part.indexOf('Formule Pro :') < part.indexOf('L’avis officiel fait foi'), 'block before the footer');
+    const block = part.slice(part.indexOf('Formule Pro :'), part.indexOf('L’avis officiel fait foi'));
+    assert.ok(!/€|\d+ ?eur|limitée|dernier jour|vite|aujourd’hui seulement|plus que|expire/i.test(block), 'no price, no urgency: ' + block);
+  }
+  assert.ok(mFree.text.includes(URL_UP) && mFree.html.includes('href="' + URL_UP.replace(/&/g, '&amp;') + '"'), 'tracked link');
+  for (const m of [mBuyer, plan.mails.find((x) => x.email === 'pro@entreprise.tn')]) {
+    assert.ok(!m.text.includes('Formule Pro :') && !m.html.includes('upsell-pro'), 'no Pro block for a paid address');
+  }
   // Cutover (only when FREE_ALERTS_UNTIL_ is set): free sign-ups stop, Essentiel keeps Morocco only, Pro keeps Tunisia.
   const q = gas([
     { at: '2026-10-20T09:00:00Z', email: 'free@entreprise.ma', kind: 'alertes', countries: 'maroc', ...consent },
