@@ -1,4 +1,4 @@
-"""python -m aoafrique update | build --out _site | indexnow | alerts --mode test|real"""
+"""python -m aoafrique update | build --out _site | indexnow | alerts --mode test|real | announce --mode test|real --confirm WORD"""
 
 from __future__ import annotations
 
@@ -265,6 +265,11 @@ def cmd_alerts(args) -> int:
     return alerts.run(args.mode, dry_run=args.dry_run)
 
 
+def cmd_announce(args) -> int:
+    from . import announce
+    return announce.run(args.mode, args.confirm, dry_run=args.dry_run)
+
+
 def main(argv=None) -> int:
     p = argparse.ArgumentParser(prog="aoafrique")
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -283,8 +288,13 @@ def main(argv=None) -> int:
     a = sub.add_parser("alerts", help="send today's e-mail alerts from alertes@jalonel.com (SMTP)")
     a.add_argument("--mode", choices=["test", "real"], required=True)
     a.add_argument("--dry-run", action="store_true", help="show who would receive what (masked); send and record nothing")
+    n = sub.add_parser("announce", help="one-off « fin du test gratuit » e-mail from alertes@jalonel.com (SMTP)")
+    n.add_argument("--mode", choices=["test", "real"], required=True)
+    n.add_argument("--confirm", default="", help="must be ENVOYER-FIN-TEST, otherwise nothing is sent")
+    n.add_argument("--dry-run", action="store_true", help="show the recipients (masked); send and record nothing")
     args = p.parse_args(argv)
-    return {"update": cmd_update, "build": cmd_build, "indexnow": cmd_indexnow, "alerts": cmd_alerts}[args.cmd](args)
+    return {"update": cmd_update, "build": cmd_build, "indexnow": cmd_indexnow, "alerts": cmd_alerts,
+            "announce": cmd_announce}[args.cmd](args)
 
 
 if __name__ == "__main__":

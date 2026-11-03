@@ -35,6 +35,8 @@
  *   alerts_plan / alerts_confirm POST {token}  e-mails of the day and their confirmation, for the GitHub Actions
  *                                   workflow that sends them from alertes@jalonel.com (src/Alerts.js). Nothing is ever
  *                                   e-mailed from this script.
+ *   announce_plan / announce_confirm POST {token}  one-off « fin du test gratuit » e-mail (src/Announce.js): recipients
+ *                                   and their e-mail (read-only), then the one-real-run marker; sent by announce.yml.
  *   unsubscribe also accepts the RFC 8058 one-click POST (form body List-Unsubscribe=One-Click).
  *
  * Scope: spreadsheets only. No send_mail and no external_request: the alert e-mails never leave from the owner's
@@ -161,6 +163,12 @@ function route_(params, body) {
       case 'alerts_confirm':
         if (!body) throw userError_('method_not_allowed', 'POST attendu.');
         return json_(alertsConfirmAction_(req));
+      case 'announce_plan':
+        if (!body) throw userError_('method_not_allowed', 'POST attendu.');
+        return json_(announcePlanAction_(req));
+      case 'announce_confirm':
+        if (!body) throw userError_('method_not_allowed', 'POST attendu.');
+        return json_(announceConfirmAction_(req));
       default: return json_({ ok: false, error: 'unknown_action' });
     }
   } catch (err) {

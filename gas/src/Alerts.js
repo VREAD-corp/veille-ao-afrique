@@ -160,8 +160,9 @@ function alertFeed_(feed) {
 }
 
 /** Active alert sign-ups, one per address: criteria of the latest row, `since` = day of the first row. testMode: only the
- * `test` rows (end-to-end checks); otherwise only the real ones. A withdrawal on any row stops the address. */
-function alertSubscribers_(testMode) {
+ * `test` rows (end-to-end checks); otherwise only the real ones. A withdrawal on any row stops the address, except with
+ * keepWithdrawn (Announce.js test mode only: our own test address, whose unsubscribe link was tested on 22/10). */
+function alertSubscribers_(testMode, keepWithdrawn) {
   var sh = tab_('Inscriptions', SIGNUP_HEADER_);
   var last = sh.getLastRow();
   if (last < 2) return [];
@@ -171,7 +172,7 @@ function alertSubscribers_(testMode) {
   rows.forEach(function (r) {
     var email = cellText_(r[1]).toLowerCase();
     if (!email) return;
-    if (r[15]) { withdrawn[email] = true; return; }
+    if (r[15]) { withdrawn[email] = true; if (!keepWithdrawn) return; }
     if (r[2] !== 'alertes' || (r[14] === 'oui') !== !!testMode) return;
     var at = cellText_(r[0]);
     var split = function (v) { return cellText_(v).split(',').map(function (x) { return x.trim(); }).filter(String); };
@@ -181,7 +182,7 @@ function alertSubscribers_(testMode) {
     if (at > cur.at) { row.since = cur.since; by[email] = row; } else if (row.since < cur.since) cur.since = row.since;
   });
   var paid = paidSubscriptions_(testMode);
-  return Object.keys(by).filter(function (k) { return !withdrawn[k]; }).map(function (k) { by[k].paid = paid[k] || null; return by[k]; });
+  return Object.keys(by).filter(function (k) { return keepWithdrawn || !withdrawn[k]; }).map(function (k) { by[k].paid = paid[k] || null; return by[k]; });
 }
 
 /** Paid periods still running today (Paris), one per address: the one that ends last. testMode: only `test` rows. */
@@ -251,6 +252,11 @@ function frDate_(iso) {
   return day + ' ' + ALERT_MONTHS_[Number(m[2]) - 1] + ' ' + m[1] + (m[4] ? ' à ' + Number(m[4]) + ' h' + (m[5] !== '00' ? ' ' + m[5] : '') : '');
 }
 
+/** One-click unsubscribe link of an address (HMAC LINK_KEY_), also used by Announce.js. */
+function unsubscribeUrl_(email) {
+  return ALERT_WEBAPP_URL_ + '?action=unsubscribe&email=' + encodeURIComponent(email) + '&t=' + hmac_(email);
+}
+
 function maskEmail_(email) { return String(email).replace(/^(.).*(@.*)$/, '$1…$2'); }
 
 function escHtml_(s) {
@@ -296,7 +302,7 @@ function alertMail_(sub, items, labels, first) {
   var n = items.length;
   var shown = items.slice(0, ALERT_MAX_ITEMS_);
   var subject = n + (n > 1 ? ' nouveaux appels d’offres' : ' nouvel appel d’offres') + ' pour vos critères – Veille AO Afrique';
-  var unsub = ALERT_WEBAPP_URL_ + '?action=unsubscribe&email=' + encodeURIComponent(sub.email) + '&t=' + hmac_(sub.email);
+  var unsub = unsubscribeUrl_(sub.email);
   var utm = 'utm_source=alerte&utm_medium=email&utm_campaign=alertes-quotidiennes';
   var url = function (x) { return ALERT_SITE_ + 'ao/' + x.i + '/?' + utm; };
   var place = function (x) { return x.x === 'BM' ? x.k : (x.p && x.p.length ? x.p.join(', ') : 'Maroc'); };

@@ -1,0 +1,57 @@
+name: Annonce fin du test gratuit
+
+# One-off e-mail « Fin du test gratuit : ce qui change pour vous », sent from alertes@jalonel.com with the SMTP of the
+# alerts (aoafrique/announce.py). Manual only. The Apps Script backend picks the recipients and builds each e-mail
+# (announce_plan) and allows one real run only (announce_confirm marker). Without confirm=ENVOYER-FIN-TEST, nothing
+# is sent. Real run, only after the founder's written agreement:
+#   gh workflow run announce.yml -f mode=real -f confirm=ENVOYER-FIN-TEST
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "test (the `test` sign-up of secret AOAF_TEST_TO only) or real"
+        required: true
+        default: test
+        type: choice
+        options: [test, real]
+      confirm:
+        description: "Type ENVOYER-FIN-TEST to send (otherwise nothing is sent)"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  # Same group as the daily alerts: never two runs on the mailbox at once.
+  group: alerts
+  cancel-in-progress: false
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Confirmation
+        env:
+          CONFIRM: ${{ github.event.inputs.confirm }}
+        run: |
+          if [ "$CONFIRM" != "ENVOYER-FIN-TEST" ]; then
+            echo "::error::confirm doit valoir ENVOYER-FIN-TEST : rien n'est envoyé"
+            exit 1
+          fi
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: aoafrique
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - name: Send
+        env:
+          AOAF_ALERTS_TOKEN: ${{ secrets.AOAF_ALERTS_TOKEN }}
+          AOAF_SMTP_PASSWORD: ${{ secrets.AOAF_SMTP_PASSWORD }}
+          # Test mode goes to this one test sign-up only (a secret: the logs of this public repository stay clean).
+          AOAF_ONLY: ${{ secrets.AOAF_TEST_TO }}
+          MODE: ${{ github.event.inputs.mode }}
+          CONFIRM: ${{ github.event.inputs.confirm }}
+        run: python -m aoafrique announce --mode "$MODE" --confirm "$CONFIRM"
