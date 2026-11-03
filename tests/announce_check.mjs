@@ -1,7 +1,8 @@
 // Announcement « fin du test gratuit » of gas/src/Announce.js with fake Apps Script services:
 // node tests/announce_check.mjs (exit 0 = ok).
-// Checks: token; announce_plan writes nothing; real recipients = active free alert sign-ups established outside the EU
-// (declared country, else African ccTLD), never test, withdrawn, pre-registration-only or paid addresses; test mode =
+// Checks: token; announce_plan writes nothing; real recipients = active free alert sign-ups except those declared in
+// « Autre pays d'Europe » (rule of 2026-11-03: France can pay, no declared country = included), never test, withdrawn,
+// pre-registration-only or paid addresses; test mode =
 // the `only` test sign-up alone; the e-mail is the draft word for word (date, criteria, tracked link, unsubscribe link
 // that works); one real run only (start claimed once, even after a failed run); test runs never set the marker.
 import fs from 'node:fs';
@@ -77,15 +78,18 @@ function gas(signups, subs = []) {
 const consent = { consent_version: 'v2', consent_text: 'x'.repeat(50) };
 const row = (email, over = {}) => ({ at: '2026-10-18T09:00:00Z', email, kind: 'alertes', sectors: 'btp', countries: 'maroc', regions: '', frequency: 'quotidien', ...consent, ...over });
 const g = gas([
-  row('ma@entreprise.ma'),                                                     // empty country, .ma -> kept
+  row('ma@entreprise.ma'),                                                     // empty country -> kept
   row('decl@gmail.com', { company_country: 'maroc', sectors: 'btp, sante' }),  // declared Morocco -> kept
   row('autre@entreprise.com', { company_country: 'autre' }),                   // declared « autre » -> kept
   row('afr@cabinet.sn', { company_country: 'autre-afrique', countries: 'afrique-francophone' }),
-  row('fr@entreprise.fr', { company_country: 'france' }),                       // EU declared -> out
-  row('ch@entreprise.ch', { company_country: 'autre-europe' }),                 // maybe outside the EU, unknown -> out
-  row('webmail@gmail.com'),                                                    // no clue -> out
-  row('be@bureau.be'),                                                         // EU ccTLD -> out
-  row('reunion@societe.re'),                                                   // French overseas -> out
+  row('fr@entreprise.fr', { company_country: 'france' }),                       // France can pay (SIREN) -> kept
+  row('ch@entreprise.ch', { company_country: 'autre-europe' }),                 // « Autre pays d'Europe » -> out
+  row('webmail@gmail.com'),                                                    // no declared country -> kept
+  row('be@bureau.be'),                                                         // no declared country -> kept (checkout refuses)
+  row('mix@bureau.fr', { at: '2026-10-19T09:00:00Z', company_country: 'france' }),       // latest declaration wins:
+  row('mix@bureau.fr', { at: '2026-10-18T09:00:00Z', company_country: 'autre-europe' }), // france (19/10) -> kept
+  row('eu2@bureau.de', { at: '2026-10-19T09:00:00Z', company_country: 'autre-europe' }), // autre-europe (19/10) -> out
+  row('eu2@bureau.de', { at: '2026-10-18T09:00:00Z', company_country: 'france' }),
   row('paid@entreprise.ma'),                                                   // paid (running) -> out
   row('expired@entreprise.ma'),                                                // paid once (period over) -> out
   row('gone@entreprise.ma', { withdrawn_at: '2026-10-25T00:00:00Z' }),          // withdrawn -> out
@@ -122,20 +126,18 @@ assert.equal(g.table('Annonces_envois').length, 0);
 // Recipients.
 assert.equal(plan.ok, true);
 assert.equal(plan.already, null);
-assert.deepEqual(plan.mails.map((m) => m.email).sort(), ['afr@cabinet.sn', 'autre@entreprise.com', 'decl@gmail.com', 'later@entreprise.tn', 'ma@entreprise.ma']);
-assert.equal(plan.subscribers, 12, 'active real alert sign-ups (not test, withdrawn or pre-registration)');
-assert.deepEqual(plan.excluded, { paid: 2, eu: 2, unknown: 3 }, JSON.stringify(plan.excluded));
+assert.deepEqual(plan.mails.map((m) => m.email).sort(), ['afr@cabinet.sn', 'autre@entreprise.com', 'be@bureau.be', 'decl@gmail.com', 'fr@entreprise.fr', 'later@entreprise.tn', 'ma@entreprise.ma', 'mix@bureau.fr', 'webmail@gmail.com']);
+assert.equal(plan.subscribers, 13, 'active real alert sign-ups (not test, withdrawn or pre-registration)');
+assert.deepEqual(plan.excluded, { paid: 2, eu: 2 }, JSON.stringify(plan.excluded));
 assert.deepEqual([plan.from, plan.sender, plan.reply_to], ['alertes@jalonel.com', 'Veille AO Afrique (Jalonel)', 'contact@jalonel.com']);
 {
   const r = g.R.announceRegion_;
-  assert.equal(r('', 'a@b.ma'), 'outside-eu');
-  assert.equal(r('', 'a@b.MA'), 'outside-eu');
-  assert.equal(r('', 'a@b.fr'), 'unknown');
-  assert.equal(r('', 'a@gmail.com'), 'unknown');
-  assert.equal(r('', 'a@b.re'), 'unknown');
-  assert.equal(r('France', 'a@b.ma'), 'eu', 'the declared country wins over the domain');
-  assert.equal(r('autre-europe', 'a@b.ch'), 'eu');
-  assert.equal(r('autre', 'a@b.fr'), 'outside-eu');
+  assert.equal(r(''), 'ok');
+  assert.equal(r('france'), 'ok');
+  assert.equal(r('maroc'), 'ok');
+  assert.equal(r('autre'), 'ok');
+  assert.equal(r('autre-europe'), 'eu');
+  assert.equal(r(' Autre-Europe '), 'eu');
 }
 
 // The e-mail: the draft word for word, with the three fields.
@@ -154,7 +156,9 @@ Ce qui est nouveau : deux formules payantes, pour avoir 3 mois d'alertes garanti
 - Essentiel, 39 € pour 3 mois : les consultations du portail marocain des marchés publics.
 - Pro, 79 € pour 3 mois : en plus, les portails nationaux du Bénin et de la Tunisie et les avis en français de la Banque mondiale dans les pays d'Afrique francophone.
 
-Paiement unique par carte, sans renouvellement automatique. Remboursement intégral sur simple demande dans les 14 jours. Réservé aux entreprises établies hors de l'Union européenne ; prix sans TVA française. Les formules et les conditions de vente : ${URL_OFFERS}
+Paiement unique par carte, sans renouvellement automatique. Remboursement intégral sur simple demande dans les 14 jours. Les formules et les conditions de vente : ${URL_OFFERS}
+
+Paiement en ligne ouvert aux entreprises et aux particuliers établis hors de l'Union européenne, et aux professionnels établis en France, qui indiquent leur SIREN au paiement. Pas de TVA dans les deux cas (en France, la facture porte « TVA non applicable, art. 293 B du CGI »). Dans les autres pays de l'Union européenne, le paiement en ligne n'est pas encore ouvert.
 
 Une question, un devis pour votre service achats : répondez à ce message.
 
@@ -195,7 +199,7 @@ assert.equal(t.mails[0].subject, 'Fin du test gratuit : ce qui change pour vous'
 assert.equal(g.post({ action: 'announce_plan', token: TOKEN, mode: 'test', only: 'ma@entreprise.ma' }).mails.length, 0, 'a real address is never a test recipient');
 assert.deepEqual(g.post({ action: 'announce_plan', token: TOKEN, mode: 'test', only: 'test2@entreprise.ma' }).mails.map((x) => x.email), ['test2@entreprise.ma'], 'our withdrawn test address still gets the test e-mail');
 assert.equal(g.post({ action: 'announce_plan', token: TOKEN, mode: 'test', only: 'gonereal@entreprise.ma' }).mails.length, 0, 'never a withdrawn real address');
-assert.equal(g.post({ action: 'announce_plan', token: TOKEN, mode: 'real', only: 'ma@entreprise.ma' }).mails.length, 4, '`only` ignored in real mode');
+assert.equal(g.post({ action: 'announce_plan', token: TOKEN, mode: 'real', only: 'ma@entreprise.ma' }).mails.length, 8, '`only` ignored in real mode');
 
 // Test runs: start and done never set the marker; one row per run in Annonces_envois.
 assert.equal(g.post({ action: 'announce_confirm', token: TOKEN, mode: 'test', stage: 'start', planned: 1 }).ok, true);

@@ -53,7 +53,7 @@ def run(mode: str, confirm: str, url: str = alerts.BACKEND, dry_run: bool = Fals
     mails = plan.get("mails", [])
     ex = plan.get("excluded") or {}
     print(f"Mode {mode} : {plan.get('subscribers')} inscrit(s) actif(s), {len(mails)} destinataire(s) ; écartés : "
-          f"{ex.get('paid', 0)} payant(s), {ex.get('eu', 0)} établi(s) dans l'UE, {ex.get('unknown', 0)} sans indice hors UE")
+          f"{ex.get('paid', 0)} payant(s), {ex.get('eu', 0)} déclaré(s) « Autre pays d'Europe »")
     if mode == "test" and (len(mails) != 1 or mails[0]["email"] != only):
         print("Mode test : il faut exactement l'inscription de test, rien n'est envoyé", file=sys.stderr)
         return 1

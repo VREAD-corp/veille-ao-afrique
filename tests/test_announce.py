@@ -16,7 +16,7 @@ MAIL = {"email": "a@entreprise.ma", "subject": "Fin du test gratuit : ce qui cha
 def fake(monkeypatch):
     calls, sent = [], []
     state = {"plan": {"ok": True, "from": "alertes@jalonel.com", "sender": "Veille AO Afrique (Jalonel)", "reply_to": "contact@jalonel.com",
-                      "max_mails": 150, "already": None, "subscribers": 2, "excluded": {"paid": 0, "eu": 1, "unknown": 0}, "mails": [MAIL]},
+                      "max_mails": 150, "already": None, "subscribers": 2, "excluded": {"paid": 0, "eu": 1}, "mails": [MAIL]},
              "start": {"ok": True}}
 
     def backend(url, body, timeout=120):

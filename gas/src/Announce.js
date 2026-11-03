@@ -7,8 +7,9 @@
  *
  *   announce_plan     POST {token, mode: 'real'|'test', sectors?, only?}: read-only, writes nothing. Returns, for each
  *                     recipient, the e-mail (subject, text, HTML, one-click unsubscribe URL). Real recipients: active
- *                     alert sign-ups (kind `alertes`, not `test`, not withdrawn) with no paid period ever, established
- *                     outside the EU (announceRegion_: declared company_country, else the address's ccTLD). Test mode:
+ *                     alert sign-ups (kind `alertes`, not `test`, not withdrawn) with no paid period ever, except those
+ *                     declared established in another EU country than France (announceRegion_; since 2026-11-03
+ *                     professionals in France can pay, and the checkout itself refuses buyers it cannot sell to). Test mode:
  *                     only the `test` sign-up whose address is `only`, withdrawn or not (no country filter, so its
  *                     rendering can be read).
  *                     Real mode also returns `already` once the announcement has been claimed (then no e-mail).
@@ -26,13 +27,10 @@ var ANNOUNCE_FIN_TEST_KEY_ = 'ANNOUNCE_FIN_TEST';
 var ANNOUNCE_RUNS_HEADER_ = ['at', 'announce', 'mode', 'stage', 'planned', 'sent', 'errors', 'detail'];
 // Literal, not ALERT_SITE_ +: no dependency on the load order of the script files.
 var ANNOUNCE_URL_ = 'https://ao-afrique.jalonel.com/alertes/?utm_source=annonce&utm_medium=email&utm_campaign=fin-test#offres';
-// Declared « Votre entreprise est établie en » (form of /alertes/): kept outside the EU, dropped inside or unknown.
-var ANNOUNCE_COUNTRY_KEEP_ = ['maroc', 'autre-afrique', 'autre'];
-var ANNOUNCE_COUNTRY_DROP_ = ['france', 'autre-europe'];
-// No declared country: only an African ccTLD counts as « outside the EU » (.re and .yt are French, hence EU).
-var ANNOUNCE_TLD_KEEP_ = ['ma', 'dz', 'tn', 'ly', 'eg', 'mr', 'sn', 'ml', 'bf', 'ne', 'td', 'ci', 'gn', 'gw', 'tg', 'bj', 'cm',
-  'cf', 'ga', 'cg', 'cd', 'gq', 'km', 'dj', 'mg', 'mu', 'sc', 'rw', 'bi', 'ng', 'gh', 'cv', 'st', 'sl', 'lr', 'gm', 'et', 'ke',
-  'tz', 'ug', 'ao', 'mz', 'zm', 'zw', 'mw', 'na', 'bw', 'za', 'ls', 'sz', 'so', 'sd', 'ss', 'er'];
+// Declared « Votre entreprise est établie en » (form of /alertes/): only « Autre pays d'Europe » is left out, the
+// closest value to « another EU country than France » (it may be Switzerland or the UK: we cannot tell, so no e-mail).
+// No declared country (webmail, .com…): included, the checkout refuses the buyers it cannot sell to, with a message.
+var ANNOUNCE_COUNTRY_DROP_ = ['autre-europe'];
 
 /* ------------------------------------------------------------------ web-app actions (token) */
 
@@ -47,7 +45,7 @@ function announcePlanAction_(req) {
     Object.keys(req.sectors).slice(0, 100).forEach(function (k) { if (typeof req.sectors[k] === 'string') labels[k] = req.sectors[k].slice(0, 80); });
   }
   var out = { ok: true, mode: req.mode, announce: ANNOUNCE_ID_, from: ALERT_FROM_, sender: ALERT_SENDER_, reply_to: ALERT_REPLY_TO_,
-    max_mails: ALERT_MAX_MAILS_, already: null, subscribers: 0, excluded: { paid: 0, eu: 0, unknown: 0 }, mails: [] };
+    max_mails: ALERT_MAX_MAILS_, already: null, subscribers: 0, excluded: { paid: 0, eu: 0 }, mails: [] };
   if (!test) {
     var raw = PropertiesService.getScriptProperties().getProperty(ANNOUNCE_FIN_TEST_KEY_);
     if (raw) { out.already = JSON.parse(raw); return out; }
@@ -61,8 +59,7 @@ function announcePlanAction_(req) {
   subs.forEach(function (sub) {
     if (!test) {
       if (sub.paid || everPaid[sub.email]) { out.excluded.paid++; return; }
-      var region = announceRegion_(countries[sub.email] || '', sub.email);
-      if (region !== 'outside-eu') { out.excluded[region]++; return; }
+      if (announceRegion_(countries[sub.email] || '') === 'eu') { out.excluded.eu++; return; }
     }
     var mail = announceMail_(sub, labels);
     out.mails.push({ email: sub.email, subject: mail.subject, text: mail.body, html: mail.html, unsubscribe: mail.unsubscribe });
@@ -110,13 +107,9 @@ function announceConfirmAction_(req) {
 
 /* ------------------------------------------------------------------ pieces */
 
-/** 'outside-eu' | 'eu' | 'unknown', from the declared company country, else from the address's ccTLD. */
-function announceRegion_(companyCountry, email) {
-  var c = String(companyCountry || '').trim().toLowerCase();
-  if (ANNOUNCE_COUNTRY_KEEP_.indexOf(c) >= 0) return 'outside-eu';
-  if (ANNOUNCE_COUNTRY_DROP_.indexOf(c) >= 0) return 'eu';
-  var tld = String(email || '').toLowerCase().split('@').pop().split('.').pop();
-  return ANNOUNCE_TLD_KEEP_.indexOf(tld) >= 0 ? 'outside-eu' : 'unknown';
+/** 'eu' when declared established in another EU country than France, otherwise 'ok'. */
+function announceRegion_(companyCountry) {
+  return ANNOUNCE_COUNTRY_DROP_.indexOf(String(companyCountry || '').trim().toLowerCase()) >= 0 ? 'eu' : 'ok';
 }
 
 /** Latest non-empty « établie en » of each real address (any kind of row). */
@@ -159,17 +152,19 @@ function announceMail_(sub, labels) {
     ['Essentiel', ', 39 € pour 3 mois : les consultations du portail marocain des marchés publics.'],
     ['Pro', ', 79 € pour 3 mois : en plus, les portails nationaux du Bénin et de la Tunisie et les avis en français de la Banque mondiale dans les pays d\'Afrique francophone.'],
   ];
-  var terms = 'Paiement unique par carte, sans renouvellement automatique. Remboursement intégral sur simple demande dans les 14 jours. Réservé aux entreprises établies hors de l\'Union européenne ; prix sans TVA française. Les formules et les conditions de vente :';
+  var terms = 'Paiement unique par carte, sans renouvellement automatique. Remboursement intégral sur simple demande dans les 14 jours. Les formules et les conditions de vente :';
+  // Who can pay online: the block « Qui peut payer en ligne » of /alertes/ (CGV of 2026-11-03).
+  var who = 'Paiement en ligne ouvert aux entreprises et aux particuliers établis hors de l\'Union européenne, et aux professionnels établis en France, qui indiquent leur SIREN au paiement. Pas de TVA dans les deux cas (en France, la facture porte « TVA non applicable, art. 293 B du CGI »). Dans les autres pays de l\'Union européenne, le paiement en ligne n\'est pas encore ouvert.';
   var ask = 'Une question, un devis pour votre service achats : répondez à ce message.';
   var sign = 'Veille AO Afrique, un service Jalonel';
   var legal = 'Veille AO Afrique est un service Jalonel, marque de READ FRANCE SAS (SIREN 988 741 773), 11 rue Rouvet, 75019 Paris. Contact : ' + ALERT_REPLY_TO_ + '.';
   var text = ['Bonjour,', '', p[0], '', p[1], '', p[2]]
     .concat(plans.map(function (x) { return '- ' + x[0] + x[1]; }))
-    .concat(['', terms + ' ' + ANNOUNCE_URL_, '', ask, '', sign, '', 'Se désinscrire en un clic : ' + unsub, legal]);
+    .concat(['', terms + ' ' + ANNOUNCE_URL_, '', who, '', ask, '', sign, '', 'Se désinscrire en un clic : ' + unsub, legal]);
   // One block per line, as in the alerts: a client that strips the tags must not glue two sentences.
   var html = ['<p>Bonjour,</p>', '<p>' + escHtml_(p[0]) + '</p>', '<p>' + escHtml_(p[1]) + '</p>', '<p>' + escHtml_(p[2]) + '</p>', '<ul style="padding-left:1.2em">']
     .concat(plans.map(function (x) { return '<li style="margin:0 0 .4em"><strong>' + escHtml_(x[0]) + '</strong>' + escHtml_(x[1]) + '</li>'; }))
-    .concat(['</ul>', '<p>' + escHtml_(terms) + ' <a href="' + escHtml_(ANNOUNCE_URL_) + '">ao-afrique.jalonel.com/alertes</a></p>',
+    .concat(['</ul>', '<p>' + escHtml_(terms) + ' <a href="' + escHtml_(ANNOUNCE_URL_) + '">ao-afrique.jalonel.com/alertes</a></p>', '<p>' + escHtml_(who) + '</p>',
       '<p>' + escHtml_(ask) + '</p>', '<p>' + escHtml_(sign) + '</p>', '<hr style="border:0;border-top:1px solid #ddd">',
       '<p style="color:#555;font-size:85%"><a href="' + escHtml_(unsub) + '">Se désinscrire en un clic</a><br>\n' + escHtml_(legal) + '</p>']);
   return { subject: subject, body: text.join('\n'), html: html.join('\n'), unsubscribe: unsub };
