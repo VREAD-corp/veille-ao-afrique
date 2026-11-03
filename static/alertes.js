@@ -75,18 +75,20 @@
     }).then(function () { submit.disabled = false; });
   });
 
-  /* ---------- payment step (octave-global-checkout, EUR, buyers outside the EU only) ---------- */
+  /* ---------- payment step (octave-global-checkout, EUR: buyers outside the EU, and professionals in France) ---------- */
   function openPay(email, companyCountry) {
     var sum = document.getElementById('pay-summary');
     sum.textContent = 'Inscription enregistrée pour ' + email + '. Formule ' + NAMES[chosenPlan.id] + ' : payez maintenant pour garantir vos 3 mois d’alertes. Utilisez la même adresse e-mail au paiement.';
-    if (companyCountry === 'france' || companyCountry === 'autre-europe') {
-      sum.textContent += ' Attention : le paiement en ligne refuse les entreprises établies dans l’Union européenne ; écrivez-nous à contact@jalonel.com.';
+    if (companyCountry === 'france') {
+      sum.textContent += ' En France, la vente est réservée aux professionnels : cochez « Je suis un professionnel » et indiquez la raison sociale, le SIREN et l’adresse de facturation.';
+    } else if (companyCountry === 'autre-europe') {
+      sum.textContent += ' Attention : hors de France, le paiement en ligne refuse les entreprises établies dans l’Union européenne ; écrivez-nous à contact@jalonel.com.';
     }
     pay.hidden = false;
     msg.className = 'form-msg ok';
     msg.textContent = 'Inscription enregistrée. Dernière étape : le paiement, juste en dessous.';
     mesure('checkout_view', chosenPlan.id);
-    pay.dataset.country = companyCountry === 'maroc' ? 'MA' : '';
+    pay.dataset.country = companyCountry === 'maroc' ? 'MA' : companyCountry === 'france' ? 'FR' : '';
     pay.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
   var open = document.getElementById('pay-open');
@@ -111,6 +113,7 @@
       window.OctaveCheckout.mount('#buy', {
         product: plan.product, amount: plan.amount, currency: 'eur', venture: form.getAttribute('data-venture'), lang: 'fr',
         country: pay.dataset.country || undefined,
+        frPro: true, // professionals established in France (module 1.6.0; the catalog says so too)
         appearance: { variables: { colorPrimary: '#16302b', borderRadius: '6px' } },
         onSuccess: function () { goal('paid'); mesure('paid', plan.id); },
       });

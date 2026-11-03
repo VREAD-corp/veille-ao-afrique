@@ -11,6 +11,10 @@
  * and the G- receipt. After a 3-D Secure redirect the same page finishes the order from the URL parameters.
  * Card only by default; `paymentMethodConfiguration: 'pmc_…'` is the hook for UPI / Pix once enabled.
  * Country allowlist (1.4.0): `countries: ['US']`, or the product's `countries` from the catalog, limits the country list.
+ * Professionals in France (1.6.0): for a product whose catalog entry says `frPro` (or option `frPro: true`), France
+ * is accepted for professionals only: a « professional purchase » box, company name, SIREN and billing address
+ * (sent as proAttested, company, siren, addressLine1, postalCode, city); a private person in France is refused
+ * with a clear message, before any PaymentIntent, and the backend checks it all again.
  * Tests (1.5.0): a test utm tag (e2e-…, smoke, selftest, test-…) counts like ?octave_notrack=1, and createIntent
  * carries `test` (notrack | webdriver) so the backend marks the PaymentIntent and leaves it out of the funnel.
  * Stripe.js is loaded from https://js.stripe.com/v3/ (never self-hosted). No cookie; the only storage is the
@@ -34,6 +38,11 @@
     'RU RW SA SB SC SD SE SG SH SI SJ SK SL SM SN SO SR SS ST SV SX SY SZ TC TD TF TG TH TJ TK TL TM TN TO TR TT TV TW TZ ' +
     'UA UG UM US UY UZ VA VC VE VG VI VN VU WF WS YE YT ZA ZM ZW').split(' ');
   var EU = 'AT BE BG HR CY CZ DK EE FI FR DE GR HU IE IT LV LT LU MT NL PL PT RO SK SI ES SE MC'.split(' ');
+  // Professionals in France (1.6.0); pt / es fall back to these English texts.
+  var FR_T = {
+    en: { frNote: 'In France, this service is sold to professionals only (a company with a SIREN number). Invoice without VAT: VAT not applicable, French Tax Code art. 293 B.', frPro: 'I am a professional: I buy on behalf of a company established in France, for its business', frCompany: 'Company legal name', siren: 'SIREN (9 digits)', addr: 'Billing address', postal: 'Postal code', city: 'City', frConsumer: 'In France, this service is sold to professionals only (a company with a SIREN number, buying for its business). Private individuals living in France cannot buy it.', euFr: 'This checkout serves buyers outside the European Union, and professionals established in France.', secureFr: 'Professionals established in France: VAT not applicable, French Tax Code art. 293 B.' },
+    fr: { frNote: 'En France, ce service est vendu aux professionnels seulement (entreprise avec un numéro SIREN). Facture sans TVA : TVA non applicable, art. 293 B du CGI.', frPro: 'Je suis un professionnel : j’achète au nom et pour le compte d’une entreprise établie en France, pour les besoins de son activité', frCompany: 'Raison sociale', siren: 'SIREN (9 chiffres)', addr: 'Adresse de facturation', postal: 'Code postal', city: 'Ville', frConsumer: 'En France, ce service est vendu aux professionnels seulement : une entreprise avec un numéro SIREN, qui achète pour son activité. Les particuliers établis en France ne peuvent pas l’acheter.', euFr: 'Ce paiement est réservé aux acheteurs situés hors de l’Union européenne et aux professionnels établis en France.', secureFr: 'Professionnels établis en France : TVA non applicable, art. 293 B du CGI.' },
+  };
   var ZERO_DECIMAL = ['xof', 'xaf', 'vnd', 'clp', 'jpy', 'krw', 'pyg', 'rwf', 'bif', 'djf', 'gnf', 'kmf', 'mga', 'vuv', 'xpf'];
   var T = {
     en: { email: 'E-mail', name: 'Full name', country: 'Country', choose: 'Choose…', company: 'I am buying for a company', companyName: 'Company name', taxId: 'Tax ID (optional)', pay: 'Pay {price}', paying: 'Processing…', loading: 'Loading secure payment…', stale: 'The displayed price is out of date (current price: {price}). Please reload the page.', notServed: 'This product is not sold to buyers in this country.', eu: 'This checkout serves buyers outside the European Union only.', loadFail: 'The payment form could not be loaded. Please reload the page.', done: 'Payment confirmed. We sent your order to {email}.', doneHelp: 'Order {order}. Please check your spam folder.', confirming: 'Confirming your payment…', later: 'If you close this page, your order will still be e-mailed within 10 minutes.', failed: 'The payment did not go through. Nothing was charged.', unreachable: 'The service cannot be reached right now.', secure: 'Payments are processed by Stripe for READ FRANCE SAS (France). No French VAT applies to buyers outside the EU.' },
@@ -41,7 +50,7 @@
     pt: { email: 'E-mail', name: 'Nome completo', country: 'País', choose: 'Escolha…', company: 'Estou comprando para uma empresa', companyName: 'Nome da empresa', taxId: 'Número fiscal (opcional)', pay: 'Pagar {price}', paying: 'Processando…', loading: 'Carregando o pagamento seguro…', stale: 'O preço exibido está desatualizado (preço atual: {price}). Recarregue a página.', notServed: 'Este produto não é vendido a compradores deste país.', eu: 'Este pagamento é reservado a compradores fora da União Europeia.', loadFail: 'Não foi possível carregar o formulário de pagamento. Recarregue a página.', done: 'Pagamento confirmado. Enviamos seu pedido para {email}.', doneHelp: 'Pedido {order}. Verifique também a caixa de spam.', confirming: 'Confirmando seu pagamento…', later: 'Se você fechar esta página, seu pedido será enviado por e-mail em até 10 minutos.', failed: 'O pagamento não foi concluído. Nada foi cobrado.', unreachable: 'O serviço está indisponível no momento.', secure: 'Pagamento processado pela Stripe para a READ FRANCE SAS (França).' },
     es: { email: 'Correo electrónico', name: 'Nombre completo', country: 'País', choose: 'Elegir…', company: 'Compro para una empresa', companyName: 'Nombre de la empresa', taxId: 'Número fiscal (opcional)', pay: 'Pagar {price}', paying: 'Procesando…', loading: 'Cargando el pago seguro…', stale: 'El precio mostrado no está actualizado (precio actual: {price}). Recargue la página.', notServed: 'Este producto no se vende a compradores de este país.', eu: 'Este pago está reservado a compradores fuera de la Unión Europea.', loadFail: 'No se pudo cargar el formulario de pago. Recargue la página.', done: 'Pago confirmado. Enviamos su pedido a {email}.', doneHelp: 'Pedido {order}. Revise también la carpeta de spam.', confirming: 'Confirmando su pago…', later: 'Si cierra esta página, su pedido se le enviará por correo en un plazo de 10 minutos.', failed: 'El pago no se completó. No se ha cobrado nada.', unreachable: 'El servicio no está disponible en este momento.', secure: 'Pago procesado por Stripe para READ FRANCE SAS (Francia).' },
   };
-  var CSS = '.ogc{font:inherit;max-width:520px}.ogc label{display:block;margin:.6em 0 .2em;font-weight:600}.ogc input[type=text],.ogc input[type=email],.ogc select{width:100%;box-sizing:border-box;padding:.55em .6em;border:1px solid #bbb;border-radius:6px;font:inherit;background:#fff;color:#111}.ogc .ogc-check{display:flex;gap:.5em;align-items:center;font-weight:400;margin:.8em 0}.ogc .ogc-pe{margin:1em 0}.ogc button{width:100%;padding:.8em;border:0;border-radius:6px;background:#1a56db;color:#fff;font:inherit;font-weight:700;cursor:pointer}.ogc button[disabled]{opacity:.55;cursor:not-allowed}.ogc .ogc-err{color:#b00020;margin:.6em 0}.ogc .ogc-ok{color:#0a7a2f;font-weight:700}.ogc .ogc-small{font-size:.85em;opacity:.8;margin:.6em 0}.ogc-spin{display:inline-block;width:1em;height:1em;margin-right:.5em;vertical-align:-.15em;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:ogc-spin .7s linear infinite}@keyframes ogc-spin{to{transform:rotate(360deg)}}@media (prefers-reduced-motion:reduce){.ogc-spin{animation-duration:2s}}';
+  var CSS = '.ogc{font:inherit;max-width:520px}.ogc [hidden]{display:none!important}.ogc label{display:block;margin:.6em 0 .2em;font-weight:600}.ogc input[type=text],.ogc input[type=email],.ogc select{width:100%;box-sizing:border-box;padding:.55em .6em;border:1px solid #bbb;border-radius:6px;font:inherit;background:#fff;color:#111}.ogc .ogc-check{display:flex;gap:.5em;align-items:center;font-weight:400;margin:.8em 0}.ogc .ogc-pe{margin:1em 0}.ogc button{width:100%;padding:.8em;border:0;border-radius:6px;background:#1a56db;color:#fff;font:inherit;font-weight:700;cursor:pointer}.ogc button[disabled]{opacity:.55;cursor:not-allowed}.ogc .ogc-err{color:#b00020;margin:.6em 0}.ogc .ogc-ok{color:#0a7a2f;font-weight:700}.ogc .ogc-small{font-size:.85em;opacity:.8;margin:.6em 0}.ogc-spin{display:inline-block;width:1em;height:1em;margin-right:.5em;vertical-align:-.15em;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:ogc-spin .7s linear infinite}@keyframes ogc-spin{to{transform:rotate(360deg)}}@media (prefers-reduced-motion:reduce){.ogc-spin{animation-duration:2s}}';
 
   function pickLang(v) {
     var l = String(v || '').toLowerCase().slice(0, 2);
@@ -191,7 +200,8 @@
     if (!o.product || typeof o.amount !== 'number' || !o.currency) throw new Error('OctaveCheckout: product, amount and currency are required');
     o.currency = String(o.currency).toLowerCase();
     var lang = pickLang(o.lang) || pickLang(document.documentElement.lang) || pickLang((global.navigator || {}).language) || 'en';
-    var L = T[lang];
+    var L = {};
+    [T[lang], FR_T.en, FR_T[lang] || {}].forEach(function (d) { Object.keys(d).forEach(function (k) { L[k] = d[k]; }); });
     var price = formatPrice(o.amount, o.currency, lang);
     var attempt = randomId();
     var pmOpts = o.paymentMethodConfiguration ? { configuration: o.paymentMethodConfiguration } : { types: ['card'] };
@@ -222,15 +232,34 @@
     }
     fillCountries(COUNTRIES);
     restrict(o.countries);
+    var frAllowed = o.frPro === true;
+    function frMode() { return frAllowed && countrySelect.value === 'FR'; }
     function countryError() {
       var v = countrySelect.value;
-      return EU.indexOf(v) >= 0 ? L.eu : (served && v && served.indexOf(v) < 0 ? L.notServed : '');
+      if (frMode()) return '';
+      return EU.indexOf(v) >= 0 ? (frAllowed ? L.euFr : L.eu) : (served && v && served.indexOf(v) < 0 ? L.notServed : '');
     }
     var companyBox = el('div', { hidden: true }, [
       el('label', { for: 'ogc-company', text: L.companyName }), el('input', { type: 'text', name: 'company', id: 'ogc-company', maxlength: '200', autocomplete: 'organization' }),
       el('label', { for: 'ogc-taxid', text: L.taxId }), el('input', { type: 'text', name: 'taxId', id: 'ogc-taxid', maxlength: '40', pattern: '[A-Za-z0-9 .\\/\\-]{2,40}' }),
     ]);
     var companyToggle = el('input', { type: 'checkbox', name: 'isCompany', id: 'ogc-is-company' });
+    var companyLabel = el('label', { class: 'ogc-check', for: 'ogc-is-company' }, [companyToggle, document.createTextNode(L.company)]);
+    // France (frPro products): professional purchase box, then company, SIREN and billing address.
+    var frProBox = el('input', { type: 'checkbox', name: 'frPro', id: 'ogc-fr-pro' });
+    var frFields = el('div', { hidden: true }, [
+      el('label', { for: 'ogc-fr-company', text: L.frCompany }), el('input', { type: 'text', name: 'frCompany', id: 'ogc-fr-company', minlength: '2', maxlength: '200', autocomplete: 'organization' }),
+      el('label', { for: 'ogc-siren', text: L.siren }), el('input', { type: 'text', name: 'siren', id: 'ogc-siren', inputmode: 'numeric', maxlength: '11', pattern: '[0-9 ]{9,11}', autocomplete: 'off' }),
+      el('label', { for: 'ogc-addr', text: L.addr }), el('input', { type: 'text', name: 'addressLine1', id: 'ogc-addr', minlength: '3', maxlength: '200', autocomplete: 'address-line1' }),
+      el('label', { for: 'ogc-postal', text: L.postal }), el('input', { type: 'text', name: 'postalCode', id: 'ogc-postal', inputmode: 'numeric', maxlength: '5', pattern: '[0-9]{5}', autocomplete: 'postal-code' }),
+      el('label', { for: 'ogc-city', text: L.city }), el('input', { type: 'text', name: 'city', id: 'ogc-city', maxlength: '100', autocomplete: 'address-level2' }),
+    ]);
+    var frBox = el('div', { class: 'ogc-fr', id: 'ogc-fr', hidden: true }, [
+      el('p', { class: 'ogc-small', text: L.frNote }),
+      el('label', { class: 'ogc-check', for: 'ogc-fr-pro' }, [frProBox, document.createTextNode(L.frPro)]),
+      frFields,
+    ]);
+    var secureP = el('p', { class: 'ogc-small', text: L.secure });
     var loading = el('p', { class: 'ogc-small', role: 'status', text: L.loading });
     var peBox = el('div', { class: 'ogc-pe', id: 'ogc-payment-element' });
     var btn = el('button', { type: 'submit', id: 'ogc-pay', disabled: true, text: fill(L.pay, { price: price }) });
@@ -241,8 +270,7 @@
       el('label', { for: 'ogc-email', text: L.email }), el('input', { type: 'email', name: 'email', id: 'ogc-email', required: true, maxlength: '254', autocomplete: 'email' }),
       el('label', { for: 'ogc-name', text: L.name }), el('input', { type: 'text', name: 'name', id: 'ogc-name', required: true, minlength: '2', maxlength: '120', autocomplete: 'name' }),
       el('label', { for: 'ogc-country', text: L.country }), countrySelect,
-      el('label', { class: 'ogc-check', for: 'ogc-is-company' }, [companyToggle, document.createTextNode(L.company)]),
-      companyBox, loading, peBox, errBox, btn, el('p', { class: 'ogc-small', text: L.secure }),
+      companyLabel, companyBox, frBox, loading, peBox, errBox, btn, secureP,
     ]);
     root.appendChild(form);
     root.appendChild(status);
@@ -251,9 +279,24 @@
       companyBox.hidden = !companyToggle.checked;
       form.elements.company.required = companyToggle.checked;
     });
+    function syncFr() {
+      var on = frMode();
+      frBox.hidden = !on;
+      companyLabel.hidden = on;
+      companyBox.hidden = on || !companyToggle.checked;
+      form.elements.company.required = !on && companyToggle.checked;
+      frFields.hidden = !(on && frProBox.checked);
+      ['frCompany', 'siren', 'addressLine1', 'postalCode', 'city'].forEach(function (k) { form.elements[k].required = on && frProBox.checked; });
+      secureP.textContent = frAllowed ? L.secure + ' ' + L.secureFr : L.secure;
+      if (on && frProBox.checked && errBox.textContent === L.frConsumer) errBox.hidden = true;
+    }
+    function allowFr() { if (!frAllowed) { frAllowed = true; syncFr(); countrySelect.setCustomValidity(countryError()); } }
+    frProBox.addEventListener('change', syncFr);
     countrySelect.addEventListener('change', function () {
+      syncFr();
       countrySelect.setCustomValidity(countryError());
     });
+    syncFr();
 
     var ready = false, busy = false, blocked = null, pending = null, stripe = null, elements = null;
     function setButton() { if (!busy) { btn.textContent = fill(L.pay, { price: price }); btn.disabled = !ready || !!blocked; } }
@@ -343,7 +386,10 @@
       .then(function (c) {
         if (!c.ok) block(c.message || L.loadFail);
         else if (c.amount !== o.amount || c.currency !== o.currency) block(fill(L.stale, { price: formatPrice(c.amount, c.currency, lang) }));
-        else if (c.countries && !served) restrict(c.countries);
+        else {
+          if (c.countries && !served) restrict(c.countries);
+          if (c.frPro === true) allowFr();
+        }
       })
       .catch(function () { /* createIntent re-checks everything */ });
 
@@ -354,11 +400,14 @@
       errBox.hidden = true;
       countrySelect.setCustomValidity(countryError());
       if (!form.reportValidity()) return;
+      // A private person in France: refused here with the reason (the backend refuses it too: fr_consumer).
+      if (frMode() && !frProBox.checked) { errBox.textContent = L.frConsumer; errBox.hidden = false; return; }
       track(o, 'checkout_start');
       if (o.track !== false) croGoal('checkout');
       setBusy(true);
       var f = form.elements;
-      var isCompany = companyToggle.checked;
+      var fr = frMode();
+      var isCompany = !fr && companyToggle.checked;
       var body = {
         action: 'createIntent',
         product: o.product,
@@ -366,13 +415,20 @@
         email: f.email.value.trim(),
         name: f.name.value.trim(),
         country: countrySelect.value,
-        company: isCompany ? f.company.value.trim() : '',
+        company: fr ? f.frCompany.value.trim() : isCompany ? f.company.value.trim() : '',
         taxId: isCompany ? f.taxId.value.trim() : '',
         lang: lang,
         expectedAmount: o.amount,
         expectedCurrency: o.currency,
         attempt: attempt,
       };
+      if (fr) {
+        body.proAttested = true;
+        body.siren = f.siren.value.replace(/\s/g, '');
+        body.addressLine1 = f.addressLine1.value.trim();
+        body.postalCode = f.postalCode.value.trim();
+        body.city = f.city.value.trim();
+      }
       if (pmOpts.configuration) body.paymentMethodConfiguration = pmOpts.configuration;
       if (o.smokeToken) body.smokeToken = o.smokeToken;
       // Our tests (octave_notrack, automated browser): the backend marks the PaymentIntent metadata.test and keeps it
@@ -411,7 +467,7 @@
           elements: elements,
           clientSecret: p.clientSecret,
           redirect: 'if_required',
-          confirmParams: { return_url: returnUrl, payment_method_data: { billing_details: { name: body.name, email: body.email, address: { country: body.country } } } },
+          confirmParams: { return_url: returnUrl, payment_method_data: { billing_details: { name: body.name, email: body.email, address: fr ? { country: 'FR', line1: body.addressLine1, postal_code: body.postalCode, city: body.city } : { country: body.country } } } },
         }).then(function (r) {
           if (r.error) { showError(r.error.message || L.failed); return; }
           return finish(p.pi, p.clientSecret, body.email);
@@ -432,6 +488,6 @@
     },
     /** Internal (unit tests): cancelIntent(endpoint, { pi, clientSecret }, lang) with one retry. */
     _cancelIntent: cancelIntent,
-    version: '1.5.0',
+    version: '1.6.0',
   };
 })(window);

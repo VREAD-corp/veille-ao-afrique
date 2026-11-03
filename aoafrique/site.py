@@ -56,10 +56,13 @@ SELLER = {
     "president": "Tanguy Warsmann",
 }
 # Paid plans (2026-10-24): sold by octave-global-checkout (PaymentIntents only, buyers outside the EU), products below.
+# Since 2026-11-03 also to professionals established in France (company, SIREN, billing address, professional box;
+# invoice « TVA non applicable, art. 293 B du CGI »); private persons in France and the other EU states stay refused.
 PLAN_PRODUCTS = {"essentiel-39": ("aoaf-essentiel-3m-eur", 3900), "pro-79": ("aoaf-pro-3m-eur", 7900)}
 OGC_VENTURE = "af-xx-04"
 FREE_TEST_END = "3 novembre 2026"
-CGV_VERSION = "24 octobre 2026"
+CGV_VERSION = "3 novembre 2026"
+CGV_PREVIOUS = "24 octobre 2026"
 PLANS = [
     ("essentiel-39", "Essentiel", 39, "Maroc : les nouveaux appels d'offres de vos secteurs et régions, chaque matin, "
      "avec le résumé de chaque avis et le lien officiel."),
@@ -850,7 +853,12 @@ class Site:
 <section class="pay-step" id="paiement" data-section="paiement" hidden aria-labelledby="paiement-h" data-ogc="{link('static/og-checkout.js')}?v={static_v('og-checkout.js')}">
 <h3 id="paiement-h">Paiement</h3>
 <p id="pay-summary"></p>
-<p class="small"><strong>Entreprises établies hors de l'Union européenne seulement.</strong> Prix en euros, sans TVA française : service fourni par voie électronique à un client établi hors de l'Union européenne (article 259-1° du CGI pour une entreprise, 259 B pour un particulier). Les éventuelles taxes locales de votre pays ne sont pas incluses. Une entreprise établie dans l'Union européenne ne peut pas payer en ligne pour l'instant : écrivez à <a href="mailto:{CONTACT}">{CONTACT}</a>.</p>
+<p class="small"><strong>Qui peut payer en ligne.</strong> Prix en euros.</p>
+<ul class="small">
+<li>Hors de l'Union européenne : entreprises et particuliers. Pas de TVA française, car le service est fourni par voie électronique à un client établi hors de l'Union européenne (article 259-1° du CGI pour une entreprise, 259 B pour un particulier). Les éventuelles taxes locales de votre pays ne sont pas incluses.</li>
+<li>En France : professionnels seulement, c'est-à-dire une entreprise avec un numéro SIREN qui achète pour son activité. Vous cochez la case « Je suis un professionnel » et indiquez la raison sociale, le SIREN et l'adresse de facturation. Facture sans TVA : « TVA non applicable, art. 293 B du CGI ». Les particuliers établis en France ne peuvent pas acheter ces formules.</li>
+<li>Autres pays de l'Union européenne et Monaco : pas de paiement en ligne pour l'instant. Écrivez à <a href="mailto:{CONTACT}">{CONTACT}</a>.</li>
+</ul>
 <label class="chk consent"><input type="checkbox" id="cgv-ok"> <span>J'ai lu les <a href="{link('cgv/')}">conditions de vente</a> (version du {CGV_VERSION}) et je les accepte.</span></label>
 <p class="form-msg" id="pay-msg" role="alert"></p>
 <p><button type="button" class="btn" id="pay-open">Payer par carte</button></p>
@@ -974,7 +982,16 @@ class Site:
 </ul>
 <p>Ne sont pas inclus : la rédaction des offres, le téléchargement des dossiers de consultation, le dépôt sur les portails, tout conseil juridique. Les avis viennent de sources publiques relues deux fois par jour (voir <a href="{link('methode/')}">Méthode et sources</a>) : un avis peut manquer, être en retard ou avoir changé. L'avis officiel fait foi.</p>
 <h2>3. Prix et paiement</h2>
-<p>Prix en euros, payés en une fois par carte au moment de la commande, par l'intermédiaire de Stripe. La vente est réservée aux clients établis hors de l'Union européenne et de Monaco : le paiement refuse ces pays. Pour ces clients, aucune TVA française n'est due, car le service est fourni par voie électronique à un client établi hors de l'Union européenne (article 259-1° du code général des impôts pour une entreprise, article 259 B pour un particulier). Les éventuelles taxes locales du pays du client ne sont pas incluses. Une facture (entreprise) ou un reçu (particulier), numéroté dans la série G-, est envoyé par e-mail avec la confirmation.</p>
+<p>Prix en euros, payés en une fois par carte au moment de la commande, par l'intermédiaire de Stripe. La vente est ouverte :</p>
+<ul>
+<li>aux clients établis hors de l'Union européenne et de Monaco, entreprises ou particuliers. Pour eux, aucune TVA française n'est due, car le service est fourni par voie électronique à un client établi hors de l'Union européenne (article 259-1° du code général des impôts pour une entreprise, article 259 B pour un particulier). Les éventuelles taxes locales du pays du client ne sont pas incluses ;</li>
+<li>aux professionnels établis en France métropolitaine ou en Corse : voir l'article 3 bis.</li>
+</ul>
+<p>Le paiement refuse les particuliers établis en France, les clients établis dans un autre État de l'Union européenne ou à Monaco, et les adresses de facturation d'outre-mer. Une facture (entreprise) ou un reçu (particulier), numéroté dans la série G-, est envoyé par e-mail avec la confirmation.</p>
+<h2>3 bis. Clients établis en France : professionnels seulement</h2>
+<p>En France, les formules sont vendues uniquement à des professionnels : une entreprise immatriculée en France, identifiée par son numéro SIREN, qui commande pour les besoins de son activité professionnelle. Les ventes aux consommateurs établis en France ne sont pas proposées. À la commande, l'acheteur coche la case « Je suis un professionnel » et indique la raison sociale, le SIREN et l'adresse de facturation de l'entreprise ; il déclare commander au nom et pour le compte de cette entreprise.</p>
+<p>{p['name']} relève de la franchise en base de TVA : la facture porte la mention « TVA non applicable, art. 293 B du CGI » ; le prix payé est un prix net, sans TVA. La facture indique le SIREN et l'adresse de l'acheteur. Le prix est payé en totalité à la commande, sans escompte. Entre professionnels, tout retard de paiement donnerait lieu à des pénalités au taux de trois fois le taux d'intérêt légal et à une indemnité forfaitaire pour frais de recouvrement de 40 € (articles L441-10 et D441-5 du code de commerce).</p>
+<p>La vente étant conclue entre professionnels, le droit de rétractation du code de la consommation ne s'applique pas. Le remboursement de l'article 6 reste acquis : c'est un engagement commercial de {p['name']}.</p>
 <h2>4. Durée</h2>
 <p>3 mois, du premier au dernier jour inclus. Pour une commande payée avant le {FREE_TEST_END}, date de fin du test gratuit, les 3 mois commencent ce jour-là ; sinon, le jour du paiement. L'abonnement ne se renouvelle pas tout seul : nous vous écrivons avant la fin.</p>
 <h2>5. Accès et critères</h2>
@@ -986,7 +1003,8 @@ class Site:
 <h2>8. Données personnelles</h2>
 <p>Voir la page <a href="{link('confidentialite/')}">Confidentialité</a>.</p>
 <h2>9. Droit applicable et litiges</h2>
-<p>Ces conditions sont soumises au droit français. En cas de difficulté, écrivez-nous d'abord : nous répondons sous 5 jours ouvrés. Pour un client professionnel, à défaut d'accord amiable, les tribunaux de Paris sont compétents. Un client particulier garde les droits que lui donne la loi de son pays de résidence.</p>"""
+<p>Ces conditions sont soumises au droit français. En cas de difficulté, écrivez-nous d'abord : nous répondons sous 5 jours ouvrés. Pour un client professionnel, à défaut d'accord amiable, les tribunaux de Paris sont compétents. Un client particulier garde les droits que lui donne la loi de son pays de résidence.</p>
+<p class="small muted">Version du {CGV_VERSION} : vente ouverte aux professionnels établis en France (articles 3 et 3 bis). Version précédente du {CGV_PREVIOUS}.</p>"""
         self.write("cgv/", self.page("cgv/", f"Conditions de vente | {BRAND}",
                                      "Conditions de vente des alertes payantes de Veille AO Afrique : formules Essentiel et Pro, prix, durée de 3 mois, remboursement sous 14 jours.",
                                      cgv, noindex=True, crumbs=[("", "Appels d'offres"), ("cgv/", "Conditions de vente")]),
@@ -1007,7 +1025,7 @@ class Site:
 <p>Seule READ FRANCE y a accès. Elles sont stockées dans Google Sheets : Google LLC agit comme sous-traitant, et le transfert vers les États-Unis est encadré par le Data Privacy Framework et les clauses contractuelles types de Google. Les alertes partent de l'adresse alertes@jalonel.com, une boîte hébergée en France par OVH SAS (Roubaix), sous-traitant pour l'envoi ; le programme d'envoi tourne une fois par jour sur GitHub Actions (GitHub Inc., sous-traitant, même encadrement du transfert), qui ne fait que transmettre l'e-mail et n'en garde aucune copie ni l'adresse dans ses journaux. Elles ne sont ni vendues ni prêtées.</p>
 <p>Nous les conservons jusqu'au retrait de votre accord, et au plus 12 mois après notre dernier e-mail si le service n'ouvre pas.</p>
 <h2>Achat d'une formule payante</h2>
-<p>Au paiement, nous recevons votre adresse e-mail, votre nom, votre pays et, si vous les indiquez, le nom et l'identifiant fiscal de votre entreprise. Ils servent à exécuter la commande (envoi des alertes pendant la période payée, facture) : la base légale est le contrat (article 6.1.b du RGPD). Les données de carte sont saisies chez Stripe (Stripe Payments Europe Ltd, Irlande), qui les traite comme responsable de traitement ; nous n'y avons jamais accès. La commande et la facture sont gardées dans un tableur et un dossier Google Drive de READ FRANCE (Google LLC, sous-traitant), et la facture pendant 10 ans (article L123-22 du code de commerce).</p>
+<p>Au paiement, nous recevons votre adresse e-mail, votre nom, votre pays et, si vous les indiquez, le nom et l'identifiant fiscal de votre entreprise. Pour une entreprise établie en France, nous recevons aussi sa raison sociale, son SIREN, son adresse de facturation et votre déclaration d'achat professionnel. Ils servent à exécuter la commande (envoi des alertes pendant la période payée, facture) : la base légale est le contrat (article 6.1.b du RGPD). Les données de carte sont saisies chez Stripe (Stripe Payments Europe Ltd, Irlande), qui les traite comme responsable de traitement ; nous n'y avons jamais accès. La commande et la facture sont gardées dans un tableur et un dossier Google Drive de READ FRANCE (Google LLC, sous-traitant), et la facture pendant 10 ans (article L123-22 du code de commerce).</p>
 <h2>Vos droits</h2>
 <p>Accès, rectification, effacement, limitation, opposition et portabilité : écrivez à <a href="mailto:{CONTACT}">{CONTACT}</a>, réponse sous un mois. Vous pouvez saisir la <a href="https://www.cnil.fr/fr/plaintes" rel="noopener">CNIL</a>. Si vous résidez au Maroc, la loi n° 09-08 vous donne des droits comparables (accès, rectification, opposition) ; nous les appliquons de la même manière, et l'autorité marocaine compétente est la <a href="https://www.cndp.ma/" rel="noopener">CNDP</a>.</p>
 <h2>Hébergement</h2>
