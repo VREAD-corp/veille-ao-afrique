@@ -274,19 +274,19 @@ class Site:
                     else "avis de la Banque mondiale")
             where_field = (f'<p class="ai-zone"><span class="muted">Zone :</span> {e(country)}, {what}'
                            f'<input type="hidden" name="countries" value="{e(country_slug(country))}"></p>')
-            price = ("Gratuit pendant le test, au moins jusqu'au " + FREE_TEST_END + ". Formule payante, alertes garanties 3 mois : Pro à 79 €, "
+            price = ("La version gratuite continue. Formule payante, alertes garanties 3 mois : Pro à 79 €, "
                      "sans renouvellement automatique.")
         elif bm:
             where_field = ('<p class="ai-zone"><span class="muted">Zone :</span> Afrique francophone, avis de la Banque mondiale'
                            '<input type="hidden" name="countries" value="afrique-francophone"></p>')
-            price = ("Gratuit pendant le test, au moins jusqu'au " + FREE_TEST_END + ". Formule payante, alertes garanties 3 mois : Pro à 79 €, "
+            price = ("La version gratuite continue. Formule payante, alertes garanties 3 mois : Pro à 79 €, "
                      "sans renouvellement automatique.")
         else:
             region_opts = '<option value="">Toutes les régions</option>' + "".join(
                 f'<option value="{e(model.slugify(r))}"{" selected" if r == region else ""}>{e(r)}</option>'
                 for r in model.REGIONS)
             where_field = f'<label>Région<select name="regions">{region_opts}</select></label>'
-            price = ("Gratuit pendant le test, au moins jusqu'au " + FREE_TEST_END + ". Formule payante, alertes garanties 3 mois : Essentiel à 39 €, "
+            price = ("La version gratuite continue. Formule payante, alertes garanties 3 mois : Essentiel à 39 €, "
                      "sans renouvellement automatique.")
         qs = urlencode([(k, v) for k, v in (("secteur", sector), ("region", region)) if v])
         full = link("alertes/") + ("?" + e(qs) if qs else "")
@@ -335,7 +335,7 @@ class Site:
 <button type="submit" class="btn">Recevoir les alertes</button>
 <p class="form-msg" role="status" aria-live="polite"></p>
 </form>
-<p class="small aq-terms"><span class="consent-text">{e(QUICK_CONSENT_TEXT)}</span> Gratuit pendant le test, aucun paiement. <a href="{full}">Autres critères</a> · <a href="{link('confidentialite/')}">Vos données</a></p>
+<p class="small aq-terms"><span class="consent-text">{e(QUICK_CONSENT_TEXT)}</span> La version gratuite continue, sans paiement. <a href="{full}">Autres critères</a> · <a href="{link('confidentialite/')}">Vos données</a></p>
 </section>"""
 
     def similar(self, n: dict, k: int = 6) -> list[dict]:
@@ -436,7 +436,7 @@ class Site:
 <p class="kicker">Mis à jour le {e(self.updated_text())}</p>
 <h1>Appels d'offres publics au Maroc et en Afrique francophone, en cours aujourd'hui</h1>
 <p class="lead"><strong>{nb(s['pmmp'])} consultations ouvertes</strong> sur le portail marocain des marchés publics ({nb(cat.get('Travaux', 0))} travaux, {nb(cat.get('Fournitures', 0))} fournitures, {nb(cat.get('Services', 0))} services), {''.join(f", {nb(c)} sur le portail national {'du' if k == 'Bénin' else 'de la'} {e(k)}" for k, c in sorted(s['national'].items()))} et {nb(s['bm'])} avis en français de projets financés par la Banque mondiale (<a href="{link('pays/')}">par pays</a>). Chaque avis a sa fiche avec un résumé en français et le lien vers l'avis officiel.</p>
-<p class="hero-cta"><a class="btn" href="#alerte" data-mesure="cta_click" data-detail="hero">Recevoir les nouveaux avis par e-mail (gratuit pendant le test)</a> <a class="link-more" href="#liste">Parcourir la liste</a></p>
+<p class="hero-cta"><a class="btn" href="#alerte" data-mesure="cta_click" data-detail="hero">Recevoir les nouveaux avis par e-mail (version gratuite)</a> <a class="link-more" href="#liste">Parcourir la liste</a></p>
 <ul class="hero-facts">
 <li><b>{nb(s['new7'])}</b> publiées ces 7 derniers jours</li>
 <li><b>{nb(s['close7'])}</b> clôturent dans les 7 jours</li>
@@ -820,7 +820,7 @@ class Site:
         body = f"""<h1>Alertes e-mail : les nouveaux appels d'offres marocains de vos secteurs, chaque matin</h1>
 <p class="lead">Le portail marocain publie en moyenne {nb(round(s['new7'] / 7))} nouvelles consultations par jour (moyenne des 7 derniers jours). L'alerte vous envoie seulement celles de vos secteurs et régions, avec le résumé et la date limite de chacune.</p>
 <div class="status-box" data-section="statut">
-<p><strong>Où en est le service.</strong> Les alertes partent chaque matin depuis alertes@jalonel.com. Elles sont gratuites pendant le test, au moins jusqu'au {FREE_TEST_END}. Pour être sûr de les garder 3 mois après le test, choisissez une <a href="#offres">formule payante</a>. Désinscription en un clic à tout moment.</p>
+<p><strong>Où en est le service.</strong> Les alertes partent chaque matin depuis alertes@jalonel.com. La version gratuite continue. Pour avoir 3 mois d'alertes garanties, choisissez une <a href="#offres">formule payante</a>. Désinscription en un clic à tout moment.</p>
 </div>
 
 <form id="alerte-form" class="alert-form" data-section="formulaire" novalidate data-venture="{OGC_VENTURE}">
@@ -845,7 +845,7 @@ class Site:
 
 <section class="plans-section" id="offres" aria-labelledby="offres-h">
 <h2 id="offres-h">Formules payantes : 3 mois d'alertes garanties</h2>
-<p>Paiement unique par carte, pour 3 mois, sans renouvellement automatique. Si vous payez avant le {FREE_TEST_END} (fin du test gratuit), vos 3 mois commencent ce jour-là ; sinon, le jour du paiement. Remboursement intégral sur simple demande dans les 14 jours suivant le paiement.</p>
+<p>Paiement unique par carte, pour 3 mois, sans renouvellement automatique. Vos 3 mois commencent le jour du paiement. Remboursement intégral sur simple demande dans les 14 jours suivant le paiement.</p>
 <div class="plans">{plans}</div>
 <section class="pay-step" id="paiement" data-section="paiement" hidden aria-labelledby="paiement-h" data-ogc="{link('static/og-checkout.js')}?v={static_v('og-checkout.js')}">
 <h3 id="paiement-h">Paiement</h3>
@@ -876,14 +876,14 @@ class Site:
 
 <section id="questions" data-section="faq">
 <h2>Questions fréquentes</h2>
-<details id="faq-prix"><summary>Est-ce payant ?</summary><p>Les alertes sont gratuites pendant le test, au moins jusqu'au {FREE_TEST_END}, et rien n'est facturé sans votre accord. Deux formules payantes garantissent 3 mois d'alertes : Essentiel à 39 € (portail marocain) et Pro à 79 € (Maroc, Bénin, Tunisie et Banque mondiale en Afrique francophone). Avant la fin du test, nous écrirons à chaque inscrit pour dire ce qui change.</p></details>
+<details id="faq-prix"><summary>Est-ce payant ?</summary><p>La version gratuite continue, et rien n'est facturé sans votre accord. Deux formules payantes garantissent 3 mois d'alertes : Essentiel à 39 € (portail marocain) et Pro à 79 € (Maroc, Bénin, Tunisie et Banque mondiale en Afrique francophone).</p></details>
 <details id="faq-volume"><summary>Combien d'e-mails vais-je recevoir ?</summary><p>Au plus un par matin (ou un par semaine si vous le choisissez), et seulement s'il y a de nouveaux avis dans vos secteurs et régions. Chaque e-mail contient un lien de désinscription en un clic.</p></details>
 <details id="faq-facture"><summary>Facture, devis, bon de commande ?</summary><p>La facture est établie au nom de votre entreprise par {SELLER['name']} (SIREN {SELLER['siren']}) et envoyée par e-mail au paiement : indiquez le nom de l'entreprise et son identifiant fiscal (ICE au Maroc, par exemple) dans le formulaire de paiement. Si votre service achats demande un devis avant, écrivez à <a href="mailto:{CONTACT}">{CONTACT}</a>.</p></details>
 <details id="faq-mise-a-jour"><summary>Les avis sont-ils à jour ?</summary><p>La liste est relue deux fois par jour, vers 7 h et 19 h (heure de Paris). Une annulation ou un report peut mettre jusqu'à une semaine à apparaître : l'avis officiel fait foi. Le détail est sur la page <a href="{link('methode/')}">Méthode et sources</a>.</p></details>
 </section>
 """
         self.write("alertes/", self.page("alertes/", f"Alertes e-mail appels d'offres Maroc | {BRAND}",
-                                         "Recevez chaque matin les nouveaux appels d'offres publics marocains de vos secteurs et régions, résumés en français. Gratuit pendant le test.",
+                                         "Recevez chaque matin les nouveaux appels d'offres publics marocains de vos secteurs et régions, résumés en français. Version gratuite et formules payantes.",
                                          body, scripts=("alertes.js",), crumbs=[("", "Appels d'offres"), ("alertes/", "Alertes e-mail")],
                                          jsonld=self.plans_ld(), csp=CSP_PAY))
 

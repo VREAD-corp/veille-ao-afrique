@@ -131,6 +131,11 @@ def test_build_site(tmp_path):
             assert "vread" not in t.lower() and "github.com/" not in t.replace("docs.github.com/", "") \
                 and "code source" not in t.lower() and "/issues" not in t, f
     assert "mailto:contact@jalonel.com" in legal
+    # Test over on 2026-11-03: no page may still promise « gratuit pendant le test, au moins jusqu'au … » (CGV keep the
+    # dated rule for orders paid before that day).
+    for f in tmp_path.rglob("*.html"):
+        t = f.read_text(encoding="utf-8").lower()
+        assert "pendant le test" not in t and "au moins jusqu'au" not in t and "avant la fin du test" not in t, f
 
 
 def test_inline_alert_on_tender_list_and_filter_pages(tmp_path):
@@ -152,7 +157,7 @@ def test_inline_alert_on_tender_list_and_filter_pages(tmp_path):
     assert f'<option value="{model.slugify(n["regions"][0])}" selected>' in page
     assert 'data-ctx="fiche"' in page and "/static/alerte-inline.js" in page
     # honest price and status next to the button
-    assert "Gratuit pendant le test" in page and "39 €" in page and "sans renouvellement automatique" in page
+    assert "La version gratuite continue." in page and "39 €" in page and "sans renouvellement automatique" in page
     assert "Envoi chaque matin" in page and "ouvre bientôt" not in page and "Aucun paiement aujourd'hui" not in page
     # similar notices, links to the sector and region, clear next step at the end
     assert "Et maintenant ?" in page and 'href="#alerte"' in page
