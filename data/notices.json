@@ -1,5 +1,26 @@
 [
 {
+"buyer": "Municipalité Ben Arous",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-07T11:00",
+"first_seen": "2026-11-04",
+"id": "tn-104592",
+"object": "modernisation des voiries",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-04",
+"reference": "Tender-104592",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104592-modernisation-voiries",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104592"
+},
+{
 "buyer": "Gouvernorat de Tunis",
 "category": "",
 "country": "Tunisie",
@@ -55967,6 +55988,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-04T13:30",
+"delisted": "2026-11-04",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux de construction traditionnelle en pierre, en terre banchée et en brique de terre"
@@ -60980,6 +61002,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-04T14:30",
+"delisted": "2026-11-04",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -93206,6 +93229,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-04T14:00",
+"delisted": "2026-11-04",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
