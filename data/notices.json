@@ -1,5 +1,68 @@
 [
 {
+"buyer": "Direction Régionale de l’Equipement, de l’Habitat et de l’Aménagement du Territoire de Gabes",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-07T09:30",
+"first_seen": "2026-11-05",
+"id": "tn-104613",
+"object": "Travaux de dedoublement de la RN1 du PK 405+500 au PK 407+000 et travaux de construction d'un ouvrage d'art sur RN1 au PK 406+200 sur oued Gabes.",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-05",
+"reference": "Tender-104613",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104613-travaux-dedoublement-rn1-pk-405-500-pk-407-000",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104613"
+},
+{
+"buyer": "Municipalite de Sousse",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-10T14:00",
+"first_seen": "2026-11-05",
+"id": "tn-104612",
+"object": "Appel d'offre pour choix de bureau d'étude multidisciplinaire ou groupement d'experts pour l'exécution d'étude de construction et de renouvellement voirie et trottoirs de la ville de Sousse programme 2026-2027",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-05",
+"reference": "Tender-104612",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "tn-104612-appel-offre-choix-bureau-etude-multidisciplinaire-ou-groupement-experts",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104612"
+},
+{
+"buyer": "Municipalité de Metline",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-07T10:00",
+"first_seen": "2026-11-05",
+"id": "tn-104609",
+"object": "Désignation d'un avocat pour représenter la municipalité de Metline auprès des tribunaux et de toutes autres instances judiciaires.",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-05",
+"reference": "Tender-104609",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "tn-104609-designation-avocat-representer-municipalite-metline-aupres-tribunaux-toutes-autr",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104609"
+},
+{
 "buyer": "Municipalité Chihia",
 "category": "",
 "country": "Tunisie",
@@ -105,6 +168,27 @@
 "sme": false,
 "source": "TN",
 "url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104599"
+},
+{
+"buyer": "Société Tunisienne d’Electricité et de Gaz",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-08T09:00",
+"first_seen": "2026-11-05",
+"id": "tn-104593",
+"object": "Mobilier de bureau",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-05",
+"reference": "Tender-104593",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "tn-104593-mobilier-bureau",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104593"
 },
 {
 "buyer": "Office du Thermalisme",
@@ -45493,6 +45577,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-05T14:00",
+"delisted": "2026-11-05",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
@@ -52315,6 +52400,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-05T14:00",
+"delisted": "2026-11-05",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
@@ -83626,7 +83712,7 @@
 "buyer": "Office National de la Télédiffusion",
 "category": "",
 "country": "Tunisie",
-"deadline": "2026-11-19T10:00",
+"deadline": "2026-12-04T10:00",
 "first_seen": "2026-10-08",
 "id": "tn-104126",
 "object": "Acquisition d'une matrice vidéo 128x128 pour le centre nodal",
@@ -95303,6 +95389,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-05T14:00",
+"delisted": "2026-11-05",
 "detail_checked": true,
 "domains": [
 "Services / Prestations d’essais, de contrôle et de laboratoire / Contrôle et analyse techniques des échantillons prélevés sur les produits, matériel et matériaux soumis à des normes obligatoires (autre que le domaine du génie civil)"
@@ -95335,6 +95422,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-05T13:30",
+"delisted": "2026-11-05",
 "detail_checked": true,
 "domains": [
 "Services / Prestations d’essais, de contrôle et de laboratoire / Contrôle et analyse techniques des échantillons prélevés sur les produits, matériel et matériaux soumis à des normes obligatoires (autre que le domaine du génie civil)"
@@ -138021,7 +138109,7 @@
 "buyer": "Office National de la Télédiffusion",
 "category": "",
 "country": "Tunisie",
-"deadline": "2026-11-17T10:00",
+"deadline": "2026-12-02T10:00",
 "first_seen": "2026-10-01",
 "id": "tn-103991",
 "object": "Rénovation des systèmes d'antennes de GHRABA VHF et CHAAMBI FM",
