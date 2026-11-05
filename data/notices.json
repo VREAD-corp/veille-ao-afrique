@@ -1,5 +1,47 @@
 [
 {
+"buyer": "Centre national du cinéma et de l'image",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-23T12:00",
+"first_seen": "2026-11-05",
+"id": "tn-104617",
+"object": "Appel d’offres n°05/2026 selon les Procédures simplifiées LOCATION DE MATRIEL DE SONORISATION, LUMIERE, PROJECTEUR VIDEO, SCENE ET STRUCTURE ALUMINIUM AU PROFIT DES JCC 2026",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-05",
+"reference": "Tender-104617",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "tn-104617-appel-doffres-n05-2026-selon-procedures-simplifiees-location-matriel",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104617"
+},
+{
+"buyer": "Municipalité du Bardo",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-07T10:00",
+"first_seen": "2026-11-05",
+"id": "tn-104615",
+"object": "L'acquisition de matériels de propreté et de moyens de transport en quatre lots",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-05",
+"reference": "Tender-104615",
+"regions": [],
+"sectors": [
+"vehicules-transport"
+],
+"slug": "tn-104615-acquisition-materiels-proprete-moyens-transport-quatre-lots",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104615"
+},
+{
 "buyer": "Direction Régionale de l’Equipement, de l’Habitat et de l’Aménagement du Territoire de Gabes",
 "category": "",
 "country": "Tunisie",
@@ -210,6 +252,28 @@
 "sme": false,
 "source": "TN",
 "url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104568"
+},
+{
+"buyer": "Société Nationale des Eaux du Bénin",
+"category": "Fournitures",
+"country": "Bénin",
+"deadline": "2026-11-26T09:30",
+"first_seen": "2026-11-05",
+"id": "bj-1257259",
+"lots": 2,
+"object": "\"Acquisition et installation de groupes électrogènes et centrales solaires, de variateurs de vitesse et d'armoires de comprensation",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/2719905112026_Pj_Avis%20039-26.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-05",
+"reference": "F_DECR_127201",
+"regions": [],
+"sectors": [
+"energie"
+],
+"slug": "bj-1257259-acquisition-installation-groupes-electrogenes-centrales-solaires-variateurs-vite",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=F_DECR_127201"
 },
 {
 "buyer": "Inter-State Committee against Drought in the Sahel",
@@ -12854,6 +12918,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-05T16:00",
+"delisted": "2026-11-05",
 "detail_checked": true,
 "domains": [
 "Travaux / Fondations, injections, parois moulées, sondages et forages / Travaux de stabilisation et de fixation"
