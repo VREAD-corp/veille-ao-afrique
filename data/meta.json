@@ -1,23 +1,23 @@
 {
-"checked": "2026-11-05T23:49+00:00",
+"checked": "2026-11-06T13:02+00:00",
 "sources": {
 "BJ": {
-"at": "2026-11-05T23:49+00:00",
-"count": 54,
+"at": "2026-11-06T13:02+00:00",
+"count": 59,
 "ok": true,
 "open": 37
 },
 "BM": {
-"at": "2026-11-05T23:49+00:00",
-"count": 417,
+"at": "2026-11-06T13:02+00:00",
+"count": 425,
 "ok": true,
-"open": 205
+"open": 197
 },
 "PMMP": {
 "at": "2026-10-29T13:40+00:00",
 "count": 5707,
 "error": "request failed after 3 attempts: https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseAdvancedSearch&searchAnnCons: <urlopen error [Errno 110] Connection timed out>",
-"failed_at": "2026-11-05T23:49+00:00",
+"failed_at": "2026-11-06T13:02+00:00",
 "full_at": "2026-10-29T13:40+00:00",
 "listed": 0,
 "mode": "complet",
@@ -25,11 +25,11 @@
 "requests": 3
 },
 "TN": {
-"at": "2026-11-05T23:49+00:00",
-"count": 463,
+"at": "2026-11-06T13:02+00:00",
+"count": 472,
 "ok": true,
-"open": 330
+"open": 322
 }
 },
-"updated": "2026-11-05T22:43+00:00"
+"updated": "2026-11-06T13:02+00:00"
 }
