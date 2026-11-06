@@ -1,5 +1,26 @@
 [
 {
+"buyer": "Institut National de la Météorologie",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-11T10:00",
+"first_seen": "2026-11-06",
+"id": "tn-104639",
+"object": "ACQUISITION DE PIECES DE RECHANGE DES SYSTEMES D’OBSERVATION METEOROLOGIQUE",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-06",
+"reference": "Tender-104639",
+"regions": [],
+"sectors": [
+"vehicules-transport"
+],
+"slug": "tn-104639-acquisition-pieces-rechange-systemes-dobservation-meteorologique",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104639"
+},
+{
 "buyer": "Municipalité Boumhel Bassatine",
 "category": "",
 "country": "Tunisie",
@@ -192,6 +213,29 @@
 "url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104598"
 },
 {
+"buyer": "Commune de Savalou",
+"category": "Travaux",
+"country": "Bénin",
+"deadline": "2026-12-01T10:00",
+"first_seen": "2026-11-06",
+"id": "bj-1259637",
+"lots": 3,
+"object": "Travaux de construction et de réfection plus équipement des maisons des jeunes de Doumè, de Gobada et de Lèma plus construction d’un module de deux (02) salles de classes à l’EM Lèma plus équipements et aires de jeux et de trois (03) hangars de douze (12) places au marché de Konkondji dans l'arrondissement de DJALLOUKOU.",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/23091106112026_Pj_AVIS%20N%C3%82%C2%B0006_DAO-MAISON%20DES%20JEUNES%202026.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-06",
+"reference": "T_ST_119106",
+"regions": [],
+"sectors": [
+"btp",
+"fournitures-mobilier"
+],
+"slug": "bj-1259637-travaux-construction-refection-plus-equipement-maisons-jeunes-doume-gobada",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=T_ST_119106"
+},
+{
 "buyer": "Commune de Bonou",
 "category": "Services",
 "country": "Bénin",
@@ -254,6 +298,27 @@
 "slug": "bj-1258777-achat-divers-papiers-imprimerie-profit-onip",
 "source": "BJ",
 "url": "https://www.marches-publics.bj/appels-doffres?search=F_DI_127414"
+},
+{
+"buyer": "Commune de Karimama",
+"category": "Travaux",
+"country": "Bénin",
+"deadline": "2026-11-27T10:00",
+"first_seen": "2026-11-06",
+"id": "bj-1256568",
+"object": "Travaux de construction en brique en terre comprimée (BTC) d’hangar de vente de divers + Boucherie+ Clôture de l’espace d’hébergement (Relance)",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/50201106112026_Pj_AOO%20PDIEML3.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-06",
+"reference": "T_ST_126661",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "bj-1256568-travaux-construction-brique-terre-comprimee-btc-dhangar-vente-divers",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=T_ST_126661"
 },
 {
 "buyer": "DECIM",
@@ -773,6 +838,27 @@
 "slug": "bj-1258529-equipement-table-bancs-epp-gourou-bansou-boro-fana-dougou",
 "source": "BJ",
 "url": "https://www.marches-publics.bj/appels-doffres?search=F_DST_125659"
+},
+{
+"buyer": "Ministère de l'Agriculture, de l'Elevage et de la Pêche",
+"category": "Services de consultants",
+"country": "Bénin",
+"deadline": "2026-11-25T10:00",
+"first_seen": "2026-11-06",
+"id": "bj-1258231",
+"object": "Recrutement d'un cabinet pour la réalisation des études techniques et architecturales pour la construction d'un bâtiment administratif de type R+2 à l'ATDA 4",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/1709106112026_Pj_AMI%20R%2B2.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-05",
+"reference": "PI_PDCV-RT_122722",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "bj-1258231-recrutement-cabinet-realisation-etudes-techniques-architecturales-construction-b",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=PI_PDCV-RT_122722"
 },
 {
 "buyer": "Société Nationale des Eaux du Bénin",
@@ -44908,6 +44994,7 @@
 "category": "",
 "country": "Tunisie",
 "deadline": "2026-11-06T15:30",
+"delisted": "2026-11-06",
 "first_seen": "2026-10-14",
 "id": "tn-104247",
 "object": "Consultation N° 05/2026 relative à l’acquisition des consommables pour imprimantes et informatique au profit du Centre (CNUDST)",
@@ -44972,6 +45059,7 @@
 "category": "",
 "country": "Tunisie",
 "deadline": "2026-11-06T15:30",
+"delisted": "2026-11-06",
 "first_seen": "2026-10-14",
 "id": "tn-104243",
 "object": "Consultation N° 04/2026 relative à l’acquisition, l’installation et la mise en marche d’équipements informatique pour la deuxième fois au profit du Centre (CNUDST)",
@@ -45098,6 +45186,7 @@
 "category": "",
 "country": "Tunisie",
 "deadline": "2026-11-06T15:30",
+"delisted": "2026-11-06",
 "first_seen": "2026-10-14",
 "id": "tn-104234",
 "object": "Consultation N° 03/2026 relative à la formation des cadres et du personnel du centre (CNUDST)",
