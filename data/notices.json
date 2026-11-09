@@ -1,5 +1,111 @@
 [
 {
+"buyer": "Municipalité Bouhajla",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-14T10:00",
+"first_seen": "2026-11-09",
+"id": "tn-104677",
+"object": "ACQUISITION D’UN CAMION À BENNE TASSEUSE DE 16 m³",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-09",
+"reference": "Tender-104677",
+"regions": [],
+"sectors": [
+"vehicules-transport"
+],
+"slug": "tn-104677-acquisition-dun-camion-benne-tasseuse-16-m3",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104677"
+},
+{
+"buyer": "Office National de l'Assainissement",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-08T11:00",
+"first_seen": "2026-11-09",
+"id": "tn-104674",
+"object": "des travaux de réhabilitation du système d’abaissement du niveau d’eau de la Sebkha de l’Ariana à la délégation de Raoued - Gouvernorat de l’Ariana",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-09",
+"reference": "Tender-104674",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104674-travaux-rehabilitation-systeme-dabaissement-niveau-deau-sebkha-lariana-delegatio",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104674"
+},
+{
+"buyer": "Municipalité de Ghar el Melh",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-30T10:00",
+"first_seen": "2026-11-09",
+"id": "tn-104673",
+"object": "Acquisition d’une Remorque Agricole charge utile 3 Tonnes",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-09",
+"reference": "Tender-104673",
+"regions": [],
+"sectors": [
+"agriculture"
+],
+"slug": "tn-104673-acquisition-dune-remorque-agricole-charge-utile-3-tonnes",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104673"
+},
+{
+"buyer": "Office National de l'Assainissement",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-24T11:00",
+"first_seen": "2026-11-09",
+"id": "tn-104671",
+"object": "Etude d’exécution pour la Réhabilitation et extension de la station d’épuration de Hammamet Sud et Kasserine",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-09",
+"reference": "Tender-104671",
+"regions": [],
+"sectors": [
+"eau-assainissement",
+"etudes-conseil"
+],
+"slug": "tn-104671-etude-dexecution-rehabilitation-extension-station-depuration-hammamet-sud-kasser",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104671"
+},
+{
+"buyer": "Office National de l'Assainissement",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-15T10:00",
+"first_seen": "2026-11-09",
+"id": "tn-104669",
+"object": "PROJET D EXTENSION DU RESEAU DANS LA VILLE BORJ AMRI GOUVERNORAT DE MANOUBA",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-09",
+"reference": "Tender-104669",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104669-projet-extension-reseau-ville-borj-amri-gouvernorat-manouba",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104669"
+},
+{
 "buyer": "Ministère de la Santé Publique",
 "category": "",
 "country": "Tunisie",
@@ -82,6 +188,26 @@
 "sme": false,
 "source": "TN",
 "url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104655"
+},
+{
+"buyer": "Commune de Zagnanado",
+"category": "Services de consultants",
+"country": "Bénin",
+"deadline": "2026-12-01T10:00",
+"first_seen": "2026-11-09",
+"id": "bj-1260595",
+"object": "Recrutement d’un cabinet pour l'étude d'Impact Environnemental et social du projet de construction du cimetière communal de Banamè (lot 1) et d’un cabinet pour les études de faisabilité technique et financière du projet de construction et d’équipement d’un cimetière à Banamè dans la Commune de Zagnanado (lot 2).",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-09",
+"reference": "PI_DST_126900",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "bj-1260595-recrutement-dun-cabinet-etude-impact-environnemental-social-projet-construction",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=PI_DST_126900"
 },
 {
 "buyer": "Société de Gestion des Déchets et de la Salubrité - Grand Nokoué",
@@ -12238,6 +12364,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-09T15:00",
+"delisted": "2026-11-09",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériaux de construction, plomberie, quincaillerie et outillages / Matériaux de construction"
@@ -14282,6 +14409,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-09T16:00",
+"delisted": "2026-11-09",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de voiries, chemins et pistes / Travaux d’équipements de la route et des voiries"
@@ -22268,6 +22396,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-09T16:00",
+"delisted": "2026-11-09",
 "detail_checked": true,
 "domains": [
 "Services / Services architecturales et topographiques / Exécution de plans, sommaires, d’exécutions et de détails"
@@ -22301,6 +22430,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-09T15:00",
+"delisted": "2026-11-09",
 "detail_checked": true,
 "domains": [
 "Services / Services architecturales et topographiques / Exécution de plans, sommaires, d’exécutions et de détails"
@@ -34207,6 +34337,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-09T14:30",
+"delisted": "2026-11-09",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -41295,6 +41426,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-09T15:00",
+"delisted": "2026-11-09",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -42329,6 +42461,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-09T15:00",
+"delisted": "2026-11-09",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -51933,6 +52066,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-09T15:00",
+"delisted": "2026-11-09",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’installation / Travaux d'installation de climatisation et chauffage"
