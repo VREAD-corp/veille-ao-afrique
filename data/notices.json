@@ -1,5 +1,89 @@
 [
 {
+"buyer": "Commissariat Régional au Développement Agricole du Kef",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-24T09:00",
+"first_seen": "2026-11-10",
+"id": "tn-104701",
+"object": "Acquisition de semences fourragères (mélanges fourragers et trèfle d'Alexandrie de production locale) pour la campagne 2026/2027",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-10",
+"reference": "Tender-104701",
+"regions": [],
+"sectors": [
+"agriculture"
+],
+"slug": "tn-104701-acquisition-semences-fourrageres-melanges-fourragers-trefle-alexandrie-productio",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104701"
+},
+{
+"buyer": "Ministère des Affaires Sociales",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-10T11:00",
+"first_seen": "2026-11-10",
+"id": "tn-104700",
+"object": "Acquisition et location de respirateurs à domicile au profit des patients nécessiteux",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-10",
+"reference": "Tender-104700",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "tn-104700-acquisition-location-respirateurs-domicile-profit-patients-necessiteux",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104700"
+},
+{
+"buyer": "Municipalite de Sousse",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-03T14:00",
+"first_seen": "2026-11-10",
+"id": "tn-104699",
+"object": "acquisition de materiels informatiques",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-10",
+"reference": "Tender-104699",
+"regions": [],
+"sectors": [
+"informatique-telecoms"
+],
+"slug": "tn-104699-acquisition-materiels-informatiques",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104699"
+},
+{
+"buyer": "Office du Commerce de Tunisie",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-25T10:00",
+"first_seen": "2026-11-10",
+"id": "tn-104697",
+"object": "Conditionnement de 6000 tonnes de riz Au titre de l’année 2026",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-10",
+"reference": "Tender-104697",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "tn-104697-conditionnement-6000-tonnes-riz-titre-lannee-2026",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104697"
+},
+{
 "buyer": "Société Tunisienne d’Electricité et de Gaz",
 "category": "",
 "country": "Tunisie",
@@ -420,6 +504,48 @@
 "sme": false,
 "source": "TN",
 "url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104637"
+},
+{
+"buyer": "Université d'Abomey-Calavi",
+"category": "Fournitures",
+"country": "Bénin",
+"deadline": "2026-11-26T09:00",
+"first_seen": "2026-11-10",
+"id": "bj-1261341",
+"object": "Acquisition de divers mobiliers (de bureau et académiques) de fabrication locale au profit de certaines entités (IFRI, FSS, Rectorat, FADESP)",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/1226410112026_Pj_AVIS%20MOBILIERS.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-10",
+"reference": "F_UAC_127554",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "bj-1261341-acquisition-divers-mobiliers-bureau-academiques-fabrication-locale-profit-certai",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=F_UAC_127554"
+},
+{
+"buyer": "Université d'Abomey-Calavi",
+"category": "Services",
+"country": "Bénin",
+"deadline": "2026-12-01T10:00",
+"first_seen": "2026-11-10",
+"id": "bj-1261280",
+"object": "Accord-cadre à bons de commande de trois (3) ans pour l'entretien des espaces verts du campus d'Abomey-Calavi au profit du Rectorat.",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/5220410112026_Pj_AVIS%20ENTRETIEN.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-10",
+"reference": "S_RECTORAT_127574",
+"regions": [],
+"sectors": [
+"services-generaux"
+],
+"slug": "bj-1261280-accord-cadre-bons-commande-trois-3-ans-entretien-espaces",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=S_RECTORAT_127574"
 },
 {
 "buyer": "Commune de Lalo",
@@ -16775,6 +16901,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-10T16:00",
+"delisted": "2026-11-10",
 "detail_checked": true,
 "domains": [
 "Services / Services architecturales et topographiques / Cartographie des zones urbaines et rurales"
@@ -16810,6 +16937,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-10T15:30",
+"delisted": "2026-11-10",
 "detail_checked": true,
 "domains": [
 "Services / Services architecturales et topographiques / Etude de la morphologie des zones urbaine, de l’habitat, de l’architecture et du patrimoine bâti"
