@@ -422,6 +422,50 @@
 "url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104637"
 },
 {
+"buyer": "Commune de Lalo",
+"category": "Travaux",
+"country": "Bénin",
+"deadline": "2026-11-20T10:00",
+"first_seen": "2026-11-10",
+"id": "bj-1261086",
+"lots": 2,
+"object": "Réhabilitation des bureaux annexes de la Mairie abritant la Trésorerie Communale et de la salle de réunion ADJALLA avec équipement",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/38531110112026_Pj_ADRP%20TC%20et%20ADJALLA%20avec%20EQUIPEMENT%20Sign%C3%A9%20Scann%C3%A9.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-10",
+"reference": "T_SPPRMP_119525",
+"regions": [],
+"sectors": [
+"btp",
+"fournitures-mobilier"
+],
+"slug": "bj-1261086-rehabilitation-bureaux-annexes-mairie-abritant-tresorerie-communale-salle-reunio",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=T_SPPRMP_119525"
+},
+{
+"buyer": "Société Nationale des Eaux du Bénin",
+"category": "Services",
+"country": "Bénin",
+"deadline": "2026-12-01T09:30",
+"first_seen": "2026-11-10",
+"id": "bj-1259853",
+"object": "Surveillance et gardiennage des sites des Départements du Mono-Couffo, Zou-Collines, en accord-cadre de deux ans, à bons de commande",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/51291110112026_Pj_AVI%20041-26%20BON.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-10",
+"reference": "S_DAAG_127197",
+"regions": [],
+"sectors": [
+"services-generaux"
+],
+"slug": "bj-1259853-surveillance-gardiennage-sites-departements-mono-couffo-zou-collines-accord",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=S_DAAG_127197"
+},
+{
 "buyer": "CG-HISWACA Project Implementation Unit",
 "category": "Fournitures",
 "country": "Afrique de l'Ouest et du Centre (régional)",
@@ -16799,6 +16843,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-10T15:00",
+"delisted": "2026-11-10",
 "detail_checked": true,
 "domains": [
 "Services / Services architecturales et topographiques / Etude de la morphologie des zones urbaine, de l’habitat, de l’architecture et du patrimoine bâti"
@@ -16832,6 +16877,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-10T14:30",
+"delisted": "2026-11-10",
 "detail_checked": true,
 "domains": [
 "Services / Services architecturales et topographiques / Etude de la morphologie des zones urbaine, de l’habitat, de l’architecture et du patrimoine bâti"
@@ -16865,6 +16911,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-10T14:00",
+"delisted": "2026-11-10",
 "detail_checked": true,
 "domains": [
 "Services / Services architecturales et topographiques / Etude de la morphologie des zones urbaine, de l’habitat, de l’architecture et du patrimoine bâti"
@@ -26902,6 +26949,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-10T14:00",
+"delisted": "2026-11-10",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
@@ -35072,6 +35120,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-10T14:30",
+"delisted": "2026-11-10",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -40927,6 +40976,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-10T14:30",
+"delisted": "2026-11-10",
 "detail_checked": true,
 "domains": [
 "Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Audit, évaluation et certification des comptes"
@@ -110681,6 +110731,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-10T14:00",
+"delisted": "2026-11-10",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
