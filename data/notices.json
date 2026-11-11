@@ -1,5 +1,48 @@
 [
 {
+"buyer": "Direction régionale de la santé publique de Sfax",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-14T10:00",
+"first_seen": "2026-11-11",
+"id": "tn-104715",
+"object": "Projet d'approvisionnement du Centre régional de transfusion sanguine de Sfax en azote liquide et aménagement d'une salle destinée aux équipements de conservation cellulaire par azote.",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-11",
+"reference": "Tender-104715",
+"regions": [],
+"sectors": [
+"btp",
+"fournitures-mobilier"
+],
+"slug": "tn-104715-projet-approvisionnement-centre-regional-transfusion-sanguine-sfax-azote-liquide",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104715"
+},
+{
+"buyer": "Commissariat régional de l'éducation d'Ariana",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-02T09:30",
+"first_seen": "2026-11-11",
+"id": "tn-104711",
+"object": "Travaux d'extensions aux écoles primaires à l'Ariana",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-11",
+"reference": "Tender-104711",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104711-travaux-extensions-ecoles-primaires-ariana",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104711"
+},
+{
 "buyer": "MUNICIPALTE SAHLINE MOOTAMAR",
 "category": "",
 "country": "Tunisie",
@@ -148,6 +191,27 @@
 "sme": false,
 "source": "TN",
 "url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104687"
+},
+{
+"buyer": "Commune de Kouandé",
+"category": "Services de consultants",
+"country": "Bénin",
+"deadline": "2026-11-26T10:00",
+"first_seen": "2026-11-11",
+"id": "bj-1261756",
+"object": "Etude de faisabilité pour la construction des modules de salles de classe, la mise au norme du marché de Fô-Tanncé ;la délimitation et aménagement de couloir de passage des animaux à Tancé et sur l’axe Yakabissi-Yaoukoussi etla rénovation du marché de Niaro-Gninon",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/2818011112026_Pj_AVIS%20PRESELECT%20AMI.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-11",
+"reference": "PI_ST_125765",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "bj-1261756-etude-faisabilite-construction-modules-salles-classe-mise-norme-marche",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=PI_ST_125765"
 },
 {
 "buyer": "Commune de Dogbo",
@@ -12748,6 +12812,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-11T14:00",
+"delisted": "2026-11-11",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Salles et stands"
@@ -14975,6 +15040,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-11T13:00",
+"delisted": "2026-11-11",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -15215,6 +15281,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-11T13:00",
+"delisted": "2026-11-11",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -23177,6 +23244,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-11T14:00",
+"delisted": "2026-11-11",
 "detail_checked": true,
 "domains": [
 "Travaux / Construction d'ouvrages d'art / Travaux de réparation et de confortement de structures des ouvrages d'art"
@@ -23211,6 +23279,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-11T13:00",
+"delisted": "2026-11-11",
 "detail_checked": true,
 "domains": [
 "Travaux / Construction d'ouvrages d'art / Travaux de réparation et de confortement de structures des ouvrages d'art"
@@ -48758,6 +48827,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-11T13:00",
+"delisted": "2026-11-11",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Salles et stands"
