@@ -1,5 +1,111 @@
 [
 {
+"buyer": "Municipalite de Moknine",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-01T10:00",
+"first_seen": "2026-11-11",
+"id": "tn-104726",
+"object": "Fourniture, installation et pose camera de surveillance au profit de la municipalité de Moknine",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-11",
+"reference": "Tender-104726",
+"regions": [],
+"sectors": [
+"services-generaux",
+"fournitures-mobilier"
+],
+"slug": "tn-104726-fourniture-installation-pose-camera-surveillance-profit-municipalite-moknine",
+"sme": true,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104726"
+},
+{
+"buyer": "Entreprise Tunisienne des Activités Pétrolières",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-22T09:00",
+"first_seen": "2026-11-11",
+"id": "tn-104724",
+"object": "Mise en place d'un data center",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-11",
+"reference": "Tender-104724",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "tn-104724-mise-place-data-center",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104724"
+},
+{
+"buyer": "Ministère de l'équipement, de l'habitat et de l'aménagement du territoire",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-01T09:00",
+"first_seen": "2026-11-11",
+"id": "tn-104723",
+"object": "Etude d’aménagement de 51.8 km de Pistes Rurales au Gouvernorat de kasserine",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-11",
+"reference": "Tender-104723",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "tn-104723-etude-damenagement-51-8-km-pistes-rurales-gouvernorat-kasserine",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104723"
+},
+{
+"buyer": "Agence de Réhabilitation et de Rénovation Urbaine",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-15T12:00",
+"first_seen": "2026-11-11",
+"id": "tn-104721",
+"object": "APPEL DOFFRES N°95 /2026 choix d’un avocat ou un cabinet professionnel d’avocat pour représenter L’agence de réhabilitation et de rénovation urbaine auprès des tribunaux et instances judiciaires lot N°…….",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-11",
+"reference": "Tender-104721",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104721-appel-doffres-n95-2026-choix-dun-avocat-ou-cabinet",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104721"
+},
+{
+"buyer": "Office du Commerce de Tunisie",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-11T10:00",
+"first_seen": "2026-11-11",
+"id": "tn-104719",
+"object": "Acquisition de voitures de service",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-11",
+"reference": "Tender-104719",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "tn-104719-acquisition-voitures-service",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104719"
+},
+{
 "buyer": "Direction régionale de la santé publique de Sfax",
 "category": "",
 "country": "Tunisie",
@@ -220270,6 +220376,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-11T17:30",
+"delisted": "2026-11-11",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Travaux de pré-câblage et réseau informatique"
