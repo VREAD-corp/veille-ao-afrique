@@ -1,5 +1,26 @@
 [
 {
+"buyer": "Municipalité de Carthage",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-30T10:30",
+"first_seen": "2026-11-12",
+"id": "tn-104747",
+"object": "Désignation d’un architecte pour faire étude architecturale urbanistique et technique ( VRD) pour l’aménagement et la requalification de la place Beit El Hikma Carthage Hannibal",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-12",
+"reference": "Tender-104747",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "tn-104747-designation-dun-architecte-faire-etude-architecturale-urbanistique-technique-vrd",
+"sme": true,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104747"
+},
+{
 "buyer": "Hôpital Charles Nicolle de Tunis",
 "category": "",
 "country": "Tunisie",
@@ -22641,6 +22662,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-12T14:00",
+"delisted": "2026-11-12",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
@@ -23262,6 +23284,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-12T15:00",
+"delisted": "2026-11-12",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude de marché"
