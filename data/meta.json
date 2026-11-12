@@ -1,23 +1,23 @@
 {
-"checked": "2026-11-11T23:31+00:00",
+"checked": "2026-11-12T00:58+00:00",
 "sources": {
 "BJ": {
-"at": "2026-11-11T23:31+00:00",
+"at": "2026-11-12T00:58+00:00",
 "count": 77,
 "ok": true,
 "open": 48
 },
 "BM": {
-"at": "2026-11-11T23:31+00:00",
-"count": 469,
+"at": "2026-11-12T00:58+00:00",
+"count": 448,
 "ok": true,
-"open": 201
+"open": 185
 },
 "PMMP": {
 "at": "2026-10-29T13:40+00:00",
 "count": 5707,
-"error": "PMMP: 0 lignes lues pour 6308 annoncées",
-"failed_at": "2026-11-11T23:31+00:00",
+"error": "request failed after 3 attempts: https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseAdvancedSearch&searchAnnCons: HTTP Error 503: Service Unavailable",
+"failed_at": "2026-11-12T00:58+00:00",
 "full_at": "2026-10-29T13:40+00:00",
 "listed": 0,
 "mode": "complet",
@@ -25,11 +25,11 @@
 "requests": 3
 },
 "TN": {
-"at": "2026-11-11T23:31+00:00",
+"at": "2026-11-12T00:58+00:00",
 "count": 526,
 "ok": true,
 "open": 325
 }
 },
-"updated": "2026-11-11T23:31+00:00"
+"updated": "2026-11-12T00:58+00:00"
 }
