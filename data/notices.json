@@ -1,5 +1,47 @@
 [
 {
+"buyer": "Commissariat Régional au Développement Agricole de Gafsa",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-11-27T09:30",
+"first_seen": "2026-11-13",
+"id": "tn-104774",
+"object": "EQUIPEMENT DU POSTE TRANSFORMATEUR HT/BT DE LA STATION DE POMPAGE DU PERIMETRE IRRIGUE EN EUT EL GUETAR",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-13",
+"reference": "Tender-104774",
+"regions": [],
+"sectors": [
+"energie"
+],
+"slug": "tn-104774-equipement-poste-transformateur-ht-bt-station-pompage-perimetre-irrigue",
+"sme": true,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104774"
+},
+{
+"buyer": "Commissariat Régional au Développement Agricole de Monastir",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-14T10:00",
+"first_seen": "2026-11-13",
+"id": "tn-104773",
+"object": "travaux d'aménagement en enrobé de la cour du parc du CRDA de Monastir,",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-13",
+"reference": "Tender-104773",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104773-travaux-amenagement-enrobe-cour-parc-crda-monastir",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104773"
+},
+{
 "buyer": "Société El Bouniane",
 "category": "",
 "country": "Tunisie",
@@ -211,6 +253,27 @@
 "slug": "bj-1263516-acquisition-pose-quarante-huit-48-lampadaires-solaires-electrification-hors",
 "source": "BJ",
 "url": "https://www.marches-publics.bj/appels-doffres?search=F_ST+_127422"
+},
+{
+"buyer": "Commune de Klouekamè",
+"category": "Services de consultants",
+"country": "Bénin",
+"deadline": "2026-11-23T10:00",
+"first_seen": "2026-11-13",
+"id": "bj-1263484",
+"object": "Recrutement d’un prestataire pour le suivi et contrôle des différents travaux par accord-cadre biennal à bon de commande.",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/4253113112026_Pj_AVISD%27~1.PDF",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-13",
+"reference": "PI_DST_126789",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "bj-1263484-recrutement-dun-prestataire-suivi-controle-differents-travaux-accord-cadre",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=PI_DST_126789"
 },
 {
 "buyer": "Commune de Bantè",
@@ -67834,6 +67897,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-13T14:00",
+"delisted": "2026-11-13",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Mobiliers"
