@@ -1,5 +1,111 @@
 [
 {
+"buyer": "Agence de Réhabilitation et de Rénovation Urbaine",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-16T12:00",
+"first_seen": "2026-11-13",
+"id": "tn-104779",
+"object": "AO 97 /2026 Travaux de réhabilitation du quartier El Waha Commune Dgueche Gouvernorat Tozeur",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-13",
+"reference": "Tender-104779",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104779-ao-97-2026-travaux-rehabilitation-quartier-el-waha-commune",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104779"
+},
+{
+"buyer": "Agence de Réhabilitation et de Rénovation Urbaine",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-16T12:00",
+"first_seen": "2026-11-13",
+"id": "tn-104778",
+"object": "AO 96 /2026 Travaux des Quartiers Sfaxi Oued Dabegh dans la commune de Douar Hicher Gouvernorat de Mannouba",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-13",
+"reference": "Tender-104778",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "tn-104778-ao-96-2026-travaux-quartiers-sfaxi-oued-dabegh-commune",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104778"
+},
+{
+"buyer": "Direction Régionale de l’Equipement, de l’Habitat et de l’Aménagement du Territoire de Gabes",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-15T09:30",
+"first_seen": "2026-11-13",
+"id": "tn-104777",
+"object": "mission de contrôle et assistance technique des travaux de construction d'un ouvrage d'art sur oued Gabes sur RN1 au PK 406+200",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-13",
+"reference": "Tender-104777",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "tn-104777-mission-controle-assistance-technique-travaux-construction-ouvrage-art-oued",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104777"
+},
+{
+"buyer": "Commissariat régional de l'éducation à Jendouba",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-16T10:00",
+"first_seen": "2026-11-13",
+"id": "tn-104776",
+"object": "travaux d'entretient et d'aménagement du l'école préparatoire ghardimaou",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-13",
+"reference": "Tender-104776",
+"regions": [],
+"sectors": [
+"btp",
+"services-generaux"
+],
+"slug": "tn-104776-travaux-entretient-amenagement-ecole-preparatoire-ghardimaou",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104776"
+},
+{
+"buyer": "Société d'Exploitation du Canal et Adduction des Eaux du Nord",
+"category": "",
+"country": "Tunisie",
+"deadline": "2026-12-14T10:00",
+"first_seen": "2026-11-13",
+"id": "tn-104775",
+"object": "Fourniture de tuyaux en polyéthylène haute densité au Complexe Kalaat Andalous – Ras Jebel",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-13",
+"reference": "Tender-104775",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "tn-104775-fourniture-tuyaux-polyethylene-haute-densite-complexe-kalaat-andalous-ras",
+"sme": false,
+"source": "TN",
+"url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104775"
+},
+{
 "buyer": "Commissariat Régional au Développement Agricole de Gafsa",
 "category": "",
 "country": "Tunisie",
@@ -232,6 +338,27 @@
 "sme": false,
 "source": "TN",
 "url": "https://www.marchespublics.gov.tn/fr/appels-doffres/Tender-104748"
+},
+{
+"buyer": "Université d'Abomey-Calavi",
+"category": "Fournitures",
+"country": "Bénin",
+"deadline": "2026-11-30T09:00",
+"first_seen": "2026-11-13",
+"id": "bj-1264326",
+"object": "Accord cadre à bons de commande de deux ans pour la fourniture d'imprimés de feuilles, enveloppes pour examens et autres imprimés pour fonctionnement au profit de certaines entités (ENEAM, FADESP, FAST et autres) de l'UAC .",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/3137313112026_Pj_AVIS.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-13",
+"reference": "F_UAC_127565",
+"regions": [],
+"sectors": [
+"formation-evenementiel"
+],
+"slug": "bj-1264326-accord-cadre-bons-commande-deux-ans-fourniture-imprimes-feuilles",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=F_UAC_127565"
 },
 {
 "buyer": "Commune de Segbana",
@@ -23946,6 +24073,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-13T15:00",
+"delisted": "2026-11-13",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude de marché"
