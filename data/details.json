@@ -1558,18 +1558,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-d0q-1045659": {
-"bond": 6000.0,
-"buyer_full": "RTAH / CRSMBL - Commune rurale de S. MHAMED BEN LAHCEN",
-"domains": [
-"Travaux / Construction d'ouvrages d'art / Ouvrages d'art en béton armé ou compacté au rouleau, en acier et maçonnerie"
-],
-"estimate": 311280.0,
-"fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
 "ma-d0q-1045792": {
 "buyer_full": "RTAH / CRAM - Commune rurale de AIN MAATOUF",
 "domains": [
@@ -5684,18 +5672,6 @@
 "reserved": false,
 "variant": "Non",
 "visit": "30/10/2026 10:00"
-},
-"ma-e5w-1035483": {
-"bond": 2000.0,
-"buyer_full": "RFM / CROAY - Commune rurale Ouled Ali Youssef",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
-],
-"estimate": 112800.11,
-"fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
 },
 "ma-e5w-1036264": {
 "bond": 1700.0,
@@ -23003,30 +22979,6 @@
 "fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": true,
-"variant": "Non"
-},
-"ma-j0w-1040372": {
-"bond": 7000.0,
-"buyer_full": "RMTA / CRO - Commune rurale de OUKAIMIDEN",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
-],
-"estimate": 376000.0,
-"fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-j0w-1040373": {
-"bond": 8500.0,
-"buyer_full": "RMTA / CRO - Commune rurale de OUKAIMIDEN",
-"domains": [
-"Travaux / Travaux de voiries, chemins et pistes / Travaux de bétonnage et de dallage de trottoirs"
-],
-"estimate": 441800.0,
-"fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": false,
 "variant": "Non"
 },
 "ma-j0w-1040447": {
@@ -56938,18 +56890,6 @@
 "Travaux / Travaux de voiries, chemins et pistes / Pistes"
 ],
 "estimate": 545000.82,
-"fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-z9k-1045735": {
-"bond": 5500.0,
-"buyer_full": "RTA / CRO - Commune rurale de OUAOULA",
-"domains": [
-"Travaux / Terrassements / Terrassements en masse"
-],
-"estimate": 285300.0,
 "fetched": "2026-10-15",
 "notice_type": "Annonce de consultation",
 "reserved": false,
