@@ -1,14 +1,14 @@
 {
-"checked": "2026-11-17T14:40+00:00",
+"checked": "2026-11-17T16:26+00:00",
 "sources": {
 "BJ": {
-"at": "2026-11-17T14:40+00:00",
-"count": 97,
+"at": "2026-11-17T16:26+00:00",
+"count": 98,
 "ok": true,
-"open": 55
+"open": 56
 },
 "BM": {
-"at": "2026-11-17T14:40+00:00",
+"at": "2026-11-17T16:26+00:00",
 "count": 443,
 "ok": true,
 "open": 178
@@ -16,8 +16,8 @@
 "PMMP": {
 "at": "2026-10-29T13:40+00:00",
 "count": 4774,
-"error": "PMMP: 0 lignes lues pour 5731 annoncées",
-"failed_at": "2026-11-17T14:40+00:00",
+"error": "PMMP: 0 lignes lues pour 5846 annoncées",
+"failed_at": "2026-11-17T16:26+00:00",
 "full_at": "2026-10-29T13:40+00:00",
 "listed": 0,
 "mode": "complet",
@@ -28,10 +28,10 @@
 "at": "2026-11-15T23:08+00:00",
 "count": 567,
 "error": "request failed after 3 attempts: https://www.marchespublics.gov.tn/fr/appels-doffres?draw=1&length=500&order%5B0%5D%5Bcolumn%5D=4&order%5B0%5D%5Bdir%5D=desc&columns%5B4%5D%5Bdata%5D=publication_date&start=0: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has e",
-"failed_at": "2026-11-17T14:40+00:00",
+"failed_at": "2026-11-17T16:26+00:00",
 "ok": false,
 "open": 336
 }
 },
-"updated": "2026-11-17T14:40+00:00"
+"updated": "2026-11-17T16:26+00:00"
 }
