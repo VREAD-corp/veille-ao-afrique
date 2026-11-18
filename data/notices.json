@@ -1,5 +1,339 @@
 [
 {
+"buyer": "Ministère de l'Agriculture, de l'Elevage et de la Pêche",
+"category": "Fournitures",
+"country": "Bénin",
+"deadline": "2026-12-15T10:00",
+"first_seen": "2026-11-18",
+"id": "bj-1266211",
+"lots": 2,
+"object": "Acquisition des équipements pour la mise à niveau des écloseries et unités de fabrique d'aliments",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/26071018112026_Pj_DAON%201%20mise%20%C3%A0%20niveau%20%C3%A9closerie%20et%20fabrique%20d%27aliment_merged.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-18",
+"reference": "F_PROMAC_119276",
+"regions": [],
+"sectors": [
+"btp",
+"fournitures-mobilier"
+],
+"slug": "bj-1266211-acquisition-equipements-mise-niveau-ecloseries-unites-fabrique-aliments",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=F_PROMAC_119276"
+},
+{
+"buyer": "Niger Integrated Landscape Management Project",
+"category": "Services de consultants",
+"country": "Niger",
+"deadline": "2026-11-30T10:00",
+"first_seen": "2026-11-18",
+"id": "wb-op00482235",
+"method": "Individual Consultant Selection",
+"object": "Recrutement d'un Expert en Développement Social et Mobilisation des Parties Prenantes",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P177043 – RESILAND Niger Integrated Landscape Management Project",
+"published": "2026-11-17",
+"reference": "NE-PGIP-569775-CS-INDV",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "wb-op00482235-recrutement-expert-developpement-social-mobilisation-parties-prenantes",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482235"
+},
+{
+"buyer": "Niger Integrated Landscape Management Project",
+"category": "Services de consultants",
+"country": "Niger",
+"deadline": "2026-11-30T10:00",
+"first_seen": "2026-11-18",
+"id": "wb-op00482233",
+"method": "Individual Consultant Selection",
+"object": "Recrutement d'un Expert en Développement Social et Mobilisation des Parties prenantes pour l'UAR de Diffa",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P177043 – RESILAND Niger Integrated Landscape Management Project",
+"published": "2026-11-17",
+"reference": "NE-PGIP-576079-CS-INDV",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "wb-op00482233-recrutement-expert-developpement-social-mobilisation-parties-prenantes-uar-diffa",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482233"
+},
+{
+"buyer": "COMMISSION NATIONALE DES TIPPEE",
+"category": "Services de consultants",
+"country": "Gabon",
+"deadline": "2026-12-04T12:00",
+"first_seen": "2026-11-18",
+"id": "wb-op00482232",
+"method": "Quality And Cost-Based Selection",
+"object": "Étude sur le plan national d'électrification géolocalisée à moindre coût au Gabon pour un accès universel à l’électricité",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P179643 – Access to Basic Services and Performance Improvement Project (PASBAP)",
+"published": "2026-11-17",
+"reference": "GA-CN TIPPEE-513990-CS-QCBS",
+"regions": [],
+"sectors": [
+"energie",
+"etudes-conseil"
+],
+"slug": "wb-op00482232-etude-plan-national-electrification-geolocalisee-moindre-cout-gabon-acces",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482232"
+},
+{
+"buyer": "REGIONAL SAHEL PASTORALISM SUPPORT PROJECT II - NIGER",
+"category": "Fournitures",
+"country": "Afrique de l'Ouest et du Centre (régional)",
+"deadline": "2026-12-01T10:00",
+"first_seen": "2026-11-18",
+"id": "wb-op00482218",
+"method": "Request for Quotations",
+"object": "Acquisition d'une chambre froide au profit de la DGSV du Ministère",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P173197 – Regional Sahel Pastoralism Support Project II",
+"published": "2026-11-17",
+"reference": "NE-PRAPS II - NE-575952-GO-RFQ",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "wb-op00482218-acquisition-chambre-froide-profit-dgsv-ministere",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482218"
+},
+{
+"buyer": "Ministry of Communication, Information Technology and Media - Executive Secretariat for ICT (SETIC)",
+"category": "Services",
+"country": "Burundi",
+"deadline": "2027-01-11T10:00",
+"first_seen": "2026-11-18",
+"id": "wb-op00482177",
+"method": "Request for Proposals",
+"object": "Acquisition d'une plateforme d'interopérabilité gouvernementale intégrant un système PKI (Infrastructure à clés publiques)",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P176396 – Burundi Digital Foundations Project",
+"published": "2026-11-17",
+"reference": "BI-PAFEN-PIU-2.3.1.5-NC-RFB",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "wb-op00482177-acquisition-plateforme-interoperabilite-gouvernementale-integrant-systeme-pki-in",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482177"
+},
+{
+"buyer": "MINISTRY OF ECONOMY, PLANNING AND REGIONAL DEVELOPMENT",
+"category": "Travaux",
+"country": "Cameroun",
+"deadline": "2026-12-17T13:00",
+"first_seen": "2026-11-18",
+"id": "wb-op00482131",
+"method": "Request for Bids",
+"object": "RÉALISATION DES POINTS D’EAU (MINI-ADDUCTION EN EAU POTABLE À ÉNERGIE SOLAIRE, FORAGES) DANS LES COMMUNES (MORA ET WAZA) DANS LES DEPARTEMENTS DU MAYO SAVA ET LOGONE ET CHARI",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P178207 – Enhancing Connectivity and Resilience in the Far North of Cameroon for Inclusiveness Project",
+"published": "2026-11-17",
+"reference": "CM-MINEPAT-577836-CW-RFB",
+"regions": [],
+"sectors": [
+"eau-assainissement",
+"energie"
+],
+"slug": "wb-op00482131-realisation-points-deau-mini-adduction-eau-potable-energie-solaire",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482131"
+},
+{
+"buyer": "MINISTRY OF ECONOMY, PLANNING AND REGIONAL DEVELOPMENT",
+"category": "Travaux",
+"country": "Cameroun",
+"deadline": "2026-12-16T13:00",
+"first_seen": "2026-11-18",
+"id": "wb-op00482120",
+"method": "Request for Bids",
+"object": "RÉALISATION DES POINTS D’EAU (MINI-ADDUCTION EN EAU POTABLE À ÉNERGIE SOLAIRE, FORAGES) DANS LES COMMUNES (KOUSSERI, MAKARY ET LOGONE BIRNI) DANS LE DEPARTEMENT DU LOGONE ET CHARI",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P178207 – Enhancing Connectivity and Resilience in the Far North of Cameroon for Inclusiveness Project",
+"published": "2026-11-17",
+"reference": "CM-MINEPAT-570266-CW-RFB",
+"regions": [],
+"sectors": [
+"eau-assainissement",
+"energie"
+],
+"slug": "wb-op00482120-realisation-points-deau-mini-adduction-eau-potable-energie-solaire",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482120"
+},
+{
+"buyer": "Agency for the Development of Technical Education",
+"category": "Services de consultants",
+"country": "Bénin",
+"deadline": "2026-12-02T10:00",
+"first_seen": "2026-11-18",
+"id": "wb-op00482103",
+"method": "Individual Consultant Selection",
+"object": "Recrutement d’un consultant individuel pour une analyse de l’approche multisectorielle de la nutrition et en particulier du point de vue du secteur privé",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P182125 – Project Preparation for ALAFIA I: Nourishing Benin's Future Program",
+"published": "2026-11-17",
+"reference": "BJ-ADET-568930-CS-INDV",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "wb-op00482103-recrutement-dun-consultant-individuel-analyse-lapproche-multisectorielle-nutriti",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482103"
+},
+{
+"buyer": "Project Implementation Unit- PROVIR",
+"category": "Travaux",
+"country": "Centrafrique",
+"deadline": "2026-12-30T10:00",
+"first_seen": "2026-11-18",
+"id": "wb-op00481900",
+"method": "Request for Bids",
+"object": "Travaux d'aménagement des collecteurs à Bangui repartis en 08 lots",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P178774 – CAR Inclusive and Resilient Cities Project",
+"published": "2026-11-17",
+"reference": "CF-PIU-PROVIR-578209-CW-RFB",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "wb-op00481900-travaux-amenagement-collecteurs-bangui-repartis-08-lots",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00481900"
+},
+{
+"buyer": "FOREST INVESTMENT PROJECT 2",
+"category": "Services de consultants",
+"country": "Côte d'Ivoire",
+"deadline": "2026-12-03T10:00",
+"first_seen": "2026-11-18",
+"id": "wb-op00481858",
+"method": "Quality And Cost-Based Selection",
+"object": "Recrutement d’un Consultant (Firme) pour la maitrise d'œuvre des travaux de Reprofilage Lourd et Traitement de Points Critiques (RLTPC) de 250,95 km de pistes rurales dans les agro-forêts du PIF 2",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P175982 – Forest Investment Project, phase 2",
+"published": "2026-11-17",
+"reference": "CI-FIP2-579070-CS-QCBS",
+"regions": [],
+"sectors": [
+"etudes-conseil",
+"agriculture"
+],
+"slug": "wb-op00481858-recrutement-dun-consultant-firme-maitrise-uvre-travaux-reprofilage-lourd",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00481858"
+},
+{
+"buyer": "Direction Générale des ponts et chaussées",
+"category": "Travaux",
+"country": "Tunisie",
+"deadline": "2026-12-22T09:30",
+"first_seen": "2026-11-07",
+"id": "wb-op00479850",
+"method": "Request for Bids",
+"object": "PROJETS CONNEXES : LOT3, LOT4 & LOT5 : AMENAGEMENT DES PISTES RURALES DANS LE GOUVERNORAT DE SIDI BOUZID",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P167900 – Tunisia Economic Development Corridor Project",
+"published": "2026-11-17",
+"reference": "TN-DGPC-580330-CW-RFB",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "wb-op00479850-projets-connexes-lot3-lot4-lot5-amenagement-pistes-rurales-gouvernorat",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479850"
+},
+{
+"buyer": "Direction Générale des ponts et Chaussées",
+"category": "Travaux",
+"country": "Tunisie",
+"deadline": "2026-12-22T09:30",
+"first_seen": "2026-11-18",
+"id": "wb-op00479831",
+"method": "Request for Bids",
+"object": "PROJETS CONNEXES : AMENAGEMENT DES PISTES RURALES DANS LE GOUVERNORAT DE KASSERINE LOT6, LOT7 & LOT8",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P167900 – Tunisia Economic Development Corridor Project",
+"published": "2026-11-17",
+"reference": "TN-DGPC-576199-CW-RFB",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "wb-op00479831-projets-connexes-amenagement-pistes-rurales-gouvernorat-kasserine-lot6-lot7",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479831"
+},
+{
+"buyer": "Direction General des ponts et chaussees",
+"category": "Travaux",
+"country": "Tunisie",
+"deadline": "2026-12-22T09:30",
+"first_seen": "2026-11-07",
+"id": "wb-op00479804",
+"method": "Request for Bids",
+"object": "PROJETS CONNEXES : LOT1 & LOT2 AMENAGEMENT DES PISTES RURALES DANS LE GOUVERNORAT DE SFAX",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P167900 – Tunisia Economic Development Corridor Project",
+"published": "2026-11-17",
+"reference": "TN-DGPC-580369-CW-RFB",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "wb-op00479804-projets-connexes-lot1-lot2-amenagement-pistes-rurales-gouvernorat-sfax",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479804"
+},
+{
+"buyer": "Commune de Djougou",
+"category": "Travaux",
+"country": "Bénin",
+"deadline": "2026-12-08T09:00",
+"first_seen": "2026-11-18",
+"id": "bj-1266181",
+"object": "Travaux de construction, de réhabilitation et de réfection d’écoles maternelles et primaires sur le programme BRIC",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/5803918112026_Pj_AVIS%20N%C2%B0035-026_CONSTRUCTION_REHABILITATION_ECOLES_BRIC.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-17",
+"reference": "T_DST_125977",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "bj-1266181-travaux-construction-rehabilitation-refection-decoles-maternelles-primaires-prog",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=T_DST_125977"
+},
+{
 "buyer": "Université d'Abomey-Calavi",
 "category": "Travaux",
 "country": "Bénin",
@@ -4384,28 +4718,6 @@
 "url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479856"
 },
 {
-"buyer": "Direction Générale des ponts et chaussées",
-"category": "Travaux",
-"country": "Tunisie",
-"deadline": "2026-12-15T09:30",
-"first_seen": "2026-11-07",
-"id": "wb-op00479850",
-"method": "Request for Bids",
-"object": "PROJETS CONNEXES : LOT3, LOT4 & LOT5 : AMENAGEMENT DES PISTES RURALES DANS LE GOUVERNORAT DE SIDI BOUZID",
-"places": [],
-"procedure": "Appel d'offres",
-"project": "P167900 – Tunisia Economic Development Corridor Project",
-"published": "2026-11-06",
-"reference": "TN-DGPC-580330-CW-RFB",
-"regions": [],
-"sectors": [
-"btp"
-],
-"slug": "wb-op00479850-projets-connexes-lot3-lot4-lot5-amenagement-pistes-rurales-gouvernorat",
-"source": "BM",
-"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479850"
-},
-{
 "buyer": "Ministry of National Education- Chad Improving Learning Outcomes Project",
 "category": "Travaux",
 "country": "Tchad",
@@ -4492,28 +4804,6 @@
 "slug": "wb-op00479824-acquisition-montage-equipements-scolaires-medicaux-faveur-103-ibd-ecoles",
 "source": "BM",
 "url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479824"
-},
-{
-"buyer": "Direction General des ponts et chaussees",
-"category": "Travaux",
-"country": "Tunisie",
-"deadline": "2026-12-15T09:30",
-"first_seen": "2026-11-07",
-"id": "wb-op00479804",
-"method": "Request for Bids",
-"object": "PROJETS CONNEXES : LOT1 & LOT2 AMENAGEMENT DES PISTES RURALES DANS LE GOUVERNORAT DE SFAX",
-"places": [],
-"procedure": "Appel d'offres",
-"project": "P167900 – Tunisia Economic Development Corridor Project",
-"published": "2026-11-06",
-"reference": "TN-DGPC-580369-CW-RFB",
-"regions": [],
-"sectors": [
-"btp"
-],
-"slug": "wb-op00479804-projets-connexes-lot1-lot2-amenagement-pistes-rurales-gouvernorat-sfax",
-"source": "BM",
-"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479804"
 },
 {
 "buyer": "Municipalité de Akouda",
@@ -9649,6 +9939,7 @@
 "category": "Services de consultants",
 "country": "Bénin",
 "deadline": "2026-11-18T10:00",
+"delisted": "2026-11-18",
 "first_seen": "2026-10-27",
 "id": "bj-1251943",
 "object": "Recrutement d'un cabinet pour réaliser l'audit comptable et financier du projet des exercices 2026, 2027, 2028 et premier semestre 2029",
@@ -139619,6 +139910,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-18T10:00",
+"delisted": "2026-11-18",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux hydrauliques, maritimes et fluviaux / Travaux d'installation d'équipements hydro électromécaniques pour stations de pompage"
@@ -139653,6 +139945,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-18T10:00",
+"delisted": "2026-11-18",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -139687,6 +139980,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-18T10:00",
+"delisted": "2026-11-18",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Travaux d’adduction d’eau potable"
