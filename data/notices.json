@@ -1,5 +1,406 @@
 [
 {
+"buyer": "Commune de Covè",
+"category": "Travaux",
+"country": "Bénin",
+"deadline": "2026-12-10T10:00",
+"first_seen": "2026-11-19",
+"id": "bj-1266315",
+"lots": 3,
+"object": "Travaux de construction d'une résidence de sage femme au centre santé de Zounsègo, de construction d'un système d'assainissement collectif au centre de santé de Zounsègo et de construction d'une paillote de pesée et de vaccination à la maternité de HOUEN-HOUNSO en trois (03) lots.",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/1724818112026_Pj_DAO_BATIMENTS_ZOUNSEGO.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-19",
+"reference": "T_ST_127152",
+"regions": [],
+"sectors": [
+"eau-assainissement",
+"sante"
+],
+"slug": "bj-1266315-travaux-construction-residence-sage-femme-centre-sante-zounsego-construction",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=T_ST_127152"
+},
+{
+"buyer": "Ministry of Entrepreneurship and Small Medium Enterprises",
+"category": "Services de consultants",
+"country": "RD Congo",
+"deadline": "2026-12-02T16:00",
+"first_seen": "2026-11-19",
+"id": "wb-op00482485",
+"method": "Individual Consultant Selection",
+"object": "Recrutement d'un consultant individuel pour l'étude sur l'État des lieux du registre des coopératives (diagnostic)",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P178176 – Empowering Women Entrepreneurs and Upgrading MSMEs for Economic Transformation and Jobs in DRC Proje",
+"published": "2026-11-18",
+"reference": "ZR-TRANSFORME-574771-CS-INDV",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "wb-op00482485-recrutement-consultant-individuel-etude-etat-lieux-registre-cooperatives-diagnos",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482485"
+},
+{
+"buyer": "Ministry of Entrepreneurship and Small Medium Enterprises",
+"category": "Services de consultants",
+"country": "RD Congo",
+"deadline": "2026-12-03T16:00",
+"first_seen": "2026-11-19",
+"id": "wb-op00482482",
+"method": "Individual Consultant Selection",
+"object": "Recrutement d'un expert national pour assurer les formations sur l'Amélioration de l'environnement de l'arbitrage dans les villes du corridor Lobito",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P178176 – Empowering Women Entrepreneurs and Upgrading MSMEs for Economic Transformation and Jobs in DRC Proje",
+"published": "2026-11-18",
+"reference": "ZR-TRANSFORME-574837-CS-INDV",
+"regions": [],
+"sectors": [
+"formation-evenementiel"
+],
+"slug": "wb-op00482482-recrutement-expert-national-assurer-formations-amelioration-environnement-arbitr",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482482"
+},
+{
+"buyer": "Ministry of Entrepreneurship and Small Medium Enterprises",
+"category": "Services de consultants",
+"country": "RD Congo",
+"deadline": "2026-12-04T16:00",
+"first_seen": "2026-11-19",
+"id": "wb-op00482478",
+"method": "Individual Consultant Selection",
+"object": "Recrutement d'expert international pour assurer les formations sur l'Amélioration de l'environnement de l'arbitrage dans les villes du corridor Lobito",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P178176 – Empowering Women Entrepreneurs and Upgrading MSMEs for Economic Transformation and Jobs in DRC Proje",
+"published": "2026-11-18",
+"reference": "ZR-TRANSFORME-574835-CS-INDV",
+"regions": [],
+"sectors": [
+"alimentation",
+"formation-evenementiel"
+],
+"slug": "wb-op00482478-recrutement-expert-international-assurer-formations-amelioration-environnement-a",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482478"
+},
+{
+"buyer": "CCP PUSEB",
+"category": "Fournitures",
+"country": "Centrafrique",
+"deadline": "2026-11-19T10:00",
+"first_seen": "2026-11-19",
+"id": "wb-op00482471",
+"method": "Request for Bids",
+"object": "ACQUISITION DES SMARTPHONES ET TABLETTES POUR LA MISE EN OEUVRE DU STSTEME INTEGRE DE GESTION ET D'AMELIORATION DES APPRENTISSAGES (CI-CM2).",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P502128 – CAR Accelerating Results in Education",
+"published": "2026-11-18",
+"reference": "CF-PUSEB-575104-GO-RFB",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "wb-op00482471-acquisition-smartphones-tablettes-mise-oeuvre-ststeme-integre-gestion-ameliorati",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482471"
+},
+{
+"buyer": "Minsitère du Plan",
+"category": "Services de consultants",
+"country": "RD Congo",
+"deadline": "2026-12-03T11:00",
+"first_seen": "2026-11-19",
+"id": "wb-op00482448",
+"method": "Individual Consultant Selection",
+"object": "Chargé des Opérations de recensement",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P516861 – Preparation in relation to DECIDE Project (Development of Statistical Capacity to Improve Decision M",
+"published": "2026-11-18",
+"reference": "ZR-MINPLAN-576298-CS-INDV",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "wb-op00482448-charge-operations-recensement",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482448"
+},
+{
+"buyer": "Cellule d’Exécution des Projets Eau",
+"category": "Services de consultants",
+"country": "RD Congo",
+"deadline": "2026-12-03T23:45",
+"first_seen": "2026-11-19",
+"id": "wb-op00482395",
+"method": "Consultant Qualification  Selection",
+"object": "Elaboration de l'Etude d'impact Environnemental et Social (EIES) et Plan d'actions de Réinstallation (PAR) pour les systèmes d'alimentation en eau potable (AEP) des secteurs de Mudiba, Movo Nkatshia et Kalonji Sud au Kasaï oriental",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P178389 – Water Supply and Sanitation Access Program (PASEA) Project",
+"published": "2026-11-18",
+"reference": "ZR-CEP-O-569535-CS-CQS",
+"regions": [],
+"sectors": [
+"eau-assainissement",
+"etudes-conseil"
+],
+"slug": "wb-op00482395-elaboration-etude-impact-environnemental-social-eies-plan-actions-reinstallation",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482395"
+},
+{
+"buyer": "Road Agency",
+"category": "Services de consultants",
+"country": "Madagascar",
+"deadline": "2026-12-11T17:00",
+"first_seen": "2026-11-19",
+"id": "wb-op00482392",
+"method": "Consultant Qualification  Selection",
+"object": "Appui à l’ATT dans l’élaboration d’un schéma directeur de formation aux opérateurs et aux préposés en vue de professionnaliser le sous-secteur Transport Routier",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P176811 – Madagascar Road Sector Sustainability Project",
+"published": "2026-11-18",
+"reference": "136-PDDR-SCHÉMA DIRECTEUR ATT",
+"regions": [],
+"sectors": [
+"etudes-conseil",
+"vehicules-transport"
+],
+"slug": "wb-op00482392-appui-latt-lelaboration-dun-schema-directeur-formation-operateurs-preposes",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482392"
+},
+{
+"buyer": "CEMAC-CAR",
+"category": "Services de consultants",
+"country": "Afrique centrale (régional)",
+"deadline": "2026-12-03T23:45",
+"first_seen": "2026-11-19",
+"id": "wb-op00482388",
+"method": "Individual Consultant Selection",
+"object": "RECRUTEMENT D'UN SPÉCIALISTE EN PASSATION DES MARCHES (SPM) JUNIOR AU PROFIT DU PROGRAMME DE CORRIDOR ÉCONOMIQUE DOUALA-BANGUI-COMPOSANTE REGIONALE CEMAC",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P513683 – Douala-Bangui Economic Corridor Project",
+"published": "2026-11-18",
+"reference": "CF-CEMAC-RCA-583127-CS-INDV",
+"regions": [],
+"sectors": [
+"sante"
+],
+"slug": "wb-op00482388-recrutement-specialiste-passation-marches-spm-junior-profit-programme-corridor",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482388"
+},
+{
+"buyer": "CEMAC-CAR",
+"category": "Services de consultants",
+"country": "Afrique centrale (régional)",
+"deadline": "2026-12-03T23:45",
+"first_seen": "2026-11-19",
+"id": "wb-op00482386",
+"method": "Individual Consultant Selection",
+"object": "RECRUTEMENT D'UN COMPTABLE AU PROFIT DU PROGRAMME DE CORRIDOR ÉCONOMIQUE DOUALA-BANGUI-COMPOSANTE RÉGIONALE CEMAC",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P513683 – Douala-Bangui Economic Corridor Project",
+"published": "2026-11-18",
+"reference": "CF-CEMAC-RCA-583130-CS-INDV",
+"regions": [],
+"sectors": [
+"sante"
+],
+"slug": "wb-op00482386-recrutement-comptable-profit-programme-corridor-economique-douala-bangui-composa",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482386"
+},
+{
+"buyer": "Project Management Unit",
+"category": "Services de consultants",
+"country": "Madagascar",
+"deadline": "2026-12-04T23:00",
+"first_seen": "2026-11-19",
+"id": "wb-op00482314",
+"method": "Consultant Qualification  Selection",
+"object": "Agent Vérificateur Indépendant - réseaux électrique JIRAMA",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P515164 – Accelerating Sustainable and Clean Energy Access Transformation Madagascar",
+"published": "2026-11-18",
+"reference": "MG-PMU-577467-CS-INDV",
+"regions": [],
+"sectors": [
+"energie"
+],
+"slug": "wb-op00482314-agent-verificateur-independant-reseaux-electrique-jirama",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482314"
+},
+{
+"buyer": "Project Management Unit",
+"category": "Services de consultants",
+"country": "Madagascar",
+"deadline": "2026-12-04T23:00",
+"first_seen": "2026-11-19",
+"id": "wb-op00482306",
+"method": "Quality Based Selection",
+"object": "Agent Vérificateur Indépendant- Finances - gouvernance JIRAMA",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P515164 – Accelerating Sustainable and Clean Energy Access Transformation Madagascar",
+"published": "2026-11-18",
+"reference": "MG-PMU-577468-CS-INDV",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "wb-op00482306-agent-verificateur-independant-finances-gouvernance-jirama",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482306"
+},
+{
+"buyer": "Project Management Unit",
+"category": "Services de consultants",
+"country": "Madagascar",
+"deadline": "2026-12-03T23:00",
+"first_seen": "2026-11-19",
+"id": "wb-op00482301",
+"method": "Quality Based Selection",
+"object": "Agent Vérificateur Indépendant - cuisson propre et connexions ERD",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P515164 – Accelerating Sustainable and Clean Energy Access Transformation Madagascar",
+"published": "2026-11-18",
+"reference": "MG-PMU-577450-CS-INDV",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "wb-op00482301-agent-verificateur-independant-cuisson-propre-connexions-erd",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482301"
+},
+{
+"buyer": "Project Management Unit",
+"category": "Services de consultants",
+"country": "Madagascar",
+"deadline": "2026-12-03T23:00",
+"first_seen": "2026-11-19",
+"id": "wb-op00482293",
+"method": "Individual Consultant Selection",
+"object": "Recrutement Responsable Environnemental et Social",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P515164 – Accelerating Sustainable and Clean Energy Access Transformation Madagascar",
+"published": "2026-11-18",
+"reference": "MG-PMU-563418-CS-INDV",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "wb-op00482293-recrutement-responsable-environnemental-social",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482293"
+},
+{
+"buyer": "AGEROUTE",
+"category": "Services de consultants",
+"country": "Sénégal",
+"deadline": "2026-12-03T10:30",
+"first_seen": "2026-11-19",
+"id": "wb-op00482193",
+"method": "Quality And Cost-Based Selection",
+"object": "Sélection d'un consultant pour la mise à jour de la stratégie nationale des transports (terrestres, maritimes et aériens) du Sénégal dans le cadre de l'appui institutionnel à la Direction Générale des Transports Terrestres (DGTT)",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P176419 – Enhancing Connectivity in the Northern and Central Agricultural Production Areas of Senegal Project",
+"published": "2026-11-18",
+"reference": "SN-AGEROUTE-367878-CS-QCBS",
+"regions": [],
+"sectors": [
+"etudes-conseil",
+"vehicules-transport"
+],
+"slug": "wb-op00482193-selection-consultant-mise-jour-strategie-nationale-transports-terrestres-maritim",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482193"
+},
+{
+"buyer": "Ministry of Communication, Information Technology and Media - Executive Secretariat for ICT (SETIC)",
+"category": "Services",
+"country": "Burundi",
+"deadline": "2027-01-11T10:00",
+"first_seen": "2026-11-18",
+"id": "wb-op00482177",
+"method": "Request for Proposals",
+"object": "Acquisition d'une plateforme d'interopérabilité gouvernementale intégrant un système PKI (Infrastructure à clés publiques)",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P176396 – Burundi Digital Foundations Project",
+"published": "2026-11-18",
+"reference": "BI-PAFEN-PIU-2.3.1.5-NC-RFB",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "wb-op00482177-acquisition-plateforme-interoperabilite-gouvernementale-integrant-systeme-pki-in",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482177"
+},
+{
+"buyer": "Project Management Unit",
+"category": "Services de consultants",
+"country": "Madagascar",
+"deadline": "2026-12-03T23:45",
+"first_seen": "2026-11-19",
+"id": "wb-op00481197",
+"method": "Individual Consultant Selection",
+"object": "Responsable Passation de Marchés (RPM)",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P515164 – Accelerating Sustainable and Clean Energy Access Transformation Madagascar",
+"published": "2026-11-18",
+"reference": "MG-PMU-563381-CS-INDV",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "wb-op00481197-responsable-passation-marches-rpm",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00481197"
+},
+{
+"buyer": "DRC Urban Flood Resilience Project",
+"category": "Services de consultants",
+"country": "RD Congo",
+"deadline": "2026-12-07T18:00",
+"first_seen": "2026-11-19",
+"id": "wb-op00427876",
+"method": "Quality And Cost-Based Selection",
+"object": "Recrutement d'une ONG chargée de la mise en œuvre du Plan de mobilisation des parties prenantes du Projet à Kinshasa",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P508410 – DRC Urban Flood Resilience Project",
+"published": "2026-11-18",
+"reference": "ZR-PRIUR-513367-CS-QCBS",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "wb-op00427876-recrutement-ong-chargee-mise-uvre-plan-mobilisation-parties-prenantes",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00427876"
+},
+{
 "buyer": "Ministère de l'Agriculture, de l'Elevage et de la Pêche",
 "category": "Fournitures",
 "country": "Bénin",
@@ -110,28 +511,6 @@
 "slug": "wb-op00482218-acquisition-chambre-froide-profit-dgsv-ministere",
 "source": "BM",
 "url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482218"
-},
-{
-"buyer": "Ministry of Communication, Information Technology and Media - Executive Secretariat for ICT (SETIC)",
-"category": "Services",
-"country": "Burundi",
-"deadline": "2027-01-11T10:00",
-"first_seen": "2026-11-18",
-"id": "wb-op00482177",
-"method": "Request for Proposals",
-"object": "Acquisition d'une plateforme d'interopérabilité gouvernementale intégrant un système PKI (Infrastructure à clés publiques)",
-"places": [],
-"procedure": "Appel d'offres",
-"project": "P176396 – Burundi Digital Foundations Project",
-"published": "2026-11-17",
-"reference": "BI-PAFEN-PIU-2.3.1.5-NC-RFB",
-"regions": [],
-"sectors": [
-"fournitures-mobilier"
-],
-"slug": "wb-op00482177-acquisition-plateforme-interoperabilite-gouvernementale-integrant-systeme-pki-in",
-"source": "BM",
-"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482177"
 },
 {
 "buyer": "MINISTRY OF ECONOMY, PLANNING AND REGIONAL DEVELOPMENT",
@@ -9298,6 +9677,7 @@
 "category": "Fournitures",
 "country": "Bénin",
 "deadline": "2026-11-19T09:00",
+"delisted": "2026-11-19",
 "first_seen": "2026-10-28",
 "id": "bj-1252902",
 "object": "Acquisition de serveurs pour la mise en place d’un environnement de préproduction/staging pour tester avant déploiement (Relance)",
@@ -11272,6 +11652,7 @@
 "category": "Fournitures",
 "country": "Bénin",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "first_seen": "2026-10-23",
 "id": "bj-1250992",
 "object": "Acquisition, installation et mis en service des équipements médico-techniques de pointe au profit des structures de santé",
@@ -12430,6 +12811,7 @@
 "category": "Travaux",
 "country": "Bénin",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "first_seen": "2026-10-21",
 "id": "bj-1250285",
 "lots": 5,
@@ -19359,6 +19741,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-19T12:30",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de voiries, chemins et pistes / Routes et voiries en béton"
@@ -23883,6 +24266,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Travaux d'éclairage publics"
@@ -25092,6 +25476,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-19T10:30",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -25125,6 +25510,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -26728,6 +27114,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-19T11:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Services / Services architecturales et topographiques / Exécution de plans, sommaires, d’exécutions et de détails"
@@ -35341,6 +35728,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-19T11:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Fournitures / Produits alimentaires, d’élevage, de la pêche, d’agriculture, d’horticulture et pépinière / Plantes, végétaux, graines, plants et autres produits de pépinière connexes"
@@ -39120,6 +39508,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Audit, évaluation et certification des comptes"
@@ -40074,6 +40463,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
@@ -41325,6 +41715,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-19T11:30",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’installation / Travaux d’installation d’équipement audio-visuel"
@@ -58664,6 +59055,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-19T09:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de voiries, chemins et pistes / Travaux d'entretien des routes, voirie et voies ferrées"
@@ -68923,6 +69315,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-19T09:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Travaux / Fondations, injections, parois moulées, sondages et forages / Travaux de fondations"
@@ -76231,6 +76624,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-19T09:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électrique"
@@ -84612,6 +85006,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "env_clauses": true,
 "estimate": 30000000.0,
@@ -84674,6 +85069,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Gardiennage et surveillance des bâtiments administratifs"
@@ -87960,6 +88356,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Logiciels utilitaires, middlewares, sécurités, messageries, collaboration et autres"
@@ -90794,6 +91191,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Pièces de rechange pour matériel de lutte contre l’incendie"
@@ -91293,6 +91691,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-19T11:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation de réception"
@@ -91350,6 +91749,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation de réception"
@@ -93659,6 +94059,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de voiries, chemins et pistes / Routes et voiries en béton"
@@ -94266,6 +94667,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etudes d’impact et de gestion des risques"
@@ -96033,6 +96435,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Mobilier de bureau"
@@ -108848,6 +109251,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-19T10:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Gardiennage et surveillance des bâtiments administratifs"
@@ -111777,6 +112181,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-19T11:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux hydrauliques, maritimes et fluviaux / Ouvrages intérieurs portuaires"
@@ -118889,6 +119294,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-19T11:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
@@ -123552,6 +123958,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-19T11:00",
+"delisted": "2026-11-19",
 "detail_checked": true,
 "domains": [
 "Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Assistance et conseil (juridique, financier, en management, en gestion, technique…)"
