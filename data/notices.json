@@ -1,5 +1,50 @@
 [
 {
+"buyer": "Centre des Œuvres Universitaires et Sociales Parakou",
+"category": "Fournitures",
+"country": "Bénin",
+"deadline": "2026-12-11T09:00",
+"first_seen": "2026-11-19",
+"id": "bj-1266688",
+"lots": 5,
+"object": "Achat de denrées alimentaires (produits locaux) pour la restauration des étudiants par accord-cadre à bons de commande au titre des années académiques 2027-2028 et 2028-2029 répartis en cinq (05) lots.",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/1044019112026_Pj_AAOON%20DENREES%20ALIMENTAIRES.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-19",
+"reference": "F_COUS P_119887",
+"regions": [],
+"sectors": [
+"alimentation"
+],
+"slug": "bj-1266688-achat-denrees-alimentaires-produits-locaux-restauration-etudiants-accord-cadre",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=F_COUS+P_119887"
+},
+{
+"buyer": "Agence Territoriale de Développement Agricole Pôle 6",
+"category": "Travaux",
+"country": "Bénin",
+"deadline": "2026-12-11T10:00",
+"first_seen": "2026-11-19",
+"id": "bj-1266561",
+"lots": 3,
+"object": "Travaux de construction d’un magasin au niveau du centre de stockage d’huile de palme de Pobè au titre de 2021 et de voirie et d’assainissement des centres de stockage d’huile de palme de Pobè et d'Ifangni (lots 1 à 3). Poursuite.",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/0452019112026_Pj_AAON%20Travaux%20Assainissement%20Pob%C3%A9.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-19",
+"reference": "T_DAI_116349",
+"regions": [],
+"sectors": [
+"eau-assainissement",
+"btp"
+],
+"slug": "bj-1266561-travaux-construction-dun-magasin-niveau-centre-stockage-dhuile-palme",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=T_DAI_116349"
+},
+{
 "buyer": "Commune de Covè",
 "category": "Travaux",
 "country": "Bénin",
