@@ -519,22 +519,6 @@
 {
 "buyer": "DELEGATION GENERALE A L'ADMINISTRATION PENITENTIAIRE ET A LA REINSERTION",
 "category": "Fournitures",
-"deadline": "2026-11-20T10:30",
-"env_clauses": false,
-"object": "L’achat des matelas de prison au profit de la Délégation Générale à l’Administration Pénitentiaire et à la Réinsertion , livrable au magasin central arjat 1, en Trois Lots :\nLot 1 : Région Casa-settat\nLot 2 : Région fes-meknes\nLot 3 : Région Rabat-Salé-Kénitra",
-"org": "h5j",
-"places": [
-"SALE"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-09",
-"ref_id": "1037525",
-"reference": "106/2026"
-},
-{
-"buyer": "DELEGATION GENERALE A L'ADMINISTRATION PENITENTIAIRE ET A LA REINSERTION",
-"category": "Fournitures",
 "deadline": "2026-12-01T10:30",
 "env_clauses": false,
 "object": "L’achat des couvertures polyester pour divers établissements pénitentiaires , livrable au magasin central arjat 1, en lot unique.",
@@ -627,55 +611,6 @@
 "published": "2026-10-16",
 "ref_id": "1047706",
 "reference": "38/BP/2026"
-},
-{
-"buyer": "SOCIETE DE DEVELOPPEMENT LOCAL MARRAKECH MOBILITY SA",
-"category": "Services",
-"deadline": "2026-11-20T10:00",
-"env_clauses": false,
-"object": "Exécution des prestations d'étude et de maitrise d'œuvre pour la réalisation du programme de création des ouvrages d'art pour faciliter la mobilité autour du grand stade et l'accès nord de la ville de Marrakech tranche 3",
-"org": "j0w",
-"places": [
-"MAROC",
-"MARRAKECH"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-10",
-"ref_id": "1048367",
-"reference": "AO.44/MM/2026"
-},
-{
-"buyer": "AL OMRANE RABAT SALE KENITRA",
-"category": "Travaux",
-"deadline": "2026-11-20T10:00",
-"env_clauses": true,
-"object": "TRAVAUX DE LOTISSEMENT ET DE CONSTRUCTION DE GROUPEMENT D'HABITATION R+4 & R+3 Opération Yasmine - Tranche 02",
-"org": "j8k",
-"places": [
-"SKHIRATE-TEMARA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-13",
-"ref_id": "1049108",
-"reference": "155/2026/T/TRA"
-},
-{
-"buyer": "AL OMRANE RABAT SALE KENITRA",
-"category": "Travaux",
-"deadline": "2026-11-20T11:00",
-"env_clauses": true,
-"object": "TRAVAUX DE LOTISSEMENT ET DE CONSTRUCTION DE GROUPEMENT D'HABITATION R+4 & R+3 Opération Yasmine - Tranche 03",
-"org": "j8k",
-"places": [
-"SKHIRATE-TEMARA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-13",
-"ref_id": "1049122",
-"reference": "156/2026/T/TRA"
 },
 {
 "buyer": "DIRECTEUR DE LA METEOROLOGIE NATIONALE",
@@ -839,22 +774,6 @@
 "reference": "06/2026"
 },
 {
-"buyer": "LE DIRECTEUR PROVINCIAL DE L'EQUIPEMENT ET DU TRANSPORT ET DE LA LOGISTIQUE DE SIDI KACEM",
-"category": "Travaux",
-"deadline": "2026-11-20T13:00",
-"env_clauses": true,
-"object": "Programme prioritaire de Connectivite Intercommunale-\nObjet : PPCI-Travaux de construction de la RNC :\n• Reliant la RR418 à la coopérative Bir Anzarane et Développement Sidi EL Harrati\n• Reliant la RR 411 et la RP 4234\n• Reliant la RP4232 à Douar Coopérative Nouirate\n• Reliant la Douar Gnafda à Mellah\n• Douar Laataouna\n• Douar Lamlakhit et Laababda\nLot unique -Province de Sidi Kacem-",
-"org": "o8p",
-"places": [
-"SIDI KACEM"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-09-20",
-"ref_id": "1041301",
-"reference": "SK04/2026/CFR"
-},
-{
 "buyer": "MINISTERE DE L'EQUIPEMENT ET DE L'EAU",
 "category": "Fournitures",
 "deadline": "2026-11-26T10:00",
@@ -983,22 +902,6 @@
 "published": "2026-10-14",
 "ref_id": "1048933",
 "reference": "07/2026"
-},
-{
-"buyer": "Direction de l'Equipement et des Transports de Taourirt",
-"category": "Services",
-"deadline": "2026-11-20T11:00",
-"env_clauses": false,
-"object": "ETUDE DE RECONSTRUCTION D’UN OUVRAGE D’ART SUR OUED BOURDIM AU PK33+350 DE LA RP6005- PROVINCE DE TAOURIRT",
-"org": "o8p",
-"places": [
-"TAOURIRT"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-19",
-"ref_id": "1049873",
-"reference": "23/TA/2026"
 },
 {
 "buyer": "OFFICE NATIONAL DES AEROPORTS",
@@ -1243,22 +1146,6 @@
 "reference": "29/2026/DPA/SAHA"
 },
 {
-"buyer": "DIRECTEUR PROVINCIAL D'AGRICULTURE-TAN-TAN",
-"category": "Fournitures",
-"deadline": "2026-11-20T10:00",
-"env_clauses": false,
-"object": "Acquisition et installation du matériel d’élevage dans le cadre du programme de l’agriculture solidaire centre sur l’élevage au niveau des Communes Territoriales de Msied et Tilemzoune, Cercle de Msied, Province de TanTan",
-"org": "q1s",
-"places": [
-"TAN-TAN"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-08",
-"ref_id": "1037336",
-"reference": "09/DPA/TT/2026"
-},
-{
 "buyer": "OFFICE REGIONAL DE MISE EN VALEUR AGRICOLE DE TAFILALET",
 "category": "Fournitures",
 "deadline": "2026-11-24T10:00",
@@ -1291,22 +1178,6 @@
 "published": "2026-10-16",
 "ref_id": "1047002",
 "reference": "01/2026/DIAEA/DOPSAISS"
-},
-{
-"buyer": "ETABLISSEMENT AUTONOME DE CONTROLE ET DE COORDINATION DES EXPORTATIONS",
-"category": "Services",
-"deadline": "2026-11-20T10:00",
-"env_clauses": false,
-"object": "l’organisation et la réalisation des pavillons du Maroc aux salons internationaux « LA SEMAINE VERTE DE BERLIN » et « FRUIT LOGISTICA » en deux lots séparés.",
-"org": "q1s",
-"places": [
-"ALLEMAGNE"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-09",
-"ref_id": "1047968",
-"reference": "42/2026/EACCE"
 },
 {
 "buyer": "DIRECTEUR PROVINCIAL D'AGRICULTURE KHENIFRA",
@@ -1672,22 +1543,6 @@
 "published": "2026-10-13",
 "ref_id": "1034289",
 "reference": "44/DGPC/2026"
-},
-{
-"buyer": "DIRECTION GENERALE DE LA PROTECTION CIVILE",
-"category": "Fournitures",
-"deadline": "2026-11-20T10:00",
-"env_clauses": false,
-"object": "l’acquisition des embarcations semi rigides avec accessoires pour le sauvetage en mer destinées à la Direction Générale de la Protection Civile Rabat (lot unique).",
-"org": "w9x",
-"places": [
-"RABAT"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-07",
-"ref_id": "1041795",
-"reference": "104/DGPC/2026"
 },
 {
 "buyer": "DIRECTION GENERALE DE LA PROTECTION CIVILE",

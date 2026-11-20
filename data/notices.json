@@ -1,5 +1,115 @@
 [
 {
+"buyer": "Ministry of Population",
+"category": "Services de consultants",
+"country": "Madagascar",
+"deadline": "2026-12-04T10:00",
+"first_seen": "2026-11-20",
+"id": "wb-op00482632",
+"method": "Individual Consultant Selection",
+"object": "Recrutement d'un technicien de surface",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P179466 – Madagascar Safety Nets and Resilience Project",
+"published": "2026-11-19",
+"reference": "MG-MPS-544202-CS-INDV",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "wb-op00482632-recrutement-technicien-surface",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482632"
+},
+{
+"buyer": "Ministry of Population",
+"category": "Services de consultants",
+"country": "Madagascar",
+"deadline": "2026-12-04T10:00",
+"first_seen": "2026-11-20",
+"id": "wb-op00482619",
+"method": "Individual Consultant Selection",
+"object": "Recrutement d'un consultant Secrétaire de direction",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P179466 – Madagascar Safety Nets and Resilience Project",
+"published": "2026-11-19",
+"reference": "MG-MPS-544198-CS-INDV",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "wb-op00482619-recrutement-consultant-secretaire-direction",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482619"
+},
+{
+"buyer": "Community Nutrition National Program Unit",
+"category": "Services",
+"country": "Madagascar",
+"deadline": "2026-11-30T10:00",
+"first_seen": "2026-11-20",
+"id": "wb-op00482525",
+"method": "Request for Quotations",
+"object": "Prestation de services pour la location de magasins et gardiennage des LNS / PS/ PN",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P175110 – Phase 2 of Improving Nutrition Outcomes Using the Multiphase Programmatic Approach",
+"published": "2026-11-19",
+"reference": "MG-UPNNC-565134-NC-RFQ",
+"regions": [],
+"sectors": [
+"services-generaux"
+],
+"slug": "wb-op00482525-prestation-services-location-magasins-gardiennage-lns-ps-pn",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482525"
+},
+{
+"buyer": "Ministry of Digital Transition and Technological Innovation",
+"category": "Services de consultants",
+"country": "Côte d'Ivoire",
+"deadline": "2026-12-03T09:30",
+"first_seen": "2026-11-20",
+"id": "wb-op00481598",
+"method": "Quality And Cost-Based Selection",
+"object": "Recrutement de cabinet pour le renforcement des capacités de 5500 fonctionnaires et agents de l'Etat en compétences numériques intermédiaires",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P180059 – RESULTS ACCELERATION PROGRAM FOR INCLUSIVE DIGITALIZATION IN CÔTE D'IVOIRE - PHASE 1",
+"published": "2026-11-19",
+"reference": "CI-PADCI-575277-CS-CQS",
+"regions": [],
+"sectors": [
+"informatique-telecoms"
+],
+"slug": "wb-op00481598-recrutement-cabinet-renforcement-capacites-5500-fonctionnaires-agents-etat-compe",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00481598"
+},
+{
+"buyer": "Projet Eau et Assainissement de Guinee (PEAG)",
+"category": "Services de consultants",
+"country": "Guinée",
+"deadline": "2026-12-04T10:00",
+"first_seen": "2026-11-20",
+"id": "wb-op00476667",
+"method": "Quality Based Selection",
+"object": "Recrutement d’une entreprise pour la mise en œuvre à titre pilote pour élaborer une base de référence des Eaux Non Facturées (ENF) dans le cadre d’un contrat de performance.",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P179017 – Guinea Water and Sanitation Project",
+"published": "2026-11-19",
+"reference": "GN-GWSP-573123-CS-CQS",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "wb-op00476667-recrutement-dune-entreprise-mise-uvre-titre-pilote-elaborer-base",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00476667"
+},
+{
 "buyer": "Centre des Œuvres Universitaires et Sociales Parakou",
 "category": "Fournitures",
 "country": "Bénin",
@@ -66,6 +176,28 @@
 "slug": "bj-1266315-travaux-construction-residence-sage-femme-centre-sante-zounsego-construction",
 "source": "BJ",
 "url": "https://www.marches-publics.bj/appels-doffres?search=T_ST_127152"
+},
+{
+"buyer": "Agence pour le Developement et la Promotion du Projet Grand Inga",
+"category": "Services de consultants",
+"country": "RD Congo",
+"deadline": "2026-11-27T16:00",
+"first_seen": "2026-11-20",
+"id": "wb-op00482511",
+"method": "Individual Consultant Selection",
+"object": "Recrutement d’un Consultant assumant la fonction d'Ingénieur Hydro électricien principal au sein de l'Agence pour le Développement et la Promotion du Projet Grand Inga (ADPI) dans le cadre du Programme de Développement Inga 3 (PDI3)",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P506438 – Inga 3 Development Program",
+"published": "2026-11-18",
+"reference": "ZR-ADEPI-570695-CS-INDV",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "wb-op00482511-recrutement-dun-consultant-assumant-fonction-ingenieur-hydro-electricien-princip",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00482511"
 },
 {
 "buyer": "Ministry of Entrepreneurship and Small Medium Enterprises",
@@ -4274,6 +4406,7 @@
 "category": "Travaux",
 "country": "Bénin",
 "deadline": "2026-11-20T10:00",
+"delisted": "2026-11-20",
 "first_seen": "2026-11-10",
 "id": "bj-1261086",
 "lots": 2,
@@ -19740,6 +19873,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-20T11:00",
+"delisted": "2026-11-20",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude de marché"
@@ -66025,6 +66159,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-20T11:00",
+"delisted": "2026-11-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -66058,6 +66193,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-20T10:00",
+"delisted": "2026-11-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -79836,6 +79972,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-20T10:00",
+"delisted": "2026-11-20",
 "detail_checked": true,
 "domains": [
 "Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Accompagnement dans la mise en œuvre de projet, pilotage des travaux Et coordination"
@@ -82943,6 +83080,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-20T10:00",
+"delisted": "2026-11-20",
 "detail_checked": true,
 "domains": [
 "Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation événementiel, d’organisation de manifestations"
@@ -86232,6 +86370,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-20T10:30",
+"delisted": "2026-11-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et articles de literie, de couchage, de cuisine et de buanderie / Matériel et articles de literie et de couchage"
@@ -91561,6 +91700,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-20T10:00",
+"delisted": "2026-11-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
@@ -98066,6 +98206,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-20T10:00",
+"delisted": "2026-11-20",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
@@ -168219,6 +168360,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-20T13:00",
+"delisted": "2026-11-20",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de voiries, chemins et pistes / Travaux d’assises non traitées et enduits superficiels"
