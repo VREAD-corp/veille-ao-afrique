@@ -1,5 +1,73 @@
 [
 {
+"buyer": "Agence Territoriale de Développement Agricole Pôle 2",
+"category": "Travaux",
+"country": "Bénin",
+"deadline": "2026-12-15T10:00",
+"first_seen": "2026-11-20",
+"id": "bj-1268775",
+"lots": 3,
+"object": "Construction de16 bâtiments types d’élevage au profit des éleveurs moderne de poulets de chair .",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/26011020112026_Pj_AVIS_DAON_16BATIMENTS.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-20",
+"reference": "T_DAI_124350",
+"regions": [],
+"sectors": [
+"agriculture",
+"btp"
+],
+"slug": "bj-1268775-construction-de16-batiments-types-delevage-profit-eleveurs-moderne-poulets",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=T_DAI_124350"
+},
+{
+"buyer": "Agence Territoriale de Développement Agricole Pôle 2",
+"category": "Travaux",
+"country": "Bénin",
+"deadline": "2026-12-14T10:00",
+"first_seen": "2026-11-20",
+"id": "bj-1268739",
+"lots": 2,
+"object": "Réalisation de huit (08) forages avec château d’eau équipés de moyen d’exhaure solaire au profit des aviculteurs modernes",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/1456920112026_Pj_AVIS_DAON_8FORAGES.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-20",
+"reference": "T_DAI_124349",
+"regions": [],
+"sectors": [
+"eau-assainissement",
+"energie"
+],
+"slug": "bj-1268739-realisation-huit-08-forages-avec-chateau-deau-equipes-moyen",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=T_DAI_124349"
+},
+{
+"buyer": "Agence Territoriale de Développement Agricole Pôle 2",
+"category": "Services de consultants",
+"country": "Bénin",
+"deadline": "2026-12-03T10:00",
+"first_seen": "2026-11-20",
+"id": "bj-1268711",
+"object": "Recrutement d’un prestataire pour la délivrance du conseil agricole au profit des producteurs de Maïs (accord cadre à bon de commande pour 3 ans)",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/47031020112026_Pj_AMI_CTS_MAIS.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-20",
+"reference": "PI_CPM_124406",
+"regions": [],
+"sectors": [
+"etudes-conseil",
+"agriculture"
+],
+"slug": "bj-1268711-recrutement-dun-prestataire-delivrance-conseil-agricole-profit-producteurs-mais",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=PI_CPM_124406"
+},
+{
 "buyer": "Ministry of Population",
 "category": "Services de consultants",
 "country": "Madagascar",
