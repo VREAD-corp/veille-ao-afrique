@@ -1,16 +1,4 @@
 {
-"ma-a1t-1037488": {
-"bond": 133000.0,
-"buyer_full": "CG / CNDP - COMMISSION NATIONALE DE CONTROLE DE LA PROTECTION DES DONNEES A CARACTERE PERSONNEL",
-"domains": [
-"Fournitures / Matériel, mobilier et fournitures de bureau / Mobilier de bureau"
-],
-"estimate": 6655327.34,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-a1t-1038512": {
 "bond": 6000.0,
 "buyer_full": "CG / ANRF - AUTORITÉ NATIONALE DU RENSEIGNEMENT FINANCIER",
@@ -45,18 +33,6 @@
 "fetched": "2026-10-18",
 "notice_type": "Annonce de consultation",
 "reserved": true,
-"variant": "Non"
-},
-"ma-a1t-1040397": {
-"bond": 42000.0,
-"buyer_full": "CG / APPDESPPNR - AGENCE POUR LA PROMOTION ET LE DEVELOPPEMENT ECONOMIQUE ET SOCIAL DES PREFECTURES ET PROVINCES DU NORD DU ROYAUME",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
-],
-"estimate": 2135989.78,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
 "variant": "Non"
 },
 "ma-a1t-1040990": {
@@ -622,18 +598,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-a1z-1042242": {
-"bond": 10000.0,
-"buyer_full": "RGC / ECCDD - ETABLISSEMENT DE COOPERATION ENTRE LES COMMUNES'ENVIRONNEMENT ET DEVELOPPEMENT DURABLE",
-"domains": [
-"Services / Etudes d’ingénierie / Etude de faisabilité"
-],
-"estimate": 500000.0,
-"fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-a1z-1042733": {
 "bond": 15000.0,
 "buyer_full": "RGC / RCS - REGION CASABLANCA-SETTAT",
@@ -668,18 +632,6 @@
 "fetched": "2026-10-16",
 "notice_type": "Annonce de consultation",
 "reserved": false,
-"variant": "Non"
-},
-"ma-a1z-1045225": {
-"bond": 10000.0,
-"buyer_full": "RGC / ASO - Arrondissement SIDI OTHMANE",
-"domains": [
-"Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
-],
-"estimate": 561600.0,
-"fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": true,
 "variant": "Non"
 },
 "ma-a1z-1045295": {
@@ -839,18 +791,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-a1z-1047529": {
-"bond": 12000.0,
-"buyer_full": "RGC / ABMS - Arrondissement BEN M'SICK",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
-],
-"estimate": 921856.68,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-a1z-1047621": {
 "allotment": "2 Lots",
 "buyer_full": "RGC / SCB - SOCIETE CASABLANCA BAÏA",
@@ -1003,17 +943,6 @@
 ],
 "estimate": 2600249.94,
 "fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-a2a-1044094": {
-"buyer_full": "MATEEE / DRPER - DIRECTEUR DE LA RECHERCHE ET DE LA PLANIFICATION DE L'EAU",
-"domains": [
-"Services / Etudes d’ingénierie / Etude de définition"
-],
-"estimate": 4396800.0,
-"fetched": "2026-10-16",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -1247,18 +1176,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-d0q-1041246": {
-"bond": 3600.0,
-"buyer_full": "RTAH / GCC - Groupement de communes COOPERATION",
-"domains": [
-"Services / Etudes d’ingénierie"
-],
-"estimate": 180000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-d0q-1041758": {
 "bond": 30000.0,
 "buyer_full": "RTAH / CUT - Commune urbaine de TAOUNATE",
@@ -1271,18 +1188,6 @@
 "reserved": false,
 "variant": "Non",
 "visit": "19/10/2026 11:00"
-},
-"ma-d0q-1042932": {
-"bond": 3000.0,
-"buyer_full": "RTAH / CRT - Commune rurale de TAMEDIT",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
-],
-"estimate": 200736.0,
-"fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
 },
 "ma-d0q-1043479": {
 "bond": 74000.0,
@@ -1447,18 +1352,6 @@
 "fetched": "2026-10-14",
 "notice_type": "Annonce de consultation",
 "reserved": false,
-"variant": "Non"
-},
-"ma-d0q-1046300": {
-"bond": 7000.0,
-"buyer_full": "RTAH / CRB - Commune rurale de BOURD",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Pose de conduites d'eau potable"
-],
-"estimate": 372094.8,
-"fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": true,
 "variant": "Non"
 },
 "ma-d0q-1046306": {
@@ -2304,18 +2197,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-d4q-1041339": {
-"bond": 3000.0,
-"buyer_full": "MEMEE / ONEEBE - OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
-"domains": [
-"Services / Prestations d’essais, de contrôle et de laboratoire / Contrôle et analyse techniques des échantillons prélevés sur les produits, matériel et matériaux soumis à des normes obligatoires (autre que le domaine du génie civil)"
-],
-"estimate": 299998.08,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-d4q-1041374": {
 "buyer_full": "MEMEE / ONEEBELEC - OFFICE NATIONALE DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE ELECTRICITE",
 "domains": [
@@ -2387,18 +2268,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-d4q-1041728": {
-"bond": 14000.0,
-"buyer_full": "MEMEE / ABHDON - Agence du Bassain Hydraulique de DRAA OUED NOUN",
-"domains": [
-"Services / Prestations d’essais, de contrôle et de laboratoire / Contrôle et analyse de la qualité de l’eau et d’air"
-],
-"estimate": 792624.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
 "ma-d4q-1041738": {
 "bond": 8000.0,
 "buyer_full": "MEMEE / ONEEBE - OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
@@ -2409,42 +2278,6 @@
 "fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
-"variant": "Non"
-},
-"ma-d4q-1041814": {
-"bond": 40000.0,
-"buyer_full": "MEMEE / ABHDON - Agence du Bassain Hydraulique de DRAA OUED NOUN",
-"domains": [
-"Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
-],
-"estimate": 2920200.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-d4q-1041891": {
-"bond": 39000.0,
-"buyer_full": "MEMEE / ABHDON - Agence du Bassain Hydraulique de DRAA OUED NOUN",
-"domains": [
-"Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
-],
-"estimate": 1999200.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-d4q-1041929": {
-"bond": 9000.0,
-"buyer_full": "MEMEE / ABHDON - Agence du Bassain Hydraulique de DRAA OUED NOUN",
-"domains": [
-"Travaux / Construction d'ouvrages d'art / Ouvrages d'art en béton armé ou compacté au rouleau, en acier et maçonnerie"
-],
-"estimate": 498144.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": true,
 "variant": "Non"
 },
 "ma-d4q-1041966": {
@@ -2654,18 +2487,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-d4q-1043256": {
-"bond": 18000.0,
-"buyer_full": "MEMEE / ONEEBE - OFFICE NATIONAL DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE EAU",
-"domains": [
-"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et nettoyage des bâtiments administratifs"
-],
-"estimate": 1800000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-d4q-1043357": {
 "buyer_full": "MEMEE / ONEEBELEC - OFFICE NATIONALE DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE ELECTRICITE",
 "domains": [
@@ -2801,19 +2622,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-d4q-1043734": {
-"bond": 10000.0,
-"buyer_full": "MEMEE / ABHBC - AGENCE DU BASSAIN HYDRAULIQUE DU BOUREGREG ET DE LA CHAOUIA",
-"domains": [
-"Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / fournitures électriques (lampes, disjoncteurs, prises……..)"
-],
-"estimate": 621600.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non",
-"visit": "15/10/2026 10:00"
-},
 "ma-d4q-1043740": {
 "bond": 5000.0,
 "buyer_full": "MEMEE / ABHBC - AGENCE DU BASSAIN HYDRAULIQUE DU BOUREGREG ET DE LA CHAOUIA",
@@ -2821,18 +2629,6 @@
 "Services / Services courants / Impression de documents, brochures, maquettes et services connexes"
 ],
 "estimate": 279120.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-d4q-1043746": {
-"bond": 1200.0,
-"buyer_full": "MEMEE / ABHBC - AGENCE DU BASSAIN HYDRAULIQUE DU BOUREGREG ET DE LA CHAOUIA",
-"domains": [
-"Fournitures / Matériaux de construction, plomberie, quincaillerie et outillages / Articles et fournitures de quincaillerie"
-],
-"estimate": 62172.0,
 "fetched": "2026-10-16",
 "notice_type": "Annonce de consultation",
 "reserved": true,
@@ -5314,24 +5110,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-e5w-1041454": {
-"bond": 12700.0,
-"buyer_full": "RFM / PB - Province de BOULEMANE",
-"estimate": 645553.5,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-e5w-1041462": {
-"bond": 12000.0,
-"buyer_full": "RFM / PB - Province de BOULEMANE",
-"estimate": 605058.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-e5w-1041890": {
 "bond": 4500.0,
 "buyer_full": "RFM / AS - Arrondissement SAISS",
@@ -5413,18 +5191,6 @@
 ],
 "estimate": 700200.0,
 "fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-e5w-1046354": {
-"bond": 10000.0,
-"buyer_full": "RFM / CUF - Commune urbaine de FES",
-"domains": [
-"Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / fournitures électriques (lampes, disjoncteurs, prises……..)"
-],
-"estimate": 541200.0,
-"fetched": "2026-10-14",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -5809,18 +5575,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-f4g-1039143": {
-"bond": 700.0,
-"buyer_full": "MHAI / DRAIRMTAH - DELEGUE REGIONAL DES AFFAIRES ISLAMIQUES DE LA REGION MARRAKECH SAFI",
-"domains": [
-"Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
-],
-"estimate": 36000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-f4g-1039712": {
 "buyer_full": "MHAI / DRAIRRSK - DELEGUE REGIONAL DES AFFAIRES ISLAMIQUES DE LA REGION RABAT SALE KENITRA",
 "domains": [
@@ -5868,18 +5622,6 @@
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
-},
-"ma-f4g-1041405": {
-"allotment": "2 Lots",
-"buyer_full": "MHAI / DRAIRBK - DELEGUE REGIONAL DES AFFAIRES ISLAMIQUES DE LA REGION BENIMELLAL-KHENIFRA",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
-],
-"fetched": "2026-10-17",
-"lots": 2,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
 },
 "ma-f4g-1041750": {
 "bond": 2600.0,
@@ -6074,30 +5816,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-f4g-1043591": {
-"bond": 35000.0,
-"buyer_full": "MHAI / DM - Direction des Mosquées",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
-],
-"estimate": 1749522.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-f4g-1043594": {
-"bond": 50000.0,
-"buyer_full": "MHAI / DM - Direction des Mosquées",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
-],
-"estimate": 2489076.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-f4g-1043607": {
 "bond": 40000.0,
 "buyer_full": "MHAI / DM - Direction des Mosquées",
@@ -6207,18 +5925,6 @@
 "fetched": "2026-10-13",
 "notice_type": "Annonce de consultation",
 "reserved": true,
-"variant": "Non"
-},
-"ma-f4g-1044429": {
-"bond": 3500.0,
-"buyer_full": "MHAI / DRAIRRSK - DELEGUE REGIONAL DES AFFAIRES ISLAMIQUES DE LA REGION RABAT SALE KENITRA",
-"domains": [
-"Fournitures / Documentation, manuels, fournitures scolaires et d’enseignement / fournitures scolaires et d’enseignement"
-],
-"estimate": 180000.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
 "variant": "Non"
 },
 "ma-f4g-1045116": {
@@ -6333,18 +6039,6 @@
 ],
 "estimate": 2651785.92,
 "fetched": "2026-10-19",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-f4g-1047344": {
-"bond": 800.0,
-"buyer_full": "MHAI / DRAIRGC - DELEGUE REGIONAL DES AFFAIRES ISLAMIQUES DE LA REGION GRAND CASABLANCA",
-"domains": [
-"Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
-],
-"estimate": 44400.0,
-"fetched": "2026-10-13",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -6578,18 +6272,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-f8y-1035325": {
-"bond": 10000.0,
-"buyer_full": "RO / RO - REGION de ORIENTAL",
-"domains": [
-"Services / Prestations d’essais, de contrôle et de laboratoire / Contrôle et analyse techniques des échantillons prélevés sur les produits, matériel et matériaux soumis à des normes obligatoires (autre que le domaine du génie civil)"
-],
-"estimate": 635760.0,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-f8y-1037974": {
 "bond": 5400.0,
 "buyer_full": "RO / CRBB - Commune rurale de BNI BOUIFROUR",
@@ -6648,18 +6330,6 @@
 "fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
-"variant": "Non"
-},
-"ma-f8y-1041548": {
-"bond": 19000.0,
-"buyer_full": "RO / CRBC - Commune rurale de BNI CHIKER",
-"domains": [
-"Travaux / Travaux de voiries, chemins et pistes / Pistes"
-],
-"estimate": 1127616.0,
-"fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": true,
 "variant": "Non"
 },
 "ma-f8y-1041712": {
@@ -6743,18 +6413,6 @@
 ],
 "estimate": 3780000.0,
 "fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-f8y-1043397": {
-"bond": 11000.0,
-"buyer_full": "RO / CRM - Commune MADAGH",
-"domains": [
-"Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
-],
-"estimate": 600000.0,
-"fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -7666,18 +7324,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-f9f-1041745": {
-"bond": 8400.0,
-"buyer_full": "RSMD / CRB - Collectivité territoriale de BOUNAAMANE",
-"domains": [
-"Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
-],
-"estimate": 420000.0,
-"fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-f9f-1041837": {
 "bond": 2000.0,
 "buyer_full": "RSMD / RSM - REGION DE SOUS-MASSA",
@@ -7880,18 +7526,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-f9f-1044664": {
-"bond": 5000.0,
-"buyer_full": "RSMD / CRA - Commune de AMSKROUD",
-"domains": [
-"Travaux / Travaux de voiries, chemins et pistes"
-],
-"estimate": 299262.0,
-"fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-f9f-1045104": {
 "bond": 1000.0,
 "buyer_full": "RSMD / CRAAA - Collectivité territoriale de ARBAA AIT AHMED",
@@ -8040,18 +7674,6 @@
 "Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
 ],
 "estimate": 80000.0,
-"fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-f9f-1046337": {
-"bond": 15000.0,
-"buyer_full": "RSMD / CRG - Commune rurale de GHASSATE",
-"domains": [
-"Travaux / Terrassements / Terrassements routiers"
-],
-"estimate": 796566.0,
 "fetched": "2026-10-14",
 "notice_type": "Annonce de consultation",
 "reserved": false,
@@ -8211,18 +7833,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-f9f-1047721": {
-"bond": 5000.0,
-"buyer_full": "RSMD / CRT - Commune de TAGHAZOUT",
-"domains": [
-"Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / fournitures électriques (lampes, disjoncteurs, prises……..)"
-],
-"estimate": 296520.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-f9f-1047735": {
 "bond": 10000.0,
 "buyer_full": "RSMD / CRA - Commune AOUGUENZ",
@@ -8245,18 +7855,6 @@
 "fetched": "2026-10-16",
 "notice_type": "Annonce de consultation",
 "reserved": false,
-"variant": "Non"
-},
-"ma-f9f-1048063": {
-"bond": 13500.0,
-"buyer_full": "RSMD / GCTAYPH - GROUPEMENT DES COLLECTIVITES TERRITORIALES AIT YAFELMANE POUR LA PRESERVATION DE L HYGIENE",
-"domains": [
-"Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
-],
-"estimate": 684000.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": true,
 "variant": "Non"
 },
 "ma-f9f-1048363": {
@@ -8675,18 +8273,6 @@
 "notice_type": "Annonce de consultation",
 "visit": "Variante :"
 },
-"ma-g3h-1006425": {
-"bond": 5700.0,
-"buyer_full": "M6 / PPO - PREFET DE LA POLICE DE OUJDA",
-"domains": [
-"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
-],
-"estimate": 285360.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-g3h-1010477": {
 "bond": 190600.0,
 "buyer_full": "M6 / PPGC - PREFET DE LA POLICE DU GRAND CASA",
@@ -8964,18 +8550,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-g3h-1034988": {
-"bond": 83000.0,
-"buyer_full": "M6 / GPDADAMS - GOUVERNEUR DE LA PREFECTURE D'ARRONDISSEMENTS AL FIDA MERS SULTAN",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
-],
-"estimate": 4192500.0,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-g3h-1034995": {
 "bond": 2500.0,
 "buyer_full": "M6 / GPDADAMS - GOUVERNEUR DE LA PREFECTURE D'ARRONDISSEMENTS AL FIDA MERS SULTAN",
@@ -9025,18 +8599,6 @@
 "variant": "Non",
 "visit": "19/10/2026 10:00"
 },
-"ma-g3h-1036487": {
-"buyer_full": "M6 / GB - GOUVERNEUR DE BENSLIMANE",
-"domains": [
-"Services / Services architecturales et topographiques / Exécution de plans, sommaires, d’exécutions et de détails"
-],
-"estimate": 8520000.0,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "06/10/2026 10:00"
-},
 "ma-g3h-1036495": {
 "bond": 200000.0,
 "buyer_full": "M6 / SISC - SOCIETE DES INFRASTRUCTURES SPORTIVES DE CASABLANCA - CASAREGIONSPORT S.A",
@@ -9048,18 +8610,6 @@
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
-},
-"ma-g3h-1036532": {
-"buyer_full": "M6 / GB - GOUVERNEUR DE BENSLIMANE",
-"domains": [
-"Services / Services architecturales et topographiques / Exécution de plans, sommaires, d’exécutions et de détails"
-],
-"estimate": 2520000.0,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "06/10/2026 11:00"
 },
 "ma-g3h-1036587": {
 "bond": 40000.0,
@@ -9155,32 +8705,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-g3h-1037666": {
-"bond": 437000.0,
-"buyer_full": "M6 / SRMSM - SOCIETE REGIONALE MULTISERVICES SOUSS - MASSA SA",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Travaux d’adduction d’eau potable"
-],
-"estimate": 29100000.0,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "21/09/2026 10:00"
-},
-"ma-g3h-1037688": {
-"bond": 51000.0,
-"buyer_full": "M6 / SRMSM - SOCIETE REGIONALE MULTISERVICES SOUSS - MASSA SA",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Travaux d’adduction d’eau potable"
-],
-"estimate": 3360000.0,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "23/09/2026 10:00"
-},
 "ma-g3h-1037805": {
 "bond": 2500.0,
 "buyer_full": "M6 / GKES - GOUVERNEUR DE KELAA ES-SRAGHNA",
@@ -9204,19 +8728,6 @@
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
-},
-"ma-g3h-1037973": {
-"bond": 630000.0,
-"buyer_full": "M6 / SRMSM - SOCIETE REGIONALE MULTISERVICES SOUSS - MASSA SA",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Ouvrages d'assainissement"
-],
-"estimate": 41514720.0,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "22/09/2026 10:00"
 },
 "ma-g3h-1037982": {
 "bond": 3000.0,
@@ -9361,18 +8872,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-g3h-1039460": {
-"allotment": "3 Lots",
-"buyer_full": "M6 / SRMFM - SOCIETE REGIONALE MULTISERVICES FES - MEKNES S.A",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers"
-],
-"fetched": "2026-10-18",
-"lots": 3,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
-},
 "ma-g3h-1039558": {
 "bond": 30000.0,
 "buyer_full": "M6 / GPC - GOUVERNEUR DE LA PROVINCE DE CHICHAOUA",
@@ -9494,18 +8993,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-g3h-1039827": {
-"bond": 2400.0,
-"buyer_full": "M6 / GPDADASHM - GOUVERNEUR DE LA PREFECTURE D'ARRONDISSEMENT D'AIN SBAA HAY MOHAMMADI",
-"domains": [
-"Services / Services courants / Formation du personnel"
-],
-"estimate": 124800.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-g3h-1039958": {
 "bond": 40000.0,
 "buyer_full": "M6 / APAVB - AGENCE POUR L'AMENAGEMENT DE LA VALLE DU BOUREGREG",
@@ -9562,18 +9049,6 @@
 ],
 "estimate": 17175972.0,
 "fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-g3h-1040286": {
-"bond": 9000.0,
-"buyer_full": "M6 / GPT - GOUVERNEUR DE LA PROVINCE DE TATA",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Pose de conduites d'eau potable"
-],
-"estimate": 488856.0,
-"fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -9649,18 +9124,6 @@
 ],
 "estimate": 94908.0,
 "fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-g3h-1040750": {
-"bond": 7800.0,
-"buyer_full": "M6 / PPGC - PREFET DE LA POLICE DU GRAND CASA",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
-],
-"estimate": 397740.0,
-"fetched": "2026-10-18",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -9964,18 +9427,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-g3h-1041587": {
-"bond": 6000.0,
-"buyer_full": "M6 / GDI - GOUVERNEUR DE LA PROVINCE D'IFRANE",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers"
-],
-"estimate": 467358.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-g3h-1041604": {
 "bond": 3500.0,
 "buyer_full": "M6 / GDI - GOUVERNEUR DE LA PROVINCE D'IFRANE",
@@ -9996,18 +9447,6 @@
 ],
 "estimate": 229020.0,
 "fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-g3h-1041642": {
-"bond": 5000.0,
-"buyer_full": "M6 / GDI - GOUVERNEUR DE LA PROVINCE D'IFRANE",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Travaux d’adduction d’eau potable"
-],
-"estimate": 422184.0,
-"fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -10165,18 +9604,6 @@
 ],
 "estimate": 444000.0,
 "fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-g3h-1042255": {
-"bond": 10000.0,
-"buyer_full": "M6 / SDROS - SOCIETE DE DEVELOPPEMENT REGIONAL \"ORIENTAL SERVICES\" SA",
-"domains": [
-"Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
-],
-"estimate": 700000.0,
-"fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -10387,18 +9814,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-g3h-1042692": {
-"allotment": "2 Lots",
-"buyer_full": "M6 / SRMCS - SOCIETE REGIONALE MULTISERVICES CASABLANCA - SETTAT SA",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Ouvrages d'assainissement"
-],
-"fetched": "2026-10-17",
-"lots": 2,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
-},
 "ma-g3h-1042695": {
 "bond": 20000.0,
 "buyer_full": "M6 / SRMO - SOCIETE REGIONALE MULTISERVICES DE L'ORIENTAL S.A",
@@ -10422,18 +9837,6 @@
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
-},
-"ma-g3h-1042828": {
-"allotment": "3 Lots",
-"buyer_full": "M6 / SRMCS - SOCIETE REGIONALE MULTISERVICES CASABLANCA - SETTAT SA",
-"domains": [
-"Fournitures / Matériel, mobilier et fournitures de bureau / Matériel de bureau"
-],
-"fetched": "2026-10-17",
-"lots": 3,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
 },
 "ma-g3h-1042836": {
 "bond": 196000.0,
@@ -10509,15 +9912,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-g3h-1042994": {
-"bond": 8500.0,
-"buyer_full": "M6 / WRTAHTGPDAH - GOUVERNEUR DE LA PROVINCE D'AL HOCEIMA",
-"estimate": 433594.8,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-g3h-1043023": {
 "bond": 339000.0,
 "buyer_full": "M6 / SRMFM - SOCIETE REGIONALE MULTISERVICES FES - MEKNES S.A",
@@ -10566,18 +9960,6 @@
 "notice_type": "Annonce de consultation",
 "visit": "Variante :"
 },
-"ma-g3h-1043045": {
-"bond": 7600.0,
-"buyer_full": "M6 / AUBM - AGENCE URBAINE DE BENI MELLAL",
-"domains": [
-"Services / Services architecturales et topographiques / Prestations d’aménagement et de réaménagement urbain"
-],
-"estimate": 384000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-g3h-1043047": {
 "allotment": "2 Lots",
 "buyer_full": "M6 / SRMFM - SOCIETE REGIONALE MULTISERVICES FES - MEKNES S.A",
@@ -10615,18 +9997,6 @@
 "variant": "Non",
 "visit": "19/10/2026 10:00"
 },
-"ma-g3h-1043058": {
-"bond": 6000.0,
-"buyer_full": "M6 / AUBM - AGENCE URBAINE DE BENI MELLAL",
-"domains": [
-"Services / Services architecturales et topographiques / Prestations d’aménagement et de réaménagement urbain"
-],
-"estimate": 300000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-g3h-1043062": {
 "bond": 570000.0,
 "buyer_full": "M6 / SRMFM - SOCIETE REGIONALE MULTISERVICES FES - MEKNES S.A",
@@ -10639,18 +10009,6 @@
 "reserved": false,
 "variant": "Non",
 "visit": "21/10/2026 10:00"
-},
-"ma-g3h-1043070": {
-"bond": 7600.0,
-"buyer_full": "M6 / AUBM - AGENCE URBAINE DE BENI MELLAL",
-"domains": [
-"Services / Services architecturales et topographiques / Prestations d’aménagement et de réaménagement urbain"
-],
-"estimate": 384000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
 },
 "ma-g3h-1043085": {
 "bond": 4600.0,
@@ -10719,18 +10077,6 @@
 "Services / Services architecturales et topographiques / Prestations d’aménagement et de réaménagement urbain"
 ],
 "estimate": 231000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-g3h-1043161": {
-"bond": 34000.0,
-"buyer_full": "M6 / SRMSM - SOCIETE REGIONALE MULTISERVICES SOUSS - MASSA SA",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Travaux d’adduction d’eau potable"
-],
-"estimate": 2208600.0,
 "fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": true,
@@ -10955,19 +10301,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-g3h-1043462": {
-"bond": 8500.0,
-"buyer_full": "M6 / SRM-TTA - SOCIETE REGIONALE MULTISERVICES TANGER- TETOUAN-AL HOCEIMA SA",
-"domains": [
-"Travaux / Travaux d’électricité / Travaux d'entretien et de réparation des équipements électriques MT/BT"
-],
-"estimate": 528000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "08/10/2026 10:00"
-},
 "ma-g3h-1043474": {
 "bond": 20000.0,
 "buyer_full": "M6 / GKES - GOUVERNEUR DE KELAA ES-SRAGHNA",
@@ -10992,19 +10325,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-g3h-1043519": {
-"bond": 35000.0,
-"buyer_full": "M6 / SRM-TTA - SOCIETE REGIONALE MULTISERVICES TANGER- TETOUAN-AL HOCEIMA SA",
-"domains": [
-"Travaux / Travaux d’électricité / Travaux de branchement électrique"
-],
-"estimate": 2142000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "08/10/2026 10:00"
-},
 "ma-g3h-1043529": {
 "bond": 200000.0,
 "buyer_full": "M6 / GPFA - GOUVERNEUR DE LA PROVINCE DE FAHS-ANJRA",
@@ -11016,43 +10336,6 @@
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
-},
-"ma-g3h-1043534": {
-"bond": 25000.0,
-"buyer_full": "M6 / SRM-TTA - SOCIETE REGIONALE MULTISERVICES TANGER- TETOUAN-AL HOCEIMA SA",
-"domains": [
-"Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
-],
-"estimate": 1560000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-g3h-1043542": {
-"bond": 42000.0,
-"buyer_full": "M6 / SRMSM - SOCIETE REGIONALE MULTISERVICES SOUSS - MASSA SA",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Ouvrages d'assainissement"
-],
-"estimate": 2788800.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-g3h-1043572": {
-"bond": 15000.0,
-"buyer_full": "M6 / SRM-TTA - SOCIETE REGIONALE MULTISERVICES TANGER- TETOUAN-AL HOCEIMA SA",
-"domains": [
-"Travaux / Travaux d’installation / Travaux d’installation de matériel et équipements hydro-électromécaniques, électroniques, électromécaniques et similaires"
-],
-"estimate": 910776.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "08/10/2026 10:00"
 },
 "ma-g3h-1043583": {
 "bond": 15000.0,
@@ -11066,18 +10349,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-g3h-1043590": {
-"allotment": "4 Lots",
-"buyer_full": "M6 / SRM-TTA - SOCIETE REGIONALE MULTISERVICES TANGER- TETOUAN-AL HOCEIMA SA",
-"domains": [
-"Travaux / Travaux d’électricité / Transformateurs et travaux d'installations de MT"
-],
-"fetched": "2026-10-17",
-"lots": 4,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
-},
 "ma-g3h-1043661": {
 "bond": 7000.0,
 "buyer_full": "M6 / GPT - GOUVERNEUR DE LA PROVINCE DE TATA",
@@ -11089,31 +10360,6 @@
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
-},
-"ma-g3h-1043693": {
-"allotment": "2 Lots",
-"buyer_full": "M6 / SRM-TTA - SOCIETE REGIONALE MULTISERVICES TANGER- TETOUAN-AL HOCEIMA SA",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Pose de conduites d'assainissement"
-],
-"fetched": "2026-10-17",
-"lots": 2,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
-},
-"ma-g3h-1043700": {
-"bond": 55000.0,
-"buyer_full": "M6 / SRM-TTA - SOCIETE REGIONALE MULTISERVICES TANGER- TETOUAN-AL HOCEIMA SA",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Ouvrages d'assainissement"
-],
-"estimate": 3429946.66,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "07/10/2026 10:00"
 },
 "ma-g3h-1043701": {
 "bond": 52000.0,
@@ -11188,18 +10434,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-g3h-1043711": {
-"bond": 16000.0,
-"buyer_full": "M6 / SRMSM - SOCIETE REGIONALE MULTISERVICES SOUSS - MASSA SA",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Pose de conduites d'assainissement"
-],
-"estimate": 1010880.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-g3h-1043713": {
 "bond": 20000.0,
 "buyer_full": "M6 / SRMO - SOCIETE REGIONALE MULTISERVICES DE L'ORIENTAL S.A",
@@ -11240,18 +10474,6 @@
 "meeting": "Date et heure : Visites des lieux : Variante :",
 "notice_type": "Annonce de consultation",
 "visit": "Variante :"
-},
-"ma-g3h-1043727": {
-"bond": 15000.0,
-"buyer_full": "M6 / APAVB - AGENCE POUR L'AMENAGEMENT DE LA VALLE DU BOUREGREG",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Préfabrication et mise en œuvre d'éléments de construction"
-],
-"estimate": 715200.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
 },
 "ma-g3h-1043735": {
 "bond": 11000.0,
@@ -11408,18 +10630,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-g3h-1044113": {
-"bond": 130000.0,
-"buyer_full": "M6 / SDAD - SDL - SOCIETE DAKHLA AMENAGEMENT ET DEVELOPPEMENT SA",
-"domains": [
-"Travaux / Travaux d’électricité / Travaux d'installation pour usage industriel"
-],
-"estimate": 6593424.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-g3h-1044188": {
 "bond": 35000.0,
 "buyer_full": "M6 / GN - GOUVERNEUR DE NADOR",
@@ -11427,18 +10637,6 @@
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
 ],
 "estimate": 1783552.8,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-g3h-1044190": {
-"bond": 37500.0,
-"buyer_full": "M6 / SDRRAM - SOCIETE DE DEVELOPPEMENT REGIONAL - REGION AMENAGEMENT MARRAKECH SA",
-"domains": [
-"Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
-],
-"estimate": 2500000.0,
 "fetched": "2026-10-16",
 "notice_type": "Annonce de consultation",
 "reserved": false,
@@ -12226,18 +11424,6 @@
 "variant": "Non",
 "visit": "13/10/2026 11:00"
 },
-"ma-g3h-1044710": {
-"bond": 5000.0,
-"buyer_full": "M6 / GT - GOUVERNEUR DE LA PROVINCE DE TIZNIT",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Travaux d’adduction d’eau potable"
-],
-"estimate": 268224.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
 "ma-g3h-1044727": {
 "bond": 28000.0,
 "buyer_full": "M6 / WREGCBHGPK - GOUVERNEUR PROVINCIAL DE KENITRA",
@@ -12246,30 +11432,6 @@
 ],
 "estimate": 1440000.0,
 "fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-g3h-1044744": {
-"bond": 6000.0,
-"buyer_full": "M6 / GT - GOUVERNEUR DE LA PROVINCE DE TAZA",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
-],
-"estimate": 321654.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-g3h-1044751": {
-"bond": 5000.0,
-"buyer_full": "M6 / GT - GOUVERNEUR DE LA PROVINCE DE TAZA",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
-],
-"estimate": 285648.0,
-"fetched": "2026-10-13",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -12320,19 +11482,6 @@
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
-},
-"ma-g3h-1044787": {
-"bond": 63000.0,
-"buyer_full": "M6 / A - AMENDIS",
-"domains": [
-"Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
-],
-"estimate": 3170700.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "14/10/2026 10:00"
 },
 "ma-g3h-1044791": {
 "bond": 1000.0,
@@ -12514,19 +11663,6 @@
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Oui"
-},
-"ma-g3h-1045065": {
-"bond": 2600.0,
-"buyer_full": "M6 / A - AMENDIS",
-"domains": [
-"Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
-],
-"estimate": 130440.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "14/10/2026 10:00"
 },
 "ma-g3h-1045071": {
 "bond": 150000.0,
@@ -15192,18 +14328,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-g3h-1047743": {
-"bond": 3000.0,
-"buyer_full": "M6 / PSI - GOUVERNEUR DE LA PROVINCE DE SIDI IFNI",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
-],
-"estimate": 198747.6,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-g3h-1047754": {
 "bond": 20000.0,
 "buyer_full": "M6 / GPF - GOUVERNEUR DE LA PROVINCE DE FIGUIG",
@@ -15409,18 +14533,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-g3h-1048124": {
-"bond": 500.0,
-"buyer_full": "M6 / CRIBMK - CENTRE REGIONAL D'INVESTISSEMENT BENI MELLAL KHÉNIFRA",
-"domains": [
-"Services / Services de location sans option d’achat / Licences d'utilisation de logiciels"
-],
-"estimate": 26400.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-g3h-1048187": {
 "allotment": "4 Lots",
 "buyer_full": "M6 / SRMCS - SOCIETE REGIONALE MULTISERVICES CASABLANCA - SETTAT SA",
@@ -15432,18 +14544,6 @@
 "meeting": "Date et heure : Visites des lieux : Variante :",
 "notice_type": "Annonce de consultation",
 "visit": "Variante :"
-},
-"ma-g3h-1048190": {
-"bond": 6000.0,
-"buyer_full": "M6 / CEA - CASABLANCA EVENTS AND ANIMATIONS",
-"domains": [
-"Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation événementiel, d’organisation de manifestations"
-],
-"estimate": 300000.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
 },
 "ma-g3h-1048275": {
 "buyer_full": "M6 / GB - GOUVERNEUR DE BOULMANE",
@@ -15478,18 +14578,6 @@
 "fetched": "2026-10-16",
 "notice_type": "Annonce de consultation",
 "reserved": true,
-"variant": "Non"
-},
-"ma-g3h-1048360": {
-"bond": 30000.0,
-"buyer_full": "M6 / SDLOA - SOCIETE DE DEVELOPPEMENT LOCAL OUARZAZATE AMENAGEMENT",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Pose de conduites d'eau potable"
-],
-"estimate": 1514136.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
 "variant": "Non"
 },
 "ma-g3h-1048440": {
@@ -17619,18 +16707,6 @@
 "notice_type": "Annonce de consultation",
 "visit": "Variante :"
 },
-"ma-g8e-1025989": {
-"bond": 20000.0,
-"buyer_full": "MEF / TGR - TRESORERIE GENERALE DU ROYAUME",
-"domains": [
-"Fournitures / Matériel, mobilier et fournitures de bureau / Fournitures de bureau"
-],
-"estimate": 1013640.0,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
 "ma-g8e-1027190": {
 "bond": 60000.0,
 "buyer_full": "MEF / DDIIR - DIRECTEUR DES DOUANES ET IMPOTS INDIRECTS RABAT",
@@ -17740,19 +16816,6 @@
 "meeting": "Date et heure : Visites des lieux : Variante :",
 "notice_type": "Annonce de consultation",
 "visit": "Variante :"
-},
-"ma-g8e-1034631": {
-"bond": 1800.0,
-"buyer_full": "MEF / DDIIR - DIRECTEUR DES DOUANES ET IMPOTS INDIRECTS RABAT",
-"domains": [
-"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements informatiques (matériel, logiciels, progiciels )"
-],
-"estimate": 96000.0,
-"fetched": "2026-10-17",
-"meeting": "Date et heure : 15/10/2026 10:00",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
 },
 "ma-g8e-1034913": {
 "bond": 10000.0,
@@ -17993,19 +17056,6 @@
 "reserved": false,
 "variant": "Non",
 "visit": "21/10/2026 11:00"
-},
-"ma-g8e-1042946": {
-"bond": 120000.0,
-"buyer_full": "MEF / MM - LA SOCIETE MARCHICA MED",
-"domains": [
-"Travaux / Travaux de voiries, chemins et pistes / Routes et voiries en béton"
-],
-"estimate": 12528480.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "08/10/2026 11:00"
 },
 "ma-g8e-1043336": {
 "bond": 220000.0,
@@ -18440,18 +17490,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-g8e-1048106": {
-"bond": 4000.0,
-"buyer_full": "MEF / RRA - RABAT REGION AMENAGEMENT",
-"domains": [
-"Travaux / Travaux d’électricité / Travaux d'installation pour usage domestique de bâtiments courants"
-],
-"estimate": 267660.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-g8e-1048292": {
 "buyer_full": "MEF / ANSS - AGENCE NATIONALE DU SOUTIEN SOCIALE (ANSS)",
 "domains": [
@@ -18715,18 +17753,6 @@
 "variant": "Non",
 "visit": "05/11/2026 11:00"
 },
-"ma-h5j-1035714": {
-"bond": 15000.0,
-"buyer_full": "DGAPR / DGAAPAR - DELEGATION GENERALE A L'ADMINISTRATION PENITENTIAIRE ET A LA REINSERTION",
-"domains": [
-"Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
-],
-"estimate": 1000032.0,
-"fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-h5j-1036778": {
 "bond": 30000.0,
 "buyer_full": "DGAPR / DGAAPAR - DELEGATION GENERALE A L'ADMINISTRATION PENITENTIAIRE ET A LA REINSERTION",
@@ -18904,18 +17930,6 @@
 ],
 "estimate": 1080000.0,
 "fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-h5r-1043165": {
-"bond": 30000.0,
-"buyer_full": "RCO / CUB - Commune urbaine de BERRECHID",
-"domains": [
-"Travaux / Travaux de voiries, chemins et pistes / Routes et voiries en béton"
-],
-"estimate": 1548000.0,
-"fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -19119,42 +18133,6 @@
 "Services / Services de location sans option d’achat / Salles et stands"
 ],
 "estimate": 477000.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-h5r-1046893": {
-"bond": 2600.0,
-"buyer_full": "RCO / CREM - Commune urbaine de EL MANSOURIA",
-"domains": [
-"Travaux / Aménagement de jardins, d'espaces verts / Aménagement d'espaces verts et jardins et apports de terres végétales"
-],
-"estimate": 126630.0,
-"fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-h5r-1047379": {
-"bond": 350.0,
-"buyer_full": "RCO / CUOMR - Commune urbaine de OULAD M'RAH",
-"domains": [
-"Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Accompagnement dans la mise en œuvre de projet, pilotage des travaux Et coordination"
-],
-"estimate": 20400.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-h5r-1047438": {
-"bond": 800.0,
-"buyer_full": "RCO / CUOMR - Commune urbaine de OULAD M'RAH",
-"domains": [
-"Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Accompagnement dans la mise en œuvre de projet, pilotage des travaux Et coordination"
-],
-"estimate": 44400.0,
 "fetched": "2026-10-13",
 "notice_type": "Annonce de consultation",
 "reserved": false,
@@ -19853,30 +18831,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-j0w-1026906": {
-"bond": 14000.0,
-"buyer_full": "RMTA / CRO - Commune OURIKA",
-"domains": [
-"Fournitures / Engins de chantier, matériel de manutention et de levage / Engins et matériels de BTP"
-],
-"estimate": 700000.0,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-j0w-1027395": {
-"bond": 40000.0,
-"buyer_full": "RMTA / CRO - Commune OURIKA",
-"domains": [
-"Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
-],
-"estimate": 2000000.0,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-j0w-1027402": {
 "bond": 7500.0,
 "buyer_full": "RMTA / CUBG - Commune urbaine de BEN GUERIR",
@@ -20015,18 +18969,6 @@
 "fetched": "2026-10-16",
 "notice_type": "Annonce de consultation",
 "reserved": false,
-"variant": "Non"
-},
-"ma-j0w-1033785": {
-"bond": 12000.0,
-"buyer_full": "RMTA / CRO - Commune OURIKA",
-"domains": [
-"Fournitures / Engins de chantier, matériel de manutention et de levage / matériel de manutention et de levage (Chariot élévateur, grues, nacelles …)"
-],
-"estimate": 600000.0,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": true,
 "variant": "Non"
 },
 "ma-j0w-1034368": {
@@ -20171,30 +19113,6 @@
 "fetched": "2026-10-15",
 "notice_type": "Annonce de consultation",
 "reserved": false,
-"variant": "Non"
-},
-"ma-j0w-1038155": {
-"bond": 6500.0,
-"buyer_full": "RMTA / CUM - Commune urbaine de MARRAKECH",
-"domains": [
-"Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation de réception"
-],
-"estimate": 335500.0,
-"fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-j0w-1038157": {
-"bond": 11500.0,
-"buyer_full": "RMTA / CUM - Commune urbaine de MARRAKECH",
-"domains": [
-"Fournitures / Objets d’art, articles artistiques, de divertissement et de médiathèque / objets d’art (Tableau, sculpture…..)"
-],
-"estimate": 593000.0,
-"fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": true,
 "variant": "Non"
 },
 "ma-j0w-1038473": {
@@ -20522,30 +19440,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-j0w-1042096": {
-"bond": 200000.0,
-"buyer_full": "RMTA / CRRAR - Commune RAS AIN RHAMNA",
-"domains": [
-"Services / Services de location sans option d’achat / Salles et stands"
-],
-"estimate": 662833.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-j0w-1042108": {
-"bond": 30000.0,
-"buyer_full": "RMTA / CRRAR - Commune RAS AIN RHAMNA",
-"domains": [
-"Services / Services de location sans option d’achat / Salles et stands"
-],
-"estimate": 73500.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
 "ma-j0w-1042542": {
 "bond": 4500.0,
 "buyer_full": "RMTA / CUBG - Commune urbaine de BEN GUERIR",
@@ -20698,43 +19592,6 @@
 ],
 "estimate": 259992.0,
 "fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-j0w-1044181": {
-"bond": 15000.0,
-"buyer_full": "RMTA / SDLMM - SOCIETE DE DEVELOPPEMENT LOCAL MARRAKECH MOBILITY SA",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
-],
-"estimate": 1053410.88,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-j0w-1044183": {
-"bond": 15000.0,
-"buyer_full": "RMTA / SDLMM - SOCIETE DE DEVELOPPEMENT LOCAL MARRAKECH MOBILITY SA",
-"domains": [
-"Services / Nettoyage, gardiennage, entretien et maintenance / Gardiennage et surveillance des bâtiments administratifs"
-],
-"estimate": 1100000.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "12/10/2026 12:00"
-},
-"ma-j0w-1044191": {
-"bond": 24900.0,
-"buyer_full": "RMTA / CRM - Commune MAJJAT",
-"domains": [
-"Travaux / Travaux de voiries, chemins et pistes / Pistes"
-],
-"estimate": 1245312.0,
-"fetched": "2026-10-16",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -21709,18 +20566,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-j4k-1034349": {
-"allotment": "2 Lots",
-"buyer_full": "M7 / MIDGSN - DIRECTION GENERALE DE LA SURETE NATIONALE",
-"domains": [
-"Fournitures / Matériel et articles de literie, de couchage, de cuisine et de buanderie / Matériel et articles de literie et de couchage"
-],
-"fetched": "2026-10-18",
-"lots": 2,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
-},
 "ma-j4k-1047233": {
 "bond": 40000.0,
 "buyer_full": "M7 / FMSN - FONDATION MOHAMMED VI POUR LES OEUVRES SOCIALES DU PERSONNEL DE LA SURETE NATIONALE",
@@ -21752,18 +20597,6 @@
 "Fournitures / Produits alimentaires, d’élevage, de la pêche, d’agriculture, d’horticulture et pépinière / Produits alimentaires pour usage humain"
 ],
 "estimate": 2337240.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-j4k-1047342": {
-"bond": 2600.0,
-"buyer_full": "M7 / FMSN - FONDATION MOHAMMED VI POUR LES OEUVRES SOCIALES DU PERSONNEL DE LA SURETE NATIONALE",
-"domains": [
-"Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
-],
-"estimate": 134400.0,
 "fetched": "2026-10-13",
 "notice_type": "Annonce de consultation",
 "reserved": false,
@@ -21913,18 +20746,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-j8k-1042634": {
-"bond": 650000.0,
-"buyer_full": "MHUAE / SAOM - SOCIETE AL OMRANE MARRAKECH - SAFI",
-"domains": [
-"Travaux / Construction d'ouvrages d'art / Ouvrages d’art souterrains en béton armé et en maçonnerie"
-],
-"estimate": 58900108.8,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-j8k-1042686": {
 "bond": 10000.0,
 "buyer_full": "MHUAE / ORSK - AL OMRANE RABAT SALE KENITRA",
@@ -22019,18 +20840,6 @@
 "fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": true,
-"variant": "Non"
-},
-"ma-j8k-1043250": {
-"bond": 43000.0,
-"buyer_full": "MHUAE / SAAOAJ - SOCIETE D'AMENAGEMENT AL OMRANE AL JANOUB",
-"domains": [
-"Travaux / Terrassements / Terrassements en masse"
-],
-"estimate": 2870254.5,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
 "variant": "Non"
 },
 "ma-j8k-1043387": {
@@ -23688,20 +22497,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-k2q-1033435": {
-"bond": 2900000.0,
-"buyer_full": "MDMEMEE / DAHR - DIRECTEUR DES AMENAGEMENTS HYDRAULIQUES",
-"domains": [
-"Travaux / Fondations, injections, parois moulées, sondages et forages / Travaux d'injection"
-],
-"estimate": 167805000.0,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"plans_price": 220.0,
-"reserved": false,
-"variant": "Non",
-"visit": "14/10/2026 10:00"
-},
 "ma-k2q-1033739": {
 "bond": 30000.0,
 "buyer_full": "MDMEMEE / DAHR - DIRECTEUR DES AMENAGEMENTS HYDRAULIQUES",
@@ -24034,18 +22829,6 @@
 "variant": "Non",
 "visit": "04/11/2026 10:00"
 },
-"ma-k2q-1047546": {
-"bond": 7000.0,
-"buyer_full": "MDMEMEE / DMN - DIRECTEUR DE LA METEOROLOGIE NATIONALE",
-"domains": [
-"Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
-],
-"estimate": 522000.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-k2q-1048220": {
 "buyer_full": "MDMEMEE / DAHR - DIRECTEUR DES AMENAGEMENTS HYDRAULIQUES",
 "domains": [
@@ -24179,18 +22962,6 @@
 ],
 "estimate": 2188800.0,
 "fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-l1f-1033005": {
-"bond": 90000.0,
-"buyer_full": "RTT / CUKEK - Commune urbaine de KSAR-EL-KEBIR",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
-],
-"estimate": 4563462.0,
-"fetched": "2026-10-18",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -24481,18 +23252,6 @@
 "fetched": "2026-10-16",
 "notice_type": "Annonce de consultation",
 "reserved": true,
-"variant": "Non"
-},
-"ma-l1f-1045643": {
-"bond": 500.0,
-"buyer_full": "RTT / CRJ - Commune JOUAMAA",
-"domains": [
-"Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
-],
-"estimate": 25200.0,
-"fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": false,
 "variant": "Non"
 },
 "ma-l1f-1045741": {
@@ -24882,18 +23641,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-m1w-1042818": {
-"bond": 15000.0,
-"buyer_full": "MICIEN / ISCAE - INSTITUT SUPERIEUR DE COMMERCE ET D'ADMINISTRATION DES ENTREPRISES",
-"domains": [
-"Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation de publicité, de communication et de marketing"
-],
-"estimate": 750000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-m1w-1043642": {
 "bond": 9500.0,
 "buyer_full": "MICIEN / INCVT - L'INSTITUT NATIONAL DES CONDITIONS DE VIE AU TRAVAIL",
@@ -25218,18 +23965,6 @@
 "variant": "Non",
 "visit": "08/10/2026 09:00"
 },
-"ma-m8x-1033579": {
-"bond": 280000.0,
-"buyer_full": "RGON / RGON - REGION DE GUELMIM - OUED NOUN",
-"domains": [
-"Travaux / Travaux de voiries, chemins et pistes / Routes et voiries en béton"
-],
-"estimate": 17744351.22,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-m8x-1036655": {
 "bond": 6000.0,
 "buyer_full": "RGON / PT - Province de TATA",
@@ -25342,15 +24077,6 @@
 ],
 "estimate": 10676930.5,
 "fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-m8x-1042637": {
-"bond": 85000.0,
-"buyer_full": "RGON / CPSI - CONSEIL PROVINCIAL DE SIDI IFNI",
-"estimate": 4996730.04,
-"fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -25766,30 +24492,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-o4d-1043343": {
-"allotment": "2 Lots",
-"buyer_full": "MEFPE / OFPPT - OFFICE DE LA FORMATION PROFESSIONNELLE ET DE LA PROMOTION DU TRAVAIL",
-"domains": [
-"Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électrique"
-],
-"fetched": "2026-10-17",
-"lots": 2,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
-},
-"ma-o4d-1043441": {
-"bond": 40000.0,
-"buyer_full": "MEFPE / OFPPT / OFPPT INCPHMEDSR - OFFICE DE LA FORMATION PROFESSIONNELLE ET DE LA PROMOTION DU TRAVAIL INSTITUT NATIONAL DU CHEVAL PRINCE HERITIER MOULAY ELHASSAN DAR SALAM RABAT",
-"domains": [
-"Fournitures / Matériel, mobilier et fournitures de bureau / Mobilier de bureau"
-],
-"estimate": 2012100.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
 "ma-o4d-1043469": {
 "bond": 3290.0,
 "buyer_full": "MEFPE / OFPPT - OFFICE DE LA FORMATION PROFESSIONNELLE ET DE LA PROMOTION DU TRAVAIL",
@@ -25813,84 +24515,6 @@
 "meeting": "Date et heure : Visites des lieux : Variante :",
 "notice_type": "Annonce de consultation",
 "visit": "Variante :"
-},
-"ma-o4d-1043844": {
-"bond": 11500.0,
-"buyer_full": "MEFPE / OFPPT - OFFICE DE LA FORMATION PROFESSIONNELLE ET DE LA PROMOTION DU TRAVAIL",
-"domains": [
-"Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
-],
-"estimate": 804000.0,
-"fetched": "2026-10-16",
-"meeting": "Date et heure : 15/10/2026 11:00",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-o4d-1043860": {
-"bond": 27000.0,
-"buyer_full": "MEFPE / OFPPT - OFFICE DE LA FORMATION PROFESSIONNELLE ET DE LA PROMOTION DU TRAVAIL",
-"domains": [
-"Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
-],
-"estimate": 1768800.0,
-"fetched": "2026-10-16",
-"meeting": "Date et heure : 15/10/2026 10:30",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-o4d-1043874": {
-"bond": 435000.0,
-"buyer_full": "MEFPE / OFPPT - OFFICE DE LA FORMATION PROFESSIONNELLE ET DE LA PROMOTION DU TRAVAIL",
-"domains": [
-"Travaux / Aménagement de jardins, d'espaces verts / Aménagement d'espaces verts et jardins et apports de terres végétales"
-],
-"estimate": 28777379.96,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "15/10/2026 11:00"
-},
-"ma-o4d-1043895": {
-"bond": 56000.0,
-"buyer_full": "MEFPE / OFPPT - OFFICE DE LA FORMATION PROFESSIONNELLE ET DE LA PROMOTION DU TRAVAIL",
-"domains": [
-"Travaux / Aménagement de jardins, d'espaces verts / Aménagement d'espaces verts et jardins et apports de terres végétales"
-],
-"estimate": 3696870.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "14/10/2026 11:00"
-},
-"ma-o4d-1043907": {
-"bond": 3400.0,
-"buyer_full": "MEFPE / OFPPT - OFFICE DE LA FORMATION PROFESSIONNELLE ET DE LA PROMOTION DU TRAVAIL",
-"domains": [
-"Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
-],
-"estimate": 228000.0,
-"fetched": "2026-10-16",
-"meeting": "Date et heure : 15/10/2026 10:00",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-o4d-1043918": {
-"bond": 9000.0,
-"buyer_full": "MEFPE / OFPPT - OFFICE DE LA FORMATION PROFESSIONNELLE ET DE LA PROMOTION DU TRAVAIL",
-"domains": [
-"Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
-],
-"estimate": 579600.0,
-"fetched": "2026-10-16",
-"meeting": "Date et heure : 15/10/2026 11:30",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
 },
 "ma-o4d-1044461": {
 "bond": 6000.0,
@@ -26547,18 +25171,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-o8p-1034718": {
-"bond": 35000.0,
-"buyer_full": "M3 / SETLSI - CHEF DE SERVICE DE L'EQUIPEMENT, DU TRANSPORT ET DE LA LOGISTIQUE DE SIDI IFNI",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Ouvrages d'assainissement"
-],
-"estimate": 2071422.0,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-o8p-1034799": {
 "bond": 170000.0,
 "buyer_full": "M3 / ANEP / DRANEPMS - DIRECTION REGIONALE DE L'AGENCE NATIONALE DES EQUIPEMENTS PUBLICS DE MARRAKECH - SAFI",
@@ -26640,30 +25252,6 @@
 ],
 "estimate": 10789236.0,
 "fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-o8p-1035625": {
-"bond": 5000.0,
-"buyer_full": "M3 / DPDET - DIRECTEUR PROVINCIAL D'EQUIPEMENT TETOUAN",
-"domains": [
-"Services / Services architecturales et topographiques / Exécution de plans, sommaires, d’exécutions et de détails"
-],
-"estimate": 265200.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-o8p-1035646": {
-"bond": 6000.0,
-"buyer_full": "M3 / DPEEJ - DIRECTEUR PROVINCIAL DE L'EQUIPEMENT A EL JADIDA",
-"domains": [
-"Services / Prestations d’essais, de contrôle et de laboratoire / Essais routiers et d’ouvrages d’art"
-],
-"estimate": 386112.0,
-"fetched": "2026-10-18",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -26801,19 +25389,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-o8p-1037432": {
-"bond": 188900.0,
-"buyer_full": "M3 / ONCF - OFFICE NATIONAL DES CHEMINS DE FER",
-"domains": [
-"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des engins et matériel de chantier"
-],
-"estimate": 12590799.94,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "28/09/2026 10:00"
-},
 "ma-o8p-1037543": {
 "bond": 5000000.0,
 "buyer_full": "M3 / DPETLER - DIRECTION PROVINCIALE DE L'EQUIPEMENT DU TRANSPORT DE LA LOGISTIQUE ET DE L'EAU DE RABAT",
@@ -26948,18 +25523,6 @@
 ],
 "estimate": 1314132.0,
 "fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-o8p-1039106": {
-"bond": 12200.0,
-"buyer_full": "M3 / DPESK - LE DIRECTEUR PROVINCIAL DE L'EQUIPEMENT ET DU TRANSPORT ET DE LA LOGISTIQUE DE SIDI KACEM",
-"domains": [
-"Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Accompagnement dans la mise en œuvre de projet, pilotage des travaux Et coordination"
-],
-"estimate": 612000.0,
-"fetched": "2026-10-18",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -27451,18 +26014,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-o8p-1041365": {
-"bond": 3000.0,
-"buyer_full": "M3 / DPETLEF - DIRECTION PROVINCIALE DE L'EQUIPEMENT ,DU TRANSPORT , DE LA LOGISTIQUE ET DE L’EAU DE FES",
-"domains": [
-"Services / Prestations d’essais, de contrôle et de laboratoire / Essais routiers et d’ouvrages d’art"
-],
-"estimate": 154524.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-o8p-1041506": {
 "bond": 1900.0,
 "buyer_full": "M3 / DRDEMTDPEM - LE DIRECTEUR PROVINCIAL DE L'EQUIPEMENT ET DU TRANSPORT ET DE LA LOGISTIQUE DE MEKNES",
@@ -27486,19 +26037,6 @@
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
-},
-"ma-o8p-1041540": {
-"bond": 17200.0,
-"buyer_full": "M3 / ONCF - OFFICE NATIONAL DES CHEMINS DE FER",
-"domains": [
-"Fournitures / Engins de chantier, matériel de manutention et de levage / matériel de manutention et de levage (Chariot élévateur, grues, nacelles …)"
-],
-"estimate": 1142196.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "08/10/2026 11:00"
 },
 "ma-o8p-1041552": {
 "bond": 50000.0,
@@ -27558,30 +26096,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-o8p-1041763": {
-"bond": 4000.0,
-"buyer_full": "M3 / DPET - LE DIRECTEUR PROVINCIAL DE L'EQUIPEMENT ET DU TRANSPORT ET DE LA LOGISTIQUE DE TAOUNATE",
-"domains": [
-"Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
-],
-"estimate": 233592.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-o8p-1041767": {
-"bond": 30000.0,
-"buyer_full": "M3 / DPELT - DIRECTEUR PROVINCIAL DE L'EQUIPEMENT DU TRANSPORT ET DE LA LOGISTIQUE DE TAROUDANT",
-"domains": [
-"Travaux / Travaux de voiries, chemins et pistes / Travaux de signalisation de la route et des voiries"
-],
-"estimate": 1684984.8,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-o8p-1041771": {
 "bond": 4000.0,
 "buyer_full": "M3 / DPET - LE DIRECTEUR PROVINCIAL DE L'EQUIPEMENT ET DU TRANSPORT ET DE LA LOGISTIQUE DE TAOUNATE",
@@ -27590,18 +26104,6 @@
 ],
 "estimate": 200784.0,
 "fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-o8p-1041796": {
-"bond": 200000.0,
-"buyer_full": "M3 / DPETM - Directeur Provincial de l'Equipement et du Transport A Midelt",
-"domains": [
-"Travaux / Terrassements / Terrassements routiers"
-],
-"estimate": 10406484.0,
-"fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -27650,17 +26152,6 @@
 ],
 "estimate": 68286564.0,
 "fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-o8p-1041971": {
-"bond": 55000.0,
-"buyer_full": "M3 / SETLSI - CHEF DE SERVICE DE L'EQUIPEMENT, DU TRANSPORT ET DE LA LOGISTIQUE DE SIDI IFNI",
-"domains": [
-"Travaux / Fondations, injections, parois moulées, sondages et forages / Forage hydrogéologique"
-],
-"fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -28181,18 +26672,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-o8p-1043138": {
-"allotment": "3 Lots",
-"buyer_full": "M3 / AM - AUTOROUTES DU MAROC",
-"domains": [
-"Travaux / Travaux de voiries, chemins et pistes / Travaux d’assises traitées et enrobées à chaud"
-],
-"fetched": "2026-10-17",
-"lots": 3,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
-},
 "ma-o8p-1043140": {
 "bond": 10000.0,
 "buyer_full": "M3 / DPETLAIO - DIRECTEUR PROVINCIAL DE L'EQUIPEMENT, DU TRANSPORT ET DE LA LOGISTIQUE DE AGADIR IDDA OUTANAN",
@@ -28265,30 +26744,6 @@
 "reserved": false,
 "variant": "Non",
 "visit": "21/10/2026 10:00"
-},
-"ma-o8p-1043304": {
-"bond": 17000.0,
-"buyer_full": "M3 / ANSR - AGENCE NATIONALE DE LA SECURITE ROUTIERE (NARSA)",
-"domains": [
-"Services / Services de technologies de l'information et télécommunications / Elaboration de schéma directeur de système d’information"
-],
-"estimate": 890520.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-o8p-1043305": {
-"bond": 50000.0,
-"buyer_full": "M3 / ANSR - AGENCE NATIONALE DE LA SECURITE ROUTIERE (NARSA)",
-"domains": [
-"Fournitures / Matériel informatique, logiciels et pièces de rechanges / Logiciels utilitaires, middlewares, sécurités, messageries, collaboration et autres"
-],
-"estimate": 2544900.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
 },
 "ma-o8p-1043333": {
 "buyer_full": "M3 / DPEB - DIRECTEUR PROVINCIAL DE L'EQUIPEMENT A BENSLIMANE",
@@ -30501,18 +28956,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-o8p-1047768": {
-"bond": 9600.0,
-"buyer_full": "M3 / ONCF - OFFICE NATIONAL DES CHEMINS DE FER",
-"domains": [
-"Fournitures / Produits pétroliers, carburants, lubrifiants et produits de chauffage / Gaz divers (Propane, butane, gaz manufacturé…..)"
-],
-"estimate": 638450.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Oui"
-},
 "ma-o8p-1047772": {
 "bond": 20000.0,
 "buyer_full": "M3 / ONDA - OFFICE NATIONAL DES AEROPORTS",
@@ -31937,18 +30380,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-p1v-1039593": {
-"bond": 4900.0,
-"buyer_full": "RDA / CROG - Commune rurale de OULED GHANEM",
-"domains": [
-"Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
-],
-"estimate": 247500.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
 "ma-p1v-1040440": {
 "buyer_full": "RDA / CROA - Commune rurale de OULAD AISSA",
 "domains": [
@@ -31983,30 +30414,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-p1v-1041310": {
-"bond": 8000.0,
-"buyer_full": "RDA / CROG - Commune rurale de OULED GHANEM",
-"domains": [
-"Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électrique"
-],
-"estimate": 415680.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-p1v-1041512": {
-"bond": 20400.0,
-"buyer_full": "RDA / CRJ - Commune JDOUR",
-"domains": [
-"Services / Services de location sans option d’achat / Salles et stands"
-],
-"estimate": 6800.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-p1v-1041945": {
 "bond": 3500.0,
 "buyer_full": "RDA / CRSMHA - Commune rurale de SIDI M'HAMED AKDIM",
@@ -32015,18 +30422,6 @@
 ],
 "estimate": 250053.6,
 "fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-p1v-1042894": {
-"bond": 900.0,
-"buyer_full": "RDA / CRJ - Commune JDOUR",
-"domains": [
-"Services / Services de location sans option d’achat / Salles et stands"
-],
-"estimate": 150.0,
-"fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -32127,18 +30522,6 @@
 "reserved": false,
 "variant": "Non",
 "visit": "02/11/2026 11:00"
-},
-"ma-p1v-1044560": {
-"allotment": "3 Lots",
-"buyer_full": "RDA / CRB - Commune BOUGUEDRA",
-"domains": [
-"Services / Services de location sans option d’achat / Salles et stands"
-],
-"fetched": "2026-10-16",
-"lots": 3,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
 },
 "ma-p1v-1044600": {
 "bond": 15000.0,
@@ -32808,18 +31191,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-p8x-1043148": {
-"bond": 80000.0,
-"buyer_full": "MENESFC / AREFGCDMCA - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE CASA-ANFA",
-"domains": [
-"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et nettoyage des bâtiments administratifs"
-],
-"estimate": 4500787.2,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-p8x-1043274": {
 "bond": 10000.0,
 "buyer_full": "MENESFC / DPD - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE Driouch",
@@ -32827,42 +31198,6 @@
 "Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
 ],
 "estimate": 544392.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-p8x-1043294": {
-"bond": 57000.0,
-"buyer_full": "MENESFC / DMENB - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE BERCHID",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
-],
-"estimate": 2896996.36,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-p8x-1043308": {
-"bond": 140000.0,
-"buyer_full": "MENESFC / DPT - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE TAROUDANT",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
-],
-"estimate": 9106670.67,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-p8x-1043309": {
-"bond": 200000.0,
-"buyer_full": "MENESFC / DPT - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE TAROUDANT",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
-],
-"estimate": 13144554.0,
 "fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
@@ -32962,30 +31297,6 @@
 "reserved": false,
 "variant": "Non",
 "visit": "16/10/2026 11:00"
-},
-"ma-p8x-1043617": {
-"allotment": "2 Lots",
-"buyer_full": "MENESFC / ENSR - ECOLE NORMALE SUPERIEURE DE RABAT",
-"domains": [
-"Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Equipements électronique"
-],
-"fetched": "2026-10-17",
-"lots": 2,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
-},
-"ma-p8x-1043630": {
-"bond": 20000.0,
-"buyer_full": "MENESFC / ENSR - ECOLE NORMALE SUPERIEURE DE RABAT",
-"domains": [
-"Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation de restauration"
-],
-"estimate": 499840.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
 },
 "ma-p8x-1043644": {
 "bond": 540000.0,
@@ -33175,18 +31486,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-p8x-1044328": {
-"bond": 25000.0,
-"buyer_full": "MENESFC / DPI - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D'IFRANE",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
-],
-"estimate": 1323000.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-p8x-1044360": {
 "bond": 200000.0,
 "buyer_full": "MENESFC / DPH - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE HAOUZ",
@@ -33194,39 +31493,6 @@
 "Travaux / Construction d'ouvrages d'art / Ouvrages d'art en béton armé ou compacté au rouleau, en acier et maçonnerie"
 ],
 "estimate": 10468207.2,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-p8x-1044435": {
-"buyer_full": "MENESFC / DPI - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D'IFRANE",
-"domains": [
-"Services / Services architecturales et topographiques / Services d'architecture paysagère"
-],
-"estimate": 2410000.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-p8x-1044451": {
-"buyer_full": "MENESFC / DPI - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D'IFRANE",
-"domains": [
-"Services / Services architecturales et topographiques / Exécution de plans, sommaires, d’exécutions et de détails"
-],
-"estimate": 2700000.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-p8x-1044466": {
-"buyer_full": "MENESFC / DPI - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D'IFRANE",
-"domains": [
-"Services / Services architecturales et topographiques / Exécution de plans, sommaires, d’exécutions et de détails"
-],
-"estimate": 6250000.0,
 "fetched": "2026-10-16",
 "notice_type": "Annonce de consultation",
 "reserved": false,
@@ -35127,42 +33393,6 @@
 "fetched": "2026-10-13",
 "notice_type": "Annonce de consultation",
 "reserved": false,
-"variant": "Non"
-},
-"ma-p8x-1048325": {
-"bond": 14700.0,
-"buyer_full": "MENESFC / DPB - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE BERKANE",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
-],
-"estimate": 739200.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-p8x-1048326": {
-"bond": 5300.0,
-"buyer_full": "MENESFC / DPB - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE BERKANE",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
-],
-"estimate": 267132.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-p8x-1048327": {
-"bond": 14500.0,
-"buyer_full": "MENESFC / DPB - DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE BERKANE",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
-],
-"estimate": 728890.2,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": true,
 "variant": "Non"
 },
 "ma-p8x-1048329": {
@@ -38041,18 +36271,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-q0x-1038652": {
-"bond": 9000.0,
-"buyer_full": "RMT / CUM - Commune urbaine de MEKNES",
-"domains": [
-"Services / Services de location sans option d’achat / Engins et moyen de transport de matériel et matériaux"
-],
-"estimate": 498960.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-q0x-1039336": {
 "bond": 58000.0,
 "buyer_full": "RMT / CUM - Commune urbaine de MEKNES",
@@ -38198,18 +36416,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-q0x-1043079": {
-"bond": 58000.0,
-"buyer_full": "RMT / CREH - Commune de EL HAMMAM",
-"domains": [
-"Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
-],
-"estimate": 2939200.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
 "ma-q0x-1043160": {
 "bond": 38000.0,
 "buyer_full": "RMT / CRT - Commune rurale de TIGHASSALINE",
@@ -38256,18 +36462,6 @@
 ],
 "estimate": 792000.0,
 "fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-q0x-1043586": {
-"bond": 5000.0,
-"buyer_full": "RMT / CRMH - COMMUNE M'HAYA",
-"domains": [
-"Services / Nettoyage, gardiennage, entretien et maintenance / Gardiennage et surveillance des bâtiments administratifs"
-],
-"estimate": 296640.0,
-"fetched": "2026-10-13",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -38733,18 +36927,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-q1s-1020714": {
-"bond": 50000.0,
-"buyer_full": "M4 / DRADT - DIRECTION REGIONALE DE L’AGRICULTURE DRAA - TAFILALET",
-"domains": [
-"Travaux / Travaux de construction et d’aménagement / Travaux d’aménagement, d’entretien et réhabilitation des bâtiments"
-],
-"estimate": 3400680.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-q1s-1023050": {
 "bond": 47500.0,
 "buyer_full": "M4 / DPDAM - DIRECTEUR PROVINCIAL D'AGRICULTURE-MARRAKECH",
@@ -38837,18 +37019,6 @@
 ],
 "estimate": 960000.0,
 "fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-q1s-1035276": {
-"bond": 60000.0,
-"buyer_full": "M4 / DRADT - DIRECTION REGIONALE DE L’AGRICULTURE DRAA - TAFILALET",
-"domains": [
-"Travaux / Fondations, injections, parois moulées, sondages et forages / Travaux de creusement de puits"
-],
-"estimate": 3745296.0,
-"fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -38950,18 +37120,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-q1s-1037679": {
-"bond": 18000.0,
-"buyer_full": "M4 / DPDAFB - DIRECTEUR PROVINCIAL D'AGRICULTURE FIGUIG BOUARFA",
-"domains": [
-"Travaux / Travaux d’installation / Travaux d’installation de matériel et équipements hydro-électromécaniques, électroniques, électromécaniques et similaires"
-],
-"estimate": 1672032.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-q1s-1037811": {
 "allotment": "2 Lots",
 "buyer_full": "M4 / DPDATT - DIRECTEUR PROVINCIAL D'AGRICULTURE-TAN-TAN",
@@ -38997,18 +37155,6 @@
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
-},
-"ma-q1s-1038091": {
-"allotment": "4 Lots",
-"buyer_full": "M4 / DPAR - DIRECTION PROVINCIALE DE L'AGRICULTURE DE RHAMNA",
-"domains": [
-"Travaux / Aménagement de jardins, d'espaces verts / Travaux de plantation et pépinière"
-],
-"fetched": "2026-10-18",
-"lots": 4,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
 },
 "ma-q1s-1038158": {
 "bond": 5000.0,
@@ -40897,18 +39043,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-q1s-1046693": {
-"bond": 1300.0,
-"buyer_full": "M4 / DRATA - DIRECTEUR REGIONAL D'AGRICULTURE DE LA REGION BENI MELLAL -KHENIFRA",
-"domains": [
-"Services / Services courants"
-],
-"estimate": 75000.0,
-"fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-q1s-1046836": {
 "bond": 9500.0,
 "buyer_full": "M4 / DORMVAE - OFFICE REGIONAL DE MISE EN VALEUR AGRICOLE D'EL HAOUZ",
@@ -41295,18 +39429,6 @@
 "Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation de publicité, de communication et de marketing"
 ],
 "estimate": 426000.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-q1s-1048284": {
-"bond": 4000.0,
-"buyer_full": "M4 / SOREC - SOCIETE ROYALE D'ENCOURAGEMENT DU CHEVAL",
-"domains": [
-"Services / Services de location sans option d’achat / Engins et moyen de transport de matériel et matériaux"
-],
-"estimate": 205080.0,
 "fetched": "2026-10-13",
 "notice_type": "Annonce de consultation",
 "reserved": false,
@@ -42645,18 +40767,6 @@
 "variant": "Non",
 "visit": "21/10/2026 11:00"
 },
-"ma-q9t-1037176": {
-"allotment": "2 Lots",
-"buyer_full": "MS / CHPOA - CENTRE HOSPITALIER REGIONAL D'OUJDA",
-"domains": [
-"Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
-],
-"fetched": "2026-10-17",
-"lots": 2,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
-},
 "ma-q9t-1037796": {
 "buyer_full": "MS / DRSAG - DIRECTEUR REGIONAL DE LA SANTE A LA REGION DE GUELMIM OUED NOUN",
 "domains": [
@@ -42789,18 +40899,6 @@
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
-},
-"ma-q9t-1039951": {
-"allotment": "2 Lots",
-"buyer_full": "MS / CHMVIO - CENTRE HOSPITALIER UNIVERSITAIRE MOHAMMED VI - OUJDA",
-"domains": [
-"Fournitures / Effets d’habillement et accessoires / Vêtements professionnels"
-],
-"fetched": "2026-10-18",
-"lots": 2,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
 },
 "ma-q9t-1039993": {
 "bond": 17000.0,
@@ -42960,18 +41058,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-q9t-1042220": {
-"bond": 30000.0,
-"buyer_full": "MS / DMSPK - DELEGUE DU MINISTERE DE LA SANTE A LA PROVINCE KHOURIBGA",
-"domains": [
-"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et nettoyage des bâtiments administratifs"
-],
-"estimate": 1723830.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-q9t-1042259": {
 "bond": 12600.0,
 "buyer_full": "MS / CHPG - Centre Hospitalier Régional de Guelmim",
@@ -43107,30 +41193,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-q9t-1043094": {
-"bond": 80000.0,
-"buyer_full": "MS / GSTLSH - GROUPEMENT SANITAIRE TERRITORIAL LAAYOUN SAKIA EL HAMRA",
-"domains": [
-"Services / Services de santé, vétérinaire / Prestations médicales et hospitalières"
-],
-"estimate": 4320000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-q9t-1043106": {
-"bond": 90000.0,
-"buyer_full": "MS / GSTLSH - GROUPEMENT SANITAIRE TERRITORIAL LAAYOUN SAKIA EL HAMRA",
-"domains": [
-"Services / Services de santé, vétérinaire / Prestations médicales et hospitalières"
-],
-"estimate": 4924800.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-q9t-1043139": {
 "allotment": "31 Lots",
 "buyer_full": "MS / CHMVIO - CENTRE HOSPITALIER UNIVERSITAIRE MOHAMMED VI - OUJDA",
@@ -43179,18 +41241,6 @@
 "notice_type": "Annonce de consultation",
 "visit": "Variante :"
 },
-"ma-q9t-1043385": {
-"allotment": "5 Lots",
-"buyer_full": "MS / IPC - INSTITUT PASTEUR DU MAROC",
-"domains": [
-"Fournitures / Matériel, mobilier et fournitures de bureau / Mobilier de bureau"
-],
-"fetched": "2026-10-17",
-"lots": 5,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
-},
 "ma-q9t-1043401": {
 "allotment": "4 Lots",
 "buyer_full": "MS / IPC - INSTITUT PASTEUR DU MAROC",
@@ -43228,31 +41278,6 @@
 "reserved": false,
 "variant": "Non",
 "visit": "22/10/2026 10:30"
-},
-"ma-q9t-1043459": {
-"bond": 17000.0,
-"buyer_full": "MS / CHMVIO - CENTRE HOSPITALIER UNIVERSITAIRE MOHAMMED VI - OUJDA",
-"domains": [
-"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
-],
-"estimate": 850080.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "15/10/2026 10:30"
-},
-"ma-q9t-1043468": {
-"allotment": "3 Lots",
-"buyer_full": "MS / CHMVIO - CENTRE HOSPITALIER UNIVERSITAIRE MOHAMMED VI - OUJDA",
-"domains": [
-"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
-],
-"fetched": "2026-10-17",
-"lots": 3,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
 },
 "ma-q9t-1043562": {
 "bond": 84000.0,
@@ -43297,18 +41322,6 @@
 "Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation de réception"
 ],
 "estimate": 21984457.92,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-q9t-1043666": {
-"bond": 7000.0,
-"buyer_full": "MS / CHMVIO - CENTRE HOSPITALIER UNIVERSITAIRE MOHAMMED VI - OUJDA",
-"domains": [
-"Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Accompagnement dans la mise en œuvre de projet, pilotage des travaux Et coordination"
-],
-"estimate": 360000.0,
 "fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
@@ -43363,18 +41376,6 @@
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
-},
-"ma-q9t-1044124": {
-"allotment": "9 Lots",
-"buyer_full": "MS / CHMVIO - CENTRE HOSPITALIER UNIVERSITAIRE MOHAMMED VI - OUJDA",
-"domains": [
-"Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
-],
-"fetched": "2026-10-16",
-"lots": 9,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
 },
 "ma-q9t-1044248": {
 "bond": 1000.0,
@@ -43514,18 +41515,6 @@
 ],
 "estimate": 927840.0,
 "fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-q9t-1044926": {
-"bond": 3000.0,
-"buyer_full": "MS / GSTTTH / DSMF - DISTRICT SANITAIRE M DIQ FNIDEQ",
-"domains": [
-"Fournitures / Effets d’habillement et accessoires / Vêtements professionnels"
-],
-"estimate": 152088.0,
-"fetched": "2026-10-16",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -44039,30 +42028,6 @@
 ],
 "estimate": 1798560.0,
 "fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-q9t-1047987": {
-"bond": 10000.0,
-"buyer_full": "MS / GSTTTH / EDST - ESPACE - DISTRICT SANITAIRE TETOUAN",
-"domains": [
-"Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
-],
-"estimate": 638304.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-q9t-1048000": {
-"bond": 16000.0,
-"buyer_full": "MS / GSTLSH - GROUPEMENT SANITAIRE TERRITORIAL LAAYOUN SAKIA EL HAMRA",
-"domains": [
-"Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation d’Hôtellerie."
-],
-"estimate": 829400.0,
-"fetched": "2026-10-13",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
@@ -45539,18 +43504,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-s3z-1043947": {
-"bond": 12305.11,
-"buyer_full": "RRSK / CRAI - Commune rurale de AIT IKKOU",
-"domains": [
-"Travaux / Travaux d’électricité / Travaux de branchement électrique"
-],
-"estimate": 615255.6,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-s3z-1044071": {
 "bond": 110000.0,
 "buyer_full": "RRSK / AREPRRSK - AGENCE REGIONALE D'EXECUTION DES PROJETS DE LA REGION RABAT SALE KENITRA",
@@ -46227,18 +44180,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-t5y-1027787": {
-"bond": 7000.0,
-"buyer_full": "M1 / DPJS - DIRECTION PROVINCIALE DE LA JUSTICE SETTAT",
-"domains": [
-"Travaux / Aménagement de jardins, d'espaces verts / Aménagement d'espaces verts et jardins et apports de terres végétales"
-],
-"estimate": 370206.0,
-"fetched": "2026-10-15",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
 "ma-t5y-1028196": {
 "bond": 15000.0,
 "buyer_full": "M1 / SDRACAM - Sous Direction Régionale auprès de la Cour d'Appel Marrakech",
@@ -46273,18 +44214,6 @@
 "fetched": "2026-10-14",
 "notice_type": "Annonce de consultation",
 "reserved": false,
-"variant": "Non"
-},
-"ma-t5y-1031665": {
-"bond": 1000.0,
-"buyer_full": "M1 / SDRACAM - Sous Direction Régionale auprès de la Cour d'Appel Marrakech",
-"domains": [
-"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
-],
-"estimate": 66000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": true,
 "variant": "Non"
 },
 "ma-t5y-1031700": {
@@ -46374,18 +44303,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-t5y-1039711": {
-"bond": 2500.0,
-"buyer_full": "M1 / SDRACAM - Sous Direction Régionale auprès de la Cour d'Appel Marrakech",
-"domains": [
-"Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
-],
-"estimate": 148200.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-t5y-1039719": {
 "bond": 5000.0,
 "buyer_full": "M1 / SDRACDAM - SOUS DIRECTEUR REGIONAL AUPRES DE LA COUR D'APPEL DE MEKNES",
@@ -46393,18 +44310,6 @@
 "Travaux / Travaux d’installation / Travaux d’installation d’équipements de contrôle d'accès"
 ],
 "estimate": 300000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-t5y-1039754": {
-"bond": 5000.0,
-"buyer_full": "M1 / SDRACDAM - SOUS DIRECTEUR REGIONAL AUPRES DE LA COUR D'APPEL DE MEKNES",
-"domains": [
-"Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
-],
-"estimate": 298800.0,
 "fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": true,
@@ -46862,16 +44767,6 @@
 "variant": "Non",
 "visit": "28/10/2026 11:00"
 },
-"ma-u9g-1036960": {
-"bond": 70000.0,
-"buyer_full": "FMVPASLF / FMVPASLF - FONDATION MOHAMMED VI POUR LA PROMOTION DES OEUVRES SOCIALES DE L'EDUCATION-FORMATION",
-"estimate": 4669330.0,
-"fetched": "2026-10-18",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "18/09/2026 11:00"
-},
 "ma-u9g-1044007": {
 "bond": 35000.0,
 "buyer_full": "FMVPASLF / FMVPASLF - FONDATION MOHAMMED VI POUR LA PROMOTION DES OEUVRES SOCIALES DE L'EDUCATION-FORMATION",
@@ -47036,42 +44931,6 @@
 "Travaux / Travaux de voiries, chemins et pistes / Chemins forestiers"
 ],
 "estimate": 5636622.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-w7t-1043277": {
-"allotment": "3 Lots",
-"buyer_full": "ANEF / DRANEFBMK - DIRECTION REGIONALE DE L'AGENCE NATIONALE DES EAUX ET FORETS BENI MELLAL - KHENIFRA",
-"domains": [
-"Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
-],
-"fetched": "2026-10-17",
-"lots": 3,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
-},
-"ma-w7t-1043278": {
-"bond": 7000.0,
-"buyer_full": "ANEF / DRANEFBMK - DIRECTION REGIONALE DE L'AGENCE NATIONALE DES EAUX ET FORETS BENI MELLAL - KHENIFRA",
-"domains": [
-"Fournitures / Produits alimentaires, d’élevage, de la pêche, d’agriculture, d’horticulture et pépinière / Produits alimentaires pour usage animal"
-],
-"estimate": 469980.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-w7t-1043279": {
-"bond": 3900.0,
-"buyer_full": "ANEF / DRANEFBMK - DIRECTION REGIONALE DE L'AGENCE NATIONALE DES EAUX ET FORETS BENI MELLAL - KHENIFRA",
-"domains": [
-"Services / Etudes d’ingénierie / Etude d’avant-projet, d’indentification, et de recueil des données"
-],
-"estimate": 261438.0,
 "fetched": "2026-10-17",
 "notice_type": "Annonce de consultation",
 "reserved": false,
@@ -47701,54 +45560,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-x6c-1042253": {
-"bond": 2000.0,
-"buyer_full": "MC / AMAP - AGENCE MAGHREB ARABE PRESSE",
-"domains": [
-"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements informatiques (matériel, logiciels, progiciels )"
-],
-"estimate": 120000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-x6c-1042271": {
-"bond": 33000.0,
-"buyer_full": "MC / AMAP - AGENCE MAGHREB ARABE PRESSE",
-"domains": [
-"Services / Services de location sans option d’achat / Licences d'utilisation de logiciels"
-],
-"estimate": 1656000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-x6c-1042378": {
-"bond": 4000.0,
-"buyer_full": "MC / AMAP - AGENCE MAGHREB ARABE PRESSE",
-"domains": [
-"Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements informatiques (matériel, logiciels, progiciels )"
-],
-"estimate": 210000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-x6c-1044021": {
-"allotment": "2 Lots",
-"buyer_full": "MC / SNRT - LA SOCIETE NATIONALE DE RADIODIFFUSION ET DE TELEVISION",
-"domains": [
-"Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Audit, évaluation et certification des comptes"
-],
-"fetched": "2026-10-16",
-"lots": 2,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
-},
 "ma-x6c-1044226": {
 "allotment": "2 Lots",
 "buyer_full": "MC / SNRT - LA SOCIETE NATIONALE DE RADIODIFFUSION ET DE TELEVISION",
@@ -48183,30 +45994,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-z7x-1042390": {
-"allotment": "21 Lots",
-"buyer_full": "MENESFC / FSA - FACULTE DES SCIENCES AGADIR",
-"domains": [
-"Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
-],
-"fetched": "2026-10-17",
-"lots": 21,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
-},
-"ma-z7x-1042909": {
-"buyer_full": "MENESFC / PUSMSBM - PRESIDENCE DE L'UNIVERSITE SULTAN MOULAY SLIMANE",
-"domains": [
-"Services / Etudes d’ingénierie / Etudes de conception"
-],
-"estimate": 9000000.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "15/10/2026 10:00"
-},
 "ma-z7x-1042992": {
 "allotment": "2 Lots",
 "buyer_full": "MENESFC / ENSAB - ECOLE NATIONALE DES SCIENCES APPLIQUEES BERRCHID",
@@ -48305,18 +46092,6 @@
 "reserved": true,
 "variant": "Non",
 "visit": "19/10/2026 10:00"
-},
-"ma-z7x-1044179": {
-"bond": 7500.0,
-"buyer_full": "MENESFC / ENCGF - ECOLE NATIONALE DE COMMERCE ET DE GESTION FES",
-"domains": [
-"Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation de restauration"
-],
-"estimate": 398090.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
 },
 "ma-z7x-1044187": {
 "bond": 5000.0,
@@ -48671,42 +46446,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-z7x-1046703": {
-"bond": 1100.0,
-"buyer_full": "MENESFC / ESTS - ECOLE SUPERIEURE DE TECHNOLOGIE DE SAFI",
-"domains": [
-"Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation d’hébergement"
-],
-"estimate": 42196.0,
-"fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-z7x-1046715": {
-"bond": 900.0,
-"buyer_full": "MENESFC / ESTS - ECOLE SUPERIEURE DE TECHNOLOGIE DE SAFI",
-"domains": [
-"Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation de restauration"
-],
-"estimate": 35200.0,
-"fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
-"ma-z7x-1046720": {
-"bond": 2600.0,
-"buyer_full": "MENESFC / ESTS - ECOLE SUPERIEURE DE TECHNOLOGIE DE SAFI",
-"domains": [
-"Services / Services d’hôtellerie, hébergement, restauration, événementiel et marketing / Prestation de restauration"
-],
-"estimate": 102795.0,
-"fetched": "2026-10-14",
-"notice_type": "Annonce de consultation",
-"reserved": true,
-"variant": "Non"
-},
 "ma-z7x-1046806": {
 "buyer_full": "MENESFC / FSDMF - FACULTE DES SCIENCES DHAR EL MEHRAZ - FES",
 "domains": [
@@ -48787,18 +46526,6 @@
 ],
 "fetched": "2026-10-14",
 "lots": 18,
-"meeting": "Date et heure : Visites des lieux : Variante :",
-"notice_type": "Annonce de consultation",
-"visit": "Variante :"
-},
-"ma-z7x-1047269": {
-"allotment": "3 Lots",
-"buyer_full": "MENESFC / FSTM - FACULTE DES SCIENCES ET TECHNIQUES MARRAKECH",
-"domains": [
-"Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange"
-],
-"fetched": "2026-10-13",
-"lots": 3,
 "meeting": "Date et heure : Visites des lieux : Variante :",
 "notice_type": "Annonce de consultation",
 "visit": "Variante :"
@@ -49085,19 +46812,6 @@
 "variant": "Non",
 "visit": "30/10/2026 10:00"
 },
-"ma-z7x-1048140": {
-"bond": 3000.0,
-"buyer_full": "MENESFC / FST - FACULTE DES SCIENCES TETOUAN",
-"domains": [
-"Services / Services de location sans option d’achat / Salles et stands"
-],
-"estimate": 45000.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "19/10/2026 11:00"
-},
 "ma-z7x-1048152": {
 "bond": 12000.0,
 "buyer_full": "MENESFC / EMI - ECOLE MOHAMMADIA D'INGENIEURS",
@@ -49135,19 +46849,6 @@
 "reserved": false,
 "variant": "Non",
 "visit": "27/10/2026 11:00"
-},
-"ma-z7x-1048210": {
-"bond": 3000.0,
-"buyer_full": "MENESFC / FST - FACULTE DES SCIENCES TETOUAN",
-"domains": [
-"Services / Services courants / Impression de documents, brochures, maquettes et services connexes"
-],
-"estimate": 40000.0,
-"fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non",
-"visit": "19/10/2026 12:00"
 },
 "ma-z7x-1048234": {
 "bond": 7500.0,
@@ -49855,18 +47556,6 @@
 "reserved": false,
 "variant": "Non"
 },
-"ma-z9k-1043312": {
-"bond": 10400.0,
-"buyer_full": "RTA / CRDEK - Commune rurale de DIR EL KSIBA",
-"domains": [
-"Travaux / Fondations, injections, parois moulées, sondages et forages / Travaux de fondations"
-],
-"estimate": 520800.0,
-"fetched": "2026-10-17",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-z9k-1043390": {
 "bond": 14000.0,
 "buyer_full": "RTA / CROMB - COMMUNE OULED M'BAREK",
@@ -49891,18 +47580,6 @@
 "reserved": true,
 "variant": "Non"
 },
-"ma-z9k-1043827": {
-"bond": 14000.0,
-"buyer_full": "RTA / CPA - LE CONSEIL PROVINCIAL D'AZILAL",
-"domains": [
-"Services / Etudes d’ingénierie / Etude d’organisation et de gestion"
-],
-"estimate": 900000.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
 "ma-z9k-1043838": {
 "bond": 32000.0,
 "buyer_full": "RTA / CUKT - Commune de KASBAT TADLA",
@@ -49910,54 +47587,6 @@
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électrique"
 ],
 "estimate": 1740000.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-z9k-1043847": {
-"bond": 3000.0,
-"buyer_full": "RTA / CPA - LE CONSEIL PROVINCIAL D'AZILAL",
-"domains": [
-"Travaux / Travaux d’électricité / Travaux d'installation pour usages courants de grands ensembles d'habitat ou de lieux publics"
-],
-"estimate": 175200.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-z9k-1043857": {
-"bond": 5000.0,
-"buyer_full": "RTA / CPA - LE CONSEIL PROVINCIAL D'AZILAL",
-"domains": [
-"Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Pose de conduites d'assainissement"
-],
-"estimate": 258060.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-z9k-1043883": {
-"bond": 28000.0,
-"buyer_full": "RTA / CPA - LE CONSEIL PROVINCIAL D'AZILAL",
-"domains": [
-"Services / Services de location sans option d’achat / Moyens de transport des personnes"
-],
-"estimate": 1499400.0,
-"fetched": "2026-10-16",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-z9k-1043960": {
-"bond": 1500.0,
-"buyer_full": "RTA / CRO - Commune rurale de OUAOULA",
-"domains": [
-"Services / Services de location sans option d’achat / Moyens de transport des personnes"
-],
-"estimate": 1000.0,
 "fetched": "2026-10-16",
 "notice_type": "Annonce de consultation",
 "reserved": false,
@@ -50090,18 +47719,6 @@
 ],
 "estimate": 2400000.0,
 "fetched": "2026-10-13",
-"notice_type": "Annonce de consultation",
-"reserved": false,
-"variant": "Non"
-},
-"ma-z9k-1046473": {
-"bond": 15600.0,
-"buyer_full": "RTA / CRAT - Commune rurale de AIT TAMLIL",
-"domains": [
-"Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
-],
-"estimate": 780000.0,
-"fetched": "2026-10-14",
 "notice_type": "Annonce de consultation",
 "reserved": false,
 "variant": "Non"
