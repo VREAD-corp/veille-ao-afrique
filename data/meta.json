@@ -1,14 +1,14 @@
 {
-"checked": "2026-11-24T03:22+00:00",
+"checked": "2026-11-24T04:57+00:00",
 "sources": {
 "BJ": {
-"at": "2026-11-24T03:22+00:00",
+"at": "2026-11-24T04:57+00:00",
 "count": 103,
 "ok": true,
 "open": 58
 },
 "BM": {
-"at": "2026-11-24T03:22+00:00",
+"at": "2026-11-24T04:57+00:00",
 "count": 423,
 "ok": true,
 "open": 149
@@ -17,7 +17,7 @@
 "at": "2026-10-29T13:40+00:00",
 "count": 3591,
 "error": "request failed after 3 attempts: https://www.marchespublics.gov.ma/index.php?page=entreprise.EntrepriseAdvancedSearch&searchAnnCons: HTTP Error 503: Service Unavailable",
-"failed_at": "2026-11-24T03:22+00:00",
+"failed_at": "2026-11-24T04:57+00:00",
 "full_at": "2026-10-29T13:40+00:00",
 "listed": 0,
 "mode": "complet",
@@ -28,7 +28,7 @@
 "at": "2026-11-15T23:08+00:00",
 "count": 567,
 "error": "request failed after 3 attempts: https://www.marchespublics.gov.tn/fr/appels-doffres?draw=1&length=500&order%5B0%5D%5Bcolumn%5D=4&order%5B0%5D%5Bdir%5D=desc&columns%5B4%5D%5Bdata%5D=publication_date&start=0: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has e",
-"failed_at": "2026-11-24T03:22+00:00",
+"failed_at": "2026-11-24T04:57+00:00",
 "ok": false,
 "open": 336
 }
