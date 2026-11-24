@@ -142,22 +142,6 @@
 "reference": "84/DR9/2026"
 },
 {
-"buyer": "MINISTERE DE LA TRANSITION ENERGETIQUE ET DU DEVELOPPEMENT DURABLE, DEPARTEMENT DE LA TRANSITION ENERGETIQUE",
-"category": "Services",
-"deadline": "2026-11-24T10:00",
-"env_clauses": false,
-"object": "location de licences d’utilisation des logiciels informatiques destinées au Ministère de la Transition Energétique et du Développement Durable, Département de la Transition Energétique, à Rabat.",
-"org": "d4q",
-"places": [
-"RABAT"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-12",
-"ref_id": "1045350",
-"reference": "20/2026/DAASI"
-},
-{
 "buyer": "OFFICE NATIONALE DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE ELECTRICITE",
 "category": "Fournitures",
 "deadline": "2026-11-26T09:00",
@@ -226,22 +210,6 @@
 "published": "2026-10-19",
 "ref_id": "1051151",
 "reference": "97/AREPFM/2026"
-},
-{
-"buyer": "C.T. de SIDI BOUMOUSSA",
-"category": "Fournitures",
-"deadline": "2026-11-24T10:00",
-"env_clauses": false,
-"object": "ACQUISITION DE CIMENT CPJ 45 AU PROFIT DE LA COMMUNE SIDI BOUMOUSSA PROVINCE DE TAROUDANT",
-"org": "f9f",
-"places": [
-"TAROUDANNT"
-],
-"procedure": "Appel d'offres ouvert simplifié",
-"procedure_code": "AOS",
-"published": "2026-10-16",
-"ref_id": "1050440",
-"reference": "01/2026"
 },
 {
 "buyer": "L'IMPRIMERIE OFFICIELLE",
@@ -355,38 +323,6 @@
 "published": "2026-10-14",
 "ref_id": "1049639",
 "reference": "83/2026/INDH/PAZ"
-},
-{
-"buyer": "CASABLANCA PRESTATIONS",
-"category": "Services",
-"deadline": "2026-11-24T11:00",
-"env_clauses": false,
-"object": "Gardiennage et surveillance du Marché de Gros des fruits et légumes et des Entrepôts Frigorifiques de Casablanca",
-"org": "g3h",
-"places": [
-"CASABLANCA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-15",
-"ref_id": "1049826",
-"reference": "18/2026"
-},
-{
-"buyer": "GOUVERNEUR DE LA PROVINCE D'AZILAL",
-"category": "Fournitures",
-"deadline": "2026-11-24T10:00",
-"env_clauses": false,
-"object": "Équipement des logements administratifs de la Province d’Azilal.",
-"org": "g3h",
-"places": [
-"AZILAL"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-16",
-"ref_id": "1050443",
-"reference": "82/2026/BG"
 },
 {
 "buyer": "SOCIETE REGIONALE MULTISERVICES SOUSS - MASSA SA",
@@ -597,22 +533,6 @@
 "reference": "05/2026/DRMC"
 },
 {
-"buyer": "DIRECTEUR DE LA METEOROLOGIE NATIONALE",
-"category": "Fournitures",
-"deadline": "2026-11-24T10:00",
-"env_clauses": false,
-"object": "la fourniture, installation et mise en service d’une chaine d’étalonnage des systèmes de mesure du vent (préfecture d’arrondissement Hay hassani)",
-"org": "k2q",
-"places": [
-"CASABLANCA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-13",
-"ref_id": "1042609",
-"reference": "76/2026/DGM"
-},
-{
 "buyer": "DIRECTEUR DES AMENAGEMENTS HYDRAULIQUES",
 "category": "Services",
 "deadline": "2026-11-25T10:00",
@@ -660,22 +580,6 @@
 "published": "2026-10-14",
 "ref_id": "1009725",
 "reference": "23/2026"
-},
-{
-"buyer": "Commune territorial TIGZMERTE",
-"category": "Services",
-"deadline": "2026-11-24T10:00",
-"env_clauses": false,
-"object": "Location des boutiques au centre de la commune de TIGZMERT",
-"org": "m8x",
-"places": [
-"TATA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-12",
-"ref_id": "1048632",
-"reference": "01/2026/CTTGZ"
 },
 {
 "buyer": "OFFICE DE LA FORMATION PROFESSIONNELLE ET DE LA PROMOTION DU TRAVAIL",
@@ -774,56 +678,6 @@
 "reference": "44/2026/KH"
 },
 {
-"buyer": "OFFICE NATIONAL DES AEROPORTS",
-"category": "Fournitures",
-"deadline": "2026-11-24T10:00",
-"env_clauses": true,
-"object": "Fourniture et montage de mobilier de bureau pour l’ONDA.",
-"org": "o8p",
-"places": [
-"CASABLANCA",
-"NOUACEUR"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-09",
-"ref_id": "1047800",
-"reference": "196/26/AOO/ONDA"
-},
-{
-"buyer": "OFFICE NATIONAL DES AEROPORTS",
-"category": "Fournitures",
-"deadline": "2026-11-24T10:00",
-"env_clauses": true,
-"object": "Construction d’une nouvelle zone Terminale à l’Aéroport Casablanca Mohammed V - Fourniture, installation, mise en service et maintenance des passerelles télescopiques, convertisseurs et mires de guidage.\nTranche ferme : Fourniture, installation et mise en service des passerelles télescopiques, convertisseurs et mires de guidage\nTranche conditionnelle : Maintenance des passerelles télescopiques, convertisseurs et mires de guidage",
-"org": "o8p",
-"places": [
-"CASABLANCA",
-"NOUACEUR"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-09",
-"ref_id": "1047840",
-"reference": "197/26/AOO/ONDA"
-},
-{
-"buyer": "DIRECTEUR PROVINCIAL DE L'EQUIPEMENT D'AZILAL",
-"category": "Travaux",
-"deadline": "2026-11-24T11:00",
-"env_clauses": false,
-"object": "TRAVAUX DE CONSTRUCTION DE LA VOIE DE CONTOURNEMENT DU BARRAGE BIN EL OUIDANE SUR 5,55 KM\n– PROVINCE D’AZILAL –",
-"org": "o8p",
-"places": [
-"AZILAL"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-09",
-"ref_id": "1048196",
-"reference": "AZ/02/2026/CFR"
-},
-{
 "buyer": "DIRECTION REGIONALE DE L'AGENCE NATIONALE DES EQUIPEMENTS PUBLICS DU CENTRE OUEST",
 "category": "Travaux",
 "deadline": "2026-12-02T10:00",
@@ -838,22 +692,6 @@
 "published": "2026-10-19",
 "ref_id": "1048270",
 "reference": "41/2026/ANEPCO"
-},
-{
-"buyer": "LE DIRECTEUR REGIONAL DE L'EQUIPEMENT ET DU TRANSPORT ET DE LA LOGISTIQUE DE SOUS MASSA -AGADIR- IDDA OUTANAN",
-"category": "Services",
-"deadline": "2026-11-24T10:30",
-"env_clauses": false,
-"object": "Prestation de conduite d’Engins et de poids lourd pour le compte de la Direction Régional de l’Equipement du Transport et de la Logistique de Sous Massa.",
-"org": "o8p",
-"places": [
-"AGADIR IDA OU TANANE"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-14",
-"ref_id": "1048933",
-"reference": "07/2026"
 },
 {
 "buyer": "OFFICE NATIONAL DES AEROPORTS",
@@ -887,62 +725,6 @@
 "published": "2026-10-20",
 "ref_id": "1051309",
 "reference": "26F033"
-},
-{
-"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE TAOURIRT",
-"category": "Services",
-"deadline": "2026-11-24T10:00",
-"env_clauses": false,
-"object": "PRESTATION DE RESTAURATION DES INTERNATS ET CANTINES DES ETABLISSEMENT SCOLAIRES RELEVANT DE LA DIRECTION PROVINCIALE DE TAOURIRT AREFO-ZONE 2-",
-"org": "p8x",
-"places": [
-"TAOURIRT"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-12",
-"ref_id": "1048409",
-"reference": "09/EXP/2026"
-},
-{
-"buyer": "ACADEMIE REGIONALE D'EDUCATION ET DE FORMATION GUELMIM-OUED NOUN",
-"category": "Fournitures",
-"deadline": "2026-11-24T11:00",
-"env_clauses": false,
-"object": "ACQUISITION DU MATÉRIEL D'ENSEIGNEMENT DE LA MATIÈRE PHYSIQUE CHIMIE AU PROFIT DES COLLÈGES PIONNIERS RELEVANT DES AREF SUIVANTES :\n1 - Académie Régionale de l'Education et de la Formation - Région de Guelmim Oued Noun\n2 - Académie Régionale de l'Education et de la Formation - Région de Marrakech Safi\n3 - Académie Régionale de l'Education et de la Formation - Région de Souss Massa\n4 - Académie Régionale de l'Education et de la Formation - Région de Laayoune Sakia El Hamra\n5 - Académie Régionale de l'Education et de la Formation - Région de Dakhla Oued Eddahab",
-"org": "p8x",
-"places": [
-"MARRAKECH",
-"CHICHAOUA",
-"AL HAOUZ",
-"EL KELAA DES SRAGHNA",
-"ESSAOUIRA",
-"REHAMNA",
-"SAFI",
-"YOUSSOUFIA",
-"AGADIR IDA OU TANANE",
-"INEZGANE-AIT MELLOUL",
-"CHTOUKA-AIT BAHA",
-"TAROUDANNT",
-"TIZNIT",
-"TATA",
-"GUELMIM",
-"ASSA-ZAG",
-"TAN-TAN",
-"SIDI IFNI",
-"LAAYOUNE",
-"BOUJDOUR",
-"TARFAYA",
-"ES-SEMARA",
-"OUED ED DAHAB",
-"AOUSSERD",
-"DAKHLA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-14",
-"ref_id": "1049408",
-"reference": "13/2026/I.AREF.GON"
 },
 {
 "buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D'El FIDA MERS SULTAN",
@@ -1050,23 +832,6 @@
 "reference": "29/2026/DPA/SAHA"
 },
 {
-"buyer": "OFFICE REGIONAL DE MISE EN VALEUR AGRICOLE DE TAFILALET",
-"category": "Fournitures",
-"deadline": "2026-11-24T10:00",
-"env_clauses": true,
-"object": "ACQUISITION DE 20 000 VITRO-PLANTS DE PALMIER DATTIER DE VARIETE BOUFEGGOUS, DE 27 000 VITRO-PLANTS DE PALMIER DATTIER DE VARIETE MEJHOUL ET 3 000 VITRO-PLANTS DE PALMIER DATTIER DE VARIETE AZIZA",
-"org": "q1s",
-"places": [
-"ERRACHIDIA",
-"MIDELT"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-12",
-"ref_id": "1040746",
-"reference": "10/2026/MAPMDREF/OR/TAF"
-},
-{
 "buyer": "CHEF DU PROJET PROVISOIR D'AMENAGEMENT HYDROAGRICOLE DE LA PLAINE DE SAISS",
 "category": "Services",
 "deadline": "2026-11-30T10:00",
@@ -1114,22 +879,6 @@
 "published": "2026-10-16",
 "ref_id": "1049026",
 "reference": "50/2026/DPA/48/SMOPFPA"
-},
-{
-"buyer": "ETABLISSEMENT AUTONOME DE CONTROLE ET DE COORDINATION DES EXPORTATIONS",
-"category": "Services",
-"deadline": "2026-11-24T10:00",
-"env_clauses": false,
-"object": "L’organisation et la réalisation du pavillon du Maroc au salon « GULFOOD »",
-"org": "q1s",
-"places": [
-"ÉMIRATS ARABES UNIS"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-14",
-"ref_id": "1049030",
-"reference": "46/2026/EACCE"
 },
 {
 "buyer": "DIRECTEUR DE L'INSTITUT SUPERIEUR D'ETUDES MARITIMES CASABLANCA",
@@ -1393,22 +1142,6 @@
 "reference": "22/SAM/FDP/2026"
 },
 {
-"buyer": "DIRECTION REGIONALE DE L'AGENCE NATIONALE DES EAUX ET FORETS DE FES-MEKNES",
-"category": "Travaux",
-"deadline": "2026-11-24T11:00",
-"env_clauses": true,
-"object": "Exécution des travaux d’infrastructures antiérosives d’un volume de 4000m3 aux lieux-dits : Jbel Lahmaret Rquibat, situés dans les Communes territoriales de Maghraoua et Tazarine, Province de Taza (lot unique)",
-"org": "w7t",
-"places": [
-"TAZA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-19",
-"ref_id": "1050982",
-"reference": "21/2026/DPANEF/TAZA"
-},
-{
 "buyer": "DIRECTION GENERALE DE LA PROTECTION CIVILE",
 "category": "Fournitures",
 "deadline": "2026-11-25T10:00",
@@ -1488,22 +1221,5 @@
 "published": "2026-10-15",
 "ref_id": "1028370",
 "reference": "13/2026/CDC_PTD"
-},
-{
-"buyer": "Commune rurale de TANOUGHA",
-"category": "Services",
-"deadline": "2026-11-24T11:30",
-"env_clauses": false,
-"object": "l’affermage du souk hebdomadaire de la commune territoriale de TANOGHA pour l’année 2027,",
-"org": "z9k",
-"places": [
-"MAROC",
-"BENI MELLAL"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-14",
-"ref_id": "1049537",
-"reference": "02/2026/CT"
 }
 ]
