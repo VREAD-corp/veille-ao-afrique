@@ -1,5 +1,313 @@
 [
 {
+"buyer": "Agence de Développement de l’Élevage des Ruminants",
+"category": "Services de consultants",
+"country": "Bénin",
+"deadline": "2026-12-09T10:00",
+"first_seen": "2026-11-25",
+"id": "bj-1270935",
+"object": "Sélection d'un cabinet pour l'étude de faisabilité pour la mise en œuvre et le déploiement du SNITA : puces et boucles RFID bovins/ovins, registre national informatisé interfacé avec Agri-Digit Bénin",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/4131325112026_Pj_AMI%20SNITA%20BON.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-25",
+"reference": "PI_ADER_128488",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "bj-1270935-selection-cabinet-etude-faisabilite-mise-uvre-deploiement-snita-puces",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=PI_ADER_128488"
+},
+{
+"buyer": "Commune d'Abomey",
+"category": "Travaux",
+"country": "Bénin",
+"deadline": "2026-12-22T10:00",
+"first_seen": "2026-11-25",
+"id": "bj-1270791",
+"lots": 3,
+"object": "Travaux d'aménagements et de réfection d'infrastructure dans la Commune d'Abomey en 3 lots: Ouverture de voies dans les zones en cours de lotissement (Lot1), aménagement de la façade principale et réalisation de l'enseigne lumineuse de l'Hôtel de ville d'Abomey (Lot2) et travaux d'aménagement urbain (place GOHO et différents carrefour de la Commune d'Abomey) (Lot3).",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/2704425112026_Pj_AVIS%20DAO%20TRAVAUX%20D%27AMENAG%20TROIS%20LOTS%20AVEC%20BAL%20CCMP%2025_11_2026.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-25",
+"reference": "T_DADE_127017",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "bj-1270791-travaux-amenagements-refection-infrastructure-commune-abomey-3-lots-ouverture",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=T_DADE_127017"
+},
+{
+"buyer": "West African Health Organization",
+"category": "Services de consultants",
+"country": "Afrique de l'Ouest et du Centre (régional)",
+"deadline": "2026-12-14T12:00",
+"first_seen": "2026-11-25",
+"id": "wb-op00483563",
+"method": "Individual Consultant Selection",
+"object": "Recrutement du Coordonnateur du Projet HeSP",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P179078 – Health Security Program in Western and Central Africa",
+"published": "2026-11-24",
+"reference": "BF-WAHO-BF-529468-CS-INDV",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "wb-op00483563-recrutement-coordonnateur-projet-hesp",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483563"
+},
+{
+"buyer": "Livestock and Agriculture Modernization Project (LAMP)",
+"category": "Fournitures",
+"country": "Niger",
+"deadline": "2026-12-22T11:00",
+"first_seen": "2026-11-25",
+"id": "wb-op00483526",
+"method": "Request for Bids",
+"object": "Acquisition de matériel et équipements de production du riz et des cultures maraîchères",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P179276 – Livestock and Agriculture Modernization Project (LAMP)",
+"published": "2026-11-24",
+"reference": "NE-LAMP-562773-GO-RFB",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "wb-op00483526-acquisition-materiel-equipements-production-riz-cultures-maraicheres",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483526"
+},
+{
+"buyer": "CAMEROON NATIONAL INSTITUTE OF STATISTICS",
+"category": "Fournitures",
+"country": "Afrique de l'Ouest et du Centre (régional)",
+"deadline": "2026-11-26T10:00",
+"first_seen": "2026-11-25",
+"id": "wb-op00483512",
+"method": "Request for Bids",
+"object": "Acquisition et livraison du matériel roulant pour le Système National d'Information Statistique",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P180085 – Harmonizing and Improving Statistics in West and Central Africa - Series of Projects Two (HISWACA -",
+"published": "2026-11-24",
+"reference": "CM-INS-576858-GO-RFB",
+"regions": [],
+"sectors": [
+"formation-evenementiel"
+],
+"slug": "wb-op00483512-acquisition-livraison-materiel-roulant-systeme-national-information-statistique",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483512"
+},
+{
+"buyer": "Livestock and Agriculture Modernization Project (LAMP)",
+"category": "Travaux",
+"country": "Niger",
+"deadline": "2026-12-21T11:00",
+"first_seen": "2026-11-25",
+"id": "wb-op00483489",
+"method": "Request for Bids",
+"object": "Travaux d'aménagement de sites de périmètres irrigués pour la formation des jeunes agriculteurs des régions de Diffa et Tahoua",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P179276 – Livestock and Agriculture Modernization Project (LAMP)",
+"published": "2026-11-24",
+"reference": "NE-LAMP-565646-CW-RFB",
+"regions": [],
+"sectors": [
+"formation-evenementiel",
+"btp"
+],
+"slug": "wb-op00483489-travaux-amenagement-sites-perimetres-irrigues-formation-jeunes-agriculteurs-regi",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483489"
+},
+{
+"buyer": "RDC-MINISTERE DE LA SANTE PUBLIQUE",
+"category": "Fournitures",
+"country": "RD Congo",
+"deadline": "2026-12-21T11:00",
+"first_seen": "2026-11-25",
+"id": "wb-op00483433",
+"method": "Request for Bids",
+"object": "Acquisition et livraison des commodités de PF aux Etablissements des Soins de Santé dans les provinces du Kwango, du Kwilu, de Maindombe, du Kasaï-central, du Kasaï, de Tshuapa, de la Mongala et du Sud-Ubangi, en trois lots",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P168756 – DRC Multisectoral Nutrition and Health Project",
+"published": "2026-11-24",
+"reference": "ZR-DRC-MSP-565243-GO-RFB",
+"regions": [],
+"sectors": [
+"sante"
+],
+"slug": "wb-op00483433-acquisition-livraison-commodites-pf-etablissements-soins-sante-provinces-kwango",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483433"
+},
+{
+"buyer": "Ministry of Infrastructure, Equipment and Social Housing",
+"category": "Travaux",
+"country": "Burundi",
+"deadline": "2026-12-29T00:00",
+"first_seen": "2026-11-25",
+"id": "wb-op00483399",
+"method": "Request for Bids",
+"object": "TRAVAUX DE PAVAGE DES ROUTES (13; 31 km) EN MAIRIE DE BUJUMBURA ( 5 lots)",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P177146 – Urban Resilience Emergency Project",
+"published": "2026-11-24",
+"reference": "BI-MIELS-PIU-577306-CW-RFB",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "wb-op00483399-travaux-pavage-routes-13-31-km-mairie-bujumbura-5",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483399"
+},
+{
+"buyer": "Projet Intégré de Développement Urbain et de Résilience Multisectorielle",
+"category": "Travaux",
+"country": "Niger",
+"deadline": "2026-12-29T10:00",
+"first_seen": "2026-11-25",
+"id": "wb-op00483396",
+"method": "Request for Bids",
+"object": "Travaux d'aménagement espace vert dans plusieurs villes de la Zone d'intervention du Projet",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P175857 – Niger Integrated Urban Development and Multi-sectoral Resilience Project",
+"published": "2026-11-24",
+"reference": "NE-PIDUREM-544628-CW-RFB",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "wb-op00483396-travaux-amenagement-espace-vert-plusieurs-villes-zone-intervention-projet",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483396"
+},
+{
+"buyer": "Projet Intégré de Développement Urbain et de Résilience Multisectorielle",
+"category": "Travaux",
+"country": "Niger",
+"deadline": "2026-12-28T10:00",
+"first_seen": "2026-11-25",
+"id": "wb-op00483392",
+"method": "Request for Bids",
+"object": "Construction centre d'accueils des sinistrés à Diffa et Maradi",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P175857 – Niger Integrated Urban Development and Multi-sectoral Resilience Project",
+"published": "2026-11-24",
+"reference": "NE-PIDUREM-472827-CW-RFB",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "wb-op00483392-construction-centre-accueils-sinistres-diffa-maradi",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483392"
+},
+{
+"buyer": "SOMELEC_BEST",
+"category": "Services de consultants",
+"country": "Mauritanie",
+"deadline": "2026-12-17T12:00",
+"first_seen": "2026-11-25",
+"id": "wb-op00483369",
+"method": "Quality And Cost-Based Selection",
+"object": "Evaluation du Système de contrôle interne, mise à jour des procédures de gestion et identification des leviers de réduction des couts de la SOMELEC",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P179383 – Development of Energy Resources and Mining Sector Support Phase 1 Project",
+"published": "2026-11-24",
+"reference": "MR-SOMELEC_BEST-545977-CS-QCBS",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "wb-op00483369-evaluation-systeme-controle-interne-mise-jour-procedures-gestion-identification",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483369"
+},
+{
+"buyer": "Madagascar Youth Skills for Economic Transformation and Jobs Project",
+"category": "Services de consultants",
+"country": "Madagascar",
+"deadline": "2026-12-04T16:00",
+"first_seen": "2026-11-25",
+"id": "wb-op00483367",
+"method": "Individual Consultant Selection",
+"object": "Equipe FINANCES : 02 Comptables- 02 Logisticiens- 01 ASS Comptable - 01 Assistant Admin",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P510605 – Madagascar Youth Skills for Economic Transformation and Jobs Project",
+"published": "2026-11-24",
+"reference": "MG-MYSET-55-UFP-563759-CS-INDV",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "wb-op00483367-equipe-finances-02-comptables-02-logisticiens-01-ass-comptable",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483367"
+},
+{
+"buyer": "RDC-MINISTERE DE LA SANTE PUBLIQUE",
+"category": "Fournitures",
+"country": "RD Congo",
+"deadline": "2026-12-22T11:00",
+"first_seen": "2026-11-25",
+"id": "wb-op00483203",
+"method": "Request for Bids",
+"object": "Acquisition des intrants nutritionnels",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P168756 – DRC Multisectoral Nutrition and Health Project",
+"published": "2026-11-24",
+"reference": "ZR-DRC-MSP-565262-GO-RFB",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "wb-op00483203-acquisition-intrants-nutritionnels",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483203"
+},
+{
+"buyer": "Project Implementation Unit- Ministry of Infrastructure",
+"category": "Services de consultants",
+"country": "Afrique centrale (régional)",
+"deadline": "2026-12-23T13:00",
+"first_seen": "2026-11-25",
+"id": "wb-op00481762",
+"method": "Quality And Cost-Based Selection",
+"object": "Formation Hydrographes GIE-SCEVN - Recrutement d'une Institution pour la formation de 40 jeunes au métier d'Hydrographe pour le compte du GIE - SCEVN.",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P175235 – Central Africa Regional Waterways Project",
+"published": "2026-11-24",
+"reference": "PRACAC - 50/SC/SFQC/25",
+"regions": [],
+"sectors": [
+"formation-evenementiel"
+],
+"slug": "wb-op00481762-formation-hydrographes-gie-scevn-recrutement-institution-formation-40-jeunes",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00481762"
+},
+{
 "buyer": "Caisse des Dépôts et Consignations du Bénin",
 "category": "Services de consultants",
 "country": "Bénin",
@@ -6845,6 +7153,7 @@
 "category": "Services de consultants",
 "country": "Bénin",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "first_seen": "2026-11-06",
 "id": "bj-1258231",
 "object": "Recrutement d'un cabinet pour la réalisation des études techniques et architecturales pour la construction d'un bâtiment administratif de type R+2 à l'ATDA 4",
@@ -10400,6 +10709,7 @@
 "category": "Fournitures",
 "country": "Bénin",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "first_seen": "2026-10-28",
 "id": "bj-1252818",
 "object": "Acquisition, installation et mis en service d'équipements médicaux techniques au profit des 6 maternités à réhabilités et les 10 centres de simulation",
@@ -14533,6 +14843,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-25T09:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Locomotives et matériel roulant de chemin de fer et de tramway, fournitures ferroviaires et pièces détachées"
@@ -22721,6 +23032,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-25T11:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Ouvrages d'assainissement"
@@ -22755,6 +23067,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Ouvrages d'assainissement"
@@ -22933,6 +23246,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-25T10:30",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
@@ -25329,6 +25643,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériaux de construction, plomberie, quincaillerie et outillages / Outillages"
@@ -44221,6 +44536,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Mobilier de bureau"
@@ -46125,6 +46441,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Travaux / Terrassements / Terrassements routiers"
@@ -49529,6 +49846,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Accompagnement dans la mise en œuvre de projet, pilotage des travaux Et coordination"
@@ -56720,6 +57038,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Progiciels"
@@ -57385,6 +57704,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
@@ -61803,6 +62123,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Matériel technique"
@@ -61937,6 +62258,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
@@ -63291,6 +63613,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Assistance et conseil (juridique, financier, en management, en gestion, technique…)"
@@ -66497,6 +66820,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
@@ -70325,6 +70649,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude de définition"
@@ -80146,6 +80471,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-25T11:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et articles de literie, de couchage, de cuisine et de buanderie / Appareils et ustensiles de cuisine"
@@ -82867,6 +83193,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Réseau d’irrigation"
@@ -98090,6 +98417,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-25T09:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériaux de construction, plomberie, quincaillerie et outillages / Outillages"
@@ -134418,6 +134746,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Fournitures / Imprimés, produits d’impression, de reproduction, et de photographie / Produits d’impression, de reproduction et de photographie"
@@ -134452,6 +134781,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Fournitures / Imprimés, produits d’impression, de reproduction, et de photographie / Consommables d'impression et de reproduction (encre, plaques…)."
@@ -141095,6 +141425,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux hydrauliques, maritimes et fluviaux / Travaux de construction d'ouvrages hydromécaniques"
@@ -141129,6 +141460,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Travaux d’adduction d’eau potable"
@@ -148435,6 +148767,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-25T10:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’assainissement, d’eau potable et de réseaux divers / Travaux d’adduction d’eau potable"
@@ -150677,6 +151010,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-25T09:00",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux d’électricité / Travaux d'entretien et de réparation des équipements électriques MT/BT"
@@ -152136,6 +152470,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-25T09:30",
+"delisted": "2026-11-25",
 "detail_checked": true,
 "domains": [
 "Travaux / Travaux de construction et d’aménagement / Travaux en béton armé ou maçonnerie"
