@@ -1,62 +1,5 @@
 [
 {
-"buyer": "DIRECTEUR DE LA RECHERCHE ET DE LA PLANIFICATION DE L'EAU",
-"category": "Services",
-"deadline": "2026-11-26T10:00",
-"env_clauses": false,
-"object": "Etude de refonte de la base de données relative à l’annonce de crues (BAC 21)",
-"org": "a2a",
-"places": [
-"TANGER-ASSILAH",
-"MDIQ-FNIDEQ",
-"TETOUAN",
-"FAHS-ANJRA",
-"LARACHE",
-"AL HOCEIMA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-13",
-"ref_id": "1025541",
-"reference": "65/2026/DRPE"
-},
-{
-"buyer": "Commune urbaine de GUERCIF",
-"category": "Services",
-"deadline": "2026-11-26T10:00",
-"env_clauses": true,
-"object": "l'Exploitation temporaire de quelques points de ventes au souk de poisson situé au boulevard grande ceinture (ancien abattoir) Guercif",
-"org": "d0q",
-"places": [
-"GUERCIF"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-12",
-"ref_id": "1044902",
-"reference": "29/2026"
-},
-{
-"buyer": "OFFICE NATIONALE DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE ELECTRICITE",
-"category": "Fournitures",
-"deadline": "2026-11-26T09:00",
-"env_clauses": false,
-"object": "Fourniture du desemulsifiant chimique pour la séparation eau/sédiments dans du fioul lourd pour les centrales Turbines à Gaz",
-"org": "d4q",
-"places": [
-"TETOUAN",
-"KENITRA",
-"MOHAMMADIA",
-"MEDIOUNA",
-"LAAYOUNE"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-13",
-"ref_id": "1048734",
-"reference": "GN4131124/DXG/2026"
-},
-{
 "buyer": "OFFICE NATIONALE DE L'ELECTRICITE ET DE L'EAU POTABLE - BRANCHE ELECTRICITE",
 "category": "Fournitures",
 "deadline": "2026-12-02T09:00",
@@ -124,70 +67,6 @@
 "reference": "58/2026"
 },
 {
-"buyer": "GOUVERNEUR DE LA PROVINCE DE LARACHE",
-"category": "Fournitures",
-"deadline": "2026-11-26T11:00",
-"env_clauses": false,
-"object": "ACQUISITION DE HUIT (08) MINIBUS SCOLAIRES AU PROFIT DE CERTAINES COMMUNES A LA PROVINCE DE LARACHE",
-"org": "g3h",
-"places": [
-"LARACHE"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-14",
-"ref_id": "1048311",
-"reference": "64./2026/INDH"
-},
-{
-"buyer": "GOUVERNEUR DE LA PROVINCE D'AZILAL",
-"category": "Fournitures",
-"deadline": "2026-11-26T10:00",
-"env_clauses": false,
-"object": "- Acquisition de quatre Véhicules mini bus au Profit des personnes en situation d’handicap, Province d’Azilal.",
-"org": "g3h",
-"places": [
-"AZILAL"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-14",
-"ref_id": "1049639",
-"reference": "83/2026/INDH/PAZ"
-},
-{
-"buyer": "HAUT COMMISSARIAT AU PLAN",
-"category": "Fournitures",
-"deadline": "2026-11-26T10:00",
-"env_clauses": false,
-"object": "L’acquisition, l’installation et le déploiement d’une solution de téléphonie IP, ainsi que la mise à niveau de l’infrastructure réseau informatique au profit de l’annexe du Haut-Commissariat au Plan à Rabat.",
-"org": "g7n",
-"places": [
-"RABAT"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-12",
-"ref_id": "1027006",
-"reference": "13/2026/DRHAG"
-},
-{
-"buyer": "DELEGATION GENERALE A L'ADMINISTRATION PENITENTIAIRE ET A LA REINSERTION",
-"category": "Fournitures",
-"deadline": "2026-11-26T11:00",
-"env_clauses": false,
-"object": "La Fourniture et mise en service des équipements de cuisine au profit de la Prison Locale Chichaoua, en lot unique",
-"org": "h5j",
-"places": [
-"CHICHAOUA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-09",
-"ref_id": "1005224",
-"reference": "68/2026"
-},
-{
 "buyer": "DELEGATION GENERALE A L'ADMINISTRATION PENITENTIAIRE ET A LA REINSERTION",
 "category": "Fournitures",
 "deadline": "2026-12-01T10:30",
@@ -236,22 +115,6 @@
 "reference": "36/2026"
 },
 {
-"buyer": "Commune EL MARBOUH",
-"category": "Travaux",
-"deadline": "2026-11-26T10:00",
-"env_clauses": false,
-"object": "TRAVAUX DE CONSTRUCTION DU MUR DE CLOTURE DU\nCIMETIERE DU DOUAR JDID (CIMETIERE FQIH\nBENAMAR), SUR LE TERRITOIRE DE LA COMMUNE D'EL\nMARBOUH",
-"org": "j0w",
-"places": [
-"EL KELAA DES SRAGHNA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-19",
-"ref_id": "1036684",
-"reference": "01/2026"
-},
-{
 "buyer": "Province de CHICHAOUA",
 "category": "Fournitures",
 "deadline": "2026-11-30T10:00",
@@ -284,55 +147,6 @@
 "reference": "121/2026/DAH"
 },
 {
-"buyer": "MINISTERE DE L'INDUSTRIE, DU COMMERCE, DE L'ECONOMIE VERTE ET NUMERIQUE",
-"category": "Fournitures",
-"deadline": "2026-11-26T10:00",
-"env_clauses": false,
-"object": "Acquisition, installation et mise en service d'équipements de protection et d'équilibrage de charge des applications web pour le compte du Ministère de l’Industrie et du Commerce",
-"org": "m1w",
-"places": [
-"MAROC",
-"RABAT"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-14",
-"ref_id": "1009725",
-"reference": "23/2026"
-},
-{
-"buyer": "OFFICE DE LA FORMATION PROFESSIONNELLE ET DE LA PROMOTION DU TRAVAIL",
-"category": "Services",
-"deadline": "2026-11-26T10:00",
-"env_clauses": false,
-"object": "Études architecturales et la conduite des travaux de démolition et reconstruction de l'ISTA ESSAOUIRA et de son internat.",
-"org": "o4d",
-"places": [
-"ESSAOUIRA"
-],
-"procedure": "Concours Architectural",
-"procedure_code": "CONCA",
-"published": "2026-10-16",
-"ref_id": "1050259",
-"reference": "123/2026/OFPPT"
-},
-{
-"buyer": "OFFICE DE LA FORMATION PROFESSIONNELLE ET DE LA PROMOTION DU TRAVAIL",
-"category": "Services",
-"deadline": "2026-11-26T11:00",
-"env_clauses": false,
-"object": "Études architecturales et la conduite des travaux d'aménagement et d'extension de l'ISTHT ESSAOUIRA.",
-"org": "o4d",
-"places": [
-"ESSAOUIRA"
-],
-"procedure": "Concours Architectural",
-"procedure_code": "CONCA",
-"published": "2026-10-16",
-"ref_id": "1050295",
-"reference": "135/2026/OFPPT"
-},
-{
 "buyer": "DIRECTEUR REGIONAL DE L'EQUIPEMENT ET DU TRANSPORT ET DE LA LOGISTIQUE ET DE L EAU LAAYOUNE",
 "category": "Services",
 "deadline": "2026-12-09T11:00",
@@ -349,22 +163,6 @@
 "reference": "06/2026"
 },
 {
-"buyer": "MINISTERE DE L'EQUIPEMENT ET DE L'EAU",
-"category": "Fournitures",
-"deadline": "2026-11-26T10:00",
-"env_clauses": false,
-"object": "Acquisition de matériel de bureau destiné aux entités gérées par la Direction des Affaires Administratives et Juridiques relevant du Ministère de l’Equipement et de l’Eau en lot unique.",
-"org": "o8p",
-"places": [
-"RABAT"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-15",
-"ref_id": "1043650",
-"reference": "26/DAAJ/MEE/2026"
-},
-{
 "buyer": "DIRECTION REGIONALE DE L'AGENCE NATIONALE DES EQUIPEMENTS PUBLICS DU CENTRE OUEST",
 "category": "Travaux",
 "deadline": "2026-12-02T10:00",
@@ -379,39 +177,6 @@
 "published": "2026-10-19",
 "ref_id": "1048270",
 "reference": "41/2026/ANEPCO"
-},
-{
-"buyer": "OFFICE NATIONAL DES AEROPORTS",
-"category": "Fournitures",
-"deadline": "2026-11-26T10:00",
-"env_clauses": true,
-"object": "Construction d’une nouvelle zone Terminale à l’Aéroport Casablanca Mohammed V – Équipement des locaux de production et de distribution d’énergie frigorifique et travaux associés.",
-"org": "o8p",
-"places": [
-"CASABLANCA",
-"NOUACEUR"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-16",
-"ref_id": "1050527",
-"reference": "202/26/AOO/ONDA"
-},
-{
-"buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE D'El FIDA MERS SULTAN",
-"category": "Services",
-"deadline": "2026-11-26T10:00",
-"env_clauses": false,
-"object": "Le Gardiennage et la Surveillance des bâtiments du siège de la direction provinciale de ELFIDA MERS SULTAN, des établissements scolaires d'enseignement primaire, collégial et secondaire dépendant de la direction provinciale de ELFIDA MERS SULTAN, relevant de l’Académie Régionale d’Education et de Formation de la région CASABLANCA - SETTAT. (EN UN LOT UNIQUE).",
-"org": "p8x",
-"places": [
-"CASABLANCA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-15",
-"ref_id": "1049881",
-"reference": "06/E/26"
 },
 {
 "buyer": "DIRECTION PROVINCIALE DE L’EDUCATION NATIONALE DE SEFROU",
@@ -464,22 +229,6 @@
 "reference": "01/2026/DIAEA/DOPSAISS"
 },
 {
-"buyer": "DIRECTEUR PROVINCIAL D'AGRICULTURE KHENIFRA",
-"category": "Fournitures",
-"deadline": "2026-11-26T10:00",
-"env_clauses": false,
-"object": "L’ACQUISITION DE L’ORGE SUBVENTIONNÉE POUR L’ALIMENTATION DU BÉTAIL DANS LE CADRE DU PLAN NATIONAL D’ATTÉNUATION DES EFFETS DE LA VAGUE DE FROID AU PROFIT DES ÉLEVEURS Y COMPRIS LE CHARGEMENT, LE TRANSPORT ET LA LIVRAISON AUX CHEFS-LIEUX DES COMMUNES RELEVANT DE LA ZONE D’ACTION DE LA DIRECTION PROVINCIALE DE L’AGRICULTURE DE KHENIFRA EN LOT UNIQUE",
-"org": "q1s",
-"places": [
-"KHENIFRA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-15",
-"ref_id": "1048451",
-"reference": "AOOI02/2026/DPAK"
-},
-{
 "buyer": "DIRECTEUR PROVINCIAL DE L'AGRICULTURE DE BOULMANE",
 "category": "Fournitures",
 "deadline": "2026-12-08T10:00",
@@ -530,22 +279,6 @@
 "published": "2026-10-13",
 "ref_id": "1037014",
 "reference": "42/2026"
-},
-{
-"buyer": "Directeur Régional de la Santé, région Marrakech Safi",
-"category": "Fournitures",
-"deadline": "2026-11-26T10:00",
-"env_clauses": false,
-"object": "L’ACQUISITION ET L'INSTALLATION DES EQUIPEMENTS DE CUISINE, BUANDERIE, MORGUE ET CHAMBRES FROIDES DU CENTRE MEDICAL DE PROXIMITE HAY HASSANI A MARRAKECH RELEVANT DE LA DIRECTION REGIONALE DE LA SANTE ET DE LA PROTECTION SOCIALE MARRAKECH-SAFI EN LOT UNIQUE.",
-"org": "q9t",
-"places": [
-"MARRAKECH"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-15",
-"ref_id": "1042282",
-"reference": "16/2026/DRSPSMS"
 },
 {
 "buyer": "DELEGUE PROVINCIAL DE MINISTERE DE LA SANTE PROVINCE DE FKIH BEN SALAH",
@@ -661,70 +394,6 @@
 "reference": "04/2026"
 },
 {
-"buyer": "GROUPEMENT SANITAIRE TERRITORIAL CASABLANCA - SETTAT",
-"category": "Fournitures",
-"deadline": "2026-11-26T08:30",
-"env_clauses": false,
-"object": "ACHAT DE MATERIEL MEDICO-TECHNIQUE POUR L’HOPITAL UNIVERSITAIRE 20 AOUT 1953 RELEVANT DU GROUPEMENT SANITAIRE TERRITORIAL CASABLANCA-SETTAT",
-"org": "q9t",
-"places": [
-"CASABLANCA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-15",
-"ref_id": "1049968",
-"reference": "160/2026/GSTCS"
-},
-{
-"buyer": "GROUPEMENT SANITAIRE TERRITORIAL CASABLANCA - SETTAT",
-"category": "Fournitures",
-"deadline": "2026-11-26T08:00",
-"env_clauses": false,
-"object": "ACHAT DE MATERIEL MÉDICO-TECHNIQUE (ACCELERATEUR) POUR L’HOPITAL UNIVERSITAIRE IBN ROCHD RELEVANT DU GROUPEMENT SANITAIRE TERRITORIAL CASABLANCA-SETTAT",
-"org": "q9t",
-"places": [
-"CASABLANCA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-16",
-"ref_id": "1050017",
-"reference": "164/2026/GST_CS"
-},
-{
-"buyer": "GROUPEMENT SANITAIRE TERRITORIAL CASABLANCA - SETTAT",
-"category": "Fournitures",
-"deadline": "2026-11-26T09:00",
-"env_clauses": false,
-"object": "ACHAT DE MATERIEL MÉDICO-TECHNIQUE : SYSTEME D'ANGIOGRAPHIE CARDIOVASCULAIRE POUR L’HOPITAL UNIVERSITAIRE IBN ROCHD RELEVANT DU GROUPEMENT SANITAIRE TERRITORIAL CASABLANCA-SETTAT",
-"org": "q9t",
-"places": [
-"CASABLANCA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-16",
-"ref_id": "1050502",
-"reference": "169/2026/GST_CS"
-},
-{
-"buyer": "GROUPEMENT SANITAIRE TERRITORIAL CASABLANCA - SETTAT",
-"category": "Fournitures",
-"deadline": "2026-11-26T09:30",
-"env_clauses": false,
-"object": "ACHAT DE DISPOSITIFS MEDICAUX (DIVERS) POUR LES BESOINS DES HOPITAUX UNIVERSITAIRES RELEVANT DU GROUPEMENT SANITAIRE TERRITORIAL CASABLANCA –SETTAT.",
-"org": "q9t",
-"places": [
-"CASABLANCA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-16",
-"ref_id": "1050540",
-"reference": "143/2026/GSTCS"
-},
-{
 "buyer": "DOMAINE DES PECHES MARITIMES",
 "category": "Services",
 "deadline": "2026-11-27T10:30",
@@ -758,22 +427,6 @@
 "reference": "101/DGPC/2026"
 },
 {
-"buyer": "DIRECTION GENERALE DE LA PROTECTION CIVILE",
-"category": "Fournitures",
-"deadline": "2026-11-26T10:00",
-"env_clauses": false,
-"object": "l’acquisition des sacs mortuaires destinés au dépôt régional de la Protection Civile d'Al Arjate (lot unique).",
-"org": "w9x",
-"places": [
-"SALE"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-13",
-"ref_id": "1044644",
-"reference": "107/DGPC/2026"
-},
-{
 "buyer": "DIRECTEUR DE L'INSTITUT NATIONALE DES AFFAIRES SOCIALES TANGER",
 "category": "Fournitures",
 "deadline": "2026-11-27T10:00",
@@ -788,21 +441,5 @@
 "published": "2026-10-16",
 "ref_id": "1048609",
 "reference": "08/2026"
-},
-{
-"buyer": "Ministère de l'education nationale, de l'enseignement superieur, de la formation des cadres et de la recherche scientifique - l'enseignement superieur, la formation des cadres et la recherche scientifique",
-"category": "Services",
-"deadline": "2026-11-26T10:00",
-"env_clauses": false,
-"object": "Assistance technique liée à la conduite de changement dans le cadre de la révision du système d’information - programme de la transformation digitale du Ministère de l’Enseignement Supérieur, de la Recherche Scientifique et de l’Innovation à Rabat en lot unique",
-"org": "z7x",
-"places": [
-"RABAT"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-15",
-"ref_id": "1028370",
-"reference": "13/2026/CDC_PTD"
 }
 ]

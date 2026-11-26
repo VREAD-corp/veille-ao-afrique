@@ -1,5 +1,186 @@
 [
 {
+"buyer": "Agence Territoriale de Développement Agricole Pôle 1",
+"category": "Fournitures",
+"country": "Bénin",
+"deadline": "2026-12-17T10:00",
+"first_seen": "2026-11-26",
+"id": "bj-1271050",
+"lots": 3,
+"object": "Acquisition et mise en place des Bâches de séchage, des emballages et des Filets de lutte aviaire au profit des riziculteurs",
+"pdf": "https://bi.marches-publics.bj/beninmp/fichiers/pj/52231126112026_Pj_Avis%20Acquisition%20et%20mise%20en%20place%20des%20b%C3%A2ches%20de%20%20s%C3%A9chage%2C%20des.pdf",
+"places": [],
+"procedure": "Appel d'offres",
+"published": "2026-11-26",
+"reference": "F_DP_116091",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "bj-1271050-acquisition-mise-place-baches-sechage-emballages-filets-lutte-aviaire",
+"source": "BJ",
+"url": "https://www.marches-publics.bj/appels-doffres?search=F_DP_116091"
+},
+{
+"buyer": "Cote d'Ivoire Agri-Food Sector Development Project",
+"category": "Fournitures",
+"country": "Côte d'Ivoire",
+"deadline": "2027-01-13T10:00",
+"first_seen": "2026-11-26",
+"id": "wb-op00483843",
+"method": "Request for Bids",
+"object": "Acquisition et installation des mobiliers de laboratoires pour le bâtiment R+3 de la SRCV CNRA",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P171613 – Cote d'Ivoire Agri-Food Sector Development Project",
+"published": "2026-11-25",
+"reference": "CI-PDC2V-580159-GO-RFB",
+"regions": [],
+"sectors": [
+"btp",
+"fournitures-mobilier"
+],
+"slug": "wb-op00483843-acquisition-installation-mobiliers-laboratoires-batiment-r-3-srcv-cnra",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483843"
+},
+{
+"buyer": "INSTITUT NATIONAL DE LA STATISTIQUE - GUINEE",
+"category": "Services de consultants",
+"country": "Afrique de l'Ouest et du Centre (régional)",
+"deadline": "2026-11-30T14:30",
+"first_seen": "2026-11-26",
+"id": "wb-op00483790",
+"method": "Quality And Cost-Based Selection",
+"object": "RECRUTEMENT D'UN BUREAU POUR LA REALISATION DES ETUDES DE LA CONSTRUCTION DU SIEGE DE L'INS COMPOSE DES BUREAUX, SALLES DE FORMATION, HEBERGEMENT DES HÔTES ET ACCESSOIRES",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P178497 – Harmonizing and Improving Statistics in West and Central Africa - Series of Projects 1 (HISWACA - SO",
+"published": "2026-11-25",
+"reference": "GN-INS-GUINEE-427663-CS-QCBS",
+"regions": [],
+"sectors": [
+"etudes-conseil",
+"formation-evenementiel"
+],
+"slug": "wb-op00483790-recrutement-bureau-realisation-etudes-construction-siege-ins-compose-bureaux",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483790"
+},
+{
+"buyer": "Communaute Urbaine de Douala",
+"category": "Services de consultants",
+"country": "Cameroun",
+"deadline": "2026-12-17T12:00",
+"first_seen": "2026-11-26",
+"id": "wb-op00483695",
+"method": "Quality And Cost-Based Selection",
+"object": "Recrutement d’un Consultant (Firme) pour le contrôle et la supervision des travaux de construction des aires de stationnement des moto-taxis dans la ville de Douala",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P167795 – Douala Urban Mobility Project",
+"published": "2026-11-25",
+"reference": "CM-CUD-579723-CS-QCBS",
+"regions": [],
+"sectors": [
+"etudes-conseil",
+"vehicules-transport"
+],
+"slug": "wb-op00483695-recrutement-dun-consultant-firme-controle-supervision-travaux-construction-aires",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483695"
+},
+{
+"buyer": "1ère Partie de la Seconde Phase DREDGE (APL2A) - KANDADJI",
+"category": "Travaux",
+"country": "Afrique de l'Ouest et du Centre (régional)",
+"deadline": "2027-01-26T10:00",
+"first_seen": "2026-11-26",
+"id": "wb-op00483234",
+"method": "Request for Bids",
+"object": "Réalisation des travaux de construction des logements, des équipements publics et communautaires et d’aménagement des voiries réseaux divers des villages de réinstallation de Seno-Farey (Lot 1) et Kandadji 2 (Lot 2)",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P130174 – Kandadji Project",
+"published": "2026-11-25",
+"reference": "NE-APL2A - KANDADJI-560909-CW-RFB",
+"regions": [],
+"sectors": [
+"btp",
+"fournitures-mobilier"
+],
+"slug": "wb-op00483234-realisation-travaux-construction-logements-equipements-publics-communautaires-da",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483234"
+},
+{
+"buyer": "MINISTERE DE L'HABITAT ET DU DEVELOPPEMENT URBAIN",
+"category": "Travaux",
+"country": "Cameroun",
+"deadline": "2027-01-14T13:00",
+"first_seen": "2026-11-26",
+"id": "wb-op00480877",
+"method": "Request for Bids",
+"object": "Travaux de réhabilitation et construction neuve des voiries structurantes et drains en deux (02) lots (Lot1 : voiries urbaines structurante (9.3km) et lot 2 : drains (10km) à Bobongo (4 km) et Tongo Bassa (6km))",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P180884 – Sustainable Cities and Land Project",
+"published": "2026-11-25",
+"reference": "CM-MINHDU-576262-CW-RFB",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "wb-op00480877-travaux-rehabilitation-construction-neuve-voiries-structurantes-drains-deux-02",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480877"
+},
+{
+"buyer": "1ère Partie de la Seconde Phase DREDGE (APL2A) - KANDADJI",
+"category": "Services de consultants",
+"country": "Afrique de l'Ouest et du Centre (régional)",
+"deadline": "2026-12-10T10:00",
+"first_seen": "2026-11-11",
+"id": "wb-op00480576",
+"method": "Individual Consultant Selection",
+"object": "Recrutement d'un expert en sécurité pour la mise à niveau du Protocole de Sûreté élaboré dans le cadre de la mise en œuvre du Programme Kandadji",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P130174 – Kandadji Project",
+"published": "2026-11-25",
+"reference": "NE-APL2A - KANDADJI-576457-CS-INDV",
+"regions": [],
+"sectors": [
+"btp"
+],
+"slug": "wb-op00480576-recrutement-expert-securite-mise-niveau-protocole-surete-elabore-cadre",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480576"
+},
+{
+"buyer": "1ère Partie de la Seconde Phase DREDGE (APL2A) - KANDADJI",
+"category": "Services de consultants",
+"country": "Afrique de l'Ouest et du Centre (régional)",
+"deadline": "2026-12-15T10:00",
+"first_seen": "2026-11-11",
+"id": "wb-op00479557",
+"method": "Quality And Cost-Based Selection",
+"object": "Service de consultant (firme) pour la supervision- contrôle des travaux des 17 sites de réinstallation du PAR 2 y compris l'aménagement de l'esplanade du site d'Ayourou et des aménagements hydro-agricoles de compensation connexes",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P130174 – Kandadji Project",
+"published": "2026-11-25",
+"reference": "NE-APL2A - KANDADJI-560917-CS-QCBS",
+"regions": [],
+"sectors": [
+"eau-assainissement",
+"etudes-conseil"
+],
+"slug": "wb-op00479557-service-consultant-firme-supervision-controle-travaux-17-sites-reinstallation",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479557"
+},
+{
 "buyer": "Agence de Développement de l’Élevage des Ruminants",
 "category": "Services de consultants",
 "country": "Bénin",
@@ -4176,6 +4357,7 @@
 "category": "Services de consultants",
 "country": "Bénin",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "first_seen": "2026-11-11",
 "id": "bj-1261756",
 "object": "Etude de faisabilité pour la construction des modules de salles de classe, la mise au norme du marché de Fô-Tanncé ;la délimitation et aménagement de couloir de passage des animaux à Tancé et sur l’axe Yakabissi-Yaoukoussi etla rénovation du marché de Niaro-Gninon",
@@ -4283,6 +4465,7 @@
 "category": "Services de consultants",
 "country": "Bénin",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "first_seen": "2026-11-11",
 "id": "bj-1258274",
 "object": "Recrutement de firmes pour la délivrance du conseil agricole dans le pole de développement agricole 7 (lot 1 à 4)",
@@ -4367,28 +4550,6 @@
 "slug": "wb-op00480624-recrutement-comptable-profit-ucp-pif-2",
 "source": "BM",
 "url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480624"
-},
-{
-"buyer": "1ère Partie de la Seconde Phase DREDGE (APL2A) - KANDADJI",
-"category": "Services de consultants",
-"country": "Afrique de l'Ouest et du Centre (régional)",
-"deadline": "2026-12-07T10:00",
-"first_seen": "2026-11-11",
-"id": "wb-op00480576",
-"method": "Individual Consultant Selection",
-"object": "Recrutement d'un expert en sécurité pour la mise à niveau du Protocole de Sûreté élaboré dans le cadre de la mise en œuvre du Programme Kandadji",
-"places": [],
-"procedure": "Appel à manifestation d'intérêt",
-"project": "P130174 – Kandadji Project",
-"published": "2026-11-10",
-"reference": "NE-APL2A - KANDADJI-576457-CS-INDV",
-"regions": [],
-"sectors": [
-"btp"
-],
-"slug": "wb-op00480576-recrutement-expert-securite-mise-niveau-protocole-surete-elabore-cadre",
-"source": "BM",
-"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480576"
 },
 {
 "buyer": "Coordination Unit of Solar Energy and Access Project",
@@ -4598,29 +4759,6 @@
 "slug": "wb-op00480365-selection-consultant-suivi-controle-travaux-construction-voiries-urbaines-ouvrag",
 "source": "BM",
 "url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00480365"
-},
-{
-"buyer": "1ère Partie de la Seconde Phase DREDGE (APL2A) - KANDADJI",
-"category": "Services de consultants",
-"country": "Afrique de l'Ouest et du Centre (régional)",
-"deadline": "2026-12-03T10:00",
-"first_seen": "2026-11-11",
-"id": "wb-op00479557",
-"method": "Quality And Cost-Based Selection",
-"object": "Service de consultant (firme) pour la supervision- contrôle des travaux des 17 sites de réinstallation du PAR 2 y compris l'aménagement de l'esplanade du site d'Ayourou et des aménagements hydro-agricoles de compensation connexes",
-"places": [],
-"procedure": "Appel à manifestation d'intérêt",
-"project": "P130174 – Kandadji Project",
-"published": "2026-11-10",
-"reference": "NE-APL2A - KANDADJI-560917-CS-QCBS",
-"regions": [],
-"sectors": [
-"eau-assainissement",
-"etudes-conseil"
-],
-"slug": "wb-op00479557-service-consultant-firme-supervision-controle-travaux-17-sites-reinstallation",
-"source": "BM",
-"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00479557"
 },
 {
 "buyer": "URBAN SANITATION AND RESILIENCE PROJECT",
@@ -5199,6 +5337,7 @@
 "category": "Fournitures",
 "country": "Bénin",
 "deadline": "2026-11-26T09:00",
+"delisted": "2026-11-26",
 "first_seen": "2026-11-10",
 "id": "bj-1261341",
 "object": "Acquisition de divers mobiliers (de bureau et académiques) de fabrication locale au profit de certaines entités (IFRI, FSS, Rectorat, FADESP)",
@@ -7163,6 +7302,7 @@
 "category": "Fournitures",
 "country": "Bénin",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "first_seen": "2026-11-06",
 "id": "bj-1258529",
 "object": "Equipement en table-bancs les EPP de : Gourou-Bansou, Boro, Fana, Dougou et Bagou dans la commune de Gogounou",
@@ -7206,6 +7346,7 @@
 "category": "Fournitures",
 "country": "Bénin",
 "deadline": "2026-11-26T09:30",
+"delisted": "2026-11-26",
 "first_seen": "2026-11-05",
 "id": "bj-1257259",
 "lots": 2,
@@ -7670,6 +7811,7 @@
 "category": "Fournitures",
 "country": "Bénin",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "first_seen": "2026-11-04",
 "id": "bj-1256804",
 "lots": 2,
@@ -22442,6 +22584,7 @@
 "category": "Travaux",
 "country": "Maroc",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Travaux / Fondations, injections, parois moulées, sondages et forages / Travaux de fondations"
@@ -31094,6 +31237,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T09:30",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Fongibles et consommables médicaux"
@@ -31192,6 +31336,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T09:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
@@ -31427,6 +31572,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T08:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
@@ -34349,6 +34495,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "env_clauses": true,
 "estimate": 344952000.0,
@@ -35239,6 +35386,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-26T11:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
@@ -35307,6 +35455,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etudes techniques (choix de terrains, géologique, géophysique, hydrologique,…)"
@@ -42583,6 +42732,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Services / Conseil, audit et assistance à maitrise d’ouvrage (à l’exception du domaine des nouvelles technologies) / Assistance et conseil (juridique, financier, en management, en gestion, technique…)"
@@ -43215,6 +43365,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T08:30",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Equipements et produits médicaux, pharmaceutiques et de laboratoire / Equipements et matériel médical, médico-technique et biomédical"
@@ -43522,6 +43673,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et articles de literie, de couchage, de cuisine et de buanderie / Appareils et ustensiles de cuisine"
@@ -43943,6 +44095,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Produits alimentaires, d’élevage, de la pêche, d’agriculture, d’horticulture et pépinière / Produits alimentaires pour usage animal"
@@ -44746,6 +44899,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Gardiennage et surveillance des bâtiments administratifs"
@@ -45985,6 +46139,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Matériel de bureau"
@@ -55838,6 +55993,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
@@ -56933,6 +57089,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
@@ -57211,6 +57368,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T11:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel de transport, pièces de rechange et pneumatiques / Véhicules à moteur (automobiles, navires, avions….)"
@@ -60752,6 +60910,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel technique, de lutte contre l’incendie et pièces de rechange / Produits et matériel de lutte contre l’incendie"
@@ -68331,6 +68490,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T09:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Produits chimiques, de nettoyage, insecticides / Additifs pour ciment, mortier ou béton et autres additifs chimiques similaires"
@@ -68808,6 +68968,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Services / Etudes d’ingénierie / Etude d’organisation et de gestion"
@@ -73386,6 +73547,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel informatique, logiciels et pièces de rechanges / Matériel et équipements informatiques"
@@ -75806,6 +75968,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-26T10:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Services / Services de location sans option d’achat / Salles et stands"
@@ -83260,6 +83423,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-26T11:00",
+"delisted": "2026-11-26",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et articles de literie, de couchage, de cuisine et de buanderie / Appareils et ustensiles de cuisine"
