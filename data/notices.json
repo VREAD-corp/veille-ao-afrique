@@ -1,5 +1,139 @@
 [
 {
+"buyer": "Cellule d’Exécution des Projets Eau",
+"category": "Fournitures",
+"country": "RD Congo",
+"deadline": "2027-01-22T11:00",
+"first_seen": "2026-11-27",
+"id": "wb-op00484020",
+"method": "Request for Bids",
+"object": "Acquisition des matériels de laboratoire d’analyses physicochimiques et microbiologiques au bénéfice de l’UNIKIN pour le suivi de l'exploitation de la STBV",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P513301 – DRC: Scaling Up Water Supply and Sanitation Access in Kinshasa Project",
+"published": "2026-11-26",
+"reference": "ZR-CEP-O-572241-GO-RFB",
+"regions": [],
+"sectors": [
+"fournitures-mobilier"
+],
+"slug": "wb-op00484020-acquisition-materiels-laboratoire-danalyses-physicochimiques-microbiologiques-be",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00484020"
+},
+{
+"buyer": "Cellule d’Exécution des Projets Eau",
+"category": "Fournitures",
+"country": "RD Congo",
+"deadline": "2027-01-22T11:00",
+"first_seen": "2026-11-27",
+"id": "wb-op00483995",
+"method": "Request for Bids",
+"object": "Acquisition de matériels roulants : véhicules d'exploitation Pick up trucks en faveur de la REGIDESO (Lot 1), un (01) véhicule en faveur de la DPT et six (06) véhicules en faveur de la CEP-O (Lot 2)",
+"places": [],
+"procedure": "Appel d'offres",
+"project": "P513301 – DRC: Scaling Up Water Supply and Sanitation Access in Kinshasa Project",
+"published": "2026-11-26",
+"reference": "ZR-CEP-O-572245-GO-RFB",
+"regions": [],
+"sectors": [
+"vehicules-transport"
+],
+"slug": "wb-op00483995-acquisition-materiels-roulants-vehicules-exploitation-pick-up-trucks-faveur",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483995"
+},
+{
+"buyer": "Ministry of Infrastructure, Equipment and Social Housing",
+"category": "Services de consultants",
+"country": "Burundi",
+"deadline": "2026-12-02T17:00",
+"first_seen": "2026-11-27",
+"id": "wb-op00483946",
+"method": "Quality And Cost-Based Selection",
+"object": "Recrutement d’un cabinet pour l’évaluation environnemental et social stratégique (EESS) du secteur des transports au Burundi",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P172988 – Burundi Transport Resilience Project",
+"published": "2026-11-26",
+"reference": "BI-MIELS-PIU-570794-CS-QCBS",
+"regions": [],
+"sectors": [
+"etudes-conseil",
+"vehicules-transport"
+],
+"slug": "wb-op00483946-recrutement-dun-cabinet-levaluation-environnemental-social-strategique-eess-sect",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483946"
+},
+{
+"buyer": "Ministry of Infrastructure, Equipment and Social Housing",
+"category": "Services de consultants",
+"country": "Burundi",
+"deadline": "2026-11-30T17:00",
+"first_seen": "2026-11-27",
+"id": "wb-op00483944",
+"method": "Consultant Qualification  Selection",
+"object": "Recrutement d'un consultant (Firme) pour la surveillance des travaux de construction de 14 maisons en faveur des Batwa dans la zone d'intervention du projet",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P172988 – Burundi Transport Resilience Project",
+"published": "2026-11-26",
+"reference": "BI-MIELS-PIU-574420-CS-CQS",
+"regions": [],
+"sectors": [
+"etudes-conseil"
+],
+"slug": "wb-op00483944-recrutement-consultant-firme-surveillance-travaux-construction-14-maisons-faveur",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483944"
+},
+{
+"buyer": "Comoros Inter Islands Connectivity Project",
+"category": "Services de consultants",
+"country": "Comores",
+"deadline": "2026-12-11T14:00",
+"first_seen": "2026-11-27",
+"id": "wb-op00483915",
+"method": "Individual Consultant Selection",
+"object": "Relance 2ème Comptable du Projet",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P173114 – Comoros Interisland Connectivity Project",
+"published": "2026-11-26",
+"reference": "KM-PICMC-576169-CS-INDV",
+"regions": [],
+"sectors": [
+"autre"
+],
+"slug": "wb-op00483915-relance-2eme-comptable-projet",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483915"
+},
+{
+"buyer": "UGP STAR EST",
+"category": "Services de consultants",
+"country": "RD Congo",
+"deadline": "2026-12-23T16:00",
+"first_seen": "2026-11-27",
+"id": "wb-op00483616",
+"method": "Quality And Cost-Based Selection",
+"object": "Recrutement firme chargée de réaliser le diagnostic des systèmes de collecte des recettes, proposer une solution informatique, élaborer un cahier de charge des équipements indispensables pour la fonctionnalité du système, proposer un plan de renfoncement",
+"places": [],
+"procedure": "Appel à manifestation d'intérêt",
+"project": "P175834 – Stabilization and Recovery in Eastern DRC",
+"published": "2026-11-26",
+"reference": "ZR-STAR EST-559121-CS-QCBS",
+"regions": [],
+"sectors": [
+"informatique-telecoms",
+"etudes-conseil"
+],
+"slug": "wb-op00483616-recrutement-firme-chargee-realiser-diagnostic-systemes-collecte-recettes-propose",
+"source": "BM",
+"url": "https://projects.worldbank.org/en/projects-operations/procurement-detail/OP00483616"
+},
+{
 "buyer": "Agence Territoriale de Développement Agricole Pôle 1",
 "category": "Fournitures",
 "country": "Bénin",
@@ -6716,6 +6850,7 @@
 "category": "Services",
 "country": "Bénin",
 "deadline": "2026-11-27T10:00",
+"delisted": "2026-11-27",
 "first_seen": "2026-11-06",
 "id": "bj-1259317",
 "object": "Entretien des espaces verts et des bureaux de la Mairie de Bonou et de ses arrondissements par accord-cadre triennal à marchés subséquents",
@@ -6737,6 +6872,7 @@
 "category": "Travaux",
 "country": "Bénin",
 "deadline": "2026-11-27T10:00",
+"delisted": "2026-11-27",
 "first_seen": "2026-11-06",
 "id": "bj-1258863",
 "object": "Travaux de réalisation des ouvertures de voies à Ségbana centre",
@@ -6758,6 +6894,7 @@
 "category": "Fournitures",
 "country": "Bénin",
 "deadline": "2026-11-27T10:00",
+"delisted": "2026-11-27",
 "first_seen": "2026-11-06",
 "id": "bj-1258777",
 "lots": 2,
@@ -6780,6 +6917,7 @@
 "category": "Travaux",
 "country": "Bénin",
 "deadline": "2026-11-27T10:00",
+"delisted": "2026-11-27",
 "first_seen": "2026-11-06",
 "id": "bj-1256568",
 "object": "Travaux de construction en brique en terre comprimée (BTC) d’hangar de vente de divers + Boucherie+ Clôture de l’espace d’hébergement (Relance)",
@@ -30306,6 +30444,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-27T10:00",
+"delisted": "2026-11-27",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel, mobilier et fournitures de bureau / Mobilier de bureau"
@@ -39021,6 +39160,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-27T10:30",
+"delisted": "2026-11-27",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et fournitures électriques, électronique, électromécanique et pièces de rechange / Matériel électrique"
@@ -50503,6 +50643,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-27T10:00",
+"delisted": "2026-11-27",
 "detail_checked": true,
 "domains": [
 "Fournitures / Effets d’habillement et accessoires / Vêtements professionnels"
@@ -50538,6 +50679,7 @@
 "category": "Services",
 "country": "Maroc",
 "deadline": "2026-11-27T10:30",
+"delisted": "2026-11-27",
 "detail_checked": true,
 "domains": [
 "Services / Nettoyage, gardiennage, entretien et maintenance / Entretien et maintenance des équipements techniques électriques, électroniques, électromécaniques, scientifiques y compris la fourniture des pièces de rechange"
@@ -63315,6 +63457,7 @@
 "category": "Fournitures",
 "country": "Maroc",
 "deadline": "2026-11-27T11:00",
+"delisted": "2026-11-27",
 "detail_checked": true,
 "domains": [
 "Fournitures / Matériel et articles de literie, de couchage, de cuisine et de buanderie / Appareils et ustensiles de cuisine"

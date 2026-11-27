@@ -34,23 +34,6 @@
 "reference": "97/AREPFM/2026"
 },
 {
-"buyer": "L'IMPRIMERIE OFFICIELLE",
-"category": "Fournitures",
-"deadline": "2026-11-27T10:30",
-"env_clauses": true,
-"object": "L’acquisition et modernisation d'équipements de production et de finition, et acquisition de matériel de levage, de manutention, de stockage et de façonnage",
-"org": "g0u",
-"places": [
-"Wilaya de Rabat",
-"MAROC"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-16",
-"ref_id": "1038884",
-"reference": "11/2026/SGG/IO"
-},
-{
 "buyer": "GOUVERNEUR DE LA PROVINCE DE TAROUDANNT",
 "category": "Fournitures",
 "deadline": "2026-12-01T10:00",
@@ -97,22 +80,6 @@
 "published": "2026-10-14",
 "ref_id": "975094",
 "reference": "35/2026"
-},
-{
-"buyer": "DELEGATION GENERALE A L'ADMINISTRATION PENITENTIAIRE ET A LA REINSERTION",
-"category": "Fournitures",
-"deadline": "2026-11-27T11:00",
-"env_clauses": false,
-"object": "La Fourniture et mise en service des équipements de cuisine au profit de la Prison Locale benimellal, en lot unique",
-"org": "h5j",
-"places": [
-"BENI MELLAL"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-13",
-"ref_id": "975095",
-"reference": "36/2026"
 },
 {
 "buyer": "Province de CHICHAOUA",
@@ -392,54 +359,5 @@
 "published": "2026-10-15",
 "ref_id": "1047308",
 "reference": "04/2026"
-},
-{
-"buyer": "DOMAINE DES PECHES MARITIMES",
-"category": "Services",
-"deadline": "2026-11-27T10:30",
-"env_clauses": false,
-"object": "Réalisation des prestations de maintenance des socles techniques du système informatique S@M@C du Secrétariat d’Etat Chargé de la Pêche Maritime à Rabat, en lot unique.",
-"org": "u6i",
-"places": [
-"RABAT"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-14",
-"ref_id": "1013391",
-"reference": "22/SAM/FDP/2026"
-},
-{
-"buyer": "DIRECTION GENERALE DE LA PROTECTION CIVILE",
-"category": "Fournitures",
-"deadline": "2026-11-27T10:00",
-"env_clauses": false,
-"object": "l’acquisition des effets d’habillement (cagoule de protection) destinés à la Direction Générale de la Protection Civile Rabat, unité Mohamadia et Magasin à Sidi Allal El Bahraoui (lot unique).",
-"org": "w9x",
-"places": [
-"RABAT",
-"MOHAMMADIA"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-14",
-"ref_id": "1043659",
-"reference": "101/DGPC/2026"
-},
-{
-"buyer": "DIRECTEUR DE L'INSTITUT NATIONALE DES AFFAIRES SOCIALES TANGER",
-"category": "Fournitures",
-"deadline": "2026-11-27T10:00",
-"env_clauses": false,
-"object": "Achat de mobilier de bureau pour l’administration et les classes de l’INAS. Lot unique.",
-"org": "y5l",
-"places": [
-"Wilaya de Tanger Assilah"
-],
-"procedure": "Appel d'offres ouvert",
-"procedure_code": "AOO",
-"published": "2026-10-16",
-"ref_id": "1048609",
-"reference": "08/2026"
 }
 ]
